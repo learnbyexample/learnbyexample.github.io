@@ -2,6 +2,7 @@ My super duper awesome programming blog is now live at https://learnbyexample.gi
 
 :warning: :construction: Work still in progress, stay tuned...
 
+I'm also reposting it on https://dev.to/learnbyexample - gives you an alternate experience, plus it has comments and other features.
 
 <br>
 
