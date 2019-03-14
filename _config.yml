@@ -71,6 +71,7 @@ tag_archive_path: "/tags/#"
 #   - vendor/ruby/
 
 plugins:
+  - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-paginate
 
