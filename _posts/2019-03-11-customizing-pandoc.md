@@ -225,6 +225,7 @@ This [tex.stackexchange Q&A](https://tex.stackexchange.com/questions/23235/elimi
 * [Sphinx](https://www.sphinx-doc.org/en/stable/index.html)
     * [Self-publishing a book with reStructuredText, Sphinx, Calibre, and vim](https://digitalsuperpowers.com/blog/2019-02-16-publishing-ebook.html)
 * [Bookdown](https://bookdown.org/home/)
+* [emacs orgmode](https://orgmode.org/)
 * [Markdeep](https://casual-effects.com/markdeep/)
 
 **Miscellaneous**
