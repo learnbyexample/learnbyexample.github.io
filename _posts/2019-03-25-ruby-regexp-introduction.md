@@ -8,15 +8,14 @@ tags:
 date: 2019-03-25T18:02:36
 ---
 
+![cover](/images/ruby_regexp/cover.png)
+
 This is first post in a series, where I'll be posting chapters from my free [Ruby Regexp](https://github.com/learnbyexample/Ruby_Regexp) book. Regular expression syntax and features vary from one language to another. Still, the core concept is same and you could benefit from this series even if you do not use Ruby. You can download the ebook from any of these links for free or pay what you wish:
 
-* [leanpub](https://leanpub.com/rubyregexp)
 * [gumroad](https://gumroad.com/l/rubyregexp)
+* [leanpub](https://leanpub.com/rubyregexp)
 * [instamojo](https://www.instamojo.com/learnbyexample/ruby-regexp/)
 
-For practice problems, visit [Exercises](https://github.com/learnbyexample/Ruby_Regexp/blob/master/exercises/Exercises.md) file from the repository.
-
-<br>
 <br>
 
 # Preface
@@ -187,4 +186,8 @@ Yet another alternative to `match?` method is the `===` operator. This one retur
 ```
 
 You might wonder why there are so many ways to test matching condition with regexps. The most common approach is to use `match?` method in a conditional statement. If you need position of match, use `=~` operator or `index` method. The `===` operator is usually relevant in Enumerable methods. Usage of global variables will be covered in later chapters. The `=~` and `!~` operators are also prevalent in command line one-liners, see my [Ruby one liners](https://github.com/learnbyexample/Command-line-text-processing/blob/master/ruby_one_liners.md) tutorial for examples.
+
+<br>
+
+For practice problems, visit [Exercises](https://github.com/learnbyexample/Ruby_Regexp/blob/master/exercises/Exercises.md) file from the repository.
 
