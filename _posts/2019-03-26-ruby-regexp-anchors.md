@@ -6,9 +6,12 @@ tags:
   - ruby
   - regular-expressions
 date: 2019-03-26T15:27:20
+last_modified_at: 2019-03-29T10:53:12
 ---
 
-![cover](/images/ruby_regexp/cover.png)
+![cover](/images/ruby_regexp/anchors.png)
+
+*Photo Credit: [Nias Nyalada](https://unsplash.com/photos/4vDWaJDlRmM) on [Unsplash](https://unsplash.com)*
 
 This is second post in a series, where I'll be posting chapters from my free [Ruby Regexp](https://github.com/learnbyexample/Ruby_Regexp) book. Regular expression syntax and features vary from one language to another. Still, the core concept is same and you could benefit from this series even if you do not use Ruby. You can download the ebook from any of these links for free or pay what you wish:
 

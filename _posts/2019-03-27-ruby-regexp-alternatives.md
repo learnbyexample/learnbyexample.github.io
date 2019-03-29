@@ -10,7 +10,7 @@ date: 2019-03-27T17:02:19
 
 ![alternatives](/images/ruby_regexp/alternatives.png)
 
-*Photo Credit: [Markus Spiske](https://unsplash.com/@markusspiske) on [Unsplash](https://unsplash.com)*
+*Photo Credit: [Markus Spiske](https://unsplash.com/photos/QVVXPNbjLrI) on [Unsplash](https://unsplash.com)*
 
 This is third post in a series, where I'll be posting chapters from my free [Ruby Regexp](https://github.com/learnbyexample/Ruby_Regexp) book. Regular expression syntax and features vary from one language to another. Still, the core concept is same and you could benefit from this series even if you do not use Ruby. You can download the ebook from any of these links for free or pay what you wish:
 
