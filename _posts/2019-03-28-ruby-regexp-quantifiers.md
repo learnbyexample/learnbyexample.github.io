@@ -10,7 +10,7 @@ date: 2019-03-28T18:53:07
 
 ![quantifiers](/images/ruby_regexp/quantifiers.png)
 
-*Photo Credit: [Judi Neumeyer](https://unsplash.com/photos/ECjHeJtRznQ) on [Unsplash](https://unsplash.com)*
+*Photo Credit: [Crissy Jarvis](https://unsplash.com/photos/gdL-UZfnD3I) on [Unsplash](https://unsplash.com)*
 
 This is fourth post in a series, where I'll be posting chapters from my free [Ruby Regexp](https://github.com/learnbyexample/Ruby_Regexp) book. Regular expression syntax and features vary from one language to another. Still, the core concept is same and you could benefit from this series even if you do not use Ruby. You can download the ebook from any of these links for free or pay what you wish:
 
