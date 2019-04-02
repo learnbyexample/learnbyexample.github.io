@@ -8,7 +8,7 @@ tags:
 date: 2019-04-01T13:27:02
 ---
 
-![matched portions](/images/ruby_regexp/character_class.png)
+![character class](/images/ruby_regexp/character_class.png)
 
 *Photo Credit: [Megan Savoie](https://unsplash.com/photos/bHoBMkArD5k) on [Unsplash](https://unsplash.com)*
 
