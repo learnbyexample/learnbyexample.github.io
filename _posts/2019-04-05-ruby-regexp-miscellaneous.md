@@ -8,7 +8,7 @@ tags:
 date: 2019-04-05T12:12:44
 ---
 
-![modifiers](/images/ruby_regexp/modifiers.jpg)
+![misc](/images/ruby_regexp/misc.jpg)
 
 *Photo Credit: [Markus Spiske](https://unsplash.com/photos/0VNVxhEnkII) on [Unsplash](https://unsplash.com)*
 
