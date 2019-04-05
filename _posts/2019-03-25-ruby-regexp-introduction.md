@@ -44,7 +44,7 @@ This work is licensed under a
 
 Code snippets are available under [MIT License](https://github.com/learnbyexample/Ruby_Regexp/blob/master/LICENSE)
 
-See [Version_changes.md](https://github.com/learnbyexample/Ruby_Regexp/blob/master/Version_changes.md) to track changes across book versions. This series is based on version 1.0
+See [Version_changes.md](https://github.com/learnbyexample/Ruby_Regexp/blob/master/Version_changes.md) to track changes across book versions. This series is based on version 1.1
 
 # Why is it needed?
 
