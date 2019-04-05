@@ -1,5 +1,5 @@
 ---
-title: "Ruby Regexp Part 10 - Miscellaneous
+title: "Ruby Regexp Part 10 - Miscellaneous"
 categories:
   - ebook
 tags:
