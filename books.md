@@ -20,6 +20,21 @@ Learn Python Regular Expressions step by step from beginner to advanced levels w
 
 <br>
 
+# GNU grep and ripgrep
+
+Example based guide to mastering GNU grep and ripgrep. Exercises are also included to test your understanding.
+
+![grep cover image]({{ '/images/books/grep.png' | absolute_url }}){: .align-center}
+
+* [Sample chapters](https://github.com/learnbyexample/learn_gnugrep_ripgrep/blob/master/sample_chapters/grep_sample_v1p0.pdf)
+* Buy pdf from:
+    * [gumroad](https://gumroad.com/l/gnugrep_ripgrep)
+    * [leanpub](https://leanpub.com/gnugrep_ripgrep)
+    * [instamojo](https://www.instamojo.com/learnbyexample/gnu-grep-and-ripgrep/)
+* [GitHub repo for code snippets and more](https://github.com/learnbyexample/learn_gnugrep_ripgrep)
+
+<br>
+
 # Ruby Regexp
 
 Learn Ruby Regexp step by step from beginner to advanced levels with 200+ examples. Exercises are also included to test your understanding.
