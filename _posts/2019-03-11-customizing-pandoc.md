@@ -11,7 +11,7 @@ tags:
 date: 2019-03-11T21:05:25
 ---
 
-Either you've already heard of `pandoc` or if you have searched online for `markdown` to `pdf` or similar, you are sure to come across `pandoc`. This tutorial will give you a basic idea of using `pandoc` to generate `pdf` from [GitHub style markdown](https://github.github.com/gfm/) file. The main purpose is to highlight what customizations I did to generate `pdf` for self-publishing my ebooks. It wasn't easy to arrive at the set-up I ended up with, so I hope this will be useful for those looking to use `pandoc` to generate `pdf`. Specifically aimed at technical books that has code snippets.
+Either you've already heard of `pandoc` or if you have searched online for `markdown` to `pdf` or similar, you are sure to come across `pandoc`. This tutorial will give you a basic idea of using `pandoc` to generate `pdf` from [GitHub style markdown](https://github.github.com/gfm/) file. The main purpose is to highlight what customizations I did to generate `pdf` for [self-publishing my ebooks](https://learnbyexample.github.io/books/). It wasn't easy to arrive at the set-up I ended up with, so I hope this will be useful for those looking to use `pandoc` to generate `pdf`. Specifically aimed at technical books that has code snippets.
 
 ## Installation
 
@@ -35,21 +35,21 @@ For more details and guide for other OS, refer to [pandoc: installation](https:/
 
 Once `pandoc` is working on your system, try generating a sample `pdf` without any customization.
 
-**Note**: See [learnbyexample.github.io repo](https://github.com/learnbyexample/learnbyexample.github.io/tree/master/files/pandoc_pdf) for all the input and output files referred in this tutorial
+![info](/images/info.svg) See [learnbyexample.github.io repo](https://github.com/learnbyexample/learnbyexample.github.io/tree/master/files/pandoc_pdf) for all the input and output files referred in this tutorial
 
 ```bash
 $ pandoc sample_1.md -f gfm -o sample_1.pdf
 ```
 
-Here `sample_1.md` is input markdown file and `-f` is used to specify that the input format is GitHub style markdown. The `-o` option specifies the output file type based on extension. The default output is probably good enough but has shortcomings like hyperlink and inline code are hard to distinguish, chapters are not separated, etc.
+Here `sample_1.md` is input markdown file and `-f` is used to specify that the input format is GitHub style markdown. The `-o` option specifies the output file type based on extension. The default output is probably good enough. But has shortcomings like hyperlinks and inline code are hard to distinguish, chapters are not separated, etc.
 
-`pandoc` has its own version of `markdown` as well with many useful extensions, see [pandoc: pandocs-markdown](https://pandoc.org/MANUAL.html#pandocs-markdown) for details.
+![info](/images/info.svg) `pandoc` has its own flavor of `markdown` with many useful extensions, see [pandoc: pandocs-markdown](https://pandoc.org/MANUAL.html#pandocs-markdown) for details. GitHub style markdown is recommended if you wish to use the same source (or with minor changes) in multiple places.
 
-**Note** that it is advised to use `markdown` headers in order without skipping - for example, `H1` for chapter heading and `H2` for chapter sub-section, etc is fine. `H1` for chapter heading and `H3` for sub-section is not. Using the former can give automatic index navigation on `pdf` readers.
+![info](/images/info.svg) It is advised to use `markdown` headers in order without skipping - for example, `H1` for chapter heading and `H2` for chapter sub-section, etc is fine. `H1` for chapter heading and `H3` for sub-section is not. Using the former can give automatic index navigation on `pdf` readers.
 
 On [Evince](https://wiki.gnome.org/Apps/Evince) reader, the index navigation for above sample looks like this:
 
-![Chapter Index](/images/pandoc_pdf/chapter_index.png)
+![Chapter Index]({{ '/images/pandoc_pdf/chapter_index.png' | absolute_url }}){: .align-center}
 
 ## Chapter breaks
 
@@ -70,7 +70,7 @@ This can be added using `-H` option. From `pandoc` manual,
 >files in the header.  They will be included in the  order  specified.
 >Implies --standalone.
 
-So, the `pandoc` invocation now looks like:
+The `pandoc` invocation now looks like:
 
 ```bash
 $ pandoc sample_1.md -f gfm -H chapter_break.tex -o sample_1_chapter_break.pdf
@@ -110,20 +110,24 @@ pandoc "$1" \
 
 Using `xelatex` as the `pdf-engine` allows to use any font installed in the system. One reason I chose `DejaVu` was because it supported **Greek** and other Unicode characters that were causing error with other fonts. See [tex.stackexchange: Using XeLaTeX instead of pdfLaTeX](https://tex.stackexchange.com/questions/21736/using-xelatex-instead-of-pdflatex) for some more details.
 
+The `pandoc` invocation is now through a script:
+
 ```bash
 $ chmod +x md2pdf.sh
 $ ./md2pdf.sh sample_1.md sample_1_settings.pdf
 ```
 
+Do compare the pdf generated side by side with previous output before proceeding.
+
 ## Syntax highlighting
 
-One option to customize syntax highlighting for code snippets is to save one of the `pandoc` themes and editing it. See [stackoverflow: What are the available syntax highlighters?](https://stackoverflow.com/questions/30880200/pandoc-what-are-the-available-syntax-highlighters/47876166#47876166) for available themes and more details (go through other answers as well).
+One option to customize syntax highlighting for code snippets is to save one of the `pandoc` themes and editing it. See [stackoverflow: What are the available syntax highlighters?](https://stackoverflow.com/questions/30880200/pandoc-what-are-the-available-syntax-highlighters/47876166#47876166) for available themes and more details (as a good practice on stackoverflow, go through all answers and comments - the linked/related sections on sidebar are useful as well).
 
 ```bash
 $ pandoc --print-highlight-style=pygments > pygments.theme
 ```
 
-Change theme settings using a text editor ([colorhexa](https://www.colorhexa.com/) is a good site to choose colors). For this demo, the below settings are changed:
+Edit the above file to customize the theme. Use sites like [colorhexa](https://www.colorhexa.com/) to help with color choices, hex values, etc. For this demo, the below settings are changed:
 
 ```
 # by default, background is same as normal text
@@ -131,7 +135,7 @@ Change theme settings using a text editor ([colorhexa](https://www.colorhexa.com
 "background-color": "#f8f8f8",
 
 # change italic to false, messes up comments with slashes
-# change text-color to another shade of gray
+# change comment text-color to yet another shade of gray
 "Comment": {
     "text-color": "#9c9c9c",
     "background-color": null,
@@ -160,17 +164,17 @@ Add `--highlight-style pygments.theme` and `--include-in-header inline_code.tex`
 
 With `pandoc sample_2.md -f gfm -o sample_2.pdf` the output would be:
 
-![Default syntax highlighting](/images/pandoc_pdf/default_syn.png)
+![Default syntax highlighting]({{ '/images/pandoc_pdf/default_syn.png' | absolute_url }}){: .align-center}
 
 With `./md2pdf_syn.sh sample_2.md sample_2_syn.pdf` the output is:
 
-![Customized syntax highlighting](/images/pandoc_pdf/customized_syn.png)
+![Customized syntax highlighting]({{ '/images/pandoc_pdf/customized_syn.png' | absolute_url }}){: .align-center}
 
 <br>
 
-For my [Python re(gex)?](https://github.com/learnbyexample/py_regular_expressions) book, by chance I found that using `ruby` instead of `python` for REPL code snippets syntax highlighting was better. As seen from `./md2pdf_syn.sh sample_3.md sample_3.pdf` result, for `python` directive, string output gets treated as a comment and color for boolean values isn't easy to distinguish from string values.
+For my [Python re(gex)?](https://github.com/learnbyexample/py_regular_expressions) book, by chance I found that using `ruby` instead of `python` for REPL code snippets syntax highlighting was better. Snapshot from `./md2pdf_syn.sh sample_3.md sample_3.pdf` result is shown below. For `python` directive, string output gets treated as a comment and color for boolean values isn't easy to distinguish from string values. The `ruby` directive treats string value as expected and boolean values are easier to spot.
 
-![REPL syntax highlighting](/images/pandoc_pdf/python_vs_ruby_syn.png)
+![REPL syntax highlighting]({{ '/images/pandoc_pdf/python_vs_ruby_syn.png' | absolute_url }}){: .align-center}
 
 ## Bullet styling
 
@@ -188,9 +192,9 @@ This [stackoverflow Q&A](https://stackoverflow.com/questions/22156999/how-to-cha
 \setlist[itemize,3]{label=$\star$}
 ```
 
-`pandoc sample_4.md -f gfm -o sample_4.pdf` vs `./md2pdf_syn_bullet.sh sample_4.md sample_4_bullet.pdf` gives:
+Comparing `pandoc sample_4.md -f gfm -o sample_4.pdf` vs `./md2pdf_syn_bullet.sh sample_4.md sample_4_bullet.pdf` gives:
 
-![Bullet styling](/images/pandoc_pdf/bullet_styling.png)
+![Bullet styling]({{ '/images/pandoc_pdf/bullet_styling.png' | absolute_url }}){: .align-center}
 
 ## PDF properties
 
@@ -209,7 +213,7 @@ This [tex.stackexchange Q&A](https://tex.stackexchange.com/questions/23235/elimi
 
 `./md2pdf_syn_bullet_prop.sh sample_4.md sample_4_bullet_prop.pdf` gives:
 
-![PDF properties](/images/pandoc_pdf/pdf_properties.png)
+![PDF properties]({{ '/images/pandoc_pdf/pdf_properties.png' | absolute_url }}){: .align-center}
 
 ## Resource links
 
@@ -219,8 +223,9 @@ This [tex.stackexchange Q&A](https://tex.stackexchange.com/questions/23235/elimi
 * [tex.stackexchange: How to change the background color and border of a blockquote?](https://tex.stackexchange.com/questions/154528/how-to-change-the-background-color-and-border-of-a-pandoc-generated-blockquote)
 * [tex.stackexchange: Change section fonts](https://tex.stackexchange.com/questions/10138/change-section-fonts)
 
-**Other ebook creation tools**:
+**More options for generating ebooks**:
 
+* [pandoc-latex-template](https://github.com/Wandmalfarbe/pandoc-latex-template) - a clean pandoc LaTeX template to convert your markdown files to PDF or LaTeX
 * [Asciidoctor](https://asciidoctor.org/docs/what-is-asciidoc/)
 * [Sphinx](https://www.sphinx-doc.org/en/stable/index.html)
     * [Self-publishing a book with reStructuredText, Sphinx, Calibre, and vim](https://digitalsuperpowers.com/blog/2019-02-16-publishing-ebook.html)
