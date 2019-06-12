@@ -11,9 +11,24 @@ tags:
 date: 2019-03-11T21:05:25
 ---
 
+**Table of Contents**
+
+* [Installation](#installation)
+* [Minimal example](#minimal-example)
+* [Chapter breaks](#chapter-breaks)
+* [Changing settings via -V option](#changing-settings-via--v-option)
+* [Syntax highlighting](#syntax-highlighting)
+* [Bullet styling](#bullet-styling)
+* [PDF properties](#pdf-properties)
+* [Resource links](#resource-links)
+
+<br>
+
 Either you've already heard of `pandoc` or if you have searched online for `markdown` to `pdf` or similar, you are sure to come across `pandoc`. This tutorial will give you a basic idea of using `pandoc` to generate `pdf` from [GitHub style markdown](https://github.github.com/gfm/) file. The main purpose is to highlight what customizations I did to generate `pdf` for [self-publishing my ebooks](https://learnbyexample.github.io/books/). It wasn't easy to arrive at the set-up I ended up with, so I hope this will be useful for those looking to use `pandoc` to generate `pdf`. Specifically aimed at technical books that has code snippets.
 
-## Installation
+<br>
+
+## <a name="installation"></a>Installation
 
 I use Ubuntu, as far as I remember, the below steps are enough to work for the demos in this tutorial. If you get an error or warning, search that issue online and you'll likely find what else has to be installed.
 
@@ -31,7 +46,9 @@ $ sudo apt install texlive-math-extra
 
 For more details and guide for other OS, refer to [pandoc: installation](https://pandoc.org/installing.html)
 
-## Minimal example
+<br>
+
+## <a name="minimal-example"></a>Minimal example
 
 Once `pandoc` is working on your system, try generating a sample `pdf` without any customization.
 
@@ -51,7 +68,9 @@ On [Evince](https://wiki.gnome.org/Apps/Evince) reader, the index navigation for
 
 ![Chapter Index]({{ '/images/pandoc_pdf/chapter_index.png' | absolute_url }}){: .align-center}
 
-## Chapter breaks
+<br>
+
+## <a name="chapter-breaks"></a>Chapter breaks
 
 As observed from previous demo, by default there are no chapter breaks. Searching for a [solution online](https://superuser.com/questions/601469/getting-chapters-to-start-on-a-new-page-in-a-pandoc-generated-pdf), I got this piece of `tex` code:
 
@@ -76,7 +95,9 @@ The `pandoc` invocation now looks like:
 $ pandoc sample_1.md -f gfm -H chapter_break.tex -o sample_1_chapter_break.pdf
 ```
 
-## Changing settings via -V option
+<br>
+
+## <a name="changing-settings-via--v-option"></a>Changing settings via -V option
 
 >-V KEY[=VAL], --variable=KEY[:VAL]
 >
@@ -119,7 +140,9 @@ $ ./md2pdf.sh sample_1.md sample_1_settings.pdf
 
 Do compare the pdf generated side by side with previous output before proceeding.
 
-## Syntax highlighting
+<br>
+
+## <a name="syntax-highlighting"></a>Syntax highlighting
 
 One option to customize syntax highlighting for code snippets is to save one of the `pandoc` themes and editing it. See [stackoverflow: What are the available syntax highlighters?](https://stackoverflow.com/questions/30880200/pandoc-what-are-the-available-syntax-highlighters/47876166#47876166) for available themes and more details (as a good practice on stackoverflow, go through all answers and comments - the linked/related sections on sidebar are useful as well).
 
@@ -176,7 +199,9 @@ For my [Python re(gex)?](https://github.com/learnbyexample/py_regular_expression
 
 ![REPL syntax highlighting]({{ '/images/pandoc_pdf/python_vs_ruby_syn.png' | absolute_url }}){: .align-center}
 
-## Bullet styling
+<br>
+
+## <a name="bullet-styling"></a>Bullet styling
 
 This [stackoverflow Q&A](https://stackoverflow.com/questions/22156999/how-to-change-the-style-of-bullets-in-pandoc-markdown) helped for bullet styling.
 
@@ -196,7 +221,9 @@ Comparing `pandoc sample_4.md -f gfm -o sample_4.pdf` vs `./md2pdf_syn_bullet.sh
 
 ![Bullet styling]({{ '/images/pandoc_pdf/bullet_styling.png' | absolute_url }}){: .align-center}
 
-## PDF properties
+<br>
+
+## <a name="pdf-properties"></a>PDF properties
 
 This [tex.stackexchange Q&A](https://tex.stackexchange.com/questions/23235/eliminate-edit-pdf-properties-added-by-pdflatex) helped to change metadata. See also [pspdfkit: What’s Hiding in Your PDF?](https://pspdfkit.com/blog/2018/whats-hiding-in-your-pdf/) and [discussion on HN](https://news.ycombinator.com/item?id=18381515).
 
@@ -215,7 +242,9 @@ This [tex.stackexchange Q&A](https://tex.stackexchange.com/questions/23235/elimi
 
 ![PDF properties]({{ '/images/pandoc_pdf/pdf_properties.png' | absolute_url }}){: .align-center}
 
-## Resource links
+<br>
+
+## <a name="resource-links"></a>Resource links
 
 * [pandoc: manual](https://pandoc.org/MANUAL.html)
 * [pandoc: demos](https://pandoc.org/demos.html)
