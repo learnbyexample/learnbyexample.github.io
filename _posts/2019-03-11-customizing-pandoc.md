@@ -95,6 +95,11 @@ The `pandoc` invocation now looks like:
 $ pandoc sample_1.md -f gfm -H chapter_break.tex -o sample_1_chapter_break.pdf
 ```
 
+You can add further customization to headings, for example use `\sectionfont{\underline\clearpage}` to underline chapter names or `\sectionfont{\LARGE\clearpage}` to allow chapter names to get even bigger. Here's some more links to play with:
+
+* [tex.stackexchange: section fonts](https://tex.stackexchange.com/questions/1455/how-to-set-the-font-for-a-section-title-and-chapter-etc)
+* [tex.stackexchange: section colors](https://tex.stackexchange.com/questions/230730/section-coming-up-as-undefined-when-using-sectsty)
+
 <br>
 
 ## <a name="changing-settings-via--v-option"></a>Changing settings via -V option
@@ -128,6 +133,8 @@ pandoc "$1" \
 * `monofont` is for code snippets
 * `geometry` for page size and margins
 * `linkcolor` to set hyperlink color
+* to increase default font size, use `-V fontsize=12pt`
+    * See [stackoverflow: change font size](https://stackoverflow.com/questions/23811002/from-markdown-to-pdf-how-to-change-the-font-size-with-pandoc) if you need even bigger size options
 
 Using `xelatex` as the `pdf-engine` allows to use any font installed in the system. One reason I chose `DejaVu` was because it supported **Greek** and other Unicode characters that were causing error with other fonts. See [tex.stackexchange: Using XeLaTeX instead of pdfLaTeX](https://tex.stackexchange.com/questions/21736/using-xelatex-instead-of-pdflatex) for some more details.
 
