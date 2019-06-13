@@ -20,6 +20,7 @@ date: 2019-03-11T21:05:25
 * [Syntax highlighting](#syntax-highlighting)
 * [Bullet styling](#bullet-styling)
 * [PDF properties](#pdf-properties)
+* [Adding table of contents](#adding-table-of-contents)
 * [Resource links](#resource-links)
 
 <br>
@@ -147,6 +148,8 @@ $ ./md2pdf.sh sample_1.md sample_1_settings.pdf
 
 Do compare the pdf generated side by side with previous output before proceeding.
 
+![warning](/images/warning.svg) On my system, `DejaVu Serif` did not have *italic* variation installed, so I had to use `sudo apt install ttf-dejavu-extra` to get it.
+
 <br>
 
 ## <a name="syntax-highlighting"></a>Syntax highlighting
@@ -248,6 +251,58 @@ This [tex.stackexchange Q&A](https://tex.stackexchange.com/questions/23235/elimi
 `./md2pdf_syn_bullet_prop.sh sample_4.md sample_4_bullet_prop.pdf` gives:
 
 ![PDF properties]({{ '/images/pandoc_pdf/pdf_properties.png' | absolute_url }}){: .align-center}
+
+<br>
+
+## <a name="adding-table-of-contents"></a>Adding table of contents
+
+There's a handy option `--toc` to automatically include table of contents at top of the generated `pdf`. You can control number of levels using `--toc-depth` option, the default is 3 levels. You can also change the default string `Contents` to something else using `-V toc-title` option.
+
+`./md2pdf_syn_bullet_prop_toc.sh sample_1.md sample_1_toc.pdf` gives:
+
+![table of contents]({{ '/images/pandoc_pdf/table_of_contents.png' | absolute_url }}){: .align-center}
+
+However, if you want to add something prior to table of contents (cover image for example), you need to hack stuff. As far as I know, there's no inbuilt method. The `-B` option only allows verbatim inclusion, whereas we need markdown here. The only cover image option I see is `--epub-cover-image` but we need `pdf` here. I arrived at a workaround after about a day of trying things - the solution looks simple, but I just didn't know what is possible until I went through multiple options and this one worked.
+
+For this example, `![cover image](cover.png)` is added to `sample_1.md` at the top to create input markdown file. The modified script now looks like:
+
+```bash
+#!/bin/bash
+
+pandoc "$1" \
+    -f gfm \
+    --toc \
+    --include-in-header chapter_break.tex \
+    --include-in-header inline_code.tex \
+    --include-in-header bullet_style.tex \
+    --include-in-header pdf_properties.tex \
+    --highlight-style pygments.theme \
+    -V toc-title='Table of contents' \
+    -V linkcolor:blue \
+    -V geometry:a4paper \
+    -V geometry:margin=2cm \
+    -V mainfont="DejaVu Serif" \
+    -V monofont="DejaVu Sans Mono" \
+    --pdf-engine=xelatex \
+    -o temp.tex
+
+fn="${2%.*}"
+
+perl -0777 -pe \
+  's/begin\{document\}\n\n\K(.*?^\}$)(.+?)\n/$2\n\\thispagestyle{empty}\n\n$1\n/ms' \
+  temp.tex > "$fn".tex
+
+xelatex "$fn".tex &> /dev/null
+xelatex "$fn".tex &> /dev/null
+
+rm temp.tex "$fn".{tex,toc,aux,log}
+```
+
+The `pandoc` command is changed to produce `tex` output instead of `pdf`. The `perl` script will switch the positions of cover image and table of contents. Also, `\thispagestyle{empty}` is added to remove page number from showing up with cover image, see also [tex.stackexchange: clear page](https://tex.stackexchange.com/questions/360739/what-is-the-use-of-clearpage-thispagestyleempty-cleardoublepage). See my tutorial on [perl one-liners](https://github.com/learnbyexample/Command-line-text-processing/blob/master/perl_the_swiss_knife.md) if you are interested in learning how to write such powerful commands.
+
+After modifying the `tex` file, `xelatex` command is directly used to get the `pdf` output. For some reason, the table of contents goes awry but gives correct output if the command is called twice! The output file is named same as input, but with extension changed from `tex` to `pdf`. Finally, the temporary files are removed.
+
+The `bash` script invocation is now `./md2pdf_syn_bullet_prop_toc_cover.sh sample_5.md sample_5.pdf`.
 
 <br>
 
