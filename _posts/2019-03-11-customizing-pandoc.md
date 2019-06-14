@@ -298,11 +298,22 @@ xelatex "$fn".tex &> /dev/null
 rm temp.tex "$fn".{tex,toc,aux,log}
 ```
 
-The `pandoc` command is changed to produce `tex` output instead of `pdf`. The `perl` script will switch the positions of cover image and table of contents. Also, `\thispagestyle{empty}` is added to remove page number from showing up with cover image, see also [tex.stackexchange: clear page](https://tex.stackexchange.com/questions/360739/what-is-the-use-of-clearpage-thispagestyleempty-cleardoublepage). See my tutorial on [perl one-liners](https://github.com/learnbyexample/Command-line-text-processing/blob/master/perl_the_swiss_knife.md) if you are interested in learning how to write such powerful commands.
+The `pandoc` command is changed to produce `tex` output instead of `pdf`. The `perl` script will switch the positions of cover image and table of contents. Also, `\thispagestyle{empty}` is added to avoid page number from showing up with cover image, see also [tex.stackexchange: clear page](https://tex.stackexchange.com/questions/360739/what-is-the-use-of-clearpage-thispagestyleempty-cleardoublepage). See my tutorial on [perl one-liners](https://github.com/learnbyexample/Command-line-text-processing/blob/master/perl_the_swiss_knife.md) if you are interested in learning how to write such powerful commands.
 
 After modifying the `tex` file, `xelatex` command is directly used to get the `pdf` output. For some reason, the table of contents goes awry but gives correct output if the command is called twice! The output file is named same as input, but with extension changed from `tex` to `pdf`. Finally, the temporary files are removed.
 
 The `bash` script invocation is now `./md2pdf_syn_bullet_prop_toc_cover.sh sample_5.md sample_5.pdf`.
+
+After posting the above solution, I realized that for simple content like cover image, you can use `tex` file and include it verbatim instead of hacking and calling `xelatex` twice, etc. For above example, use `sample_1.md` instead of `sample_5.md` as input markdown. Create a `tex` file with content shown below:
+
+```tex
+\includegraphics{cover.png}
+\thispagestyle{empty}
+```
+
+Then, modify the `md2pdf_syn_bullet_prop_toc.sh` script by adding `--include-before-body cover.tex` and tada - you get the cover image before table of contents in a much easier way than hacking intermediate `tex` file.
+
+![warning](/images/warning.svg) You'll need at least one image in input markdown file, otherwise settings won't apply to the cover image and you may end up with weird output. And be careful to use escapes if the image path can contain `tex` metacharacters.
 
 <br>
 
