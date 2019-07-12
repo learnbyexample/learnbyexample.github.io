@@ -26,7 +26,7 @@ Example based guide to mastering GNU grep and ripgrep. Exercises are also includ
 
 ![grep cover image]({{ '/images/books/grep.png' | absolute_url }}){: .align-center}
 
-* [Sample chapters](https://github.com/learnbyexample/learn_gnugrep_ripgrep/blob/master/sample_chapters/grep_sample_v1p0.pdf)
+* [Sample chapters](https://github.com/learnbyexample/learn_gnugrep_ripgrep/blob/master/sample_chapters/grep_sample_v1p2.pdf)
 * Buy pdf from:
     * [gumroad](https://gumroad.com/l/gnugrep_ripgrep)
     * [leanpub](https://leanpub.com/gnugrep_ripgrep)
