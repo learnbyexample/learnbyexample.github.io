@@ -16,7 +16,7 @@ Learn Python Regular Expressions step by step from beginner to advanced levels w
     * [gumroad](https://gumroad.com/l/py_regex)
     * [leanpub](https://leanpub.com/py_regex)
     * [instamojo](https://www.instamojo.com/learnbyexample/python-regex/)
-    * as a bundle: [Python 201: Intermediate Python by Michael Driscoll + Python re(gex)?](https://leanpub.com/b/python201_and_regex) or [(Python|Ruby) regex](https://leanpub.com/b/pythonrubyregex)
+    * as a bundle: [Python 201 and Python regex](https://leanpub.com/b/python201_and_regex) or [Python and Ruby regex](https://leanpub.com/b/pythonrubyregex)
 * [GitHub repo for code snippets and more](https://github.com/learnbyexample/py_regular_expressions)
 * Feedback: [Goodreads](https://www.goodreads.com/book/show/47142552-python-re-gex) and [Twitter](https://twitter.com/learn_byexample)
 
@@ -48,6 +48,6 @@ Learn Ruby Regexp step by step from beginner to advanced levels with 200+ exampl
     * [gumroad](https://gumroad.com/l/rubyregexp)
     * [leanpub](https://leanpub.com/rubyregexp)
     * [instamojo](https://www.instamojo.com/learnbyexample/ruby-regexp/)
-    * as a bundle: [(Python|Ruby) regex](https://leanpub.com/b/pythonrubyregex)
+    * as a bundle: [Python and Ruby regex](https://leanpub.com/b/pythonrubyregex)
 * [GitHub repo for code snippets and more](https://github.com/learnbyexample/Ruby_Regexp)
 
