@@ -11,6 +11,12 @@ tags:
 date: 2019-09-23T10:41:37
 ---
 
+![pyregex example]({{ '/images/books/pyregex_example.png' | absolute_url }}){: .align-center}
+
+*Above diagram created using [Regulex](https://jex.im/regulex)*
+
+<br>
+
 From [docs.python: re](https://docs.python.org/3/library/re.html):
 
 >A regular expression (or RE) specifies a set of strings that matches it; the functions in this module let you check if a particular string matches a given regular expression
