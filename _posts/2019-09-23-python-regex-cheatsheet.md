@@ -34,10 +34,10 @@ This blog post gives an overview and examples of regular expression syntax as im
 
 | Feature | Description |
 | ------------- | ----------- |
-| `\|` | multiple RE combined as conditional OR |
+| `|` | multiple RE combined as conditional OR |
 |   | each alternative can have independent anchors  |
 | `(RE)` | group pattern(s), also a capturing group |
-| | `a(b\|c)d` is same as `abd\|acd` |
+| | `a(b|c)d` is same as `abd|acd` |
 | `(?:RE)` | non-capturing group |
 | `(?P<name>pat)` | named capture group |
 | `.` | Match any character except the newline character `\n` |
@@ -53,7 +53,7 @@ This blog post gives an overview and examples of regular expression syntax as im
 | `{,n}` | Match up to `n` times (including `0` times) |
 | `{n}` | Match exactly n times |
 | `pat1.*pat2` | any number of characters between `pat1` and `pat2` |
-| `pat1.*pat2\|pat2.*pat1` | match both `pat1` and `pat2` in any order |
+| `pat1.*pat2|pat2.*pat1` | match both `pat1` and `pat2` in any order |
 
 Greedy here means that the above quantifiers will match as much as possible that'll also honor the overall RE. Appending a `?` to greedy quantifiers makes them non-greedy, i.e. match as minimally as possible. Quantifiers can be applied to literal characters, groups, backreferences and character classes.
 
@@ -84,7 +84,7 @@ Greedy here means that the above quantifiers will match as much as possible that
 | ------------- | ----------- |
 | `re.IGNORECASE` or `re.I` | flag to ignore case |
 | `re.DOTALL` or `re.S` | allow `.` metacharacter to match newline character |
-| `flags=re.S\|re.I` | multiple flags can be combined using `\|` operator |
+| `flags=re.S|re.I` | multiple flags can be combined using `|` operator |
 | `re.MULTILINE` or `re.M` | allow `^` and `$` anchors to match line wise |
 | `re.VERBOSE` or `re.X` | allows to use literal whitespaces for aligning purposes |
 |  | and to add comments after the `#` character |
@@ -156,6 +156,8 @@ re.subn(pattern, repl, string, count=0, flags=0)
 
 ## Regular expression examples
 
+As a good practice, always use **raw strings** to construct RE, unless other formats are required. This will avoid clash of special meaning of backslash character between RE and normal quoted strings.
+
 * examples for `re.search`
 
 ```python
@@ -177,6 +179,10 @@ False
 ...     print('mission success')
 ... 
 mission success
+
+# use raw byte strings if input is of byte data type
+>>> bool(re.search(rb'is', b'This is a sample string'))
+True
 ```
 
 * difference between string and line anchors
