@@ -38,6 +38,22 @@ Example based guide to mastering GNU grep and ripgrep. Exercises are also includ
 
 <br>
 
+# GNU sed
+
+Example based guide to mastering GNU sed. Exercises are also included to test your understanding.
+
+![sed cover image]({{ '/images/books/sed.png' | absolute_url }}){: .align-center}
+
+* [Sample chapters](https://github.com/learnbyexample/learn_gnused/blob/master/sample_chapters/sed_sample_chapters.pdf)
+* Buy pdf from:
+    * [gumroad](https://gumroad.com/l/gnu_sed)
+    * [leanpub](https://leanpub.com/gnu_sed)
+    * [instamojo](https://www.instamojo.com/learnbyexample/gnu-sed/)
+* [GitHub repo for code snippets and more](https://github.com/learnbyexample/learn_gnused)
+* Feedback: [Twitter](https://twitter.com/learn_byexample)
+
+<br>
+
 # Ruby Regexp
 
 Learn Ruby Regexp step by step from beginner to advanced levels with 200+ examples. Exercises are also included to test your understanding.
