@@ -50,7 +50,7 @@ Example based guide to mastering GNU sed. Exercises are also included to test yo
     * [leanpub](https://leanpub.com/gnu_sed)
     * [instamojo](https://www.instamojo.com/learnbyexample/gnu-sed/)
 * [GitHub repo for code snippets and more](https://github.com/learnbyexample/learn_gnused)
-* Feedback: [Twitter](https://twitter.com/learn_byexample)
+* Feedback: [Goodreads](https://www.goodreads.com/book/show/48641172-gnu-sed) and [Twitter](https://twitter.com/learn_byexample)
 
 <br>
 
@@ -66,4 +66,5 @@ Learn Ruby Regexp step by step from beginner to advanced levels with 200+ exampl
     * [instamojo](https://www.instamojo.com/learnbyexample/ruby-regexp/)
     * as a bundle: [Python and Ruby regex](https://leanpub.com/b/pythonrubyregex)
 * [GitHub repo for code snippets and more](https://github.com/learnbyexample/Ruby_Regexp)
+* Feedback: [Goodreads](https://www.goodreads.com/book/show/48641238-ruby-regexp) and [Twitter](https://twitter.com/learn_byexample)
 
