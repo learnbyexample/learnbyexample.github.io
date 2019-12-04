@@ -22,6 +22,22 @@ Learn Python Regular Expressions step by step from beginner to advanced levels w
 
 <br>
 
+# JavaScript RegExp
+
+Learn JavaScript Regular Expressions step by step from beginner to advanced levels with 200+ examples. Exercises are also included to test your understanding.
+
+![JavaScript cover image]({{ '/images/books/js_regexp.png' | absolute_url }}){: .align-center}
+
+* [Sample chapters](https://github.com/learnbyexample/learn_js_regexp/blob/master/sample_chapters/js_regexp_sample_chapters.pdf)
+* Buy pdf from:
+    * [gumroad](https://gumroad.com/l/js_regexp)
+    * [leanpub](https://leanpub.com/js_regexp)
+    * [instamojo](https://www.instamojo.com/learnbyexample/javascript-regexp/)
+* [GitHub repo for code snippets and more](https://github.com/learnbyexample/learn_js_regexp)
+* Feedback: [Goodreads](https://www.goodreads.com/book/show/49090622-javascript-regexp) and [Twitter](https://twitter.com/learn_byexample)
+
+<br>
+
 # GNU grep and ripgrep
 
 Example based guide to mastering GNU grep and ripgrep. Exercises are also included to test your understanding.
