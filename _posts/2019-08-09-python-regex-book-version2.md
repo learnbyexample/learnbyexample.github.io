@@ -20,7 +20,6 @@ Get the ebook using either of these sites:
 
 * [https://gumroad.com/l/py_regex](https://gumroad.com/l/py_regex)
 * [https://leanpub.com/py_regex](https://leanpub.com/py_regex)
-* [https://www.instamojo.com/learnbyexample/python-regex/](https://www.instamojo.com/learnbyexample/python-regex/)
 
 Code snippets, example files, sample chapters, etc are available on GitHub: [https://github.com/learnbyexample/py_regular_expressions](https://github.com/learnbyexample/py_regular_expressions)
 

@@ -20,7 +20,6 @@ Get the e-book using either of these sites:
 
 * [https://gumroad.com/l/gnugrep_ripgrep](https://gumroad.com/l/gnugrep_ripgrep)
 * [https://leanpub.com/gnugrep_ripgrep](https://leanpub.com/gnugrep_ripgrep)
-* [https://www.instamojo.com/learnbyexample/gnu-grep-and-ripgrep](https://www.instamojo.com/learnbyexample/gnu-grep-and-ripgrep)
 
 **Note** Please use a valid e-mail and save the mail you receive, you'll get free updates for future versions.
 
