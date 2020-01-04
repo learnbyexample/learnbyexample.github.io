@@ -14,7 +14,6 @@ This is first post in a series, where I'll be posting chapters from my free [Rub
 
 * [gumroad](https://gumroad.com/l/rubyregexp)
 * [leanpub](https://leanpub.com/rubyregexp)
-* [instamojo](https://www.instamojo.com/learnbyexample/ruby-regexp/)
 
 <br>
 

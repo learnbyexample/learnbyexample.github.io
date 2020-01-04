@@ -16,7 +16,6 @@ This is tenth post in a series, where I'll be posting chapters from my free [Rub
 
 * [gumroad](https://gumroad.com/l/rubyregexp)
 * [leanpub](https://leanpub.com/rubyregexp)
-* [instamojo](https://www.instamojo.com/learnbyexample/ruby-regexp/)
 
 With this post, all of the ebook is covered. There may be more posts in future like cheatsheets, common regexp explained, etc.
 

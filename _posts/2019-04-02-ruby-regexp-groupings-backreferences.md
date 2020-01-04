@@ -16,7 +16,6 @@ This is seventh post in a series, where I'll be posting chapters from my free [R
 
 * [gumroad](https://gumroad.com/l/rubyregexp)
 * [leanpub](https://leanpub.com/rubyregexp)
-* [instamojo](https://www.instamojo.com/learnbyexample/ruby-regexp/)
 
 # Groupings and backreferences
 
