@@ -14,7 +14,7 @@ Here's my list of self-published ebooks. You can get them as individually or as 
 * **Python 201 and Python regex**: [leanpub](https://leanpub.com/b/python201_and_regex)
     * Python 201 and Python regular expressions
     * Python 201 is authored by [Michael Driscoll](https://www.blog.pythonlibrary.org/)
-* **(Python|Ruby) regex**: [leanpub](https://leanpub.com/b/pythonrubyregex)
+* **(Python\|Ruby) regex**: [leanpub](https://leanpub.com/b/pythonrubyregex)
     * Python, Ruby regular expressions
 
 <br>
