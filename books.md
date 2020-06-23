@@ -8,7 +8,7 @@ Here's my list of self-published ebooks. You can get them as individually or as 
 # Bundles
 
 * **Awesome regex**: [leanpub](https://leanpub.com/b/regex) or [gumroad](https://gumroad.com/l/regex)
-    * Python, Ruby, JavaScript regular expressions and GNU grep, ripgrep, GNU sed cli tools
+    * Python, Ruby, JavaScript regular expressions and GNU grep, ripgrep, GNU sed, GNU awk cli tools
 * **Magical one-liners**: [leanpub](https://leanpub.com/b/oneliners) or [gumroad](https://gumroad.com/l/oneliners)
     * GNU grep, ripgrep, GNU sed, GNU awk cli tools
 * **Python 201 and Python regex**: [leanpub](https://leanpub.com/b/python201_and_regex)
@@ -55,8 +55,8 @@ Example based guide to mastering GNU grep and ripgrep. Exercises are also includ
 
 ![grep cover image]({{ '/images/books/grep.png' | absolute_url }}){: .align-center}
 
-* [Sample chapters](https://github.com/learnbyexample/learn_gnugrep_ripgrep/blob/master/sample_chapters/grep_sample_v1p2.pdf)
-* Buy pdf from:
+* [Sample chapters](https://github.com/learnbyexample/learn_gnugrep_ripgrep/blob/master/sample_chapters/grep_sample_chapters.pdf)
+* Buy pdf/epub from:
     * [gumroad](https://gumroad.com/l/gnugrep_ripgrep)
     * [leanpub](https://leanpub.com/gnugrep_ripgrep)
 * [GitHub repo for code snippets and more](https://github.com/learnbyexample/learn_gnugrep_ripgrep)
@@ -71,7 +71,7 @@ Example based guide to mastering GNU sed. Exercises are also included to test yo
 ![sed cover image]({{ '/images/books/sed.png' | absolute_url }}){: .align-center}
 
 * [Sample chapters](https://github.com/learnbyexample/learn_gnused/blob/master/sample_chapters/sed_sample_chapters.pdf)
-* Buy pdf from:
+* Buy pdf/epub from:
     * [gumroad](https://gumroad.com/l/gnu_sed)
     * [leanpub](https://leanpub.com/gnu_sed)
 * [GitHub repo for code snippets and more](https://github.com/learnbyexample/learn_gnused)
@@ -86,7 +86,7 @@ Example based guide to mastering GNU awk one-liners.
 ![awk cover image]({{ '/images/books/gawk.png' | absolute_url }}){: .align-center}
 
 * [Sample chapters](https://github.com/learnbyexample/learn_gnuawk/blob/master/sample_chapters/awk_sample_chapters.pdf)
-* Buy pdf from:
+* Buy pdf/epub from:
     * [gumroad](https://gumroad.com/l/gnu_awk)
     * [leanpub](https://leanpub.com/gnu_awk)
 * [GitHub repo for code snippets and more](https://github.com/learnbyexample/learn_gnuawk)
