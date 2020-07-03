@@ -21,18 +21,19 @@ From [docs.python: re](https://docs.python.org/3/library/re.html):
 
 >A regular expression (or RE) specifies a set of strings that matches it; the functions in this module let you check if a particular string matches a given regular expression
 
-This blog post gives an overview and examples of regular expression syntax as implemented by the `re` built-in module (Python 3.7+). Assume ASCII character set unless otherwise specified. This post is an excerpt from my [Python re(gex)?](https://github.com/learnbyexample/py_regular_expressions) book.
+This blog post gives an overview and examples of regular expression syntax as implemented by the `re` built-in module (Python 3.8+). Assume ASCII character set unless otherwise specified. This post is an excerpt from my [Python re(gex)?](https://github.com/learnbyexample/py_regular_expressions) book.
 
 ## Elements that define a regular expression 
 
 | Anchors | Description |
 | ------------- | ----------- |
-| `\A` | restricts the match to start of string |
-| `\Z` | restricts the match to end of string |
-| `^` | restricts the match to start of line |
-| `$` | restricts the match to end of line |
+| `\A` | restricts the match to the start of string |
+| `\Z` | restricts the match to the end of string |
+| `^` | restricts the match to the start of line |
+| `$` | restricts the match to the end of line |
 | `\n` | newline character is used as line separator |
-| `\b` | restricts the match to start/end of words |
+| `re.MULTILINE` or `re.M` | flag to treat input as multiline string |
+| `\b` | restricts the match to the start/end of words |
 |  | word characters: alphabets, digits, underscore |
 | `\B` | matches wherever `\b` doesn't match |
 
@@ -61,7 +62,7 @@ This blog post gives an overview and examples of regular expression syntax as im
 | `pat1.*pat2` | any number of characters between `pat1` and `pat2` |
 | `pat1.*pat2|pat2.*pat1` | match both `pat1` and `pat2` in any order |
 
-Greedy here means that the above quantifiers will match as much as possible that'll also honor the overall RE. Appending a `?` to greedy quantifiers makes them non-greedy, i.e. match as minimally as possible. Quantifiers can be applied to literal characters, groups, backreferences and character classes.
+Greedy here means that the above quantifiers will match as much as possible that'll also honor the overall RE. Appending a `?` to greedy quantifiers makes them **non-greedy**, i.e. match as *minimally* as possible. Quantifiers can be applied to literal characters, groups, backreferences and character classes.
 
 | Character class | Description |
 | ------------- | ----------- |
@@ -104,7 +105,7 @@ Greedy here means that the above quantifiers will match as much as possible that
 | `(?-flags:pat)` | negate flags only for this `pat` |
 | `(?flags-flags:pat)` | apply and negate particular flags only for this `pat` |
 | `(?flags)` | apply flags for whole RE, can be used only at start of RE |
-|  |  anchors if any, should be specified after these flags |
+|  |  anchors if any, should be specified after `(?flags)` |
 
 | Matched portion | Description |
 | ------------- | ----------- |
@@ -114,6 +115,7 @@ Greedy here means that the above quantifiers will match as much as possible that
 | `m.groups()` | tuple of all the capture groups' matched portions |
 | `m.span()` | start and end+1 index of entire matched portion |
 | | pass a number to get span of that particular capture group |
+| | can also use `m.start()` and `m.end()` |
 | `\N` | backreference, gives matched portion of *N*th capture group |
 |  | applies to both search and replacement sections |
 |  | possible values: `\1`, `\2` up to `\99` provided no more digits |
@@ -124,6 +126,8 @@ Greedy here means that the above quantifiers will match as much as possible that
 |  | refer as `'name'` in `re.Match` object |
 |  | refer as `(?P=name)` in search section |
 |  | refer as `\g<name>` in replacement section |
+| `groupdict` | method applied on a `re.Match` object |
+|  | gives named capture group portions as a `dict` |
 
 `\0` and `\100` onwards are considered as octal values, hence cannot be used as backreferences.
 
@@ -136,14 +140,18 @@ Greedy here means that the above quantifiers will match as much as possible that
 |  | r-strings preferred to define RE |
 |  | Use byte pattern for byte input |
 |  | Python also maintains a small cache of recent RE |
+| `re.fullmatch` | ensures pattern matches the entire input string |
 | `re.compile` | Compile a pattern for reuse, outputs `re.Pattern` object |
 | `re.sub` | search and replace |
 | `re.sub(r'pat', f, s)` | function `f` with `re.Match` object as argument |
 | `re.escape` | automatically escape all metacharacters |
 | `re.split` | split a string based on RE |
+| | text matched by the groups will be part of the output |
+| | portion matched by pattern outside group won't be in output |
 | `re.findall` | returns all the matches as a list |
 | | if 1 capture group is used, only its matches are returned |
 | | 1+, each element will be tuple of capture groups |
+| | portion matched by pattern outside group won't be in output |
 | `re.finditer` | iterator with `re.Match` object for each match |
 | `re.subn` | gives tuple of modified string and number of substitutions |
 
@@ -151,6 +159,7 @@ The function definitions are given below:
 
 ```python
 re.search(pattern, string, flags=0)
+re.fullmatch(pattern, string, flags=0)
 re.compile(pattern, flags=0)
 re.sub(pattern, repl, string, count=0, flags=0)
 re.escape(pattern)
@@ -159,6 +168,8 @@ re.findall(pattern, string, flags=0)
 re.finditer(pattern, string, flags=0)
 re.subn(pattern, repl, string, count=0, flags=0)
 ```
+
+<br>
 
 ## Regular expression examples
 
@@ -197,7 +208,7 @@ True
 # string anchors
 >>> bool(re.search(r'\Ahi', 'hi hello\ntop spot'))
 True
->>> words = ['surrender', 'unicorn', 'newer', 'door', 'empty', 'eel', 'pest']
+>>> words = ['surrender', 'up', 'newer', 'do', 'ear', 'eel', 'pest']
 >>> [w for w in words if re.search(r'er\Z', w)]
 ['surrender', 'newer']
 
@@ -209,7 +220,7 @@ True
 * examples for `re.findall`
 
 ```python
-# match whole word par with optional s at start and optional e at end
+# whole word par with optional s at start and optional e at end
 >>> re.findall(r'\bs?pare?\b', 'par spar apparent spare part pare')
 ['par', 'spar', 'spare', 'pare']
 
@@ -219,15 +230,15 @@ True
 
 # if multiple capturing groups are used, each element of output
 # will be a tuple of strings of all the capture groups
->>> re.findall(r'(x*):(y*)', 'xx:yyy x: x:yy :y')
-[('xx', 'yyy'), ('x', ''), ('x', 'yy'), ('', 'y')]
+>>> re.findall(r'([^/]+)/([^/,]+),?', '2020/04,1986/Mar')
+[('2020', '04'), ('1986', 'Mar')]
 
 # normal capture group will hinder ability to get whole match
 # non-capturing group to the rescue
->>> re.findall(r'\b\w*(?:st|in)\b', 'cost akin more east run against')
-['cost', 'akin', 'east', 'against']
+>>> re.findall(r'\b\w*(?:st|in)\b', 'cost akin more east run')
+['cost', 'akin', 'east']
 
-# useful for debugging purposes as well before applying substitution
+# useful for debugging purposes as well
 >>> re.findall(r't.*?a', 'that is quite a fabricated tale')
 ['tha', 't is quite a', 'ted ta']
 ```
@@ -323,7 +334,7 @@ True
 * backreferencing in replacement section
 
 ```python
-# remove any number of consecutive duplicate words separated by space
+# remove consecutive duplicate words separated by space
 >>> re.sub(r'\b(\w+)( \1)+\b', r'\1', 'aa a a a 42 f_1 f_1 f_13.14')
 'aa a 42 f_1 f_13.14'
 
@@ -357,7 +368,7 @@ True
 ```python
 # change 'foo' only if it is not followed by a digit character
 # note that end of string satisfies the given assertion
-# 'foofoo' has two matches as the assertion doesn't consume characters
+# foofoo has 2 matches as the assertion doesn't consume characters
 >>> re.sub(r'foo(?!\d)', r'baz', 'hey food! foo42 foot5 foofoo')
 'hey bazd! foo42 bazt5 bazbaz'
 
@@ -365,14 +376,14 @@ True
 >>> re.sub(r'(?<![:-])\b\w+\b', r'X', ':cart <apple -rest ;tea')
 ':cart <X -rest ;X'
 
-# extract digits only if it is preceded by - and followed by ; or :
->>> re.findall(r'(?<=-)\d+(?=[:;])', '42 foo-5, baz3; x-83, y-20: f12')
+# match digits only if it is preceded by - and followed by ; or :
+>>> re.findall(r'(?<=-)\d+(?=[:;])', 'fo-5, ba3; x-83, y-20: f12')
 ['20']
 
-# words containing all lowercase vowels in any order
->>> words = ['sequoia', 'subtle', 'questionable', 'exhibit', 'equation']
->>> [w for w in words if re.search(r'(?=.*a)(?=.*e)(?=.*i)(?=.*o).*u', w)]
-['sequoia', 'questionable', 'equation']
+# words containing 'b' and 'e' and 't' in any order
+>>> words = ['sequoia', 'questionable', 'exhibit', 'equation']
+>>> [w for w in words if re.search(r'(?=.*b)(?=.*e).*t', w)]
+['questionable', 'exhibit']
 
 # match if 'do' is not there between 'at' and 'par'
 >>> bool(re.search(r'at((?!do).)*par', 'fox,cat,dog,parrot'))
@@ -395,12 +406,14 @@ True
 >>> bool(pet.search('A cat crossed their path'))
 False
 
->>> remove_parentheses = re.compile(r'\([^)]*\)')
->>> remove_parentheses.sub('', 'a+b(addition) - foo() + c%d(#modulo)')
+>>> pat = re.compile(r'\([^)]*\)')
+>>> pat.sub('', 'a+b(addition) - foo() + c%d(#modulo)')
 'a+b - foo + c%d'
->>> remove_parentheses.sub('', 'Hi there(greeting). Nice day(a(b)')
+>>> pat.sub('', 'Hi there(greeting). Nice day(a(b)')
 'Hi there. Nice day'
 ```
+
+<br>
 
 ## Python re(gex)? book
 

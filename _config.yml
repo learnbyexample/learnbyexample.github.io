@@ -21,7 +21,7 @@ title: "learnbyexample"
 description: "Doing is often better than thinking of doing"
 #baseurl: # the subpath of your site, e.g. "/blog"
 url: "https://learnbyexample.github.io"
-logo: "/images/lbe_logo.png"
+logo: "/images/lbe.jpg"
 date_format: "%B %-d, %Y"
 read_time: true
 words_per_minute: 100
