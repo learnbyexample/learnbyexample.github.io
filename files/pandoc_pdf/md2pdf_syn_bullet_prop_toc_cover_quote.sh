@@ -8,6 +8,7 @@ pandoc "$1" \
     --include-in-header inline_code.tex \
     --include-in-header bullet_style.tex \
     --include-in-header pdf_properties.tex \
+    --include-in-header quote.tex \
     --highlight-style pygments.theme \
     -V toc-title='Table of contents' \
     -V linkcolor:blue \

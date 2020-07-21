@@ -1,5 +1,5 @@
 ---
-title: "Customizing pandoc to generate beautiful pdfs from markdown"
+title: "Customizing pandoc to generate beautiful pdf and epub from markdown"
 categories:
   - tutorial
   - ebook-generation
@@ -8,6 +8,7 @@ tags:
   - xelatex
   - markdown
   - pdf
+  - epub
 date: 2019-03-11T21:05:25
 ---
 
@@ -21,11 +22,14 @@ date: 2019-03-11T21:05:25
 * [Bullet styling](#bullet-styling)
 * [PDF properties](#pdf-properties)
 * [Adding table of contents](#adding-table-of-contents)
+* [Adding cover image](#adding-cover-image)
+* [Stylish blockquote](#stylish-blockquote)
+* [Customizing epub](#customizing-epub)
 * [Resource links](#resource-links)
 
 <br>
 
-Either you've already heard of `pandoc` or if you have searched online for `markdown` to `pdf` or similar, you are sure to come across `pandoc`. This tutorial will give you a basic idea of using `pandoc` to generate `pdf` from [GitHub style markdown](https://github.github.com/gfm/) file. The main purpose is to highlight what customizations I did to generate `pdf` for [self-publishing my ebooks](https://learnbyexample.github.io/books/). It wasn't easy to arrive at the set-up I ended up with, so I hope this will be useful for those looking to use `pandoc` to generate `pdf`. Specifically aimed at technical books that has code snippets.
+Either you've already heard of `pandoc` or if you have searched online for `markdown` to `pdf` or similar, you are sure to come across `pandoc`. This tutorial will help you use `pandoc` to generate `pdf` and `epub` from a [GitHub style markdown](https://github.github.com/gfm/) file. The main motivation for this blog post is to highlight what customizations I did to generate `pdf` and `epub` versions for [self-publishing my ebooks](https://learnbyexample.github.io/books/). It wasn't easy to arrive at the set-up I ended up with, so I hope this will be useful for those looking to use `pandoc` to generate `pdf` and `epub` formats. This guide is specifically aimed at technical books that has code snippets.
 
 <br>
 
@@ -36,8 +40,8 @@ I use Ubuntu, as far as I remember, the below steps are enough to work for the d
 I first downloaded `deb` file from [pandoc: releases](https://github.com/jgm/pandoc/releases) and installed it. Followed by packages needed for `pdf` generation.
 
 ```bash
-$ # current version is 2.7, I had installed last year with 2.3
-$ sudo gdebi ~/Downloads/pandoc-2.3-1-amd64.deb
+$ # latest pandoc version as of 21 July 2010 is 2.10
+$ sudo gdebi ~/Downloads/pandoc-2.10-1-amd64.deb
 
 $ # note that download size is 750+ MB
 $ sudo apt install texlive-xetex
@@ -53,17 +57,17 @@ For more details and guide for other OS, refer to [pandoc: installation](https:/
 
 Once `pandoc` is working on your system, try generating a sample `pdf` without any customization.
 
-![info](/images/info.svg) See [learnbyexample.github.io repo](https://github.com/learnbyexample/learnbyexample.github.io/tree/master/files/pandoc_pdf) for all the input and output files referred in this tutorial
+![info](/images/info.svg) See [learnbyexample.github.io repo](https://github.com/learnbyexample/learnbyexample.github.io/tree/master/files/pandoc_pdf) for all the input and output files referred in this tutorial.
 
 ```bash
 $ pandoc sample_1.md -f gfm -o sample_1.pdf
 ```
 
-Here `sample_1.md` is input markdown file and `-f` is used to specify that the input format is GitHub style markdown. The `-o` option specifies the output file type based on extension. The default output is probably good enough. But has shortcomings like hyperlinks and inline code are hard to distinguish, chapters are not separated, etc.
+Here `sample_1.md` is input markdown file and `-f` is used to specify that the input format is GitHub style markdown. The `-o` option specifies the output file type based on extension. The default output is probably good enough. But I wished to customize hyperlinks, inline code style, add page breaks between chapters, etc. This blog post will discuss these customizations one by one.
 
-![info](/images/info.svg) `pandoc` has its own flavor of `markdown` with many useful extensions, see [pandoc: pandocs-markdown](https://pandoc.org/MANUAL.html#pandocs-markdown) for details. GitHub style markdown is recommended if you wish to use the same source (or with minor changes) in multiple places.
+![info](/images/info.svg) `pandoc` has its own flavor of `markdown` with many useful extensions — see [pandoc: pandocs-markdown](https://pandoc.org/MANUAL.html#pandocs-markdown) for details. GitHub style markdown is recommended if you wish to use the same source (or with minor changes) in multiple places.
 
-![info](/images/info.svg) It is advised to use `markdown` headers in order without skipping - for example, `H1` for chapter heading and `H2` for chapter sub-section, etc is fine. `H1` for chapter heading and `H3` for sub-section is not. Using the former can give automatic index navigation on `pdf` readers.
+![info](/images/info.svg) It is advised to use `markdown` headers in order without skipping — for example, `H1` for chapter heading and `H2` for chapter sub-section, etc is fine. `H1` for chapter heading and `H3` for sub-section is not. Using the former can give automatic index navigation on ebook readers.
 
 On [Evince](https://wiki.gnome.org/Apps/Evince) reader, the index navigation for above sample looks like this:
 
@@ -96,10 +100,11 @@ The `pandoc` invocation now looks like:
 $ pandoc sample_1.md -f gfm -H chapter_break.tex -o sample_1_chapter_break.pdf
 ```
 
-You can add further customization to headings, for example use `\sectionfont{\underline\clearpage}` to underline chapter names or `\sectionfont{\LARGE\clearpage}` to allow chapter names to get even bigger. Here's some more links to play with:
+You can add further customization to headings, for example use `\sectionfont{\underline\clearpage}` to underline chapter names or `\sectionfont{\LARGE\clearpage}` to allow chapter names to get even bigger. Here's some more links to read about various customizations:
 
 * [tex.stackexchange: section fonts](https://tex.stackexchange.com/questions/1455/how-to-set-the-font-for-a-section-title-and-chapter-etc)
 * [tex.stackexchange: section colors](https://tex.stackexchange.com/questions/230730/section-coming-up-as-undefined-when-using-sectsty)
+* [tex.stackexchange: change section fonts](https://tex.stackexchange.com/questions/10138/change-section-fonts)
 
 <br>
 
@@ -134,7 +139,7 @@ pandoc "$1" \
 * `monofont` is for code snippets
 * `geometry` for page size and margins
 * `linkcolor` to set hyperlink color
-* to increase default font size, use `-V fontsize=12pt`
+* to increase default **font size**, use `-V fontsize=12pt`
     * See [stackoverflow: change font size](https://stackoverflow.com/questions/23811002/from-markdown-to-pdf-how-to-change-the-font-size-with-pandoc) if you need even bigger size options
 
 Using `xelatex` as the `pdf-engine` allows to use any font installed in the system. One reason I chose `DejaVu` was because it supported **Greek** and other Unicode characters that were causing error with other fonts. See [tex.stackexchange: Using XeLaTeX instead of pdfLaTeX](https://tex.stackexchange.com/questions/21736/using-xelatex-instead-of-pdflatex) for some more details.
@@ -154,7 +159,7 @@ Do compare the pdf generated side by side with previous output before proceeding
 
 ## <a name="syntax-highlighting"></a>Syntax highlighting
 
-One option to customize syntax highlighting for code snippets is to save one of the `pandoc` themes and editing it. See [stackoverflow: What are the available syntax highlighters?](https://stackoverflow.com/questions/30880200/pandoc-what-are-the-available-syntax-highlighters/47876166#47876166) for available themes and more details (as a good practice on stackoverflow, go through all answers and comments - the linked/related sections on sidebar are useful as well).
+One option to customize syntax highlighting for code snippets is to save one of the `pandoc` themes and editing it. See [stackoverflow: What are the available syntax highlighters?](https://stackoverflow.com/questions/30880200/pandoc-what-are-the-available-syntax-highlighters/47876166#47876166) for available themes and more details (as a good practice on stackoverflow, go through all answers and comments — the linked/related sections on sidebar are useful as well).
 
 ```bash
 $ pandoc --print-highlight-style=pygments > pygments.theme
@@ -262,58 +267,65 @@ There's a handy option `--toc` to automatically include table of contents at top
 
 ![table of contents]({{ '/images/pandoc_pdf/table_of_contents.png' | absolute_url }}){: .align-center}
 
-However, if you want to add something prior to table of contents (cover image for example), you need to hack stuff. As far as I know, there's no inbuilt method. The `-B` option only allows verbatim inclusion, whereas we need markdown here. The only cover image option I see is `--epub-cover-image` but we need `pdf` here. I arrived at a workaround after about a day of trying things - the solution looks simple, but I just didn't know what is possible until I went through multiple options and this one worked.
+<br>
 
-For this example, `![cover image](cover.png)` is added to `sample_1.md` at the top to create input markdown file. The modified script now looks like:
+## <a name="adding-cover-image"></a>Adding cover image
 
-```bash
-#!/bin/bash
-
-pandoc "$1" \
-    -f gfm \
-    --toc \
-    --include-in-header chapter_break.tex \
-    --include-in-header inline_code.tex \
-    --include-in-header bullet_style.tex \
-    --include-in-header pdf_properties.tex \
-    --highlight-style pygments.theme \
-    -V toc-title='Table of contents' \
-    -V linkcolor:blue \
-    -V geometry:a4paper \
-    -V geometry:margin=2cm \
-    -V mainfont="DejaVu Serif" \
-    -V monofont="DejaVu Sans Mono" \
-    --pdf-engine=xelatex \
-    -o temp.tex
-
-fn="${2%.*}"
-
-perl -0777 -pe \
-  's/begin\{document\}\n\n\K(.*?^\}$)(.+?)\n/$2\n\\thispagestyle{empty}\n\n$1\n/ms' \
-  temp.tex > "$fn".tex
-
-xelatex "$fn".tex &> /dev/null
-xelatex "$fn".tex &> /dev/null
-
-rm temp.tex "$fn".{tex,toc,aux,log}
-```
-
-The `pandoc` command is changed to produce `tex` output instead of `pdf`. The `perl` script will switch the positions of cover image and table of contents. Also, `\thispagestyle{empty}` is added to avoid page number from showing up with cover image, see also [tex.stackexchange: clear page](https://tex.stackexchange.com/questions/360739/what-is-the-use-of-clearpage-thispagestyleempty-cleardoublepage). See my tutorial on [perl one-liners](https://github.com/learnbyexample/Command-line-text-processing/blob/master/perl_the_swiss_knife.md) if you are interested in learning how to write such powerful commands.
-
-After modifying the `tex` file, `xelatex` command is directly used to get the `pdf` output. For some reason, the table of contents goes awry but gives correct output if the command is called twice! The output file is named same as input, but with extension changed from `tex` to `pdf`. Finally, the temporary files are removed.
-
-The `bash` script invocation is now `./md2pdf_syn_bullet_prop_toc_cover.sh sample_5.md sample_5.pdf`.
-
-After posting the above solution, I realized that for simple content like cover image, you can use `tex` file and include it verbatim instead of hacking and calling `xelatex` twice, etc. For above example, use `sample_1.md` instead of `sample_5.md` as input markdown. Create a `tex` file with content shown below:
+To add something prior to table of contents, cover image for example, you can use a `tex` file and include it verbatim. Create a `tex` file (named as `cover.tex` here) with content as shown below:
 
 ```tex
 \includegraphics{cover.png}
 \thispagestyle{empty}
 ```
 
-Then, modify the `md2pdf_syn_bullet_prop_toc.sh` script by adding `--include-before-body cover.tex` and tada - you get the cover image before table of contents in a much easier way than hacking intermediate `tex` file.
+Then, modify the previous script `md2pdf_syn_bullet_prop_toc.sh` by adding `--include-before-body cover.tex` and tada — you get the cover image before table of contents. `\thispagestyle{empty}` helps to avoid page number on the cover page, see also [tex.stackexchange: clear page](https://tex.stackexchange.com/questions/360739/what-is-the-use-of-clearpage-thispagestyleempty-cleardoublepage).
 
-![warning](/images/warning.svg) You'll need at least one image in input markdown file, otherwise settings won't apply to the cover image and you may end up with weird output. And be careful to use escapes if the image path can contain `tex` metacharacters.
+The `bash` script invocation is now `./md2pdf_syn_bullet_prop_toc_cover.sh sample_5.md sample_5.pdf`.
+
+![warning](/images/warning.svg) You'll need at least one image in input markdown file, otherwise settings won't apply to the cover image and you may end up with weird output. `sample_5.md` used in the command above includes an image. And be careful to use escapes if the image path can contain `tex` metacharacters.
+
+<br>
+
+## <a name="stylish-blockquote"></a>Stylish blockquote
+
+By default, blockquotes (lines starting with `>` in markdown) are just indented in the `pdf` output. To make them standout, [tex.stackexchange: change the background color and border of blockquote](https://tex.stackexchange.com/questions/154528/how-to-change-the-background-color-and-border-of-a-pandoc-generated-blockquote) helped.
+
+Create `quote.tex` with the contents as shown below. You can change the colors to suit your own preferred style.
+
+```tex
+\usepackage{tcolorbox}
+\newtcolorbox{myquote}{colback=red!5!white, colframe=red!75!black}
+\renewenvironment{quote}{\begin{myquote}}{\end{myquote}}
+```
+
+The `bash` script invocation is now `./md2pdf_syn_bullet_prop_toc_cover_quote.sh sample_5.md sample_5_quote.pdf`. The difference between default and styled blockquote is shown below.
+
+![styled blockquote]({{ '/images/pandoc_pdf/styled_blockquote.png' | absolute_url }}){: .align-center}
+
+<br>
+
+## <a name="customizing-epub"></a>Customizing epub
+
+For a long time, I thought `epub` didn't make sense for programming books. Turned out, I wasn't using the right ebook readers. **FBReader** is good for novels but not ebooks with code snippets. When I used [atril](https://github.com/mate-desktop/atril) and [calibre ebook-viewer](https://calibre-ebook.com/), the results were good.
+
+I didn't know how to use `css` before trying to generate the `epub` version. Somehow, I managed to take the default [epub.css](https://github.com/jgm/pandoc/blob/master/data/epub.css) provided by `pandoc` and customize it as close as possible to the `pdf` version. The modified `epub.css` is available from the [learnbyexample.github.io repo](https://github.com/learnbyexample/learnbyexample.github.io/tree/master/files/pandoc_pdf). The `bash` script to generate the `epub` is shown below and invoked as `./md2epub.sh sample_5.md sample_5.epub`. Note that `pygments.theme` is same as the `pdf` customization discussed before.
+
+```bash
+#!/bin/bash
+
+pandoc  "$1" \
+        -f gfm \
+        --toc \
+        --standalone \
+        --top-level-division=chapter \
+        --highlight-style pygments.theme \
+        --css epub.css \
+        --metadata=title:"My awesome book" \
+        --metadata=author:"learnbyexample" \
+        --metadata=lang:"en-US" \
+        --metadata=cover-image:"cover.png" \
+        -o "$2"
+```
 
 <br>
 
@@ -322,13 +334,12 @@ Then, modify the `md2pdf_syn_bullet_prop_toc.sh` script by adding `--include-bef
 * [pandoc: manual](https://pandoc.org/MANUAL.html)
 * [pandoc: demos](https://pandoc.org/demos.html)
 * [pandoc: tips and tricks](https://github.com/jgm/pandoc/wiki/Pandoc-Tricks)
-* [tex.stackexchange: How to change the background color and border of a blockquote?](https://tex.stackexchange.com/questions/154528/how-to-change-the-background-color-and-border-of-a-pandoc-generated-blockquote)
-* [tex.stackexchange: Change section fonts](https://tex.stackexchange.com/questions/10138/change-section-fonts)
 
 **More options for generating ebooks**:
 
-* [pandoc-latex-template](https://github.com/Wandmalfarbe/pandoc-latex-template) - a clean pandoc LaTeX template to convert your markdown files to PDF or LaTeX
+* [pandoc-latex-template](https://github.com/Wandmalfarbe/pandoc-latex-template) — a clean pandoc LaTeX template to convert your markdown files to PDF or LaTeX
 * [Asciidoctor](https://asciidoctor.org/docs/what-is-asciidoc/)
+    * [pdf generation workflow with Asciidoc](https://shape-of-code.coding-guidelines.com/2019/08/11/my-books-pdf-generation-workflow/)
 * [Sphinx](https://www.sphinx-doc.org/en/stable/index.html)
     * [Self-publishing a book with reStructuredText, Sphinx, Calibre, and vim](https://digitalsuperpowers.com/blog/2019-02-16-publishing-ebook.html)
 * [Bookdown](https://bookdown.org/home/)

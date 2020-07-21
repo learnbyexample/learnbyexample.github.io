@@ -1,5 +1,3 @@
-![cover image](cover.png)
-
 # Introduction
 
 This is a sample [GitHub style markdown](https://github.github.com/gfm/) file.
@@ -26,6 +24,10 @@ print(f'numbers:      {numbers}')
 print(f'odd_numbers:  {odd_numbers}')
 print(f'even_numbers: {even_numbers}')
 ```
+
+>This is a quote
+
+>![info](info.svg) This is a note
 
 # Ruby
 
