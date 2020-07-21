@@ -10,9 +10,15 @@ tags:
 date: 2019-12-06T14:37:42
 ---
 
-This blog post gives an overview of regular expression syntax and features supported by JavaScript. Examples have been tested on Chrome/Chromium console (version 78+) and includes features not available in other browsers and platforms. Assume ASCII character set unless otherwise specified. This post is an excerpt from my [JavaScript RegExp](https://github.com/learnbyexample/learn_js_regexp) book.
+![regexp example]({{ '/images/books/pyregex_example.png' | absolute_url }}){: .align-center}
 
-## Cheatsheet
+*Above diagram created using [Regulex](https://jex.im/regulex)*
+
+<br>
+
+This blog post gives an overview of regular expression syntax and features supported by JavaScript. Examples have been tested on Chrome/Chromium console (version 81+) and includes features not available in other browsers and platforms. Assume ASCII character set unless otherwise specified. This post is an excerpt from my [JavaScript RegExp](https://github.com/learnbyexample/learn_js_regexp) book.
+
+## Elements that define a regular expression 
 
 | Note    | Description |
 | ------- | ----------- |
@@ -37,8 +43,9 @@ This blog post gives an overview of regular expression syntax and features suppo
 | ------------- | ----------- |
 | `^` | restricts the match to start of string |
 | `$` | restricts the match to end of string |
-| `\n` | line separator |
 | `m` | flag to match the start/end of line with `^` and `$` anchors |
+| | `\r`, `\n`, `\u2028` and `\u2029` are line separators |
+| | dos-style files use `\r\n`, may need special attention |
 | `\b` | restricts the match to start/end of words |
 |  | word characters: alphabets, digits, underscore |
 | `\B` | matches wherever `\b` doesn't match |
@@ -53,7 +60,7 @@ This blog post gives an overview of regular expression syntax and features suppo
 | `a(b|c)d` | same as `abd|acd` |
 | `(?:pat)` | non-capturing group |
 | `(?<name>pat)` | named capture group |
-| `.` | match any character except `\r` and `\n` characters |
+| `.` | match any character except line separators |
 | `[]` | Character class, matches one character among many |
 
 | Greedy Quantifiers | Description |
@@ -125,7 +132,9 @@ This blog post gives an overview of regular expression syntax and features suppo
 | | use `\k<name>` for backreferencing in regexp definition |
 | | use `$<name>` for backreferencing in replacement section |
 
-## Examples
+<br>
+
+## Regular expression examples
 
 * `test` method
 
@@ -163,7 +172,7 @@ This blog post gives an overview of regular expression syntax and features suppo
 // string anchors
 > /^cat/.test('cater')
 < true
-> ['surrender', 'unicorn', 'newer', 'door'].filter(w => /er$/.test(w))
+> ['surrender', 'newer', 'door'].filter(w => /er$/.test(w))
 < ["surrender", "newer"]
 
 // use 'm' flag to change string anchors to line anchors
@@ -210,7 +219,7 @@ This blog post gives an overview of regular expression syntax and features suppo
 
 ```js
 > function escapeRegExp(string) {
-    return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+    return string.replace(/[.*+\-?^${}()|[\]\\]/g, '\\$&')
   }
 
 > function unionRegExp(arr) {
@@ -227,7 +236,7 @@ This blog post gives an overview of regular expression syntax and features suppo
 // matches character '2', any character and then character '3'
 > '42\t33'.replace(/2.3/, '8')
 < "483"
-// 's' flag will allow newline character to be matched as well
+// 's' flag will allow line separators to be matched as well
 > 'Hi there\nHave a Nice Day'.replace(/the.*ice/s, 'X')
 < "Hi X Day"
 
@@ -235,7 +244,7 @@ This blog post gives an overview of regular expression syntax and features suppo
 > 'par part parrot parent'.replace(/par(en|ro)?t/g, 'X')
 < "par X X X"
 
-> ['abc', 'ac', 'abbc', 'xabbbcz', 'abbbbbc'].filter(w => /ab{1,4}c/.test(w))
+> ['abc', 'ac', 'abbc', 'xabbbcz'].filter(w => /ab{1,4}c/.test(w))
 < ["abc", "abbc", "xabbbcz"]
 ```
 
@@ -252,7 +261,8 @@ This blog post gives an overview of regular expression syntax and features suppo
 > 'cat and dog'.match(/dog/).index
 < 8
 
-// get all matching portions with 'g' flag, no properties or group portions
+// get all matching portions with 'g' flag
+// no properties or group portions
 > 'par spar apparent spare part'.match(/\bs?par[et]\b/g)
 < ["spare", "part"]
 
@@ -272,7 +282,8 @@ This blog post gives an overview of regular expression syntax and features suppo
 < [0, 4, 11]
 
 // get only capture group portions as an array for each match
-> Array.from('xx:yyy x: x:yy :y'.matchAll(/(x*):(y*)/g), m => m.slice(1))
+> let s = 'xx:yyy x: x:yy :y'
+> Array.from(s.matchAll(/(x*):(y*)/g), m => m.slice(1))
 < (4) [Array(2), Array(2), Array(2), Array(2)]
   0: (2) ["xx", "yyy"]
   1: (2) ["x", ""]
@@ -305,7 +316,7 @@ This blog post gives an overview of regular expression syntax and features suppo
 // split based on one or more digit characters
 > 'Sample123string42with777numbers'.split(/\d+/)
 < ["Sample", "string", "with", "numbers"]
-// use capture group to include the portion that caused the split as well
+// include the portion that caused the split as well
 > 'Sample123string42with777numbers'.split(/(\d+)/)
 < ["Sample", "123", "string", "42", "with", "777", "numbers"]
 
@@ -321,7 +332,8 @@ This blog post gives an overview of regular expression syntax and features suppo
 * backreferencing with normal/non-capturing/named capture groups
 
 ```js
-// remove any number of consecutive duplicate words separated by space
+// remove consecutive duplicate words separated by space
+// use \W+ instead of space to cover cases like 'a;a<-;a'
 > 'aa a a a 42 f_1 f_1 f_13.14'.replace(/\b(\w+)( \1)+\b/g, '$1')
 < "aa a 42 f_1 f_13.14"
 
@@ -347,7 +359,7 @@ This blog post gives an overview of regular expression syntax and features suppo
 ```js
 // change 'foo' only if it is not followed by a digit character
 // note that end of string satisfies the given assertion
-// 'foofoo' has two matches as the assertion doesn't consume characters
+// note that 'foofoo' has two matches
 > 'hey food! foo42 foot5 foofoo'.replace(/foo(?!\d)/g, 'baz')
 < "hey bazd! foo42 bazt5 bazbaz"
 
@@ -360,7 +372,7 @@ This blog post gives an overview of regular expression syntax and features suppo
 < ["5", "20"]
 
 // words containing all vowels in any order
-> let words = ['sequoia', 'subtle', 'questionable', 'exhibit', 'equation']
+> let words = ['sequoia', 'questionable', 'exhibit', 'equation']
 > words.filter(w => /(?=.*a)(?=.*e)(?=.*i)(?=.*o).*u/.test(w))
 < ["sequoia", "questionable", "equation"]
 
