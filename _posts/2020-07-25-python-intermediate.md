@@ -10,6 +10,10 @@ tags:
 date: 2020-07-25T15:42:34
 ---
 
+![what next]({{ '/images/what_next.png' | absolute_url }}){: .align-center}
+
+<br>
+
 What to learn next is an often asked question. [Searching for `what next` on /r/learnpython](https://www.reddit.com/r/learnpython/search?q=what+next&restrict_sr=on) gives you too many results. Here's some more Q&A and articles on this topic:
 
 * [I know how to program, but I don't know what to program](https://www.devdungeon.com/content/i-know-how-program-i-dont-know-what-program)
