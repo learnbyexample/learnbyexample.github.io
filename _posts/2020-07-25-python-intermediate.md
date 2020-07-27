@@ -75,6 +75,7 @@ Knowing how to debug your programs and how to write tests is very important. Her
 * [Effective Python](https://www.effectivepython.com/) — insight into the Pythonic way of writing programs
 * [Fluent Python](https://www.oreilly.com/library/view/fluent-python/9781491946237/) — takes you through Python’s core language features and libraries, and shows you how to make your code shorter, faster, and more readable at the same time
     * [Fluent Python, 2nd Edition](https://www.oreilly.com/library/view/fluent-python-2nd/9781492056348/)
+* [Serious Python](https://nostarch.com/seriouspython) — deployment, scalability, testing, and more
 * [Pythonprogramming](https://pythonprogramming.net/) — domain based topics like machine learning, game development, data analysis, web development, etc
 * [Youtube: Corey Schafer](https://www.youtube.com/user/schafer5/playlists) — various topics for beginners to advanced users
 
