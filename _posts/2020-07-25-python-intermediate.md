@@ -29,19 +29,10 @@ What to learn next is an often asked question. [Searching for `what next` on /r/
 
 I do not have a simple answer to this question either. If you feel comfortable with programming basics and Python syntax, then exercises are a good way to test your knowledge. The resource you used to learn Python will typically have some sort of exercises, so those would be ideal as a first choice. I'd also suggest using the below resources to improve your skills. If you get stuck, reread the material related to those topics, search online, ask for clarifications, etc  — in short, make an effort to solve it. It is okay to skip some troublesome problems (and come back to it later if you have the time), but you should be able to solve most of the beginner problems. Maintaining notes will help too, especially for common mistakes.
 
-* [Exercism](https://exercism.io/tracks/python/exercises)
-* [Practicepython](https://www.practicepython.org/)
-* [Edabit](https://edabit.com/challenges/python3)
-* [Auto-Graded course with solutions](https://repl.it/community/classrooms/17929)
-* [Codewars](https://www.codewars.com/)
-* [Adventofcode](https://adventofcode.com/)
-* [Projecteuler](https://projecteuler.net/)
-* [Hackerrank](https://www.hackerrank.com/domains/python)
-* [/r/dailyprogrammer](https://www.reddit.com/r/dailyprogrammer)
-* Gamification
-	* [Checkio](https://py.checkio.org/)
-    * [Codingame](https://www.codingame.com/start)
-	* [Codecombat](https://codecombat.com/play/level/dungeons-of-kithgard)
+* [Exercism](https://exercism.io/tracks/python/exercises), [Practicepython](https://www.practicepython.org/), [Edabit](https://edabit.com/challenges/python3) — these are all beginner friendly and difficulty levels are marked
+* [Codewars](https://www.codewars.com/), [Adventofcode](https://adventofcode.com/), [Projecteuler](https://projecteuler.net/) — more challenging
+* [Checkio](https://py.checkio.org/), [Codingame](https://www.codingame.com/start), [Codecombat](https://codecombat.com/play/level/dungeons-of-kithgard) — gaming based challenges
+* [/r/dailyprogrammer](https://www.reddit.com/r/dailyprogrammer) — not active currently, but there's plenty of past challenges with discussions
 
 Once you are comfortable with basics and syntax, the next step is projects. I use a 10-line program that solves a common problem for me — adding `body { text-align: justify }` to `epub` files that are not justify aligned. I didn't know that this line would help beforehand, I searched online for a solution and then automated the process of unzipping `epub`, adding the line and then packing it again. That will likely need you to lookup documentation and go through some stackoverflow Q&A as well. And once you have written the solution and use it regularly, you'll likely encounter corner cases and features to be added. I feel this is a great way to learn and understand programming.
 
@@ -52,17 +43,34 @@ Once you are comfortable with basics and syntax, the next step is projects. I us
 
 <br>
 
-## Debugging and Testing
+## Debugging
 
-Knowing how to debug your programs and how to write tests is very important. Here's some resources:
+Knowing how to debug your programs is crucial and should be ideally taught right from the beginning instead of a chapter at the end of the book. [Think Python](https://greenteapress.com/wp/think-python-2e/) is an awesome example for such a resource material.
 
-* [Python debugging with pdb](https://realpython.com/python-debugging-pdb/)
-* [Getting started with testing in Python](https://realpython.com/python-testing/)
-* [Rubber duck debugging](https://rubberduckdebugging.com/)
+Sites like [Pythontutor](http://www.pythontutor.com/visualize.html#mode=edit) allow you to visually debug a program — you can execute a program step by step and see the current value of variables. Similar feature is typically provided by IDEs like [Pycharm](https://www.jetbrains.com/pycharm/) and [Thonny](https://thonny.org/). Under the hood, these visualizations are using the [pdb module](https://docs.python.org/3/library/pdb.html). See also [Python debugging with pdb](https://realpython.com/python-debugging-pdb/).
+
+Debugging is often a frustrating experience. Taking a break helps (and sometimes I have found the problem in my dreams). Try to reduce the code as much as possible so that you are left with minimal code necessary to reproduce the issue. Talking about the problem to a friend/colleague/inanimate-objects/etc can help too — known as [Rubber duck debugging](https://rubberduckdebugging.com/). I have often found the issue while formulating a question to be asked on forums like stackoverflow/reddit because writing down your problem is another way to bring clarity than just having a vague idea in your mind. Here's some more articles on this challenging topic:
+
+* [What does debugging a program look like?](https://jvns.ca/blog/2019/06/23/a-few-debugging-resources/)
 * [How to debug small programs](https://ericlippert.com/2014/03/05/how-to-debug-small-programs/)
-* [Problem solving skills](https://ryanstutorials.net/problem-solving-skills/)
 * [Debugging guide](https://uchicago-cs.github.io/debugging-guide/)
-* [Stackoverflow: bug stories](https://stackoverflow.com/questions/169713/whats-the-toughest-bug-you-ever-found-and-fixed)
+* [Problem solving skills](https://ryanstutorials.net/problem-solving-skills/)
+
+Here's an interesting snippet (modified to keep it small) from a collection of [interesting bug stories](https://stackoverflow.com/questions/169713/whats-the-toughest-bug-you-ever-found-and-fixed).
+
+>A jpeg parser choked whenever the CEO came into the room, because he always had a shirt with a square pattern on it, which triggered some special case of contrast and block boundary algorithms.
+
+See also [curated list of absurd software bug stories](https://500mile.email/).
+
+## Testing
+
+Another crucial aspect in the programming journey is knowing how to write tests. In bigger projects, usually there are separate engineers (often in much larger number than code developers) to test the code. Even in those cases, writing a few sanity test cases yourself can help you develop faster knowing that the changes aren't breaking basic functionality.
+
+There's no single consensus on test methodologies. There is [Unit testing](https://en.wikipedia.org/wiki/Unit_testing), [Integration testing](https://en.wikipedia.org/wiki/Integration_testing), [Test-driven development](https://en.wikipedia.org/wiki/Test-driven_development) and so on. Often, a combination of these is used. These days, machine learning is also being considered to reduce the testing time, see [Testing Firefox more efficiently with machine learning](https://hacks.mozilla.org/2020/07/testing-firefox-more-efficiently-with-machine-learning/) for example.
+
+When I start a project, I usually try to write the programs incrementally. Say I need to iterate over files from a directory. I will make sure that portion is working (usually with `print` statements), then add another feature — say file reading and test that and so on. This reduces the burden of testing a large program at once at the end. And depending upon the nature of the program, I'll add a few sanity tests at the end. For example, for my [command_help](https://github.com/learnbyexample/command_help) project, I copy pasted a few test runs of the program with different options and arguments into a separate file and wrote a program to perform these tests programmatically whenever the source code is modified.
+
+For non-trivial projects, you'll usually end up needing frameworks like built-in module `unittest` or third-party modules like `pytest`. See [Getting started with testing in Python](https://realpython.com/python-testing/) and [calmcode: pytest](https://calmcode.io/pytest/introduction.html) for discussion on these topics.
 
 <br>
 
