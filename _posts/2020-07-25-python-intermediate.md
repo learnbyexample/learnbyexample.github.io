@@ -62,6 +62,8 @@ Here's an interesting snippet (modified to keep it small) from a collection of [
 
 See also [curated list of absurd software bug stories](https://500mile.email/).
 
+<br>
+
 ## Testing
 
 Another crucial aspect in the programming journey is knowing how to write tests. In bigger projects, usually there are separate engineers (often in much larger number than code developers) to test the code. Even in those cases, writing a few sanity test cases yourself can help you develop faster knowing that the changes aren't breaking basic functionality.
@@ -86,6 +88,13 @@ For non-trivial projects, you'll usually end up needing frameworks like built-in
 * [Serious Python](https://nostarch.com/seriouspython) — deployment, scalability, testing, and more
 * [Pythonprogramming](https://pythonprogramming.net/) — domain based topics like machine learning, game development, data analysis, web development, etc
 * [Youtube: Corey Schafer](https://www.youtube.com/user/schafer5/playlists) — various topics for beginners to advanced users
+
+**Algorithms and Design patterns**
+
+* [Problem solving with algorithms and data structures](https://runestone.academy/runestone/static/pythonds/index.html) 
+* [GitHub: Awesome algorithms](https://github.com/tayllan/awesome-algorithms)
+* [GitHub: Collection of design patterns and idioms](https://github.com/faif/python-patterns)
+* [Python design patterns](https://python-patterns.guide/) inspired from [Design Patterns: Elements of Reusable Object-Oriented Software](https://en.wikipedia.org/wiki/Design_Patterns) (also known as **Gang of Four book**)
 
 <br>
 
