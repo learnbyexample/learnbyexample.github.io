@@ -3,7 +3,7 @@ title: Books
 permalink: /books/
 ---
 
-Here's my list of self-published ebooks. You can get them as individually or as a bundle.
+Here's my list of self-published ebooks. You can get the pdf/epub versions as a bundle or as individual books.
 
 # Bundles
 
@@ -26,7 +26,7 @@ Learn Python Regular Expressions step by step from beginner to advanced levels w
 ![Python re(gex)? cover image]({{ '/images/books/pyregex.png' | absolute_url }}){: .align-center}
 
 * [Sample chapters](https://github.com/learnbyexample/py_regular_expressions/blob/master/sample_chapters/Python_Regex_sample.pdf)
-* Buy pdf from:
+* Buy pdf/epub from:
     * [gumroad](https://gumroad.com/l/py_regex)
     * [leanpub](https://leanpub.com/py_regex)
 * [GitHub repo for code snippets and more](https://github.com/learnbyexample/py_regular_expressions)
@@ -41,7 +41,7 @@ Learn JavaScript Regular Expressions step by step from beginner to advanced leve
 ![JavaScript cover image]({{ '/images/books/js_regexp.png' | absolute_url }}){: .align-center}
 
 * [Sample chapters](https://github.com/learnbyexample/learn_js_regexp/blob/master/sample_chapters/js_regexp_sample_chapters.pdf)
-* Buy pdf from:
+* Buy pdf/epub from:
     * [gumroad](https://gumroad.com/l/js_regexp)
     * [leanpub](https://leanpub.com/js_regexp)
 * [GitHub repo for code snippets and more](https://github.com/learnbyexample/learn_js_regexp)
@@ -100,7 +100,8 @@ Learn Ruby Regexp step by step from beginner to advanced levels with 200+ exampl
 
 ![Ruby Regexp cover image]({{ '/images/books/rubyregex.png' | absolute_url }}){: .align-center}
 
-* Pay what you want:
+* [Sample chapters](https://github.com/learnbyexample/Ruby_Regexp/blob/master/sample_chapters/ruby_regexp_sample.pdf)
+* Pay what you want for pdf/epub:
     * [gumroad](https://gumroad.com/l/rubyregexp)
     * [leanpub](https://leanpub.com/rubyregexp)
 * [GitHub repo for code snippets and more](https://github.com/learnbyexample/Ruby_Regexp)
