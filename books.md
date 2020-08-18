@@ -3,7 +3,7 @@ title: Books
 permalink: /books/
 ---
 
-Here's my list of self-published ebooks. You can get the pdf/epub versions as a bundle or as individual books.
+Here's my list of self-published ebooks. You can get the pdf/epub versions as a bundle or as individual books. You can also read them online.
 
 # Bundles
 
@@ -30,6 +30,7 @@ Learn Python Regular Expressions step by step from beginner to advanced levels w
     * [gumroad](https://gumroad.com/l/py_regex)
     * [leanpub](https://leanpub.com/py_regex)
 * [GitHub repo for code snippets and more](https://github.com/learnbyexample/py_regular_expressions)
+* [html version](https://learnbyexample.github.io/py_regular_expressions/)
 * Feedback: [Goodreads](https://www.goodreads.com/book/show/47142552-python-re-gex) and [Twitter](https://twitter.com/learn_byexample)
 
 <br>
@@ -45,6 +46,7 @@ Learn JavaScript Regular Expressions step by step from beginner to advanced leve
     * [gumroad](https://gumroad.com/l/js_regexp)
     * [leanpub](https://leanpub.com/js_regexp)
 * [GitHub repo for code snippets and more](https://github.com/learnbyexample/learn_js_regexp)
+* [html version](https://learnbyexample.github.io/learn_js_regexp/)
 * Feedback: [Goodreads](https://www.goodreads.com/book/show/49090622-javascript-regexp) and [Twitter](https://twitter.com/learn_byexample)
 
 <br>
@@ -60,6 +62,7 @@ Example based guide to mastering GNU grep and ripgrep. Exercises are also includ
     * [gumroad](https://gumroad.com/l/gnugrep_ripgrep)
     * [leanpub](https://leanpub.com/gnugrep_ripgrep)
 * [GitHub repo for code snippets and more](https://github.com/learnbyexample/learn_gnugrep_ripgrep)
+* [html version](https://learnbyexample.github.io/learn_gnugrep_ripgrep/)
 * Feedback: [Goodreads](https://www.goodreads.com/book/show/47406700-gnu-grep-and-ripgrep) and [Twitter](https://twitter.com/learn_byexample)
 
 <br>
@@ -75,6 +78,7 @@ Example based guide to mastering GNU sed. Exercises are also included to test yo
     * [gumroad](https://gumroad.com/l/gnu_sed)
     * [leanpub](https://leanpub.com/gnu_sed)
 * [GitHub repo for code snippets and more](https://github.com/learnbyexample/learn_gnused)
+* [html version](https://learnbyexample.github.io/learn_gnused/)
 * Feedback: [Goodreads](https://www.goodreads.com/book/show/48641172-gnu-sed) and [Twitter](https://twitter.com/learn_byexample)
 
 <br>
@@ -90,6 +94,7 @@ Example based guide to mastering GNU awk one-liners.
     * [gumroad](https://gumroad.com/l/gnu_awk)
     * [leanpub](https://leanpub.com/gnu_awk)
 * [GitHub repo for code snippets and more](https://github.com/learnbyexample/learn_gnuawk)
+* [html version](https://learnbyexample.github.io/learn_gnuawk/)
 * Feedback: [Goodreads](https://www.goodreads.com/book/show/52758608-gnu-awk) and [Twitter](https://twitter.com/learn_byexample)
 
 <br>
@@ -105,5 +110,6 @@ Learn Ruby Regexp step by step from beginner to advanced levels with 200+ exampl
     * [gumroad](https://gumroad.com/l/rubyregexp)
     * [leanpub](https://leanpub.com/rubyregexp)
 * [GitHub repo for code snippets and more](https://github.com/learnbyexample/Ruby_Regexp)
+* [html version](https://learnbyexample.github.io/Ruby_Regexp/)
 * Feedback: [Goodreads](https://www.goodreads.com/book/show/48641238-ruby-regexp) and [Twitter](https://twitter.com/learn_byexample)
 
