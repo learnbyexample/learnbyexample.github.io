@@ -11,9 +11,8 @@ Here's my list of self-published ebooks. You can get the pdf/epub versions as a 
     * Python, Ruby, JavaScript regular expressions and GNU grep, ripgrep, GNU sed, GNU awk cli tools
 * **Magical one-liners**: [leanpub](https://leanpub.com/b/oneliners) or [gumroad](https://gumroad.com/l/oneliners)
     * GNU grep, ripgrep, GNU sed, GNU awk cli tools
-* **Python 201 and Python regex**: [leanpub](https://leanpub.com/b/python201_and_regex)
-    * Python 201 and Python regular expressions
-    * Python 201 is authored by [Michael Driscoll](https://www.blog.pythonlibrary.org/)
+* [Python 101 + Python re(gex)?](https://leanpub.com/b/python101pythonregex) or [Python 201: Intermediate Python + Python re(gex)?](https://leanpub.com/b/python201_and_regex)
+    * Python 101/201 is authored by [Michael Driscoll](https://www.blog.pythonlibrary.org/)
 * **(Python\|Ruby) regex**: [leanpub](https://leanpub.com/b/pythonrubyregex)
     * Python, Ruby regular expressions
 

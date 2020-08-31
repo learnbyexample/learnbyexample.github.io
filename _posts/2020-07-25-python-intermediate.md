@@ -31,7 +31,7 @@ I do not have a simple answer to this question either. If you feel comfortable w
 
 * [Exercism](https://exercism.io/tracks/python/exercises), [Practicepython](https://www.practicepython.org/), [Edabit](https://edabit.com/challenges/python3) — these are all beginner friendly and difficulty levels are marked
 * [Codewars](https://www.codewars.com/), [Adventofcode](https://adventofcode.com/), [Projecteuler](https://projecteuler.net/) — more challenging
-* [Checkio](https://py.checkio.org/), [Codingame](https://www.codingame.com/start), [Codecombat](https://codecombat.com/play/level/dungeons-of-kithgard) — gaming based challenges
+* [Checkio](https://py.checkio.org/), [Codingame](https://www.codingame.com/start), [Codecombat](https://codecombat.com/) — gaming based challenges
 * [/r/dailyprogrammer](https://www.reddit.com/r/dailyprogrammer) — not active currently, but there's plenty of past challenges with discussions
 
 Once you are comfortable with basics and syntax, the next step is projects. I use a 10-line program that solves a common problem for me — adding `body { text-align: justify }` to `epub` files that are not justify aligned. I didn't know that this line would help beforehand, I searched online for a solution and then automated the process of unzipping `epub`, adding the line and then packing it again. That will likely need you to lookup documentation and go through some stackoverflow Q&A as well. And once you have written the solution and use it regularly, you'll likely encounter corner cases and features to be added. I feel this is a great way to learn and understand programming.
