@@ -106,5 +106,11 @@ For non-trivial projects, you'll usually end up needing frameworks like built-in
 
 <br>
 
+## More Python resources
+
+Inspired by this post, I made a Python learning resources repository (https://learnbyexample.github.io/py_resources/) which is categorized (beginner, intermediate, advanced, domains like web/ML/data science, etc) and includes a handy search feature.
+
+<br>
+
 I hope these resources will help you take that crucial next step and continue your Python journey. Happy learning :)
 
