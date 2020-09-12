@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+      <title>learnbyexample - Customizing pandoc to generate beautiful pdf and epub from markdown</title>
+
+      
+        <link rel="alternate" type="application/atom+xml" title="RSS" href="https://learnbyexample.github.io/atom.xml">
+      
+
+      
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
+          
+      
+
+      
+          <link rel="stylesheet" href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;site.css">
+          
+      
+
+      
+      
+    </head>
+
+    <body>
+        <div class="container">
+
+            <div id="mobile-navbar" class="mobile-navbar">
+              <div class="mobile-header-logo">
+                <a href="/" class="logo">learnbyexample</a>
+              </div>
+              <div class="mobile-navbar-icon icon-out">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+
+            <nav id="mobile-menu" class="mobile-menu slideout-menu slideout-menu-left">
+              <ul class="mobile-menu-list">
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io">
+                            Home
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;books">
+                            Books
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags">
+                            Tags
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;about">
+                            About
+                        </a>
+                    </li>
+                
+              </ul>
+            </nav>
+
+            <header id="header">
+                <div class="logo"><a href="https:&#x2F;&#x2F;learnbyexample.github.io">learnbyexample</a></div>
+                <nav class="menu">
+                    <ul>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io">
+                                    Home
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;books">
+                                    Books
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags">
+                                    Tags
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;about">
+                                    About
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </nav>
+            </header>
+
+            <main>
+                <div class="content" id="mobile-panel">
+                    
+
+
+<div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content always-active">
+        <nav id="TableOfContents">
+            <ul>
+                
+                <li>
+                    <a href="https://learnbyexample.github.io/customizing-pandoc/#installation" class="toc-link">Installation</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://learnbyexample.github.io/customizing-pandoc/#minimal-example" class="toc-link">Minimal example</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://learnbyexample.github.io/customizing-pandoc/#chapter-breaks" class="toc-link">Chapter breaks</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://learnbyexample.github.io/customizing-pandoc/#changing-settings-via-v-option" class="toc-link">Changing settings via -V option</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://learnbyexample.github.io/customizing-pandoc/#syntax-highlighting" class="toc-link">Syntax highlighting</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://learnbyexample.github.io/customizing-pandoc/#bullet-styling" class="toc-link">Bullet styling</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://learnbyexample.github.io/customizing-pandoc/#pdf-properties" class="toc-link">PDF properties</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://learnbyexample.github.io/customizing-pandoc/#adding-table-of-contents" class="toc-link">Adding table of contents</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://learnbyexample.github.io/customizing-pandoc/#adding-cover-image" class="toc-link">Adding cover image</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://learnbyexample.github.io/customizing-pandoc/#stylish-blockquote" class="toc-link">Stylish blockquote</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://learnbyexample.github.io/customizing-pandoc/#customizing-epub" class="toc-link">Customizing epub</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://learnbyexample.github.io/customizing-pandoc/#resource-links" class="toc-link">Resource links</a>
+                    
+                </li>
+                
+            </ul>
+        </nav>
+    </div>
+</div>
+
+
+<article class="post">
+    
+    <header class="post__header">
+        <h1 class="post__title">
+            <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;customizing-pandoc&#x2F;">Customizing pandoc to generate beautiful pdf and epub from markdown</a>
+        </h1>
+        <div class="post__meta">
+            <span class="post__time">2020-07-21</span>
+            
+        </div>
+    </header>
+
+    <div class="post-content">
+      <p>Either you've already heard of <code>pandoc</code> or if you have searched online for <code>markdown</code> to <code>pdf</code> or similar, you are sure to come across <code>pandoc</code>. This tutorial will help you use <code>pandoc</code> to generate <code>pdf</code> and <code>epub</code> from a <a href="https://github.github.com/gfm/">GitHub style markdown</a> file. The main motivation for this blog post is to highlight what customizations I did to generate <code>pdf</code> and <code>epub</code> versions for <a href="https://learnbyexample.github.io/books/">self-publishing my ebooks</a>. It wasn't easy to arrive at the set-up I ended up with, so I hope this will be useful for those looking to use <code>pandoc</code> to generate <code>pdf</code> and <code>epub</code> formats. This guide is specifically aimed at technical books that has code snippets.</p>
+<span id="continue-reading"></span><br>
+<h2 id="installation">Installation<a class="zola-anchor" href="#installation" aria-label="Anchor link for: installation">🔗</a></h2>
+<p>I use Ubuntu, as far as I remember, the below steps are enough to work for the demos in this tutorial. If you get an error or warning, search that issue online and you'll likely find what else has to be installed.</p>
+<p>I first downloaded <code>deb</code> file from <a href="https://github.com/jgm/pandoc/releases">pandoc: releases</a> and installed it. Followed by packages needed for <code>pdf</code> generation.</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#5597d6;">$ </span><span style="color:#7f8989;"># latest pandoc version as of 21 July 2010 is 2.10
+</span><span style="color:#5597d6;">$</span><span style="color:#1f1f1f;"> sudo gdebi </span><span style="color:#5597d6;">~</span><span style="color:#1f1f1f;">/Downloads/pandoc-2.10-1-amd64.deb
+
+</span><span style="color:#5597d6;">$ </span><span style="color:#7f8989;"># note that download size is 750+ MB
+</span><span style="color:#5597d6;">$</span><span style="color:#1f1f1f;"> sudo apt install texlive-xetex
+</span><span style="color:#5597d6;">$</span><span style="color:#1f1f1f;"> sudo apt install librsvg2-bin
+</span><span style="color:#5597d6;">$</span><span style="color:#1f1f1f;"> sudo apt install texlive-math-extra
+</span></code></pre>
+<p>For more details and guide for other OS, refer to <a href="https://pandoc.org/installing.html">pandoc: installation</a></p>
+<br>
+<h2 id="minimal-example">Minimal example<a class="zola-anchor" href="#minimal-example" aria-label="Anchor link for: minimal-example">🔗</a></h2>
+<p>Once <code>pandoc</code> is working on your system, try generating a sample <code>pdf</code> without any customization.</p>
+<p><img src="/images/info.svg" alt="info" /> See <a href="https://github.com/learnbyexample/learnbyexample.github.io/tree/master/files/pandoc_pdf">learnbyexample.github.io repo</a> for all the input and output files referred in this tutorial.</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#5597d6;">$</span><span style="color:#1f1f1f;"> pandoc sample_1.md</span><span style="color:#5597d6;"> -f</span><span style="color:#1f1f1f;"> gfm</span><span style="color:#5597d6;"> -o</span><span style="color:#1f1f1f;"> sample_1.pdf
+</span></code></pre>
+<p>Here <code>sample_1.md</code> is input markdown file and <code>-f</code> is used to specify that the input format is GitHub style markdown. The <code>-o</code> option specifies the output file type based on extension. The default output is probably good enough. But I wished to customize hyperlinks, inline code style, add page breaks between chapters, etc. This blog post will discuss these customizations one by one.</p>
+<p><img src="/images/info.svg" alt="info" /> <code>pandoc</code> has its own flavor of <code>markdown</code> with many useful extensions — see <a href="https://pandoc.org/MANUAL.html#pandocs-markdown">pandoc: pandocs-markdown</a> for details. GitHub style markdown is recommended if you wish to use the same source (or with minor changes) in multiple places.</p>
+<p><img src="/images/info.svg" alt="info" /> It is advised to use <code>markdown</code> headers in order without skipping — for example, <code>H1</code> for chapter heading and <code>H2</code> for chapter sub-section, etc is fine. <code>H1</code> for chapter heading and <code>H3</code> for sub-section is not. Using the former can give automatic index navigation on ebook readers.</p>
+<p>On <a href="https://wiki.gnome.org/Apps/Evince">Evince</a> reader, the index navigation for above sample looks like this:</p>
+<p><img src="/images/pandoc_pdf/chapter_index.png" alt="Chapter Index" /></p>
+<br>
+<h2 id="chapter-breaks">Chapter breaks<a class="zola-anchor" href="#chapter-breaks" aria-label="Anchor link for: chapter-breaks">🔗</a></h2>
+<p>As observed from previous demo, by default there are no chapter breaks. Searching for a <a href="https://superuser.com/questions/601469/getting-chapters-to-start-on-a-new-page-in-a-pandoc-generated-pdf">solution online</a>, I got this piece of <code>tex</code> code:</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#72ab00;">\usepackage</span><span style="color:#1f1f1f;">{</span><span style="color:#a2a001;">sectsty</span><span style="color:#1f1f1f;">}
+</span><span style="color:#b39f04;">\sectionfont</span><span style="color:#1f1f1f;">{</span><span style="color:#b39f04;">\clearpage</span><span style="color:#1f1f1f;">}
+</span></code></pre>
+<p>This can be added using <code>-H</code> option. From <code>pandoc</code> manual,</p>
+<blockquote>
+<p>-H FILE, --include-in-header=FILE</p>
+<p>Include  contents  of FILE, verbatim, at the end of the header.  This
+can be used, for example, to include special  CSS  or  JavaScript  in
+HTML documents.  This option can be used repeatedly to include multiple
+files in the header.  They will be included in the  order  specified.
+Implies --standalone.</p>
+</blockquote>
+<p>The <code>pandoc</code> invocation now looks like:</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#5597d6;">$</span><span style="color:#1f1f1f;"> pandoc sample_1.md</span><span style="color:#5597d6;"> -f</span><span style="color:#1f1f1f;"> gfm</span><span style="color:#5597d6;"> -H</span><span style="color:#1f1f1f;"> chapter_break.tex</span><span style="color:#5597d6;"> -o</span><span style="color:#1f1f1f;"> sample_1_chapter_break.pdf
+</span></code></pre>
+<p>You can add further customization to headings, for example use <code>\sectionfont{\underline\clearpage}</code> to underline chapter names or <code>\sectionfont{\LARGE\clearpage}</code> to allow chapter names to get even bigger. Here's some more links to read about various customizations:</p>
+<ul>
+<li><a href="https://tex.stackexchange.com/questions/1455/how-to-set-the-font-for-a-section-title-and-chapter-etc">tex.stackexchange: section fonts</a></li>
+<li><a href="https://tex.stackexchange.com/questions/230730/section-coming-up-as-undefined-when-using-sectsty">tex.stackexchange: section colors</a></li>
+<li><a href="https://tex.stackexchange.com/questions/10138/change-section-fonts">tex.stackexchange: change section fonts</a></li>
+</ul>
+<br>
+<h2 id="changing-settings-via-v-option">Changing settings via -V option<a class="zola-anchor" href="#changing-settings-via-v-option" aria-label="Anchor link for: changing-settings-via-v-option">🔗</a></h2>
+<blockquote>
+<p>-V KEY[=VAL], --variable=KEY[:VAL]</p>
+<p>Set the template variable KEY to the value  VAL  when  rendering  the
+document  in standalone mode.  This is generally only useful when the
+--template option is used to specify a custom template, since  pandoc
+automatically  sets  the variables used in the default templates.  If
+no VAL is specified, the key will be given the value true.</p>
+</blockquote>
+<p>The <code>-V</code> option allows to change variable values to customize settings like page size, font, link color, etc. As more settings are changed, better to use a simple script to call <code>pandoc</code> instead of typing the whole command on terminal.</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#7f8989;">#!/bin/bash
+
+</span><span style="color:#5597d6;">pandoc </span><span style="color:#d07711;">&quot;$</span><span style="color:#acb3c2;">1</span><span style="color:#d07711;">&quot; </span><span style="color:#1f1f1f;">\
+</span><span style="color:#5597d6;">    -f</span><span style="color:#1f1f1f;"> gfm \
+</span><span style="color:#5597d6;">    --include-in-header</span><span style="color:#1f1f1f;"> chapter_break.tex \
+</span><span style="color:#5597d6;">    -V</span><span style="color:#1f1f1f;"> linkcolor:blue \
+</span><span style="color:#5597d6;">    -V</span><span style="color:#1f1f1f;"> geometry:a4paper \
+</span><span style="color:#5597d6;">    -V</span><span style="color:#1f1f1f;"> geometry:margin=2cm \
+</span><span style="color:#5597d6;">    -V</span><span style="color:#1f1f1f;"> mainfont=</span><span style="color:#d07711;">&quot;DejaVu Serif&quot; </span><span style="color:#1f1f1f;">\
+</span><span style="color:#5597d6;">    -V</span><span style="color:#1f1f1f;"> monofont=</span><span style="color:#d07711;">&quot;DejaVu Sans Mono&quot; </span><span style="color:#1f1f1f;">\
+</span><span style="color:#5597d6;">    --pdf-engine</span><span style="color:#72ab00;">=</span><span style="color:#1f1f1f;">xelatex \
+</span><span style="color:#5597d6;">    -o </span><span style="color:#d07711;">&quot;$</span><span style="color:#acb3c2;">2</span><span style="color:#d07711;">&quot;
+</span></code></pre>
+<ul>
+<li><code>mainfont</code> is for normal text</li>
+<li><code>monofont</code> is for code snippets</li>
+<li><code>geometry</code> for page size and margins</li>
+<li><code>linkcolor</code> to set hyperlink color</li>
+<li>to increase default <strong>font size</strong>, use <code>-V fontsize=12pt</code>
+<ul>
+<li>See <a href="https://stackoverflow.com/questions/23811002/from-markdown-to-pdf-how-to-change-the-font-size-with-pandoc">stackoverflow: change font size</a> if you need even bigger size options</li>
+</ul>
+</li>
+</ul>
+<p>Using <code>xelatex</code> as the <code>pdf-engine</code> allows to use any font installed in the system. One reason I chose <code>DejaVu</code> was because it supported <strong>Greek</strong> and other Unicode characters that were causing error with other fonts. See <a href="https://tex.stackexchange.com/questions/21736/using-xelatex-instead-of-pdflatex">tex.stackexchange: Using XeLaTeX instead of pdfLaTeX</a> for some more details.</p>
+<p>The <code>pandoc</code> invocation is now through a script:</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#5597d6;">$</span><span style="color:#1f1f1f;"> chmod +x md2pdf.sh
+</span><span style="color:#5597d6;">$</span><span style="color:#1f1f1f;"> ./md2pdf.sh sample_1.md sample_1_settings.pdf
+</span></code></pre>
+<p>Do compare the pdf generated side by side with previous output before proceeding.</p>
+<p><img src="/images/warning.svg" alt="warning" /> On my system, <code>DejaVu Serif</code> did not have <em>italic</em> variation installed, so I had to use <code>sudo apt install ttf-dejavu-extra</code> to get it.</p>
+<br>
+<h2 id="syntax-highlighting">Syntax highlighting<a class="zola-anchor" href="#syntax-highlighting" aria-label="Anchor link for: syntax-highlighting">🔗</a></h2>
+<p>One option to customize syntax highlighting for code snippets is to save one of the <code>pandoc</code> themes and editing it. See <a href="https://stackoverflow.com/questions/30880200/pandoc-what-are-the-available-syntax-highlighters/47876166#47876166">stackoverflow: What are the available syntax highlighters?</a> for available themes and more details (as a good practice on stackoverflow, go through all answers and comments — the linked/related sections on sidebar are useful as well).</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#5597d6;">$</span><span style="color:#1f1f1f;"> pandoc</span><span style="color:#5597d6;"> --print-highlight-style</span><span style="color:#72ab00;">=</span><span style="color:#1f1f1f;">pygments </span><span style="color:#72ab00;">&gt;</span><span style="color:#1f1f1f;"> pygments.theme
+</span></code></pre>
+<p>Edit the above file to customize the theme. Use sites like <a href="https://www.colorhexa.com/">colorhexa</a> to help with color choices, hex values, etc. For this demo, the below settings are changed:</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#1f1f1f;"># by default, background is same as normal text
+# change it to a shade of gray to easily distinguish code and text
+&quot;background-color&quot;: &quot;#f8f8f8&quot;,
+
+# change italic to false, messes up comments with slashes
+# change comment text-color to yet another shade of gray
+&quot;Comment&quot;: {
+    &quot;text-color&quot;: &quot;#9c9c9c&quot;,
+    &quot;background-color&quot;: null,
+    &quot;bold&quot;: false,
+    &quot;italic&quot;: false,
+    &quot;underline&quot;: false
+},
+</span></code></pre>
+<p><strong>Inline code</strong></p>
+<p>Similar to changing background color for code snippets, I found a <a href="https://stackoverflow.com/questions/40975004/pandoc-latex-change-backtick-highlight">solution online</a> to change background color for inline code snippets.</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#72ab00;">\usepackage</span><span style="color:#1f1f1f;">{</span><span style="color:#a2a001;">fancyvrb</span><span style="color:#1f1f1f;">,newverbs,xcolor}
+
+</span><span style="color:#b39f04;">\definecolor</span><span style="color:#1f1f1f;">{Light}{HTML}{F4F4F4}
+
+</span><span style="color:#b39f04;">\let\oldtexttt\texttt
+</span><span style="color:#668f14;">\renewcommand</span><span style="color:#1f1f1f;">{</span><span style="color:#c23f31;">\texttt</span><span style="color:#1f1f1f;">}[1]{
+  </span><span style="color:#b39f04;">\colorbox</span><span style="color:#1f1f1f;">{Light}{</span><span style="color:#b39f04;">\oldtexttt</span><span style="color:#1f1f1f;">{#1}}
+}
+</span></code></pre>
+<p>Add <code>--highlight-style pygments.theme</code> and <code>--include-in-header inline_code.tex</code> to the script and generate the <code>pdf</code> again.</p>
+<p>With <code>pandoc sample_2.md -f gfm -o sample_2.pdf</code> the output would be:</p>
+<p><img src="/images/pandoc_pdf/default_syn.png" alt="Default syntax highlighting" /></p>
+<p>With <code>./md2pdf_syn.sh sample_2.md sample_2_syn.pdf</code> the output is:</p>
+<p><img src="/images/pandoc_pdf/customized_syn.png" alt="Customized syntax highlighting" /></p>
+<br>
+<p>For my <a href="https://github.com/learnbyexample/py_regular_expressions">Python re(gex)?</a> book, by chance I found that using <code>ruby</code> instead of <code>python</code> for REPL code snippets syntax highlighting was better. Snapshot from <code>./md2pdf_syn.sh sample_3.md sample_3.pdf</code> result is shown below. For <code>python</code> directive, string output gets treated as a comment and color for boolean values isn't easy to distinguish from string values. The <code>ruby</code> directive treats string value as expected and boolean values are easier to spot.</p>
+<p><img src="/images/pandoc_pdf/python_vs_ruby_syn.png" alt="REPL syntax highlighting" /></p>
+<br>
+<h2 id="bullet-styling">Bullet styling<a class="zola-anchor" href="#bullet-styling" aria-label="Anchor link for: bullet-styling">🔗</a></h2>
+<p>This <a href="https://stackoverflow.com/questions/22156999/how-to-change-the-style-of-bullets-in-pandoc-markdown">stackoverflow Q&amp;A</a> helped for bullet styling.</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#72ab00;">\usepackage</span><span style="color:#1f1f1f;">{</span><span style="color:#a2a001;">enumitem</span><span style="color:#1f1f1f;">}
+</span><span style="color:#72ab00;">\usepackage</span><span style="color:#1f1f1f;">{</span><span style="color:#a2a001;">amsfonts</span><span style="color:#1f1f1f;">}
+
+</span><span style="color:#7f8989;">% level one
+</span><span style="color:#b39f04;">\setlist</span><span style="color:#1f1f1f;">[itemize,1]{label=</span><span style="color:#d07711;">$</span><span style="color:#b39f04;">\bullet</span><span style="color:#d07711;">$</span><span style="color:#1f1f1f;">}
+</span><span style="color:#7f8989;">% level two
+</span><span style="color:#b39f04;">\setlist</span><span style="color:#1f1f1f;">[itemize,2]{label=</span><span style="color:#d07711;">$</span><span style="color:#b39f04;">\circ</span><span style="color:#d07711;">$</span><span style="color:#1f1f1f;">}
+</span><span style="color:#7f8989;">% level three
+</span><span style="color:#b39f04;">\setlist</span><span style="color:#1f1f1f;">[itemize,3]{label=</span><span style="color:#d07711;">$</span><span style="color:#b39f04;">\star</span><span style="color:#d07711;">$</span><span style="color:#1f1f1f;">}
+</span></code></pre>
+<p>Comparing <code>pandoc sample_4.md -f gfm -o sample_4.pdf</code> vs <code>./md2pdf_syn_bullet.sh sample_4.md sample_4_bullet.pdf</code> gives:</p>
+<p><img src="/images/pandoc_pdf/bullet_styling.png" alt="Bullet styling" /></p>
+<br>
+<h2 id="pdf-properties">PDF properties<a class="zola-anchor" href="#pdf-properties" aria-label="Anchor link for: pdf-properties">🔗</a></h2>
+<p>This <a href="https://tex.stackexchange.com/questions/23235/eliminate-edit-pdf-properties-added-by-pdflatex">tex.stackexchange Q&amp;A</a> helped to change metadata. See also <a href="https://pspdfkit.com/blog/2018/whats-hiding-in-your-pdf/">pspdfkit: What’s Hiding in Your PDF?</a> and <a href="https://news.ycombinator.com/item?id=18381515">discussion on HN</a>.</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#72ab00;">\usepackage</span><span style="color:#1f1f1f;">{</span><span style="color:#a2a001;">hyperref</span><span style="color:#1f1f1f;">}
+
+</span><span style="color:#b39f04;">\hypersetup</span><span style="color:#1f1f1f;">{
+  pdftitle={My awesome book},
+  pdfauthor={learnbyexample},
+  pdfsubject={pandoc},
+  pdfkeywords={pandoc,pdf,xelatex}
+}
+</span></code></pre>
+<p><code>./md2pdf_syn_bullet_prop.sh sample_4.md sample_4_bullet_prop.pdf</code> gives:</p>
+<p><img src="/images/pandoc_pdf/pdf_properties.png" alt="PDF properties" /></p>
+<br>
+<h2 id="adding-table-of-contents">Adding table of contents<a class="zola-anchor" href="#adding-table-of-contents" aria-label="Anchor link for: adding-table-of-contents">🔗</a></h2>
+<p>There's a handy option <code>--toc</code> to automatically include table of contents at top of the generated <code>pdf</code>. You can control number of levels using <code>--toc-depth</code> option, the default is 3 levels. You can also change the default string <code>Contents</code> to something else using <code>-V toc-title</code> option.</p>
+<p><code>./md2pdf_syn_bullet_prop_toc.sh sample_1.md sample_1_toc.pdf</code> gives:</p>
+<p><img src="/images/pandoc_pdf/table_of_contents.png" alt="table of contents" /></p>
+<br>
+<h2 id="adding-cover-image">Adding cover image<a class="zola-anchor" href="#adding-cover-image" aria-label="Anchor link for: adding-cover-image">🔗</a></h2>
+<p>To add something prior to table of contents, cover image for example, you can use a <code>tex</code> file and include it verbatim. Create a <code>tex</code> file (named as <code>cover.tex</code> here) with content as shown below:</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#b39f04;">\includegraphics</span><span style="color:#1f1f1f;">{cover.png}
+</span><span style="color:#b39f04;">\thispagestyle</span><span style="color:#1f1f1f;">{empty}
+</span></code></pre>
+<p>Then, modify the previous script <code>md2pdf_syn_bullet_prop_toc.sh</code> by adding <code>--include-before-body cover.tex</code> and tada — you get the cover image before table of contents. <code>\thispagestyle{empty}</code> helps to avoid page number on the cover page, see also <a href="https://tex.stackexchange.com/questions/360739/what-is-the-use-of-clearpage-thispagestyleempty-cleardoublepage">tex.stackexchange: clear page</a>.</p>
+<p>The <code>bash</code> script invocation is now <code>./md2pdf_syn_bullet_prop_toc_cover.sh sample_5.md sample_5.pdf</code>.</p>
+<p><img src="/images/warning.svg" alt="warning" /> You'll need at least one image in input markdown file, otherwise settings won't apply to the cover image and you may end up with weird output. <code>sample_5.md</code> used in the command above includes an image. And be careful to use escapes if the image path can contain <code>tex</code> metacharacters.</p>
+<br>
+<h2 id="stylish-blockquote">Stylish blockquote<a class="zola-anchor" href="#stylish-blockquote" aria-label="Anchor link for: stylish-blockquote">🔗</a></h2>
+<p>By default, blockquotes (lines starting with <code>&gt;</code> in markdown) are just indented in the <code>pdf</code> output. To make them standout, <a href="https://tex.stackexchange.com/questions/154528/how-to-change-the-background-color-and-border-of-a-pandoc-generated-blockquote">tex.stackexchange: change the background color and border of blockquote</a> helped.</p>
+<p>Create <code>quote.tex</code> with the contents as shown below. You can change the colors to suit your own preferred style.</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#72ab00;">\usepackage</span><span style="color:#1f1f1f;">{</span><span style="color:#a2a001;">tcolorbox</span><span style="color:#1f1f1f;">}
+</span><span style="color:#b39f04;">\newtcolorbox</span><span style="color:#1f1f1f;">{myquote}{colback=red!5!white, colframe=red!75!black}
+</span><span style="color:#b39f04;">\renewenvironment</span><span style="color:#1f1f1f;">{quote}{</span><span style="color:#72ab00;">\begin</span><span style="color:#1f1f1f;">{</span><span style="color:#5597d6;">myquote</span><span style="color:#1f1f1f;">}}{</span><span style="color:#72ab00;">\end</span><span style="color:#1f1f1f;">{</span><span style="color:#5597d6;">myquote</span><span style="color:#1f1f1f;">}}
+</span></code></pre>
+<p>The <code>bash</code> script invocation is now <code>./md2pdf_syn_bullet_prop_toc_cover_quote.sh sample_5.md sample_5_quote.pdf</code>. The difference between default and styled blockquote is shown below.</p>
+<p><img src="/images/pandoc_pdf/styled_blockquote.png" alt="styled blockquote" /></p>
+<br>
+<h2 id="customizing-epub">Customizing epub<a class="zola-anchor" href="#customizing-epub" aria-label="Anchor link for: customizing-epub">🔗</a></h2>
+<p>For a long time, I thought <code>epub</code> didn't make sense for programming books. Turned out, I wasn't using the right ebook readers. <strong>FBReader</strong> is good for novels but not ebooks with code snippets. When I used <a href="https://github.com/mate-desktop/atril">atril</a> and <a href="https://calibre-ebook.com/">calibre ebook-viewer</a>, the results were good.</p>
+<p>I didn't know how to use <code>css</code> before trying to generate the <code>epub</code> version. Somehow, I managed to take the default <a href="https://github.com/jgm/pandoc/blob/master/data/epub.css">epub.css</a> provided by <code>pandoc</code> and customize it as close as possible to the <code>pdf</code> version. The modified <code>epub.css</code> is available from the <a href="https://github.com/learnbyexample/learnbyexample.github.io/tree/master/files/pandoc_pdf">learnbyexample.github.io repo</a>. The <code>bash</code> script to generate the <code>epub</code> is shown below and invoked as <code>./md2epub.sh sample_5.md sample_5.epub</code>. Note that <code>pygments.theme</code> is same as the <code>pdf</code> customization discussed before.</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#7f8989;">#!/bin/bash
+
+</span><span style="color:#5597d6;">pandoc  </span><span style="color:#d07711;">&quot;$</span><span style="color:#acb3c2;">1</span><span style="color:#d07711;">&quot; </span><span style="color:#1f1f1f;">\
+</span><span style="color:#5597d6;">        -f</span><span style="color:#1f1f1f;"> gfm \
+</span><span style="color:#5597d6;">        --toc </span><span style="color:#1f1f1f;">\
+</span><span style="color:#5597d6;">        --standalone </span><span style="color:#1f1f1f;">\
+</span><span style="color:#5597d6;">        --top-level-division</span><span style="color:#72ab00;">=</span><span style="color:#1f1f1f;">chapter \
+</span><span style="color:#5597d6;">        --highlight-style</span><span style="color:#1f1f1f;"> pygments.theme \
+</span><span style="color:#5597d6;">        --css</span><span style="color:#1f1f1f;"> epub.css \
+</span><span style="color:#5597d6;">        --metadata</span><span style="color:#72ab00;">=</span><span style="color:#1f1f1f;">title:</span><span style="color:#d07711;">&quot;My awesome book&quot; </span><span style="color:#1f1f1f;">\
+</span><span style="color:#5597d6;">        --metadata</span><span style="color:#72ab00;">=</span><span style="color:#1f1f1f;">author:</span><span style="color:#d07711;">&quot;learnbyexample&quot; </span><span style="color:#1f1f1f;">\
+</span><span style="color:#5597d6;">        --metadata</span><span style="color:#72ab00;">=</span><span style="color:#1f1f1f;">lang:</span><span style="color:#d07711;">&quot;en-US&quot; </span><span style="color:#1f1f1f;">\
+</span><span style="color:#5597d6;">        --metadata</span><span style="color:#72ab00;">=</span><span style="color:#1f1f1f;">cover-image:</span><span style="color:#d07711;">&quot;cover.png&quot; </span><span style="color:#1f1f1f;">\
+</span><span style="color:#5597d6;">        -o </span><span style="color:#d07711;">&quot;$</span><span style="color:#acb3c2;">2</span><span style="color:#d07711;">&quot;
+</span></code></pre><br>
+<h2 id="resource-links">Resource links<a class="zola-anchor" href="#resource-links" aria-label="Anchor link for: resource-links">🔗</a></h2>
+<ul>
+<li><a href="https://pandoc.org/MANUAL.html">pandoc: manual</a></li>
+<li><a href="https://pandoc.org/demos.html">pandoc: demos</a></li>
+<li><a href="https://github.com/jgm/pandoc/wiki/Pandoc-Tricks">pandoc: tips and tricks</a></li>
+</ul>
+<p><strong>More options for generating ebooks</strong>:</p>
+<ul>
+<li><a href="https://github.com/Wandmalfarbe/pandoc-latex-template">pandoc-latex-template</a> — a clean pandoc LaTeX template to convert your markdown files to PDF or LaTeX</li>
+<li><a href="https://asciidoctor.org/docs/what-is-asciidoc/">Asciidoctor</a>
+<ul>
+<li><a href="https://shape-of-code.coding-guidelines.com/2019/08/11/my-books-pdf-generation-workflow/">pdf generation workflow with Asciidoc</a></li>
+</ul>
+</li>
+<li><a href="https://www.sphinx-doc.org/en/stable/index.html">Sphinx</a>
+<ul>
+<li><a href="https://digitalsuperpowers.com/blog/2019-02-16-publishing-ebook.html">Self-publishing a book with reStructuredText, Sphinx, Calibre, and vim</a></li>
+</ul>
+</li>
+<li><a href="https://bookdown.org/home/">Bookdown</a></li>
+<li><a href="https://orgmode.org/">emacs orgmode</a></li>
+<li><a href="https://casual-effects.com/markdeep/">Markdeep</a></li>
+</ul>
+<p><strong>Miscellaneous</strong></p>
+<ul>
+<li><a href="https://nickjanetakis.com/blog/vim-is-saving-me-hours-of-work-when-writing-books-and-courses">Vim is saving me hours of work when writing books &amp; courses</a></li>
+<li><a href="https://joecmarshall.com/posts/book-writing-environment/">Writing a Book with Unix</a></li>
+<li><a href="https://askubuntu.com/questions/3697/how-do-i-install-fonts">askubuntu: How do I install fonts?</a></li>
+<li><a href="https://tex.stackexchange.com/questions/9533/what-best-combination-of-fonts-for-serif-sans-and-mono-do-you-recommend">tex.stackexchange: What best combination of fonts for Serif, Sans, and Mono do you recommend?</a></li>
+<li><a href="http://www.tug.dk/FontCatalogue/">LATEX font catalogue</a></li>
+<li><a href="https://github.com/karthik/markdown_science/wiki/Tools-to-support-your-markdown-authoring">Tools to support markdown authoring</a></li>
+<li><a href="https://picular.co/">picular: search engine for colors</a></li>
+<li><a href="https://ebooks.stackexchange.com/questions?sort=votes">ebooks.stackexchange</a></li>
+</ul>
+
+    </div>
+
+    
+    
+
+    <div class="post-footer">
+        
+            
+                <div class="post-tags">
+                    
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;tutorial&#x2F;">#tutorial</a>
+                    
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;ebook-generation&#x2F;">#ebook-generation</a>
+                    
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;pandoc&#x2F;">#pandoc</a>
+                    
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;xelatex&#x2F;">#xelatex</a>
+                    
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;markdown&#x2F;">#markdown</a>
+                    
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;pdf&#x2F;">#pdf</a>
+                    
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;epub&#x2F;">#epub</a>
+                    
+                </div>
+            
+            
+                <div class="post-nav">
+                    
+                        <a class="previous" href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;javascript-regexp-cheatsheet&#x2F;">‹ JavaScript regular expressions cheatsheet and examples</a>
+                    
+                    
+                        <a class="next" href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;python-intermediate&#x2F;">I know Python basics, what next? ›</a>
+                    
+                    
+                    
+                </div>
+            
+
+        
+
+    </div>
+
+    
+    
+</article>
+
+
+                </div>
+            </main>
+
+            
+            
+        </div>
+
+      
+          <script type="text/javascript" src="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;even.js" ></script>
+      
+    </body>
+
+</html>
