@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+      <title>learnbyexample - Search and replace tricks with ripgrep</title>
+
+      
+        <link rel="alternate" type="application/atom+xml" title="RSS" href="https://learnbyexample.github.io/atom.xml">
+      
+
+      
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
+          
+      
+
+      
+          <link rel="stylesheet" href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;site.css">
+          
+      
+
+      
+      
+    </head>
+
+    <body>
+        <div class="container">
+
+            <div id="mobile-navbar" class="mobile-navbar">
+              <div class="mobile-header-logo">
+                <a href="/" class="logo">learnbyexample</a>
+              </div>
+              <div class="mobile-navbar-icon icon-out">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+
+            <nav id="mobile-menu" class="mobile-menu slideout-menu slideout-menu-left">
+              <ul class="mobile-menu-list">
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io">
+                            Home
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;books">
+                            Books
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags">
+                            Tags
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;about">
+                            About
+                        </a>
+                    </li>
+                
+              </ul>
+            </nav>
+
+            <header id="header">
+                <div class="logo"><a href="https:&#x2F;&#x2F;learnbyexample.github.io">learnbyexample</a></div>
+                <nav class="menu">
+                    <ul>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io">
+                                    Home
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;books">
+                                    Books
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags">
+                                    Tags
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;about">
+                                    About
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </nav>
+            </header>
+
+            <main>
+                <div class="content" id="mobile-panel">
+                    
+
+
+<div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content always-active">
+        <nav id="TableOfContents">
+            <ul>
+                
+                <li>
+                    <a href="https://learnbyexample.github.io/substitution-with-ripgrep/#global-search-and-replace" class="toc-link">Global search and replace</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://learnbyexample.github.io/substitution-with-ripgrep/#matching-nth-occurrence" class="toc-link">Matching Nth occurrence</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://learnbyexample.github.io/substitution-with-ripgrep/#in-place-workaround" class="toc-link">In-place workaround</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://learnbyexample.github.io/substitution-with-ripgrep/#rust-regex-and-pcre2" class="toc-link">Rust regex and PCRE2</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://learnbyexample.github.io/substitution-with-ripgrep/#fixed-string-matching" class="toc-link">Fixed string matching</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://learnbyexample.github.io/substitution-with-ripgrep/#multiline-matching" class="toc-link">Multiline matching</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://learnbyexample.github.io/substitution-with-ripgrep/#handling-dos-style-input" class="toc-link">Handling dos-style input</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://learnbyexample.github.io/substitution-with-ripgrep/#speed-comparison-with-gnu-sed" class="toc-link">Speed comparison with GNU sed</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://learnbyexample.github.io/substitution-with-ripgrep/#other-alternatives-for-sed" class="toc-link">Other alternatives for sed</a>
+                    
+                </li>
+                
+            </ul>
+        </nav>
+    </div>
+</div>
+
+
+<article class="post">
+    
+    <header class="post__header">
+        <h1 class="post__title">
+            <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;substitution-with-ripgrep&#x2F;">Search and replace tricks with ripgrep</a>
+        </h1>
+        <div class="post__meta">
+            <span class="post__time">2020-09-16</span>
+            
+        </div>
+    </header>
+
+    <div class="post-content">
+      <p><a href="https://github.com/BurntSushi/ripgrep">ripgrep</a> (command name <code>rg</code>) is a <code>grep</code> tool, but supports search and replace as well. <code>rg</code> is far from a like-for-like alternate for <code>sed</code>, but it has nifty features like multiline replacement, fixed string matching, <code>PCRE2</code> support, etc. This post gives an overview of syntax for substitution and highlights some of the cases where <code>rg</code> is a handy replacement for <code>sed</code>.</p>
+<span id="continue-reading"></span><br>
+<h2 id="global-search-and-replace">Global search and replace<a class="zola-anchor" href="#global-search-and-replace" aria-label="Anchor link for: global-search-and-replace">🔗</a></h2>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#1f1f1f;">$ cat ip.txt
+dark blue, light blue
+light orange
+blue sky
+
+</span><span style="color:#7f8989;"># by default, line number is displayed if output destination is stdout
+# by default, only lines that matched the given pattern is displayed
+# &#39;blue&#39; is search pattern and -r &#39;red&#39; is replacement string
+</span><span style="color:#1f1f1f;">$ rg </span><span style="color:#d07711;">&#39;blue&#39; </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">r </span><span style="color:#d07711;">&#39;red&#39;</span><span style="color:#1f1f1f;"> ip.txt
+</span><span style="color:#b3933a;">1:dark</span><span style="color:#1f1f1f;"> red, light red
+</span><span style="color:#b3933a;">3:red</span><span style="color:#1f1f1f;"> sky
+
+</span><span style="color:#7f8989;"># --passthru option is useful to print all lines, whether or not it matched
+# -N will disable line number prefix
+# this command is similar to: sed &#39;s/blue/red/g&#39; ip.txt
+</span><span style="color:#1f1f1f;">$ rg </span><span style="color:#72ab00;">--</span><span style="color:#1f1f1f;">passthru </span><span style="color:#72ab00;">-</span><span style="color:#5597d6;">N </span><span style="color:#d07711;">&#39;blue&#39; </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">r </span><span style="color:#d07711;">&#39;red&#39;</span><span style="color:#1f1f1f;"> ip.txt
+dark red, light red
+light orange
+red sky
+</span></code></pre><br>
+<h2 id="matching-nth-occurrence">Matching Nth occurrence<a class="zola-anchor" href="#matching-nth-occurrence" aria-label="Anchor link for: matching-nth-occurrence">🔗</a></h2>
+<p>As seen in previous example, <code>rg</code> will search and replace all occurrences. So, you'll have to be creative with regexp to replace only a specific occurrence per input line.</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#1f1f1f;">$ s=</span><span style="color:#d07711;">&#39;see bat hot at but at go gate at sat at but at&#39;
+
+</span><span style="color:#7f8989;"># replace first occurrence only
+# same as: sed &#39;s/\bat\b/[xyz]/&#39;
+</span><span style="color:#1f1f1f;">$ echo </span><span style="color:#d07711;">&quot;$s&quot; </span><span style="color:#72ab00;">|</span><span style="color:#1f1f1f;"> rg </span><span style="color:#72ab00;">--</span><span style="color:#1f1f1f;">passthru </span><span style="color:#72ab00;">-</span><span style="color:#5597d6;">N </span><span style="color:#d07711;">&#39;\bat\b(.*)&#39; </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">r </span><span style="color:#d07711;">&#39;[xyz]$1&#39;</span><span style="color:#1f1f1f;">
+see bat hot [xyz] but at go gate at sat at but at
+
+</span><span style="color:#7f8989;"># same as: sed &#39;s/\bat\b/[xyz]/3&#39;
+# the number within {} is N-1 to replace Nth occurrence, for N&gt;1
+</span><span style="color:#1f1f1f;">$ echo </span><span style="color:#d07711;">&quot;$s&quot; </span><span style="color:#72ab00;">|</span><span style="color:#1f1f1f;"> rg </span><span style="color:#72ab00;">--</span><span style="color:#1f1f1f;">passthru </span><span style="color:#72ab00;">-</span><span style="color:#5597d6;">N </span><span style="color:#d07711;">&#39;^((.*?\bat\b){2}.*?)\bat\b&#39; </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">r </span><span style="color:#d07711;">&#39;$1[xyz]&#39;</span><span style="color:#1f1f1f;">
+see bat hot at but at go gate [xyz] sat at but at
+
+</span><span style="color:#7f8989;"># replace last but Nth occurrence, for N&gt;=0
+</span><span style="color:#1f1f1f;">$ echo </span><span style="color:#d07711;">&quot;$s&quot; </span><span style="color:#72ab00;">|</span><span style="color:#1f1f1f;"> rg </span><span style="color:#72ab00;">--</span><span style="color:#1f1f1f;">passthru </span><span style="color:#72ab00;">-</span><span style="color:#5597d6;">N </span><span style="color:#d07711;">&#39;^(.*)\bat\b((.*\bat\b){3})&#39; </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">r </span><span style="color:#d07711;">&#39;$1[xyz]$2&#39;</span><span style="color:#1f1f1f;">
+see bat hot at but [xyz] go gate at sat at but at
+</span></code></pre><br>
+<h2 id="in-place-workaround">In-place workaround<a class="zola-anchor" href="#in-place-workaround" aria-label="Anchor link for: in-place-workaround">🔗</a></h2>
+<p><code>rg</code> doesn't support in-place option, so you'll have to do it yourself.</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#7f8989;"># -N isn&#39;t needed here as output destination is a file
+# same as: sed -i &#39;s/blue/red/g&#39; ip.txt
+</span><span style="color:#1f1f1f;">$ rg </span><span style="color:#72ab00;">--</span><span style="color:#1f1f1f;">passthru </span><span style="color:#d07711;">&#39;blue&#39; </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">r </span><span style="color:#d07711;">&#39;red&#39;</span><span style="color:#1f1f1f;"> ip.txt </span><span style="color:#72ab00;">&gt;</span><span style="color:#1f1f1f;"> tmp.txt </span><span style="color:#72ab00;">&amp;&amp;</span><span style="color:#1f1f1f;"> mv tmp.txt ip.txt
+
+$ cat ip.txt
+dark red, light red
+light orange
+red sky
+</span></code></pre><br>
+<h2 id="rust-regex-and-pcre2">Rust regex and PCRE2<a class="zola-anchor" href="#rust-regex-and-pcre2" aria-label="Anchor link for: rust-regex-and-pcre2">🔗</a></h2>
+<p>By default, <code>rg</code> uses Rust regular expressions, which is much more featured compared to <code>GNU sed</code>. The main feature not supported is backreference within regexp definition (for performance reasons). See <a href="https://docs.rs/regex/1.3.9/regex/index.html">Rust regex documentation</a> for regular expression syntax and features. <code>rg</code> supports Unicode by default.</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#7f8989;"># non-greedy quantifier is supported
+</span><span style="color:#1f1f1f;">$ s=</span><span style="color:#d07711;">&#39;food land bark sand band cue combat&#39;</span><span style="color:#1f1f1f;">
+$ echo </span><span style="color:#d07711;">&quot;$s&quot; </span><span style="color:#72ab00;">|</span><span style="color:#1f1f1f;"> rg </span><span style="color:#72ab00;">--</span><span style="color:#1f1f1f;">passthru </span><span style="color:#d07711;">&#39;foo.*?ba&#39; </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">r </span><span style="color:#d07711;">&#39;[xyz]&#39;
+</span><span style="color:#1f1f1f;">[xyz]rk sand band cue combat
+
+</span><span style="color:#7f8989;"># unicode support
+</span><span style="color:#1f1f1f;">$ echo </span><span style="color:#d07711;">&#39;fox:αλεπού,eagle:αετός&#39; </span><span style="color:#72ab00;">|</span><span style="color:#1f1f1f;"> rg </span><span style="color:#72ab00;">--</span><span style="color:#1f1f1f;">passthru </span><span style="color:#d07711;">&#39;\p{L}+&#39; </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">r </span><span style="color:#d07711;">&#39;($0)&#39;
+</span><span style="color:#1f1f1f;">(fox)</span><span style="color:#72ab00;">:</span><span style="color:#1f1f1f;">(αλεπού),(eagle)</span><span style="color:#72ab00;">:</span><span style="color:#1f1f1f;">(αετός)
+
+</span><span style="color:#7f8989;"># set operator example, remove all punctuation characters except . ! and ?
+</span><span style="color:#1f1f1f;">$ para=</span><span style="color:#d07711;">&#39;&quot;hi&quot;, there! how *are* you? all fine here.&#39;</span><span style="color:#1f1f1f;">
+$ echo </span><span style="color:#d07711;">&quot;$para&quot; </span><span style="color:#72ab00;">|</span><span style="color:#1f1f1f;"> rg </span><span style="color:#72ab00;">--</span><span style="color:#1f1f1f;">passthru </span><span style="color:#d07711;">&#39;[[:punct:]--[.!?]]+&#39; </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">r </span><span style="color:#d07711;">&#39;&#39;</span><span style="color:#1f1f1f;">
+hi there! how are you? all fine here.
+</span></code></pre>
+<p>The <code>-P</code> switch will enable <a href="https://www.pcre.org/current/doc/html/index.html">PCRE2</a> flavor, which has even more tricks. You can also use <code>--engine=auto</code> to allow <code>rg</code> to automatically use <code>PCRE2</code> when needed (for example: useful as an alias for <code>rg</code> command so that it gives performance of Rust engine by default and use <code>PCRE2</code> only when needed).</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#7f8989;"># backreference within regexp definition
+</span><span style="color:#1f1f1f;">$ s=</span><span style="color:#d07711;">&#39;cocoa appleseed tool speechless&#39;</span><span style="color:#1f1f1f;">
+$ echo </span><span style="color:#d07711;">&quot;$s&quot; </span><span style="color:#72ab00;">|</span><span style="color:#1f1f1f;"> rg </span><span style="color:#72ab00;">--</span><span style="color:#1f1f1f;">passthru </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">wP </span><span style="color:#d07711;">&#39;([a-z]*([a-z])\2[a-z]*){2}&#39; </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">r </span><span style="color:#d07711;">&#39;{$0}&#39;</span><span style="color:#1f1f1f;">
+cocoa {appleseed} tool {speechless}
+
+</span><span style="color:#7f8989;"># replace all whole words except &#39;imp&#39; and &#39;ant&#39;
+</span><span style="color:#1f1f1f;">$ s=</span><span style="color:#d07711;">&#39;tiger imp goat eagle ant important&#39;</span><span style="color:#1f1f1f;">
+$ echo </span><span style="color:#d07711;">&quot;$s&quot; </span><span style="color:#72ab00;">|</span><span style="color:#1f1f1f;"> rg </span><span style="color:#72ab00;">--</span><span style="color:#1f1f1f;">passthru </span><span style="color:#72ab00;">-</span><span style="color:#5597d6;">P </span><span style="color:#d07711;">&#39;\b(imp|ant)\b(*SKIP)(*F)|\w+&#39; </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">r </span><span style="color:#d07711;">&#39;[$0]&#39;
+</span><span style="color:#1f1f1f;">[tiger] imp [goat] [eagle] ant [important]
+
+</span><span style="color:#7f8989;"># recursively match parentheses
+</span><span style="color:#1f1f1f;">$ eqn=</span><span style="color:#d07711;">&#39;(3+a)x * y((r-2)*(t+2)/6) + z(a(b(c(d(e)))))&#39;</span><span style="color:#1f1f1f;">
+$ echo </span><span style="color:#d07711;">&quot;$eqn&quot; </span><span style="color:#72ab00;">|</span><span style="color:#1f1f1f;"> rg </span><span style="color:#72ab00;">--</span><span style="color:#1f1f1f;">passthru </span><span style="color:#72ab00;">-</span><span style="color:#5597d6;">P </span><span style="color:#d07711;">&#39;\((?:[^()]++|(?0))++\)&#39; </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">r </span><span style="color:#d07711;">&#39;&#39;</span><span style="color:#1f1f1f;">
+x </span><span style="color:#72ab00;">*</span><span style="color:#1f1f1f;"> y </span><span style="color:#72ab00;">+</span><span style="color:#1f1f1f;"> z
+
+$ </span><span style="color:#7f8989;"># all lowercase letters and optional hyphen combo from start of string
+</span><span style="color:#1f1f1f;">$ s=</span><span style="color:#d07711;">&#39;apple-fig-mango guava grape&#39;</span><span style="color:#1f1f1f;">
+$ echo </span><span style="color:#d07711;">&quot;$s&quot; </span><span style="color:#72ab00;">|</span><span style="color:#1f1f1f;"> rg </span><span style="color:#72ab00;">--</span><span style="color:#1f1f1f;">passthru </span><span style="color:#72ab00;">-</span><span style="color:#5597d6;">P </span><span style="color:#d07711;">&#39;\G([a-z]+)(-)?&#39; </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">r </span><span style="color:#d07711;">&#39;($1)$2&#39;
+</span><span style="color:#1f1f1f;">(apple)</span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">(fig)</span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">(mango) guava grape
+</span></code></pre><br>
+<h2 id="fixed-string-matching">Fixed string matching<a class="zola-anchor" href="#fixed-string-matching" aria-label="Anchor link for: fixed-string-matching">🔗</a></h2>
+<p>Like <code>grep</code>, the <code>-F</code> option will allow fixed strings to be matched, a handy option that I feel every search and replace tool should provide.</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#1f1f1f;">$ </span><span style="color:#b39f04;">printf </span><span style="color:#d07711;">&#39;2.3/[4]*6\nfoo\n5.3-[4]*9\n&#39; </span><span style="color:#72ab00;">|</span><span style="color:#1f1f1f;"> rg </span><span style="color:#72ab00;">--</span><span style="color:#1f1f1f;">passthru </span><span style="color:#72ab00;">-</span><span style="color:#5597d6;">F </span><span style="color:#d07711;">&#39;[4]*&#39; </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">r </span><span style="color:#d07711;">&#39;2&#39;
+</span><span style="color:#b3933a;">2.3</span><span style="color:#72ab00;">/</span><span style="color:#b3933a;">26</span><span style="color:#1f1f1f;">
+foo
+</span><span style="color:#b3933a;">5.3</span><span style="color:#72ab00;">-</span><span style="color:#b3933a;">29
+</span></code></pre>
+<p><code>-F</code> doesn't extend to replacement section though, so you need <code>$$</code> instead of <code>$</code> character to represent it literally.</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#1f1f1f;">$ echo </span><span style="color:#d07711;">&#39;a.*{2}-b&#39; </span><span style="color:#72ab00;">|</span><span style="color:#1f1f1f;"> rg </span><span style="color:#72ab00;">--</span><span style="color:#1f1f1f;">passthru </span><span style="color:#72ab00;">-</span><span style="color:#5597d6;">F </span><span style="color:#d07711;">&#39;.*{2}&#39; </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">r </span><span style="color:#d07711;">&#39;+$x&#39;</span><span style="color:#1f1f1f;">
+a</span><span style="color:#72ab00;">+-</span><span style="color:#1f1f1f;">b
+$ echo </span><span style="color:#d07711;">&#39;a.*{2}-b&#39; </span><span style="color:#72ab00;">|</span><span style="color:#1f1f1f;"> rg </span><span style="color:#72ab00;">--</span><span style="color:#1f1f1f;">passthru </span><span style="color:#72ab00;">-</span><span style="color:#5597d6;">F </span><span style="color:#d07711;">&#39;.*{2}&#39; </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">r </span><span style="color:#d07711;">&#39;+$$x&#39;</span><span style="color:#1f1f1f;">
+a</span><span style="color:#72ab00;">+</span><span style="color:#5597d6;">$x</span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">b
+</span></code></pre><br>
+<h2 id="multiline-matching">Multiline matching<a class="zola-anchor" href="#multiline-matching" aria-label="Anchor link for: multiline-matching">🔗</a></h2>
+<p>Another handy option is <code>-U</code> which enables multiline matching.</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#1f1f1f;">$ s=</span><span style="color:#d07711;">&#39;hi there\nhave a nice day\nbye&#39;
+
+</span><span style="color:#7f8989;"># (?s) flag will allow . to match newline characters as well
+</span><span style="color:#1f1f1f;">$ </span><span style="color:#b39f04;">printf </span><span style="color:#d07711;">&#39;</span><span style="color:#aeb52b;">%b</span><span style="color:#d07711;">&#39; &quot;$s&quot; </span><span style="color:#72ab00;">|</span><span style="color:#1f1f1f;"> rg </span><span style="color:#72ab00;">--</span><span style="color:#1f1f1f;">passthru </span><span style="color:#72ab00;">-</span><span style="color:#5597d6;">U </span><span style="color:#d07711;">&#39;(?s)the.*ice&#39; </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">r </span><span style="color:#d07711;">&#39;&#39;</span><span style="color:#1f1f1f;">
+hi  day
+bye
+</span></code></pre><br>
+<h2 id="handling-dos-style-input">Handling dos-style input<a class="zola-anchor" href="#handling-dos-style-input" aria-label="Anchor link for: handling-dos-style-input">🔗</a></h2>
+<p><code>rg</code> provides support for dos-style files with <code>--crlf</code> option.</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#7f8989;"># same as: sed -E &#39;s/\w+(\r?)$/xyz\1/&#39;
+# note that output will retain CR+LF as line ending
+# similar to the sed solution, this will work for unix-style input too
+</span><span style="color:#1f1f1f;">$ </span><span style="color:#b39f04;">printf </span><span style="color:#d07711;">&#39;hi there\r\ngood day\r\n&#39; </span><span style="color:#72ab00;">|</span><span style="color:#1f1f1f;"> rg </span><span style="color:#72ab00;">--</span><span style="color:#1f1f1f;">passthru </span><span style="color:#72ab00;">--</span><span style="color:#1f1f1f;">crlf </span><span style="color:#d07711;">&#39;\w+$&#39; </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">r </span><span style="color:#d07711;">&#39;xyz&#39;</span><span style="color:#1f1f1f;">
+hi xyz
+good xyz
+</span></code></pre><br>
+<h2 id="speed-comparison-with-gnu-sed">Speed comparison with GNU sed<a class="zola-anchor" href="#speed-comparison-with-gnu-sed" aria-label="Anchor link for: speed-comparison-with-gnu-sed">🔗</a></h2>
+<p>Another advantage of <code>rg</code> is that it is likely to be faster than <code>sed</code>. See <a href="https://blog.burntsushi.net/ripgrep/">ripgrep benchmark with other grep implementations</a> by the author for a methodological detailed analysis and insights.</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#7f8989;"># for small files, initial processing time of rg is a large component
+</span><span style="color:#1f1f1f;">$ time echo </span><span style="color:#d07711;">&#39;aba&#39; </span><span style="color:#72ab00;">|</span><span style="color:#1f1f1f;"> sed </span><span style="color:#d07711;">&#39;s/a/b/g&#39; </span><span style="color:#72ab00;">&gt;</span><span style="color:#1f1f1f;"> f1
+real	0m0.002s
+$ time echo </span><span style="color:#d07711;">&#39;aba&#39; </span><span style="color:#72ab00;">|</span><span style="color:#1f1f1f;"> rg </span><span style="color:#72ab00;">--</span><span style="color:#1f1f1f;">passthru </span><span style="color:#d07711;">&#39;a&#39; </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">r </span><span style="color:#d07711;">&#39;b&#39; </span><span style="color:#72ab00;">&gt;</span><span style="color:#1f1f1f;"> f2
+real	0m0.007s
+
+</span><span style="color:#7f8989;"># for larger files, rg is likely to be faster
+# 6.2M sample ASCII file
+</span><span style="color:#1f1f1f;">$ wget </span><span style="color:#d07711;">&#39;https://norvig.com/big.txt&#39;</span><span style="color:#1f1f1f;">
+$ time </span><span style="color:#c23f31;">LC_ALL</span><span style="color:#72ab00;">=</span><span style="color:#5597d6;">C</span><span style="color:#1f1f1f;"> sed </span><span style="color:#d07711;">&#39;s/\bcat\b/dog/g&#39;</span><span style="color:#1f1f1f;"> big.txt </span><span style="color:#72ab00;">&gt;</span><span style="color:#1f1f1f;"> f1
+real	0m0.060s
+$ time rg </span><span style="color:#72ab00;">--</span><span style="color:#1f1f1f;">passthru </span><span style="color:#d07711;">&#39;\bcat\b&#39; </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">r </span><span style="color:#d07711;">&#39;dog&#39;</span><span style="color:#1f1f1f;"> big.txt </span><span style="color:#72ab00;">&gt;</span><span style="color:#1f1f1f;"> f2
+real	0m0.048s
+$ diff </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">s f1 f2
+</span><span style="color:#5597d6;">Files</span><span style="color:#1f1f1f;"> f1 </span><span style="color:#72ab00;">and</span><span style="color:#1f1f1f;"> f2 are identical
+
+</span><span style="color:#7f8989;"># nearly 8 times faster!!
+</span><span style="color:#1f1f1f;">$ time </span><span style="color:#c23f31;">LC_ALL</span><span style="color:#72ab00;">=</span><span style="color:#5597d6;">C</span><span style="color:#1f1f1f;"> sed </span><span style="color:#72ab00;">-</span><span style="color:#5597d6;">E </span><span style="color:#d07711;">&#39;s/\b(\w+)(\s+\1)+\b/\1/g&#39;</span><span style="color:#1f1f1f;"> big.txt </span><span style="color:#72ab00;">&gt;</span><span style="color:#1f1f1f;"> f1
+real	0m0.725s
+$ time rg </span><span style="color:#72ab00;">--</span><span style="color:#1f1f1f;">no</span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">unicode </span><span style="color:#72ab00;">--</span><span style="color:#1f1f1f;">passthru </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">wP </span><span style="color:#d07711;">&#39;(\w+)(\s+\1)+&#39; </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">r </span><span style="color:#d07711;">&#39;$1&#39;</span><span style="color:#1f1f1f;"> big.txt </span><span style="color:#72ab00;">&gt;</span><span style="color:#1f1f1f;"> f2
+real	0m0.093s
+$ diff </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">s f1 f2
+</span><span style="color:#5597d6;">Files</span><span style="color:#1f1f1f;"> f1 </span><span style="color:#72ab00;">and</span><span style="color:#1f1f1f;"> f2 are identical
+</span></code></pre><br>
+<h2 id="other-alternatives-for-sed">Other alternatives for sed<a class="zola-anchor" href="#other-alternatives-for-sed" aria-label="Anchor link for: other-alternatives-for-sed">🔗</a></h2>
+<ul>
+<li><a href="https://unix.stackexchange.com/questions/112023/how-can-i-replace-a-string-in-a-files/251742#251742">rpl</a> — search and replace tool, has interesting options like interactive mode and recursive mode</li>
+<li><a href="https://github.com/chmln/sd">sd</a> — simple search and replace, implemented in Rust</li>
+<li><a href="https://www.perl.org/">perl</a> and <a href="https://www.ruby-lang.org/en/">ruby</a> — programming languages with excellent command line support</li>
+</ul>
+
+    </div>
+
+    
+    
+
+    <div class="post-footer">
+        
+            
+                <div class="post-tags">
+                    
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;ripgrep&#x2F;">#ripgrep</a>
+                    
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;substitution&#x2F;">#substitution</a>
+                    
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;fixed-string&#x2F;">#fixed-string</a>
+                    
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;multiline&#x2F;">#multiline</a>
+                    
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;regular-expressions&#x2F;">#regular-expressions</a>
+                    
+                </div>
+            
+            
+                <div class="post-nav">
+                    
+                        <a class="previous" href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;python-intermediate&#x2F;">‹ I know Python basics, what next?</a>
+                    
+                    
+                    
+                    
+                </div>
+            
+
+        
+
+    </div>
+
+    
+    
+</article>
+
+
+                </div>
+            </main>
+
+            
+            
+        </div>
+
+      
+          <script type="text/javascript" src="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;even.js" ></script>
+      
+    </body>
+
+</html>

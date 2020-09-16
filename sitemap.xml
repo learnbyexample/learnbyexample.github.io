@@ -52,6 +52,10 @@
         <lastmod>2020-07-03</lastmod>
     </url>
     <url>
+        <loc>https://learnbyexample.github.io/substitution-with-ripgrep/</loc>
+        <lastmod>2020-09-16</lastmod>
+    </url>
+    <url>
         <loc>https://learnbyexample.github.io/tags/</loc>
     </url>
     <url>
@@ -85,6 +89,9 @@
         <loc>https://learnbyexample.github.io/tags/examples/</loc>
     </url>
     <url>
+        <loc>https://learnbyexample.github.io/tags/fixed-string/</loc>
+    </url>
+    <url>
         <loc>https://learnbyexample.github.io/tags/gnu-grep/</loc>
     </url>
     <url>
@@ -104,6 +111,9 @@
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tags/maths/</loc>
+    </url>
+    <url>
+        <loc>https://learnbyexample.github.io/tags/multiline/</loc>
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tags/pandoc/</loc>
@@ -128,6 +138,9 @@
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tags/shell-scripting/</loc>
+    </url>
+    <url>
+        <loc>https://learnbyexample.github.io/tags/substitution/</loc>
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tags/tutorial/</loc>
