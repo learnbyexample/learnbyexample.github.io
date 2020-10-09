@@ -222,7 +222,7 @@
 <p><img src="/images/info.svg" alt="info" /> <code>pandoc</code> has its own flavor of <code>markdown</code> with many useful extensions — see <a href="https://pandoc.org/MANUAL.html#pandocs-markdown">pandoc: pandocs-markdown</a> for details. GitHub style markdown is recommended if you wish to use the same source (or with minor changes) in multiple places.</p>
 <p><img src="/images/info.svg" alt="info" /> It is advised to use <code>markdown</code> headers in order without skipping — for example, <code>H1</code> for chapter heading and <code>H2</code> for chapter sub-section, etc is fine. <code>H1</code> for chapter heading and <code>H3</code> for sub-section is not. Using the former can give automatic index navigation on ebook readers.</p>
 <p>On <a href="https://wiki.gnome.org/Apps/Evince">Evince</a> reader, the index navigation for above sample looks like this:</p>
-<p><img src="/images/pandoc_pdf/chapter_index.png" alt="Chapter Index" /></p>
+<p align="center"><img src="/images/pandoc_pdf/chapter_index.png" alt="index navigation" /></p>
 <br>
 <h2 id="chapter-breaks">Chapter breaks<a class="zola-anchor" href="#chapter-breaks" aria-label="Anchor link for: chapter-breaks">🔗</a></h2>
 <p>As observed from previous demo, by default there are no chapter breaks. Searching for a <a href="https://superuser.com/questions/601469/getting-chapters-to-start-on-a-new-page-in-a-pandoc-generated-pdf">solution online</a>, I got this piece of <code>tex</code> code:</p>
@@ -365,7 +365,7 @@ no VAL is specified, the key will be given the value true.</p>
 }
 </span></code></pre>
 <p><code>./md2pdf_syn_bullet_prop.sh sample_4.md sample_4_bullet_prop.pdf</code> gives:</p>
-<p><img src="/images/pandoc_pdf/pdf_properties.png" alt="PDF properties" /></p>
+<p align="center"><img src="/images/pandoc_pdf/pdf_properties.png" alt="pdf properties" /></p>
 <br>
 <h2 id="adding-table-of-contents">Adding table of contents<a class="zola-anchor" href="#adding-table-of-contents" aria-label="Anchor link for: adding-table-of-contents">🔗</a></h2>
 <p>There's a handy option <code>--toc</code> to automatically include table of contents at top of the generated <code>pdf</code>. You can control number of levels using <code>--toc-depth</code> option, the default is 3 levels. You can also change the default string <code>Contents</code> to something else using <code>-V toc-title</code> option.</p>
@@ -391,7 +391,7 @@ no VAL is specified, the key will be given the value true.</p>
 </span><span style="color:#b39f04;">\renewenvironment</span><span style="color:#1f1f1f;">{quote}{</span><span style="color:#72ab00;">\begin</span><span style="color:#1f1f1f;">{</span><span style="color:#5597d6;">myquote</span><span style="color:#1f1f1f;">}}{</span><span style="color:#72ab00;">\end</span><span style="color:#1f1f1f;">{</span><span style="color:#5597d6;">myquote</span><span style="color:#1f1f1f;">}}
 </span></code></pre>
 <p>The <code>bash</code> script invocation is now <code>./md2pdf_syn_bullet_prop_toc_cover_quote.sh sample_5.md sample_5_quote.pdf</code>. The difference between default and styled blockquote is shown below.</p>
-<p><img src="/images/pandoc_pdf/styled_blockquote.png" alt="styled blockquote" /></p>
+<p align="center"><img src="/images/pandoc_pdf/styled_blockquote.png" alt="styling blockquotes" /></p>
 <br>
 <h2 id="customizing-epub">Customizing epub<a class="zola-anchor" href="#customizing-epub" aria-label="Anchor link for: customizing-epub">🔗</a></h2>
 <p>For a long time, I thought <code>epub</code> didn't make sense for programming books. Turned out, I wasn't using the right ebook readers. <strong>FBReader</strong> is good for novels but not ebooks with code snippets. When I used <a href="https://github.com/mate-desktop/atril">atril</a> and <a href="https://calibre-ebook.com/">calibre ebook-viewer</a>, the results were good.</p>
@@ -418,9 +418,11 @@ no VAL is specified, the key will be given the value true.</p>
 <li><a href="https://pandoc.org/demos.html">pandoc: demos</a></li>
 <li><a href="https://github.com/jgm/pandoc/wiki/Pandoc-Tricks">pandoc: tips and tricks</a></li>
 </ul>
-<p><strong>More options for generating ebooks</strong>:</p>
+<p><strong>More options and workflows for generating ebooks</strong>:</p>
 <ul>
 <li><a href="https://github.com/Wandmalfarbe/pandoc-latex-template">pandoc-latex-template</a> — a clean pandoc LaTeX template to convert your markdown files to PDF or LaTeX</li>
+<li><a href="https://keleshev.com/my-book-writing-setup/">Writing a book with pandoc, make, and vim</a></li>
+<li><a href="https://jupyterbook.org/intro.html">Jupyter Book</a> — open source project for building beautiful, publication-quality books and documents from computational material</li>
 <li><a href="https://asciidoctor.org/docs/what-is-asciidoc/">Asciidoctor</a>
 <ul>
 <li><a href="https://shape-of-code.coding-guidelines.com/2019/08/11/my-books-pdf-generation-workflow/">pdf generation workflow with Asciidoc</a></li>
@@ -443,7 +445,7 @@ no VAL is specified, the key will be given the value true.</p>
 <li><a href="https://tex.stackexchange.com/questions/9533/what-best-combination-of-fonts-for-serif-sans-and-mono-do-you-recommend">tex.stackexchange: What best combination of fonts for Serif, Sans, and Mono do you recommend?</a></li>
 <li><a href="http://www.tug.dk/FontCatalogue/">LATEX font catalogue</a></li>
 <li><a href="https://github.com/karthik/markdown_science/wiki/Tools-to-support-your-markdown-authoring">Tools to support markdown authoring</a></li>
-<li><a href="https://picular.co/">picular: search engine for colors</a></li>
+<li><a href="https://picular.co/">picular: search engine for colors</a> and <a href="https://www.colorhexa.com/">colorhexa</a></li>
 <li><a href="https://ebooks.stackexchange.com/questions?sort=votes">ebooks.stackexchange</a></li>
 </ul>
 
