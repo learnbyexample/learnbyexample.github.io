@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+      <title>learnbyexample - Emulating regexp lookarounds in GNU sed</title>
+
+      
+        <link rel="alternate" type="application/atom+xml" title="RSS" href="https://learnbyexample.github.io/atom.xml">
+      
+
+      
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
+          
+      
+
+      
+          <link rel="stylesheet" href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;site.css">
+          
+      
+
+      
+      
+<link rel="icon" href="https://learnbyexample.github.io/favicon.svg">
+<link rel="shortcut icon" href="https://learnbyexample.github.io/favicon.png">
+    </head>
+
+    <body>
+        <div class="container">
+
+            <div id="mobile-navbar" class="mobile-navbar">
+              <div class="mobile-header-logo">
+                <a href="/" class="logo">learnbyexample</a>
+              </div>
+              <div class="mobile-navbar-icon icon-out">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+
+            <nav id="mobile-menu" class="mobile-menu slideout-menu slideout-menu-left">
+              <ul class="mobile-menu-list">
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io">
+                            Home
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;books">
+                            Books
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags">
+                            Tags
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;about">
+                            About
+                        </a>
+                    </li>
+                
+              </ul>
+            </nav>
+
+            <header id="header">
+                <div class="logo"><a href="https:&#x2F;&#x2F;learnbyexample.github.io">learnbyexample</a></div>
+                <nav class="menu">
+                    <ul>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io">
+                                    Home
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;books">
+                                    Books
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags">
+                                    Tags
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;about">
+                                    About
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </nav>
+            </header>
+
+            <main>
+                <div class="content" id="mobile-panel">
+                    
+
+
+<div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content always-active">
+        <nav id="TableOfContents">
+            <ul>
+                
+                <li>
+                    <a href="https://learnbyexample.github.io/sed-lookarounds/#filtering" class="toc-link">Filtering</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://learnbyexample.github.io/sed-lookarounds/#substitution" class="toc-link">Substitution</a>
+                    
+                    <ul>
+                        
+                        <li>
+                            <a href="https://learnbyexample.github.io/sed-lookarounds/#negative-lookarounds" class="toc-link">Negative lookarounds</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://learnbyexample.github.io/sed-lookarounds/#positive-lookarounds" class="toc-link">Positive lookarounds</a>
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://learnbyexample.github.io/sed-lookarounds/#summary" class="toc-link">Summary</a>
+                    
+                </li>
+                
+            </ul>
+        </nav>
+    </div>
+</div>
+
+
+<article class="post">
+    
+    <header class="post__header">
+        <h1 class="post__title">
+            <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;sed-lookarounds&#x2F;">Emulating regexp lookarounds in GNU sed</a>
+        </h1>
+        <div class="post__meta">
+            <span class="post__time">2020-10-31</span>
+            
+        </div>
+    </header>
+
+    <div class="post-content">
+      <p>This <a href="https://stackoverflow.com/q/64371281/4082052">stackoverflow Q&amp;A</a> got me thinking about various ways to construct a solution in <code>GNU sed</code> if lookarounds are needed.</p>
+<blockquote>
+<p><img src="/images/info.svg" alt="info" /> Only single line (with newline as the line separator) processing is presented here. Equivalent lookaround syntax with <code>grep -P</code> or <code>perl</code> is also shown for comparison. Cases where multiple lines and/or ASCII NUL characters are present in the pattern space is left as an exercise.</p>
+</blockquote>
+<span id="continue-reading"></span><br>
+<h2 id="filtering">Filtering<a class="zola-anchor" href="#filtering" aria-label="Anchor link for: filtering">🔗</a></h2>
+<p>Here, you only need to decide whether the input line has to be matched or not. <code>sed</code> supports grouping commands inside <code>{}</code> that should be executed only if a filtering condition is matched. The condition could be negated by adding a <code>!</code> character. In this way, you can emulate chaining of multiple positive and/or negative lookaround conditions.</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#1f1f1f;">$ cat items.txt
+</span><span style="color:#b3933a;">1</span><span style="color:#1f1f1f;">,</span><span style="color:#b3933a;">2</span><span style="color:#1f1f1f;">,</span><span style="color:#b3933a;">3</span><span style="color:#1f1f1f;">,</span><span style="color:#b3933a;">4</span><span style="color:#1f1f1f;">
+apple=</span><span style="color:#b3933a;">50 </span><span style="color:#1f1f1f;">;per kg
+a,b,c,d
+;foo xyz3
+
+</span><span style="color:#7f8989;"># filter lines containing a digit character followed by a ; character
+# lookaround isn&#39;t needed here
+# same as: grep &#39;[0-9].*;&#39; or grep -P &#39;\d(?=.*;)&#39;
+</span><span style="color:#1f1f1f;">$ sed </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">n </span><span style="color:#d07711;">&#39;/[0-9].*;/p&#39;</span><span style="color:#1f1f1f;"> items.txt
+apple=</span><span style="color:#b3933a;">50 </span><span style="color:#1f1f1f;">;per kg
+
+</span><span style="color:#7f8989;"># filter lines containing both digit and ; characters in any order
+# same as: grep -P &#39;^(?=.*;).*\d&#39;
+</span><span style="color:#1f1f1f;">$ sed </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">n </span><span style="color:#d07711;">&#39;/;/{ /[0-9]/p }&#39;</span><span style="color:#1f1f1f;"> items.txt
+apple=</span><span style="color:#b3933a;">50 </span><span style="color:#1f1f1f;">;per kg
+;foo xyz3
+
+</span><span style="color:#7f8989;"># filter lines containing both digit and ; characters
+# but not if the line also contains character a
+# same as: grep -P &#39;^(?!.*a)(?=.*;).*\d&#39;
+</span><span style="color:#1f1f1f;">$ sed </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">n </span><span style="color:#d07711;">&#39;/a/!{ /;/{ /[0-9]/p } }&#39;</span><span style="color:#1f1f1f;"> items.txt
+;foo xyz3
+</span></code></pre>
+<p>For some cases, multiple condition check like the previous examples is not enough. For example, filter a line if it contains <code>par</code> as long as <code>cart</code> isn't present later in the line. Presence of <code>cart</code> earlier in the line shouldn't affect the outcome. In such cases, you can first change the input line to add a newline character wherever <code>cart</code> is present and then construct a condition such that it depends on the newline character instead of <code>cart</code>. If a match is found, delete all the newline characters and then print the line.</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#1f1f1f;">$ s=</span><span style="color:#d07711;">&#39;par carted spare cart park city&#39;
+
+</span><span style="color:#7f8989;"># same as: grep -P &#39;par(?!.*cart)&#39;
+</span><span style="color:#1f1f1f;">$ echo </span><span style="color:#d07711;">&quot;$s&quot; </span><span style="color:#72ab00;">|</span><span style="color:#1f1f1f;"> sed </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">n </span><span style="color:#d07711;">&#39;s/cart/\n&amp;/g; /par[^\n]*$/{ s/\n//g; p }&#39;</span><span style="color:#1f1f1f;">
+par carted spare cart park city
+</span></code></pre>
+<blockquote>
+<p><img src="/images/info.svg" alt="info" /> Newline is a safe character to choose for default line by line processing, as <code>sed</code> removes it from the pattern space. If you are processing a pattern space that contains newline character (for example: <code>-z</code> option, <code>N</code> command, etc), then you can still perform this trick as long as you know a character that is guaranteed to be absent from the input data. </p>
+</blockquote>
+<h2 id="substitution">Substitution<a class="zola-anchor" href="#substitution" aria-label="Anchor link for: substitution">🔗</a></h2>
+<p>In previous section, you saw how to modify input line with newline character to make it easier to construct a lookaround condition. This trick comes in handy for substitution as well. However, for search and replace cases, you also need to emulate zero-width nature of lookarounds. To achieve this, you can make use of <code>t</code> command to construct a loop that performs substitution as long as a match is found. See my chapter on <a href="https://learnbyexample.github.io/learn_gnused/control-structures.html">Control structures</a> for more details about branching commands in <code>GNU sed</code>.</p>
+<p>Here's an example of looping. Aim is to delete <code>fin</code> from the given input recursively.</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#7f8989;"># manual repetition, assuming count is known
+</span><span style="color:#1f1f1f;">$ echo </span><span style="color:#d07711;">&#39;coffining&#39; </span><span style="color:#72ab00;">|</span><span style="color:#1f1f1f;"> sed </span><span style="color:#d07711;">&#39;s/fin//&#39;</span><span style="color:#1f1f1f;">
+cofing
+$ echo </span><span style="color:#d07711;">&#39;coffining&#39; </span><span style="color:#72ab00;">|</span><span style="color:#1f1f1f;"> sed </span><span style="color:#d07711;">&#39;s/fin//; s///&#39;</span><span style="color:#1f1f1f;">
+cog
+
+</span><span style="color:#7f8989;"># :loop marks the &#39;s&#39; command with label &#39;loop&#39;
+# tloop will jump to label &#39;loop&#39; as long as the substitution succeeds
+</span><span style="color:#1f1f1f;">$ echo </span><span style="color:#d07711;">&#39;coffining&#39; </span><span style="color:#72ab00;">|</span><span style="color:#1f1f1f;"> sed </span><span style="color:#d07711;">&#39;:loop s/fin//; tloop&#39;</span><span style="color:#1f1f1f;">
+cog
+</span></code></pre><h3 id="negative-lookarounds">Negative lookarounds<a class="zola-anchor" href="#negative-lookarounds" aria-label="Anchor link for: negative-lookarounds">🔗</a></h3>
+<p>Some cases can be solved by performing substitution only if a condition is first satisfied. Note that <code>{}</code> grouping is optional here.</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#7f8989;"># same as: perl -ne &#39;print if s/^(?!;).*?\K[ ,].*//&#39;
+</span><span style="color:#1f1f1f;">$ sed </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">n </span><span style="color:#d07711;">&#39;/^;/! s/[ ,].*//p&#39;</span><span style="color:#1f1f1f;"> items.txt
+</span><span style="color:#b3933a;">1</span><span style="color:#1f1f1f;">
+apple=</span><span style="color:#b3933a;">50</span><span style="color:#1f1f1f;">
+a
+</span></code></pre>
+<p>Change <code>foo</code> to <code>[baz]</code> only if it is not followed by a digit character. Note that <code>foo</code> at the end of string also satisfies this assertion. <code>foofoo</code> has two matches as the assertion is zero-width in nature, i.e. it doesn't consume characters. Here, the first step is inserting a newline character between <code>foo</code> and a digit character. Then change all <code>foo</code> to <code>[baz]</code> as long as it is at the end of string or if it isn't followed by a newline character. Once the loop ends, remove all the newline characters.</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#1f1f1f;">$ s=</span><span style="color:#d07711;">&#39;hey food! foo42 foot5 foofoo&#39;
+
+</span><span style="color:#7f8989;"># same as: perl -pe &#39;s/foo(?!\d)/[baz]/g&#39;
+</span><span style="color:#1f1f1f;">$ echo </span><span style="color:#d07711;">&quot;$s&quot; </span><span style="color:#72ab00;">|</span><span style="color:#1f1f1f;"> sed </span><span style="color:#72ab00;">-</span><span style="color:#5597d6;">E </span><span style="color:#d07711;">&#39;s/(foo)([0-9])/\1\n\2/g;
+                      :a s/foo([^\n]|$)/[baz]\1/; ta;
+                      s/\n//g&#39;</span><span style="color:#1f1f1f;">
+hey [baz]d! foo42 [baz]t5 [baz][baz]
+</span></code></pre>
+<p>Change <code>foo</code> to <code>[baz]</code> only if it is not preceded by <code>_</code> character. <code>foo</code> at the start of string is matched as well.</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#1f1f1f;">$ s=</span><span style="color:#d07711;">&#39;foo _foo 42foofoo&#39;
+
+</span><span style="color:#7f8989;"># same as: perl -pe &#39;s/(?&lt;!_)foo/[baz]/g&#39;
+</span><span style="color:#1f1f1f;">$ echo </span><span style="color:#d07711;">&quot;$s&quot; </span><span style="color:#72ab00;">|</span><span style="color:#1f1f1f;"> sed </span><span style="color:#72ab00;">-</span><span style="color:#5597d6;">E </span><span style="color:#d07711;">&#39;s/(_)(foo)/\1\n\2/g;
+                      :a s/(^|[^\n])foo/\1[baz]/; ta;
+                      s/\n//g&#39;
+</span><span style="color:#1f1f1f;">[baz] _foo </span><span style="color:#b3933a;">42</span><span style="color:#1f1f1f;">[baz][baz]
+</span></code></pre>
+<p>Replace <code>par</code> with <code>[xyz]</code> as long as <code>s</code> character is not present later in the input. This assumes that the assertion doesn't conflict with the search pattern, for example <code>s</code> will not conflict with <code>par</code> but would affect if it was <code>r</code> and <code>par</code>.</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#1f1f1f;">$ s=</span><span style="color:#d07711;">&#39;par spare part party&#39;
+
+</span><span style="color:#7f8989;"># same as: perl -pe &#39;s/par(?!.*s)/[xyz]/g&#39;
+</span><span style="color:#1f1f1f;">$ echo </span><span style="color:#d07711;">&quot;$s&quot; </span><span style="color:#72ab00;">|</span><span style="color:#1f1f1f;"> sed </span><span style="color:#72ab00;">-</span><span style="color:#5597d6;">E </span><span style="color:#d07711;">&#39;s/s/&amp;\n/g;
+                      :a s/par([^\n]*)$/[xyz]\1/; ta;
+                      s/\n//g&#39;</span><span style="color:#1f1f1f;">
+par s[xyz]e [xyz]t [xyz]ty
+</span></code></pre>
+<p>Replace all empty fields with <code>NA</code> for csv input (assuming no embedded comma, newline characters, etc).</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#1f1f1f;">$ s=</span><span style="color:#d07711;">&#39;,1,,,two,3,,,&#39;
+
+</span><span style="color:#7f8989;"># same as: perl -lpe &#39;s/(?&lt;![^,])(?![^,])/NA/g&#39;
+</span><span style="color:#1f1f1f;">$ echo </span><span style="color:#d07711;">&quot;$s&quot; </span><span style="color:#72ab00;">|</span><span style="color:#1f1f1f;"> sed </span><span style="color:#72ab00;">-</span><span style="color:#5597d6;">E </span><span style="color:#d07711;">&#39;:a s/,,/,NA,/g; ta; s/^,/NA,/; s/,$/,NA/&#39;
+</span><span style="color:#5597d6;">NA</span><span style="color:#1f1f1f;">,</span><span style="color:#b3933a;">1</span><span style="color:#1f1f1f;">,</span><span style="color:#5597d6;">NA</span><span style="color:#1f1f1f;">,</span><span style="color:#5597d6;">NA</span><span style="color:#1f1f1f;">,two,</span><span style="color:#b3933a;">3</span><span style="color:#1f1f1f;">,</span><span style="color:#5597d6;">NA</span><span style="color:#1f1f1f;">,</span><span style="color:#5597d6;">NA</span><span style="color:#1f1f1f;">,</span><span style="color:#5597d6;">NA
+</span></code></pre>
+<p>Replace if <code>go</code> is not there between <code>at</code> and <code>par</code>.</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#1f1f1f;">$ s=</span><span style="color:#d07711;">&#39;fox,cat,dog,parrot,dot,park,go,spare&#39;
+
+</span><span style="color:#7f8989;"># same as: perl -pe &#39;s/at((?!go).)*par/[xyz]/&#39;
+</span><span style="color:#1f1f1f;">$ echo </span><span style="color:#d07711;">&quot;$s&quot; </span><span style="color:#72ab00;">|</span><span style="color:#1f1f1f;"> sed </span><span style="color:#d07711;">&#39;s/go/\n&amp;/g; s/at[^\n]*par/[xyz]/; s/\n//g&#39;</span><span style="color:#1f1f1f;">
+fox,c[xyz]k,go,spare
+</span></code></pre><h3 id="positive-lookarounds">Positive lookarounds<a class="zola-anchor" href="#positive-lookarounds" aria-label="Anchor link for: positive-lookarounds">🔗</a></h3>
+<p>Surround fields with <code>[]</code> except first and last fields for csv input (assuming no embedded comma, newline characters, etc). With positive lookaround emulation, the modified string may continue to satisfy the matching condition, resulting in infinite looping. In this example, the fields themselves may contain <code>[]</code> characters, so you cannot use them to prevent infinite loop. The newline character trick comes in handy again.</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#1f1f1f;">$ s=</span><span style="color:#d07711;">&#39;1,t[w]o,[3],f[ou]r,5&#39;
+
+</span><span style="color:#7f8989;"># same as: perl -pe &#39;s/(?&lt;=,)[^,]+(?=,)/[$&amp;]/g&#39;
+</span><span style="color:#1f1f1f;">$ echo </span><span style="color:#d07711;">&quot;$s&quot; </span><span style="color:#72ab00;">|</span><span style="color:#1f1f1f;"> sed </span><span style="color:#72ab00;">-</span><span style="color:#5597d6;">E </span><span style="color:#d07711;">&#39;:a s/,([^,\n]+),/,\n[\1],/g; ta; s/\n//g&#39;
+</span><span style="color:#b3933a;">1</span><span style="color:#1f1f1f;">,[t[w]o],[[</span><span style="color:#b3933a;">3</span><span style="color:#1f1f1f;">]],[f[ou]r],</span><span style="color:#b3933a;">5
+</span></code></pre>
+<p>Add space at word boundaries, but not at the start or end of string. Also, don't add space if it is already present. Here, negated character class on space character is enough to emulate the assertion.</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#1f1f1f;">$ s=</span><span style="color:#d07711;">&#39;total= num1+35*42/num2&#39;
+
+</span><span style="color:#7f8989;"># same as: perl -lpe &#39;s/(?&lt;=[^ ])\b(?=[^ ])/ /g&#39;
+</span><span style="color:#1f1f1f;">$ echo </span><span style="color:#d07711;">&quot;$s&quot; </span><span style="color:#72ab00;">|</span><span style="color:#1f1f1f;"> sed </span><span style="color:#72ab00;">-</span><span style="color:#5597d6;">E </span><span style="color:#d07711;">&#39;:a s/([^ ])\b([^ ])/\1 \2/; ta;&#39;</span><span style="color:#1f1f1f;">
+total </span><span style="color:#72ab00;">=</span><span style="color:#1f1f1f;"> num1 </span><span style="color:#72ab00;">+ </span><span style="color:#b3933a;">35 </span><span style="color:#72ab00;">* </span><span style="color:#b3933a;">42 </span><span style="color:#72ab00;">/</span><span style="color:#1f1f1f;"> num2
+</span></code></pre>
+<p>Replace <code>par</code> with <code>[xyz]</code> as long as <code>part</code> occurs as a whole word later in the line. Here, the nature of the modified string itself prevents the possibility of infinite loop.</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#1f1f1f;">$ s=</span><span style="color:#d07711;">&#39;par spare part party&#39;
+
+</span><span style="color:#7f8989;"># same as: perl -pe &#39;s/par(?=.*\bpart\b)/[xyz]/g&#39;
+</span><span style="color:#1f1f1f;">$ echo </span><span style="color:#d07711;">&quot;$s&quot; </span><span style="color:#72ab00;">|</span><span style="color:#1f1f1f;"> sed </span><span style="color:#72ab00;">-</span><span style="color:#5597d6;">E </span><span style="color:#d07711;">&#39;:a s/par(.*\bpart\b)/[xyz]\1/; ta&#39;
+</span><span style="color:#1f1f1f;">[xyz] s[xyz]e part party
+</span></code></pre><h2 id="summary">Summary<a class="zola-anchor" href="#summary" aria-label="Anchor link for: summary">🔗</a></h2>
+<p>Branching commands and some creative preprocessing of the input can be combined to emulate lookaround assertions in <code>sed</code>. Given that <a href="https://catonmat.net/proof-that-sed-is-turing-complete">Unix utility sed is Turing complete</a>, it's perhaps not a big surprise. Now, please excuse me, I'll be busy reaping points on stackoverflow/unix.stackexchange for this edge case ;)</p>
+
+    </div>
+
+    
+    
+
+    <div class="post-footer">
+        
+            
+                <div class="post-tags">
+                    
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;lookarounds&#x2F;">#lookarounds</a>
+                    
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;regular-expressions&#x2F;">#regular-expressions</a>
+                    
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;sed&#x2F;">#sed</a>
+                    
+                </div>
+            
+            
+                <div class="post-nav">
+                    
+                        <a class="previous" href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;substitution-with-ripgrep&#x2F;">‹ Search and replace tricks with ripgrep</a>
+                    
+                    
+                    
+                    
+                </div>
+            
+
+        
+
+    </div>
+
+    
+    
+</article>
+
+
+                </div>
+            </main>
+
+            
+            
+        </div>
+
+      
+          <script type="text/javascript" src="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;even.js" ></script>
+      
+    </body>
+
+</html>

@@ -32,6 +32,9 @@
         <loc>https://learnbyexample.github.io/page/2/</loc>
     </url>
     <url>
+        <loc>https://learnbyexample.github.io/page/3/</loc>
+    </url>
+    <url>
         <loc>https://learnbyexample.github.io/python-for-maths/</loc>
         <lastmod>2019-03-22</lastmod>
     </url>
@@ -50,6 +53,10 @@
     <url>
         <loc>https://learnbyexample.github.io/python-regex-cheatsheet/</loc>
         <lastmod>2020-07-03</lastmod>
+    </url>
+    <url>
+        <loc>https://learnbyexample.github.io/sed-lookarounds/</loc>
+        <lastmod>2020-10-31</lastmod>
     </url>
     <url>
         <loc>https://learnbyexample.github.io/substitution-with-ripgrep/</loc>
@@ -107,6 +114,9 @@
         <loc>https://learnbyexample.github.io/tags/linux/</loc>
     </url>
     <url>
+        <loc>https://learnbyexample.github.io/tags/lookarounds/</loc>
+    </url>
+    <url>
         <loc>https://learnbyexample.github.io/tags/markdown/</loc>
     </url>
     <url>
@@ -135,6 +145,9 @@
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tags/ripgrep/</loc>
+    </url>
+    <url>
+        <loc>https://learnbyexample.github.io/tags/sed/</loc>
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tags/shell-scripting/</loc>

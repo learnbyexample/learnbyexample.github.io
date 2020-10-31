@@ -5,8 +5,153 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2020-09-16T00:00:00+00:00</updated>
+	<updated>2020-10-31T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Emulating regexp lookarounds in GNU sed</title>
+		<published>2020-10-31T00:00:00+00:00</published>
+		<updated>2020-10-31T00:00:00+00:00</updated>
+		<link href="https://learnbyexample.github.io/sed-lookarounds/" type="text/html"/>
+		<id>https://learnbyexample.github.io/sed-lookarounds/</id>
+		<content type="html">&lt;p&gt;This &lt;a href=&quot;https:&#x2F;&#x2F;stackoverflow.com&#x2F;q&#x2F;64371281&#x2F;4082052&quot;&gt;stackoverflow Q&amp;amp;A&lt;&#x2F;a&gt; got me thinking about various ways to construct a solution in &lt;code&gt;GNU sed&lt;&#x2F;code&gt; if lookarounds are needed.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; Only single line (with newline as the line separator) processing is presented here. Equivalent lookaround syntax with &lt;code&gt;grep -P&lt;&#x2F;code&gt; or &lt;code&gt;perl&lt;&#x2F;code&gt; is also shown for comparison. Cases where multiple lines and&#x2F;or ASCII NUL characters are present in the pattern space is left as an exercise.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;&lt;br&gt;
+&lt;h2 id=&quot;filtering&quot;&gt;Filtering&lt;a class=&quot;zola-anchor&quot; href=&quot;#filtering&quot; aria-label=&quot;Anchor link for: filtering&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Here, you only need to decide whether the input line has to be matched or not. &lt;code&gt;sed&lt;&#x2F;code&gt; supports grouping commands inside &lt;code&gt;{}&lt;&#x2F;code&gt; that should be executed only if a filtering condition is matched. The condition could be negated by adding a &lt;code&gt;!&lt;&#x2F;code&gt; character. In this way, you can emulate chaining of multiple positive and&#x2F;or negative lookaround conditions.&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ cat items.txt
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;2&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;3&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;4&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
+apple=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;50 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;;per kg
+a,b,c,d
+;foo xyz3
+
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# filter lines containing a digit character followed by a ; character
+# lookaround isn&amp;#39;t needed here
+# same as: grep &amp;#39;[0-9].*;&amp;#39; or grep -P &amp;#39;\d(?=.*;)&amp;#39;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;n &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&#x2F;[0-9].*;&#x2F;p&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; items.txt
+apple=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;50 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;;per kg
+
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# filter lines containing both digit and ; characters in any order
+# same as: grep -P &amp;#39;^(?=.*;).*\d&amp;#39;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;n &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&#x2F;;&#x2F;{ &#x2F;[0-9]&#x2F;p }&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; items.txt
+apple=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;50 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;;per kg
+;foo xyz3
+
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# filter lines containing both digit and ; characters
+# but not if the line also contains character a
+# same as: grep -P &amp;#39;^(?!.*a)(?=.*;).*\d&amp;#39;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;n &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&#x2F;a&#x2F;!{ &#x2F;;&#x2F;{ &#x2F;[0-9]&#x2F;p } }&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; items.txt
+;foo xyz3
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;For some cases, multiple condition check like the previous examples is not enough. For example, filter a line if it contains &lt;code&gt;par&lt;&#x2F;code&gt; as long as &lt;code&gt;cart&lt;&#x2F;code&gt; isn&#x27;t present later in the line. Presence of &lt;code&gt;cart&lt;&#x2F;code&gt; earlier in the line shouldn&#x27;t affect the outcome. In such cases, you can first change the input line to add a newline character wherever &lt;code&gt;cart&lt;&#x2F;code&gt; is present and then construct a condition such that it depends on the newline character instead of &lt;code&gt;cart&lt;&#x2F;code&gt;. If a match is found, delete all the newline characters and then print the line.&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ s=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;par carted spare cart park city&amp;#39;
+
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# same as: grep -P &amp;#39;par(?!.*cart)&amp;#39;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot;$s&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;n &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;s&#x2F;cart&#x2F;\n&amp;amp;&#x2F;g; &#x2F;par[^\n]*$&#x2F;{ s&#x2F;\n&#x2F;&#x2F;g; p }&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
+par carted spare cart park city
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; Newline is a safe character to choose for default line by line processing, as &lt;code&gt;sed&lt;&#x2F;code&gt; removes it from the pattern space. If you are processing a pattern space that contains newline character (for example: &lt;code&gt;-z&lt;&#x2F;code&gt; option, &lt;code&gt;N&lt;&#x2F;code&gt; command, etc), then you can still perform this trick as long as you know a character that is guaranteed to be absent from the input data. &lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;h2 id=&quot;substitution&quot;&gt;Substitution&lt;a class=&quot;zola-anchor&quot; href=&quot;#substitution&quot; aria-label=&quot;Anchor link for: substitution&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;In previous section, you saw how to modify input line with newline character to make it easier to construct a lookaround condition. This trick comes in handy for substitution as well. However, for search and replace cases, you also need to emulate zero-width nature of lookarounds. To achieve this, you can make use of &lt;code&gt;t&lt;&#x2F;code&gt; command to construct a loop that performs substitution as long as a match is found. See my chapter on &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;learn_gnused&#x2F;control-structures.html&quot;&gt;Control structures&lt;&#x2F;a&gt; for more details about branching commands in &lt;code&gt;GNU sed&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Here&#x27;s an example of looping. Aim is to delete &lt;code&gt;fin&lt;&#x2F;code&gt; from the given input recursively.&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# manual repetition, assuming count is known
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;coffining&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;s&#x2F;fin&#x2F;&#x2F;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
+cofing
+$ echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;coffining&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;s&#x2F;fin&#x2F;&#x2F;; s&#x2F;&#x2F;&#x2F;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
+cog
+
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# :loop marks the &amp;#39;s&amp;#39; command with label &amp;#39;loop&amp;#39;
+# tloop will jump to label &amp;#39;loop&amp;#39; as long as the substitution succeeds
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;coffining&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;:loop s&#x2F;fin&#x2F;&#x2F;; tloop&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
+cog
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;h3 id=&quot;negative-lookarounds&quot;&gt;Negative lookarounds&lt;a class=&quot;zola-anchor&quot; href=&quot;#negative-lookarounds&quot; aria-label=&quot;Anchor link for: negative-lookarounds&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;Some cases can be solved by performing substitution only if a condition is first satisfied. Note that &lt;code&gt;{}&lt;&#x2F;code&gt; grouping is optional here.&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# same as: perl -ne &amp;#39;print if s&#x2F;^(?!;).*?\K[ ,].*&#x2F;&#x2F;&amp;#39;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;n &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&#x2F;^;&#x2F;! s&#x2F;[ ,].*&#x2F;&#x2F;p&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; items.txt
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
+apple=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;50&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
+a
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Change &lt;code&gt;foo&lt;&#x2F;code&gt; to &lt;code&gt;[baz]&lt;&#x2F;code&gt; only if it is not followed by a digit character. Note that &lt;code&gt;foo&lt;&#x2F;code&gt; at the end of string also satisfies this assertion. &lt;code&gt;foofoo&lt;&#x2F;code&gt; has two matches as the assertion is zero-width in nature, i.e. it doesn&#x27;t consume characters. Here, the first step is inserting a newline character between &lt;code&gt;foo&lt;&#x2F;code&gt; and a digit character. Then change all &lt;code&gt;foo&lt;&#x2F;code&gt; to &lt;code&gt;[baz]&lt;&#x2F;code&gt; as long as it is at the end of string or if it isn&#x27;t followed by a newline character. Once the loop ends, remove all the newline characters.&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ s=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;hey food! foo42 foot5 foofoo&amp;#39;
+
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# same as: perl -pe &amp;#39;s&#x2F;foo(?!\d)&#x2F;[baz]&#x2F;g&amp;#39;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot;$s&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;E &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;s&#x2F;(foo)([0-9])&#x2F;\1\n\2&#x2F;g;
+                      :a s&#x2F;foo([^\n]|$)&#x2F;[baz]\1&#x2F;; ta;
+                      s&#x2F;\n&#x2F;&#x2F;g&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
+hey [baz]d! foo42 [baz]t5 [baz][baz]
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Change &lt;code&gt;foo&lt;&#x2F;code&gt; to &lt;code&gt;[baz]&lt;&#x2F;code&gt; only if it is not preceded by &lt;code&gt;_&lt;&#x2F;code&gt; character. &lt;code&gt;foo&lt;&#x2F;code&gt; at the start of string is matched as well.&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ s=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;foo _foo 42foofoo&amp;#39;
+
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# same as: perl -pe &amp;#39;s&#x2F;(?&amp;lt;!_)foo&#x2F;[baz]&#x2F;g&amp;#39;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot;$s&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;E &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;s&#x2F;(_)(foo)&#x2F;\1\n\2&#x2F;g;
+                      :a s&#x2F;(^|[^\n])foo&#x2F;\1[baz]&#x2F;; ta;
+                      s&#x2F;\n&#x2F;&#x2F;g&amp;#39;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;[baz] _foo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;42&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;[baz][baz]
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Replace &lt;code&gt;par&lt;&#x2F;code&gt; with &lt;code&gt;[xyz]&lt;&#x2F;code&gt; as long as &lt;code&gt;s&lt;&#x2F;code&gt; character is not present later in the input. This assumes that the assertion doesn&#x27;t conflict with the search pattern, for example &lt;code&gt;s&lt;&#x2F;code&gt; will not conflict with &lt;code&gt;par&lt;&#x2F;code&gt; but would affect if it was &lt;code&gt;r&lt;&#x2F;code&gt; and &lt;code&gt;par&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ s=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;par spare part party&amp;#39;
+
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# same as: perl -pe &amp;#39;s&#x2F;par(?!.*s)&#x2F;[xyz]&#x2F;g&amp;#39;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot;$s&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;E &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;s&#x2F;s&#x2F;&amp;amp;\n&#x2F;g;
+                      :a s&#x2F;par([^\n]*)$&#x2F;[xyz]\1&#x2F;; ta;
+                      s&#x2F;\n&#x2F;&#x2F;g&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
+par s[xyz]e [xyz]t [xyz]ty
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Replace all empty fields with &lt;code&gt;NA&lt;&#x2F;code&gt; for csv input (assuming no embedded comma, newline characters, etc).&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ s=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;,1,,,two,3,,,&amp;#39;
+
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# same as: perl -lpe &amp;#39;s&#x2F;(?&amp;lt;![^,])(?![^,])&#x2F;NA&#x2F;g&amp;#39;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot;$s&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;E &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;:a s&#x2F;,,&#x2F;,NA,&#x2F;g; ta; s&#x2F;^,&#x2F;NA,&#x2F;; s&#x2F;,$&#x2F;,NA&#x2F;&amp;#39;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;NA&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;NA&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;NA&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;,two,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;3&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;NA&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;NA&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;NA
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Replace if &lt;code&gt;go&lt;&#x2F;code&gt; is not there between &lt;code&gt;at&lt;&#x2F;code&gt; and &lt;code&gt;par&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ s=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;fox,cat,dog,parrot,dot,park,go,spare&amp;#39;
+
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# same as: perl -pe &amp;#39;s&#x2F;at((?!go).)*par&#x2F;[xyz]&#x2F;&amp;#39;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot;$s&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;s&#x2F;go&#x2F;\n&amp;amp;&#x2F;g; s&#x2F;at[^\n]*par&#x2F;[xyz]&#x2F;; s&#x2F;\n&#x2F;&#x2F;g&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
+fox,c[xyz]k,go,spare
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;h3 id=&quot;positive-lookarounds&quot;&gt;Positive lookarounds&lt;a class=&quot;zola-anchor&quot; href=&quot;#positive-lookarounds&quot; aria-label=&quot;Anchor link for: positive-lookarounds&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;Surround fields with &lt;code&gt;[]&lt;&#x2F;code&gt; except first and last fields for csv input (assuming no embedded comma, newline characters, etc). With positive lookaround emulation, the modified string may continue to satisfy the matching condition, resulting in infinite looping. In this example, the fields themselves may contain &lt;code&gt;[]&lt;&#x2F;code&gt; characters, so you cannot use them to prevent infinite loop. The newline character trick comes in handy again.&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ s=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;1,t[w]o,[3],f[ou]r,5&amp;#39;
+
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# same as: perl -pe &amp;#39;s&#x2F;(?&amp;lt;=,)[^,]+(?=,)&#x2F;[$&amp;amp;]&#x2F;g&amp;#39;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot;$s&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;E &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;:a s&#x2F;,([^,\n]+),&#x2F;,\n[\1],&#x2F;g; ta; s&#x2F;\n&#x2F;&#x2F;g&amp;#39;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;,[t[w]o],[[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;3&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;]],[f[ou]r],&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;5
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Add space at word boundaries, but not at the start or end of string. Also, don&#x27;t add space if it is already present. Here, negated character class on space character is enough to emulate the assertion.&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ s=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;total= num1+35*42&#x2F;num2&amp;#39;
+
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# same as: perl -lpe &amp;#39;s&#x2F;(?&amp;lt;=[^ ])\b(?=[^ ])&#x2F; &#x2F;g&amp;#39;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot;$s&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;E &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;:a s&#x2F;([^ ])\b([^ ])&#x2F;\1 \2&#x2F;; ta;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
+total &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; num1 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;+ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;35 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;* &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;42 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; num2
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Replace &lt;code&gt;par&lt;&#x2F;code&gt; with &lt;code&gt;[xyz]&lt;&#x2F;code&gt; as long as &lt;code&gt;part&lt;&#x2F;code&gt; occurs as a whole word later in the line. Here, the nature of the modified string itself prevents the possibility of infinite loop.&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ s=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;par spare part party&amp;#39;
+
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# same as: perl -pe &amp;#39;s&#x2F;par(?=.*\bpart\b)&#x2F;[xyz]&#x2F;g&amp;#39;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot;$s&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;E &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;:a s&#x2F;par(.*\bpart\b)&#x2F;[xyz]\1&#x2F;; ta&amp;#39;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;[xyz] s[xyz]e part party
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;h2 id=&quot;summary&quot;&gt;Summary&lt;a class=&quot;zola-anchor&quot; href=&quot;#summary&quot; aria-label=&quot;Anchor link for: summary&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Branching commands and some creative preprocessing of the input can be combined to emulate lookaround assertions in &lt;code&gt;sed&lt;&#x2F;code&gt;. Given that &lt;a href=&quot;https:&#x2F;&#x2F;catonmat.net&#x2F;proof-that-sed-is-turing-complete&quot;&gt;Unix utility sed is Turing complete&lt;&#x2F;a&gt;, it&#x27;s perhaps not a big surprise. Now, please excuse me, I&#x27;ll be busy reaping points on stackoverflow&#x2F;unix.stackexchange for this edge case ;)&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>Search and replace tricks with ripgrep</title>
 		<published>2020-09-16T00:00:00+00:00</published>
