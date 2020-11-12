@@ -5,7 +5,7 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2020-10-31T00:00:00+00:00</updated>
+	<updated>2020-11-12T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
 	<entry xml:lang="en">
 		<title>Emulating regexp lookarounds in GNU sed</title>
@@ -338,11 +338,12 @@ $ diff &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F
 	<entry xml:lang="en">
 		<title>I know Python basics, what next?</title>
 		<published>2020-07-25T00:00:00+00:00</published>
-		<updated>2020-07-25T00:00:00+00:00</updated>
+		<updated>2020-11-12T00:00:00+00:00</updated>
 		<link href="https://learnbyexample.github.io/python-intermediate/" type="text/html"/>
 		<id>https://learnbyexample.github.io/python-intermediate/</id>
 		<content type="html">&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;what_next.png&quot; alt=&quot;what next&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 &lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;&lt;br&gt;
+&lt;h2 id=&quot;next-step&quot;&gt;Next step&lt;a class=&quot;zola-anchor&quot; href=&quot;#next-step&quot; aria-label=&quot;Anchor link for: next-step&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
 &lt;p&gt;What to learn next is an often asked question. &lt;a href=&quot;https:&#x2F;&#x2F;www.reddit.com&#x2F;r&#x2F;learnpython&#x2F;search?q=what+next&amp;amp;restrict_sr=on&quot;&gt;Searching for &lt;code&gt;what next&lt;&#x2F;code&gt; on &#x2F;r&#x2F;learnpython&lt;&#x2F;a&gt; gives you too many results. Here&#x27;s some more Q&amp;amp;A and articles on this topic:&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.devdungeon.com&#x2F;content&#x2F;i-know-how-program-i-dont-know-what-program&quot;&gt;I know how to program, but I don&#x27;t know what to program&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
@@ -389,7 +390,13 @@ $ diff &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F
 &lt;p&gt;Another crucial aspect in the programming journey is knowing how to write tests. In bigger projects, usually there are separate engineers (often in much larger number than code developers) to test the code. Even in those cases, writing a few sanity test cases yourself can help you develop faster knowing that the changes aren&#x27;t breaking basic functionality.&lt;&#x2F;p&gt;
 &lt;p&gt;There&#x27;s no single consensus on test methodologies. There is &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Unit_testing&quot;&gt;Unit testing&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Integration_testing&quot;&gt;Integration testing&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Test-driven_development&quot;&gt;Test-driven development&lt;&#x2F;a&gt; and so on. Often, a combination of these is used. These days, machine learning is also being considered to reduce the testing time, see &lt;a href=&quot;https:&#x2F;&#x2F;hacks.mozilla.org&#x2F;2020&#x2F;07&#x2F;testing-firefox-more-efficiently-with-machine-learning&#x2F;&quot;&gt;Testing Firefox more efficiently with machine learning&lt;&#x2F;a&gt; for example.&lt;&#x2F;p&gt;
 &lt;p&gt;When I start a project, I usually try to write the programs incrementally. Say I need to iterate over files from a directory. I will make sure that portion is working (usually with &lt;code&gt;print&lt;&#x2F;code&gt; statements), then add another feature — say file reading and test that and so on. This reduces the burden of testing a large program at once at the end. And depending upon the nature of the program, I&#x27;ll add a few sanity tests at the end. For example, for my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;command_help&quot;&gt;command_help&lt;&#x2F;a&gt; project, I copy pasted a few test runs of the program with different options and arguments into a separate file and wrote a program to perform these tests programmatically whenever the source code is modified.&lt;&#x2F;p&gt;
-&lt;p&gt;For non-trivial projects, you&#x27;ll usually end up needing frameworks like built-in module &lt;code&gt;unittest&lt;&#x2F;code&gt; or third-party modules like &lt;code&gt;pytest&lt;&#x2F;code&gt;. See &lt;a href=&quot;https:&#x2F;&#x2F;realpython.com&#x2F;python-testing&#x2F;&quot;&gt;Getting started with testing in Python&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;calmcode.io&#x2F;pytest&#x2F;introduction.html&quot;&gt;calmcode: pytest&lt;&#x2F;a&gt; for discussion on these topics.&lt;&#x2F;p&gt;
+&lt;p&gt;For non-trivial projects, you&#x27;ll usually end up needing frameworks like built-in module &lt;code&gt;unittest&lt;&#x2F;code&gt; or third-party modules like &lt;code&gt;pytest&lt;&#x2F;code&gt;. Here&#x27;s some learning resources.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;realpython.com&#x2F;python-testing&#x2F;&quot;&gt;Getting started with testing in Python&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;calmcode.io&#x2F;pytest&#x2F;introduction.html&quot;&gt;calmcode: pytest&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.obeythetestinggoat.com&#x2F;&quot;&gt;obeythetestinggoat&lt;&#x2F;a&gt; — TDD for the Web, with Python, Selenium, Django, JavaScript and pals&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;testdriven.io&#x2F;blog&#x2F;modern-tdd&#x2F;&quot;&gt;Modern Test-Driven Development in Python&lt;&#x2F;a&gt; — TDD guide, has a real world application example&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
 &lt;br&gt;
 &lt;h2 id=&quot;intermediate-python-resources&quot;&gt;Intermediate Python resources&lt;a class=&quot;zola-anchor&quot; href=&quot;#intermediate-python-resources&quot; aria-label=&quot;Anchor link for: intermediate-python-resources&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
 &lt;ul&gt;
@@ -404,6 +411,7 @@ $ diff &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F
 &lt;&#x2F;ul&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;nostarch.com&#x2F;seriouspython&quot;&gt;Serious Python&lt;&#x2F;a&gt; — deployment, scalability, testing, and more&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.manning.com&#x2F;books&#x2F;practices-of-the-python-pro&quot;&gt;Practices of the Python Pro&lt;&#x2F;a&gt; — learn to design professional-level, clean, easily maintainable software at scale, includes examples for software development best practices&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;pythonprogramming.net&#x2F;&quot;&gt;Pythonprogramming&lt;&#x2F;a&gt; — domain based topics like machine learning, game development, data analysis, web development, etc&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;user&#x2F;schafer5&#x2F;playlists&quot;&gt;Youtube: Corey Schafer&lt;&#x2F;a&gt; — various topics for beginners to advanced users&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
@@ -420,6 +428,7 @@ $ diff &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;ehmatthes.github.io&#x2F;pcc_2e&#x2F;cheat_sheets&#x2F;cheat_sheets&#x2F;&quot;&gt;Python Crash Course cheatsheet&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;gto76.github.io&#x2F;python-cheatsheet&#x2F;&quot;&gt;Comprehensive Python cheatsheet&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;ipgp.github.io&#x2F;scientific_python_cheat_sheet&#x2F;&quot;&gt;Scientific Python cheatsheet&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;pythonforbiologists.com&#x2F;29-common-beginner-errors-on-one-page&#x2F;&quot;&gt;Common beginner errors&lt;&#x2F;a&gt; — use the pdf link&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;br&gt;
 &lt;h2 id=&quot;more-python-resources&quot;&gt;More Python resources&lt;a class=&quot;zola-anchor&quot; href=&quot;#more-python-resources&quot; aria-label=&quot;Anchor link for: more-python-resources&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
@@ -431,7 +440,7 @@ $ diff &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F
 	<entry xml:lang="en">
 		<title>Customizing pandoc to generate beautiful pdf and epub from markdown</title>
 		<published>2020-07-21T00:00:00+00:00</published>
-		<updated>2020-07-21T00:00:00+00:00</updated>
+		<updated>2020-10-09T00:00:00+00:00</updated>
 		<link href="https://learnbyexample.github.io/customizing-pandoc/" type="text/html"/>
 		<id>https://learnbyexample.github.io/customizing-pandoc/</id>
 		<content type="html">&lt;p&gt;Either you&#x27;ve already heard of &lt;code&gt;pandoc&lt;&#x2F;code&gt; or if you have searched online for &lt;code&gt;markdown&lt;&#x2F;code&gt; to &lt;code&gt;pdf&lt;&#x2F;code&gt; or similar, you are sure to come across &lt;code&gt;pandoc&lt;&#x2F;code&gt;. This tutorial will help you use &lt;code&gt;pandoc&lt;&#x2F;code&gt; to generate &lt;code&gt;pdf&lt;&#x2F;code&gt; and &lt;code&gt;epub&lt;&#x2F;code&gt; from a &lt;a href=&quot;https:&#x2F;&#x2F;github.github.com&#x2F;gfm&#x2F;&quot;&gt;GitHub style markdown&lt;&#x2F;a&gt; file. The main motivation for this blog post is to highlight what customizations I did to generate &lt;code&gt;pdf&lt;&#x2F;code&gt; and &lt;code&gt;epub&lt;&#x2F;code&gt; versions for &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;books&#x2F;&quot;&gt;self-publishing my ebooks&lt;&#x2F;a&gt;. It wasn&#x27;t easy to arrive at the set-up I ended up with, so I hope this will be useful for those looking to use &lt;code&gt;pandoc&lt;&#x2F;code&gt; to generate &lt;code&gt;pdf&lt;&#x2F;code&gt; and &lt;code&gt;epub&lt;&#x2F;code&gt; formats. This guide is specifically aimed at technical books that has code snippets.&lt;&#x2F;p&gt;
@@ -691,10 +700,10 @@ no VAL is specified, the key will be given the value true.&lt;&#x2F;p&gt;
 	<entry xml:lang="en">
 		<title>JavaScript regular expressions cheatsheet and examples</title>
 		<published>2020-07-20T00:00:00+00:00</published>
-		<updated>2020-07-20T00:00:00+00:00</updated>
+		<updated>2020-11-12T00:00:00+00:00</updated>
 		<link href="https://learnbyexample.github.io/javascript-regexp-cheatsheet/" type="text/html"/>
 		<id>https://learnbyexample.github.io/javascript-regexp-cheatsheet/</id>
-		<content type="html">&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;books&#x2F;pyregex_example.png&quot; alt=&quot;regexp example&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+		<content type="html">&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;books&#x2F;js_regexp_example.png&quot; alt=&quot;regexp example&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 &lt;p&gt;&lt;em&gt;Above diagram created using &lt;a href=&quot;https:&#x2F;&#x2F;jex.im&#x2F;regulex&quot;&gt;Regulex&lt;&#x2F;a&gt;&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
 &lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;&lt;br&gt;
 &lt;p&gt;This blog post gives an overview of regular expression syntax and features supported by JavaScript. Examples have been tested on Chrome&#x2F;Chromium console (version 81+) and includes features not available in other browsers and platforms. Assume ASCII character set unless otherwise specified. This post is an excerpt from my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;learn_js_regexp&quot;&gt;JavaScript RegExp&lt;&#x2F;a&gt; book.&lt;&#x2F;p&gt;
@@ -1063,17 +1072,17 @@ no VAL is specified, the key will be given the value true.&lt;&#x2F;p&gt;
 &lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;books&#x2F;regulex.png&quot; alt=&quot;regulex example&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;javascript-regexp-book&quot;&gt;JavaScript RegExp book&lt;a class=&quot;zola-anchor&quot; href=&quot;#javascript-regexp-book&quot; aria-label=&quot;Anchor link for: javascript-regexp-book&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
 &lt;p&gt;Visit my repo &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;learn_js_regexp&quot;&gt;learn_js_regexp&lt;&#x2F;a&gt; for details about the book I wrote on JavaScript regular expressions. The ebook uses plenty of examples to explain the concepts from the basics and includes &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;learn_js_regexp&#x2F;blob&#x2F;master&#x2F;Exercises.md&quot;&gt;exercises&lt;&#x2F;a&gt; to test your understanding. The cheatsheet and examples presented in this post are based on contents of this book.&lt;&#x2F;p&gt;
-&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;books&#x2F;js_regexp.png&quot; alt=&quot;JavaScript cover image&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;books&#x2F;js_regexp.png&quot; alt=&quot;JavaScript regexp book cover image&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 </content>
 	</entry>
 	<entry xml:lang="en">
 		<title>Python regular expression cheatsheet and examples</title>
 		<published>2020-07-03T00:00:00+00:00</published>
-		<updated>2020-07-03T00:00:00+00:00</updated>
+		<updated>2020-11-12T00:00:00+00:00</updated>
 		<link href="https://learnbyexample.github.io/python-regex-cheatsheet/" type="text/html"/>
 		<id>https://learnbyexample.github.io/python-regex-cheatsheet/</id>
-		<content type="html">&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;books&#x2F;pyregex_example.png&quot; alt=&quot;pyregex example&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
-&lt;p&gt;&lt;em&gt;Above diagram created using &lt;a href=&quot;https:&#x2F;&#x2F;jex.im&#x2F;regulex&quot;&gt;Regulex&lt;&#x2F;a&gt;&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+		<content type="html">&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;books&#x2F;pyregex_example.png&quot; alt=&quot;pyregex example&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;em&gt;Above visualization is a screenshot created using&lt;&#x2F;em&gt; &lt;a href=&quot;https:&#x2F;&#x2F;www.debuggex.com&quot;&gt;debuggex&lt;&#x2F;a&gt; &lt;em&gt;for the pattern&lt;&#x2F;em&gt; &lt;code&gt;r&#x27;\bpar(en|ro)?t\b&#x27;&lt;&#x2F;code&gt;&lt;&#x2F;p&gt;
 &lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;&lt;br&gt;
 &lt;p&gt;From &lt;a href=&quot;https:&#x2F;&#x2F;docs.python.org&#x2F;3&#x2F;library&#x2F;re.html&quot;&gt;docs.python: re&lt;&#x2F;a&gt;:&lt;&#x2F;p&gt;
 &lt;blockquote&gt;
@@ -1176,7 +1185,9 @@ no VAL is specified, the key will be given the value true.&lt;&#x2F;p&gt;
 &lt;tr&gt;&lt;td&gt;&lt;code&gt;groupdict&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;method applied on a &lt;code&gt;re.Match&lt;&#x2F;code&gt; object&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
 &lt;tr&gt;&lt;td&gt;&lt;&#x2F;td&gt;&lt;td&gt;gives named capture group portions as a &lt;code&gt;dict&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
 &lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
-&lt;p&gt;&lt;code&gt;\0&lt;&#x2F;code&gt; and &lt;code&gt;\100&lt;&#x2F;code&gt; onwards are considered as octal values, hence cannot be used as backreferences.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; &lt;code&gt;\0&lt;&#x2F;code&gt; and &lt;code&gt;\100&lt;&#x2F;code&gt; onwards are considered as octal values, hence cannot be used as backreferences.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
 &lt;h2 id=&quot;re-module-functions&quot;&gt;re module functions&lt;a class=&quot;zola-anchor&quot; href=&quot;#re-module-functions&quot; aria-label=&quot;Anchor link for: re-module-functions&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
 &lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Function&lt;&#x2F;th&gt;&lt;th&gt;Description&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
 &lt;tr&gt;&lt;td&gt;&lt;code&gt;re.search&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;Check if given pattern is present anywhere in input string&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
@@ -1453,7 +1464,7 @@ mission success
 &lt;h2 id=&quot;python-re-gex-book&quot;&gt;Python re(gex)? book&lt;a class=&quot;zola-anchor&quot; href=&quot;#python-re-gex-book&quot; aria-label=&quot;Anchor link for: python-re-gex-book&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
 &lt;p&gt;Visit my repo &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;py_regular_expressions&quot;&gt;Python re(gex)?&lt;&#x2F;a&gt; for details about the book I wrote on Python regular expressions. The ebook uses plenty of examples to explain the concepts from the very beginning and step by step introduces more advanced concepts. The book also covers the &lt;a href=&quot;https:&#x2F;&#x2F;pypi.org&#x2F;project&#x2F;regex&#x2F;&quot;&gt;third party module regex&lt;&#x2F;a&gt;. The cheatsheet and examples presented in this post are based on contents of this book.&lt;&#x2F;p&gt;
 &lt;p&gt;Use &lt;a href=&quot;https:&#x2F;&#x2F;leanpub.com&#x2F;py_regex&#x2F;c&#x2F;P7erPYAm1386&quot;&gt;this leanpub link&lt;&#x2F;a&gt; for a discounted price.&lt;&#x2F;p&gt;
-&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;books&#x2F;pyregex.png&quot; alt=&quot;pyregex cover image&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;books&#x2F;pyregex.png&quot; alt=&quot;Python regex book cover image&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 </content>
 	</entry>
 	<entry xml:lang="en">
