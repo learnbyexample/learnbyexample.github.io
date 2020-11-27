@@ -5,8 +5,268 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2020-11-12T00:00:00+00:00</updated>
+	<updated>2020-11-27T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Multiline fixed string search and replace with cli tools</title>
+		<published>2020-11-27T00:00:00+00:00</published>
+		<updated>2020-11-27T00:00:00+00:00</updated>
+		<link href="https://learnbyexample.github.io/multiline-search-and-replace/" type="text/html"/>
+		<id>https://learnbyexample.github.io/multiline-search-and-replace/</id>
+		<content type="html">&lt;p&gt;This post shows how you can use &lt;code&gt;ripgrep&lt;&#x2F;code&gt; and &lt;code&gt;perl&lt;&#x2F;code&gt; to perform multiline fixed string search and replace operations from the command line. Solution with &lt;code&gt;GNU sed&lt;&#x2F;code&gt; is also discussed, along with its limitations.&lt;&#x2F;p&gt;
+&lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;&lt;br&gt;
+&lt;h2 id=&quot;fixed-string-matching&quot;&gt;Fixed string matching&lt;a class=&quot;zola-anchor&quot; href=&quot;#fixed-string-matching&quot; aria-label=&quot;Anchor link for: fixed-string-matching&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;The below sample input file will be used in the examples in this post.&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ cat ip.txt
+This is a multiline
+sample input with lots
+of special characters
+like . () * [] $ {}
+^ + ? \ and &amp;#39; and so on.
+This post shows how
+you can do fixed
+-string multiline
+search with cli tools.
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;h3 id=&quot;ripgrep&quot;&gt;ripgrep&lt;a class=&quot;zola-anchor&quot; href=&quot;#ripgrep&quot; aria-label=&quot;Anchor link for: ripgrep&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;BurntSushi&#x2F;ripgrep&quot;&gt;ripgrep&lt;&#x2F;a&gt; supports &lt;code&gt;-U&lt;&#x2F;code&gt; option to allow multiline matching. Use &lt;code&gt;-F&lt;&#x2F;code&gt; option to turn off regexp matching, i.e. treat the search string literally. In &lt;code&gt;bash&lt;&#x2F;code&gt; shell (and likely most other shells), you can press enter key to insert literal newline character for quoted values. When you do so, the next line starts with &lt;code&gt;&amp;gt;&lt;&#x2F;code&gt; and a space character. This isn&#x27;t shown in the examples below to make it easier to copy-paste the commands.&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ rg -UF &amp;#39;like . () * [] $ {}
+^ + ? \ and&amp;#39; ip.txt
+4:like . () * [] $ {}
+5:^ + ? \ and &amp;#39; and so on.
+
+# -l option shows only filename instead of all the matching lines
+$ rg -lUF &amp;#39;like . () * [] $ {}
+^ + ? \ and&amp;#39; ip.txt
+ip.txt
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;You&#x27;ll have an issue if your search string itself contains single quote characters. Avoid using double quotes as a workaround, as that has its own set of special characters. You can work around by concatenating multiple strings next to each other, along with escaped single quote characters as needed.&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;# -N option disables line number prefix
+$ rg -NUF &amp;#39;like . () * [] $ {}
+^ + ? \ and &amp;#39;\&amp;#39;&amp;#39; and&amp;#39; ip.txt
+like . () * [] $ {}
+^ + ? \ and &amp;#39; and so on.
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;If your search string starts with &lt;code&gt;-&lt;&#x2F;code&gt; character, you&#x27;ll have to use &lt;code&gt;--&lt;&#x2F;code&gt; before the search argument.&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ rg -NUF -- &amp;#39;-string multiline
+search&amp;#39; ip.txt
+-string multiline
+search with cli tools.
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;h3 id=&quot;perl&quot;&gt;perl&lt;a class=&quot;zola-anchor&quot; href=&quot;#perl&quot; aria-label=&quot;Anchor link for: perl&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;You can use &lt;code&gt;-0777&lt;&#x2F;code&gt; option with &lt;code&gt;perl&lt;&#x2F;code&gt; to slurp the entire input as a single string. Another advantage with &lt;code&gt;perl&lt;&#x2F;code&gt; is that you can use files to pass the search and replace strings. Thus, you don&#x27;t have to worry about any character that may clash with shell metacharacters. See my &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;learn_perl_oneliners&#x2F;&quot;&gt;Perl one-liners cookbook&lt;&#x2F;a&gt; if you are not familiar with using &lt;code&gt;perl&lt;&#x2F;code&gt; from the command line.&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ cat search_1.txt
+like . () * [] $ {}
+^ + ? \ and &amp;#39; and so on.
+
+# display filename if the given search string matches
+$ perl -0777 -nE &amp;#39;!$#ARGV ? $s=$_ :
+                  &#x2F;\Q$s&#x2F; &amp;amp;&amp;amp; say $ARGV&amp;#39; search_1.txt ip.txt
+ip.txt
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;However, you&#x27;ll have to make sure the file doesn&#x27;t end with a newline if you are providing partial lines for searching, or take care of it within the &lt;code&gt;perl&lt;&#x2F;code&gt; script.&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ cat search_2.txt
+-string multiline
+search
+
+# no output because there&amp;#39;s a newline at the end of search_2.txt file
+$ perl -0777 -nE &amp;#39;!$#ARGV ? $s=$_ :
+                  &#x2F;\Q$s&#x2F; &amp;amp;&amp;amp; say $ARGV&amp;#39; search_2.txt ip.txt
+
+# this will remove newline at the end of file before assigning to $s
+$ perl -0777 -nE &amp;#39;!$#ARGV ? $s=s&#x2F;\n\z&#x2F;&#x2F;r :
+                  &#x2F;\Q$s&#x2F; &amp;amp;&amp;amp; say $ARGV&amp;#39; search_2.txt ip.txt
+ip.txt
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;By default, &lt;code&gt;ripgrep&lt;&#x2F;code&gt; gives entire matching lines. To get rest of the line with &lt;code&gt;perl&lt;&#x2F;code&gt;, you&#x27;ll have to explicitly add a pattern around the search string.&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;# $&amp;amp; variable has the entire matching portion
+$ perl -0777 -nE &amp;#39;!$#ARGV ? $s=s&#x2F;\n\z&#x2F;&#x2F;r :
+                  &#x2F;\Q$s&#x2F; &amp;amp;&amp;amp; say $&amp;amp;&amp;#39; search_2.txt ip.txt
+-string multiline
+search
+
+# use &amp;#39;say $&amp;amp; while &#x2F;.*\Q$s\E.*&#x2F;g&amp;#39; if there are multiple matches
+$ perl -0777 -nE &amp;#39;!$#ARGV ? $s=s&#x2F;\n\z&#x2F;&#x2F;r :
+                  &#x2F;.*\Q$s\E.*&#x2F; &amp;amp;&amp;amp; say $&amp;amp;&amp;#39; search_2.txt ip.txt
+-string multiline
+search with cli tools.
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;br&gt;
+&lt;h2 id=&quot;fixed-string-substitution&quot;&gt;Fixed string substitution&lt;a class=&quot;zola-anchor&quot; href=&quot;#fixed-string-substitution&quot; aria-label=&quot;Anchor link for: fixed-string-substitution&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;h3 id=&quot;ripgrep-1&quot;&gt;ripgrep&lt;a class=&quot;zola-anchor&quot; href=&quot;#ripgrep-1&quot; aria-label=&quot;Anchor link for: ripgrep-1&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;&lt;code&gt;ripgrep&lt;&#x2F;code&gt; also supports replacing matched string with something else using the &lt;code&gt;-r&lt;&#x2F;code&gt; option. By default, you&#x27;ll see only matched lines in the output. Use &lt;code&gt;--passthru&lt;&#x2F;code&gt; option to display all the input lines, even if they do not match the given search string. See &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;substitution-with-ripgrep&#x2F;&quot;&gt;my blog post&lt;&#x2F;a&gt; for more details about the &lt;code&gt;-r&lt;&#x2F;code&gt; option and various ways you can use it for substitution requirements.&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ rg --passthru -NUF &amp;#39;like . () * [] $ {}
+^ + ? \ and&amp;#39; -r &amp;#39;====
+----
+====&amp;#39; ip.txt
+This is a multiline
+sample input with lots
+of special characters
+====
+----
+==== &amp;#39; and so on.
+This post shows how
+you can do fixed
+-string multiline
+search with cli tools.
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Apart from having to workaround single quote, you&#x27;ll have to use &lt;code&gt;$$&lt;&#x2F;code&gt; instead of &lt;code&gt;$&lt;&#x2F;code&gt; as it is used for backreferences in the replacement section.&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ echo &amp;#39;sample input&amp;#39; | rg --passthru -F &amp;#39;in&amp;#39; -r &amp;#39;$a&amp;#39;
+sample put
+$ echo &amp;#39;sample input&amp;#39; | rg --passthru -F &amp;#39;in&amp;#39; -r &amp;#39;$$a&amp;#39;
+sample $aput
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;h3 id=&quot;perl-1&quot;&gt;perl&lt;a class=&quot;zola-anchor&quot; href=&quot;#perl-1&quot; aria-label=&quot;Anchor link for: perl-1&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;With &lt;code&gt;perl&lt;&#x2F;code&gt;, you can use files for both search and replace strings. And, you can easily choose to replace first or all occurrences, unlike &lt;code&gt;ripgrep&lt;&#x2F;code&gt; where it always replaces all the matches.&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ cat replace.txt
+---------------------
+$&amp;amp; = $1 + $2 &#x2F; 3 \ 4
+=====================
+
+$ perl -0777 -ne &amp;#39;$#ARGV==1 ? $s=$_ : $#ARGV==0 ? $r=$_ :
+                  print s&#x2F;\Q$s&#x2F;$r&#x2F;gr&amp;#39; search_1.txt replace.txt ip.txt
+This is a multiline
+sample input with lots
+of special characters
+---------------------
+$&amp;amp; = $1 + $2 &#x2F; 3 \ 4
+=====================
+This post shows how
+you can do fixed
+-string multiline
+search with cli tools.
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;As seen before, you&#x27;ll have to remove newline from search string for partial line matching.&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;# use $r=s&#x2F;\n\z&#x2F;&#x2F;r to avoid trailing newline from replace.txt
+$ perl -0777 -ne &amp;#39;$#ARGV==1 ? $s=s&#x2F;\n\z&#x2F;&#x2F;r : $#ARGV==0 ? $r=$_ :
+                  print s&#x2F;\Q$s&#x2F;$r&#x2F;gr&amp;#39; search_2.txt replace.txt ip.txt
+This is a multiline
+sample input with lots
+of special characters
+like . () * [] $ {}
+^ + ? \ and &amp;#39; and so on.
+This post shows how
+you can do fixed
+---------------------
+$&amp;amp; = $1 + $2 &#x2F; 3 \ 4
+=====================
+ with cli tools.
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;br&gt;
+&lt;h2 id=&quot;saving-file-contents-to-a-variable&quot;&gt;Saving file contents to a variable&lt;a class=&quot;zola-anchor&quot; href=&quot;#saving-file-contents-to-a-variable&quot; aria-label=&quot;Anchor link for: saving-file-contents-to-a-variable&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Trailing newlines and ASCII NUL characters will be lost if you wish to save contents of a file as &lt;code&gt;bash&lt;&#x2F;code&gt; variables using &lt;code&gt;var=$(&amp;lt; filename)&lt;&#x2F;code&gt; command. See &lt;a href=&quot;https:&#x2F;&#x2F;stackoverflow.com&#x2F;questions&#x2F;7427262&#x2F;how-to-read-a-file-into-a-variable-in-shell&#x2F;22607352#22607352&quot;&gt;stackoverflow: pitfalls of reading file into shell variable&lt;&#x2F;a&gt; for details.&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ printf &amp;#39;\na\0b\n123\n\n\n\n\n\n\n\n&amp;#39; &amp;gt; t1
+$ a=$(&amp;lt; t1)
+
+# NUL character is lost after the assignment
+# all the trailing newlines are lost as well
+$ printf &amp;#39;%b&amp;#39; &amp;quot;$a&amp;quot; | cat -A
+$
+ab$
+123
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;h3 id=&quot;ripgrep-2&quot;&gt;ripgrep&lt;a class=&quot;zola-anchor&quot; href=&quot;#ripgrep-2&quot; aria-label=&quot;Anchor link for: ripgrep-2&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;If your search string doesn&#x27;t have multiple trailing newlines or ASCII NUL characters, then you can save file contents to variables and then pass them to &lt;code&gt;ripgrep&lt;&#x2F;code&gt;. Single trailing newline will not normally cause an issue for searching operations as &lt;code&gt;ripgrep&lt;&#x2F;code&gt; will append a newline while displaying results anyway. If you want to make sure input file also contains the trailing newline, then you can manually concatenate a newline character to the search string.&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ s=$(&amp;lt; search_1.txt)
+# use &amp;quot;$s&amp;quot;$&amp;#39;\n&amp;#39; if you want to match trailing newline as well
+$ rg -NUF &amp;quot;$s&amp;quot; ip.txt
+like . () * [] $ {}
+^ + ? \ and &amp;#39; and so on.
+
+# use -- if the search string starts with - character
+$ s=$(&amp;lt; search_2.txt)
+$ rg -NUF -- &amp;quot;$s&amp;quot; ip.txt
+-string multiline
+search with cli tools.
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;For substitution operations, you&#x27;ll have to preprocess the replacement file to replace &lt;code&gt;$&lt;&#x2F;code&gt; with &lt;code&gt;$$&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ s=$(&amp;lt; search_1.txt)
+$ r=$(sed &amp;#39;s&#x2F;\$&#x2F;$$&#x2F;g&amp;#39; replace.txt)
+
+# here, removal of trailing newline doesn&amp;#39;t cause an issue,
+# as it evens out between search and replace strings
+$ rg --passthru -NUF &amp;quot;$s&amp;quot; -r &amp;quot;$r&amp;quot; ip.txt
+This is a multiline
+sample input with lots
+of special characters
+---------------------
+$&amp;amp; = $1 + $2 &#x2F; 3 \ 4
+=====================
+This post shows how
+you can do fixed
+-string multiline
+search with cli tools.
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Here, partial line has to be matched. So, &lt;code&gt;$()&lt;&#x2F;code&gt; assignment works well for the search string. If the trailing newline of the replacement string isn&#x27;t needed, then &lt;code&gt;$()&lt;&#x2F;code&gt; assignment again is good enough. Otherwise, you can modify the replacement string as &lt;code&gt;-r &amp;quot;$r&amp;quot;$&#x27;\n&#x27;&lt;&#x2F;code&gt;&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ s=$(&amp;lt; search_2.txt)
+$ r=$(sed &amp;#39;s&#x2F;\$&#x2F;$$&#x2F;g&amp;#39; replace.txt)
+
+$ rg --passthru -NUF -r &amp;quot;$r&amp;quot; -- &amp;quot;$s&amp;quot; ip.txt
+This is a multiline
+sample input with lots
+of special characters
+like . () * [] $ {}
+^ + ? \ and &amp;#39; and so on.
+This post shows how
+you can do fixed
+---------------------
+$&amp;amp; = $1 + $2 &#x2F; 3 \ 4
+===================== with cli tools.
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;h3 id=&quot;gnu-sed&quot;&gt;GNU sed&lt;a class=&quot;zola-anchor&quot; href=&quot;#gnu-sed&quot; aria-label=&quot;Anchor link for: gnu-sed&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;To follow a similar approach with &lt;code&gt;GNU sed&lt;&#x2F;code&gt;, you&#x27;ll have to preprocess the strings to escape metacharacters. Assuming input doesn&#x27;t have ASCII NUL characters, you can use &lt;code&gt;-z&lt;&#x2F;code&gt; option to slurp entire input as a single string.&lt;&#x2F;p&gt;
+&lt;p&gt;Here&#x27;s an example for multiline search.&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;# escape all BRE metacharacters
+# replace literal newlines with \n
+$ s=$(sed -z &amp;#39;s#[[^$*.\&#x2F;]#\\&amp;amp;#g; s&#x2F;\n&#x2F;\\n&#x2F;g&amp;#39; search_1.txt)
+
+# since newlines are replaced with \n,
+# trailing newlines will be preserved here
+$ echo &amp;quot;$s&amp;quot;
+like \. () \* \[] \$ {}\n\^ + ? \\ and &amp;#39; and so on\.\n
+
+# display filename if input matches the given multiline search string
+# tr is used to change NUL character after filename to newline
+$ sed -nz &amp;#39;&#x2F;&amp;#39;&amp;quot;$s&amp;quot;&amp;#39;&#x2F;F&amp;#39; ip.txt | tr &amp;#39;\0&amp;#39; &amp;#39;\n&amp;#39;
+ip.txt
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;And here&#x27;s an example for multiline substitution.&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;# last newline is removed here to allow partial line matching
+$ s=$(sed -z &amp;#39;s#[[^$*.\&#x2F;]#\\&amp;amp;#g; s&#x2F;\n$&#x2F;&#x2F;; s&#x2F;\n&#x2F;\\n&#x2F;g&amp;#39; search_2.txt)
+
+# escape all replacement section metacharacters
+# and prefix \ character to literal newlines, except the last line
+$ r=$(sed &amp;#39;s:[\\&#x2F;&amp;amp;]:\\&amp;amp;:g; $!s&#x2F;$&#x2F;\\&#x2F;&amp;#39; replace.txt)
+$ echo &amp;quot;$r&amp;quot;
+---------------------\
+$\&amp;amp; = $1 + $2 \&#x2F; 3 \\ 4\
+=====================
+
+# if you need trailing newline from replace.txt,
+# use sed -z &amp;#39;s&#x2F;&amp;#39;&amp;quot;$s&amp;quot;&amp;#39;&#x2F;&amp;#39;&amp;quot;$r&amp;quot;&amp;#39;\n&#x2F;g&amp;#39;
+$ sed -z &amp;#39;s&#x2F;&amp;#39;&amp;quot;$s&amp;quot;&amp;#39;&#x2F;&amp;#39;&amp;quot;$r&amp;quot;&amp;#39;&#x2F;g&amp;#39; ip.txt
+This is a multiline
+sample input with lots
+of special characters
+like . () * [] $ {}
+^ + ? \ and &amp;#39; and so on.
+This post shows how
+you can do fixed
+---------------------
+$&amp;amp; = $1 + $2 &#x2F; 3 \ 4
+===================== with cli tools.
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>Emulating regexp lookarounds in GNU sed</title>
 		<published>2020-10-31T00:00:00+00:00</published>

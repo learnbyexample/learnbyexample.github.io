@@ -26,6 +26,10 @@
         <lastmod>2020-11-12</lastmod>
     </url>
     <url>
+        <loc>https://learnbyexample.github.io/multiline-search-and-replace/</loc>
+        <lastmod>2020-11-27</lastmod>
+    </url>
+    <url>
         <loc>https://learnbyexample.github.io/page/1/</loc>
     </url>
     <url>
@@ -102,6 +106,9 @@
         <loc>https://learnbyexample.github.io/tags/gnu-grep/</loc>
     </url>
     <url>
+        <loc>https://learnbyexample.github.io/tags/gnu-sed/</loc>
+    </url>
+    <url>
         <loc>https://learnbyexample.github.io/tags/gui/</loc>
     </url>
     <url>
@@ -132,6 +139,9 @@
         <loc>https://learnbyexample.github.io/tags/pdf/</loc>
     </url>
     <url>
+        <loc>https://learnbyexample.github.io/tags/perl/</loc>
+    </url>
+    <url>
         <loc>https://learnbyexample.github.io/tags/python/</loc>
     </url>
     <url>
@@ -145,9 +155,6 @@
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tags/ripgrep/</loc>
-    </url>
-    <url>
-        <loc>https://learnbyexample.github.io/tags/sed/</loc>
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tags/shell-scripting/</loc>
