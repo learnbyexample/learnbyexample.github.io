@@ -5,15 +5,15 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2020-11-27T00:00:00+00:00</updated>
+	<updated>2020-11-30T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
 	<entry xml:lang="en">
 		<title>Multiline fixed string search and replace with cli tools</title>
 		<published>2020-11-27T00:00:00+00:00</published>
-		<updated>2020-11-27T00:00:00+00:00</updated>
+		<updated>2020-11-30T00:00:00+00:00</updated>
 		<link href="https://learnbyexample.github.io/multiline-search-and-replace/" type="text/html"/>
 		<id>https://learnbyexample.github.io/multiline-search-and-replace/</id>
-		<content type="html">&lt;p&gt;This post shows how you can use &lt;code&gt;ripgrep&lt;&#x2F;code&gt; and &lt;code&gt;perl&lt;&#x2F;code&gt; to perform multiline fixed string search and replace operations from the command line. Solution with &lt;code&gt;GNU sed&lt;&#x2F;code&gt; is also discussed, along with its limitations.&lt;&#x2F;p&gt;
+		<content type="html">&lt;p&gt;This post shows how you can use &lt;code&gt;ripgrep&lt;&#x2F;code&gt;, &lt;code&gt;perl&lt;&#x2F;code&gt; and &lt;code&gt;sd&lt;&#x2F;code&gt; to perform multiline fixed string search and replace operations from the command line. Solution with &lt;code&gt;GNU sed&lt;&#x2F;code&gt; is also discussed, along with its limitations.&lt;&#x2F;p&gt;
 &lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;&lt;br&gt;
 &lt;h2 id=&quot;fixed-string-matching&quot;&gt;Fixed string matching&lt;a class=&quot;zola-anchor&quot; href=&quot;#fixed-string-matching&quot; aria-label=&quot;Anchor link for: fixed-string-matching&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
 &lt;p&gt;The below sample input file will be used in the examples in this post.&lt;&#x2F;p&gt;
@@ -158,6 +158,26 @@ you can do fixed
 $&amp;amp; = $1 + $2 &#x2F; 3 \ 4
 =====================
  with cli tools.
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;h3 id=&quot;sd&quot;&gt;sd&lt;a class=&quot;zola-anchor&quot; href=&quot;#sd&quot; aria-label=&quot;Anchor link for: sd&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;chmln&#x2F;sd&quot;&gt;sd&lt;&#x2F;a&gt; supports fixed string and Rust regexp based substitution. Unlike &lt;code&gt;ripgrep&lt;&#x2F;code&gt;, &lt;code&gt;-s&lt;&#x2F;code&gt; option for fixed string will apply to both search and replacement sections. &lt;code&gt;sd&lt;&#x2F;code&gt; does in-place editing for file inputs by default, you can use &lt;code&gt;-p&lt;&#x2F;code&gt; to preview results on the terminal. Multiline matching is automatically performed by default.&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ echo &amp;#39;sample input&amp;#39; | sd -s &amp;#39;in&amp;#39; &amp;#39;$a&amp;#39;
+sample $aput
+
+$ sd -ps &amp;#39;like . () * [] $ {}
+^ + ? \ and&amp;#39; &amp;#39;====
+----
+====&amp;#39; ip.txt
+This is a multiline
+sample input with lots
+of special characters
+====
+----
+==== &amp;#39; and so on.
+This post shows how
+you can do fixed
+-string multiline
+search with cli tools.
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;br&gt;
 &lt;h2 id=&quot;saving-file-contents-to-a-variable&quot;&gt;Saving file contents to a variable&lt;a class=&quot;zola-anchor&quot; href=&quot;#saving-file-contents-to-a-variable&quot; aria-label=&quot;Anchor link for: saving-file-contents-to-a-variable&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
 &lt;p&gt;Trailing newlines and ASCII NUL characters will be lost if you wish to save contents of a file as &lt;code&gt;bash&lt;&#x2F;code&gt; variables using &lt;code&gt;var=$(&amp;lt; filename)&lt;&#x2F;code&gt; command. See &lt;a href=&quot;https:&#x2F;&#x2F;stackoverflow.com&#x2F;questions&#x2F;7427262&#x2F;how-to-read-a-file-into-a-variable-in-shell&#x2F;22607352#22607352&quot;&gt;stackoverflow: pitfalls of reading file into shell variable&lt;&#x2F;a&gt; for details.&lt;&#x2F;p&gt;
@@ -221,6 +241,21 @@ you can do fixed
 ---------------------
 $&amp;amp; = $1 + $2 &#x2F; 3 \ 4
 ===================== with cli tools.
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;h3 id=&quot;sd-1&quot;&gt;sd&lt;a class=&quot;zola-anchor&quot; href=&quot;#sd-1&quot; aria-label=&quot;Anchor link for: sd-1&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
+&lt;p&gt;As mentioned before, &lt;code&gt;-s&lt;&#x2F;code&gt; option for &lt;code&gt;sd&lt;&#x2F;code&gt; applies to both search and replacement sections. So, the usage is lot simpler compared to &lt;code&gt;ripgrep&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;# -- is needed here because replace.txt starts with - character
+$ sd -ps -- &amp;quot;$(&amp;lt; search_1.txt)&amp;quot; &amp;quot;$(&amp;lt; replace.txt)&amp;quot; ip.txt
+This is a multiline
+sample input with lots
+of special characters
+---------------------
+$&amp;amp; = $1 + $2 &#x2F; 3 \ 4
+=====================
+This post shows how
+you can do fixed
+-string multiline
+search with cli tools.
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;h3 id=&quot;gnu-sed&quot;&gt;GNU sed&lt;a class=&quot;zola-anchor&quot; href=&quot;#gnu-sed&quot; aria-label=&quot;Anchor link for: gnu-sed&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
 &lt;p&gt;To follow a similar approach with &lt;code&gt;GNU sed&lt;&#x2F;code&gt;, you&#x27;ll have to preprocess the strings to escape metacharacters. Assuming input doesn&#x27;t have ASCII NUL characters, you can use &lt;code&gt;-z&lt;&#x2F;code&gt; option to slurp entire input as a single string.&lt;&#x2F;p&gt;
 &lt;p&gt;Here&#x27;s an example for multiline search.&lt;&#x2F;p&gt;
@@ -415,7 +450,7 @@ total &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;=&lt;&#x2F;
 	<entry xml:lang="en">
 		<title>Search and replace tricks with ripgrep</title>
 		<published>2020-09-16T00:00:00+00:00</published>
-		<updated>2020-09-16T00:00:00+00:00</updated>
+		<updated>2020-11-30T00:00:00+00:00</updated>
 		<link href="https://learnbyexample.github.io/substitution-with-ripgrep/" type="text/html"/>
 		<id>https://learnbyexample.github.io/substitution-with-ripgrep/</id>
 		<content type="html">&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;BurntSushi&#x2F;ripgrep&quot;&gt;ripgrep&lt;&#x2F;a&gt; (command name &lt;code&gt;rg&lt;&#x2F;code&gt;) is a &lt;code&gt;grep&lt;&#x2F;code&gt; tool, but supports search and replace as well. &lt;code&gt;rg&lt;&#x2F;code&gt; is far from a like-for-like alternate for &lt;code&gt;sed&lt;&#x2F;code&gt;, but it has nifty features like multiline replacement, fixed string matching, &lt;code&gt;PCRE2&lt;&#x2F;code&gt; support, etc. This post gives an overview of syntax for substitution and highlights some of the cases where &lt;code&gt;rg&lt;&#x2F;code&gt; is a handy replacement for &lt;code&gt;sed&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
@@ -549,7 +584,9 @@ a&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;+&lt;&#x2F;span&
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;printf &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#aeb52b;&quot;&gt;%b&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39; &amp;quot;$s&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; rg &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;--&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;passthru &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;U &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;(?s)the.*ice&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;r &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
 hi  day
 bye
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;br&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;multiline-search-and-replace&#x2F;&quot;&gt;my blog post&lt;&#x2F;a&gt; for a detailed discussion on multiline fixed string search and replace operations from the command line.&lt;&#x2F;p&gt;
+&lt;br&gt;
 &lt;h2 id=&quot;handling-dos-style-input&quot;&gt;Handling dos-style input&lt;a class=&quot;zola-anchor&quot; href=&quot;#handling-dos-style-input&quot; aria-label=&quot;Anchor link for: handling-dos-style-input&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
 &lt;p&gt;&lt;code&gt;rg&lt;&#x2F;code&gt; provides support for dos-style files with &lt;code&gt;--crlf&lt;&#x2F;code&gt; option.&lt;&#x2F;p&gt;
 &lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;

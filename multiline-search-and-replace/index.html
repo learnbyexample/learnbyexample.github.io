@@ -147,6 +147,10 @@
                             <a href="https://learnbyexample.github.io/multiline-search-and-replace/#perl-1" class="toc-link">perl</a>
                         </li>
                         
+                        <li>
+                            <a href="https://learnbyexample.github.io/multiline-search-and-replace/#sd" class="toc-link">sd</a>
+                        </li>
+                        
                     </ul>
                     
                 </li>
@@ -158,6 +162,10 @@
                         
                         <li>
                             <a href="https://learnbyexample.github.io/multiline-search-and-replace/#ripgrep-2" class="toc-link">ripgrep</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://learnbyexample.github.io/multiline-search-and-replace/#sd-1" class="toc-link">sd</a>
                         </li>
                         
                         <li>
@@ -187,7 +195,7 @@
     </header>
 
     <div class="post-content">
-      <p>This post shows how you can use <code>ripgrep</code> and <code>perl</code> to perform multiline fixed string search and replace operations from the command line. Solution with <code>GNU sed</code> is also discussed, along with its limitations.</p>
+      <p>This post shows how you can use <code>ripgrep</code>, <code>perl</code> and <code>sd</code> to perform multiline fixed string search and replace operations from the command line. Solution with <code>GNU sed</code> is also discussed, along with its limitations.</p>
 <span id="continue-reading"></span><br>
 <h2 id="fixed-string-matching">Fixed string matching<a class="zola-anchor" href="#fixed-string-matching" aria-label="Anchor link for: fixed-string-matching">🔗</a></h2>
 <p>The below sample input file will be used in the examples in this post.</p>
@@ -332,6 +340,26 @@ you can do fixed
 $&amp; = $1 + $2 / 3 \ 4
 =====================
  with cli tools.
+</span></code></pre><h3 id="sd">sd<a class="zola-anchor" href="#sd" aria-label="Anchor link for: sd">🔗</a></h3>
+<p><a href="https://github.com/chmln/sd">sd</a> supports fixed string and Rust regexp based substitution. Unlike <code>ripgrep</code>, <code>-s</code> option for fixed string will apply to both search and replacement sections. <code>sd</code> does in-place editing for file inputs by default, you can use <code>-p</code> to preview results on the terminal. Multiline matching is automatically performed by default.</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#1f1f1f;">$ echo &#39;sample input&#39; | sd -s &#39;in&#39; &#39;$a&#39;
+sample $aput
+
+$ sd -ps &#39;like . () * [] $ {}
+^ + ? \ and&#39; &#39;====
+----
+====&#39; ip.txt
+This is a multiline
+sample input with lots
+of special characters
+====
+----
+==== &#39; and so on.
+This post shows how
+you can do fixed
+-string multiline
+search with cli tools.
 </span></code></pre><br>
 <h2 id="saving-file-contents-to-a-variable">Saving file contents to a variable<a class="zola-anchor" href="#saving-file-contents-to-a-variable" aria-label="Anchor link for: saving-file-contents-to-a-variable">🔗</a></h2>
 <p>Trailing newlines and ASCII NUL characters will be lost if you wish to save contents of a file as <code>bash</code> variables using <code>var=$(&lt; filename)</code> command. See <a href="https://stackoverflow.com/questions/7427262/how-to-read-a-file-into-a-variable-in-shell/22607352#22607352">stackoverflow: pitfalls of reading file into shell variable</a> for details.</p>
@@ -395,6 +423,21 @@ you can do fixed
 ---------------------
 $&amp; = $1 + $2 / 3 \ 4
 ===================== with cli tools.
+</span></code></pre><h3 id="sd-1">sd<a class="zola-anchor" href="#sd-1" aria-label="Anchor link for: sd-1">🔗</a></h3>
+<p>As mentioned before, <code>-s</code> option for <code>sd</code> applies to both search and replacement sections. So, the usage is lot simpler compared to <code>ripgrep</code>.</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#1f1f1f;"># -- is needed here because replace.txt starts with - character
+$ sd -ps -- &quot;$(&lt; search_1.txt)&quot; &quot;$(&lt; replace.txt)&quot; ip.txt
+This is a multiline
+sample input with lots
+of special characters
+---------------------
+$&amp; = $1 + $2 / 3 \ 4
+=====================
+This post shows how
+you can do fixed
+-string multiline
+search with cli tools.
 </span></code></pre><h3 id="gnu-sed">GNU sed<a class="zola-anchor" href="#gnu-sed" aria-label="Anchor link for: gnu-sed">🔗</a></h3>
 <p>To follow a similar approach with <code>GNU sed</code>, you'll have to preprocess the strings to escape metacharacters. Assuming input doesn't have ASCII NUL characters, you can use <code>-z</code> option to slurp entire input as a single string.</p>
 <p>Here's an example for multiline search.</p>
@@ -455,6 +498,8 @@ $&amp; = $1 + $2 / 3 \ 4
                         <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;perl&#x2F;">#perl</a>
                     
                         <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;gnu-sed&#x2F;">#gnu-sed</a>
+                    
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;sd&#x2F;">#sd</a>
                     
                         <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;substitution&#x2F;">#substitution</a>
                     

@@ -27,7 +27,7 @@
     </url>
     <url>
         <loc>https://learnbyexample.github.io/multiline-search-and-replace/</loc>
-        <lastmod>2020-11-27</lastmod>
+        <lastmod>2020-11-30</lastmod>
     </url>
     <url>
         <loc>https://learnbyexample.github.io/page/1/</loc>
@@ -64,7 +64,7 @@
     </url>
     <url>
         <loc>https://learnbyexample.github.io/substitution-with-ripgrep/</loc>
-        <lastmod>2020-09-16</lastmod>
+        <lastmod>2020-11-30</lastmod>
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tags/</loc>
@@ -155,6 +155,9 @@
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tags/ripgrep/</loc>
+    </url>
+    <url>
+        <loc>https://learnbyexample.github.io/tags/sd/</loc>
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tags/shell-scripting/</loc>
