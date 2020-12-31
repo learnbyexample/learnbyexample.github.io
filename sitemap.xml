@@ -4,6 +4,10 @@
         <loc>https://learnbyexample.github.io/</loc>
     </url>
     <url>
+        <loc>https://learnbyexample.github.io/2020-favorite-fiction/</loc>
+        <lastmod>2020-12-31</lastmod>
+    </url>
+    <url>
         <loc>https://learnbyexample.github.io/a-short-and-satisfying-bug-hunt/</loc>
         <lastmod>2019-03-06</lastmod>
     </url>
@@ -70,6 +74,9 @@
         <loc>https://learnbyexample.github.io/tags/</loc>
     </url>
     <url>
+        <loc>https://learnbyexample.github.io/tags/2020/</loc>
+    </url>
+    <url>
         <loc>https://learnbyexample.github.io/tags/book-review/</loc>
     </url>
     <url>
@@ -98,6 +105,12 @@
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tags/examples/</loc>
+    </url>
+    <url>
+        <loc>https://learnbyexample.github.io/tags/fantasy/</loc>
+    </url>
+    <url>
+        <loc>https://learnbyexample.github.io/tags/fiction/</loc>
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tags/fixed-string/</loc>
@@ -155,6 +168,9 @@
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tags/ripgrep/</loc>
+    </url>
+    <url>
+        <loc>https://learnbyexample.github.io/tags/sci-fi/</loc>
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tags/sd/</loc>
