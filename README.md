@@ -4,6 +4,8 @@ My super duper awesome programming blog is now live at https://learnbyexample.gi
 
 ## Posts
 
+* [Favorite fictional books I read this year (2020)](https://learnbyexample.github.io/2020-favorite-fiction/)
+* [Multiline fixed string search and replace with cli tools](https://learnbyexample.github.io/multiline-search-and-replace/)
 * [Emulating regexp lookarounds in GNU sed](https://learnbyexample.github.io/sed-lookarounds/)
 * [Search and replace tricks with ripgrep](https://learnbyexample.github.io/substitution-with-ripgrep/)
 * [I know Python basics, what next?](https://learnbyexample.github.io/python-intermediate/)
