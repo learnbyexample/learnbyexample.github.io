@@ -202,7 +202,7 @@
 <p>I use Ubuntu, as far as I remember, the below steps are enough to work for the demos in this tutorial. If you get an error or warning, search that issue online and you'll likely find what else has to be installed.</p>
 <p>I first downloaded <code>deb</code> file from <a href="https://github.com/jgm/pandoc/releases">pandoc: releases</a> and installed it. Followed by packages needed for <code>pdf</code> generation.</p>
 <pre style="background-color:#f5f5f5;">
-<code><span style="color:#5597d6;">$ </span><span style="color:#7f8989;"># latest pandoc version as of 21 July 2010 is 2.10
+<code><span style="color:#5597d6;">$ </span><span style="color:#7f8989;"># latest pandoc version as of 21 July 2020 is 2.10
 </span><span style="color:#5597d6;">$</span><span style="color:#1f1f1f;"> sudo gdebi </span><span style="color:#5597d6;">~</span><span style="color:#1f1f1f;">/Downloads/pandoc-2.10-1-amd64.deb
 
 </span><span style="color:#5597d6;">$ </span><span style="color:#7f8989;"># note that download size is 750+ MB
@@ -422,7 +422,11 @@ no VAL is specified, the key will be given the value true.</p>
 <ul>
 <li><a href="https://github.com/Wandmalfarbe/pandoc-latex-template">pandoc-latex-template</a> — a clean pandoc LaTeX template to convert your markdown files to PDF or LaTeX</li>
 <li><a href="https://keleshev.com/my-book-writing-setup/">Writing a book with pandoc, make, and vim</a></li>
-<li><a href="https://jupyterbook.org/intro.html">Jupyter Book</a> — open source project for building beautiful, publication-quality books and documents from computational material</li>
+<li><a href="https://jupyterbook.org/intro.html">Jupyter Book</a> — open source project for building beautiful, publication-quality books and documents from computational material
+<ul>
+<li>See also <a href="https://github.com/fastai/fastdoc">fastdoc</a> — the output of fastdoc is an asciidoc file for each input notebook. You can then use asciidoctor to convert that to HTML, DocBook, epub, mobi, and so forth</li>
+</ul>
+</li>
 <li><a href="https://asciidoctor.org/docs/what-is-asciidoc/">Asciidoctor</a>
 <ul>
 <li><a href="https://shape-of-code.coding-guidelines.com/2019/08/11/my-books-pdf-generation-workflow/">pdf generation workflow with Asciidoc</a></li>
