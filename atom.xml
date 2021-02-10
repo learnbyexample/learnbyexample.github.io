@@ -5,8 +5,79 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2021-01-14T00:00:00+00:00</updated>
+	<updated>2021-02-10T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>100 Page Python Intro book announcement</title>
+		<published>2021-02-10T00:00:00+00:00</published>
+		<updated>2021-02-10T00:00:00+00:00</updated>
+		<link href="https://learnbyexample.github.io/100-page-python-intro-book-announcement/" type="text/html"/>
+		<id>https://learnbyexample.github.io/100-page-python-intro-book-announcement/</id>
+		<content type="html">&lt;p&gt;Hello!&lt;&#x2F;p&gt;
+&lt;p&gt;I just published my ebook titled &amp;quot;&lt;strong&gt;100 Page Python Intro&lt;&#x2F;strong&gt;&amp;quot;. This book is a short, introductory guide for the Python programming language. This book is well suited:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;As a reference material for Python beginner workshops&lt;&#x2F;li&gt;
+&lt;li&gt;If you have prior experience with another programming language&lt;&#x2F;li&gt;
+&lt;li&gt;If you want a complement resource after reading a Python basics book, watching a video course, etc&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;&lt;h2 id=&quot;ebook-links&quot;&gt;Ebook links&lt;a class=&quot;zola-anchor&quot; href=&quot;#ebook-links&quot; aria-label=&quot;Anchor link for: ebook-links&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;strong&gt;PDF&#x2F;EPUB&lt;&#x2F;strong&gt; versions are FREE (until 17 Feb, 2021) along with some of my other books. You can get them from Gumroad or Leanpub using the links given below:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;100 Page Python Intro&lt;&#x2F;strong&gt;: &lt;a href=&quot;https:&#x2F;&#x2F;gumroad.com&#x2F;l&#x2F;100pagepythonintro&quot;&gt;https:&#x2F;&#x2F;gumroad.com&#x2F;l&#x2F;100pagepythonintro&lt;&#x2F;a&gt; or &lt;a href=&quot;https:&#x2F;&#x2F;leanpub.com&#x2F;100pagepythonintro&quot;&gt;https:&#x2F;&#x2F;leanpub.com&#x2F;100pagepythonintro&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Python re(gex)?&lt;&#x2F;strong&gt;: &lt;a href=&quot;https:&#x2F;&#x2F;gumroad.com&#x2F;l&#x2F;py_regex&quot;&gt;https:&#x2F;&#x2F;gumroad.com&#x2F;l&#x2F;py_regex&lt;&#x2F;a&gt; or &lt;a href=&quot;https:&#x2F;&#x2F;leanpub.com&#x2F;py_regex&quot;&gt;https:&#x2F;&#x2F;leanpub.com&#x2F;py_regex&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Magical one-liners&lt;&#x2F;strong&gt; bundle: &lt;a href=&quot;https:&#x2F;&#x2F;gumroad.com&#x2F;l&#x2F;oneliners&quot;&gt;https:&#x2F;&#x2F;gumroad.com&#x2F;l&#x2F;oneliners&lt;&#x2F;a&gt; or &lt;a href=&quot;https:&#x2F;&#x2F;leanpub.com&#x2F;b&#x2F;oneliners&quot;&gt;https:&#x2F;&#x2F;leanpub.com&#x2F;b&#x2F;oneliners&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;books&#x2F;python_intro.png&quot; alt=&quot;100 Page Python Intro book cover image&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;Cover art: &lt;a href=&quot;https:&#x2F;&#x2F;ko-fi.com&#x2F;profetessaoscura&quot;&gt;Ilsa Olson&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;web-version&quot;&gt;Web version&lt;a class=&quot;zola-anchor&quot; href=&quot;#web-version&quot; aria-label=&quot;Anchor link for: web-version&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;You can also read the book online here: &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;100_page_python_intro&#x2F;introduction.html&quot;&gt;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;100_page_python_intro&#x2F;introduction.html&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;github-repo&quot;&gt;GitHub repo&lt;a class=&quot;zola-anchor&quot; href=&quot;#github-repo&quot; aria-label=&quot;Anchor link for: github-repo&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;The &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;100_page_python_intro&quot;&gt;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;100_page_python_intro&lt;&#x2F;a&gt; repo has program&#x2F;example files, markdown source and other details about the book.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;table-of-contents&quot;&gt;Table of Contents&lt;a class=&quot;zola-anchor&quot; href=&quot;#table-of-contents&quot; aria-label=&quot;Anchor link for: table-of-contents&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Preface&lt;&#x2F;li&gt;
+&lt;li&gt;Introduction&lt;&#x2F;li&gt;
+&lt;li&gt;Numeric data types&lt;&#x2F;li&gt;
+&lt;li&gt;Strings and user input&lt;&#x2F;li&gt;
+&lt;li&gt;Defining functions&lt;&#x2F;li&gt;
+&lt;li&gt;Control structures&lt;&#x2F;li&gt;
+&lt;li&gt;Importing and creating modules&lt;&#x2F;li&gt;
+&lt;li&gt;Installing modules and Virtual environments&lt;&#x2F;li&gt;
+&lt;li&gt;Exception handling&lt;&#x2F;li&gt;
+&lt;li&gt;Debugging&lt;&#x2F;li&gt;
+&lt;li&gt;Testing&lt;&#x2F;li&gt;
+&lt;li&gt;Tuple and Sequence operations&lt;&#x2F;li&gt;
+&lt;li&gt;List&lt;&#x2F;li&gt;
+&lt;li&gt;Mutability&lt;&#x2F;li&gt;
+&lt;li&gt;Dict&lt;&#x2F;li&gt;
+&lt;li&gt;Set&lt;&#x2F;li&gt;
+&lt;li&gt;Text processing&lt;&#x2F;li&gt;
+&lt;li&gt;Comprehensions and Generator expressions&lt;&#x2F;li&gt;
+&lt;li&gt;Dealing with files&lt;&#x2F;li&gt;
+&lt;li&gt;Executing external commands&lt;&#x2F;li&gt;
+&lt;li&gt;Command line arguments&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;motivation-and-faq&quot;&gt;Motivation and FAQ&lt;a class=&quot;zola-anchor&quot; href=&quot;#motivation-and-faq&quot; aria-label=&quot;Anchor link for: motivation-and-faq&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;I&#x27;ve been conducting a few Python introduction workshops for college students and faculty for the past four years (which came to a premature end thanks to the pandemic). These students were already familiar with another programming languages such as &lt;code&gt;C&lt;&#x2F;code&gt;, &lt;code&gt;Java&lt;&#x2F;code&gt;, etc. I used to provide my notes in PDF format as a workshop reference material, further reading resources, etc. After I started writing a book titled &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;practice_python_projects&#x2F;&quot;&gt;&lt;strong&gt;Practice Python Projects&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;, I realized I&#x27;d be better served by improving my Python knowledge first. What better way to do it than writing a book? And it did teach me a lot of things, some of the highlights being:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Exploring &lt;a href=&quot;https:&#x2F;&#x2F;docs.python.org&#x2F;3&#x2F;glossary.html&quot;&gt;docs.python: Glossary&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;You cannot have mutable objects as a &lt;code&gt;set&lt;&#x2F;code&gt; element!&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;startswith()&lt;&#x2F;code&gt; and &lt;code&gt;endswith()&lt;&#x2F;code&gt; string methods support &lt;code&gt;tuple&lt;&#x2F;code&gt; argument for testing multiple substrings&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;docs.python.org&#x2F;3&#x2F;using&#x2F;cmdline.html&quot;&gt;Command line options&lt;&#x2F;a&gt; like &lt;code&gt;-q&lt;&#x2F;code&gt;, &lt;code&gt;-B&lt;&#x2F;code&gt;, etc&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;&lt;em&gt;Why is it called &lt;strong&gt;100 Page Python Intro&lt;&#x2F;strong&gt; when it has more than 100 pages?&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;There are 2 hard problems in computer science: cache invalidation, naming things, and off-by-1 errors — Leon Bambrick&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;The material I was using for my workshops was 56 pages. I had more chapters to add, but I thought it would be a struggle to reach 100 pages, instead of overshooting the goal in the end. The measurement also depends on a few factors. The main content will be less than 100 pages if I reduce the font size from 12 to 11, exclude cover, TOC, Preface, etc.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;feedback&quot;&gt;Feedback&lt;a class=&quot;zola-anchor&quot; href=&quot;#feedback&quot; aria-label=&quot;Anchor link for: feedback&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Hope you find it useful and fun to learn Python. As always, I&#x27;d highly appreciate your feedback. Please do let me know if you spot any error or typo.&lt;&#x2F;p&gt;
+&lt;p&gt;Issue Manager: &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;100_page_python_intro&#x2F;issues&quot;&gt;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;100_page_python_intro&#x2F;issues&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;E-mail: learn by example.net@gmail.com (without the spaces)&lt;&#x2F;p&gt;
+&lt;p&gt;Twitter: &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;learn_byexample&quot;&gt;https:&#x2F;&#x2F;twitter.com&#x2F;learn_byexample&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Happy learning :)&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>Favorite fictional books I read this year</title>
 		<published>2020-12-31T00:00:00+00:00</published>
