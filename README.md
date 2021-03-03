@@ -4,6 +4,7 @@ My super duper awesome programming blog is now live at https://learnbyexample.gi
 
 ## Posts
 
+* [Paying my bills with 'free' ebooks](https://learnbyexample.github.io/my-book-writing-experience/)
 * [100 Page Python Intro book announcement](https://learnbyexample.github.io/100-page-python-intro-book-announcement/)
 * [Favorite fictional books I read this year (2020)](https://learnbyexample.github.io/2020-favorite-fiction/)
 * [Multiline fixed string search and replace with cli tools](https://learnbyexample.github.io/multiline-search-and-replace/)
