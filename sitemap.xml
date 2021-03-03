@@ -23,7 +23,7 @@
     </url>
     <url>
         <loc>https://learnbyexample.github.io/customizing-pandoc/</loc>
-        <lastmod>2021-01-14</lastmod>
+        <lastmod>2021-03-03</lastmod>
     </url>
     <url>
         <loc>https://learnbyexample.github.io/grep-book-announcement/</loc>
@@ -36,6 +36,10 @@
     <url>
         <loc>https://learnbyexample.github.io/multiline-search-and-replace/</loc>
         <lastmod>2020-11-30</lastmod>
+    </url>
+    <url>
+        <loc>https://learnbyexample.github.io/my-book-writing-experience/</loc>
+        <lastmod>2021-03-03</lastmod>
     </url>
     <url>
         <loc>https://learnbyexample.github.io/page/1/</loc>
@@ -82,6 +86,9 @@
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tags/book-review/</loc>
+    </url>
+    <url>
+        <loc>https://learnbyexample.github.io/tags/career/</loc>
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tags/cheatsheet/</loc>
@@ -172,6 +179,9 @@
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tags/ripgrep/</loc>
+    </url>
+    <url>
+        <loc>https://learnbyexample.github.io/tags/ruby/</loc>
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tags/sci-fi/</loc>

@@ -199,16 +199,16 @@
       <p>Either you've already heard of <code>pandoc</code> or if you have searched online for <code>markdown</code> to <code>pdf</code> or similar, you are sure to come across <code>pandoc</code>. This tutorial will help you use <code>pandoc</code> to generate <code>pdf</code> and <code>epub</code> from a <a href="https://github.github.com/gfm/">GitHub style markdown</a> file. The main motivation for this blog post is to highlight what customizations I did to generate <code>pdf</code> and <code>epub</code> versions for <a href="https://learnbyexample.github.io/books/">self-publishing my ebooks</a>. It wasn't easy to arrive at the set-up I ended up with, so I hope this will be useful for those looking to use <code>pandoc</code> to generate <code>pdf</code> and <code>epub</code> formats. This guide is specifically aimed at technical books that has code snippets.</p>
 <span id="continue-reading"></span><br>
 <h2 id="installation">Installation<a class="zola-anchor" href="#installation" aria-label="Anchor link for: installation">🔗</a></h2>
-<p>I use Ubuntu, as far as I remember, the below steps are enough to work for the demos in this tutorial. If you get an error or warning, search that issue online and you'll likely find what else has to be installed.</p>
+<p>If you use a debian based distro like Ubuntu, the below steps are enough for the demos in this tutorial. If you get an error or warning, search that issue online and you'll likely find what else has to be installed.</p>
 <p>I first downloaded <code>deb</code> file from <a href="https://github.com/jgm/pandoc/releases">pandoc: releases</a> and installed it. Followed by packages needed for <code>pdf</code> generation.</p>
 <pre style="background-color:#f5f5f5;">
-<code><span style="color:#5597d6;">$ </span><span style="color:#7f8989;"># latest pandoc version as of 21 July 2020 is 2.10
-</span><span style="color:#5597d6;">$</span><span style="color:#1f1f1f;"> sudo gdebi </span><span style="color:#5597d6;">~</span><span style="color:#1f1f1f;">/Downloads/pandoc-2.10-1-amd64.deb
+<code><span style="color:#5597d6;">$ </span><span style="color:#7f8989;"># latest pandoc version as of 24 Jan 2021 is 2.11.4
+</span><span style="color:#5597d6;">$</span><span style="color:#1f1f1f;"> sudo gdebi </span><span style="color:#5597d6;">~</span><span style="color:#1f1f1f;">/Downloads/pandoc-2.11.4-1-amd64.deb
 
-</span><span style="color:#5597d6;">$ </span><span style="color:#7f8989;"># note that download size is 750+ MB
+</span><span style="color:#5597d6;">$ </span><span style="color:#7f8989;"># note that download size is hundreds of MB
 </span><span style="color:#5597d6;">$</span><span style="color:#1f1f1f;"> sudo apt install texlive-xetex
 </span><span style="color:#5597d6;">$</span><span style="color:#1f1f1f;"> sudo apt install librsvg2-bin
-</span><span style="color:#5597d6;">$</span><span style="color:#1f1f1f;"> sudo apt install texlive-math-extra
+</span><span style="color:#5597d6;">$</span><span style="color:#1f1f1f;"> sudo apt install texlive-science
 </span></code></pre>
 <p>For more details and guide for other OS, refer to <a href="https://pandoc.org/installing.html">pandoc: installation</a></p>
 <br>
