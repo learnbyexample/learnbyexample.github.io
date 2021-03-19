@@ -177,19 +177,19 @@ apple=</span><span style="color:#b3933a;">50 </span><span style="color:#1f1f1f;"
 a,b,c,d
 ;foo xyz3
 
-</span><span style="color:#7f8989;"># filter lines containing a digit character followed by a ; character
+</span><span style="color:#7f8989;"># lines containing a digit character followed by a ; character anywhere after
 # lookaround isn&#39;t needed here
 # same as: grep &#39;[0-9].*;&#39; or grep -P &#39;\d(?=.*;)&#39;
 </span><span style="color:#1f1f1f;">$ sed </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">n </span><span style="color:#d07711;">&#39;/[0-9].*;/p&#39;</span><span style="color:#1f1f1f;"> items.txt
 apple=</span><span style="color:#b3933a;">50 </span><span style="color:#1f1f1f;">;per kg
 
-</span><span style="color:#7f8989;"># filter lines containing both digit and ; characters in any order
+</span><span style="color:#7f8989;"># lines containing both digit and ; characters in any order
 # same as: grep -P &#39;^(?=.*;).*\d&#39;
 </span><span style="color:#1f1f1f;">$ sed </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">n </span><span style="color:#d07711;">&#39;/;/{ /[0-9]/p }&#39;</span><span style="color:#1f1f1f;"> items.txt
 apple=</span><span style="color:#b3933a;">50 </span><span style="color:#1f1f1f;">;per kg
 ;foo xyz3
 
-</span><span style="color:#7f8989;"># filter lines containing both digit and ; characters
+</span><span style="color:#7f8989;"># lines containing both digit and ; characters
 # but not if the line also contains character a
 # same as: grep -P &#39;^(?!.*a)(?=.*;).*\d&#39;
 </span><span style="color:#1f1f1f;">$ sed </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">n </span><span style="color:#d07711;">&#39;/a/!{ /;/{ /[0-9]/p } }&#39;</span><span style="color:#1f1f1f;"> items.txt
@@ -197,17 +197,17 @@ apple=</span><span style="color:#b3933a;">50 </span><span style="color:#1f1f1f;"
 </span></code></pre>
 <p>For some cases, multiple condition check like the previous examples is not enough. For example, filter a line if it contains <code>par</code> as long as <code>cart</code> isn't present later in the line. Presence of <code>cart</code> earlier in the line shouldn't affect the outcome. In such cases, you can first change the input line to add a newline character wherever <code>cart</code> is present and then construct a condition such that it depends on the newline character instead of <code>cart</code>. If a match is found, delete all the newline characters and then print the line.</p>
 <pre style="background-color:#f5f5f5;">
-<code><span style="color:#1f1f1f;">$ s=</span><span style="color:#d07711;">&#39;par carted spare cart park city&#39;
+<code><span style="color:#1f1f1f;">$ s=</span><span style="color:#d07711;">&#39;par carted spare cart park city\na parking cart\n&#39;
 
 </span><span style="color:#7f8989;"># same as: grep -P &#39;par(?!.*cart)&#39;
-</span><span style="color:#1f1f1f;">$ echo </span><span style="color:#d07711;">&quot;$s&quot; </span><span style="color:#72ab00;">|</span><span style="color:#1f1f1f;"> sed </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">n </span><span style="color:#d07711;">&#39;s/cart/\n&amp;/g; /par[^\n]*$/{ s/\n//g; p }&#39;</span><span style="color:#1f1f1f;">
+</span><span style="color:#1f1f1f;">$ </span><span style="color:#b39f04;">printf </span><span style="color:#d07711;">&#39;</span><span style="color:#aeb52b;">%b</span><span style="color:#d07711;">&#39; &quot;$s&quot; </span><span style="color:#72ab00;">|</span><span style="color:#1f1f1f;"> sed </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">n </span><span style="color:#d07711;">&#39;s/cart/\n&amp;/g; /par[^\n]*$/{ s/\n//g; p }&#39;</span><span style="color:#1f1f1f;">
 par carted spare cart park city
 </span></code></pre>
 <blockquote>
 <p><img src="/images/info.svg" alt="info" /> Newline is a safe character to choose for default line by line processing, as <code>sed</code> removes it from the pattern space. If you are processing a pattern space that contains newline character (for example: <code>-z</code> option, <code>N</code> command, etc), then you can still perform this trick as long as you know a character that is guaranteed to be absent from the input data. </p>
 </blockquote>
 <h2 id="substitution">Substitution<a class="zola-anchor" href="#substitution" aria-label="Anchor link for: substitution">🔗</a></h2>
-<p>In previous section, you saw how to modify input line with newline character to make it easier to construct a lookaround condition. This trick comes in handy for substitution as well. However, for search and replace cases, you also need to emulate zero-width nature of lookarounds. To achieve this, you can make use of <code>t</code> command to construct a loop that performs substitution as long as a match is found. See my chapter on <a href="https://learnbyexample.github.io/learn_gnused/control-structures.html">Control structures</a> for more details about branching commands in <code>GNU sed</code>.</p>
+<p>In the previous section, you saw how to modify input line with newline character to make it easier to construct a lookaround condition. This trick comes in handy for substitution as well. However, for search and replace cases, you also need to emulate zero-width nature of lookarounds. To achieve this, you can make use of <code>t</code> command to construct a loop that performs substitution as long as a match is found. See my chapter on <a href="https://learnbyexample.github.io/learn_gnused/control-structures.html">Control structures</a> for more details about branching commands in <code>GNU sed</code>.</p>
 <p>Here's an example of looping. Aim is to delete <code>fin</code> from the given input recursively.</p>
 <pre style="background-color:#f5f5f5;">
 <code><span style="color:#7f8989;"># manual repetition, assuming count is known
@@ -221,7 +221,7 @@ cog
 </span><span style="color:#1f1f1f;">$ echo </span><span style="color:#d07711;">&#39;coffining&#39; </span><span style="color:#72ab00;">|</span><span style="color:#1f1f1f;"> sed </span><span style="color:#d07711;">&#39;:loop s/fin//; tloop&#39;</span><span style="color:#1f1f1f;">
 cog
 </span></code></pre><h3 id="negative-lookarounds">Negative lookarounds<a class="zola-anchor" href="#negative-lookarounds" aria-label="Anchor link for: negative-lookarounds">🔗</a></h3>
-<p>Some cases can be solved by performing substitution only if a condition is first satisfied. Note that <code>{}</code> grouping is optional here.</p>
+<p>Some cases can be solved by performing substitution only if a condition is first satisfied. For this example, need to first select lines if it doesn't start with a <code>;</code> character. Then, for such lines, remove everything from the first space or comma character. Note that <code>{}</code> grouping is optional here.</p>
 <pre style="background-color:#f5f5f5;">
 <code><span style="color:#7f8989;"># same as: perl -ne &#39;print if s/^(?!;).*?\K[ ,].*//&#39;
 </span><span style="color:#1f1f1f;">$ sed </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">n </span><span style="color:#d07711;">&#39;/^;/! s/[ ,].*//p&#39;</span><span style="color:#1f1f1f;"> items.txt
@@ -229,7 +229,7 @@ cog
 apple=</span><span style="color:#b3933a;">50</span><span style="color:#1f1f1f;">
 a
 </span></code></pre>
-<p>Change <code>foo</code> to <code>[baz]</code> only if it is not followed by a digit character. Note that <code>foo</code> at the end of string also satisfies this assertion. <code>foofoo</code> has two matches as the assertion is zero-width in nature, i.e. it doesn't consume characters. Here, the first step is inserting a newline character between <code>foo</code> and a digit character. Then change all <code>foo</code> to <code>[baz]</code> as long as it is at the end of string or if it isn't followed by a newline character. Once the loop ends, remove all the newline characters.</p>
+<p>For this example, need to change <code>foo</code> to <code>[baz]</code> only if it is not followed by a digit character. Note that <code>foo</code> at the end of string also satisfies this assertion. <code>foofoo</code> has two matches as the assertion is zero-width in nature, i.e. it doesn't consume characters. Here, the first step is inserting a newline character between <code>foo</code> and a digit character. Then change all <code>foo</code> to <code>[baz]</code> as long as it is at the end of string or if it isn't followed by a newline character. Once the loop ends, remove all the newline characters.</p>
 <pre style="background-color:#f5f5f5;">
 <code><span style="color:#1f1f1f;">$ s=</span><span style="color:#d07711;">&#39;hey food! foo42 foot5 foofoo&#39;
 
@@ -269,13 +269,13 @@ par s[xyz]e [xyz]t [xyz]ty
 </span></code></pre>
 <p>Replace if <code>go</code> is not there between <code>at</code> and <code>par</code>.</p>
 <pre style="background-color:#f5f5f5;">
-<code><span style="color:#1f1f1f;">$ s=</span><span style="color:#d07711;">&#39;fox,cat,dog,parrot,dot,park,go,spare&#39;
+<code><span style="color:#1f1f1f;">$ s=</span><span style="color:#d07711;">&#39;fox,cat,dog,parrot,dot,park,bat,go,spare,sat-in-a-park&#39;
 
-</span><span style="color:#7f8989;"># same as: perl -pe &#39;s/at((?!go).)*par/[xyz]/&#39;
-</span><span style="color:#1f1f1f;">$ echo </span><span style="color:#d07711;">&quot;$s&quot; </span><span style="color:#72ab00;">|</span><span style="color:#1f1f1f;"> sed </span><span style="color:#d07711;">&#39;s/go/\n&amp;/g; s/at[^\n]*par/[xyz]/; s/\n//g&#39;</span><span style="color:#1f1f1f;">
-fox,c[xyz]k,go,spare
+</span><span style="color:#7f8989;"># same as: perl -pe &#39;s/at((?!go).)*par/[xyz]/g&#39;
+</span><span style="color:#1f1f1f;">$ echo </span><span style="color:#d07711;">&quot;$s&quot; </span><span style="color:#72ab00;">|</span><span style="color:#1f1f1f;"> sed </span><span style="color:#d07711;">&#39;s/go/\n&amp;/g; s/at[^\n]*par/[xyz]/g; s/\n//g&#39;</span><span style="color:#1f1f1f;">
+fox,c[xyz]k,bat,go,spare,s[xyz]k
 </span></code></pre><h3 id="positive-lookarounds">Positive lookarounds<a class="zola-anchor" href="#positive-lookarounds" aria-label="Anchor link for: positive-lookarounds">🔗</a></h3>
-<p>Surround fields with <code>[]</code> except first and last fields for csv input (assuming no embedded comma, newline characters, etc). With positive lookaround emulation, the modified string may continue to satisfy the matching condition, resulting in infinite looping. In this example, the fields themselves may contain <code>[]</code> characters, so you cannot use them to prevent infinite loop. The newline character trick comes in handy again.</p>
+<p>In this example, need to surround fields with <code>[]</code> except first and last fields for csv input (assuming no embedded comma, newline characters, etc). With positive lookaround emulation, the modified string may continue to satisfy the matching condition, resulting in infinite looping. In this example, the fields themselves may contain <code>[]</code> characters, so you cannot use them to prevent infinite loop. The newline character trick comes in handy again.</p>
 <pre style="background-color:#f5f5f5;">
 <code><span style="color:#1f1f1f;">$ s=</span><span style="color:#d07711;">&#39;1,t[w]o,[3],f[ou]r,5&#39;
 
