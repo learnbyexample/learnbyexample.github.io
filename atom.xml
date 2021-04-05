@@ -5,7 +5,7 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2021-03-19T00:00:00+00:00</updated>
+	<updated>2021-04-05T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
 	<entry xml:lang="en">
 		<title>Paying my bills with &#x27;free&#x27; ebooks</title>
@@ -851,7 +851,7 @@ $ diff &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F
 	<entry xml:lang="en">
 		<title>I know Python basics, what next?</title>
 		<published>2020-07-25T00:00:00+00:00</published>
-		<updated>2020-11-12T00:00:00+00:00</updated>
+		<updated>2021-04-05T00:00:00+00:00</updated>
 		<link href="https://learnbyexample.github.io/python-intermediate/" type="text/html"/>
 		<id>https://learnbyexample.github.io/python-intermediate/</id>
 		<content type="html">&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;what_next.png&quot; alt=&quot;what next&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
@@ -880,6 +880,8 @@ $ diff &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;karan&#x2F;Projects-Solutions&quot;&gt;Projects on various topics with solutions&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;tuvtran&#x2F;project-based-learning#python&quot;&gt;Project based learning&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;norvig&#x2F;pytudes&quot;&gt;Pytudes by Peter Norvig&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Books: &lt;a href=&quot;https:&#x2F;&#x2F;www.manning.com&#x2F;books&#x2F;tiny-python-projects&quot;&gt;Tiny Python Projects&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;nostarch.com&#x2F;impracticalpythonprojects&quot;&gt;Impractical Python Projects&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;nostarch.com&#x2F;real-world-python&quot;&gt;Real world Python&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.reddit.com&#x2F;r&#x2F;learnpython&#x2F;comments&#x2F;k5k1h0&#x2F;what_do_you_automate_with_python_at_home&#x2F;&quot;&gt;&#x2F;r&#x2F;learnpython: What do you automate with Python at home?&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;rosettacode.org&#x2F;wiki&#x2F;Category:Python&quot;&gt;Rosettacode&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;br&gt;
@@ -906,17 +908,20 @@ $ diff &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F
 &lt;p&gt;For non-trivial projects, you&#x27;ll usually end up needing frameworks like built-in module &lt;code&gt;unittest&lt;&#x2F;code&gt; or third-party modules like &lt;code&gt;pytest&lt;&#x2F;code&gt;. Here&#x27;s some learning resources.&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;realpython.com&#x2F;python-testing&#x2F;&quot;&gt;Getting started with testing in Python&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;blog.thea.codes&#x2F;my-python-testing-style-guide&#x2F;&quot;&gt;Python testing style guide&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;calmcode.io&#x2F;pytest&#x2F;introduction.html&quot;&gt;calmcode: pytest&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.thedigitalcatonline.com&#x2F;blog&#x2F;2020&#x2F;09&#x2F;10&#x2F;tdd-in-python-with-pytest-part-1&#x2F;&quot;&gt;TDD in Python with pytest&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.obeythetestinggoat.com&#x2F;&quot;&gt;obeythetestinggoat&lt;&#x2F;a&gt; — TDD for the Web, with Python, Selenium, Django, JavaScript and pals&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;testdriven.io&#x2F;blog&#x2F;modern-tdd&#x2F;&quot;&gt;Modern Test-Driven Development in Python&lt;&#x2F;a&gt; — TDD guide, has a real world application example&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;br&gt;
-&lt;h2 id=&quot;intermediate-python-resources&quot;&gt;Intermediate Python resources&lt;a class=&quot;zola-anchor&quot; href=&quot;#intermediate-python-resources&quot; aria-label=&quot;Anchor link for: intermediate-python-resources&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;h2 id=&quot;intermediate-to-advanced-python-resources&quot;&gt;Intermediate to Advanced Python resources&lt;a class=&quot;zola-anchor&quot; href=&quot;#intermediate-to-advanced-python-resources&quot; aria-label=&quot;Anchor link for: intermediate-to-advanced-python-resources&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;docs.python.org&#x2F;3&#x2F;index.html&quot;&gt;Official Python docs&lt;&#x2F;a&gt; — Python docs are a treasure trove of information&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;calmcode.io&#x2F;&quot;&gt;Calmcode&lt;&#x2F;a&gt; — videos on testing, code style, args kwargs, data science, etc&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;dabeaz-course.github.io&#x2F;practical-python&#x2F;Notes&#x2F;Contents.html&quot;&gt;Practical Python Programming&lt;&#x2F;a&gt; — covers foundational aspects of Python programming with an emphasis on script writing, data manipulation, and program organization&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;book.pythontips.com&#x2F;en&#x2F;latest&#x2F;index.html&quot;&gt;Intermediate Python&lt;&#x2F;a&gt; — covers debugging, generators, decorators, virtual environment, collections, comprehensions, classes, etc&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;inventwithpython.com&#x2F;beyond&#x2F;chapter0.html&quot;&gt;Beyond the Basic Stuff with Python&lt;&#x2F;a&gt; — Best Practices, Tools, and Techniques, OOP, Practice Projects&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.effectivepython.com&#x2F;&quot;&gt;Effective Python&lt;&#x2F;a&gt; — insight into the Pythonic way of writing programs&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.oreilly.com&#x2F;library&#x2F;view&#x2F;fluent-python&#x2F;9781491946237&#x2F;&quot;&gt;Fluent Python&lt;&#x2F;a&gt; — takes you through Python’s core language features and libraries, and shows you how to make your code shorter, faster, and more readable at the same time
 &lt;ul&gt;
@@ -931,9 +936,12 @@ $ diff &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F
 &lt;p&gt;&lt;strong&gt;Algorithms and Design patterns&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;runestone.academy&#x2F;runestone&#x2F;static&#x2F;pythonds&#x2F;index.html&quot;&gt;Problem solving with algorithms and data structures&lt;&#x2F;a&gt; &lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;livebook.manning.com&#x2F;book&#x2F;classic-computer-science-problems-in-python&#x2F;about-this-book&#x2F;&quot;&gt;Classic Computer Science Problems in Python&lt;&#x2F;a&gt; — deepens your knowledge of problem solving techniques from the realm of computer science by challenging you with time-tested scenarios, exercises, and algorithms&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;tayllan&#x2F;awesome-algorithms&quot;&gt;GitHub: Awesome algorithms&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;faif&#x2F;python-patterns&quot;&gt;GitHub: Collection of design patterns and idioms&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;python-patterns.guide&#x2F;&quot;&gt;Python design patterns&lt;&#x2F;a&gt; inspired from &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Design_Patterns&quot;&gt;Design Patterns: Elements of Reusable Object-Oriented Software&lt;&#x2F;a&gt; (also known as &lt;strong&gt;Gang of Four book&lt;&#x2F;strong&gt;)&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.cosmicpython.com&#x2F;book&#x2F;preface.html&quot;&gt;Architecture Patterns with Python&lt;&#x2F;a&gt; — Enabling TDD, DDD, and Event-Driven Microservices&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.pycabook.com&#x2F;&quot;&gt;Clean Architectures in Python&lt;&#x2F;a&gt; — software design methodology&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;br&gt;
 &lt;h2 id=&quot;handy-cheatsheets&quot;&gt;Handy cheatsheets&lt;a class=&quot;zola-anchor&quot; href=&quot;#handy-cheatsheets&quot; aria-label=&quot;Anchor link for: handy-cheatsheets&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
