@@ -5,8 +5,23 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2021-04-05T00:00:00+00:00</updated>
+	<updated>2021-05-26T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Perl one-liner articles</title>
+		<published>2021-05-26T00:00:00+00:00</published>
+		<updated>2021-05-26T00:00:00+00:00</updated>
+		<link href="https://learnbyexample.github.io/mini/perl-oneliner-articles/" type="text/html"/>
+		<id>https://learnbyexample.github.io/mini/perl-oneliner-articles/</id>
+		<content type="html">&lt;p&gt;One of the feedback I got for my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;learn_perl_oneliners&quot;&gt;Perl one-liners ebook&lt;&#x2F;a&gt; was to showcase examples where Perl shines compared to other text processing tools.&lt;&#x2F;p&gt;
+&lt;p&gt;Soon after, I got an invite to publish an article for the &lt;a href=&quot;https:&#x2F;&#x2F;www.perl.com&#x2F;&quot;&gt;perldotcom&lt;&#x2F;a&gt; site. So, I wrote a two-part post highlighting use cases where Perl&#x27;s rich regular expression engine, built-in functions, extensive ecosystem and portability helps:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.perl.com&#x2F;article&#x2F;perl-one-liners-part-1&#x2F;&quot;&gt;Perl &#x2F; Unix One-liner Cage Match, Part 1&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.perl.com&#x2F;article&#x2F;perl-one-liners-part-2&#x2F;&quot;&gt;Perl &#x2F; Unix One-liner Cage Match, Part 2&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;&lt;em&gt;Thanks to the editors for suggestions and improvements.&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>Paying my bills with &#x27;free&#x27; ebooks</title>
 		<published>2021-03-03T00:00:00+00:00</published>
@@ -130,6 +145,7 @@
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;jvns.ca&#x2F;#on-writing-comics---zines&quot;&gt;Julia Evans&#x27;s articles on writing comics&#x2F;zines&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;jvns.ca&#x2F;blog&#x2F;2020&#x2F;10&#x2F;28&#x2F;a-few-things-i-ve-learned-about-email-marketing&#x2F;&quot;&gt;Julia Evans&#x27;s email marketing experience&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.swyx.io&#x2F;marketing-yourself&#x2F;&quot;&gt;Shawn Wang&#x27;s article: How to Market Yourself&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;andregarzia.com&#x2F;2021&#x2F;04&#x2F;writing-a-technical-book.html&quot;&gt;Andre Alves Garzia&#x27;s article: Writing a Technical Book&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=23818859&quot;&gt;HN discussion: Writing a software book and making over $100k&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;p&gt;&lt;strong&gt;Writing skills&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
@@ -871,6 +887,7 @@ $ diff &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F
 &lt;p&gt;I do not have a simple answer to this question either. If you feel comfortable with programming basics and Python syntax, then exercises are a good way to test your knowledge. The resource you used to learn Python will typically have some sort of exercises, so those would be ideal as a first choice. I&#x27;d also suggest using the below resources to improve your skills. If you get stuck, reread the material related to those topics, search online, ask for clarifications, etc  — in short, make an effort to solve it. It is okay to skip some troublesome problems (and come back to it later if you have the time), but you should be able to solve most of the beginner problems. Maintaining notes will help too, especially for common mistakes.&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;exercism.io&#x2F;tracks&#x2F;python&#x2F;exercises&quot;&gt;Exercism&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;www.practicepython.org&#x2F;&quot;&gt;Practicepython&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;edabit.com&#x2F;challenges&#x2F;python3&quot;&gt;Edabit&lt;&#x2F;a&gt; — these are all beginner friendly and difficulty levels are marked&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;100_page_python_intro&#x2F;blob&#x2F;main&#x2F;exercises&#x2F;Exercises.md&quot;&gt;100 Page Python Intro exercises&lt;&#x2F;a&gt; — exercises from my introductory guide&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.codewars.com&#x2F;&quot;&gt;Codewars&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;adventofcode.com&#x2F;&quot;&gt;Adventofcode&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;projecteuler.net&#x2F;&quot;&gt;Projecteuler&lt;&#x2F;a&gt; — more challenging&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;py.checkio.org&#x2F;&quot;&gt;Checkio&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;www.codingame.com&#x2F;start&quot;&gt;Codingame&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;codecombat.com&#x2F;&quot;&gt;Codecombat&lt;&#x2F;a&gt; — gaming based challenges&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.reddit.com&#x2F;r&#x2F;dailyprogrammer&quot;&gt;&#x2F;r&#x2F;dailyprogrammer&lt;&#x2F;a&gt; — not active currently, but there&#x27;s plenty of past challenges with discussions&lt;&#x2F;li&gt;
