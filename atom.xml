@@ -5,8 +5,37 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2021-05-26T00:00:00+00:00</updated>
+	<updated>2021-05-29T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Debug woes: 1</title>
+		<published>2021-05-29T00:00:00+00:00</published>
+		<updated>2021-05-29T00:00:00+00:00</updated>
+		<link href="https://learnbyexample.github.io/mini/debug-woes-1/" type="text/html"/>
+		<id>https://learnbyexample.github.io/mini/debug-woes-1/</id>
+		<content type="html">&lt;p&gt;While answering &lt;a href=&quot;https:&#x2F;&#x2F;stackoverflow.com&#x2F;q&#x2F;67703405&#x2F;4082052&quot;&gt;this SO question&lt;&#x2F;a&gt;, I ran into a debug misery. It took me an embarrassing amount of time and experiments to understand why.&lt;&#x2F;p&gt;
+&lt;p&gt;Here&#x27;s a simplified version of the problem. Can you spot the issue?&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ cat ip.txt
+a b c d
+i j k l
+
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# Change only first two occurrences of spaces with tabs
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ perl &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;pe &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;$c=2; s&#x2F; &#x2F;\t&#x2F; while $c--&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; ip.txt
+a       b       c d
+i       j       k l
+
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# Wanted to generalize the solution to match one-or-more whitespaces
+# But it doesn&amp;#39;t work!!!
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ perl &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;pe &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;$c=2; s&#x2F;\s+&#x2F;\t&#x2F; while $c--&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; ip.txt
+a       b c d
+i       j k l
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;br&gt;
+&lt;details&gt;&lt;summary&gt;Click to view answer&lt;&#x2F;summary&gt;
+The substitution works from start of the line for every iteration of the while loop. Tab is one of the whitespace characters, so after the first substitution, the tab gets matched for rest of the iterations.
+&lt;&#x2F;details&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>Perl one-liner articles</title>
 		<published>2021-05-26T00:00:00+00:00</published>
@@ -25,7 +54,7 @@
 	<entry xml:lang="en">
 		<title>Paying my bills with &#x27;free&#x27; ebooks</title>
 		<published>2021-03-03T00:00:00+00:00</published>
-		<updated>2021-03-19T00:00:00+00:00</updated>
+		<updated>2021-05-26T00:00:00+00:00</updated>
 		<link href="https://learnbyexample.github.io/my-book-writing-experience/" type="text/html"/>
 		<id>https://learnbyexample.github.io/my-book-writing-experience/</id>
 		<content type="html">&lt;p&gt;&lt;strong&gt;TL;DR&lt;&#x2F;strong&gt;: Small victories are more precious when you have nothing. Instead of burning through my savings, I&#x27;m now adding to it. The relief is priceless.&lt;&#x2F;p&gt;
@@ -867,7 +896,7 @@ $ diff &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F
 	<entry xml:lang="en">
 		<title>I know Python basics, what next?</title>
 		<published>2020-07-25T00:00:00+00:00</published>
-		<updated>2021-04-05T00:00:00+00:00</updated>
+		<updated>2021-05-26T00:00:00+00:00</updated>
 		<link href="https://learnbyexample.github.io/python-intermediate/" type="text/html"/>
 		<id>https://learnbyexample.github.io/python-intermediate/</id>
 		<content type="html">&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;what_next.png&quot; alt=&quot;what next&quot; &#x2F;&gt;&lt;&#x2F;p&gt;

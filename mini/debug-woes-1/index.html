@@ -7,7 +7,7 @@
       <!-- Enable responsiveness on mobile devices-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-      <title>learnbyexample</title>
+      <title>learnbyexample - Debug woes: 1</title>
 
       
         <link rel="alternate" type="application/atom+xml" title="RSS" href="https://learnbyexample.github.io/atom.xml">
@@ -121,66 +121,70 @@
             <main>
                 <div class="content" id="mobile-panel">
                     
-    <div class="taxonomy">
-        <h2>regular-expressions</h2>
-        
-            <div class="taxonomy__item">
-                <span class="taxonomy__item__time">2021-05-29</span>
-                <span class="taxonomy__item__title">
-                    <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;mini&#x2F;debug-woes-1&#x2F;">Debug woes: 1</a>
-                </span>
-            </div>
-        
-            <div class="taxonomy__item">
-                <span class="taxonomy__item__time">2021-03-03</span>
-                <span class="taxonomy__item__title">
-                    <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;my-book-writing-experience&#x2F;">Paying my bills with &#x27;free&#x27; ebooks</a>
-                </span>
-            </div>
-        
-            <div class="taxonomy__item">
-                <span class="taxonomy__item__time">2020-11-27</span>
-                <span class="taxonomy__item__title">
-                    <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;multiline-search-and-replace&#x2F;">Multiline fixed string search and replace with cli tools</a>
-                </span>
-            </div>
-        
-            <div class="taxonomy__item">
-                <span class="taxonomy__item__time">2020-10-31</span>
-                <span class="taxonomy__item__title">
-                    <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;sed-lookarounds&#x2F;">Emulating regexp lookarounds in GNU sed</a>
-                </span>
-            </div>
-        
-            <div class="taxonomy__item">
-                <span class="taxonomy__item__time">2020-09-16</span>
-                <span class="taxonomy__item__title">
-                    <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;substitution-with-ripgrep&#x2F;">Search and replace tricks with ripgrep</a>
-                </span>
-            </div>
-        
-            <div class="taxonomy__item">
-                <span class="taxonomy__item__time">2020-07-20</span>
-                <span class="taxonomy__item__title">
-                    <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;javascript-regexp-cheatsheet&#x2F;">JavaScript regular expressions cheatsheet and examples</a>
-                </span>
-            </div>
-        
-            <div class="taxonomy__item">
-                <span class="taxonomy__item__time">2020-07-03</span>
-                <span class="taxonomy__item__title">
-                    <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;python-regex-cheatsheet&#x2F;">Python regular expression cheatsheet and examples</a>
-                </span>
-            </div>
-        
-            <div class="taxonomy__item">
-                <span class="taxonomy__item__time">2019-08-09</span>
-                <span class="taxonomy__item__title">
-                    <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;python-regex-book-version2&#x2F;">Example driven book on Python regular expressions</a>
-                </span>
-            </div>
-        
+
+
+
+<article class="post">
+    
+    <header class="post__header">
+        <h1 class="post__title">
+            <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;mini&#x2F;debug-woes-1&#x2F;">Debug woes: 1</a>
+        </h1>
+        <div class="post__meta">
+            <span class="post__time">2021-05-29</span>
+            
+        </div>
+    </header>
+
+    <div class="post-content">
+      <p>While answering <a href="https://stackoverflow.com/q/67703405/4082052">this SO question</a>, I ran into a debug misery. It took me an embarrassing amount of time and experiments to understand why.</p>
+<p>Here's a simplified version of the problem. Can you spot the issue?</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#1f1f1f;">$ cat ip.txt
+a b c d
+i j k l
+
+</span><span style="color:#7f8989;"># Change only first two occurrences of spaces with tabs
+</span><span style="color:#1f1f1f;">$ perl </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">pe </span><span style="color:#d07711;">&#39;$c=2; s/ /\t/ while $c--&#39;</span><span style="color:#1f1f1f;"> ip.txt
+a       b       c d
+i       j       k l
+
+</span><span style="color:#7f8989;"># Wanted to generalize the solution to match one-or-more whitespaces
+# But it doesn&#39;t work!!!
+</span><span style="color:#1f1f1f;">$ perl </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">pe </span><span style="color:#d07711;">&#39;$c=2; s/\s+/\t/ while $c--&#39;</span><span style="color:#1f1f1f;"> ip.txt
+a       b c d
+i       j k l
+</span></code></pre><br>
+<details><summary>Click to view answer</summary>
+The substitution works from start of the line for every iteration of the while loop. Tab is one of the whitespace characters, so after the first substitution, the tab gets matched for rest of the iterations.
+</details>
+
     </div>
+
+    
+    
+
+    <div class="post-footer">
+        
+            
+                <div class="post-tags">
+                    
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;regular-expressions&#x2F;">#regular-expressions</a>
+                    
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;command-line&#x2F;">#command-line</a>
+                    
+                </div>
+            
+            
+
+        
+
+    </div>
+
+    
+    
+</article>
+
 
                 </div>
             </main>

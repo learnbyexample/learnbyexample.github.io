@@ -26,6 +26,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 ## Mini blog posts
 
 * [Perl one-liner articles](https://learnbyexample.github.io/mini/perl-oneliner-articles/)
+* [Debug woes: 1](https://learnbyexample.github.io/mini/debug-woes-1/)
 
 <br>
 
