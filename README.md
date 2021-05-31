@@ -6,6 +6,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Posts
 
+* [GNU BRE/ERE cheatsheet and differences between grep, sed and awk](https://learnbyexample.github.io/gnu-bre-ere-cheatsheet/)
 * [Paying my bills with 'free' ebooks](https://learnbyexample.github.io/my-book-writing-experience/)
 * [100 Page Python Intro book announcement](https://learnbyexample.github.io/100-page-python-intro-book-announcement/)
 * [Multiline fixed string search and replace with cli tools](https://learnbyexample.github.io/multiline-search-and-replace/)
@@ -25,8 +26,8 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Mini blog posts
 
-* [Perl one-liner articles](https://learnbyexample.github.io/mini/perl-oneliner-articles/)
 * [Debug woes: 1](https://learnbyexample.github.io/mini/debug-woes-1/)
+* [Perl one-liner articles](https://learnbyexample.github.io/mini/perl-oneliner-articles/)
 
 <br>
 
