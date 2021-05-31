@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+      <title>learnbyexample - GNU BRE&#x2F;ERE cheatsheet and differences between grep, sed and awk</title>
+
+      
+        <link rel="alternate" type="application/atom+xml" title="RSS" href="https://learnbyexample.github.io/atom.xml">
+      
+
+      
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
+          
+      
+
+      
+          <link rel="stylesheet" href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;site.css">
+          
+      
+
+      
+      
+<link rel="icon" href="https://learnbyexample.github.io/favicon.svg">
+<link rel="shortcut icon" href="https://learnbyexample.github.io/favicon.png">
+    </head>
+
+    <body>
+        <div class="container">
+
+            <div id="mobile-navbar" class="mobile-navbar">
+              <div class="mobile-header-logo">
+                <a href="/" class="logo">learnbyexample</a>
+              </div>
+              <div class="mobile-navbar-icon icon-out">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+
+            <nav id="mobile-menu" class="mobile-menu slideout-menu slideout-menu-left">
+              <ul class="mobile-menu-list">
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io">
+                            Home
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;mini">
+                            Mini
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;books">
+                            Books
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags">
+                            Tags
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;about">
+                            About
+                        </a>
+                    </li>
+                
+              </ul>
+            </nav>
+
+            <header id="header">
+                <div class="logo"><a href="https:&#x2F;&#x2F;learnbyexample.github.io">learnbyexample</a></div>
+                <nav class="menu">
+                    <ul>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io">
+                                    Home
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;mini">
+                                    Mini
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;books">
+                                    Books
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags">
+                                    Tags
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;about">
+                                    About
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </nav>
+            </header>
+
+            <main>
+                <div class="content" id="mobile-panel">
+                    
+
+
+<div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content always-active">
+        <nav id="TableOfContents">
+            <ul>
+                
+                <li>
+                    <a href="https://learnbyexample.github.io/gnu-bre-ere-cheatsheet/#bre-and-ere" class="toc-link">BRE and ERE</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://learnbyexample.github.io/gnu-bre-ere-cheatsheet/#anchors" class="toc-link">Anchors</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://learnbyexample.github.io/gnu-bre-ere-cheatsheet/#alternation-and-grouping" class="toc-link">Alternation and Grouping</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://learnbyexample.github.io/gnu-bre-ere-cheatsheet/#escaping-metacharacters" class="toc-link">Escaping metacharacters</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://learnbyexample.github.io/gnu-bre-ere-cheatsheet/#dot-metacharacter-and-quantifiers" class="toc-link">Dot metacharacter and Quantifiers</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://learnbyexample.github.io/gnu-bre-ere-cheatsheet/#character-class" class="toc-link">Character class</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://learnbyexample.github.io/gnu-bre-ere-cheatsheet/#escape-sequences" class="toc-link">Escape sequences</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://learnbyexample.github.io/gnu-bre-ere-cheatsheet/#named-character-sets" class="toc-link">Named character sets</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://learnbyexample.github.io/gnu-bre-ere-cheatsheet/#backreferences" class="toc-link">Backreferences</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://learnbyexample.github.io/gnu-bre-ere-cheatsheet/#sed-flags" class="toc-link">sed flags</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://learnbyexample.github.io/gnu-bre-ere-cheatsheet/#sed-case-conversion" class="toc-link">sed case conversion</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://learnbyexample.github.io/gnu-bre-ere-cheatsheet/#sed-delimiters" class="toc-link">sed delimiters</a>
+                    
+                </li>
+                
+            </ul>
+        </nav>
+    </div>
+</div>
+
+
+<article class="post">
+    
+    <header class="post__header">
+        <h1 class="post__title">
+            <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;gnu-bre-ere-cheatsheet&#x2F;">GNU BRE&#x2F;ERE cheatsheet and differences between grep, sed and awk</a>
+        </h1>
+        <div class="post__meta">
+            <span class="post__time">2021-05-31</span>
+            
+        </div>
+    </header>
+
+    <div class="post-content">
+      <p>This blog post covers <strong>Basic Regular Expressions</strong> (BRE) and <strong>Extended Regular Expressions</strong> (ERE) syntax supported by GNU <code>grep</code>, <code>sed</code> and <code>awk</code>. You'll also learn the differences between these tools — for example, <code>awk</code> doesn't support backreferences within regexp definition (i.e. the search portion).</p>
+<span id="continue-reading"></span><br>
+<h2 id="bre-and-ere">BRE and ERE<a class="zola-anchor" href="#bre-and-ere" aria-label="Anchor link for: bre-and-ere">🔗</a></h2>
+<p><img src="/images/info.svg" alt="info" /> From <a href="https://www.gnu.org/software/grep/manual/grep.html#Basic-vs-Extended">GNU grep manual</a>:</p>
+<blockquote>
+<p>In basic regular expressions the meta-characters <code>?</code>, <code>+</code>, <code>{</code>, <code>|</code>, <code>(</code>, and <code>)</code> lose their special meaning; instead use the backslashed versions <code>\?</code>, <code>\+</code>, <code>\{</code>, <code>\|</code>, <code>\(</code>, and <code>\)</code>.</p>
+</blockquote>
+<p><code>grep</code> and <code>sed</code> support BRE by default and enables ERE when <code>-E</code> option is used. <code>awk</code> supports only ERE. Assume ERE for descriptions in this post unless otherwise mentioned.</p>
+<p>This post is intended as a reference for BRE/ERE flavor of regular expressions. For a more detailed explanation with examples and exercises, see these chapters from <a href="https://learnbyexample.github.io/books/">my ebooks</a>:</p>
+<ul>
+<li><a href="https://learnbyexample.github.io/learn_gnugrep_ripgrep/breere-regular-expressions.html">grep BRE/ERE Regular Expressions</a></li>
+<li><a href="https://learnbyexample.github.io/learn_gnused/breere-regular-expressions.html">sed BRE/ERE Regular Expressions</a></li>
+<li><a href="https://learnbyexample.github.io/learn_gnuawk/regular-expressions.html">awk Regular Expressions</a></li>
+</ul>
+<br>
+<h2 id="anchors">Anchors<a class="zola-anchor" href="#anchors" aria-label="Anchor link for: anchors">🔗</a></h2>
+<table><thead><tr><th>Pattern</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>^</code></td><td>restricts the match to the start of the string</td></tr>
+<tr><td><code>$</code></td><td>restricts the match to the end of the string</td></tr>
+<tr><td><code>\&lt;</code></td><td>restricts the match to the start of word</td></tr>
+<tr><td><code>\&gt;</code></td><td>restricts the match to the end of word</td></tr>
+</tbody></table>
+<p>Word characters include alphabets, digits and underscore. Here's some more alternate ways to specify word anchors:</p>
+<table><thead><tr><th>Pattern</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>\b</code></td><td>restricts the match to the start/end of words, applicable for <code>grep</code> and <code>sed</code></td></tr>
+<tr><td><code>\y</code></td><td>restricts the match to the start/end of words, applicable for <code>awk</code> (<code>\b</code> means backspace)</td></tr>
+<tr><td><code>\B</code></td><td>matches wherever <code>\b</code> (or <code>\y</code>) doesn't match</td></tr>
+</tbody></table>
+<p><code>grep</code> also supports <code>-w</code> cli option. It is equivalent to <code>(?&lt;!\w)pattern(?!\w)</code>. The three different ways to specify word anchors are not exactly equivalent though, see <a href="https://learnbyexample.github.io/learn_gnugrep_ripgrep/gotchas-and-tricks.html#word-boundary-differences">Word boundary differences</a> section from my book for details and examples.</p>
+<p>The <code>-x</code> cli option in <code>grep</code> is equivalent to <code>^pattern$</code>.</p>
+<br>
+<h2 id="alternation-and-grouping">Alternation and Grouping<a class="zola-anchor" href="#alternation-and-grouping" aria-label="Anchor link for: alternation-and-grouping">🔗</a></h2>
+<table><thead><tr><th>Pattern</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>pat1|pat2|pat3</code></td><td>match <code>pat1</code> or <code>pat2</code> or <code>pat3</code></td></tr>
+<tr><td></td><td>use <code>\|</code> in BRE mode</td></tr>
+<tr><td><code>()</code></td><td>group pattern(s), <code>a(b|c)d</code> is same as <code>abd|acd</code></td></tr>
+<tr><td></td><td>use <code>\(\)</code> in BRE mode</td></tr>
+</tbody></table>
+<p>The alternative patterns can have their own independent anchors. Alternative which matches earliest in the input gets precedence. The leftmost longest portion wins in case of a tie.</p>
+<br>
+<h2 id="escaping-metacharacters">Escaping metacharacters<a class="zola-anchor" href="#escaping-metacharacters" aria-label="Anchor link for: escaping-metacharacters">🔗</a></h2>
+<table><thead><tr><th>Pattern</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>\</code></td><td>prefix metacharacters with <code>\</code> to match them literally</td></tr>
+<tr><td><code>\\</code></td><td>to match <code>\</code> literally</td></tr>
+</tbody></table>
+<ul>
+<li>With <code>grep</code> and <code>sed</code>, switching between ERE and BRE can reduce the number of escapes needed for some cases. For fixed string matching, <code>grep</code> has <code>-F</code> option and <code>awk</code> has string comparison operators (whole string) and the <code>index</code> function (partial string).</li>
+<li><code>sed</code> requires both <code>(</code> and <code>)</code> characters to be escaped (in ERE mode), whereas <code>grep</code> and <code>awk</code> doesn't require <code>)</code> to be escaped.</li>
+<li><code>sed</code> requires <code>{</code> to be escaped (in ERE mode) even if it isn't part of a valid quantifier syntax, whereas <code>grep</code> and <code>awk</code> doesn't require escaping. For example, you'd need <code>\{a}</code> in <code>sed</code> whereas <code>{a}</code> is enough for the other two.</li>
+<li>In BRE mode, <code>grep</code> and <code>sed</code> doesn't require <code>^</code> and <code>$</code> to be escaped if they are used away from their customary positions.</li>
+</ul>
+<br>
+<h2 id="dot-metacharacter-and-quantifiers">Dot metacharacter and Quantifiers<a class="zola-anchor" href="#dot-metacharacter-and-quantifiers" aria-label="Anchor link for: dot-metacharacter-and-quantifiers">🔗</a></h2>
+<table><thead><tr><th>Pattern</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>.</code></td><td>match any character, including the newline character</td></tr>
+<tr><td><code>?</code></td><td>match <code>0</code> or <code>1</code> times</td></tr>
+<tr><td></td><td>use <code>\?</code> in BRE mode</td></tr>
+<tr><td><code>*</code></td><td>match <code>0</code> or more times</td></tr>
+<tr><td><code>+</code></td><td>match <code>1</code> or more times</td></tr>
+<tr><td></td><td>use <code>\+</code> in BRE mode</td></tr>
+<tr><td><code>{m,n}</code></td><td>match <code>m</code> to <code>n</code> times</td></tr>
+<tr><td><code>{m,}</code></td><td>match at least <code>m</code> times</td></tr>
+<tr><td><code>{,n}</code></td><td>match up to <code>n</code> times (including <code>0</code> times)</td></tr>
+<tr><td><code>{n}</code></td><td>match exactly <code>n</code> times</td></tr>
+<tr><td></td><td>use <code>\{\}</code> in BRE mode</td></tr>
+<tr><td><code>pat1.*pat2</code></td><td>any number of characters between <code>pat1</code> and <code>pat2</code></td></tr>
+<tr><td><code>pat1.*pat2|pat2.*pat1</code></td><td>match both <code>pat1</code> and <code>pat2</code> in any order</td></tr>
+</tbody></table>
+<p>Precedence rule is <em>longest match wins</em>, which is mostly similar but not exactly same as greedy quantifiers. For example, with <code>foo123312baz</code> as input string, <code>o[123]+(12baz)?</code> will match <code>o123312baz</code> with these tools, whereas it will match <code>o123312</code> with greedy quantifiers.</p>
+<br>
+<h2 id="character-class">Character class<a class="zola-anchor" href="#character-class" aria-label="Anchor link for: character-class">🔗</a></h2>
+<table><thead><tr><th>Pattern</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>[set123]</code></td><td>match any of these characters once</td></tr>
+<tr><td><code>[^set123]</code></td><td>match except any of these characters once</td></tr>
+<tr><td><code>[3-7AM-X]</code></td><td>range of characters from <code>3</code> to <code>7</code>, <code>A</code>, another range from <code>M</code> to <code>X</code></td></tr>
+<tr><td><code>[.</code></td><td>open collating symbol</td></tr>
+<tr><td><code>.]</code></td><td>close collating symbol</td></tr>
+<tr><td><code>[=</code></td><td>open equivalence class</td></tr>
+<tr><td><code>=]</code></td><td>close equivalence class</td></tr>
+</tbody></table>
+<p>Specific placement will help to match character class metacharacters literally.</p>
+<table><thead><tr><th>Pattern</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>[a-z-]</code></td><td><code>-</code> should be first/last character to match literally</td></tr>
+<tr><td><code>[+^]</code></td><td><code>^</code> shouldn't be first character</td></tr>
+<tr><td><code>[]=]</code></td><td><code>]</code> should be first character (second if <code>^</code> is used to invert the set)</td></tr>
+</tbody></table>
+<ul>
+<li><code>\</code> isn't special within character class in <code>grep</code>.</li>
+<li><code>\</code> can be used to escape character class metacharacters in <code>awk</code>.</li>
+</ul>
+<p>Some commonly used character sets have predefined escape sequences:</p>
+<table><thead><tr><th>Pattern</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>\w</code></td><td>similar to <code>[a-zA-Z0-9_]</code> for matching word characters</td></tr>
+<tr><td><code>\s</code></td><td>similar to <code>[ \t\n\r\f\v]</code> for matching whitespace characters</td></tr>
+<tr><td><code>\W</code></td><td>match non-word characters</td></tr>
+<tr><td><code>\S</code></td><td>match non-whitespace characters</td></tr>
+</tbody></table>
+<ul>
+<li>Undefined escape sequences will be treated as the character it escapes. For example, <code>\e</code> will match <code>e</code> (not <code>\</code> and <code>e</code>).
+<ul>
+<li>in addition, <code>awk</code> gives a &quot;not a known regexp operator&quot; warning.</li>
+</ul>
+</li>
+<li>The above escape sequences <em>cannot</em> be used inside character classes and behavior varies between the tools.
+<ul>
+<li>For example, using <code>[\w]</code> will match <code>\</code> or <code>w</code> characters in <code>grep</code> and <code>sed</code> whereas it will match only <code>w</code> in <code>awk</code>.</li>
+</ul>
+</li>
+<li>These tools do <em>not</em> support <code>\d</code> and <code>\D</code>, commonly featured in other regexp implementations for digits and non-digits.</li>
+</ul>
+<br>
+<h2 id="escape-sequences">Escape sequences<a class="zola-anchor" href="#escape-sequences" aria-label="Anchor link for: escape-sequences">🔗</a></h2>
+<p>This section is applicable only for <code>sed</code> and <code>awk</code> unless otherwise specified and can be used within character classes too. See also <a href="https://ascii.cl/">ASCII Codes Table Standard characters</a>.</p>
+<table><thead><tr><th>Escape sequence</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>\a</code></td><td>alert</td></tr>
+<tr><td><code>\b</code></td><td>backspace in <code>awk</code>, word boundary in <code>grep</code> and <code>sed</code></td></tr>
+<tr><td><code>\f</code></td><td>formfeed</td></tr>
+<tr><td><code>\n</code></td><td>newline</td></tr>
+<tr><td><code>\r</code></td><td>carriage return</td></tr>
+<tr><td><code>\t</code></td><td>horizontal tab</td></tr>
+<tr><td><code>\v</code></td><td>vertical tab</td></tr>
+<tr><td><code>\cx</code></td><td>CONTROL-x in <code>sed</code></td></tr>
+</tbody></table>
+<p>You can also represent ASCII characters using their codepoint values.</p>
+<table><thead><tr><th>Escape sequence</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>\xNN</code></td><td>hexadecimal digits</td></tr>
+<tr><td><code>\NNN</code></td><td>octal digits in <code>awk</code></td></tr>
+<tr><td><code>\oNNN</code></td><td>octal digits in <code>sed</code></td></tr>
+<tr><td><code>\dNNN</code></td><td>decimal digits in <code>sed</code></td></tr>
+</tbody></table>
+<ul>
+<li>In search section, a metacharacter specified by escape sequences will still act as the metacharacter. For example, <code>/\x5eco/</code> will match <code>co</code> only at the start of the string.</li>
+<li>In replacement section,
+<ul>
+<li>escape sequences in <code>sed</code> produces literal character. For example, <code>s/.*/&quot;\x26&quot;/</code> will have <code>&quot;&amp;&quot;</code> as the replacement value.</li>
+<li>escape sequences in <code>awk</code> is treated as metacharacter. For example, <code>sub(/.*/, &quot;[&amp;]&quot;)</code> and <code>sub(/.*/, &quot;[\x26]&quot;)</code> are equivalent.</li>
+</ul>
+</li>
+</ul>
+<p><img src="/images/info.svg" alt="info" /> Ways to use escape sequences with <code>grep</code>:</p>
+<ul>
+<li><a href="https://www.gnu.org/software/bash/manual/bash.html#ANSI_002dC-Quoting">ANSI-C Quoting</a> — for example, <code>$'a\tb'</code> will match <code>a</code> and <code>b</code> with a tab in between.</li>
+<li><code>-P</code> option, see my chapter on <a href="https://learnbyexample.github.io/learn_gnugrep_ripgrep/perl-compatible-regular-expressions.html">Perl Compatible Regular Expressions</a> for more details.</li>
+</ul>
+<br>
+<h2 id="named-character-sets">Named character sets<a class="zola-anchor" href="#named-character-sets" aria-label="Anchor link for: named-character-sets">🔗</a></h2>
+<p>These can be used inside character classes only. For example, <code>[[:digit:]]</code> is same as <code>[0-9]</code> and <code>[[:alnum:]_]</code> is equivalent to <code>\w</code>.</p>
+<table><thead><tr><th>Named set</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>[:digit:]</code></td><td><code>[0-9]</code></td></tr>
+<tr><td><code>[:lower:]</code></td><td><code>[a-z]</code></td></tr>
+<tr><td><code>[:upper:]</code></td><td><code>[A-Z]</code></td></tr>
+<tr><td><code>[:alpha:]</code></td><td><code>[a-zA-Z]</code></td></tr>
+<tr><td><code>[:alnum:]</code></td><td><code>[0-9a-zA-Z]</code></td></tr>
+<tr><td><code>[:xdigit:]</code></td><td><code>[0-9a-fA-F]</code></td></tr>
+<tr><td><code>[:cntrl:]</code></td><td>control characters — first 32 ASCII characters and 127th (DEL)</td></tr>
+<tr><td><code>[:punct:]</code></td><td>all the punctuation characters</td></tr>
+<tr><td><code>[:graph:]</code></td><td><code>[:alnum:]</code> and <code>[:punct:]</code></td></tr>
+<tr><td><code>[:print:]</code></td><td><code>[:alnum:]</code>, <code>[:punct:]</code> and space</td></tr>
+<tr><td><code>[:blank:]</code></td><td>space and tab characters</td></tr>
+<tr><td><code>[:space:]</code></td><td>whitespace characters, same as <code>\s</code></td></tr>
+</tbody></table>
+<br>
+<h2 id="backreferences">Backreferences<a class="zola-anchor" href="#backreferences" aria-label="Anchor link for: backreferences">🔗</a></h2>
+<table><thead><tr><th>Pattern</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>\N</code></td><td>backreference, gives matched portion of Nth capture group</td></tr>
+<tr><td></td><td>possible values: <code>\1</code>, <code>\2</code> up to <code>\9</code></td></tr>
+<tr><td><code>&amp;</code></td><td>represents entire matched string in the replacement section</td></tr>
+<tr><td><code>\0</code></td><td>equivalent to <code>&amp;</code> in <code>sed</code></td></tr>
+</tbody></table>
+<p>Notes for <code>awk</code>:</p>
+<ul>
+<li>backreferences can be used only in replacement section, not allowed in search section.</li>
+<li><code>sub</code> and <code>gsub</code> functions allow only the <code>&amp;</code> backreference.</li>
+<li><code>gensub</code> function allows <code>\N</code> form of backreference as well.
+<ul>
+<li>but need to use <code>\\1</code>, <code>\\2</code> etc since they are specified using string syntax.</li>
+</ul>
+</li>
+</ul>
+<br>
+<h2 id="sed-flags">sed flags<a class="zola-anchor" href="#sed-flags" aria-label="Anchor link for: sed-flags">🔗</a></h2>
+<p>When used with regexp addressing:</p>
+<table><thead><tr><th>Flag</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>I</code></td><td>match case insensitively</td></tr>
+<tr><td><code>p</code></td><td>print if match is found</td></tr>
+<tr><td><code>e</code></td><td>replace matching line with output of the line executed as a shell command</td></tr>
+<tr><td><code>e argument</code></td><td>execute argument as external command and insert output before matching lines</td></tr>
+<tr><td><code>w filename</code></td><td>if match is found, write contents of pattern space to given filename</td></tr>
+</tbody></table>
+<p>When used with substitution command:</p>
+<table><thead><tr><th>Flag</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>i</code> or <code>I</code></td><td>match case insensitively</td></tr>
+<tr><td><code>g</code></td><td>replace all occurrences instead of just the first match</td></tr>
+<tr><td><code>N</code></td><td>a number will cause only the <em>N</em>th match to be replaced</td></tr>
+<tr><td><code>Ng</code></td><td>replace from <em>N</em>th match to the end</td></tr>
+<tr><td><code>p</code></td><td>print if substitution succeeds</td></tr>
+<tr><td><code>w filename</code></td><td>if substitution succeeds, write contents of pattern space to given filename</td></tr>
+<tr><td><code>e</code></td><td>if substitution succeeds, execute contents of pattern space as shell command and replace the pattern space with command output</td></tr>
+<tr><td><code>m</code> or <code>M</code></td><td>multiline mode</td></tr>
+<tr><td></td><td><code>.</code> will not match the newline character</td></tr>
+<tr><td></td><td><code>^</code> and <code>$</code> will match every line's start and end locations (line separator is <code>\n</code> by default and NUL when <code>-z</code> option is used)</td></tr>
+<tr><td><code>\`</code></td><td>always match the start of string irrespective of multiline mode</td></tr>
+<tr><td><code>\'</code></td><td>always match the end of string irrespective of multiline mode</td></tr>
+</tbody></table>
+<p>Flags are not supported by <code>grep</code> or <code>awk</code>. But these equivalent/alternative options can be used:</p>
+<ul>
+<li><code>-i</code> cli option in <code>grep</code> and setting <code>IGNORECASE</code> to non-zero value in <code>awk</code> will match case insensitively.</li>
+<li><code>tolower</code> or <code>toupper</code> functions can be used in <code>awk</code> to convert input to single case.</li>
+<li>you can also use character classes for small strings, for example <code>[cC][aA][tT]</code> will match <code>cat</code> case insensitively.</li>
+<li><code>sub</code> function in <code>awk</code> replaces only the first matching occurrence and <code>gsub</code> function is equivalent to using the <code>g</code> flag.</li>
+<li>third argument of <code>gensub</code> function in <code>awk</code> supports replacing only the <em>N</em>th match as well as the <code>g</code> flag.</li>
+</ul>
+<br>
+<h2 id="sed-case-conversion">sed case conversion<a class="zola-anchor" href="#sed-case-conversion" aria-label="Anchor link for: sed-case-conversion">🔗</a></h2>
+<table><thead><tr><th>Escape sequence</th><th>Description</th></tr></thead><tbody>
+<tr><td><code>\E</code></td><td>indicates end of case conversion in replacement section</td></tr>
+<tr><td><code>\l</code></td><td>convert next character to lowercase</td></tr>
+<tr><td><code>\u</code></td><td>convert next character to uppercase</td></tr>
+<tr><td><code>\L</code></td><td>convert following characters to lowercase, stops if <code>\U</code> or <code>\E</code> is found</td></tr>
+<tr><td><code>\U</code></td><td>convert following characters to uppercase, stops if <code>\L</code> or <code>\E</code> is found</td></tr>
+</tbody></table>
+<br>
+<h2 id="sed-delimiters">sed delimiters<a class="zola-anchor" href="#sed-delimiters" aria-label="Anchor link for: sed-delimiters">🔗</a></h2>
+<ul>
+<li><code>/</code> is idiomatically used as the delimiter.</li>
+<li>Any character except <code>\</code> and newline character can also be used. For example: <code>s#/home/learnbyexample/#~/#</code> is same as <code>s/\/home\/learnbyexample\//~\//</code>.</li>
+<li>For regexp addressing, the first delimiter has to be escaped. For example: <code>\;/foo/bar/;p</code> is same as <code>/foo\/bar\//p</code>.</li>
+</ul>
+
+    </div>
+
+    
+    
+
+    <div class="post-footer">
+        
+            
+                <div class="post-tags">
+                    
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;gnu-grep&#x2F;">#gnu-grep</a>
+                    
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;gnu-sed&#x2F;">#gnu-sed</a>
+                    
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;gnu-awk&#x2F;">#gnu-awk</a>
+                    
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;regular-expressions&#x2F;">#regular-expressions</a>
+                    
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;cheatsheet&#x2F;">#cheatsheet</a>
+                    
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;linux&#x2F;">#linux</a>
+                    
+                </div>
+            
+            
+                <div class="post-nav">
+                    
+                        <a class="previous" href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;my-book-writing-experience&#x2F;">‹ Paying my bills with &#x27;free&#x27; ebooks</a>
+                    
+                    
+                    
+                    
+                </div>
+            
+
+        
+
+    </div>
+
+    
+    
+</article>
+
+
+                </div>
+            </main>
+
+            
+            
+        </div>
+
+      
+          <script type="text/javascript" src="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;even.js" ></script>
+      
+    </body>
+
+</html>
