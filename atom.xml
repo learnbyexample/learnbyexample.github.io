@@ -203,10 +203,6 @@
 &lt;p&gt;When used with regexp addressing:&lt;&#x2F;p&gt;
 &lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Flag&lt;&#x2F;th&gt;&lt;th&gt;Description&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
 &lt;tr&gt;&lt;td&gt;&lt;code&gt;I&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;match case insensitively&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
-&lt;tr&gt;&lt;td&gt;&lt;code&gt;p&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;print if match is found&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
-&lt;tr&gt;&lt;td&gt;&lt;code&gt;e&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;replace matching line with output of the line executed as a shell command&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
-&lt;tr&gt;&lt;td&gt;&lt;code&gt;e argument&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;execute argument as external command and insert output before matching lines&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
-&lt;tr&gt;&lt;td&gt;&lt;code&gt;w filename&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;if match is found, write contents of pattern space to given filename&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
 &lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
 &lt;p&gt;When used with substitution command:&lt;&#x2F;p&gt;
 &lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Flag&lt;&#x2F;th&gt;&lt;th&gt;Description&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
@@ -214,9 +210,6 @@
 &lt;tr&gt;&lt;td&gt;&lt;code&gt;g&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;replace all occurrences instead of just the first match&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
 &lt;tr&gt;&lt;td&gt;&lt;code&gt;N&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;a number will cause only the &lt;em&gt;N&lt;&#x2F;em&gt;th match to be replaced&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
 &lt;tr&gt;&lt;td&gt;&lt;code&gt;Ng&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;replace from &lt;em&gt;N&lt;&#x2F;em&gt;th match to the end&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
-&lt;tr&gt;&lt;td&gt;&lt;code&gt;p&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;print if substitution succeeds&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
-&lt;tr&gt;&lt;td&gt;&lt;code&gt;w filename&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;if substitution succeeds, write contents of pattern space to given filename&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
-&lt;tr&gt;&lt;td&gt;&lt;code&gt;e&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;if substitution succeeds, execute contents of pattern space as shell command and replace the pattern space with command output&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
 &lt;tr&gt;&lt;td&gt;&lt;code&gt;m&lt;&#x2F;code&gt; or &lt;code&gt;M&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;multiline mode&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
 &lt;tr&gt;&lt;td&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;code&gt;.&lt;&#x2F;code&gt; will not match the newline character&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
 &lt;tr&gt;&lt;td&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;code&gt;^&lt;&#x2F;code&gt; and &lt;code&gt;$&lt;&#x2F;code&gt; will match every line&#x27;s start and end locations (line separator is &lt;code&gt;\n&lt;&#x2F;code&gt; by default and NUL when &lt;code&gt;-z&lt;&#x2F;code&gt; option is used)&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;

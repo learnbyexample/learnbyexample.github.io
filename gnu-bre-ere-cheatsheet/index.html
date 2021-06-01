@@ -398,10 +398,6 @@
 <p>When used with regexp addressing:</p>
 <table><thead><tr><th>Flag</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>I</code></td><td>match case insensitively</td></tr>
-<tr><td><code>p</code></td><td>print if match is found</td></tr>
-<tr><td><code>e</code></td><td>replace matching line with output of the line executed as a shell command</td></tr>
-<tr><td><code>e argument</code></td><td>execute argument as external command and insert output before matching lines</td></tr>
-<tr><td><code>w filename</code></td><td>if match is found, write contents of pattern space to given filename</td></tr>
 </tbody></table>
 <p>When used with substitution command:</p>
 <table><thead><tr><th>Flag</th><th>Description</th></tr></thead><tbody>
@@ -409,9 +405,6 @@
 <tr><td><code>g</code></td><td>replace all occurrences instead of just the first match</td></tr>
 <tr><td><code>N</code></td><td>a number will cause only the <em>N</em>th match to be replaced</td></tr>
 <tr><td><code>Ng</code></td><td>replace from <em>N</em>th match to the end</td></tr>
-<tr><td><code>p</code></td><td>print if substitution succeeds</td></tr>
-<tr><td><code>w filename</code></td><td>if substitution succeeds, write contents of pattern space to given filename</td></tr>
-<tr><td><code>e</code></td><td>if substitution succeeds, execute contents of pattern space as shell command and replace the pattern space with command output</td></tr>
 <tr><td><code>m</code> or <code>M</code></td><td>multiline mode</td></tr>
 <tr><td></td><td><code>.</code> will not match the newline character</td></tr>
 <tr><td></td><td><code>^</code> and <code>$</code> will match every line's start and end locations (line separator is <code>\n</code> by default and NUL when <code>-z</code> option is used)</td></tr>
