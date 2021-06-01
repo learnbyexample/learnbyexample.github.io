@@ -5,12 +5,12 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2021-05-31T00:00:00+00:00</updated>
+	<updated>2021-06-01T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
 	<entry xml:lang="en">
 		<title>GNU BRE&#x2F;ERE cheatsheet and differences between grep, sed and awk</title>
 		<published>2021-05-31T00:00:00+00:00</published>
-		<updated>2021-05-31T00:00:00+00:00</updated>
+		<updated>2021-06-01T00:00:00+00:00</updated>
 		<link href="https://learnbyexample.github.io/gnu-bre-ere-cheatsheet/" type="text/html"/>
 		<id>https://learnbyexample.github.io/gnu-bre-ere-cheatsheet/</id>
 		<content type="html">&lt;p&gt;This blog post covers &lt;strong&gt;Basic Regular Expressions&lt;&#x2F;strong&gt; (BRE) and &lt;strong&gt;Extended Regular Expressions&lt;&#x2F;strong&gt; (ERE) syntax supported by GNU &lt;code&gt;grep&lt;&#x2F;code&gt;, &lt;code&gt;sed&lt;&#x2F;code&gt; and &lt;code&gt;awk&lt;&#x2F;code&gt;. You&#x27;ll also learn the differences between these tools — for example, &lt;code&gt;awk&lt;&#x2F;code&gt; doesn&#x27;t support backreferences within regexp definition (i.e. the search portion).&lt;&#x2F;p&gt;
@@ -51,7 +51,7 @@
 &lt;tr&gt;&lt;td&gt;&lt;code&gt;()&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;group pattern(s), &lt;code&gt;a(b|c)d&lt;&#x2F;code&gt; is same as &lt;code&gt;abd|acd&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
 &lt;tr&gt;&lt;td&gt;&lt;&#x2F;td&gt;&lt;td&gt;use &lt;code&gt;\(\)&lt;&#x2F;code&gt; in BRE mode&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
 &lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
-&lt;p&gt;The alternative patterns can have their own independent anchors. Alternative which matches earliest in the input gets precedence. The leftmost longest portion wins in case of a tie.&lt;&#x2F;p&gt;
+&lt;p&gt;The alternative patterns can have their own independent anchors. Alternative which matches earliest in the input gets precedence. Longest matching portion wins if multiple alternatives start from the same location (irrespective of the order of alternatives). In case of a tie with same lengths, leftmost alternative wins (see &lt;a href=&quot;https:&#x2F;&#x2F;stackoverflow.com&#x2F;a&#x2F;39752929&#x2F;4082052&quot;&gt;stackoverflow: Non greedy matching in sed&lt;&#x2F;a&gt; for a practical use case).&lt;&#x2F;p&gt;
 &lt;br&gt;
 &lt;h2 id=&quot;escaping-metacharacters&quot;&gt;Escaping metacharacters&lt;a class=&quot;zola-anchor&quot; href=&quot;#escaping-metacharacters&quot; aria-label=&quot;Anchor link for: escaping-metacharacters&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
 &lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Pattern&lt;&#x2F;th&gt;&lt;th&gt;Description&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
@@ -129,6 +129,7 @@
 &lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Escape sequence&lt;&#x2F;th&gt;&lt;th&gt;Description&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
 &lt;tr&gt;&lt;td&gt;&lt;code&gt;\a&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;alert&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
 &lt;tr&gt;&lt;td&gt;&lt;code&gt;\b&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;backspace in &lt;code&gt;awk&lt;&#x2F;code&gt;, word boundary in &lt;code&gt;grep&lt;&#x2F;code&gt; and &lt;code&gt;sed&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;code&gt;\b&lt;&#x2F;code&gt; inside a character class in &lt;code&gt;sed&lt;&#x2F;code&gt; will act as a backspace&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
 &lt;tr&gt;&lt;td&gt;&lt;code&gt;\f&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;formfeed&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
 &lt;tr&gt;&lt;td&gt;&lt;code&gt;\n&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;newline&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
 &lt;tr&gt;&lt;td&gt;&lt;code&gt;\r&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;carriage return&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
@@ -159,7 +160,7 @@
 &lt;&#x2F;ul&gt;
 &lt;br&gt;
 &lt;h2 id=&quot;named-character-sets&quot;&gt;Named character sets&lt;a class=&quot;zola-anchor&quot; href=&quot;#named-character-sets&quot; aria-label=&quot;Anchor link for: named-character-sets&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
-&lt;p&gt;These can be used inside character classes only. For example, &lt;code&gt;[[:digit:]]&lt;&#x2F;code&gt; is same as &lt;code&gt;[0-9]&lt;&#x2F;code&gt; and &lt;code&gt;[[:alnum:]_]&lt;&#x2F;code&gt; is equivalent to &lt;code&gt;\w&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;The below table lists named sets and their equivalent character class in ASCII encoding. These can be used inside character classes only. For example, &lt;code&gt;[[:digit:]]&lt;&#x2F;code&gt; is same as &lt;code&gt;[0-9]&lt;&#x2F;code&gt; and &lt;code&gt;[[:alnum:]_]&lt;&#x2F;code&gt; is equivalent to &lt;code&gt;\w&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
 &lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Named set&lt;&#x2F;th&gt;&lt;th&gt;Description&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
 &lt;tr&gt;&lt;td&gt;&lt;code&gt;[:digit:]&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;code&gt;[0-9]&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
 &lt;tr&gt;&lt;td&gt;&lt;code&gt;[:lower:]&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;code&gt;[a-z]&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
@@ -174,6 +175,10 @@
 &lt;tr&gt;&lt;td&gt;&lt;code&gt;[:blank:]&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;space and tab characters&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
 &lt;tr&gt;&lt;td&gt;&lt;code&gt;[:space:]&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;whitespace characters, same as &lt;code&gt;\s&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
 &lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; From &lt;a href=&quot;https:&#x2F;&#x2F;www.gnu.org&#x2F;software&#x2F;grep&#x2F;manual&#x2F;grep.html#Character-Classes-and-Bracket-Expressions&quot;&gt;grep manual&lt;&#x2F;a&gt;:&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Their interpretation depends on the &lt;code&gt;LC_CTYPE&lt;&#x2F;code&gt; locale; for example, &lt;code&gt;[[:alnum:]]&lt;&#x2F;code&gt; means the character class of numbers and letters in the current locale.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
 &lt;br&gt;
 &lt;h2 id=&quot;backreferences&quot;&gt;Backreferences&lt;a class=&quot;zola-anchor&quot; href=&quot;#backreferences&quot; aria-label=&quot;Anchor link for: backreferences&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
 &lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Pattern&lt;&#x2F;th&gt;&lt;th&gt;Description&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;

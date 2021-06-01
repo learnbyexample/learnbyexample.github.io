@@ -246,7 +246,7 @@
 <tr><td><code>()</code></td><td>group pattern(s), <code>a(b|c)d</code> is same as <code>abd|acd</code></td></tr>
 <tr><td></td><td>use <code>\(\)</code> in BRE mode</td></tr>
 </tbody></table>
-<p>The alternative patterns can have their own independent anchors. Alternative which matches earliest in the input gets precedence. The leftmost longest portion wins in case of a tie.</p>
+<p>The alternative patterns can have their own independent anchors. Alternative which matches earliest in the input gets precedence. Longest matching portion wins if multiple alternatives start from the same location (irrespective of the order of alternatives). In case of a tie with same lengths, leftmost alternative wins (see <a href="https://stackoverflow.com/a/39752929/4082052">stackoverflow: Non greedy matching in sed</a> for a practical use case).</p>
 <br>
 <h2 id="escaping-metacharacters">Escaping metacharacters<a class="zola-anchor" href="#escaping-metacharacters" aria-label="Anchor link for: escaping-metacharacters">🔗</a></h2>
 <table><thead><tr><th>Pattern</th><th>Description</th></tr></thead><tbody>
@@ -324,6 +324,7 @@
 <table><thead><tr><th>Escape sequence</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>\a</code></td><td>alert</td></tr>
 <tr><td><code>\b</code></td><td>backspace in <code>awk</code>, word boundary in <code>grep</code> and <code>sed</code></td></tr>
+<tr><td></td><td><code>\b</code> inside a character class in <code>sed</code> will act as a backspace</td></tr>
 <tr><td><code>\f</code></td><td>formfeed</td></tr>
 <tr><td><code>\n</code></td><td>newline</td></tr>
 <tr><td><code>\r</code></td><td>carriage return</td></tr>
@@ -354,7 +355,7 @@
 </ul>
 <br>
 <h2 id="named-character-sets">Named character sets<a class="zola-anchor" href="#named-character-sets" aria-label="Anchor link for: named-character-sets">🔗</a></h2>
-<p>These can be used inside character classes only. For example, <code>[[:digit:]]</code> is same as <code>[0-9]</code> and <code>[[:alnum:]_]</code> is equivalent to <code>\w</code>.</p>
+<p>The below table lists named sets and their equivalent character class in ASCII encoding. These can be used inside character classes only. For example, <code>[[:digit:]]</code> is same as <code>[0-9]</code> and <code>[[:alnum:]_]</code> is equivalent to <code>\w</code>.</p>
 <table><thead><tr><th>Named set</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>[:digit:]</code></td><td><code>[0-9]</code></td></tr>
 <tr><td><code>[:lower:]</code></td><td><code>[a-z]</code></td></tr>
@@ -369,6 +370,10 @@
 <tr><td><code>[:blank:]</code></td><td>space and tab characters</td></tr>
 <tr><td><code>[:space:]</code></td><td>whitespace characters, same as <code>\s</code></td></tr>
 </tbody></table>
+<p><img src="/images/info.svg" alt="info" /> From <a href="https://www.gnu.org/software/grep/manual/grep.html#Character-Classes-and-Bracket-Expressions">grep manual</a>:</p>
+<blockquote>
+<p>Their interpretation depends on the <code>LC_CTYPE</code> locale; for example, <code>[[:alnum:]]</code> means the character class of numbers and letters in the current locale.</p>
+</blockquote>
 <br>
 <h2 id="backreferences">Backreferences<a class="zola-anchor" href="#backreferences" aria-label="Anchor link for: backreferences">🔗</a></h2>
 <table><thead><tr><th>Pattern</th><th>Description</th></tr></thead><tbody>
