@@ -316,6 +316,7 @@
 <li>For example, using <code>[\w]</code> will match <code>\</code> or <code>w</code> characters in <code>grep</code> and <code>sed</code> whereas it will match only <code>w</code> in <code>awk</code>.</li>
 </ul>
 </li>
+<li>These escape sequences are also locale aware, for example <code>αλεπού</code> and <code>\u2028</code> (line separator) will be considered as word and whitespace characters respectively in appropriate locales.</li>
 <li>These tools do <em>not</em> support <code>\d</code> and <code>\D</code>, commonly featured in other regexp implementations for digits and non-digits.</li>
 </ul>
 <br>

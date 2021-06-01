@@ -121,6 +121,7 @@
 &lt;li&gt;For example, using &lt;code&gt;[\w]&lt;&#x2F;code&gt; will match &lt;code&gt;\&lt;&#x2F;code&gt; or &lt;code&gt;w&lt;&#x2F;code&gt; characters in &lt;code&gt;grep&lt;&#x2F;code&gt; and &lt;code&gt;sed&lt;&#x2F;code&gt; whereas it will match only &lt;code&gt;w&lt;&#x2F;code&gt; in &lt;code&gt;awk&lt;&#x2F;code&gt;.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;&#x2F;li&gt;
+&lt;li&gt;These escape sequences are also locale aware, for example &lt;code&gt;αλεπού&lt;&#x2F;code&gt; and &lt;code&gt;\u2028&lt;&#x2F;code&gt; (line separator) will be considered as word and whitespace characters respectively in appropriate locales.&lt;&#x2F;li&gt;
 &lt;li&gt;These tools do &lt;em&gt;not&lt;&#x2F;em&gt; support &lt;code&gt;\d&lt;&#x2F;code&gt; and &lt;code&gt;\D&lt;&#x2F;code&gt;, commonly featured in other regexp implementations for digits and non-digits.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;br&gt;
