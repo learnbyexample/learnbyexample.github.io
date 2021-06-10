@@ -5,8 +5,57 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2021-06-01T00:00:00+00:00</updated>
+	<updated>2021-06-10T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Dreaming solutions</title>
+		<published>2021-06-10T00:00:00+00:00</published>
+		<updated>2021-06-10T00:00:00+00:00</updated>
+		<link href="https://learnbyexample.github.io/mini/dreaming-solutions/" type="text/html"/>
+		<id>https://learnbyexample.github.io/mini/dreaming-solutions/</id>
+		<content type="html">&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;stackoverflow.com&#x2F;q&#x2F;67886163&#x2F;4082052&quot;&gt;This SO question&lt;&#x2F;a&gt; was interesting and had various approaches to solve it. Here&#x27;s a sample example to explain the problem to be solved:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ cat ip.txt
+caller_number=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;034082394234324&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;, clear_number=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;33335345435&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;,  direction=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;,
+caller_number=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;83479234234&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;,     clear_number=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;34836424733&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;, direction=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;2&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;,
+caller_number=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;83479234234&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;,     clear_number=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;64237384533&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;, direction=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;2&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;,
+
+$ cat list.txt
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;642
+3333
+534234235&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
+
+$ cat op.txt
+caller_number=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;83479234234&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;,     clear_number=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;64237384533&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;, direction=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;2&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;,
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Any data present in &lt;code&gt;list.txt&lt;&#x2F;code&gt; has to be matched immediately after &lt;code&gt;clear_number=&lt;&#x2F;code&gt; and the input line should also have &lt;code&gt;direction=2,&lt;&#x2F;code&gt;. In the sample above, first line matches &lt;code&gt;3333&lt;&#x2F;code&gt; but not the second criteria. The second line fails even though it has &lt;code&gt;642&lt;&#x2F;code&gt; since it is not immediately after &lt;code&gt;clear_number=&lt;&#x2F;code&gt;. The &lt;code&gt;list.txt&lt;&#x2F;code&gt; file can have 10K-50K lines and &lt;code&gt;ip.txt&lt;&#x2F;code&gt; is around 10GB.&lt;&#x2F;p&gt;
+&lt;p&gt;Here&#x27;s a slightly modified answer based on existing solutions on that thread. Since the data present in &lt;code&gt;list.txt&lt;&#x2F;code&gt; has to be partially matched after &lt;code&gt;clear_number=&lt;&#x2F;code&gt;, a &lt;em&gt;single&lt;&#x2F;em&gt; direct comparison with the keys saved in &lt;code&gt;arr&lt;&#x2F;code&gt; is not possible. This solution loops over all the keys for every input line that matches the &lt;code&gt;direction=2,&lt;&#x2F;code&gt; criteria (breaks the loop if a match is found early).&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;FNR&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;==&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;NR&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;{ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;arr&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot;=&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$0&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;]&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;next&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; }
+
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$3&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;==&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot;direction=2,&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;{
+    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;for&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;i &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;in &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;arr&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;)
+        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#c23f31;&quot;&gt;if&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;index&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$2&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;i&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;)){
+            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;print
+            next
+        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;}
+}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; &lt;em&gt;To run the solutions, use &lt;code&gt;mawk -f script.awk list.txt ip.txt&lt;&#x2F;code&gt;&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;In my dreams that night&lt;&#x2F;strong&gt;, I realized that the solution can be improved drastically by looping over the digits after &lt;code&gt;clear_number=&lt;&#x2F;code&gt; instead of looping over keys saved in &lt;code&gt;arr&lt;&#x2F;code&gt;. Matching a key is &lt;code&gt;O(1)&lt;&#x2F;code&gt;, so the time saving is huge since the inner loop is now a maximum of 12 (length of digits after &lt;code&gt;clear_number=&lt;&#x2F;code&gt;) instead of looping a maximum of 10K-50K times! With a 35M sample input file and 12K keys that I created for testing, I found this solution to be about &lt;strong&gt;200&lt;&#x2F;strong&gt; times faster.&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;FNR&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;==&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;NR&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;{ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;arr&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$0&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;]&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;next&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; }
+
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$3&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;==&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot;direction=2,&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;{
+    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;val&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;substr&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$2&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;14&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;)
+    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#c23f31;&quot;&gt;for&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;i&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;i&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;length&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;val&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;); &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;i&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;++&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;)
+        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#c23f31;&quot;&gt;if&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;substr&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;val&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;i&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;in &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;arr&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;){
+            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;print
+            next
+        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;}
+}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>GNU BRE&#x2F;ERE cheatsheet and differences between grep, sed and awk</title>
 		<published>2021-05-31T00:00:00+00:00</published>
@@ -200,7 +249,7 @@
 &lt;&#x2F;ul&gt;
 &lt;br&gt;
 &lt;h2 id=&quot;sed-flags&quot;&gt;sed flags&lt;a class=&quot;zola-anchor&quot; href=&quot;#sed-flags&quot; aria-label=&quot;Anchor link for: sed-flags&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
-&lt;p&gt;When used with regexp addressing:&lt;&#x2F;p&gt;
+&lt;p&gt;This section discusses flags (also known as modifiers) that change the regexp behavior. When used with regexp addressing:&lt;&#x2F;p&gt;
 &lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Flag&lt;&#x2F;th&gt;&lt;th&gt;Description&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
 &lt;tr&gt;&lt;td&gt;&lt;code&gt;I&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;match case insensitively&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
 &lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
