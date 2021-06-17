@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+      <title>learnbyexample - Debug woes: 2</title>
+
+      
+        <link rel="alternate" type="application/atom+xml" title="RSS" href="https://learnbyexample.github.io/atom.xml">
+      
+
+      
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
+          
+      
+
+      
+          <link rel="stylesheet" href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;site.css">
+          
+      
+
+      
+      
+<link rel="icon" href="https://learnbyexample.github.io/favicon.svg">
+<link rel="shortcut icon" href="https://learnbyexample.github.io/favicon.png">
+    </head>
+
+    <body>
+        <div class="container">
+
+            <div id="mobile-navbar" class="mobile-navbar">
+              <div class="mobile-header-logo">
+                <a href="/" class="logo">learnbyexample</a>
+              </div>
+              <div class="mobile-navbar-icon icon-out">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+
+            <nav id="mobile-menu" class="mobile-menu slideout-menu slideout-menu-left">
+              <ul class="mobile-menu-list">
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io">
+                            Home
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;mini">
+                            Mini
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;books">
+                            Books
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags">
+                            Tags
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;about">
+                            About
+                        </a>
+                    </li>
+                
+              </ul>
+            </nav>
+
+            <header id="header">
+                <div class="logo"><a href="https:&#x2F;&#x2F;learnbyexample.github.io">learnbyexample</a></div>
+                <nav class="menu">
+                    <ul>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io">
+                                    Home
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;mini">
+                                    Mini
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;books">
+                                    Books
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags">
+                                    Tags
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;about">
+                                    About
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </nav>
+            </header>
+
+            <main>
+                <div class="content" id="mobile-panel">
+                    
+
+
+
+<article class="post">
+    
+    <header class="post__header">
+        <h1 class="post__title">
+            <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;mini&#x2F;debug-woes-2&#x2F;">Debug woes: 2</a>
+        </h1>
+        <div class="post__meta">
+            <span class="post__time">2021-06-17</span>
+            
+        </div>
+    </header>
+
+    <div class="post-content">
+      <p>So, I was editing a markdown file in Vim and I wanted to convert some lines to links. The regexp pattern ended up needing non-greedy quantifier, but it didn't work. I thought I got Vim's rather weird <code>\{-}</code> syntax wrong and switched to using Perl from the command line instead of checking the documentation if I had actually made that mistake.</p>
+<p>Turns out I made other mistakes in the regexp, but I didn't want to switch back to Vim. I was still scratching my head though, since I wasn't getting the expected output. Thankfully, compared to the <a href="https://learnbyexample.github.io/mini/debug-woes-1/">previous debug misery</a>, I was able to guess this issue soon enough.</p>
+<p>Here's a simplified issue, how I debugged it and the corrected usage:</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#7f8989;"># sample input
+</span><span style="color:#1f1f1f;">$ cat ip.txt 
+</span><span style="color:#72ab00;">*</span><span style="color:#1f1f1f;"> blah blah </span><span style="color:#b3933a;">12</span><span style="color:#1f1f1f;"> xyz </span><span style="color:#b3933a;">34</span><span style="color:#1f1f1f;"> abcd </span><span style="color:#b3933a;">56</span><span style="color:#1f1f1f;"> foobaz
+</span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;"> blah </span><span style="color:#b3933a;">100</span><span style="color:#1f1f1f;"> apple </span><span style="color:#b3933a;">200</span><span style="color:#1f1f1f;"> fig
+
+</span><span style="color:#7f8989;"># where I got stuck
+# what happened to $1 and $2?
+</span><span style="color:#1f1f1f;">$ perl </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">lpe </span><span style="color:#d07711;">&#39;s/^(. )(.*?\d+) (.+)/$1[$2](#$3)/&#39;</span><span style="color:#1f1f1f;"> ip.txt
+(</span><span style="color:#7f8989;">#xyz 34 abcd 56 foobaz)
+</span><span style="color:#1f1f1f;">(</span><span style="color:#7f8989;">#apple 200 fig)
+
+# what I did to debug
+# step 1: only $1 in the replacement
+</span><span style="color:#1f1f1f;">$ perl </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">lpe </span><span style="color:#d07711;">&#39;s/^(. )(.*?\d+) (.+)/$1/&#39;</span><span style="color:#1f1f1f;"> ip.txt
+</span><span style="color:#72ab00;">* 
+- 
+</span><span style="color:#7f8989;"># step 2: $1 and $2 in the replacement
+# only empty lines as output - bingo!
+</span><span style="color:#1f1f1f;">$ perl </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">lpe </span><span style="color:#d07711;">&#39;s/^(. )(.*?\d+) (.+)/$1[$2]/&#39;</span><span style="color:#1f1f1f;"> ip.txt
+
+
+</span><span style="color:#7f8989;"># $1[$2] treated as array syntax in Perl
+# so, need to escape [ since array isn&#39;t intended here
+</span><span style="color:#1f1f1f;">$ perl </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">lpe </span><span style="color:#d07711;">&#39;s/^(. )(.*?\d+) (.+)/$1\[$2](#$3)/&#39;</span><span style="color:#1f1f1f;"> ip.txt
+</span><span style="color:#72ab00;">* </span><span style="color:#1f1f1f;">[blah blah </span><span style="color:#b3933a;">12</span><span style="color:#1f1f1f;">](</span><span style="color:#7f8989;">#xyz 34 abcd 56 foobaz)
+</span><span style="color:#72ab00;">- </span><span style="color:#1f1f1f;">[blah </span><span style="color:#b3933a;">100</span><span style="color:#1f1f1f;">](</span><span style="color:#7f8989;">#apple 200 fig)
+</span></code></pre>
+    </div>
+
+    
+    
+
+    <div class="post-footer">
+        
+            
+                <div class="post-tags">
+                    
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;perl&#x2F;">#perl</a>
+                    
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;regular-expressions&#x2F;">#regular-expressions</a>
+                    
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;debugging&#x2F;">#debugging</a>
+                    
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;command-line&#x2F;">#command-line</a>
+                    
+                </div>
+            
+            
+
+        
+
+    </div>
+
+    
+    
+</article>
+
+
+                </div>
+            </main>
+
+            
+            
+        </div>
+
+      
+          <script type="text/javascript" src="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;even.js" ></script>
+      
+    </body>
+
+</html>

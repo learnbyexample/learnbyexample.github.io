@@ -5,8 +5,46 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2021-06-10T00:00:00+00:00</updated>
+	<updated>2021-06-17T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Debug woes: 2</title>
+		<published>2021-06-17T00:00:00+00:00</published>
+		<updated>2021-06-17T00:00:00+00:00</updated>
+		<link href="https://learnbyexample.github.io/mini/debug-woes-2/" type="text/html"/>
+		<id>https://learnbyexample.github.io/mini/debug-woes-2/</id>
+		<content type="html">&lt;p&gt;So, I was editing a markdown file in Vim and I wanted to convert some lines to links. The regexp pattern ended up needing non-greedy quantifier, but it didn&#x27;t work. I thought I got Vim&#x27;s rather weird &lt;code&gt;\{-}&lt;&#x2F;code&gt; syntax wrong and switched to using Perl from the command line instead of checking the documentation if I had actually made that mistake.&lt;&#x2F;p&gt;
+&lt;p&gt;Turns out I made other mistakes in the regexp, but I didn&#x27;t want to switch back to Vim. I was still scratching my head though, since I wasn&#x27;t getting the expected output. Thankfully, compared to the &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;mini&#x2F;debug-woes-1&#x2F;&quot;&gt;previous debug misery&lt;&#x2F;a&gt;, I was able to guess this issue soon enough.&lt;&#x2F;p&gt;
+&lt;p&gt;Here&#x27;s a simplified issue, how I debugged it and the corrected usage:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# sample input
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ cat ip.txt 
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; blah blah &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;12&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; xyz &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;34&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; abcd &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;56&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; foobaz
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; blah &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;100&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; apple &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;200&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; fig
+
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# where I got stuck
+# what happened to $1 and $2?
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ perl &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;lpe &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;s&#x2F;^(. )(.*?\d+) (.+)&#x2F;$1[$2](#$3)&#x2F;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; ip.txt
+(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;#xyz 34 abcd 56 foobaz)
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;#apple 200 fig)
+
+# what I did to debug
+# step 1: only $1 in the replacement
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ perl &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;lpe &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;s&#x2F;^(. )(.*?\d+) (.+)&#x2F;$1&#x2F;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; ip.txt
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;* 
+- 
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# step 2: $1 and $2 in the replacement
+# only empty lines as output - bingo!
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ perl &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;lpe &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;s&#x2F;^(. )(.*?\d+) (.+)&#x2F;$1[$2]&#x2F;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; ip.txt
+
+
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# $1[$2] treated as array syntax in Perl
+# so, need to escape [ since array isn&amp;#39;t intended here
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ perl &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;lpe &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;s&#x2F;^(. )(.*?\d+) (.+)&#x2F;$1\[$2](#$3)&#x2F;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; ip.txt
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;* &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;[blah blah &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;12&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;](&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;#xyz 34 abcd 56 foobaz)
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;- &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;[blah &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;100&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;](&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;#apple 200 fig)
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>Dreaming solutions</title>
 		<published>2021-06-10T00:00:00+00:00</published>
