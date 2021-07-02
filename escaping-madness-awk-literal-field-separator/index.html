@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+      <title>learnbyexample - Escaping madness to get literal field separators in awk</title>
+
+      
+        <link rel="alternate" type="application/atom+xml" title="RSS" href="https://learnbyexample.github.io/atom.xml">
+      
+
+      
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
+          
+      
+
+      
+          <link rel="stylesheet" href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;site.css">
+          
+      
+
+      
+      
+<link rel="icon" href="https://learnbyexample.github.io/favicon.svg">
+<link rel="shortcut icon" href="https://learnbyexample.github.io/favicon.png">
+    </head>
+
+    <body>
+        <div class="container">
+
+            <div id="mobile-navbar" class="mobile-navbar">
+              <div class="mobile-header-logo">
+                <a href="/" class="logo">learnbyexample</a>
+              </div>
+              <div class="mobile-navbar-icon icon-out">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+
+            <nav id="mobile-menu" class="mobile-menu slideout-menu slideout-menu-left">
+              <ul class="mobile-menu-list">
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io">
+                            Home
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;mini">
+                            Mini
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;books">
+                            Books
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags">
+                            Tags
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;about">
+                            About
+                        </a>
+                    </li>
+                
+              </ul>
+            </nav>
+
+            <header id="header">
+                <div class="logo"><a href="https:&#x2F;&#x2F;learnbyexample.github.io">learnbyexample</a></div>
+                <nav class="menu">
+                    <ul>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io">
+                                    Home
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;mini">
+                                    Mini
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;books">
+                                    Books
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags">
+                                    Tags
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;about">
+                                    About
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </nav>
+            </header>
+
+            <main>
+                <div class="content" id="mobile-panel">
+                    
+
+
+<div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content always-active">
+        <nav id="TableOfContents">
+            <ul>
+                
+                <li>
+                    <a href="https://learnbyexample.github.io/escaping-madness-awk-literal-field-separator/#how-many-escapes-for-a-single-backslash" class="toc-link">How many escapes for a single backslash?</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://learnbyexample.github.io/escaping-madness-awk-literal-field-separator/#using-awk-to-generate-an-escaped-string" class="toc-link">Using awk to generate an escaped string</a>
+                    
+                    <ul>
+                        
+                        <li>
+                            <a href="https://learnbyexample.github.io/escaping-madness-awk-literal-field-separator/#case-1-backslash-madness" class="toc-link">Case 1: backslash madness</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://learnbyexample.github.io/escaping-madness-awk-literal-field-separator/#case-2-character-class" class="toc-link">Case 2: character class</a>
+                        </li>
+                        
+                        <li>
+                            <a href="https://learnbyexample.github.io/escaping-madness-awk-literal-field-separator/#case-3-codepoint-to-represent-backslash" class="toc-link">Case 3: codepoint to represent backslash</a>
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://learnbyexample.github.io/escaping-madness-awk-literal-field-separator/#sanity-check" class="toc-link">Sanity check</a>
+                    
+                </li>
+                
+            </ul>
+        </nav>
+    </div>
+</div>
+
+
+<article class="post">
+    
+    <header class="post__header">
+        <h1 class="post__title">
+            <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;escaping-madness-awk-literal-field-separator&#x2F;">Escaping madness to get literal field separators in awk</a>
+        </h1>
+        <div class="post__meta">
+            <span class="post__time">2021-07-02</span>
+            
+        </div>
+    </header>
+
+    <div class="post-content">
+      <p>I'm building a tool called <a href="https://github.com/learnbyexample/regexp-cut">rcut</a> that allows you to use <code>cut</code> like syntax with features like regexp based delimiters. The solution uses <code>awk</code> inside a <code>bash</code> script.</p>
+<p>Latest <a href="https://en.wikipedia.org/wiki/Feature_creep">feature creep</a> is fixed string field splitting. I thought it would be a simple enough solution to add.</p>
+<p>I was wrong.</p>
+<span id="continue-reading"></span><br>
+<h2 id="how-many-escapes-for-a-single-backslash">How many escapes for a single backslash?<a class="zola-anchor" href="#how-many-escapes-for-a-single-backslash" aria-label="Anchor link for: how-many-escapes-for-a-single-backslash">🔗</a></h2>
+<p>For reference, these are the versions I have on my machine:</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#5597d6;">$</span><span style="color:#1f1f1f;"> gawk</span><span style="color:#5597d6;"> --version
+GNU</span><span style="color:#1f1f1f;"> Awk 5.1.0, API: 3.0
+
+</span><span style="color:#5597d6;">$</span><span style="color:#1f1f1f;"> mawk</span><span style="color:#5597d6;"> -W</span><span style="color:#1f1f1f;"> version
+</span><span style="color:#5597d6;">mawk</span><span style="color:#1f1f1f;"> 1.3.4 20200120
+</span></code></pre>
+<p><code>mawk</code> and <code>gawk</code> differ when it comes to escaping backslashes. You'll later see the rule that'll work correctly for both implementations.</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#5597d6;">$</span><span style="color:#1f1f1f;"> echo </span><span style="color:#d07711;">&#39;apple\bake\cake&#39; </span><span style="color:#72ab00;">| </span><span style="color:#5597d6;">mawk -F</span><span style="color:#d07711;">&#39;e\&#39; &#39;{print $2}&#39;
+</span><span style="color:#5597d6;">bak
+
+$</span><span style="color:#1f1f1f;"> echo </span><span style="color:#d07711;">&#39;apple\bake\cake&#39; </span><span style="color:#72ab00;">| </span><span style="color:#5597d6;">gawk -F</span><span style="color:#d07711;">&#39;e\&#39; &#39;{print $2}&#39;
+</span><span style="color:#5597d6;">gawk:</span><span style="color:#1f1f1f;"> fatal: invalid regexp: Trailing backslash: /e</span><span style="color:#b3933a;">\/
+</span><span style="color:#5597d6;">$</span><span style="color:#1f1f1f;"> echo </span><span style="color:#d07711;">&#39;apple\bake\cake&#39; </span><span style="color:#72ab00;">| </span><span style="color:#5597d6;">gawk -F</span><span style="color:#d07711;">&#39;e\\&#39; &#39;{print $2}&#39;
+</span><span style="color:#5597d6;">gawk:</span><span style="color:#1f1f1f;"> fatal: invalid regexp: Trailing backslash: /e</span><span style="color:#b3933a;">\/
+</span><span style="color:#5597d6;">$</span><span style="color:#1f1f1f;"> echo </span><span style="color:#d07711;">&#39;apple\bake\cake&#39; </span><span style="color:#72ab00;">| </span><span style="color:#5597d6;">gawk -F</span><span style="color:#d07711;">&#39;e\\\&#39; &#39;{print $2}&#39;
+</span><span style="color:#5597d6;">bak
+</span></code></pre>
+<p>The value assigned to <code>FS</code> is treated as a string and then converted to a regexp. <code>\</code> is a metacharacter for string and regexp both. So, <code>\\</code> in a string means a single backslash and <code>\\\\</code> means double backslash. Double backslash in regexp means a single backslash.</p>
+<p><strong>Conclusion</strong>: For a consistent behavior across both <code>mawk</code> and <code>gawk</code> and irrespective of trailing backslash errors, you need to use 4 backslashes for every backslash.</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#7f8989;"># both 2 and 4 backslashes here gets treated as single backslash
+# hence the empty fields in the output
+</span><span style="color:#5597d6;">$</span><span style="color:#1f1f1f;"> echo </span><span style="color:#d07711;">&#39;1\\2\\3&#39; </span><span style="color:#72ab00;">| </span><span style="color:#5597d6;">mawk -F</span><span style="color:#d07711;">&#39;\\&#39;</span><span style="color:#5597d6;"> -v</span><span style="color:#1f1f1f;"> OFS=, </span><span style="color:#d07711;">&#39;{$1=$1} 1&#39;
+</span><span style="color:#5597d6;">1,,2,,3
+$</span><span style="color:#1f1f1f;"> echo </span><span style="color:#d07711;">&#39;1\\2\\3&#39; </span><span style="color:#72ab00;">| </span><span style="color:#5597d6;">mawk -F</span><span style="color:#d07711;">&#39;\\\\&#39;</span><span style="color:#5597d6;"> -v</span><span style="color:#1f1f1f;"> OFS=, </span><span style="color:#d07711;">&#39;{$1=$1} 1&#39;
+</span><span style="color:#5597d6;">1,,2,,3
+$</span><span style="color:#1f1f1f;"> echo </span><span style="color:#d07711;">&#39;1\\2\\3&#39; </span><span style="color:#72ab00;">| </span><span style="color:#5597d6;">gawk -F</span><span style="color:#d07711;">&#39;\\&#39;</span><span style="color:#5597d6;"> -v</span><span style="color:#1f1f1f;"> OFS=, </span><span style="color:#d07711;">&#39;{$1=$1} 1&#39;
+</span><span style="color:#5597d6;">1,,2,,3
+$</span><span style="color:#1f1f1f;"> echo </span><span style="color:#d07711;">&#39;1\\2\\3&#39; </span><span style="color:#72ab00;">| </span><span style="color:#5597d6;">gawk -F</span><span style="color:#d07711;">&#39;\\\\&#39;</span><span style="color:#5597d6;"> -v</span><span style="color:#1f1f1f;"> OFS=, </span><span style="color:#d07711;">&#39;{$1=$1} 1&#39;
+</span><span style="color:#5597d6;">1,,2,,3
+
+</span><span style="color:#7f8989;"># 5-8 backslashes give expected results
+</span><span style="color:#5597d6;">$</span><span style="color:#1f1f1f;"> echo </span><span style="color:#d07711;">&#39;1\\2\\3&#39; </span><span style="color:#72ab00;">| </span><span style="color:#5597d6;">mawk -F</span><span style="color:#d07711;">&#39;\\\\\&#39;</span><span style="color:#5597d6;"> -v</span><span style="color:#1f1f1f;"> OFS=, </span><span style="color:#d07711;">&#39;{$1=$1} 1&#39;
+</span><span style="color:#5597d6;">1,2,3
+$</span><span style="color:#1f1f1f;"> echo </span><span style="color:#d07711;">&#39;1\\2\\3&#39; </span><span style="color:#72ab00;">| </span><span style="color:#5597d6;">mawk -F</span><span style="color:#d07711;">&#39;\\\\\\&#39;</span><span style="color:#5597d6;"> -v</span><span style="color:#1f1f1f;"> OFS=, </span><span style="color:#d07711;">&#39;{$1=$1} 1&#39;
+</span><span style="color:#5597d6;">1,2,3
+$</span><span style="color:#1f1f1f;"> echo </span><span style="color:#d07711;">&#39;1\\2\\3&#39; </span><span style="color:#72ab00;">| </span><span style="color:#5597d6;">mawk -F</span><span style="color:#d07711;">&#39;\\\\\\\&#39;</span><span style="color:#5597d6;"> -v</span><span style="color:#1f1f1f;"> OFS=, </span><span style="color:#d07711;">&#39;{$1=$1} 1&#39;
+</span><span style="color:#5597d6;">1,2,3
+$</span><span style="color:#1f1f1f;"> echo </span><span style="color:#d07711;">&#39;1\\2\\3&#39; </span><span style="color:#72ab00;">| </span><span style="color:#5597d6;">mawk -F</span><span style="color:#d07711;">&#39;\\\\\\\\&#39;</span><span style="color:#5597d6;"> -v</span><span style="color:#1f1f1f;"> OFS=, </span><span style="color:#d07711;">&#39;{$1=$1} 1&#39;
+</span><span style="color:#5597d6;">1,2,3
+
+</span><span style="color:#7f8989;"># 5-6 backslashes give error, 7-8 backslashes give expected results
+</span><span style="color:#5597d6;">$</span><span style="color:#1f1f1f;"> echo </span><span style="color:#d07711;">&#39;1\\2\\3&#39; </span><span style="color:#72ab00;">| </span><span style="color:#5597d6;">gawk -F</span><span style="color:#d07711;">&#39;\\\\\&#39;</span><span style="color:#5597d6;"> -v</span><span style="color:#1f1f1f;"> OFS=, </span><span style="color:#d07711;">&#39;{$1=$1} 1&#39;
+</span><span style="color:#5597d6;">gawk:</span><span style="color:#1f1f1f;"> fatal: invalid regexp: Trailing backslash: /</span><span style="color:#b3933a;">\\\/
+</span><span style="color:#5597d6;">$</span><span style="color:#1f1f1f;"> echo </span><span style="color:#d07711;">&#39;1\\2\\3&#39; </span><span style="color:#72ab00;">| </span><span style="color:#5597d6;">gawk -F</span><span style="color:#d07711;">&#39;\\\\\\&#39;</span><span style="color:#5597d6;"> -v</span><span style="color:#1f1f1f;"> OFS=, </span><span style="color:#d07711;">&#39;{$1=$1} 1&#39;
+</span><span style="color:#5597d6;">gawk:</span><span style="color:#1f1f1f;"> fatal: invalid regexp: Trailing backslash: /</span><span style="color:#b3933a;">\\\/
+</span><span style="color:#5597d6;">$</span><span style="color:#1f1f1f;"> echo </span><span style="color:#d07711;">&#39;1\\2\\3&#39; </span><span style="color:#72ab00;">| </span><span style="color:#5597d6;">gawk -F</span><span style="color:#d07711;">&#39;\\\\\\\&#39;</span><span style="color:#5597d6;"> -v</span><span style="color:#1f1f1f;"> OFS=, </span><span style="color:#d07711;">&#39;{$1=$1} 1&#39;
+</span><span style="color:#5597d6;">1,2,3
+$</span><span style="color:#1f1f1f;"> echo </span><span style="color:#d07711;">&#39;1\\2\\3&#39; </span><span style="color:#72ab00;">| </span><span style="color:#5597d6;">gawk -F</span><span style="color:#d07711;">&#39;\\\\\\\\&#39;</span><span style="color:#5597d6;"> -v</span><span style="color:#1f1f1f;"> OFS=, </span><span style="color:#d07711;">&#39;{$1=$1} 1&#39;
+</span><span style="color:#5597d6;">1,2,3
+</span></code></pre>
+<p>As an alternate method, you can use codepoint of the backslash character. This removes one level of escaping. See <a href="https://ascii.cl/">ASCII code table</a> for codepoint reference.</p>
+<p><strong>Conclusion</strong>: You need <code>\x5c\x5c</code> for every backslash.</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#5597d6;">$</span><span style="color:#1f1f1f;"> echo </span><span style="color:#d07711;">&#39;apple\bake\cake&#39; </span><span style="color:#72ab00;">| </span><span style="color:#5597d6;">mawk -F</span><span style="color:#d07711;">&#39;e\x5c\x5c&#39; &#39;{print $2}&#39;
+</span><span style="color:#5597d6;">bak
+$</span><span style="color:#1f1f1f;"> echo </span><span style="color:#d07711;">&#39;apple\bake\cake&#39; </span><span style="color:#72ab00;">| </span><span style="color:#5597d6;">gawk -F</span><span style="color:#d07711;">&#39;e\x5c\x5c&#39; &#39;{print $2}&#39;
+</span><span style="color:#5597d6;">bak
+
+$</span><span style="color:#1f1f1f;"> echo </span><span style="color:#d07711;">&#39;1\\2\\3&#39; </span><span style="color:#72ab00;">| </span><span style="color:#5597d6;">mawk -F</span><span style="color:#d07711;">&#39;\x5c\x5c\x5c\x5c&#39;</span><span style="color:#5597d6;"> -v</span><span style="color:#1f1f1f;"> OFS=, </span><span style="color:#d07711;">&#39;{$1=$1} 1&#39;
+</span><span style="color:#5597d6;">1,2,3
+$</span><span style="color:#1f1f1f;"> echo </span><span style="color:#d07711;">&#39;1\\2\\3&#39; </span><span style="color:#72ab00;">| </span><span style="color:#5597d6;">gawk -F</span><span style="color:#d07711;">&#39;\x5c\x5c\x5c\x5c&#39;</span><span style="color:#5597d6;"> -v</span><span style="color:#1f1f1f;"> OFS=, </span><span style="color:#d07711;">&#39;{$1=$1} 1&#39;
+</span><span style="color:#5597d6;">1,2,3
+</span></code></pre><br>
+<h2 id="using-awk-to-generate-an-escaped-string">Using awk to generate an escaped string<a class="zola-anchor" href="#using-awk-to-generate-an-escaped-string" aria-label="Anchor link for: using-awk-to-generate-an-escaped-string">🔗</a></h2>
+<p>Suppose you want to use <code>\.</code> literally for field splitting. Here's some ways to do it that works for both <code>mawk</code> and <code>gawk</code>:</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#5597d6;">$</span><span style="color:#1f1f1f;"> echo </span><span style="color:#d07711;">&#39;x\2\.y\.z&#39; </span><span style="color:#72ab00;">| </span><span style="color:#5597d6;">gawk -F</span><span style="color:#d07711;">&#39;\\\\\\.&#39;</span><span style="color:#5597d6;"> -v</span><span style="color:#1f1f1f;"> OFS=, </span><span style="color:#d07711;">&#39;{$1=$1} 1&#39;
+</span><span style="color:#5597d6;">x</span><span style="color:#b3933a;">\2</span><span style="color:#5597d6;">,y,z
+$</span><span style="color:#1f1f1f;"> echo </span><span style="color:#d07711;">&#39;x\2\.y\.z&#39; </span><span style="color:#72ab00;">| </span><span style="color:#5597d6;">gawk -F</span><span style="color:#d07711;">&#39;\\\\[.]&#39;</span><span style="color:#5597d6;"> -v</span><span style="color:#1f1f1f;"> OFS=, </span><span style="color:#d07711;">&#39;{$1=$1} 1&#39;
+</span><span style="color:#5597d6;">x</span><span style="color:#b3933a;">\2</span><span style="color:#5597d6;">,y,z
+$</span><span style="color:#1f1f1f;"> echo </span><span style="color:#d07711;">&#39;x\2\.y\.z&#39; </span><span style="color:#72ab00;">| </span><span style="color:#5597d6;">gawk -F</span><span style="color:#d07711;">&#39;\x5c\x5c[.]&#39;</span><span style="color:#5597d6;"> -v</span><span style="color:#1f1f1f;"> OFS=, </span><span style="color:#d07711;">&#39;{$1=$1} 1&#39;
+</span><span style="color:#5597d6;">x</span><span style="color:#b3933a;">\2</span><span style="color:#5597d6;">,y,z
+</span></code></pre>
+<p>Now, the task is to generate one of the above strings passed to the <code>-F</code> option from <code>\.</code> as input. Using <code>sed</code> is better, but for <a href="https://github.com/learnbyexample/regexp-cut">rcut</a>, I didn't want to add another external tool.</p>
+<h3 id="case-1-backslash-madness">Case 1: backslash madness<a class="zola-anchor" href="#case-1-backslash-madness" aria-label="Anchor link for: case-1-backslash-madness">🔗</a></h3>
+<p>You need to convert <code>\</code> to 4 backslashes and escape regexp metacharacters with 2 backslashes. Note that you cannot escape all characters except <code>\</code> with 2 backslashes, for example <code>\\t</code> will become a tab character! Also, you need to escape <code>\</code> first and then escape the other metacharacters.</p>
+<p>Ready for the solution? I'm not even going to try explaining this, found it by experimenting.</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#7f8989;"># replacement string for the first gsub has 16 backslashes
+# replacement string for the second gsub has 8 backslashes
+</span><span style="color:#5597d6;">$</span><span style="color:#1f1f1f;"> echo </span><span style="color:#d07711;">&#39;a.b\c^d&#39; </span><span style="color:#72ab00;">| </span><span style="color:#5597d6;">gawk </span><span style="color:#d07711;">&#39;{gsub(/\\/, &quot;\\\\\\\\\\\\\\\\&quot;);
+                          gsub(/[{[(^$*?+.|]/, &quot;\\\\\\\\&amp;&quot;)} 1&#39;
+</span><span style="color:#5597d6;">a</span><span style="color:#b3933a;">\\</span><span style="color:#5597d6;">.b</span><span style="color:#b3933a;">\\\\</span><span style="color:#5597d6;">c</span><span style="color:#b3933a;">\\</span><span style="color:#5597d6;">^d
+</span></code></pre>
+<p><img src="/images/info.svg" alt="info" /> <img src="/images/warning.svg" alt="warning" /> <a href="https://www.gnu.org/software/gawk/manual/gawk.html#Gory-Details">gawk manual: Gory details</a> might help you understand the above solution.</p>
+<h3 id="case-2-character-class">Case 2: character class<a class="zola-anchor" href="#case-2-character-class" aria-label="Anchor link for: case-2-character-class">🔗</a></h3>
+<p>One of the characteristic of character class is that you can enclose all characters except <code>\</code> and <code>^</code> to match them literally. The <code>\</code> character is special both inside/outside of character class and <code>[^]</code> is invalid since <code>^</code> is special if used as the first character.</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#5597d6;">$</span><span style="color:#1f1f1f;"> echo </span><span style="color:#d07711;">&#39;a.b\c^d&#39; </span><span style="color:#72ab00;">| </span><span style="color:#5597d6;">gawk </span><span style="color:#d07711;">&#39;{gsub(/\\/, &quot;\\\\\\\\\\\\\\\\&quot;);
+                          gsub(/[^^\\]/, &quot;[&amp;]&quot;);
+                          gsub(/\^/, &quot;\\\\^&quot;)} 1&#39;
+</span><span style="color:#5597d6;">[a][.][b]</span><span style="color:#b3933a;">\\\\</span><span style="color:#5597d6;">[c]</span><span style="color:#b3933a;">\\</span><span style="color:#5597d6;">^[d]
+</span></code></pre><h3 id="case-3-codepoint-to-represent-backslash">Case 3: codepoint to represent backslash<a class="zola-anchor" href="#case-3-codepoint-to-represent-backslash" aria-label="Anchor link for: case-3-codepoint-to-represent-backslash">🔗</a></h3>
+<p>Finally, my preferred solutions that uses codepoint instead of escaping backslashes.</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#7f8989;"># case 1 alternate
+</span><span style="color:#5597d6;">$</span><span style="color:#1f1f1f;"> echo </span><span style="color:#d07711;">&#39;a.b\c^d&#39; </span><span style="color:#72ab00;">| </span><span style="color:#5597d6;">gawk </span><span style="color:#d07711;">&#39;{gsub(/\\/, &quot;\\x5c\\x5c&quot;);
+                          gsub(/[{[(^$*?+.|]/, &quot;\\x5c&amp;&quot;)} 1&#39;
+</span><span style="color:#5597d6;">a</span><span style="color:#b3933a;">\x</span><span style="color:#5597d6;">5c.b</span><span style="color:#b3933a;">\x</span><span style="color:#5597d6;">5c</span><span style="color:#b3933a;">\x</span><span style="color:#5597d6;">5cc</span><span style="color:#b3933a;">\x</span><span style="color:#5597d6;">5c^d
+
+</span><span style="color:#7f8989;"># case 2 alternate
+</span><span style="color:#5597d6;">$</span><span style="color:#1f1f1f;"> echo </span><span style="color:#d07711;">&#39;a.b\c^d&#39; </span><span style="color:#72ab00;">| </span><span style="color:#5597d6;">gawk </span><span style="color:#d07711;">&#39;{gsub(/[^^\\]/, &quot;[&amp;]&quot;);
+                          gsub(/\\/, &quot;\\x5c\\x5c&quot;);
+                          gsub(/\^/, &quot;\\x5c^&quot;)} 1&#39;
+</span><span style="color:#5597d6;">[a][.][b]</span><span style="color:#b3933a;">\x</span><span style="color:#5597d6;">5c</span><span style="color:#b3933a;">\x</span><span style="color:#5597d6;">5c[c]</span><span style="color:#b3933a;">\x</span><span style="color:#5597d6;">5c^[d]
+</span></code></pre><br>
+<h2 id="sanity-check">Sanity check<a class="zola-anchor" href="#sanity-check" aria-label="Anchor link for: sanity-check">🔗</a></h2>
+<p>I probably lost my sanity trying to come up with a solution and again while writing this post. I did try a few sanity checks for the solutions presented here, but there's a chance I messed up or missed some corner case. If you spot an issue, do let me know.</p>
+
+    </div>
+
+    
+    
+
+    <div class="post-footer">
+        
+            
+                <div class="post-tags">
+                    
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;gnu-awk&#x2F;">#gnu-awk</a>
+                    
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;mawk&#x2F;">#mawk</a>
+                    
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;regular-expressions&#x2F;">#regular-expressions</a>
+                    
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;command-line&#x2F;">#command-line</a>
+                    
+                </div>
+            
+            
+                <div class="post-nav">
+                    
+                        <a class="previous" href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;gnu-bre-ere-cheatsheet&#x2F;">‹ GNU BRE&#x2F;ERE cheatsheet and differences between grep, sed and awk</a>
+                    
+                    
+                    
+                    
+                </div>
+            
+
+        
+
+    </div>
+
+    
+    
+</article>
+
+
+                </div>
+            </main>
+
+            
+            
+        </div>
+
+      
+          <script type="text/javascript" src="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;even.js" ></script>
+      
+    </body>
+
+</html>

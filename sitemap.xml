@@ -22,6 +22,10 @@
         <lastmod>2021-03-03</lastmod>
     </url>
     <url>
+        <loc>https://learnbyexample.github.io/escaping-madness-awk-literal-field-separator/</loc>
+        <lastmod>2021-07-02</lastmod>
+    </url>
+    <url>
         <loc>https://learnbyexample.github.io/gnu-bre-ere-cheatsheet/</loc>
         <lastmod>2021-06-01</lastmod>
     </url>
@@ -68,6 +72,9 @@
     </url>
     <url>
         <loc>https://learnbyexample.github.io/page/3/</loc>
+    </url>
+    <url>
+        <loc>https://learnbyexample.github.io/page/4/</loc>
     </url>
     <url>
         <loc>https://learnbyexample.github.io/python-for-maths/</loc>
@@ -168,6 +175,9 @@
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tags/maths/</loc>
+    </url>
+    <url>
+        <loc>https://learnbyexample.github.io/tags/mawk/</loc>
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tags/multiline/</loc>
