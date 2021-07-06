@@ -5,7 +5,7 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2021-07-02T00:00:00+00:00</updated>
+	<updated>2021-07-06T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
 	<entry xml:lang="en">
 		<title>Escaping madness to get literal field separators in awk</title>
@@ -1343,7 +1343,7 @@ $ diff &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F
 	<entry xml:lang="en">
 		<title>I know Python basics, what next?</title>
 		<published>2020-07-25T00:00:00+00:00</published>
-		<updated>2021-06-18T00:00:00+00:00</updated>
+		<updated>2021-07-06T00:00:00+00:00</updated>
 		<link href="https://learnbyexample.github.io/python-intermediate/" type="text/html"/>
 		<id>https://learnbyexample.github.io/python-intermediate/</id>
 		<content type="html">&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;what_next.png&quot; alt=&quot;what next&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
@@ -1374,7 +1374,13 @@ $ diff &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;tuvtran&#x2F;project-based-learning#python&quot;&gt;Project based learning&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;practice_python_projects&#x2F;&quot;&gt;Practice Python Projects&lt;&#x2F;a&gt; — my book on basic to intermediate level projects (&lt;em&gt;work-in-progress&lt;&#x2F;em&gt;)&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;norvig&#x2F;pytudes&quot;&gt;Pytudes by Peter Norvig&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;Books: &lt;a href=&quot;https:&#x2F;&#x2F;www.manning.com&#x2F;books&#x2F;tiny-python-projects&quot;&gt;Tiny Python Projects&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;nostarch.com&#x2F;impracticalpythonprojects&quot;&gt;Impractical Python Projects&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;nostarch.com&#x2F;real-world-python&quot;&gt;Real world Python&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Books:
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;inventwithpython.com&#x2F;bigbookpython&#x2F;&quot;&gt;The Big Book of Small Python Projects&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.manning.com&#x2F;books&#x2F;tiny-python-projects&quot;&gt;Tiny Python Projects&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;nostarch.com&#x2F;impracticalpythonprojects&quot;&gt;Impractical Python Projects&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;nostarch.com&#x2F;real-world-python&quot;&gt;Real world Python&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.reddit.com&#x2F;r&#x2F;learnpython&#x2F;comments&#x2F;k5k1h0&#x2F;what_do_you_automate_with_python_at_home&#x2F;&quot;&gt;&#x2F;r&#x2F;learnpython: What do you automate with Python at home?&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;rosettacode.org&#x2F;wiki&#x2F;Category:Python&quot;&gt;Rosettacode&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
