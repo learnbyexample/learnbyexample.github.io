@@ -5,12 +5,12 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2021-07-30T00:00:00+00:00</updated>
+	<updated>2021-08-02T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
 	<entry xml:lang="en">
 		<title>Practice Python Projects book announcement</title>
 		<published>2021-07-30T00:00:00+00:00</published>
-		<updated>2021-07-30T00:00:00+00:00</updated>
+		<updated>2021-08-02T00:00:00+00:00</updated>
 		<link href="https://learnbyexample.github.io/practice-python-projects-book-announcement/" type="text/html"/>
 		<id>https://learnbyexample.github.io/practice-python-projects-book-announcement/</id>
 		<content type="html">&lt;p&gt;Hello!&lt;&#x2F;p&gt;
@@ -22,7 +22,11 @@
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;practice_python_projects&#x2F;mcq&#x2F;multiple_choice_questions.html&quot;&gt;Creating a GUI for evaluating multiple choice questions&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;practice_python_projects&#x2F;square_tic_tac_toe&#x2F;square_tic_tac_toe.html&quot;&gt;Square Tic Tac Toe — creating a GUI game with AI&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
-&lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;&lt;br&gt;
+&lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;
+&lt;p&gt;To test your understanding and to make it more interesting, you&#x27;ll also be presented with exercises at the end of each project. Resources for further exploration are also mentioned throughout the book. Here&#x27;s a short video about the book:&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;5whwiiURWS8&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;&#x2F;iframe&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;br&gt;
 &lt;h2 id=&quot;ebook-links&quot;&gt;Ebook links&lt;a class=&quot;zola-anchor&quot; href=&quot;#ebook-links&quot; aria-label=&quot;Anchor link for: ebook-links&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
 &lt;p&gt;You can buy the &lt;strong&gt;PDF&#x2F;EPUB&lt;&#x2F;strong&gt; versions of the book using these links:&lt;&#x2F;p&gt;
 &lt;ul&gt;
@@ -2543,61 +2547,62 @@ mission success
 	<entry xml:lang="en">
 		<title>Example driven book on Python regular expressions</title>
 		<published>2019-08-09T00:00:00+00:00</published>
-		<updated>2019-08-09T00:00:00+00:00</updated>
+		<updated>2021-08-02T00:00:00+00:00</updated>
 		<link href="https://learnbyexample.github.io/python-regex-book-version2/" type="text/html"/>
 		<id>https://learnbyexample.github.io/python-regex-book-version2/</id>
 		<content type="html">&lt;p&gt;Hello!&lt;&#x2F;p&gt;
-&lt;p&gt;I recently updated my book titled &lt;strong&gt;Python re(gex)?&lt;&#x2F;strong&gt; and it is free to download till 11-Aug-2019! You can still pay if you wish :)&lt;&#x2F;p&gt;
-&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;books&#x2F;pyregex.png&quot; alt=&quot;pyregex cover image&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;I recently updated my &lt;strong&gt;Python re(gex)?&lt;&#x2F;strong&gt; ebook.&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;books&#x2F;pyregex.png&quot; alt=&quot;Python re(gex)? cover image&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 &lt;p&gt;Get the ebook using either of these sites:&lt;&#x2F;p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;gumroad.com&#x2F;l&#x2F;py_regex&quot;&gt;https:&#x2F;&#x2F;gumroad.com&#x2F;l&#x2F;py_regex&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;py_regex&quot;&gt;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;py_regex&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;leanpub.com&#x2F;py_regex&quot;&gt;https:&#x2F;&#x2F;leanpub.com&#x2F;py_regex&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
-&lt;p&gt;Code snippets, example files, sample chapters, etc are available on GitHub: &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;py_regular_expressions&quot;&gt;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;py_regular_expressions&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;For web version of the book, visit &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;py_regular_expressions&#x2F;&quot;&gt;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;py_regular_expressions&#x2F;&lt;&#x2F;a&gt;. Code snippets, example files, sample chapters, markdown source, etc are available on GitHub: &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;py_regular_expressions&quot;&gt;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;py_regular_expressions&lt;&#x2F;a&gt;. I&#x27;m generating the PDF&#x2F;EPUB versions using &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;customizing-pandoc&#x2F;&quot;&gt;pandoc&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;p&gt;This book covers both &lt;code&gt;re&lt;&#x2F;code&gt; module and the third-party &lt;a href=&quot;https:&#x2F;&#x2F;pypi.org&#x2F;project&#x2F;regex&#x2F;&quot;&gt;regex&lt;&#x2F;a&gt; module. Examples are used extensively, please follow along by typing them out. Exercises are included to test your understanding and chapters have cheatsheets for easy reference.&lt;&#x2F;p&gt;
 &lt;p&gt;&lt;strong&gt;Table of Contents&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;Preface&lt;&#x2F;li&gt;
 &lt;li&gt;Why is it needed?&lt;&#x2F;li&gt;
-&lt;li&gt;Regular Expression modules&lt;&#x2F;li&gt;
+&lt;li&gt;re introduction&lt;&#x2F;li&gt;
 &lt;li&gt;Anchors&lt;&#x2F;li&gt;
 &lt;li&gt;Alternation and Grouping&lt;&#x2F;li&gt;
 &lt;li&gt;Escaping metacharacters&lt;&#x2F;li&gt;
 &lt;li&gt;Dot metacharacter and Quantifiers&lt;&#x2F;li&gt;
+&lt;li&gt;Interlude: Tools for debugging and visualization&lt;&#x2F;li&gt;
 &lt;li&gt;Working with matched portions&lt;&#x2F;li&gt;
 &lt;li&gt;Character class&lt;&#x2F;li&gt;
 &lt;li&gt;Groupings and backreferences&lt;&#x2F;li&gt;
+&lt;li&gt;Interlude: Common tasks&lt;&#x2F;li&gt;
 &lt;li&gt;Lookarounds&lt;&#x2F;li&gt;
 &lt;li&gt;Flags&lt;&#x2F;li&gt;
 &lt;li&gt;Unicode&lt;&#x2F;li&gt;
-&lt;li&gt;Miscellaneous&lt;&#x2F;li&gt;
+&lt;li&gt;regex module&lt;&#x2F;li&gt;
 &lt;li&gt;Gotchas&lt;&#x2F;li&gt;
 &lt;li&gt;Further Reading&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
-&lt;p&gt;I plan to add more content to the book in future and hopefully create an interactive course. Currently the book is licensed under &lt;a href=&quot;https:&#x2F;&#x2F;creativecommons.org&#x2F;licenses&#x2F;by-nc-sa&#x2F;4.0&#x2F;&quot;&gt;cc-by-nc-sa&lt;&#x2F;a&gt; with code snippets under &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;py_regular_expressions&#x2F;blob&#x2F;master&#x2F;LICENSE&quot;&gt;MIT&lt;&#x2F;a&gt; and I&#x27;ll probably add the source files to the repo sometime in the future. I&#x27;m generating the PDF using &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tutorial&#x2F;ebook-generation&#x2F;customizing-pandoc&quot;&gt;pandoc+xelatex&lt;&#x2F;a&gt;. I plan to create an epub version too and possibly put the book on Amazon Kindle.&lt;&#x2F;p&gt;
-&lt;p&gt;Hope you find the book useful. I would be grateful for your feedback and suggestions (&lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;learn_byexample&#x2F;status&#x2F;1159676706224873472&quot;&gt;twitter&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;www.goodreads.com&#x2F;book&#x2F;show&#x2F;47142552-python-re-gex&quot;&gt;goodreads&lt;&#x2F;a&gt;).&lt;&#x2F;p&gt;
+&lt;p&gt;Hope you find the book useful. I would be grateful for your feedback and suggestions (via email or &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;learn_byexample&quot;&gt;twitter&lt;&#x2F;a&gt;).&lt;&#x2F;p&gt;
 &lt;p&gt;Happy learning :)&lt;&#x2F;p&gt;
 </content>
 	</entry>
 	<entry xml:lang="en">
 		<title>GNU GREP and RIPGREP</title>
 		<published>2019-05-16T00:00:00+00:00</published>
-		<updated>2019-05-16T00:00:00+00:00</updated>
+		<updated>2021-08-02T00:00:00+00:00</updated>
 		<link href="https://learnbyexample.github.io/grep-book-announcement/" type="text/html"/>
 		<id>https://learnbyexample.github.io/grep-book-announcement/</id>
 		<content type="html">&lt;p&gt;Hello!&lt;&#x2F;p&gt;
 &lt;p&gt;I recently self-published my third book, this one is about &lt;strong&gt;GNU GREP and RIPGREP&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
-&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;books&#x2F;grep.png&quot; alt=&quot;grep cover image&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;books&#x2F;grep.png&quot; alt=&quot;GNU GREP and RIPGREP cover image&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 &lt;p&gt;Get the e-book using either of these sites:&lt;&#x2F;p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;gumroad.com&#x2F;l&#x2F;gnugrep_ripgrep&quot;&gt;https:&#x2F;&#x2F;gumroad.com&#x2F;l&#x2F;gnugrep_ripgrep&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;gnugrep_ripgrep&quot;&gt;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;gnugrep_ripgrep&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;leanpub.com&#x2F;gnugrep_ripgrep&quot;&gt;https:&#x2F;&#x2F;leanpub.com&#x2F;gnugrep_ripgrep&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;p&gt;&lt;strong&gt;Note&lt;&#x2F;strong&gt; Please use a valid e-mail and save the mail you receive, you&#x27;ll get free updates for future versions.&lt;&#x2F;p&gt;
-&lt;p&gt;Code snippets, example files, sample chapters, etc are available on GitHub: &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;learn_gnugrep_ripgrep&quot;&gt;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;learn_gnugrep_ripgrep&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Code snippets, example files, sample chapters, markdown source, etc are available on GitHub: &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;learn_gnugrep_ripgrep&quot;&gt;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;learn_gnugrep_ripgrep&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;p&gt;This book covers features of &lt;code&gt;GNU grep&lt;&#x2F;code&gt; and &lt;code&gt;ripgrep&lt;&#x2F;code&gt; along with discussion on BRE&#x2F;ERE&#x2F;PCRE(2)&#x2F;Rust &lt;strong&gt;regular expressions&lt;&#x2F;strong&gt;. Examples are used extensively, please follow along by typing them out. Exercises are also included to test your understanding.&lt;&#x2F;p&gt;
-&lt;p&gt;Some of you might be familiar with my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;Command-line-text-processing&quot;&gt;Command Line Text Processing&lt;&#x2F;a&gt; repo. This book is based on the &lt;code&gt;grep&lt;&#x2F;code&gt; chapter - edited to add more descriptions, better examples, exercises, etc. Also, I took the plunge and checked out &lt;code&gt;ripgrep&lt;&#x2F;code&gt; while working on this book. I&#x27;d assumed it would be similar to &lt;code&gt;gnu grep&lt;&#x2F;code&gt; and I just need simple changes to present it in the book. Well, it turned out lot more work and I had to settle for not covering all the options and customizations. In hindsight, would&#x27;ve been better if I did a separate book. Speed wise, &lt;code&gt;ripgrep&lt;&#x2F;code&gt; is very impressive and has plenty of additional nice features. For example: the multiline &lt;code&gt;-U&lt;&#x2F;code&gt; and replace &lt;code&gt;-r&lt;&#x2F;code&gt; options of &lt;code&gt;ripgrep&lt;&#x2F;code&gt; are quite handy - you can use this instead of &lt;code&gt;sed&lt;&#x2F;code&gt; for some cases with added advantage of speed, &lt;code&gt;-F&lt;&#x2F;code&gt; option and better regex features.&lt;&#x2F;p&gt;
+&lt;p&gt;Some of you might be familiar with my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;Command-line-text-processing&quot;&gt;Command Line Text Processing&lt;&#x2F;a&gt; repo. This book is based on the &lt;code&gt;grep&lt;&#x2F;code&gt; chapter - edited to add more descriptions, better examples, exercises, etc. Also, I took the plunge and checked out &lt;code&gt;ripgrep&lt;&#x2F;code&gt; while working on this book. I&#x27;d assumed it would be similar to &lt;code&gt;gnu grep&lt;&#x2F;code&gt; and I just need simple changes to present it in the book. Well, it turned out lot more work and I had to settle for not covering all the options and customizations. In hindsight, would&#x27;ve been better if I did a separate book. Speed wise, &lt;code&gt;ripgrep&lt;&#x2F;code&gt; is very impressive and has plenty of additional nice features. For example: the multiline &lt;code&gt;-U&lt;&#x2F;code&gt; and replace &lt;code&gt;-r&lt;&#x2F;code&gt; options of &lt;code&gt;ripgrep&lt;&#x2F;code&gt; are quite handy - you can use this instead of &lt;code&gt;sed&lt;&#x2F;code&gt; for some cases with added advantage of speed, &lt;code&gt;-F&lt;&#x2F;code&gt; option and better regexp features.&lt;&#x2F;p&gt;
 &lt;p&gt;&lt;strong&gt;Table of Contents&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;Preface&lt;&#x2F;li&gt;
@@ -2612,7 +2617,7 @@ mission success
 &lt;li&gt;ripgrep&lt;&#x2F;li&gt;
 &lt;li&gt;Further Reading&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
-&lt;p&gt;Hope you find the book useful. I would be grateful for your feedback and suggestions (&lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;learn_byexample&quot;&gt;twitter&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;www.goodreads.com&#x2F;book&#x2F;show&#x2F;47406700-gnu-grep-and-ripgrep&quot;&gt;goodreads&lt;&#x2F;a&gt;).&lt;&#x2F;p&gt;
+&lt;p&gt;Hope you find the book useful. I would be grateful for your feedback and suggestions (via email or &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;learn_byexample&quot;&gt;twitter&lt;&#x2F;a&gt;).&lt;&#x2F;p&gt;
 &lt;p&gt;Happy learning :)&lt;&#x2F;p&gt;
 </content>
 	</entry>
