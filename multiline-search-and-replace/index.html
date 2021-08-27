@@ -207,7 +207,7 @@
     </header>
 
     <div class="post-content">
-      <p>This post shows how you can use <code>ripgrep</code>, <code>perl</code> and <code>sd</code> to perform multiline fixed string search and replace operations from the command line. Solution with <code>GNU sed</code> is also discussed, along with its limitations.</p>
+      <p>This post shows how you can use <code>ripgrep</code>, <code>perl</code> and <code>sd</code> commands to perform multiline fixed string search and replace operations from the command line. Solution with <code>GNU sed</code> is also discussed, along with its limitations.</p>
 <span id="continue-reading"></span><br>
 <h2 id="fixed-string-matching">Fixed string matching<a class="zola-anchor" href="#fixed-string-matching" aria-label="Anchor link for: fixed-string-matching">🔗</a></h2>
 <p>The below sample input file will be used in the examples in this post.</p>
@@ -374,7 +374,7 @@ you can do fixed
 search with cli tools.
 </span></code></pre><br>
 <h2 id="saving-file-contents-to-a-variable">Saving file contents to a variable<a class="zola-anchor" href="#saving-file-contents-to-a-variable" aria-label="Anchor link for: saving-file-contents-to-a-variable">🔗</a></h2>
-<p>Trailing newlines and ASCII NUL characters will be lost if you wish to save contents of a file as <code>bash</code> variables using <code>var=$(&lt; filename)</code> command. See <a href="https://stackoverflow.com/questions/7427262/how-to-read-a-file-into-a-variable-in-shell/22607352#22607352">stackoverflow: pitfalls of reading file into shell variable</a> for details.</p>
+<p>Trailing newlines and ASCII NUL characters will be lost if you wish to save contents of a file as <code>bash</code> variables using <code>var=$(&lt; filename)</code> command. See <a href="https://stackoverflow.com/a/22607352/4082052">stackoverflow: pitfalls of reading file into shell variable</a> for details.</p>
 <pre style="background-color:#f5f5f5;">
 <code><span style="color:#1f1f1f;">$ printf &#39;\na\0b\n123\n\n\n\n\n\n\n\n&#39; &gt; t1
 $ a=$(&lt; t1)

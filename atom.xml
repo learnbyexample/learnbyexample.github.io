@@ -5,7 +5,7 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2021-08-02T00:00:00+00:00</updated>
+	<updated>2021-08-27T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
 	<entry xml:lang="en">
 		<title>Practice Python Projects book announcement</title>
@@ -770,10 +770,10 @@ The substitution works from start of the line for every iteration of the while l
 	<entry xml:lang="en">
 		<title>Multiline fixed string search and replace with cli tools</title>
 		<published>2020-11-27T00:00:00+00:00</published>
-		<updated>2020-11-30T00:00:00+00:00</updated>
+		<updated>2021-08-27T00:00:00+00:00</updated>
 		<link href="https://learnbyexample.github.io/multiline-search-and-replace/" type="text/html"/>
 		<id>https://learnbyexample.github.io/multiline-search-and-replace/</id>
-		<content type="html">&lt;p&gt;This post shows how you can use &lt;code&gt;ripgrep&lt;&#x2F;code&gt;, &lt;code&gt;perl&lt;&#x2F;code&gt; and &lt;code&gt;sd&lt;&#x2F;code&gt; to perform multiline fixed string search and replace operations from the command line. Solution with &lt;code&gt;GNU sed&lt;&#x2F;code&gt; is also discussed, along with its limitations.&lt;&#x2F;p&gt;
+		<content type="html">&lt;p&gt;This post shows how you can use &lt;code&gt;ripgrep&lt;&#x2F;code&gt;, &lt;code&gt;perl&lt;&#x2F;code&gt; and &lt;code&gt;sd&lt;&#x2F;code&gt; commands to perform multiline fixed string search and replace operations from the command line. Solution with &lt;code&gt;GNU sed&lt;&#x2F;code&gt; is also discussed, along with its limitations.&lt;&#x2F;p&gt;
 &lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;&lt;br&gt;
 &lt;h2 id=&quot;fixed-string-matching&quot;&gt;Fixed string matching&lt;a class=&quot;zola-anchor&quot; href=&quot;#fixed-string-matching&quot; aria-label=&quot;Anchor link for: fixed-string-matching&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
 &lt;p&gt;The below sample input file will be used in the examples in this post.&lt;&#x2F;p&gt;
@@ -940,7 +940,7 @@ you can do fixed
 search with cli tools.
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;br&gt;
 &lt;h2 id=&quot;saving-file-contents-to-a-variable&quot;&gt;Saving file contents to a variable&lt;a class=&quot;zola-anchor&quot; href=&quot;#saving-file-contents-to-a-variable&quot; aria-label=&quot;Anchor link for: saving-file-contents-to-a-variable&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
-&lt;p&gt;Trailing newlines and ASCII NUL characters will be lost if you wish to save contents of a file as &lt;code&gt;bash&lt;&#x2F;code&gt; variables using &lt;code&gt;var=$(&amp;lt; filename)&lt;&#x2F;code&gt; command. See &lt;a href=&quot;https:&#x2F;&#x2F;stackoverflow.com&#x2F;questions&#x2F;7427262&#x2F;how-to-read-a-file-into-a-variable-in-shell&#x2F;22607352#22607352&quot;&gt;stackoverflow: pitfalls of reading file into shell variable&lt;&#x2F;a&gt; for details.&lt;&#x2F;p&gt;
+&lt;p&gt;Trailing newlines and ASCII NUL characters will be lost if you wish to save contents of a file as &lt;code&gt;bash&lt;&#x2F;code&gt; variables using &lt;code&gt;var=$(&amp;lt; filename)&lt;&#x2F;code&gt; command. See &lt;a href=&quot;https:&#x2F;&#x2F;stackoverflow.com&#x2F;a&#x2F;22607352&#x2F;4082052&quot;&gt;stackoverflow: pitfalls of reading file into shell variable&lt;&#x2F;a&gt; for details.&lt;&#x2F;p&gt;
 &lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
 &lt;code&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ printf &amp;#39;\na\0b\n123\n\n\n\n\n\n\n\n&amp;#39; &amp;gt; t1
 $ a=$(&amp;lt; t1)
@@ -1395,24 +1395,21 @@ $ diff &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F
 	<entry xml:lang="en">
 		<title>I know Python basics, what next?</title>
 		<published>2020-07-25T00:00:00+00:00</published>
-		<updated>2021-07-30T00:00:00+00:00</updated>
+		<updated>2021-08-27T00:00:00+00:00</updated>
 		<link href="https://learnbyexample.github.io/python-intermediate/" type="text/html"/>
 		<id>https://learnbyexample.github.io/python-intermediate/</id>
 		<content type="html">&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;what_next.png&quot; alt=&quot;what next&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 &lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;&lt;br&gt;
 &lt;h2 id=&quot;next-step&quot;&gt;Next step&lt;a class=&quot;zola-anchor&quot; href=&quot;#next-step&quot; aria-label=&quot;Anchor link for: next-step&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
-&lt;p&gt;What to learn next is an often asked question. &lt;a href=&quot;https:&#x2F;&#x2F;www.reddit.com&#x2F;r&#x2F;learnpython&#x2F;search?q=what+next&amp;amp;restrict_sr=on&quot;&gt;Searching for &lt;code&gt;what next&lt;&#x2F;code&gt; on &#x2F;r&#x2F;learnpython&lt;&#x2F;a&gt; gives you too many results. Here&#x27;s some more Q&amp;amp;A and articles on this topic:&lt;&#x2F;p&gt;
+&lt;p&gt;What to learn next is an often asked question. &lt;a href=&quot;https:&#x2F;&#x2F;www.reddit.com&#x2F;r&#x2F;learnpython&#x2F;search?q=what+next&amp;amp;restrict_sr=on&quot;&gt;Searching for &lt;code&gt;what next&lt;&#x2F;code&gt; on &#x2F;r&#x2F;learnpython&lt;&#x2F;a&gt; gives you too many results. Here&#x27;s some wonderful articles on this topic:&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.devdungeon.com&#x2F;content&#x2F;i-know-how-program-i-dont-know-what-program&quot;&gt;I know how to program, but I don&#x27;t know what to program&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.reddit.com&#x2F;r&#x2F;learnpython&#x2F;comments&#x2F;5503pa&#x2F;code_conversion_probably_the_best_tool_any_level&#x2F;&quot;&gt;Learning by converting code from one language to another&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.reddit.com&#x2F;r&#x2F;learnprogramming&#x2F;comments&#x2F;7m92i1&#x2F;coding_idea_write_a_commandline_utility&#x2F;&quot;&gt;Write a command-line utility&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.reddit.com&#x2F;r&#x2F;learnprogramming&#x2F;comments&#x2F;5jm97p&#x2F;if_you_want_to_learn_youll_need_to_be_willing_to&#x2F;&quot;&gt;If you want to learn you&#x27;ll need to be willing to look stupid&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;www.flyingmachinestudios.com&#x2F;programming&#x2F;learn-programming-languages-efficiently&#x2F;&quot;&gt;Techniques for Efficiently Learning Programming Languages&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.techinasia.com&#x2F;talk&#x2F;27-things-started-programming&quot;&gt;Things you might encounter in your programming journey&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.flyingmachinestudios.com&#x2F;programming&#x2F;learn-programming-languages-efficiently&#x2F;&quot;&gt;Techniques for Efficiently Learning Programming Languages&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;br&gt;
 &lt;h2 id=&quot;exercises-and-projects&quot;&gt;Exercises and Projects&lt;a class=&quot;zola-anchor&quot; href=&quot;#exercises-and-projects&quot; aria-label=&quot;Anchor link for: exercises-and-projects&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
-&lt;p&gt;I do not have a simple answer to this question either. If you feel comfortable with programming basics and Python syntax, then exercises are a good way to test your knowledge. The resource you used to learn Python will typically have some sort of exercises, so those would be ideal as a first choice. I&#x27;d also suggest using the below resources to improve your skills. If you get stuck, reread the material related to those topics, search online, ask for clarifications, etc  — in short, make an effort to solve it. It is okay to skip some troublesome problems (and come back to it later if you have the time), but you should be able to solve most of the beginner problems. Maintaining notes will help too, especially for common mistakes.&lt;&#x2F;p&gt;
+&lt;p&gt;I do not have a simple answer to this question either. If you feel comfortable with programming basics and Python syntax, then exercises are a good way to test your knowledge. The resource you used to learn Python will typically have some sort of exercises, so those would be ideal as a first choice. I&#x27;d also suggest using the below resources to improve your skills. If you get stuck, reread the material related to those topics, search online, ask for clarifications, etc  — in short, make an effort to solve it. It is okay to skip some troublesome problems (and come back to it later if you have the time), but you should be able to solve most of the beginner problems. Maintaining notes and cheatsheets will help too, especially for common mistakes.&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;exercism.io&#x2F;tracks&#x2F;python&#x2F;exercises&quot;&gt;Exercism&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;www.practicepython.org&#x2F;&quot;&gt;Practicepython&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;edabit.com&#x2F;challenges&#x2F;python3&quot;&gt;Edabit&lt;&#x2F;a&gt; — these are all beginner friendly and difficulty levels are marked&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;100_page_python_intro&#x2F;blob&#x2F;main&#x2F;exercises&#x2F;Exercises.md&quot;&gt;100 Page Python Intro exercises&lt;&#x2F;a&gt; — exercises from my introductory guide&lt;&#x2F;li&gt;
@@ -1420,12 +1417,12 @@ $ diff &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;py.checkio.org&#x2F;&quot;&gt;Checkio&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;www.codingame.com&#x2F;start&quot;&gt;Codingame&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;codecombat.com&#x2F;&quot;&gt;Codecombat&lt;&#x2F;a&gt; — gaming based challenges&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.reddit.com&#x2F;r&#x2F;dailyprogrammer&quot;&gt;&#x2F;r&#x2F;dailyprogrammer&lt;&#x2F;a&gt; — not active currently, but there&#x27;s plenty of past challenges with discussions&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
-&lt;p&gt;Once you are comfortable with basics and syntax, the next step is projects. I use a 10-line program that solves a common problem for me — adding &lt;code&gt;body { text-align: justify }&lt;&#x2F;code&gt; to &lt;code&gt;epub&lt;&#x2F;code&gt; files that are not justify aligned. I didn&#x27;t know that this line would help beforehand, I searched online for a solution and then automated the process of unzipping &lt;code&gt;epub&lt;&#x2F;code&gt;, adding the line and then packing it again. That will likely need you to lookup documentation and go through some stackoverflow Q&amp;amp;A as well. And once you have written the solution and use it regularly, you&#x27;ll likely encounter corner cases and features to be added. I feel this is a great way to learn and understand programming.&lt;&#x2F;p&gt;
+&lt;p&gt;Once you are comfortable with basics and syntax, the next step is projects. I use a 10-line program that solves a common problem for me — adding &lt;code&gt;body { text-align: justify }&lt;&#x2F;code&gt; to &lt;code&gt;epub&lt;&#x2F;code&gt; files that are not justify aligned. I didn&#x27;t know that this line would help beforehand. Found a solution online and then automated the process of unzipping &lt;code&gt;epub&lt;&#x2F;code&gt;, adding the line and then packing it again. That will likely need you to lookup documentation and go through some stackoverflow Q&amp;amp;A as well. And once you have written the solution and use it regularly, you&#x27;ll likely encounter corner cases and features to be added. I feel this is a great way to learn and understand programming.&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;practice_python_projects&#x2F;&quot;&gt;Practice Python Projects&lt;&#x2F;a&gt; — my book on beginner to intermediate level projects&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;karan&#x2F;Projects-Solutions&quot;&gt;Projects on various topics with solutions&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;tuvtran&#x2F;project-based-learning#python&quot;&gt;Project based learning&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;norvig&#x2F;pytudes&quot;&gt;Pytudes by Peter Norvig&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;karan&#x2F;Projects-Solutions&quot;&gt;Projects with solutions&lt;&#x2F;a&gt; — algorithms, data structures, networking, security, databases, etc&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;tuvtran&#x2F;project-based-learning#python&quot;&gt;Project based learning&lt;&#x2F;a&gt; — web applications, bots, data science, machine learning, etc&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;norvig&#x2F;pytudes&quot;&gt;Pytudes by Peter Norvig&lt;&#x2F;a&gt; — Python programs, usually short, of considerable difficulty&lt;&#x2F;li&gt;
 &lt;li&gt;Books:
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;inventwithpython.com&#x2F;bigbookpython&#x2F;&quot;&gt;The Big Book of Small Python Projects&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
@@ -1434,24 +1431,23 @@ $ diff &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F
 &lt;&#x2F;ul&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.reddit.com&#x2F;r&#x2F;learnpython&#x2F;comments&#x2F;k5k1h0&#x2F;what_do_you_automate_with_python_at_home&#x2F;&quot;&gt;&#x2F;r&#x2F;learnpython: What do you automate with Python at home?&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;rosettacode.org&#x2F;wiki&#x2F;Category:Python&quot;&gt;Rosettacode&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;br&gt;
 &lt;h2 id=&quot;debugging&quot;&gt;Debugging&lt;a class=&quot;zola-anchor&quot; href=&quot;#debugging&quot; aria-label=&quot;Anchor link for: debugging&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
 &lt;p&gt;Knowing how to debug your programs is crucial and should be ideally taught right from the beginning instead of a chapter at the end of the book. &lt;a href=&quot;https:&#x2F;&#x2F;greenteapress.com&#x2F;wp&#x2F;think-python-2e&#x2F;&quot;&gt;Think Python&lt;&#x2F;a&gt; is an awesome example for such a resource material.&lt;&#x2F;p&gt;
 &lt;p&gt;Sites like &lt;a href=&quot;http:&#x2F;&#x2F;www.pythontutor.com&#x2F;visualize.html#mode=edit&quot;&gt;Pythontutor&lt;&#x2F;a&gt; allow you to visually debug a program — you can execute a program step by step and see the current value of variables. Similar feature is typically provided by IDEs like &lt;a href=&quot;https:&#x2F;&#x2F;www.jetbrains.com&#x2F;pycharm&#x2F;&quot;&gt;Pycharm&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;thonny.org&#x2F;&quot;&gt;Thonny&lt;&#x2F;a&gt;. Under the hood, these visualizations are using the &lt;a href=&quot;https:&#x2F;&#x2F;docs.python.org&#x2F;3&#x2F;library&#x2F;pdb.html&quot;&gt;pdb module&lt;&#x2F;a&gt;. See also &lt;a href=&quot;https:&#x2F;&#x2F;realpython.com&#x2F;python-debugging-pdb&#x2F;&quot;&gt;Python debugging with pdb&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
-&lt;p&gt;Debugging is often a frustrating experience. Taking a break helps (and sometimes I have found the problem in my dreams). Try to reduce the code as much as possible so that you are left with minimal code necessary to reproduce the issue. Talking about the problem to a friend&#x2F;colleague&#x2F;inanimate-objects&#x2F;etc can help too — known as &lt;a href=&quot;https:&#x2F;&#x2F;rubberduckdebugging.com&#x2F;&quot;&gt;Rubber duck debugging&lt;&#x2F;a&gt;. I have often found the issue while formulating a question to be asked on forums like stackoverflow&#x2F;reddit because writing down your problem is another way to bring clarity than just having a vague idea in your mind. Here&#x27;s some more articles on this challenging topic:&lt;&#x2F;p&gt;
+&lt;p&gt;Debugging is often a frustrating experience. Taking a break helps (and sometimes I find the solution or spot a problem in my dreams). Try to reduce the code as much as possible so that you are left with minimal code necessary to reproduce the issue. Talking about the problem to a friend&#x2F;colleague&#x2F;inanimate-objects&#x2F;etc can help too — known as &lt;a href=&quot;https:&#x2F;&#x2F;rubberduckdebugging.com&#x2F;&quot;&gt;Rubber duck debugging&lt;&#x2F;a&gt;. I have often found the issue while formulating a question to be asked on forums like stackoverflow&#x2F;reddit because writing down your problem is another way to bring clarity than just having a vague idea in your mind. Here&#x27;s some more articles on this challenging topic:&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;jvns.ca&#x2F;blog&#x2F;2019&#x2F;06&#x2F;23&#x2F;a-few-debugging-resources&#x2F;&quot;&gt;What does debugging a program look like?&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;ericlippert.com&#x2F;2014&#x2F;03&#x2F;05&#x2F;how-to-debug-small-programs&#x2F;&quot;&gt;How to debug small programs&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;uchicago-cs.github.io&#x2F;debugging-guide&#x2F;&quot;&gt;Debugging guide&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;ryanstutorials.net&#x2F;problem-solving-skills&#x2F;&quot;&gt;Problem solving skills&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
-&lt;p&gt;Here&#x27;s an interesting snippet (modified to keep it small) from a collection of &lt;a href=&quot;https:&#x2F;&#x2F;stackoverflow.com&#x2F;questions&#x2F;169713&#x2F;whats-the-toughest-bug-you-ever-found-and-fixed&quot;&gt;interesting bug stories&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Here&#x27;s an interesting snippet (paraphrased) from a collection of &lt;a href=&quot;https:&#x2F;&#x2F;stackoverflow.com&#x2F;q&#x2F;169713&#x2F;4082052&quot;&gt;interesting bug stories&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;A jpeg parser choked whenever the CEO came into the room, because he always had a shirt with a square pattern on it, which triggered some special case of contrast and block boundary algorithms.&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;
-&lt;p&gt;See also &lt;a href=&quot;https:&#x2F;&#x2F;500mile.email&#x2F;&quot;&gt;curated list of absurd software bug stories&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;See also &lt;a href=&quot;https:&#x2F;&#x2F;500mile.email&#x2F;&quot;&gt;this curated list of absurd software bug stories&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;br&gt;
 &lt;h2 id=&quot;testing&quot;&gt;Testing&lt;a class=&quot;zola-anchor&quot; href=&quot;#testing&quot; aria-label=&quot;Anchor link for: testing&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
 &lt;p&gt;Another crucial aspect in the programming journey is knowing how to write tests. In bigger projects, usually there are separate engineers (often in much larger number than code developers) to test the code. Even in those cases, writing a few sanity test cases yourself can help you develop faster knowing that the changes aren&#x27;t breaking basic functionality.&lt;&#x2F;p&gt;
@@ -1472,28 +1468,17 @@ $ diff &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;docs.python.org&#x2F;3&#x2F;index.html&quot;&gt;Official Python docs&lt;&#x2F;a&gt; — Python docs are a treasure trove of information&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;calmcode.io&#x2F;&quot;&gt;Calmcode&lt;&#x2F;a&gt; — videos on testing, code style, args kwargs, data science, etc&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;dabeaz-course.github.io&#x2F;practical-python&#x2F;Notes&#x2F;Contents.html&quot;&gt;Practical Python Programming&lt;&#x2F;a&gt; — covers foundational aspects of Python programming with an emphasis on script writing, data manipulation, and program organization&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;book.pythontips.com&#x2F;en&#x2F;latest&#x2F;index.html&quot;&gt;Intermediate Python&lt;&#x2F;a&gt; — covers debugging, generators, decorators, virtual environment, collections, comprehensions, classes, etc&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;inventwithpython.com&#x2F;beyond&#x2F;chapter0.html&quot;&gt;Beyond the Basic Stuff with Python&lt;&#x2F;a&gt; — Best Practices, Tools, and Techniques, OOP, Practice Projects&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.effectivepython.com&#x2F;&quot;&gt;Effective Python&lt;&#x2F;a&gt; — insight into the Pythonic way of writing programs&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.oreilly.com&#x2F;library&#x2F;view&#x2F;fluent-python&#x2F;9781491946237&#x2F;&quot;&gt;Fluent Python&lt;&#x2F;a&gt; — takes you through Python’s core language features and libraries, and shows you how to make your code shorter, faster, and more readable at the same time
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.oreilly.com&#x2F;library&#x2F;view&#x2F;fluent-python-2nd&#x2F;9781492056348&#x2F;&quot;&gt;Fluent Python, 2nd Edition&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
-&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.oreilly.com&#x2F;library&#x2F;view&#x2F;fluent-python-2nd&#x2F;9781492056348&#x2F;&quot;&gt;Fluent Python&lt;&#x2F;a&gt; — takes you through Python’s core language features and libraries, and shows you how to make your code shorter, faster, and more readable at the same time&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;nostarch.com&#x2F;seriouspython&quot;&gt;Serious Python&lt;&#x2F;a&gt; — deployment, scalability, testing, and more&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.manning.com&#x2F;books&#x2F;practices-of-the-python-pro&quot;&gt;Practices of the Python Pro&lt;&#x2F;a&gt; — learn to design professional-level, clean, easily maintainable software at scale, includes examples for software development best practices&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;pythonprogramming.net&#x2F;&quot;&gt;Pythonprogramming&lt;&#x2F;a&gt; — domain based topics like machine learning, game development, data analysis, web development, etc&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;user&#x2F;schafer5&#x2F;playlists&quot;&gt;Youtube: Corey Schafer&lt;&#x2F;a&gt; — various topics for beginners to advanced users&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;p&gt;&lt;strong&gt;Algorithms and Design patterns&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;runestone.academy&#x2F;runestone&#x2F;static&#x2F;pythonds&#x2F;index.html&quot;&gt;Problem solving with algorithms and data structures&lt;&#x2F;a&gt; &lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;livebook.manning.com&#x2F;book&#x2F;classic-computer-science-problems-in-python&#x2F;about-this-book&#x2F;&quot;&gt;Classic Computer Science Problems in Python&lt;&#x2F;a&gt; — deepens your knowledge of problem solving techniques from the realm of computer science by challenging you with time-tested scenarios, exercises, and algorithms&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;tayllan&#x2F;awesome-algorithms&quot;&gt;GitHub: Awesome algorithms&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;faif&#x2F;python-patterns&quot;&gt;GitHub: Collection of design patterns and idioms&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;python-patterns.guide&#x2F;&quot;&gt;Python design patterns&lt;&#x2F;a&gt; inspired from &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Design_Patterns&quot;&gt;Design Patterns: Elements of Reusable Object-Oriented Software&lt;&#x2F;a&gt; (also known as &lt;strong&gt;Gang of Four book&lt;&#x2F;strong&gt;)&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.cosmicpython.com&#x2F;book&#x2F;preface.html&quot;&gt;Architecture Patterns with Python&lt;&#x2F;a&gt; — Enabling TDD, DDD, and Event-Driven Microservices&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.pycabook.com&#x2F;&quot;&gt;Clean Architectures in Python&lt;&#x2F;a&gt; — software design methodology&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;br&gt;
 &lt;h2 id=&quot;handy-cheatsheets&quot;&gt;Handy cheatsheets&lt;a class=&quot;zola-anchor&quot; href=&quot;#handy-cheatsheets&quot; aria-label=&quot;Anchor link for: handy-cheatsheets&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
@@ -1513,7 +1498,7 @@ $ diff &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F
 	<entry xml:lang="en">
 		<title>Customizing pandoc to generate beautiful pdf and epub from markdown</title>
 		<published>2020-07-21T00:00:00+00:00</published>
-		<updated>2021-03-03T00:00:00+00:00</updated>
+		<updated>2021-08-27T00:00:00+00:00</updated>
 		<link href="https://learnbyexample.github.io/customizing-pandoc/" type="text/html"/>
 		<id>https://learnbyexample.github.io/customizing-pandoc/</id>
 		<content type="html">&lt;p&gt;Either you&#x27;ve already heard of &lt;code&gt;pandoc&lt;&#x2F;code&gt; or if you have searched online for &lt;code&gt;markdown&lt;&#x2F;code&gt; to &lt;code&gt;pdf&lt;&#x2F;code&gt; or similar, you are sure to come across &lt;code&gt;pandoc&lt;&#x2F;code&gt;. This tutorial will help you use &lt;code&gt;pandoc&lt;&#x2F;code&gt; to generate &lt;code&gt;pdf&lt;&#x2F;code&gt; and &lt;code&gt;epub&lt;&#x2F;code&gt; from a &lt;a href=&quot;https:&#x2F;&#x2F;github.github.com&#x2F;gfm&#x2F;&quot;&gt;GitHub style markdown&lt;&#x2F;a&gt; file. The main motivation for this blog post is to highlight what customizations I did to generate &lt;code&gt;pdf&lt;&#x2F;code&gt; and &lt;code&gt;epub&lt;&#x2F;code&gt; versions for &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;books&#x2F;&quot;&gt;self-publishing my ebooks&lt;&#x2F;a&gt;. It wasn&#x27;t easy to arrive at the set-up I ended up with, so I hope this will be useful for those looking to use &lt;code&gt;pandoc&lt;&#x2F;code&gt; to generate &lt;code&gt;pdf&lt;&#x2F;code&gt; and &lt;code&gt;epub&lt;&#x2F;code&gt; formats. This guide is specifically aimed at technical books that has code snippets.&lt;&#x2F;p&gt;
@@ -1522,8 +1507,8 @@ $ diff &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F
 &lt;p&gt;If you use a debian based distro like Ubuntu, the below steps are enough for the demos in this tutorial. If you get an error or warning, search that issue online and you&#x27;ll likely find what else has to be installed.&lt;&#x2F;p&gt;
 &lt;p&gt;I first downloaded &lt;code&gt;deb&lt;&#x2F;code&gt; file from &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;jgm&#x2F;pandoc&#x2F;releases&quot;&gt;pandoc: releases&lt;&#x2F;a&gt; and installed it. Followed by packages needed for &lt;code&gt;pdf&lt;&#x2F;code&gt; generation.&lt;&#x2F;p&gt;
 &lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
-&lt;code&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# latest pandoc version as of 24 Jan 2021 is 2.11.4
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; sudo gdebi &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;~&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;&#x2F;Downloads&#x2F;pandoc-2.11.4-1-amd64.deb
+&lt;code&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# latest pandoc version as of 27 Aug 2021 is 2.14.2
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; sudo gdebi &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;~&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;&#x2F;Downloads&#x2F;pandoc-2.14.2-1-amd64.deb
 
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# note that download size is hundreds of MB
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; sudo apt install texlive-xetex
@@ -1601,7 +1586,7 @@ no VAL is specified, the key will be given the value true.&lt;&#x2F;p&gt;
 &lt;li&gt;&lt;code&gt;linkcolor&lt;&#x2F;code&gt; to set hyperlink color&lt;&#x2F;li&gt;
 &lt;li&gt;to increase default &lt;strong&gt;font size&lt;&#x2F;strong&gt;, use &lt;code&gt;-V fontsize=12pt&lt;&#x2F;code&gt;
 &lt;ul&gt;
-&lt;li&gt;See &lt;a href=&quot;https:&#x2F;&#x2F;stackoverflow.com&#x2F;questions&#x2F;23811002&#x2F;from-markdown-to-pdf-how-to-change-the-font-size-with-pandoc&quot;&gt;stackoverflow: change font size&lt;&#x2F;a&gt; if you need even bigger size options&lt;&#x2F;li&gt;
+&lt;li&gt;See &lt;a href=&quot;https:&#x2F;&#x2F;stackoverflow.com&#x2F;q&#x2F;23811002&#x2F;4082052&quot;&gt;stackoverflow: change font size&lt;&#x2F;a&gt; if you need even bigger size options&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
@@ -1615,7 +1600,7 @@ no VAL is specified, the key will be given the value true.&lt;&#x2F;p&gt;
 &lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;warning.svg&quot; alt=&quot;warning&quot; &#x2F;&gt; On my system, &lt;code&gt;DejaVu Serif&lt;&#x2F;code&gt; did not have &lt;em&gt;italic&lt;&#x2F;em&gt; variation installed, so I had to use &lt;code&gt;sudo apt install ttf-dejavu-extra&lt;&#x2F;code&gt; to get it.&lt;&#x2F;p&gt;
 &lt;br&gt;
 &lt;h2 id=&quot;syntax-highlighting&quot;&gt;Syntax highlighting&lt;a class=&quot;zola-anchor&quot; href=&quot;#syntax-highlighting&quot; aria-label=&quot;Anchor link for: syntax-highlighting&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
-&lt;p&gt;One option to customize syntax highlighting for code snippets is to save one of the &lt;code&gt;pandoc&lt;&#x2F;code&gt; themes and editing it. See &lt;a href=&quot;https:&#x2F;&#x2F;stackoverflow.com&#x2F;questions&#x2F;30880200&#x2F;pandoc-what-are-the-available-syntax-highlighters&#x2F;47876166#47876166&quot;&gt;stackoverflow: What are the available syntax highlighters?&lt;&#x2F;a&gt; for available themes and more details (as a good practice on stackoverflow, go through all answers and comments — the linked&#x2F;related sections on sidebar are useful as well).&lt;&#x2F;p&gt;
+&lt;p&gt;One option to customize syntax highlighting for code snippets is to save one of the &lt;code&gt;pandoc&lt;&#x2F;code&gt; themes and editing it. See &lt;a href=&quot;https:&#x2F;&#x2F;stackoverflow.com&#x2F;a&#x2F;47876166&#x2F;4082052&quot;&gt;stackoverflow: What are the available syntax highlighters?&lt;&#x2F;a&gt; for available themes and more details (as a good practice on stackoverflow, go through all answers and comments — the linked&#x2F;related sections on sidebar are useful as well).&lt;&#x2F;p&gt;
 &lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
 &lt;code&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; pandoc&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt; --print-highlight-style&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;pygments &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; pygments.theme
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
@@ -1636,7 +1621,7 @@ no VAL is specified, the key will be given the value true.&lt;&#x2F;p&gt;
 },
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;&lt;strong&gt;Inline code&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
-&lt;p&gt;Similar to changing background color for code snippets, I found a &lt;a href=&quot;https:&#x2F;&#x2F;stackoverflow.com&#x2F;questions&#x2F;40975004&#x2F;pandoc-latex-change-backtick-highlight&quot;&gt;solution online&lt;&#x2F;a&gt; to change background color for inline code snippets.&lt;&#x2F;p&gt;
+&lt;p&gt;Similar to changing background color for code snippets, I found a &lt;a href=&quot;https:&#x2F;&#x2F;stackoverflow.com&#x2F;q&#x2F;40975004&#x2F;4082052&quot;&gt;solution online&lt;&#x2F;a&gt; to change background color for inline code snippets.&lt;&#x2F;p&gt;
 &lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
 &lt;code&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;\usepackage&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;{&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a2a001;&quot;&gt;fancyvrb&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;,newverbs,xcolor}
 
@@ -1657,7 +1642,7 @@ no VAL is specified, the key will be given the value true.&lt;&#x2F;p&gt;
 &lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;pandoc_pdf&#x2F;python_vs_ruby_syn.png&quot; alt=&quot;REPL syntax highlighting&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 &lt;br&gt;
 &lt;h2 id=&quot;bullet-styling&quot;&gt;Bullet styling&lt;a class=&quot;zola-anchor&quot; href=&quot;#bullet-styling&quot; aria-label=&quot;Anchor link for: bullet-styling&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
-&lt;p&gt;This &lt;a href=&quot;https:&#x2F;&#x2F;stackoverflow.com&#x2F;questions&#x2F;22156999&#x2F;how-to-change-the-style-of-bullets-in-pandoc-markdown&quot;&gt;stackoverflow Q&amp;amp;A&lt;&#x2F;a&gt; helped for bullet styling.&lt;&#x2F;p&gt;
+&lt;p&gt;This &lt;a href=&quot;https:&#x2F;&#x2F;stackoverflow.com&#x2F;q&#x2F;22156999&#x2F;4082052&quot;&gt;stackoverflow Q&amp;amp;A&lt;&#x2F;a&gt; helped for bullet styling.&lt;&#x2F;p&gt;
 &lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
 &lt;code&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;\usepackage&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;{&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a2a001;&quot;&gt;enumitem&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;}
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;\usepackage&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;{&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a2a001;&quot;&gt;amsfonts&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;}
@@ -1758,7 +1743,7 @@ no VAL is specified, the key will be given the value true.&lt;&#x2F;p&gt;
 &lt;&#x2F;ul&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;bookdown.org&#x2F;home&#x2F;&quot;&gt;Bookdown&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;orgmode.org&#x2F;&quot;&gt;emacs orgmode&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;orgmode.org&#x2F;&quot;&gt;Emacs orgmode&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;casual-effects.com&#x2F;markdeep&#x2F;&quot;&gt;Markdeep&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;p&gt;&lt;strong&gt;Miscellaneous&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
@@ -1767,7 +1752,7 @@ no VAL is specified, the key will be given the value true.&lt;&#x2F;p&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;joecmarshall.com&#x2F;posts&#x2F;book-writing-environment&#x2F;&quot;&gt;Writing a Book with Unix&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;askubuntu.com&#x2F;questions&#x2F;3697&#x2F;how-do-i-install-fonts&quot;&gt;askubuntu: How do I install fonts?&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;tex.stackexchange.com&#x2F;questions&#x2F;9533&#x2F;what-best-combination-of-fonts-for-serif-sans-and-mono-do-you-recommend&quot;&gt;tex.stackexchange: What best combination of fonts for Serif, Sans, and Mono do you recommend?&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;www.tug.dk&#x2F;FontCatalogue&#x2F;&quot;&gt;LATEX font catalogue&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;tug.org&#x2F;FontCatalogue&#x2F;&quot;&gt;LATEX font catalogue&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;karthik&#x2F;markdown_science&#x2F;wiki&#x2F;Tools-to-support-your-markdown-authoring&quot;&gt;Tools to support markdown authoring&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;picular.co&#x2F;&quot;&gt;picular: search engine for colors&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;www.colorhexa.com&#x2F;&quot;&gt;colorhexa&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;ebooks.stackexchange.com&#x2F;questions?sort=votes&quot;&gt;ebooks.stackexchange&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;

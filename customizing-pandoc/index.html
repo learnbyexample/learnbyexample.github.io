@@ -214,8 +214,8 @@
 <p>If you use a debian based distro like Ubuntu, the below steps are enough for the demos in this tutorial. If you get an error or warning, search that issue online and you'll likely find what else has to be installed.</p>
 <p>I first downloaded <code>deb</code> file from <a href="https://github.com/jgm/pandoc/releases">pandoc: releases</a> and installed it. Followed by packages needed for <code>pdf</code> generation.</p>
 <pre style="background-color:#f5f5f5;">
-<code><span style="color:#5597d6;">$ </span><span style="color:#7f8989;"># latest pandoc version as of 24 Jan 2021 is 2.11.4
-</span><span style="color:#5597d6;">$</span><span style="color:#1f1f1f;"> sudo gdebi </span><span style="color:#5597d6;">~</span><span style="color:#1f1f1f;">/Downloads/pandoc-2.11.4-1-amd64.deb
+<code><span style="color:#5597d6;">$ </span><span style="color:#7f8989;"># latest pandoc version as of 27 Aug 2021 is 2.14.2
+</span><span style="color:#5597d6;">$</span><span style="color:#1f1f1f;"> sudo gdebi </span><span style="color:#5597d6;">~</span><span style="color:#1f1f1f;">/Downloads/pandoc-2.14.2-1-amd64.deb
 
 </span><span style="color:#5597d6;">$ </span><span style="color:#7f8989;"># note that download size is hundreds of MB
 </span><span style="color:#5597d6;">$</span><span style="color:#1f1f1f;"> sudo apt install texlive-xetex
@@ -293,7 +293,7 @@ no VAL is specified, the key will be given the value true.</p>
 <li><code>linkcolor</code> to set hyperlink color</li>
 <li>to increase default <strong>font size</strong>, use <code>-V fontsize=12pt</code>
 <ul>
-<li>See <a href="https://stackoverflow.com/questions/23811002/from-markdown-to-pdf-how-to-change-the-font-size-with-pandoc">stackoverflow: change font size</a> if you need even bigger size options</li>
+<li>See <a href="https://stackoverflow.com/q/23811002/4082052">stackoverflow: change font size</a> if you need even bigger size options</li>
 </ul>
 </li>
 </ul>
@@ -307,7 +307,7 @@ no VAL is specified, the key will be given the value true.</p>
 <p><img src="/images/warning.svg" alt="warning" /> On my system, <code>DejaVu Serif</code> did not have <em>italic</em> variation installed, so I had to use <code>sudo apt install ttf-dejavu-extra</code> to get it.</p>
 <br>
 <h2 id="syntax-highlighting">Syntax highlighting<a class="zola-anchor" href="#syntax-highlighting" aria-label="Anchor link for: syntax-highlighting">🔗</a></h2>
-<p>One option to customize syntax highlighting for code snippets is to save one of the <code>pandoc</code> themes and editing it. See <a href="https://stackoverflow.com/questions/30880200/pandoc-what-are-the-available-syntax-highlighters/47876166#47876166">stackoverflow: What are the available syntax highlighters?</a> for available themes and more details (as a good practice on stackoverflow, go through all answers and comments — the linked/related sections on sidebar are useful as well).</p>
+<p>One option to customize syntax highlighting for code snippets is to save one of the <code>pandoc</code> themes and editing it. See <a href="https://stackoverflow.com/a/47876166/4082052">stackoverflow: What are the available syntax highlighters?</a> for available themes and more details (as a good practice on stackoverflow, go through all answers and comments — the linked/related sections on sidebar are useful as well).</p>
 <pre style="background-color:#f5f5f5;">
 <code><span style="color:#5597d6;">$</span><span style="color:#1f1f1f;"> pandoc</span><span style="color:#5597d6;"> --print-highlight-style</span><span style="color:#72ab00;">=</span><span style="color:#1f1f1f;">pygments </span><span style="color:#72ab00;">&gt;</span><span style="color:#1f1f1f;"> pygments.theme
 </span></code></pre>
@@ -328,7 +328,7 @@ no VAL is specified, the key will be given the value true.</p>
 },
 </span></code></pre>
 <p><strong>Inline code</strong></p>
-<p>Similar to changing background color for code snippets, I found a <a href="https://stackoverflow.com/questions/40975004/pandoc-latex-change-backtick-highlight">solution online</a> to change background color for inline code snippets.</p>
+<p>Similar to changing background color for code snippets, I found a <a href="https://stackoverflow.com/q/40975004/4082052">solution online</a> to change background color for inline code snippets.</p>
 <pre style="background-color:#f5f5f5;">
 <code><span style="color:#72ab00;">\usepackage</span><span style="color:#1f1f1f;">{</span><span style="color:#a2a001;">fancyvrb</span><span style="color:#1f1f1f;">,newverbs,xcolor}
 
@@ -349,7 +349,7 @@ no VAL is specified, the key will be given the value true.</p>
 <p><img src="/images/pandoc_pdf/python_vs_ruby_syn.png" alt="REPL syntax highlighting" /></p>
 <br>
 <h2 id="bullet-styling">Bullet styling<a class="zola-anchor" href="#bullet-styling" aria-label="Anchor link for: bullet-styling">🔗</a></h2>
-<p>This <a href="https://stackoverflow.com/questions/22156999/how-to-change-the-style-of-bullets-in-pandoc-markdown">stackoverflow Q&amp;A</a> helped for bullet styling.</p>
+<p>This <a href="https://stackoverflow.com/q/22156999/4082052">stackoverflow Q&amp;A</a> helped for bullet styling.</p>
 <pre style="background-color:#f5f5f5;">
 <code><span style="color:#72ab00;">\usepackage</span><span style="color:#1f1f1f;">{</span><span style="color:#a2a001;">enumitem</span><span style="color:#1f1f1f;">}
 </span><span style="color:#72ab00;">\usepackage</span><span style="color:#1f1f1f;">{</span><span style="color:#a2a001;">amsfonts</span><span style="color:#1f1f1f;">}
@@ -450,7 +450,7 @@ no VAL is specified, the key will be given the value true.</p>
 </ul>
 </li>
 <li><a href="https://bookdown.org/home/">Bookdown</a></li>
-<li><a href="https://orgmode.org/">emacs orgmode</a></li>
+<li><a href="https://orgmode.org/">Emacs orgmode</a></li>
 <li><a href="https://casual-effects.com/markdeep/">Markdeep</a></li>
 </ul>
 <p><strong>Miscellaneous</strong></p>
@@ -459,7 +459,7 @@ no VAL is specified, the key will be given the value true.</p>
 <li><a href="https://joecmarshall.com/posts/book-writing-environment/">Writing a Book with Unix</a></li>
 <li><a href="https://askubuntu.com/questions/3697/how-do-i-install-fonts">askubuntu: How do I install fonts?</a></li>
 <li><a href="https://tex.stackexchange.com/questions/9533/what-best-combination-of-fonts-for-serif-sans-and-mono-do-you-recommend">tex.stackexchange: What best combination of fonts for Serif, Sans, and Mono do you recommend?</a></li>
-<li><a href="http://www.tug.dk/FontCatalogue/">LATEX font catalogue</a></li>
+<li><a href="https://tug.org/FontCatalogue/">LATEX font catalogue</a></li>
 <li><a href="https://github.com/karthik/markdown_science/wiki/Tools-to-support-your-markdown-authoring">Tools to support markdown authoring</a></li>
 <li><a href="https://picular.co/">picular: search engine for colors</a> and <a href="https://www.colorhexa.com/">colorhexa</a></li>
 <li><a href="https://ebooks.stackexchange.com/questions?sort=votes">ebooks.stackexchange</a></li>
