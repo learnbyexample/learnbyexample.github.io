@@ -5,7 +5,7 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2021-08-27T00:00:00+00:00</updated>
+	<updated>2021-09-07T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
 	<entry xml:lang="en">
 		<title>Practice Python Projects book announcement</title>
@@ -269,10 +269,11 @@ caller_number=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;834
 	<entry xml:lang="en">
 		<title>GNU BRE&#x2F;ERE cheatsheet and differences between grep, sed and awk</title>
 		<published>2021-05-31T00:00:00+00:00</published>
-		<updated>2021-06-01T00:00:00+00:00</updated>
+		<updated>2021-09-07T00:00:00+00:00</updated>
 		<link href="https://learnbyexample.github.io/gnu-bre-ere-cheatsheet/" type="text/html"/>
 		<id>https://learnbyexample.github.io/gnu-bre-ere-cheatsheet/</id>
-		<content type="html">&lt;p&gt;This blog post covers &lt;strong&gt;Basic Regular Expressions&lt;&#x2F;strong&gt; (BRE) and &lt;strong&gt;Extended Regular Expressions&lt;&#x2F;strong&gt; (ERE) syntax supported by GNU &lt;code&gt;grep&lt;&#x2F;code&gt;, &lt;code&gt;sed&lt;&#x2F;code&gt; and &lt;code&gt;awk&lt;&#x2F;code&gt;. You&#x27;ll also learn the differences between these tools — for example, &lt;code&gt;awk&lt;&#x2F;code&gt; doesn&#x27;t support backreferences within regexp definition (i.e. the search portion).&lt;&#x2F;p&gt;
+		<content type="html">&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;bre_ere_cheatsheet.png&quot; alt=&quot;GNU BRE&#x2F;ERE cheatsheet&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;This post covers &lt;strong&gt;Basic Regular Expressions&lt;&#x2F;strong&gt; (BRE) and &lt;strong&gt;Extended Regular Expressions&lt;&#x2F;strong&gt; (ERE) syntax supported by GNU &lt;code&gt;grep&lt;&#x2F;code&gt;, &lt;code&gt;sed&lt;&#x2F;code&gt; and &lt;code&gt;awk&lt;&#x2F;code&gt;. You&#x27;ll also learn the differences between these tools — for example, &lt;code&gt;awk&lt;&#x2F;code&gt; doesn&#x27;t support backreferences within regexp definition (i.e. the search portion).&lt;&#x2F;p&gt;
 &lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;&lt;br&gt;
 &lt;h2 id=&quot;bre-and-ere&quot;&gt;BRE and ERE&lt;a class=&quot;zola-anchor&quot; href=&quot;#bre-and-ere&quot; aria-label=&quot;Anchor link for: bre-and-ere&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
 &lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; From &lt;a href=&quot;https:&#x2F;&#x2F;www.gnu.org&#x2F;software&#x2F;grep&#x2F;manual&#x2F;grep.html#Basic-vs-Extended&quot;&gt;GNU grep manual&lt;&#x2F;a&gt;:&lt;&#x2F;p&gt;
@@ -294,6 +295,7 @@ caller_number=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;834
 &lt;tr&gt;&lt;td&gt;&lt;code&gt;\&amp;lt;&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;restricts the match to the start of word&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
 &lt;tr&gt;&lt;td&gt;&lt;code&gt;\&amp;gt;&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;restricts the match to the end of word&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
 &lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;p&gt;The &lt;code&gt;-x&lt;&#x2F;code&gt; cli option in &lt;code&gt;grep&lt;&#x2F;code&gt; is equivalent to &lt;code&gt;^pattern$&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
 &lt;p&gt;Word characters include alphabets, digits and underscore. Here&#x27;s some more alternate ways to specify word anchors:&lt;&#x2F;p&gt;
 &lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Pattern&lt;&#x2F;th&gt;&lt;th&gt;Description&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
 &lt;tr&gt;&lt;td&gt;&lt;code&gt;\b&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;restricts the match to the start&#x2F;end of words, applicable for &lt;code&gt;grep&lt;&#x2F;code&gt; and &lt;code&gt;sed&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
@@ -301,7 +303,6 @@ caller_number=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;834
 &lt;tr&gt;&lt;td&gt;&lt;code&gt;\B&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;matches wherever &lt;code&gt;\b&lt;&#x2F;code&gt; (or &lt;code&gt;\y&lt;&#x2F;code&gt;) doesn&#x27;t match&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
 &lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
 &lt;p&gt;&lt;code&gt;grep&lt;&#x2F;code&gt; also supports &lt;code&gt;-w&lt;&#x2F;code&gt; cli option. It is equivalent to &lt;code&gt;(?&amp;lt;!\w)pattern(?!\w)&lt;&#x2F;code&gt;. The three different ways to specify word anchors are not exactly equivalent though, see &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;learn_gnugrep_ripgrep&#x2F;gotchas-and-tricks.html#word-boundary-differences&quot;&gt;Word boundary differences&lt;&#x2F;a&gt; section from my book for details and examples.&lt;&#x2F;p&gt;
-&lt;p&gt;The &lt;code&gt;-x&lt;&#x2F;code&gt; cli option in &lt;code&gt;grep&lt;&#x2F;code&gt; is equivalent to &lt;code&gt;^pattern$&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
 &lt;br&gt;
 &lt;h2 id=&quot;alternation-and-grouping&quot;&gt;Alternation and Grouping&lt;a class=&quot;zola-anchor&quot; href=&quot;#alternation-and-grouping&quot; aria-label=&quot;Anchor link for: alternation-and-grouping&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
 &lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Pattern&lt;&#x2F;th&gt;&lt;th&gt;Description&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
@@ -319,9 +320,9 @@ caller_number=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;834
 &lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
 &lt;ul&gt;
 &lt;li&gt;With &lt;code&gt;grep&lt;&#x2F;code&gt; and &lt;code&gt;sed&lt;&#x2F;code&gt;, switching between ERE and BRE can reduce the number of escapes needed for some cases. For fixed string matching, &lt;code&gt;grep&lt;&#x2F;code&gt; has &lt;code&gt;-F&lt;&#x2F;code&gt; option and &lt;code&gt;awk&lt;&#x2F;code&gt; has string comparison operators (whole string) and the &lt;code&gt;index&lt;&#x2F;code&gt; function (partial string).&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;code&gt;sed&lt;&#x2F;code&gt; requires both &lt;code&gt;(&lt;&#x2F;code&gt; and &lt;code&gt;)&lt;&#x2F;code&gt; characters to be escaped (in ERE mode), whereas &lt;code&gt;grep&lt;&#x2F;code&gt; and &lt;code&gt;awk&lt;&#x2F;code&gt; doesn&#x27;t require &lt;code&gt;)&lt;&#x2F;code&gt; to be escaped.&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;code&gt;sed&lt;&#x2F;code&gt; requires &lt;code&gt;{&lt;&#x2F;code&gt; to be escaped (in ERE mode) even if it isn&#x27;t part of a valid quantifier syntax, whereas &lt;code&gt;grep&lt;&#x2F;code&gt; and &lt;code&gt;awk&lt;&#x2F;code&gt; doesn&#x27;t require escaping. For example, you&#x27;d need &lt;code&gt;\{a}&lt;&#x2F;code&gt; in &lt;code&gt;sed&lt;&#x2F;code&gt; whereas &lt;code&gt;{a}&lt;&#x2F;code&gt; is enough for the other two.&lt;&#x2F;li&gt;
-&lt;li&gt;In BRE mode, &lt;code&gt;grep&lt;&#x2F;code&gt; and &lt;code&gt;sed&lt;&#x2F;code&gt; doesn&#x27;t require &lt;code&gt;^&lt;&#x2F;code&gt; and &lt;code&gt;$&lt;&#x2F;code&gt; to be escaped if they are used away from their customary positions.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;sed&lt;&#x2F;code&gt; requires both &lt;code&gt;(&lt;&#x2F;code&gt; and &lt;code&gt;)&lt;&#x2F;code&gt; characters to be escaped (in ERE mode), whereas &lt;code&gt;grep&lt;&#x2F;code&gt; and &lt;code&gt;awk&lt;&#x2F;code&gt; don&#x27;t require &lt;code&gt;)&lt;&#x2F;code&gt; to be escaped.&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;sed&lt;&#x2F;code&gt; requires &lt;code&gt;{&lt;&#x2F;code&gt; to be escaped (in ERE mode) even if it isn&#x27;t part of a valid quantifier syntax, whereas &lt;code&gt;grep&lt;&#x2F;code&gt; and &lt;code&gt;awk&lt;&#x2F;code&gt; don&#x27;t require escaping. For example, you&#x27;d need &lt;code&gt;\{a}&lt;&#x2F;code&gt; in &lt;code&gt;sed&lt;&#x2F;code&gt; whereas &lt;code&gt;{a}&lt;&#x2F;code&gt; is enough for the other two.&lt;&#x2F;li&gt;
+&lt;li&gt;In BRE mode, &lt;code&gt;grep&lt;&#x2F;code&gt; and &lt;code&gt;sed&lt;&#x2F;code&gt; don&#x27;t require &lt;code&gt;^&lt;&#x2F;code&gt; and &lt;code&gt;$&lt;&#x2F;code&gt; to be escaped if they are used away from their customary positions.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;br&gt;
 &lt;h2 id=&quot;dot-metacharacter-and-quantifiers&quot;&gt;Dot metacharacter and Quantifiers&lt;a class=&quot;zola-anchor&quot; href=&quot;#dot-metacharacter-and-quantifiers&quot; aria-label=&quot;Anchor link for: dot-metacharacter-and-quantifiers&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
@@ -453,7 +454,7 @@ caller_number=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;834
 &lt;li&gt;&lt;code&gt;sub&lt;&#x2F;code&gt; and &lt;code&gt;gsub&lt;&#x2F;code&gt; functions allow only the &lt;code&gt;&amp;amp;&lt;&#x2F;code&gt; backreference.&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;code&gt;gensub&lt;&#x2F;code&gt; function allows &lt;code&gt;\N&lt;&#x2F;code&gt; form of backreference as well.
 &lt;ul&gt;
-&lt;li&gt;but need to use &lt;code&gt;\\1&lt;&#x2F;code&gt;, &lt;code&gt;\\2&lt;&#x2F;code&gt; etc since they are specified using string syntax.&lt;&#x2F;li&gt;
+&lt;li&gt;but need to use &lt;code&gt;\\0&lt;&#x2F;code&gt;, &lt;code&gt;\\1&lt;&#x2F;code&gt;, &lt;code&gt;\\2&lt;&#x2F;code&gt; etc since they are specified using string syntax.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
@@ -483,7 +484,18 @@ caller_number=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;834
 &lt;li&gt;&lt;code&gt;sub&lt;&#x2F;code&gt; function in &lt;code&gt;awk&lt;&#x2F;code&gt; replaces only the first matching occurrence and &lt;code&gt;gsub&lt;&#x2F;code&gt; function is equivalent to using the &lt;code&gt;g&lt;&#x2F;code&gt; flag.&lt;&#x2F;li&gt;
 &lt;li&gt;third argument of &lt;code&gt;gensub&lt;&#x2F;code&gt; function in &lt;code&gt;awk&lt;&#x2F;code&gt; supports replacing only the &lt;em&gt;N&lt;&#x2F;em&gt;th match as well as the &lt;code&gt;g&lt;&#x2F;code&gt; flag.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
-&lt;br&gt;
+&lt;p&gt;The behavior of &lt;code&gt;sed&lt;&#x2F;code&gt; and &lt;code&gt;awk&lt;&#x2F;code&gt; differs for &lt;em&gt;N&lt;&#x2F;em&gt;th match if the pattern can match empty string:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;a,,c,d,,f&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;s&#x2F;[^,]*&#x2F;b&#x2F;2&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
+a,b,c,d,,f
+$ echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;a,,c,d,,f&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;s&#x2F;[^,]*&#x2F;e&#x2F;5&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
+a,,c,d,e,f
+
+$ echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;a,,c,d,,f&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; awk &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;{print gensub(&#x2F;[^,]*&#x2F;, &amp;quot;b&amp;quot;, 2)}&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
+ab,,c,d,,f
+$ echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;a,,c,d,,f&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; awk &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;{print gensub(&#x2F;[^,]*&#x2F;, &amp;quot;e&amp;quot;, 5)}&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
+a,,ce,d,,f
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;br&gt;
 &lt;h2 id=&quot;sed-case-conversion&quot;&gt;sed case conversion&lt;a class=&quot;zola-anchor&quot; href=&quot;#sed-case-conversion&quot; aria-label=&quot;Anchor link for: sed-case-conversion&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
 &lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Escape sequence&lt;&#x2F;th&gt;&lt;th&gt;Description&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
 &lt;tr&gt;&lt;td&gt;&lt;code&gt;\E&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;indicates end of case conversion in replacement section&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
@@ -499,6 +511,8 @@ caller_number=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;834
 &lt;li&gt;Any character except &lt;code&gt;\&lt;&#x2F;code&gt; and newline character can also be used. For example: &lt;code&gt;s#&#x2F;home&#x2F;learnbyexample&#x2F;#~&#x2F;#&lt;&#x2F;code&gt; is same as &lt;code&gt;s&#x2F;\&#x2F;home\&#x2F;learnbyexample\&#x2F;&#x2F;~\&#x2F;&#x2F;&lt;&#x2F;code&gt;.&lt;&#x2F;li&gt;
 &lt;li&gt;For regexp addressing, the first delimiter has to be escaped. For example: &lt;code&gt;\;&#x2F;foo&#x2F;bar&#x2F;;p&lt;&#x2F;code&gt; is same as &lt;code&gt;&#x2F;foo\&#x2F;bar\&#x2F;&#x2F;p&lt;&#x2F;code&gt;.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;i&gt;Computer illustration: &lt;a href=&quot;https:&#x2F;&#x2F;lukaszadam.com&#x2F;assets&#x2F;downloads&#x2F;javascript_illustration.svg&quot;&gt;Lukaz Adam&lt;&#x2F;a&gt;&lt;&#x2F;i&gt;&lt;&#x2F;p&gt;
 </content>
 	</entry>
 	<entry xml:lang="en">
@@ -1395,7 +1409,7 @@ $ diff &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F
 	<entry xml:lang="en">
 		<title>I know Python basics, what next?</title>
 		<published>2020-07-25T00:00:00+00:00</published>
-		<updated>2021-08-27T00:00:00+00:00</updated>
+		<updated>2021-09-07T00:00:00+00:00</updated>
 		<link href="https://learnbyexample.github.io/python-intermediate/" type="text/html"/>
 		<id>https://learnbyexample.github.io/python-intermediate/</id>
 		<content type="html">&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;what_next.png&quot; alt=&quot;what next&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
@@ -1411,7 +1425,7 @@ $ diff &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F
 &lt;h2 id=&quot;exercises-and-projects&quot;&gt;Exercises and Projects&lt;a class=&quot;zola-anchor&quot; href=&quot;#exercises-and-projects&quot; aria-label=&quot;Anchor link for: exercises-and-projects&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
 &lt;p&gt;I do not have a simple answer to this question either. If you feel comfortable with programming basics and Python syntax, then exercises are a good way to test your knowledge. The resource you used to learn Python will typically have some sort of exercises, so those would be ideal as a first choice. I&#x27;d also suggest using the below resources to improve your skills. If you get stuck, reread the material related to those topics, search online, ask for clarifications, etc  — in short, make an effort to solve it. It is okay to skip some troublesome problems (and come back to it later if you have the time), but you should be able to solve most of the beginner problems. Maintaining notes and cheatsheets will help too, especially for common mistakes.&lt;&#x2F;p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;exercism.io&#x2F;tracks&#x2F;python&#x2F;exercises&quot;&gt;Exercism&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;www.practicepython.org&#x2F;&quot;&gt;Practicepython&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;edabit.com&#x2F;challenges&#x2F;python3&quot;&gt;Edabit&lt;&#x2F;a&gt; — these are all beginner friendly and difficulty levels are marked&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;exercism.org&#x2F;tracks&#x2F;python&#x2F;exercises&quot;&gt;Exercism&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;www.practicepython.org&#x2F;&quot;&gt;Practicepython&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;edabit.com&#x2F;challenges&#x2F;python3&quot;&gt;Edabit&lt;&#x2F;a&gt; — these are all beginner friendly and difficulty levels are marked&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;100_page_python_intro&#x2F;blob&#x2F;main&#x2F;exercises&#x2F;Exercises.md&quot;&gt;100 Page Python Intro exercises&lt;&#x2F;a&gt; — exercises from my introductory guide&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.codewars.com&#x2F;&quot;&gt;Codewars&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;adventofcode.com&#x2F;&quot;&gt;Adventofcode&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;projecteuler.net&#x2F;&quot;&gt;Projecteuler&lt;&#x2F;a&gt; — more challenging&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;py.checkio.org&#x2F;&quot;&gt;Checkio&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;www.codingame.com&#x2F;start&quot;&gt;Codingame&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;codecombat.com&#x2F;&quot;&gt;Codecombat&lt;&#x2F;a&gt; — gaming based challenges&lt;&#x2F;li&gt;

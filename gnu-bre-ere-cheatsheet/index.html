@@ -208,7 +208,8 @@
     </header>
 
     <div class="post-content">
-      <p>This blog post covers <strong>Basic Regular Expressions</strong> (BRE) and <strong>Extended Regular Expressions</strong> (ERE) syntax supported by GNU <code>grep</code>, <code>sed</code> and <code>awk</code>. You'll also learn the differences between these tools — for example, <code>awk</code> doesn't support backreferences within regexp definition (i.e. the search portion).</p>
+      <p align="center"><img src="/images/bre_ere_cheatsheet.png" alt="GNU BRE/ERE cheatsheet" /></p>
+<p>This post covers <strong>Basic Regular Expressions</strong> (BRE) and <strong>Extended Regular Expressions</strong> (ERE) syntax supported by GNU <code>grep</code>, <code>sed</code> and <code>awk</code>. You'll also learn the differences between these tools — for example, <code>awk</code> doesn't support backreferences within regexp definition (i.e. the search portion).</p>
 <span id="continue-reading"></span><br>
 <h2 id="bre-and-ere">BRE and ERE<a class="zola-anchor" href="#bre-and-ere" aria-label="Anchor link for: bre-and-ere">🔗</a></h2>
 <p><img src="/images/info.svg" alt="info" /> From <a href="https://www.gnu.org/software/grep/manual/grep.html#Basic-vs-Extended">GNU grep manual</a>:</p>
@@ -230,6 +231,7 @@
 <tr><td><code>\&lt;</code></td><td>restricts the match to the start of word</td></tr>
 <tr><td><code>\&gt;</code></td><td>restricts the match to the end of word</td></tr>
 </tbody></table>
+<p>The <code>-x</code> cli option in <code>grep</code> is equivalent to <code>^pattern$</code>.</p>
 <p>Word characters include alphabets, digits and underscore. Here's some more alternate ways to specify word anchors:</p>
 <table><thead><tr><th>Pattern</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>\b</code></td><td>restricts the match to the start/end of words, applicable for <code>grep</code> and <code>sed</code></td></tr>
@@ -237,7 +239,6 @@
 <tr><td><code>\B</code></td><td>matches wherever <code>\b</code> (or <code>\y</code>) doesn't match</td></tr>
 </tbody></table>
 <p><code>grep</code> also supports <code>-w</code> cli option. It is equivalent to <code>(?&lt;!\w)pattern(?!\w)</code>. The three different ways to specify word anchors are not exactly equivalent though, see <a href="https://learnbyexample.github.io/learn_gnugrep_ripgrep/gotchas-and-tricks.html#word-boundary-differences">Word boundary differences</a> section from my book for details and examples.</p>
-<p>The <code>-x</code> cli option in <code>grep</code> is equivalent to <code>^pattern$</code>.</p>
 <br>
 <h2 id="alternation-and-grouping">Alternation and Grouping<a class="zola-anchor" href="#alternation-and-grouping" aria-label="Anchor link for: alternation-and-grouping">🔗</a></h2>
 <table><thead><tr><th>Pattern</th><th>Description</th></tr></thead><tbody>
@@ -255,9 +256,9 @@
 </tbody></table>
 <ul>
 <li>With <code>grep</code> and <code>sed</code>, switching between ERE and BRE can reduce the number of escapes needed for some cases. For fixed string matching, <code>grep</code> has <code>-F</code> option and <code>awk</code> has string comparison operators (whole string) and the <code>index</code> function (partial string).</li>
-<li><code>sed</code> requires both <code>(</code> and <code>)</code> characters to be escaped (in ERE mode), whereas <code>grep</code> and <code>awk</code> doesn't require <code>)</code> to be escaped.</li>
-<li><code>sed</code> requires <code>{</code> to be escaped (in ERE mode) even if it isn't part of a valid quantifier syntax, whereas <code>grep</code> and <code>awk</code> doesn't require escaping. For example, you'd need <code>\{a}</code> in <code>sed</code> whereas <code>{a}</code> is enough for the other two.</li>
-<li>In BRE mode, <code>grep</code> and <code>sed</code> doesn't require <code>^</code> and <code>$</code> to be escaped if they are used away from their customary positions.</li>
+<li><code>sed</code> requires both <code>(</code> and <code>)</code> characters to be escaped (in ERE mode), whereas <code>grep</code> and <code>awk</code> don't require <code>)</code> to be escaped.</li>
+<li><code>sed</code> requires <code>{</code> to be escaped (in ERE mode) even if it isn't part of a valid quantifier syntax, whereas <code>grep</code> and <code>awk</code> don't require escaping. For example, you'd need <code>\{a}</code> in <code>sed</code> whereas <code>{a}</code> is enough for the other two.</li>
+<li>In BRE mode, <code>grep</code> and <code>sed</code> don't require <code>^</code> and <code>$</code> to be escaped if they are used away from their customary positions.</li>
 </ul>
 <br>
 <h2 id="dot-metacharacter-and-quantifiers">Dot metacharacter and Quantifiers<a class="zola-anchor" href="#dot-metacharacter-and-quantifiers" aria-label="Anchor link for: dot-metacharacter-and-quantifiers">🔗</a></h2>
@@ -389,7 +390,7 @@
 <li><code>sub</code> and <code>gsub</code> functions allow only the <code>&amp;</code> backreference.</li>
 <li><code>gensub</code> function allows <code>\N</code> form of backreference as well.
 <ul>
-<li>but need to use <code>\\1</code>, <code>\\2</code> etc since they are specified using string syntax.</li>
+<li>but need to use <code>\\0</code>, <code>\\1</code>, <code>\\2</code> etc since they are specified using string syntax.</li>
 </ul>
 </li>
 </ul>
@@ -419,7 +420,18 @@
 <li><code>sub</code> function in <code>awk</code> replaces only the first matching occurrence and <code>gsub</code> function is equivalent to using the <code>g</code> flag.</li>
 <li>third argument of <code>gensub</code> function in <code>awk</code> supports replacing only the <em>N</em>th match as well as the <code>g</code> flag.</li>
 </ul>
-<br>
+<p>The behavior of <code>sed</code> and <code>awk</code> differs for <em>N</em>th match if the pattern can match empty string:</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#1f1f1f;">$ echo </span><span style="color:#d07711;">&#39;a,,c,d,,f&#39; </span><span style="color:#72ab00;">|</span><span style="color:#1f1f1f;"> sed </span><span style="color:#d07711;">&#39;s/[^,]*/b/2&#39;</span><span style="color:#1f1f1f;">
+a,b,c,d,,f
+$ echo </span><span style="color:#d07711;">&#39;a,,c,d,,f&#39; </span><span style="color:#72ab00;">|</span><span style="color:#1f1f1f;"> sed </span><span style="color:#d07711;">&#39;s/[^,]*/e/5&#39;</span><span style="color:#1f1f1f;">
+a,,c,d,e,f
+
+$ echo </span><span style="color:#d07711;">&#39;a,,c,d,,f&#39; </span><span style="color:#72ab00;">|</span><span style="color:#1f1f1f;"> awk </span><span style="color:#d07711;">&#39;{print gensub(/[^,]*/, &quot;b&quot;, 2)}&#39;</span><span style="color:#1f1f1f;">
+ab,,c,d,,f
+$ echo </span><span style="color:#d07711;">&#39;a,,c,d,,f&#39; </span><span style="color:#72ab00;">|</span><span style="color:#1f1f1f;"> awk </span><span style="color:#d07711;">&#39;{print gensub(/[^,]*/, &quot;e&quot;, 5)}&#39;</span><span style="color:#1f1f1f;">
+a,,ce,d,,f
+</span></code></pre><br>
 <h2 id="sed-case-conversion">sed case conversion<a class="zola-anchor" href="#sed-case-conversion" aria-label="Anchor link for: sed-case-conversion">🔗</a></h2>
 <table><thead><tr><th>Escape sequence</th><th>Description</th></tr></thead><tbody>
 <tr><td><code>\E</code></td><td>indicates end of case conversion in replacement section</td></tr>
@@ -435,6 +447,8 @@
 <li>Any character except <code>\</code> and newline character can also be used. For example: <code>s#/home/learnbyexample/#~/#</code> is same as <code>s/\/home\/learnbyexample\//~\//</code>.</li>
 <li>For regexp addressing, the first delimiter has to be escaped. For example: <code>\;/foo/bar/;p</code> is same as <code>/foo\/bar\//p</code>.</li>
 </ul>
+<br>
+<p><i>Computer illustration: <a href="https://lukaszadam.com/assets/downloads/javascript_illustration.svg">Lukaz Adam</a></i></p>
 
     </div>
 
