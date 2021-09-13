@@ -5,7 +5,7 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2021-09-07T00:00:00+00:00</updated>
+	<updated>2021-09-13T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
 	<entry xml:lang="en">
 		<title>Practice Python Projects book announcement</title>
@@ -1409,7 +1409,7 @@ $ diff &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F
 	<entry xml:lang="en">
 		<title>I know Python basics, what next?</title>
 		<published>2020-07-25T00:00:00+00:00</published>
-		<updated>2021-09-07T00:00:00+00:00</updated>
+		<updated>2021-09-13T00:00:00+00:00</updated>
 		<link href="https://learnbyexample.github.io/python-intermediate/" type="text/html"/>
 		<id>https://learnbyexample.github.io/python-intermediate/</id>
 		<content type="html">&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;what_next.png&quot; alt=&quot;what next&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
@@ -1435,7 +1435,7 @@ $ diff &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;practice_python_projects&#x2F;&quot;&gt;Practice Python Projects&lt;&#x2F;a&gt; — my book on beginner to intermediate level projects&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;karan&#x2F;Projects-Solutions&quot;&gt;Projects with solutions&lt;&#x2F;a&gt; — algorithms, data structures, networking, security, databases, etc&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;tuvtran&#x2F;project-based-learning#python&quot;&gt;Project based learning&lt;&#x2F;a&gt; — web applications, bots, data science, machine learning, etc&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;practical-tutorials&#x2F;project-based-learning#python&quot;&gt;Project based learning&lt;&#x2F;a&gt; — web applications, bots, data science, machine learning, etc&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;norvig&#x2F;pytudes&quot;&gt;Pytudes by Peter Norvig&lt;&#x2F;a&gt; — Python programs, usually short, of considerable difficulty&lt;&#x2F;li&gt;
 &lt;li&gt;Books:
 &lt;ul&gt;
