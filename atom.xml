@@ -511,8 +511,6 @@ a,,ce,d,,f
 &lt;li&gt;Any character except &lt;code&gt;\&lt;&#x2F;code&gt; and newline character can also be used. For example: &lt;code&gt;s#&#x2F;home&#x2F;learnbyexample&#x2F;#~&#x2F;#&lt;&#x2F;code&gt; is same as &lt;code&gt;s&#x2F;\&#x2F;home\&#x2F;learnbyexample\&#x2F;&#x2F;~\&#x2F;&#x2F;&lt;&#x2F;code&gt;.&lt;&#x2F;li&gt;
 &lt;li&gt;For regexp addressing, the first delimiter has to be escaped. For example: &lt;code&gt;\;&#x2F;foo&#x2F;bar&#x2F;;p&lt;&#x2F;code&gt; is same as &lt;code&gt;&#x2F;foo\&#x2F;bar\&#x2F;&#x2F;p&lt;&#x2F;code&gt;.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
-&lt;br&gt;
-&lt;p&gt;&lt;i&gt;Computer illustration: &lt;a href=&quot;https:&#x2F;&#x2F;lukaszadam.com&#x2F;assets&#x2F;downloads&#x2F;javascript_illustration.svg&quot;&gt;Lukaz Adam&lt;&#x2F;a&gt;&lt;&#x2F;i&gt;&lt;&#x2F;p&gt;
 </content>
 	</entry>
 	<entry xml:lang="en">
