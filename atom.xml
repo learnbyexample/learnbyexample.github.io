@@ -5,8 +5,42 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2021-09-13T00:00:00+00:00</updated>
+	<updated>2021-10-01T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>The Indie Python Extravaganza</title>
+		<published>2021-10-01T00:00:00+00:00</published>
+		<updated>2021-10-01T00:00:00+00:00</updated>
+		<link href="https://learnbyexample.github.io/indie-python-extravaganza/" type="text/html"/>
+		<id>https://learnbyexample.github.io/indie-python-extravaganza/</id>
+		<content type="html">&lt;p&gt;Hello!&lt;&#x2F;p&gt;
+&lt;p&gt;You never know where a conversation between indie authors will lead to. A &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;tw_lgiordani&#x2F;status&#x2F;1442489206681395207&quot;&gt;tweet about Leanpub Python book sales&lt;&#x2F;a&gt; brought up giveaways that we indie authors tend to do. Long story short, the four of us ended up deciding to create &lt;strong&gt;The Indie Python Extravaganza&lt;&#x2F;strong&gt; bundle.&lt;&#x2F;p&gt;
+&lt;p&gt;And guess what?! You can use this &lt;a href=&quot;https:&#x2F;&#x2F;leanpub.com&#x2F;b&#x2F;theindiepythonextravaganza&#x2F;c&#x2F;pytober&quot;&gt;pytober coupon link&lt;&#x2F;a&gt; to get the bundle for FREE (the offer is valid till 31-Oct-2021).&lt;&#x2F;p&gt;
+&lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;&lt;br&gt;
+&lt;h2 id=&quot;bundle-contents&quot;&gt;Bundle contents&lt;a class=&quot;zola-anchor&quot; href=&quot;#bundle-contents&quot; aria-label=&quot;Anchor link for: bundle-contents&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;A collection of books that will help you to improve your knowledge of the Python programming language one page at a time. Join four indie authors in a journey from the basics of Python to the structure of production-ready systems, going through the core features of the language, some intermediate projects and a deep dive into regular expressions.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;books&#x2F;indie_python.jpg&quot; alt=&quot;The Indie Python Extravaganza cover image&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;a href=&quot;https:&#x2F;&#x2F;leanpub.com&#x2F;b&#x2F;theindiepythonextravaganza&#x2F;c&#x2F;pytober&quot;&gt;Coupon link&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;In this bundle, Mike will teach you the basics of Python with &lt;strong&gt;Python 101&lt;&#x2F;strong&gt;. Sundeep will then take the lead and help you to put your knowledge into practice with &lt;strong&gt;Practice Python Projects&lt;&#x2F;strong&gt;. Learn what NOT to do when writing your Python programs with Rodrigo in his &lt;strong&gt;Pydon&#x27;ts&lt;&#x2F;strong&gt; book! If you need to learn regular expressions, Sundeep has again your back with his &lt;strong&gt;Python re(gex)?&lt;&#x2F;strong&gt; book, and when you are ready to start working on production code, you&#x27;ll have &lt;strong&gt;Clean Architectures in Python&lt;&#x2F;strong&gt; to help you!&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;authors&quot;&gt;Authors&lt;a class=&quot;zola-anchor&quot; href=&quot;#authors&quot; aria-label=&quot;Anchor link for: authors&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Leonardo Giordani: &lt;a href=&quot;https:&#x2F;&#x2F;www.thedigitalcatonline.com&quot;&gt;Blog&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;tw_lgiordani&quot;&gt;Twitter&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Michael Driscoll: &lt;a href=&quot;https:&#x2F;&#x2F;www.blog.pythonlibrary.org&quot;&gt;Blog&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;driscollis&quot;&gt;Twitter&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Rodrigo Girão Serrão: &lt;a href=&quot;https:&#x2F;&#x2F;mathspp.com&quot;&gt;Blog&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;mathsppblog&quot;&gt;Twitter&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Sundeep Agarwal: &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;&quot;&gt;Blog&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;learn_byexample&quot;&gt;Twitter&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;how-can-you-help&quot;&gt;How can you help?&lt;a class=&quot;zola-anchor&quot; href=&quot;#how-can-you-help&quot; aria-label=&quot;Anchor link for: how-can-you-help&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Share the bundle link with your friends and colleagues interested in learning Python.&lt;&#x2F;p&gt;
+&lt;p&gt;Your feedback on the book contents would be appreciated even more.&lt;&#x2F;p&gt;
+&lt;p&gt;Happy learning 😇&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>Practice Python Projects book announcement</title>
 		<published>2021-07-30T00:00:00+00:00</published>
