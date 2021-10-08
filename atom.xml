@@ -5,8 +5,65 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2021-10-01T00:00:00+00:00</updated>
+	<updated>2021-10-08T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Command line text processing with GNU Coreutils book announcement</title>
+		<published>2021-10-08T00:00:00+00:00</published>
+		<updated>2021-10-08T00:00:00+00:00</updated>
+		<link href="https://learnbyexample.github.io/cli-text-processing-coreutils-announcement/" type="text/html"/>
+		<id>https://learnbyexample.github.io/cli-text-processing-coreutils-announcement/</id>
+		<content type="html">&lt;p&gt;Hello!&lt;&#x2F;p&gt;
+&lt;p&gt;I just published my ebook titled &amp;quot;&lt;strong&gt;Command line text processing with GNU Coreutils&lt;&#x2F;strong&gt;&amp;quot;. You might be already aware of popular coreutils commands like &lt;code&gt;head&lt;&#x2F;code&gt;, &lt;code&gt;tail&lt;&#x2F;code&gt;, &lt;code&gt;tr&lt;&#x2F;code&gt;, &lt;code&gt;sort&lt;&#x2F;code&gt;, etc. This book will teach you more than twenty of such specialized text processing tools provided by the &lt;code&gt;GNU coreutils&lt;&#x2F;code&gt; package.&lt;&#x2F;p&gt;
+&lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;&lt;br&gt;
+&lt;h2 id=&quot;ebook-links&quot;&gt;Ebook links&lt;a class=&quot;zola-anchor&quot; href=&quot;#ebook-links&quot; aria-label=&quot;Anchor link for: ebook-links&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;You can get &lt;strong&gt;PDF&#x2F;EPUB&lt;&#x2F;strong&gt; versions from Gumroad or Leanpub using the links given below:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;cli_coreutils&quot;&gt;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;cli_coreutils&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;leanpub.com&#x2F;cli_coreutils&quot;&gt;https:&#x2F;&#x2F;leanpub.com&#x2F;cli_coreutils&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;books&#x2F;cli_coreutils.png&quot; alt=&quot;Command line text processing with GNU Coreutils cover image&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;web-version&quot;&gt;Web version&lt;a class=&quot;zola-anchor&quot; href=&quot;#web-version&quot; aria-label=&quot;Anchor link for: web-version&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;You can also read the book online here: &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;cli_text_processing_coreutils&#x2F;introduction.html&quot;&gt;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;cli_text_processing_coreutils&#x2F;introduction.html&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;github-repo&quot;&gt;GitHub repo&lt;a class=&quot;zola-anchor&quot; href=&quot;#github-repo&quot; aria-label=&quot;Anchor link for: github-repo&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Visit &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;cli_text_processing_coreutils&quot;&gt;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;cli_text_processing_coreutils&lt;&#x2F;a&gt; repo for code snippets, example files and other details related to the book.&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;table-of-contents&quot;&gt;Table of Contents&lt;a class=&quot;zola-anchor&quot; href=&quot;#table-of-contents&quot; aria-label=&quot;Anchor link for: table-of-contents&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Preface&lt;&#x2F;li&gt;
+&lt;li&gt;Introduction&lt;&#x2F;li&gt;
+&lt;li&gt;cat and tac&lt;&#x2F;li&gt;
+&lt;li&gt;head and tail&lt;&#x2F;li&gt;
+&lt;li&gt;tr&lt;&#x2F;li&gt;
+&lt;li&gt;cut&lt;&#x2F;li&gt;
+&lt;li&gt;seq&lt;&#x2F;li&gt;
+&lt;li&gt;shuf&lt;&#x2F;li&gt;
+&lt;li&gt;paste&lt;&#x2F;li&gt;
+&lt;li&gt;pr&lt;&#x2F;li&gt;
+&lt;li&gt;fold and fmt&lt;&#x2F;li&gt;
+&lt;li&gt;sort&lt;&#x2F;li&gt;
+&lt;li&gt;uniq&lt;&#x2F;li&gt;
+&lt;li&gt;comm&lt;&#x2F;li&gt;
+&lt;li&gt;join&lt;&#x2F;li&gt;
+&lt;li&gt;nl&lt;&#x2F;li&gt;
+&lt;li&gt;wc&lt;&#x2F;li&gt;
+&lt;li&gt;split&lt;&#x2F;li&gt;
+&lt;li&gt;csplit&lt;&#x2F;li&gt;
+&lt;li&gt;expand and unexpand&lt;&#x2F;li&gt;
+&lt;li&gt;basename and dirname&lt;&#x2F;li&gt;
+&lt;li&gt;What next?&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;feedback&quot;&gt;Feedback&lt;a class=&quot;zola-anchor&quot; href=&quot;#feedback&quot; aria-label=&quot;Anchor link for: feedback&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Hope you find it useful and fun to learn text processing tools provided by the &lt;code&gt;GNU coreutils&lt;&#x2F;code&gt; package. As always, I&#x27;d highly appreciate your feedback. Please do let me know if you spot any error or typo.&lt;&#x2F;p&gt;
+&lt;p&gt;Issue Manager: &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;cli_text_processing_coreutils&#x2F;issues&quot;&gt;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;cli_text_processing_coreutils&#x2F;issues&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;E-mail: learnbyexample.net@gmail.com&lt;&#x2F;p&gt;
+&lt;p&gt;Twitter: &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;learn_byexample&quot;&gt;https:&#x2F;&#x2F;twitter.com&#x2F;learn_byexample&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Happy learning :)&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>The Indie Python Extravaganza</title>
 		<published>2021-10-01T00:00:00+00:00</published>

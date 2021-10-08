@@ -6,6 +6,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Posts
 
+* [Command line text processing with GNU Coreutils book announcement](https://learnbyexample.github.io/cli-text-processing-coreutils-announcement/)
 * [The Indie Python Extravaganza](https://learnbyexample.github.io/indie-python-extravaganza/)
 * [Practice Python Projects book announcement](https://learnbyexample.github.io/practice-python-projects-book-announcement/)
 * [Escaping madness to get literal field separators in awk](https://learnbyexample.github.io/escaping-madness-awk-literal-field-separator/)
