@@ -47,6 +47,10 @@
         <lastmod>2020-11-12</lastmod>
     </url>
     <url>
+        <loc>https://learnbyexample.github.io/learnbyexample-weekly-newsletter/</loc>
+        <lastmod>2021-11-13</lastmod>
+    </url>
+    <url>
         <loc>https://learnbyexample.github.io/mini/</loc>
     </url>
     <url>
@@ -199,6 +203,9 @@
         <loc>https://learnbyexample.github.io/tags/multiline/</loc>
     </url>
     <url>
+        <loc>https://learnbyexample.github.io/tags/newsletter/</loc>
+    </url>
+    <url>
         <loc>https://learnbyexample.github.io/tags/pandoc/</loc>
     </url>
     <url>
@@ -242,6 +249,9 @@
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tags/tutorial/</loc>
+    </url>
+    <url>
+        <loc>https://learnbyexample.github.io/tags/vim/</loc>
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tags/wxpython/</loc>
