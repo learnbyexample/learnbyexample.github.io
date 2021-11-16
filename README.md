@@ -38,6 +38,12 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 <br>
 
+## Tips
+
+* [Python tip: 1](https://learnbyexample.github.io/tips/python-tip-1/)
+
+<br>
+
 ## Acknowledgements
 
 * This blog has been generated using [zola](https://github.com/getzola/zola) and uses [even theme](https://github.com/getzola/even) (with some changes like link color, header links, etc).

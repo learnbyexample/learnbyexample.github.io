@@ -248,6 +248,9 @@
         <loc>https://learnbyexample.github.io/tags/text-processing/</loc>
     </url>
     <url>
+        <loc>https://learnbyexample.github.io/tags/tip/</loc>
+    </url>
+    <url>
         <loc>https://learnbyexample.github.io/tags/tutorial/</loc>
     </url>
     <url>
@@ -258,5 +261,12 @@
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tags/xelatex/</loc>
+    </url>
+    <url>
+        <loc>https://learnbyexample.github.io/tips/</loc>
+    </url>
+    <url>
+        <loc>https://learnbyexample.github.io/tips/python-tip-1/</loc>
+        <lastmod>2021-11-16</lastmod>
     </url>
 </urlset>
