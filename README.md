@@ -40,6 +40,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Tips
 
+* [CLI tip: 1](https://learnbyexample.github.io/tips/cli-tip-1/)
 * [Python tip: 1](https://learnbyexample.github.io/tips/python-tip-1/)
 
 <br>
