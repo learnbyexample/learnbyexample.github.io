@@ -5,8 +5,60 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2021-11-18T00:00:00+00:00</updated>
+	<updated>2021-11-25T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Numeric Palindrome</title>
+		<published>2021-11-25T00:00:00+00:00</published>
+		<updated>2021-11-25T00:00:00+00:00</updated>
+		<link href="https://learnbyexample.github.io/numeric-palindrome/" type="text/html"/>
+		<id>https://learnbyexample.github.io/numeric-palindrome/</id>
+		<content type="html">&lt;p&gt;I posted a coding challenge in the second issue of &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;learnbyexample-weekly&quot;&gt;learnbyexample weekly&lt;&#x2F;a&gt;. I discuss the problem and Python&#x2F;Perl solutions in this blog post.&lt;&#x2F;p&gt;
+&lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;&lt;br&gt;
+&lt;h2 id=&quot;problem-statement&quot;&gt;Problem statement&lt;a class=&quot;zola-anchor&quot; href=&quot;#problem-statement&quot; aria-label=&quot;Anchor link for: problem-statement&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Find numbers from &lt;code&gt;1&lt;&#x2F;code&gt; to &lt;code&gt;10000&lt;&#x2F;code&gt; (inclusive) which reads the same in reversed form in both binary and decimal format. For example, &lt;code&gt;33&lt;&#x2F;code&gt; in decimal is &lt;code&gt;100001&lt;&#x2F;code&gt; in binary and both of these are palindromic.&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;python-solution&quot;&gt;Python solution&lt;a class=&quot;zola-anchor&quot; href=&quot;#python-solution&quot; aria-label=&quot;Anchor link for: python-solution&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Here&#x27;s one possible solution for this problem:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;for &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;n &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;in &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;range&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;10001&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;):
+    dec_s &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#668f14;&quot;&gt;f&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;{n}&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;
+    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;bin_s &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#668f14;&quot;&gt;f&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;{n&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;:b&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;}&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;
+    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;dec_s &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;== &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;dec_s[::&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;] &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;and &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;bin_s &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;== &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;bin_s[::&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;]:
+        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;print&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;(n)
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Extending the above solution to include more comparisons is easy with built-in features:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;for &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;n &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;in &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;range&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;10001&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;):
+    dec_s &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#668f14;&quot;&gt;f&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;{n}&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;
+    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;bin_s &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#668f14;&quot;&gt;f&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;{n&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;:b&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;}&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;
+    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;oct_s &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#668f14;&quot;&gt;f&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;{n&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;:o&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;}&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;
+    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;all&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;(s &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;== &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;s[::&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;] &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;for &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;s &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;in &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;(dec_s, bin_s, oct_s)):
+        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;print&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;(n)
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;As an exercise, extend this program further to include hexadecimal number comparison as well. Can you find out what&#x27;s the first number that is greater than ten to satisfy all the four numeric formats?&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;perl-one-liner&quot;&gt;Perl one-liner&lt;a class=&quot;zola-anchor&quot; href=&quot;#perl-one-liner&quot; aria-label=&quot;Anchor link for: perl-one-liner&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Here&#x27;s a solution for CLI enthusiasts:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; perl&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt; -le &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;for (1..10000) { $bn = sprintf(&amp;quot;%b&amp;quot;, $_);
+                print if ($_ eq reverse) &amp;amp;&amp;amp; ($bn eq reverse $bn) }&amp;#39;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;1
+3
+5
+7
+9
+33
+99
+313
+585
+717
+7447
+9009
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;learn_perl_oneliners&quot;&gt;Perl one-liners&lt;&#x2F;a&gt; ebook if you are interested in learning to use Perl from the command-line.&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>CLI tip: 1</title>
 		<published>2021-11-18T00:00:00+00:00</published>

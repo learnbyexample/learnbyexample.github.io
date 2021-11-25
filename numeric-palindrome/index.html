@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+      <title>Numeric Palindrome</title>
+
+      
+        <link rel="alternate" type="application/atom+xml" title="RSS" href="https://learnbyexample.github.io/atom.xml">
+      
+
+      
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
+          
+      
+
+      
+          <link rel="stylesheet" href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;site.css">
+          
+      
+
+      
+      
+<link rel="icon" href="https://learnbyexample.github.io/favicon.svg">
+<link rel="shortcut icon" href="https://learnbyexample.github.io/favicon.png">
+    </head>
+
+    <body>
+        <div class="container">
+
+            <div id="mobile-navbar" class="mobile-navbar">
+              <div class="mobile-header-logo">
+                <a href="/" class="logo">learnbyexample</a>
+              </div>
+              <div class="mobile-navbar-icon icon-out">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+
+            <nav id="mobile-menu" class="mobile-menu slideout-menu slideout-menu-left">
+              <ul class="mobile-menu-list">
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;books">
+                            Books
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;mini">
+                            Mini
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips">
+                            Tips
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags">
+                            Tags
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;about">
+                            About
+                        </a>
+                    </li>
+                
+              </ul>
+            </nav>
+
+            <header id="header">
+                <div class="logo"><a href="https:&#x2F;&#x2F;learnbyexample.github.io">learnbyexample</a></div>
+                <nav class="menu">
+                    <ul>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;books">
+                                    Books
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;mini">
+                                    Mini
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips">
+                                    Tips
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags">
+                                    Tags
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;about">
+                                    About
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </nav>
+            </header>
+
+            <main>
+                <div class="content" id="mobile-panel">
+                    
+
+
+<div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content always-active">
+        <nav id="TableOfContents">
+            <ul>
+                
+                <li>
+                    <a href="https://learnbyexample.github.io/numeric-palindrome/#problem-statement" class="toc-link">Problem statement</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://learnbyexample.github.io/numeric-palindrome/#python-solution" class="toc-link">Python solution</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://learnbyexample.github.io/numeric-palindrome/#perl-one-liner" class="toc-link">Perl one-liner</a>
+                    
+                </li>
+                
+            </ul>
+        </nav>
+    </div>
+</div>
+
+
+<article class="post">
+    
+    <header class="post__header">
+        <h1 class="post__title">
+            <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;numeric-palindrome&#x2F;">Numeric Palindrome</a>
+        </h1>
+        <div class="post__meta">
+            <span class="post__time">2021-11-25</span>
+            
+        </div>
+    </header>
+
+    <div class="post-content">
+      <p>I posted a coding challenge in the second issue of <a href="https://learnbyexample.gumroad.com/l/learnbyexample-weekly">learnbyexample weekly</a>. I discuss the problem and Python/Perl solutions in this blog post.</p>
+<span id="continue-reading"></span><br>
+<h2 id="problem-statement">Problem statement<a class="zola-anchor" href="#problem-statement" aria-label="Anchor link for: problem-statement">🔗</a></h2>
+<p>Find numbers from <code>1</code> to <code>10000</code> (inclusive) which reads the same in reversed form in both binary and decimal format. For example, <code>33</code> in decimal is <code>100001</code> in binary and both of these are palindromic.</p>
+<br>
+<h2 id="python-solution">Python solution<a class="zola-anchor" href="#python-solution" aria-label="Anchor link for: python-solution">🔗</a></h2>
+<p>Here's one possible solution for this problem:</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#72ab00;">for </span><span style="color:#1f1f1f;">n </span><span style="color:#72ab00;">in </span><span style="color:#b39f04;">range</span><span style="color:#1f1f1f;">(</span><span style="color:#b3933a;">1</span><span style="color:#1f1f1f;">, </span><span style="color:#b3933a;">10001</span><span style="color:#1f1f1f;">):
+    dec_s </span><span style="color:#72ab00;">= </span><span style="color:#668f14;">f</span><span style="color:#d07711;">&#39;</span><span style="color:#1f1f1f;">{n}</span><span style="color:#d07711;">&#39;
+    </span><span style="color:#1f1f1f;">bin_s </span><span style="color:#72ab00;">= </span><span style="color:#668f14;">f</span><span style="color:#d07711;">&#39;</span><span style="color:#1f1f1f;">{n</span><span style="color:#b3933a;">:b</span><span style="color:#1f1f1f;">}</span><span style="color:#d07711;">&#39;
+    </span><span style="color:#72ab00;">if </span><span style="color:#1f1f1f;">dec_s </span><span style="color:#72ab00;">== </span><span style="color:#1f1f1f;">dec_s[::</span><span style="color:#72ab00;">-</span><span style="color:#b3933a;">1</span><span style="color:#1f1f1f;">] </span><span style="color:#72ab00;">and </span><span style="color:#1f1f1f;">bin_s </span><span style="color:#72ab00;">== </span><span style="color:#1f1f1f;">bin_s[::</span><span style="color:#72ab00;">-</span><span style="color:#b3933a;">1</span><span style="color:#1f1f1f;">]:
+        </span><span style="color:#b39f04;">print</span><span style="color:#1f1f1f;">(n)
+</span></code></pre>
+<p>Extending the above solution to include more comparisons is easy with built-in features:</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#72ab00;">for </span><span style="color:#1f1f1f;">n </span><span style="color:#72ab00;">in </span><span style="color:#b39f04;">range</span><span style="color:#1f1f1f;">(</span><span style="color:#b3933a;">1</span><span style="color:#1f1f1f;">, </span><span style="color:#b3933a;">10001</span><span style="color:#1f1f1f;">):
+    dec_s </span><span style="color:#72ab00;">= </span><span style="color:#668f14;">f</span><span style="color:#d07711;">&#39;</span><span style="color:#1f1f1f;">{n}</span><span style="color:#d07711;">&#39;
+    </span><span style="color:#1f1f1f;">bin_s </span><span style="color:#72ab00;">= </span><span style="color:#668f14;">f</span><span style="color:#d07711;">&#39;</span><span style="color:#1f1f1f;">{n</span><span style="color:#b3933a;">:b</span><span style="color:#1f1f1f;">}</span><span style="color:#d07711;">&#39;
+    </span><span style="color:#1f1f1f;">oct_s </span><span style="color:#72ab00;">= </span><span style="color:#668f14;">f</span><span style="color:#d07711;">&#39;</span><span style="color:#1f1f1f;">{n</span><span style="color:#b3933a;">:o</span><span style="color:#1f1f1f;">}</span><span style="color:#d07711;">&#39;
+    </span><span style="color:#72ab00;">if </span><span style="color:#b39f04;">all</span><span style="color:#1f1f1f;">(s </span><span style="color:#72ab00;">== </span><span style="color:#1f1f1f;">s[::</span><span style="color:#72ab00;">-</span><span style="color:#b3933a;">1</span><span style="color:#1f1f1f;">] </span><span style="color:#72ab00;">for </span><span style="color:#1f1f1f;">s </span><span style="color:#72ab00;">in </span><span style="color:#1f1f1f;">(dec_s, bin_s, oct_s)):
+        </span><span style="color:#b39f04;">print</span><span style="color:#1f1f1f;">(n)
+</span></code></pre>
+<p>As an exercise, extend this program further to include hexadecimal number comparison as well. Can you find out what's the first number that is greater than ten to satisfy all the four numeric formats?</p>
+<br>
+<h2 id="perl-one-liner">Perl one-liner<a class="zola-anchor" href="#perl-one-liner" aria-label="Anchor link for: perl-one-liner">🔗</a></h2>
+<p>Here's a solution for CLI enthusiasts:</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#5597d6;">$</span><span style="color:#1f1f1f;"> perl</span><span style="color:#5597d6;"> -le </span><span style="color:#d07711;">&#39;for (1..10000) { $bn = sprintf(&quot;%b&quot;, $_);
+                print if ($_ eq reverse) &amp;&amp; ($bn eq reverse $bn) }&#39;
+</span><span style="color:#5597d6;">1
+3
+5
+7
+9
+33
+99
+313
+585
+717
+7447
+9009
+</span></code></pre>
+<p><img src="/images/info.svg" alt="info" /> See my <a href="https://github.com/learnbyexample/learn_perl_oneliners">Perl one-liners</a> ebook if you are interested in learning to use Perl from the command-line.</p>
+
+    </div>
+
+    
+    
+
+    <div class="post-footer">
+        
+            
+                <div class="post-tags">
+                    
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;python&#x2F;">#python</a>
+                    
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;perl&#x2F;">#perl</a>
+                    
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;command-line&#x2F;">#command-line</a>
+                    
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;coding-challenge&#x2F;">#coding-challenge</a>
+                    
+                </div>
+            
+            
+                <div class="post-nav">
+                    
+                        <a class="previous" href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;learnbyexample-weekly-newsletter&#x2F;">‹ Announcing learnbyexample weekly newsletter</a>
+                    
+                    
+                    
+                    
+                </div>
+            
+
+        
+
+    </div>
+
+    
+    
+</article>
+
+
+                </div>
+            </main>
+
+            
+            
+        </div>
+
+      
+          <script type="text/javascript" src="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;even.js" ></script>
+      
+    </body>
+
+</html>

@@ -6,6 +6,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Posts
 
+* [Numeric Palindrome](https://learnbyexample.github.io/numeric-palindrome/)
 * [Announcing learnbyexample weekly newsletter](https://learnbyexample.github.io/learnbyexample-weekly-newsletter/)
 * [Command line text processing with GNU Coreutils book announcement](https://learnbyexample.github.io/cli-text-processing-coreutils-announcement/)
 * [The Indie Python Extravaganza](https://learnbyexample.github.io/indie-python-extravaganza/)
