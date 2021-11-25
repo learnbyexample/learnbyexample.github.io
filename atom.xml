@@ -60,6 +60,53 @@
 </content>
 	</entry>
 	<entry xml:lang="en">
+		<title>Python tip: 2</title>
+		<published>2021-11-25T00:00:00+00:00</published>
+		<updated>2021-11-25T00:00:00+00:00</updated>
+		<link href="https://learnbyexample.github.io/tips/python-tip-2/" type="text/html"/>
+		<id>https://learnbyexample.github.io/tips/python-tip-2/</id>
+		<content type="html">&lt;p&gt;The &lt;code&gt;in&lt;&#x2F;code&gt; membership operator checks if a given value is part of a collection of values. Here&#x27;s an example with &lt;code&gt;range()&lt;&#x2F;code&gt; function:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;num &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;5
+
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# checks if num is present among the integers 3 or 4 or 5
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;num &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;in &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;range&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;3&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;6&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;)
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;True
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Instead of a series of &lt;code&gt;==&lt;&#x2F;code&gt; comparisons combined with the &lt;code&gt;or&lt;&#x2F;code&gt; boolean operator, you can utilize the &lt;code&gt;in&lt;&#x2F;code&gt; operator.&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;pet &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;cat&amp;#39;
+
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# instead of doing this
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;pet &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;== &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;bat&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;or &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;pet &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;== &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;cat&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;or &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;pet &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;== &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;dog&amp;#39;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;True
+
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# use the membership operator
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;pet &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;in &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;bat&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;cat&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;dog&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;)
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;True
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;When applied to strings, the &lt;code&gt;in&lt;&#x2F;code&gt; operator performs substring comparison.&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;fruit &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;mango&amp;#39;
+
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;an&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;in &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;fruit
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;True
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;at&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;in &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;fruit
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;False
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;To invert the membership test, use the &lt;code&gt;not in&lt;&#x2F;code&gt; operator.&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;pet &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;parrot&amp;#39;
+
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;pet &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;in &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;bat&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;cat&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;dog&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;)
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;False
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;pet &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;not in &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;bat&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;cat&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;dog&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;)
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;True
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See &lt;a href=&quot;https:&#x2F;&#x2F;docs.python.org&#x2F;3&#x2F;reference&#x2F;expressions.html#membership-test-operations&quot;&gt;docs.python: Membership test operations&lt;&#x2F;a&gt; for documentation.&lt;&#x2F;p&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
 		<title>CLI tip: 1</title>
 		<published>2021-11-18T00:00:00+00:00</published>
 		<updated>2021-11-18T00:00:00+00:00</updated>
