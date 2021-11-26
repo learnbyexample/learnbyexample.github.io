@@ -6,6 +6,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Posts
 
+* [Programming deals](https://learnbyexample.github.io/programming-deals/)
 * [Numeric Palindrome](https://learnbyexample.github.io/numeric-palindrome/)
 * [Announcing learnbyexample weekly newsletter](https://learnbyexample.github.io/learnbyexample-weekly-newsletter/)
 * [Command line text processing with GNU Coreutils book announcement](https://learnbyexample.github.io/cli-text-processing-coreutils-announcement/)
@@ -41,6 +42,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Tips
 
+* [Python tip: 2](https://learnbyexample.github.io/tips/python-tip-2/)
 * [CLI tip: 1](https://learnbyexample.github.io/tips/cli-tip-1/)
 * [Python tip: 1](https://learnbyexample.github.io/tips/python-tip-1/)
 

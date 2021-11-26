@@ -5,8 +5,47 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2021-11-25T00:00:00+00:00</updated>
+	<updated>2021-11-26T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Programming deals</title>
+		<published>2021-11-26T00:00:00+00:00</published>
+		<updated>2021-11-26T00:00:00+00:00</updated>
+		<link href="https://learnbyexample.github.io/programming-deals/" type="text/html"/>
+		<id>https://learnbyexample.github.io/programming-deals/</id>
+		<content type="html">&lt;p&gt;Hello!&lt;&#x2F;p&gt;
+&lt;p&gt;Here&#x27;s some exciting programming deals for my own ebooks as well sales details from other creators.&lt;&#x2F;p&gt;
+&lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;&lt;br&gt;
+&lt;p&gt;&lt;strong&gt;Offers for my ebooks&lt;&#x2F;strong&gt; (valid till Nov 30)&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;py_projects&#x2F;blackfriday&quot;&gt;Practice Python Projects&lt;&#x2F;a&gt; — FREE (normal price $10)&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;python-bundle&#x2F;blackfriday&quot;&gt;Learn by example Python bundle&lt;&#x2F;a&gt; — $2 (normal price $12)&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;all-books&#x2F;blackfriday&quot;&gt;All 11 Books Bundle&lt;&#x2F;a&gt; — $5 (normal price $22)&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;learn_byexample&#x2F;status&#x2F;1463898778860068868&quot;&gt;Giveaway contest on twitter&lt;&#x2F;a&gt; — a chance to get a single ebook for free&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;strong&gt;Indie creators&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;mathspp.gumroad.com&#x2F;l&#x2F;pythonbootcamp&#x2F;blackfriday&quot;&gt;Python Problem-Solving Bootcamp&lt;&#x2F;a&gt; — 40% OFF today, 30% OFF tomorrow and so on (boost your Python problem-solving skills)&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;driscollis.gumroad.com&#x2F;&quot;&gt;Python books by Michael Driscoll&lt;&#x2F;a&gt; — $10 OFF on any book using coupon code &amp;quot;black21&amp;quot; (Python 101&#x2F;201, Image&#x2F;PDF&#x2F;Excel processing, etc)
+&lt;ul&gt;
+&lt;li&gt;see also author&#x27;s &lt;a href=&quot;https:&#x2F;&#x2F;www.blog.pythonlibrary.org&#x2F;2021&#x2F;11&#x2F;24&#x2F;python-black-friday-cyber-monday-sales-2021&#x2F;&quot;&gt;blog post&lt;&#x2F;a&gt; for links to other Python sales&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.pythonmorsels.com&#x2F;&quot;&gt;Python Morsels&lt;&#x2F;a&gt; — 50% OFF until Nov 30 (skill-building service with short videos and hands-on bite-sized Python exercises)&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;strong&gt;Miscellaneous&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.humblebundle.com&#x2F;books&#x2F;code-like-pro-manning-publications-books&quot;&gt;Humble Book Bundle: Code Like a Pro by Manning Publications&lt;&#x2F;a&gt; — various sale options starting from $1&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=29338976&quot;&gt;Various programming deals discussion on Hacker News&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;devutils.app&#x2F;pricing&#x2F;&quot;&gt;DevUtils.app&lt;&#x2F;a&gt; — 30% OFF this week (Powerful developer tools for your everyday tasks, Native macOS app)&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;bhavaniravi.gumroad.com&#x2F;l&#x2F;AxFMK&quot;&gt;How to Journal to Live your Best Life?&lt;&#x2F;a&gt; — $1.99 for 30 customers, $3.99 for the next 30 customers and so on (not strictly related to programming, applicable for life events, career, etc)&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;br&gt;
+&lt;p&gt;Happy learning :)&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>Numeric Palindrome</title>
 		<published>2021-11-25T00:00:00+00:00</published>

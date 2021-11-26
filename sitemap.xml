@@ -101,6 +101,10 @@
         <lastmod>2021-08-02</lastmod>
     </url>
     <url>
+        <loc>https://learnbyexample.github.io/programming-deals/</loc>
+        <lastmod>2021-11-26</lastmod>
+    </url>
+    <url>
         <loc>https://learnbyexample.github.io/python-for-maths/</loc>
         <lastmod>2019-03-22</lastmod>
     </url>
@@ -157,6 +161,9 @@
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tags/curated-resources/</loc>
+    </url>
+    <url>
+        <loc>https://learnbyexample.github.io/tags/deals/</loc>
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tags/debugging/</loc>
@@ -223,6 +230,9 @@
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tags/perl/</loc>
+    </url>
+    <url>
+        <loc>https://learnbyexample.github.io/tags/programming/</loc>
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tags/projects/</loc>
