@@ -5,12 +5,12 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2021-11-26T00:00:00+00:00</updated>
+	<updated>2021-11-27T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
 	<entry xml:lang="en">
 		<title>Programming deals</title>
 		<published>2021-11-26T00:00:00+00:00</published>
-		<updated>2021-11-26T00:00:00+00:00</updated>
+		<updated>2021-11-27T00:00:00+00:00</updated>
 		<link href="https://learnbyexample.github.io/programming-deals/" type="text/html"/>
 		<id>https://learnbyexample.github.io/programming-deals/</id>
 		<content type="html">&lt;p&gt;Hello!&lt;&#x2F;p&gt;
@@ -37,6 +37,7 @@
 &lt;br&gt;
 &lt;p&gt;&lt;strong&gt;Miscellaneous&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
 &lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;mailchi.mp&#x2F;leanpub&#x2F;monthly-sale-2021-black-friday&quot;&gt;The Leanpub Monthly Sale for November 2021&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.humblebundle.com&#x2F;books&#x2F;code-like-pro-manning-publications-books&quot;&gt;Humble Book Bundle: Code Like a Pro by Manning Publications&lt;&#x2F;a&gt; — various sale options starting from $1&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=29338976&quot;&gt;Various programming deals discussion on Hacker News&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;devutils.app&#x2F;pricing&#x2F;&quot;&gt;DevUtils.app&lt;&#x2F;a&gt; — 30% OFF this week (Powerful developer tools for your everyday tasks, Native macOS app)&lt;&#x2F;li&gt;
