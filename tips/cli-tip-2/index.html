@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+      <title>CLI tip: 2</title>
+
+      
+        <link rel="alternate" type="application/atom+xml" title="RSS" href="https://learnbyexample.github.io/atom.xml">
+      
+
+      
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
+          
+      
+
+      
+          <link rel="stylesheet" href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;site.css">
+          
+      
+
+      
+      
+<link rel="icon" href="https://learnbyexample.github.io/favicon.svg">
+<link rel="shortcut icon" href="https://learnbyexample.github.io/favicon.png">
+    </head>
+
+    <body>
+        <div class="container">
+
+            <div id="mobile-navbar" class="mobile-navbar">
+              <div class="mobile-header-logo">
+                <a href="/" class="logo">learnbyexample</a>
+              </div>
+              <div class="mobile-navbar-icon icon-out">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+
+            <nav id="mobile-menu" class="mobile-menu slideout-menu slideout-menu-left">
+              <ul class="mobile-menu-list">
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;books">
+                            Books
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;mini">
+                            Mini
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips">
+                            Tips
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags">
+                            Tags
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;about">
+                            About
+                        </a>
+                    </li>
+                
+              </ul>
+            </nav>
+
+            <header id="header">
+                <div class="logo"><a href="https:&#x2F;&#x2F;learnbyexample.github.io">learnbyexample</a></div>
+                <nav class="menu">
+                    <ul>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;books">
+                                    Books
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;mini">
+                                    Mini
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips">
+                                    Tips
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags">
+                                    Tags
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;about">
+                                    About
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </nav>
+            </header>
+
+            <main>
+                <div class="content" id="mobile-panel">
+                    
+
+
+
+<article class="post">
+    
+    <header class="post__header">
+        <h1 class="post__title">
+            <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips&#x2F;cli-tip-2&#x2F;">CLI tip: 2</a>
+        </h1>
+        <div class="post__meta">
+            <span class="post__time">2021-11-30</span>
+            
+        </div>
+    </header>
+
+    <div class="post-content">
+      <p>Use <code>grep -c</code> to count the number of input <em>lines</em> containing a given pattern.</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#7f8989;"># number of input lines containing &#39;a&#39;
+</span><span style="color:#5597d6;">$</span><span style="color:#1f1f1f;"> printf </span><span style="color:#d07711;">&#39;goal\nrate\neat\npit&#39; </span><span style="color:#72ab00;">| </span><span style="color:#5597d6;">grep -c </span><span style="color:#d07711;">&#39;a&#39;
+</span><span style="color:#5597d6;">3
+
+</span><span style="color:#7f8989;"># number of input lines containing all the vowels
+</span><span style="color:#5597d6;">$</span><span style="color:#1f1f1f;"> grep</span><span style="color:#5597d6;"> -icP </span><span style="color:#d07711;">&#39;^(?=.*a)(?=.*e)(?=.*i)(?=.*o).*u&#39;</span><span style="color:#1f1f1f;"> /usr/share/dict/words
+</span><span style="color:#5597d6;">640
+
+</span><span style="color:#7f8989;"># number of input lines NOT containing &#39;at&#39;
+</span><span style="color:#5597d6;">$</span><span style="color:#1f1f1f;"> printf </span><span style="color:#d07711;">&#39;goal\nrate\neat\npit&#39; </span><span style="color:#72ab00;">| </span><span style="color:#5597d6;">grep -vc </span><span style="color:#d07711;">&#39;at&#39;
+</span><span style="color:#5597d6;">2
+</span></code></pre>
+<p>With multiple file input, count is displayed for each file <em>separately</em>. Use <code>cat</code> if you need a combined count.</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#7f8989;"># separate count for each input file
+</span><span style="color:#5597d6;">$</span><span style="color:#1f1f1f;"> seq 15 </span><span style="color:#72ab00;">| </span><span style="color:#5597d6;">grep -c </span><span style="color:#d07711;">&#39;1&#39;</span><span style="color:#1f1f1f;"> programming_quotes.txt -
+</span><span style="color:#5597d6;">programming_quotes.txt:1
+</span><span style="color:#1f1f1f;">(</span><span style="color:#5597d6;">standard</span><span style="color:#1f1f1f;"> input):7
+
+</span><span style="color:#7f8989;"># total count for all the input files
+</span><span style="color:#1f1f1f;">$ cat </span><span style="color:#72ab00;">&lt;</span><span style="color:#1f1f1f;">(</span><span style="color:#5597d6;">seq</span><span style="color:#1f1f1f;"> 15) programming_quotes.txt </span><span style="color:#72ab00;">| </span><span style="color:#5597d6;">grep -c </span><span style="color:#d07711;">&#39;1&#39;
+</span><span style="color:#5597d6;">8
+</span></code></pre>
+<p>If total number of matches is required, use the <code>-o</code> option to display only the matching portions (one per line) and then use <code>wc</code> to get the count.</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#7f8989;"># -c gives count of matching lines only
+</span><span style="color:#5597d6;">$</span><span style="color:#1f1f1f;"> printf </span><span style="color:#d07711;">&#39;goal\nrate\neat\npit&#39; </span><span style="color:#72ab00;">| </span><span style="color:#5597d6;">grep -c </span><span style="color:#d07711;">&#39;[aeiou]&#39;
+</span><span style="color:#5597d6;">4
+
+</span><span style="color:#7f8989;"># use -o to get each match on a separate line
+</span><span style="color:#5597d6;">$</span><span style="color:#1f1f1f;"> printf </span><span style="color:#d07711;">&#39;goal\nrate\neat\npit&#39; </span><span style="color:#72ab00;">| </span><span style="color:#5597d6;">grep -o </span><span style="color:#d07711;">&#39;[aeiou]&#39; </span><span style="color:#72ab00;">| </span><span style="color:#5597d6;">wc -l
+7
+</span></code></pre>
+<p>Note that if you use <a href="https://github.com/BurntSushi/ripgrep">ripgrep</a>, you can also use <code>-co</code> or <code>--count-matches</code> instead of piping to <code>wc</code> command.</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#7f8989;"># this behavior is different compared to GNU grep
+</span><span style="color:#5597d6;">$</span><span style="color:#1f1f1f;"> printf </span><span style="color:#d07711;">&#39;goal\nrate\neat\npit&#39; </span><span style="color:#72ab00;">| </span><span style="color:#5597d6;">rg -co </span><span style="color:#d07711;">&#39;[aeiou]&#39;
+</span><span style="color:#5597d6;">7
+</span></code></pre><br>
+<p><img src="/images/info.svg" alt="info" /> See my <a href="https://github.com/learnbyexample/learn_gnugrep_ripgrep">GNU GREP and RIPGREP</a> ebook if you are interested in learning about <code>GNU grep</code> and <code>ripgrep</code> commands in more detail.</p>
+
+    </div>
+
+    
+    
+
+    <div class="post-footer">
+        
+            
+                <div class="post-tags">
+                    
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;linux&#x2F;">#linux</a>
+                    
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;command-line&#x2F;">#command-line</a>
+                    
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;tip&#x2F;">#tip</a>
+                    
+                </div>
+            
+            
+
+        
+
+    </div>
+
+    
+    
+</article>
+
+
+                </div>
+            </main>
+
+            
+            
+        </div>
+
+      
+          <script type="text/javascript" src="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;even.js" ></script>
+      
+    </body>
+
+</html>

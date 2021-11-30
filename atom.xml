@@ -5,8 +5,58 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2021-11-27T00:00:00+00:00</updated>
+	<updated>2021-11-30T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>CLI tip: 2</title>
+		<published>2021-11-30T00:00:00+00:00</published>
+		<updated>2021-11-30T00:00:00+00:00</updated>
+		<link href="https://learnbyexample.github.io/tips/cli-tip-2/" type="text/html"/>
+		<id>https://learnbyexample.github.io/tips/cli-tip-2/</id>
+		<content type="html">&lt;p&gt;Use &lt;code&gt;grep -c&lt;&#x2F;code&gt; to count the number of input &lt;em&gt;lines&lt;&#x2F;em&gt; containing a given pattern.&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# number of input lines containing &amp;#39;a&amp;#39;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; printf &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;goal\nrate\neat\npit&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;| &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;grep -c &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;a&amp;#39;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;3
+
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# number of input lines containing all the vowels
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; grep&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt; -icP &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;^(?=.*a)(?=.*e)(?=.*i)(?=.*o).*u&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; &#x2F;usr&#x2F;share&#x2F;dict&#x2F;words
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;640
+
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# number of input lines NOT containing &amp;#39;at&amp;#39;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; printf &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;goal\nrate\neat\npit&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;| &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;grep -vc &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;at&amp;#39;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;2
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;With multiple file input, count is displayed for each file &lt;em&gt;separately&lt;&#x2F;em&gt;. Use &lt;code&gt;cat&lt;&#x2F;code&gt; if you need a combined count.&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# separate count for each input file
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; seq 15 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;| &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;grep -c &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;1&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; programming_quotes.txt -
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;programming_quotes.txt:1
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;standard&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; input):7
+
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# total count for all the input files
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ cat &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;seq&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; 15) programming_quotes.txt &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;| &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;grep -c &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;1&amp;#39;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;8
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;If total number of matches is required, use the &lt;code&gt;-o&lt;&#x2F;code&gt; option to display only the matching portions (one per line) and then use &lt;code&gt;wc&lt;&#x2F;code&gt; to get the count.&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# -c gives count of matching lines only
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; printf &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;goal\nrate\neat\npit&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;| &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;grep -c &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;[aeiou]&amp;#39;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;4
+
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# use -o to get each match on a separate line
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; printf &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;goal\nrate\neat\npit&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;| &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;grep -o &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;[aeiou]&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;| &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;wc -l
+7
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Note that if you use &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;BurntSushi&#x2F;ripgrep&quot;&gt;ripgrep&lt;&#x2F;a&gt;, you can also use &lt;code&gt;-co&lt;&#x2F;code&gt; or &lt;code&gt;--count-matches&lt;&#x2F;code&gt; instead of piping to &lt;code&gt;wc&lt;&#x2F;code&gt; command.&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# this behavior is different compared to GNU grep
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; printf &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;goal\nrate\neat\npit&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;| &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;rg -co &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;[aeiou]&amp;#39;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;7
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;br&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;learn_gnugrep_ripgrep&quot;&gt;GNU GREP and RIPGREP&lt;&#x2F;a&gt; ebook if you are interested in learning about &lt;code&gt;GNU grep&lt;&#x2F;code&gt; and &lt;code&gt;ripgrep&lt;&#x2F;code&gt; commands in more detail.&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>Programming deals</title>
 		<published>2021-11-26T00:00:00+00:00</published>
@@ -95,7 +145,7 @@
 717
 7447
 9009
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;br&gt;
 &lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;learn_perl_oneliners&quot;&gt;Perl one-liners&lt;&#x2F;a&gt; ebook if you are interested in learning to use Perl from the command-line.&lt;&#x2F;p&gt;
 </content>
 	</entry>
