@@ -5,8 +5,40 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2021-11-30T00:00:00+00:00</updated>
+	<updated>2021-12-01T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Improve your Python regex skills with 75 interactive exercises</title>
+		<published>2021-12-01T00:00:00+00:00</published>
+		<updated>2021-12-01T00:00:00+00:00</updated>
+		<link href="https://learnbyexample.github.io/python-25-days-of-regex/" type="text/html"/>
+		<id>https://learnbyexample.github.io/python-25-days-of-regex/</id>
+		<content type="html">&lt;p&gt;Still confused about Python regular expressions? Grow your confidence with &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;py_regular_expressions&quot;&gt;Python re(gex)?&lt;&#x2F;a&gt; ebook (FREE this month!) and an &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;py_regular_expressions&#x2F;tree&#x2F;master&#x2F;interactive_exercises&quot;&gt;interactive GUI app&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Inspired by &lt;a href=&quot;https:&#x2F;&#x2F;adventofcode.com&#x2F;&quot;&gt;Advent of Code&lt;&#x2F;a&gt;, I&#x27;ll also be posting &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;learn_byexample&#x2F;status&#x2F;1465998844898918403&quot;&gt;3 challenges per day on twitter&lt;&#x2F;a&gt; for 25 days.&lt;&#x2F;p&gt;
+&lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;&lt;br&gt;
+&lt;h2 id=&quot;free-ebook&quot;&gt;Free ebook&lt;a class=&quot;zola-anchor&quot; href=&quot;#free-ebook&quot; aria-label=&quot;Anchor link for: free-ebook&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;My post about the interactive GUI app made it to the &lt;a href=&quot;https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=29391107&quot;&gt;Hacker News front page&lt;&#x2F;a&gt;. To celebrate, you can get PDF&#x2F;EPUB versions of my &lt;strong&gt;Python re(gex)?&lt;&#x2F;strong&gt; ebook for free using either of the below links. The offer is valid till 31-Dec-2021.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;py_regex&quot;&gt;Gumroad&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;leanpub.com&#x2F;py_regex&quot;&gt;Leanpub&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Or, you can use the &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;py_regular_expressions&#x2F;&quot;&gt;web version&lt;&#x2F;a&gt; if you prefer reading the book online.&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;interactive-gui-app&quot;&gt;Interactive GUI app&lt;a class=&quot;zola-anchor&quot; href=&quot;#interactive-gui-app&quot; aria-label=&quot;Anchor link for: interactive-gui-app&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Based on the &lt;strong&gt;Python re(gex)?&lt;&#x2F;strong&gt; book contents as well as the exercises, I made an &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;py_regular_expressions&#x2F;tree&#x2F;master&#x2F;interactive_exercises&quot;&gt;interactive GUI app&lt;&#x2F;a&gt; with 75 questions on &lt;code&gt;re.search&lt;&#x2F;code&gt;, &lt;code&gt;re.sub&lt;&#x2F;code&gt;, &lt;code&gt;re.split&lt;&#x2F;code&gt; and &lt;code&gt;re.findall&lt;&#x2F;code&gt; that&#x27;ll test your understanding of anchors, alternation, grouping, escaping metacharacters, dot metacharacter, quantifiers, character class, grouping, lookarounds, flags, etc.&lt;&#x2F;p&gt;
+&lt;p&gt;Here&#x27;s some screenshots:&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;python_exercises&#x2F;search.png&quot; alt=&quot;Python exercise example for re.search&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;python_exercises&#x2F;sub.png&quot; alt=&quot;Python exercise example for re.sub&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;python_exercises&#x2F;split.png&quot; alt=&quot;Python exercise example for re.split&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;python_exercises&#x2F;findall.png&quot; alt=&quot;Python exercise example for re.findall&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;25-days-of-regex&quot;&gt;25 Days Of Regex&lt;a class=&quot;zola-anchor&quot; href=&quot;#25-days-of-regex&quot; aria-label=&quot;Anchor link for: 25-days-of-regex&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;If 75 exercises seem daunting to you, consider doing 3 exercises per day. Allocate some time everyday to read the book and complete 3 challenges.&lt;&#x2F;p&gt;
+&lt;p&gt;I&#x27;d also be posting &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;learn_byexample&#x2F;status&#x2F;1465998844898918403&quot;&gt;3 challenges per day on twitter&lt;&#x2F;a&gt;, where you&#x27;ll be able to get help from me and fellow programmers.&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;p&gt;Happy learning :)&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>CLI tip: 2</title>
 		<published>2021-11-30T00:00:00+00:00</published>

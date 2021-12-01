@@ -105,6 +105,10 @@
         <lastmod>2021-11-27</lastmod>
     </url>
     <url>
+        <loc>https://learnbyexample.github.io/python-25-days-of-regex/</loc>
+        <lastmod>2021-12-01</lastmod>
+    </url>
+    <url>
         <loc>https://learnbyexample.github.io/python-for-maths/</loc>
         <lastmod>2019-03-22</lastmod>
     </url>
@@ -179,6 +183,9 @@
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tags/examples/</loc>
+    </url>
+    <url>
+        <loc>https://learnbyexample.github.io/tags/exercises/</loc>
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tags/fixed-string/</loc>
