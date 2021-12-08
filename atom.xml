@@ -5,8 +5,33 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2021-12-01T00:00:00+00:00</updated>
+	<updated>2021-12-08T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Vim tip: 1</title>
+		<published>2021-12-08T00:00:00+00:00</published>
+		<updated>2021-12-08T00:00:00+00:00</updated>
+		<link href="https://learnbyexample.github.io/tips/vim-tip-1/" type="text/html"/>
+		<id>https://learnbyexample.github.io/tips/vim-tip-1/</id>
+		<content type="html">&lt;p&gt;Did you know that you can easily increment or decrement a number in Vim?&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Ctrl+a&lt;&#x2F;code&gt; will increment the number under the cursor or the first occurrence of a number to the right of the cursor&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;Ctrl+x&lt;&#x2F;code&gt; will decrement the number under the cursor or the first occurrence of a number to the right of the cursor&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;You can also provide a count prefix:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;3Ctrl+a&lt;&#x2F;code&gt; will add &lt;code&gt;3&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;1000Ctrl+x&lt;&#x2F;code&gt; will subtract &lt;code&gt;1000&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Numbers prefixed with &lt;code&gt;0&lt;&#x2F;code&gt;, &lt;code&gt;0x&lt;&#x2F;code&gt; and &lt;code&gt;0b&lt;&#x2F;code&gt; will be treated as octal, hexadecimal and binary respectively. You can also use uppercase for &lt;code&gt;x&lt;&#x2F;code&gt; and &lt;code&gt;b&lt;&#x2F;code&gt;. What if you want numbers prefixed with &lt;code&gt;0&lt;&#x2F;code&gt; to be treated as decimal? You can use the &lt;code&gt;nrformats&lt;&#x2F;code&gt; setting as shown below:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;set&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; nrformats-=octal
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Decimal numbers prefixed with &lt;code&gt;-&lt;&#x2F;code&gt; will be treated as negative numbers. For example, using &lt;code&gt;Ctrl+a&lt;&#x2F;code&gt; on &lt;code&gt;-100&lt;&#x2F;code&gt; will give you &lt;code&gt;-99&lt;&#x2F;code&gt;. While this is handy, this trips me up often when dealing with date formats like 2021-12-08.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See &lt;a href=&quot;https:&#x2F;&#x2F;vimhelp.org&#x2F;change.txt.html#CTRL-A&quot;&gt;:h ctrl-a&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;vimhelp.org&#x2F;change.txt.html#CTRL-X&quot;&gt;:h ctrl-x&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;vimhelp.org&#x2F;options.txt.html#%27nrformats%27&quot;&gt;:h nrformats&lt;&#x2F;a&gt; for documentation.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See also my &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;curated_resources&#x2F;vim.html&quot;&gt;curated list of resources for Vim&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;vim_reference&#x2F;&quot;&gt;Vim reference guide&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>Improve your Python regex skills with 75 interactive exercises</title>
 		<published>2021-12-01T00:00:00+00:00</published>

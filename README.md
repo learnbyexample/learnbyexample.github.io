@@ -6,6 +6,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Posts
 
+* [Improve your Python regex skills with 75 interactive exercises](https://learnbyexample.github.io/python-25-days-of-regex/)
 * [Programming deals](https://learnbyexample.github.io/programming-deals/)
 * [Numeric Palindrome](https://learnbyexample.github.io/numeric-palindrome/)
 * [Announcing learnbyexample weekly newsletter](https://learnbyexample.github.io/learnbyexample-weekly-newsletter/)
@@ -42,6 +43,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Tips
 
+* [Vim tip: 1](https://learnbyexample.github.io/tips/vim-tip-1/)
 * [CLI tip: 2](https://learnbyexample.github.io/tips/cli-tip-2/)
 * [Python tip: 2](https://learnbyexample.github.io/tips/python-tip-2/)
 * [CLI tip: 1](https://learnbyexample.github.io/tips/cli-tip-1/)
