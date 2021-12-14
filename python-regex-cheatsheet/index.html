@@ -204,9 +204,9 @@
 <tr><td><code>+</code></td><td>Match one or more times</td></tr>
 <tr><td><code>?</code></td><td>Match zero or one times</td></tr>
 <tr><td><code>{m,n}</code></td><td>Match <code>m</code> to <code>n</code> times (inclusive)</td></tr>
-<tr><td><code>{m,}</code></td><td>Match at least m times</td></tr>
+<tr><td><code>{m,}</code></td><td>Match at least <code>m</code> times</td></tr>
 <tr><td><code>{,n}</code></td><td>Match up to <code>n</code> times (including <code>0</code> times)</td></tr>
-<tr><td><code>{n}</code></td><td>Match exactly n times</td></tr>
+<tr><td><code>{n}</code></td><td>Match exactly <code>n</code> times</td></tr>
 <tr><td><code>pat1.*pat2</code></td><td>any number of characters between <code>pat1</code> and <code>pat2</code></td></tr>
 <tr><td><code>pat1.*pat2|pat2.*pat1</code></td><td>match both <code>pat1</code> and <code>pat2</code> in any order</td></tr>
 </tbody></table>
@@ -482,6 +482,10 @@ mission success
 </span><span style="color:#7f8989;"># swap words that are separated by a comma
 </span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#1f1f1f;">re.</span><span style="color:#5597d6;">sub</span><span style="color:#1f1f1f;">(</span><span style="color:#668f14;">r</span><span style="color:#d07711;">&#39;</span><span style="color:#7c8f4c;">(</span><span style="color:#aeb52b;">\w</span><span style="color:#72ab00;">+</span><span style="color:#7c8f4c;">),(</span><span style="color:#aeb52b;">\w</span><span style="color:#72ab00;">+</span><span style="color:#7c8f4c;">)</span><span style="color:#d07711;">&#39;</span><span style="color:#1f1f1f;">, </span><span style="color:#668f14;">r</span><span style="color:#d07711;">&#39;</span><span style="color:#72ab00;">\2</span><span style="color:#7c8f4c;">,</span><span style="color:#72ab00;">\1</span><span style="color:#d07711;">&#39;</span><span style="color:#1f1f1f;">, </span><span style="color:#d07711;">&#39;good,bad 42,24&#39;</span><span style="color:#1f1f1f;">)
 </span><span style="color:#d07711;">&#39;bad,good 24,42&#39;
+
+</span><span style="color:#7f8989;"># example with both capturing and non-capturing groups
+</span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#1f1f1f;">re.</span><span style="color:#5597d6;">sub</span><span style="color:#1f1f1f;">(</span><span style="color:#668f14;">r</span><span style="color:#d07711;">&#39;</span><span style="color:#7c8f4c;">(</span><span style="color:#aeb52b;">\d</span><span style="color:#72ab00;">+</span><span style="color:#7c8f4c;">)(?:abc)</span><span style="color:#72ab00;">+</span><span style="color:#7c8f4c;">(</span><span style="color:#aeb52b;">\d</span><span style="color:#72ab00;">+</span><span style="color:#7c8f4c;">)</span><span style="color:#d07711;">&#39;</span><span style="color:#1f1f1f;">, </span><span style="color:#668f14;">r</span><span style="color:#d07711;">&#39;</span><span style="color:#72ab00;">\2</span><span style="color:#7c8f4c;">:</span><span style="color:#72ab00;">\1</span><span style="color:#d07711;">&#39;</span><span style="color:#1f1f1f;">, </span><span style="color:#d07711;">&#39;2abcabc42 12abcd21&#39;</span><span style="color:#1f1f1f;">)
+</span><span style="color:#d07711;">&#39;42:2 12abcd21&#39;
 </span></code></pre>
 <ul>
 <li>using functions in replacement section of <code>re.sub</code></li>
@@ -549,7 +553,7 @@ mission success
 </span><span style="color:#d07711;">&#39;Hi there. Nice day&#39;
 </span></code></pre><br>
 <h2 id="python-re-gex-book">Python re(gex)? book<a class="zola-anchor" href="#python-re-gex-book" aria-label="Anchor link for: python-re-gex-book">🔗</a></h2>
-<p>Visit my repo <a href="https://github.com/learnbyexample/py_regular_expressions">Python re(gex)?</a> for details about the book I wrote on Python regular expressions. The ebook uses plenty of examples to explain the concepts from the very beginning and step by step introduces more advanced concepts. The book also covers the <a href="https://pypi.org/project/regex/">third party module regex</a>. The cheatsheet and examples presented in this post are based on contents of this book.</p>
+<p>Visit my GitHub repo <a href="https://github.com/learnbyexample/py_regular_expressions">Python re(gex)?</a> for details about the book I wrote on Python regular expressions. The ebook uses plenty of examples to explain the concepts from the very beginning and step by step introduces more advanced concepts. The book also covers the <a href="https://pypi.org/project/regex/">third party module regex</a>. The cheatsheet and examples presented in this post are based on contents of this book.</p>
 <p>Use <a href="https://leanpub.com/py_regex/c/P7erPYAm1386">this leanpub link</a> for a discounted price.</p>
 <p align="center"><img src="/images/books/pyregex.png" alt="Python regex book cover image" /></p>
 

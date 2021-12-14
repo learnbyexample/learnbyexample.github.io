@@ -126,7 +126,7 @@
     </url>
     <url>
         <loc>https://learnbyexample.github.io/python-regex-cheatsheet/</loc>
-        <lastmod>2020-11-12</lastmod>
+        <lastmod>2021-12-14</lastmod>
     </url>
     <url>
         <loc>https://learnbyexample.github.io/sed-lookarounds/</loc>
@@ -307,6 +307,10 @@
     <url>
         <loc>https://learnbyexample.github.io/tips/python-tip-2/</loc>
         <lastmod>2021-11-25</lastmod>
+    </url>
+    <url>
+        <loc>https://learnbyexample.github.io/tips/python-tip-3/</loc>
+        <lastmod>2021-12-14</lastmod>
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tips/vim-tip-1/</loc>

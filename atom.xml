@@ -5,8 +5,38 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2021-12-08T00:00:00+00:00</updated>
+	<updated>2021-12-14T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Python tip: 3</title>
+		<published>2021-12-14T00:00:00+00:00</published>
+		<updated>2021-12-14T00:00:00+00:00</updated>
+		<link href="https://learnbyexample.github.io/tips/python-tip-3/" type="text/html"/>
+		<id>https://learnbyexample.github.io/tips/python-tip-3/</id>
+		<content type="html">&lt;p&gt;In case you haven&#x27;t yet discovered this awesome &lt;strong&gt;f-string&lt;&#x2F;strong&gt; feature, you can add &lt;code&gt;=&lt;&#x2F;code&gt; after an expression to get both the expression and the result in the output.&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;num1 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;42
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;num2 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;7
+
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#668f14;&quot;&gt;f&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;{num1 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;+ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;num2 = }&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;
+&amp;#39;num1 + num2 = 49&amp;#39;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#668f14;&quot;&gt;f&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;{num1 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;+ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;(num2 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;* &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;10&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;) = }&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;
+&amp;#39;num1 + (num2 * 10) = 112&amp;#39;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;I use it often to quickly test a function:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;&#x2F;span&gt;&lt;span style=&quot;background-color:#562d56bf;color:#f8f8f8;&quot;&gt;def&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;isodd&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;(n):
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;...     &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;return &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a2a001;&quot;&gt;bool&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;(n &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;% &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;2&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;)
+... 
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;print&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#668f14;&quot;&gt;f&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;{&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;isodd&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;42&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;) = }&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;)
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;isodd&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;42&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;False
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;print&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#668f14;&quot;&gt;f&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;{&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;isodd&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;123&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;) = }&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;)
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;isodd&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;123&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;True
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See &lt;a href=&quot;https:&#x2F;&#x2F;docs.python.org&#x2F;3&#x2F;library&#x2F;string.html#formatstrings&quot;&gt;docs.python: Format String Syntax&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;docs.python.org&#x2F;3&#x2F;reference&#x2F;lexical_analysis.html#formatted-string-literals&quot;&gt;docs.python: Formatted string literals&lt;&#x2F;a&gt; for documentation and examples.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;100_page_python_intro&quot;&gt;100 Page Python Intro&lt;&#x2F;a&gt; ebook for a short, introductory guide for the Python programming language.&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>Vim tip: 1</title>
 		<published>2021-12-08T00:00:00+00:00</published>
@@ -2574,7 +2604,7 @@ no VAL is specified, the key will be given the value true.&lt;&#x2F;p&gt;
 	<entry xml:lang="en">
 		<title>Python regular expression cheatsheet and examples</title>
 		<published>2020-07-03T00:00:00+00:00</published>
-		<updated>2020-11-12T00:00:00+00:00</updated>
+		<updated>2021-12-14T00:00:00+00:00</updated>
 		<link href="https://learnbyexample.github.io/python-regex-cheatsheet/" type="text/html"/>
 		<id>https://learnbyexample.github.io/python-regex-cheatsheet/</id>
 		<content type="html">&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;books&#x2F;pyregex_example.png&quot; alt=&quot;pyregex example&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
@@ -2613,9 +2643,9 @@ no VAL is specified, the key will be given the value true.&lt;&#x2F;p&gt;
 &lt;tr&gt;&lt;td&gt;&lt;code&gt;+&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;Match one or more times&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
 &lt;tr&gt;&lt;td&gt;&lt;code&gt;?&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;Match zero or one times&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
 &lt;tr&gt;&lt;td&gt;&lt;code&gt;{m,n}&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;Match &lt;code&gt;m&lt;&#x2F;code&gt; to &lt;code&gt;n&lt;&#x2F;code&gt; times (inclusive)&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
-&lt;tr&gt;&lt;td&gt;&lt;code&gt;{m,}&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;Match at least m times&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;code&gt;{m,}&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;Match at least &lt;code&gt;m&lt;&#x2F;code&gt; times&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
 &lt;tr&gt;&lt;td&gt;&lt;code&gt;{,n}&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;Match up to &lt;code&gt;n&lt;&#x2F;code&gt; times (including &lt;code&gt;0&lt;&#x2F;code&gt; times)&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
-&lt;tr&gt;&lt;td&gt;&lt;code&gt;{n}&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;Match exactly n times&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;code&gt;{n}&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;Match exactly &lt;code&gt;n&lt;&#x2F;code&gt; times&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
 &lt;tr&gt;&lt;td&gt;&lt;code&gt;pat1.*pat2&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;any number of characters between &lt;code&gt;pat1&lt;&#x2F;code&gt; and &lt;code&gt;pat2&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
 &lt;tr&gt;&lt;td&gt;&lt;code&gt;pat1.*pat2|pat2.*pat1&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;match both &lt;code&gt;pat1&lt;&#x2F;code&gt; and &lt;code&gt;pat2&lt;&#x2F;code&gt; in any order&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
 &lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
@@ -2891,6 +2921,10 @@ mission success
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# swap words that are separated by a comma
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;re.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;sub&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#668f14;&quot;&gt;r&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7c8f4c;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#aeb52b;&quot;&gt;\w&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7c8f4c;&quot;&gt;),(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#aeb52b;&quot;&gt;\w&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7c8f4c;&quot;&gt;)&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#668f14;&quot;&gt;r&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;\2&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7c8f4c;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;\1&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;good,bad 42,24&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;)
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;bad,good 24,42&amp;#39;
+
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# example with both capturing and non-capturing groups
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;re.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;sub&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#668f14;&quot;&gt;r&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7c8f4c;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#aeb52b;&quot;&gt;\d&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7c8f4c;&quot;&gt;)(?:abc)&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7c8f4c;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#aeb52b;&quot;&gt;\d&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7c8f4c;&quot;&gt;)&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#668f14;&quot;&gt;r&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;\2&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7c8f4c;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;\1&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;2abcabc42 12abcd21&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;)
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;42:2 12abcd21&amp;#39;
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;ul&gt;
 &lt;li&gt;using functions in replacement section of &lt;code&gt;re.sub&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
@@ -2958,7 +2992,7 @@ mission success
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;Hi there. Nice day&amp;#39;
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;br&gt;
 &lt;h2 id=&quot;python-re-gex-book&quot;&gt;Python re(gex)? book&lt;a class=&quot;zola-anchor&quot; href=&quot;#python-re-gex-book&quot; aria-label=&quot;Anchor link for: python-re-gex-book&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
-&lt;p&gt;Visit my repo &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;py_regular_expressions&quot;&gt;Python re(gex)?&lt;&#x2F;a&gt; for details about the book I wrote on Python regular expressions. The ebook uses plenty of examples to explain the concepts from the very beginning and step by step introduces more advanced concepts. The book also covers the &lt;a href=&quot;https:&#x2F;&#x2F;pypi.org&#x2F;project&#x2F;regex&#x2F;&quot;&gt;third party module regex&lt;&#x2F;a&gt;. The cheatsheet and examples presented in this post are based on contents of this book.&lt;&#x2F;p&gt;
+&lt;p&gt;Visit my GitHub repo &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;py_regular_expressions&quot;&gt;Python re(gex)?&lt;&#x2F;a&gt; for details about the book I wrote on Python regular expressions. The ebook uses plenty of examples to explain the concepts from the very beginning and step by step introduces more advanced concepts. The book also covers the &lt;a href=&quot;https:&#x2F;&#x2F;pypi.org&#x2F;project&#x2F;regex&#x2F;&quot;&gt;third party module regex&lt;&#x2F;a&gt;. The cheatsheet and examples presented in this post are based on contents of this book.&lt;&#x2F;p&gt;
 &lt;p&gt;Use &lt;a href=&quot;https:&#x2F;&#x2F;leanpub.com&#x2F;py_regex&#x2F;c&#x2F;P7erPYAm1386&quot;&gt;this leanpub link&lt;&#x2F;a&gt; for a discounted price.&lt;&#x2F;p&gt;
 &lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;books&#x2F;pyregex.png&quot; alt=&quot;Python regex book cover image&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 </content>
