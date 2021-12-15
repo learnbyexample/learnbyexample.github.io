@@ -16,11 +16,15 @@
     </url>
     <url>
         <loc>https://learnbyexample.github.io/books/</loc>
-        <lastmod>2021-10-16</lastmod>
+        <lastmod>2021-12-15</lastmod>
     </url>
     <url>
         <loc>https://learnbyexample.github.io/cli-text-processing-coreutils-announcement/</loc>
         <lastmod>2021-10-08</lastmod>
+    </url>
+    <url>
+        <loc>https://learnbyexample.github.io/counting-nested-braces/</loc>
+        <lastmod>2021-12-15</lastmod>
     </url>
     <url>
         <loc>https://learnbyexample.github.io/customizing-pandoc/</loc>

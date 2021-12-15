@@ -5,8 +5,99 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2021-12-14T00:00:00+00:00</updated>
+	<updated>2021-12-15T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Counting nested braces</title>
+		<published>2021-12-15T00:00:00+00:00</published>
+		<updated>2021-12-15T00:00:00+00:00</updated>
+		<link href="https://learnbyexample.github.io/counting-nested-braces/" type="text/html"/>
+		<id>https://learnbyexample.github.io/counting-nested-braces/</id>
+		<content type="html">&lt;p&gt;I posted a coding challenge in the fifth issue of &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;learnbyexample-weekly&quot;&gt;learnbyexample weekly&lt;&#x2F;a&gt;. I discuss the problem and Python&#x2F;Perl solutions in this blog post.&lt;&#x2F;p&gt;
+&lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;&lt;br&gt;
+&lt;h2 id=&quot;problem-statement&quot;&gt;Problem statement&lt;a class=&quot;zola-anchor&quot; href=&quot;#problem-statement&quot; aria-label=&quot;Anchor link for: problem-statement&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Write a function that returns the maximum nested depth of curly braces for a given string input. For example:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;&#x27;a*{b+c}&#x27;&lt;&#x2F;code&gt; should return &lt;code&gt;1&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;&#x27;{{a+2}*{{b+{c*d}}+e*d}}&#x27;&lt;&#x2F;code&gt; should return &lt;code&gt;4&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;unbalanced or wrongly ordered braces like &lt;code&gt;&#x27;{{a}*b&#x27;&lt;&#x2F;code&gt; and &lt;code&gt;&#x27;}a+b{&#x27;&lt;&#x2F;code&gt; should return &lt;code&gt;-1&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;python-solution&quot;&gt;Python solution&lt;a class=&quot;zola-anchor&quot; href=&quot;#python-solution&quot; aria-label=&quot;Anchor link for: python-solution&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Here&#x27;s one possible solution for this problem:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;def &lt;&#x2F;span&gt;&lt;span style=&quot;color:#c23f31;&quot;&gt;max_nested_braces&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;expr&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;):
+    max_count &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;count &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;0
+    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;for &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;char &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;in &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;expr:
+        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;char &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;== &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;{&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;:
+            count &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;+= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;1
+            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;count &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;gt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;max_count:
+                max_count &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;count
+        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;elif &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;char &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;== &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;}&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;:
+            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;count &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;== &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;:
+                &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;return -&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;1
+            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;count &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;1
+
+    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;count &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;!= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;:
+        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;return -&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;1
+    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;return &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;max_count
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; In case you have trouble understanding the above code, you can use &lt;a href=&quot;https:&#x2F;&#x2F;www.pythontutor.com&#x2F;visualize.html#mode=edit&quot;&gt;pythontutor&lt;&#x2F;a&gt; to visualize the code execution step-by-step.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;Here&#x27;s an alternate solution using regular expressions:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;import &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;re
+
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;def &lt;&#x2F;span&gt;&lt;span style=&quot;color:#c23f31;&quot;&gt;max_nested_braces&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;expr&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;):
+    count &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;0
+    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;while &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;True&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;:
+        expr, no_of_subs &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;re.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;subn&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#668f14;&quot;&gt;r&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#aeb52b;&quot;&gt;\{[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;^&lt;&#x2F;span&gt;&lt;span style=&quot;color:#aeb52b;&quot;&gt;{}]&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span style=&quot;color:#aeb52b;&quot;&gt;\}&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;, expr)
+        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;no_of_subs &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;== &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;:
+            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;break
+        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;count &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;+= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;1
+
+    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;re.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;search&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#668f14;&quot;&gt;r&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#aeb52b;&quot;&gt;[{}]&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;, expr):
+        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;return -&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;1
+    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;return &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;count
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;And if you are a fan of assignment expressions:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;import &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;re
+
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;def &lt;&#x2F;span&gt;&lt;span style=&quot;color:#c23f31;&quot;&gt;max_nested_braces&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;expr&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;):
+    count &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;0
+    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;while &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;(op &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;:= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;re.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;subn&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#668f14;&quot;&gt;r&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#aeb52b;&quot;&gt;\{[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;^&lt;&#x2F;span&gt;&lt;span style=&quot;color:#aeb52b;&quot;&gt;{}]&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span style=&quot;color:#aeb52b;&quot;&gt;\}&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;, expr)) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;and &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;op[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;]:
+        expr &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;op[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;]
+        count &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;+= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;1
+
+    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;re.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;search&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#668f14;&quot;&gt;r&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#aeb52b;&quot;&gt;[{}]&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;, expr):
+        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;return -&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;1
+    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;return &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;count
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; I verified these solutions using &lt;code&gt;assert&lt;&#x2F;code&gt; statements. See &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;100_page_python_intro&#x2F;testing.html&quot;&gt;Testing&lt;&#x2F;a&gt; chapter from my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;100_page_python_intro&quot;&gt;100 Page Python Intro&lt;&#x2F;a&gt; ebook for more details.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;py_regular_expressions&#x2F;working-with-matched-portions.html#resubn&quot;&gt;Working with matched portions&lt;&#x2F;a&gt; chapter from my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;py_regular_expressions&quot;&gt;Python re(gex)?&lt;&#x2F;a&gt; ebook for more details about the &lt;code&gt;re.subn()&lt;&#x2F;code&gt; function.&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;perl-one-liner&quot;&gt;Perl one-liner&lt;a class=&quot;zola-anchor&quot; href=&quot;#perl-one-liner&quot; aria-label=&quot;Anchor link for: perl-one-liner&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Here&#x27;s a solution for CLI enthusiasts:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ cat ip.txt 
+{a+2}*{b+c}
+{{a+2}*{{b+{c*d}}+e*d}}
+a*b{
+{{a+2}*{{b}+{c*d}}+e*d}}
+
+$ perl -lne &amp;#39;$c=0; $c++ while(s&#x2F;\{[^{}]*\}&#x2F;&#x2F;g);
+             print &#x2F;[{}]&#x2F; ? -1 : $c&amp;#39; ip.txt
+1
+4
+-1
+-1
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;br&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;learn_perl_oneliners&quot;&gt;Perl one-liners&lt;&#x2F;a&gt; ebook if you are interested in learning to use Perl from the command-line.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; If you are interested in &lt;code&gt;awk&lt;&#x2F;code&gt; and &lt;code&gt;bash&lt;&#x2F;code&gt; solutions, see &lt;a href=&quot;https:&#x2F;&#x2F;unix.stackexchange.com&#x2F;q&#x2F;680920&#x2F;109046&quot;&gt;this unix.stackexchange thread&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>Python tip: 3</title>
 		<published>2021-12-14T00:00:00+00:00</published>
