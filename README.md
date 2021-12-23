@@ -44,13 +44,13 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Tips
 
-* [CLI tip: 3](https://learnbyexample.github.io/tips/cli-tip-3/)
-* [Python tip: 3](https://learnbyexample.github.io/tips/python-tip-3/)
-* [Vim tip: 1](https://learnbyexample.github.io/tips/vim-tip-1/)
-* [CLI tip: 2](https://learnbyexample.github.io/tips/cli-tip-2/)
-* [Python tip: 2](https://learnbyexample.github.io/tips/python-tip-2/)
-* [CLI tip: 1](https://learnbyexample.github.io/tips/cli-tip-1/)
-* [Python tip: 1](https://learnbyexample.github.io/tips/python-tip-1/)
+* [CLI tip 3: place backups in another directory with GNU sed](https://learnbyexample.github.io/tips/cli-tip-3/)
+* [Python tip 3: expression and result with f-string](https://learnbyexample.github.io/tips/python-tip-3/)
+* [Vim tip 1: increment/decrement numbers](https://learnbyexample.github.io/tips/vim-tip-1/)
+* [CLI tip 2: counting number of matches](https://learnbyexample.github.io/tips/cli-tip-2/)
+* [Python tip 2: membership operator](https://learnbyexample.github.io/tips/python-tip-2/)
+* [CLI tip 1: remove metadata from images](https://learnbyexample.github.io/tips/cli-tip-1/)
+* [Python tip 1: tuple argument for startswith/endswith methods](https://learnbyexample.github.io/tips/python-tip-1/)
 
 <br>
 
