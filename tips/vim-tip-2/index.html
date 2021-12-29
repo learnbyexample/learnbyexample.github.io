@@ -7,7 +7,7 @@
       <!-- Enable responsiveness on mobile devices-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-      <title>learnbyexample</title>
+      <title>Vim tip 2: indent&#x2F;unindent lines</title>
 
       
         <link rel="alternate" type="application/atom+xml" title="RSS" href="https://learnbyexample.github.io/atom.xml">
@@ -121,20 +121,91 @@
             <main>
                 <div class="content" id="mobile-panel">
                     
-    <div class="about">
-        <h1 id="list-of-all-tips"><p style="color: #c05b4d">List of all tips</h1>
+
+
+
+<article class="post">
+    
+    <header class="post__header">
+        <h1 class="post__title">
+            <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips&#x2F;vim-tip-2&#x2F;">Vim tip 2: indent&#x2F;unindent lines</a>
+        </h1>
+        <div class="post__meta">
+            <span class="post__time">2021-12-29</span>
+            
+        </div>
+    </header>
+
+    <div class="post-content">
+      <p><strong>Normal mode</strong></p>
 <ul>
-<li><a href="https://learnbyexample.github.io/tips/vim-tip-2/">Vim tip 2: indent/unindent lines</a></li>
-<li><a href="https://learnbyexample.github.io/tips/cli-tip-3/">CLI tip 3: place backups in another directory with GNU sed</a></li>
-<li><a href="https://learnbyexample.github.io/tips/python-tip-3/">Python tip 3: expression and result with f-string</a></li>
-<li><a href="https://learnbyexample.github.io/tips/vim-tip-1/">Vim tip 1: increment/decrement numbers</a></li>
-<li><a href="https://learnbyexample.github.io/tips/cli-tip-2/">CLI tip 2: counting number of matches</a></li>
-<li><a href="https://learnbyexample.github.io/tips/python-tip-2/">Python tip 2: membership operator</a></li>
-<li><a href="https://learnbyexample.github.io/tips/cli-tip-1/">CLI tip 1: remove metadata from images</a></li>
-<li><a href="https://learnbyexample.github.io/tips/python-tip-1/">Python tip 1: tuple argument for startswith/endswith methods</a></li>
+<li><code>&gt;&gt;</code> indent the current line</li>
+<li><code>3&gt;&gt;</code> indent the current line and two lines below (same as <code>2&gt;j</code>)</li>
+<li><code>&gt;k</code> indent the current line and the line above (same as <code>1&gt;k</code>)</li>
+<li><code>&lt;&lt;</code> unindent the current line</li>
+<li><code>5&lt;&lt;</code> unindent the current line and four lines below (same as <code>4&lt;j</code>)</li>
+<li><code>2&lt;k</code> unindent the current line and two lines above</li>
 </ul>
+<p><img src="/images/info.svg" alt="info" /> You can use any movement command with <code>&gt;</code> and <code>&lt;</code>. For example, <code>&gt;}</code> indents till the end of the paragraph.</p>
+<p><strong>Visual mode</strong></p>
+<ul>
+<li><code>&gt;</code> indent the visually selected lines once</li>
+<li><code>3&gt;</code> indent the visually selected lines three times</li>
+<li><code>&lt;</code> unindent the visually selected lines once</li>
+<li><code>=</code> auto indent code, takes care of nesting too</li>
+</ul>
+<p>Consider the following unindented code:</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#72ab00;">for</span><span style="color:#1f1f1f;">(i</span><span style="color:#72ab00;">=</span><span style="color:#b3933a;">1</span><span style="color:#1f1f1f;">; i</span><span style="color:#72ab00;">&lt;</span><span style="color:#b3933a;">5</span><span style="color:#1f1f1f;">; i</span><span style="color:#72ab00;">++</span><span style="color:#1f1f1f;">)
+{
+</span><span style="color:#72ab00;">for</span><span style="color:#1f1f1f;">(j</span><span style="color:#72ab00;">=</span><span style="color:#1f1f1f;">i; j</span><span style="color:#72ab00;">&lt;</span><span style="color:#b3933a;">10</span><span style="color:#1f1f1f;">; j</span><span style="color:#72ab00;">++</span><span style="color:#1f1f1f;">)
+{
+statements
+}
+statements
+}
+</span></code></pre>
+<p>Here's the result after applying <code>vip=</code></p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#72ab00;">for</span><span style="color:#1f1f1f;">(i</span><span style="color:#72ab00;">=</span><span style="color:#b3933a;">1</span><span style="color:#1f1f1f;">; i</span><span style="color:#72ab00;">&lt;</span><span style="color:#b3933a;">5</span><span style="color:#1f1f1f;">; i</span><span style="color:#72ab00;">++</span><span style="color:#1f1f1f;">)
+{
+    </span><span style="color:#72ab00;">for</span><span style="color:#1f1f1f;">(j</span><span style="color:#72ab00;">=</span><span style="color:#1f1f1f;">i; j</span><span style="color:#72ab00;">&lt;</span><span style="color:#b3933a;">10</span><span style="color:#1f1f1f;">; j</span><span style="color:#72ab00;">++</span><span style="color:#1f1f1f;">)
+    {
+        statements
+    }
+    statements
+}
+</span></code></pre>
+<p><img src="/images/info.svg" alt="info" /> Indentation depends on the <code>shiftwidth</code> setting.</p>
+<p><img src="/images/info.svg" alt="info" /> See <a href="https://vimhelp.org/change.txt.html#shift-left-right">:h shift-left-right</a>, <a href="https://vimhelp.org/change.txt.html#%3D">:h =</a> and <a href="https://vimhelp.org/options.txt.html#%27shiftwidth%27">:h 'shiftwidth'</a> for documentation.</p>
+<p><img src="/images/info.svg" alt="info" /> See also my <a href="https://learnbyexample.github.io/vim_reference/">Vim reference guide</a> and <a href="https://learnbyexample.github.io/curated_resources/vim.html">curated list of resources for Vim</a>.</p>
 
     </div>
+
+    
+    
+
+    <div class="post-footer">
+        
+            
+                <div class="post-tags">
+                    
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;vim&#x2F;">#vim</a>
+                    
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;tip&#x2F;">#tip</a>
+                    
+                </div>
+            
+            
+
+        
+
+    </div>
+
+    
+    
+</article>
+
 
                 </div>
             </main>

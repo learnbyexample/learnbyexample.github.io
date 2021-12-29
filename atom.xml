@@ -5,8 +5,58 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2021-12-21T00:00:00+00:00</updated>
+	<updated>2021-12-29T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Vim tip 2: indent&#x2F;unindent lines</title>
+		<published>2021-12-29T00:00:00+00:00</published>
+		<updated>2021-12-29T00:00:00+00:00</updated>
+		<link href="https://learnbyexample.github.io/tips/vim-tip-2/" type="text/html"/>
+		<id>https://learnbyexample.github.io/tips/vim-tip-2/</id>
+		<content type="html">&lt;p&gt;&lt;strong&gt;Normal mode&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;&amp;gt;&amp;gt;&lt;&#x2F;code&gt; indent the current line&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;3&amp;gt;&amp;gt;&lt;&#x2F;code&gt; indent the current line and two lines below (same as &lt;code&gt;2&amp;gt;j&lt;&#x2F;code&gt;)&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;&amp;gt;k&lt;&#x2F;code&gt; indent the current line and the line above (same as &lt;code&gt;1&amp;gt;k&lt;&#x2F;code&gt;)&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;&amp;lt;&lt;&#x2F;code&gt; unindent the current line&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;5&amp;lt;&amp;lt;&lt;&#x2F;code&gt; unindent the current line and four lines below (same as &lt;code&gt;4&amp;lt;j&lt;&#x2F;code&gt;)&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;2&amp;lt;k&lt;&#x2F;code&gt; unindent the current line and two lines above&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; You can use any movement command with &lt;code&gt;&amp;gt;&lt;&#x2F;code&gt; and &lt;code&gt;&amp;lt;&lt;&#x2F;code&gt;. For example, &lt;code&gt;&amp;gt;}&lt;&#x2F;code&gt; indents till the end of the paragraph.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Visual mode&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;&amp;gt;&lt;&#x2F;code&gt; indent the visually selected lines once&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;3&amp;gt;&lt;&#x2F;code&gt; indent the visually selected lines three times&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;&lt;&#x2F;code&gt; unindent the visually selected lines once&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;=&lt;&#x2F;code&gt; auto indent code, takes care of nesting too&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Consider the following unindented code:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;for&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;(i&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;; i&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;5&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;; i&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;++&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;)
+{
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;for&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;(j&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;i; j&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;10&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;; j&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;++&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;)
+{
+statements
+}
+statements
+}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Here&#x27;s the result after applying &lt;code&gt;vip=&lt;&#x2F;code&gt;&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;for&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;(i&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;; i&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;5&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;; i&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;++&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;)
+{
+    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;for&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;(j&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;i; j&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;10&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;; j&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;++&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;)
+    {
+        statements
+    }
+    statements
+}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; Indentation depends on the &lt;code&gt;shiftwidth&lt;&#x2F;code&gt; setting.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See &lt;a href=&quot;https:&#x2F;&#x2F;vimhelp.org&#x2F;change.txt.html#shift-left-right&quot;&gt;:h shift-left-right&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;vimhelp.org&#x2F;change.txt.html#%3D&quot;&gt;:h =&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;vimhelp.org&#x2F;options.txt.html#%27shiftwidth%27&quot;&gt;:h &#x27;shiftwidth&#x27;&lt;&#x2F;a&gt; for documentation.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See also my &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;vim_reference&#x2F;&quot;&gt;Vim reference guide&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;curated_resources&#x2F;vim.html&quot;&gt;curated list of resources for Vim&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>CLI tip 3: place backups in another directory with GNU sed</title>
 		<published>2021-12-21T00:00:00+00:00</published>
