@@ -6,6 +6,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Posts
 
+* [2021 was a wild ride](https://learnbyexample.github.io/wild-ride-2021/)
 * [Counting nested braces](https://learnbyexample.github.io/counting-nested-braces/)
 * [Improve your Python regex skills with 75 interactive exercises](https://learnbyexample.github.io/python-25-days-of-regex/)
 * [Programming deals](https://learnbyexample.github.io/programming-deals/)
@@ -44,6 +45,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Tips
 
+* [Vim tip 2: indent/unindent lines](https://learnbyexample.github.io/tips/vim-tip-2/)
 * [CLI tip 3: place backups in another directory with GNU sed](https://learnbyexample.github.io/tips/cli-tip-3/)
 * [Python tip 3: expression and result with f-string](https://learnbyexample.github.io/tips/python-tip-3/)
 * [Vim tip 1: increment/decrement numbers](https://learnbyexample.github.io/tips/vim-tip-1/)

@@ -5,8 +5,119 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2021-12-29T00:00:00+00:00</updated>
+	<updated>2021-12-30T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>2021 was a wild ride</title>
+		<published>2021-12-30T00:00:00+00:00</published>
+		<updated>2021-12-30T00:00:00+00:00</updated>
+		<link href="https://learnbyexample.github.io/wild-ride-2021/" type="text/html"/>
+		<id>https://learnbyexample.github.io/wild-ride-2021/</id>
+		<content type="html">&lt;p&gt;&lt;strong&gt;TL;DR&lt;&#x2F;strong&gt;: Started and ended the year well, with a depressing period in the middle. Published three programming ebooks, several blog posts, started a newsletter, improved Twitter readership, read 80+ novels, and so on. Had a good year in terms of ebook sales 😇&lt;&#x2F;p&gt;
+&lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;&lt;br&gt;
+&lt;h2 id=&quot;books-published&quot;&gt;Books published&lt;a class=&quot;zola-anchor&quot; href=&quot;#books-published&quot; aria-label=&quot;Anchor link for: books-published&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;100_page_python_intro&quot;&gt;100 Page Python Intro&lt;&#x2F;a&gt; — short, introductory guide for the Python programming language. Started writing last year, published in February&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;practice_python_projects&quot;&gt;Practice Python Projects&lt;&#x2F;a&gt; — five beginner to intermediate level projects inspired by real world use cases. Started writing last year (before &amp;quot;100 Page Python Intro&amp;quot;!), published in July&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;cli_text_processing_coreutils&quot;&gt;Command line text processing with GNU Coreutils&lt;&#x2F;a&gt; — learn 20+ specialized text processing tools provided by the GNU coreutils package. Published in October&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;I also spent time updating all my existing books from February to May.&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;books&#x2F;2021_books.png&quot; alt=&quot;Programming books published in 2021&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;workshops&quot;&gt;Workshops&lt;a class=&quot;zola-anchor&quot; href=&quot;#workshops&quot; aria-label=&quot;Anchor link for: workshops&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;First and only workshop I conducted since the start of pandemic in 2020. And this was possible only because it was online. The topic was Python scripting introduction for Biotech students. Publishing &amp;quot;100 Page Python Intro&amp;quot; was timely for this workshop.&lt;&#x2F;p&gt;
+&lt;p&gt;This took up most of my time during March&#x2F;April along with updating existing books.&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;blog-posts&quot;&gt;Blog posts&lt;a class=&quot;zola-anchor&quot; href=&quot;#blog-posts&quot; aria-label=&quot;Anchor link for: blog-posts&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;I&#x27;ve been consistently writing books for the past three years, but I find it difficult to come up with ideas for my programming blog. This is partly due to not wanting to repeat content from my books. Here&#x27;s my favorite posts I wrote this year:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;my-book-writing-experience&#x2F;&quot;&gt;Paying my bills with &#x27;free&#x27; ebooks&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;gnu-bre-ere-cheatsheet&#x2F;&quot;&gt;GNU BRE&#x2F;ERE cheatsheet and differences between grep, sed and awk&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;escaping-madness-awk-literal-field-separator&#x2F;&quot;&gt;Escaping madness to get literal field separators in awk&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.perl.com&#x2F;article&#x2F;perl-one-liners-part-1&#x2F;&quot;&gt;Perl &#x2F; Unix One-liner Cage Match, Part 1&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;www.perl.com&#x2F;article&#x2F;perl-one-liners-part-2&#x2F;&quot;&gt;Perl &#x2F; Unix One-liner Cage Match, Part 2&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;I tried to be more consistent by posting short articles (see &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;mini&#x2F;&quot;&gt;mini posts list&lt;&#x2F;a&gt;), but lost interest. Starting a newsletter in November helped change my perspective about re-using content from my books. I&#x27;ve started posting tips and coding challenges that are short and easy to digest:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips&#x2F;&quot;&gt;Programming tips&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;numeric-palindrome&#x2F;&quot;&gt;Numeric Palindrome&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;counting-nested-braces&#x2F;&quot;&gt;Counting nested braces&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;I was more consistent for my &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;escapist-reviews&#x2F;&quot;&gt;Escapist Reviews&lt;&#x2F;a&gt; blog that I started late last year to review novels I read.&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;book-sales&quot;&gt;Book sales&lt;a class=&quot;zola-anchor&quot; href=&quot;#book-sales&quot; aria-label=&quot;Anchor link for: book-sales&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Had better sales compared to last year, which I really wasn&#x27;t expecting. Especially when the average monthly sales was around $100 between May to September (my monthly expenses is around $150). This coincided with some health issues and the struggle to finish writing the &amp;quot;Practice Python Projects&amp;quot; book.&lt;&#x2F;p&gt;
+&lt;p&gt;This led me to reading articles about better landing pages, building audience on social media, affiliates, etc. I still have a long way to go, but I feel these active efforts led to much improved sales in the last quarter of the year. I ended up deciding not to use affiliates though.&lt;&#x2F;p&gt;
+&lt;p&gt;Here&#x27;s my sales chart from Gumroad for this year (I had similar revenue from Leanpub):&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;books&#x2F;gumroad_sales_2021.png&quot; alt=&quot;Gumroad sales in 2021&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;There were plenty of reasons that led to the awesome last quarter sales. Here&#x27;s some significant events I remember:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Joined hands with fellow Python authors for &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;indie-python-extravaganza&#x2F;&quot;&gt;The Indie Python Extravaganza&lt;&#x2F;a&gt; bundle (given away freely for a month)
+&lt;ul&gt;
+&lt;li&gt;A Twitter discussion led to the giveaway idea, which resulted in creating this bundle&lt;&#x2F;li&gt;
+&lt;li&gt;Combined marketing efforts by all four of us gave significant paid sales too&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Published &amp;quot;Command line text processing with GNU Coreutils&amp;quot;
+&lt;ul&gt;
+&lt;li&gt;In addition to my usual practice of making a new book free, this time I offered &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;all-books&quot;&gt;All books bundle&lt;&#x2F;a&gt; for $5 and a lot of users bought it&lt;&#x2F;li&gt;
+&lt;li&gt;Announcing the book on Reddit and Hacker News was well received&lt;&#x2F;li&gt;
+&lt;li&gt;I was beginning to improve my Twitter audience around that time, which helped a bit&lt;&#x2F;li&gt;
+&lt;li&gt;Got featured in Leanpub&#x27;s monthly sales newsletter&lt;&#x2F;li&gt;
+&lt;li&gt;Jesse Smith on &lt;a href=&quot;https:&#x2F;&#x2F;distrowatch.com&#x2F;weekly.php?issue=20211206#book&quot;&gt;distrowatch.com&lt;&#x2F;a&gt; wrote a lovely book review, which resulted in significant sales in December&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Getting featured on &lt;a href=&quot;https:&#x2F;&#x2F;rubyweekly.com&#x2F;issues&#x2F;574&quot;&gt;Ruby weekly&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;programming-deals&#x2F;&quot;&gt;Programming deals&lt;&#x2F;a&gt; for the last week of November
+&lt;ul&gt;
+&lt;li&gt;Helped a lot by commenting on Hacker News and getting featured in blog posts of fellow Python authors&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;python-25-days-of-regex&#x2F;&quot;&gt;Interactive GUI app for Python regex&lt;&#x2F;a&gt;
+&lt;ul&gt;
+&lt;li&gt;As part of 50 days of break from book writing, I worked on this Python app&lt;&#x2F;li&gt;
+&lt;li&gt;Made it to the front page of Hacker News yet again&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&amp;quot;The Indie Python Extravaganza&amp;quot; bundle and some of my other books were featured in Leanpub&#x27;s Boxing day sales&lt;&#x2F;li&gt;
+&lt;li&gt;And I believe creating &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&quot;&gt;GitHub Readme&lt;&#x2F;a&gt; helped as well&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;The biggest takeaway for me was to actively look for opportunities (small or big) instead of just relying on &lt;em&gt;free&lt;&#x2F;em&gt; offering during book launch (which is about once in four months).&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;newsletter&quot;&gt;Newsletter&lt;a class=&quot;zola-anchor&quot; href=&quot;#newsletter&quot; aria-label=&quot;Anchor link for: newsletter&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;During the 50 days break, the other significant project I started was &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;learnbyexample-weekly&quot;&gt;learnbyexample weekly&lt;&#x2F;a&gt; newsletter. This is still in early stages to point out any impact it will have on my book sales, but it certainly has been a pleasure so far to email an issue every Friday.&lt;&#x2F;p&gt;
+&lt;p&gt;And as mentioned earlier, this led me to write programming blog posts consistently (tips and coding challenges).&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;building-twitter-audience&quot;&gt;Building Twitter audience&lt;a class=&quot;zola-anchor&quot; href=&quot;#building-twitter-audience&quot; aria-label=&quot;Anchor link for: building-twitter-audience&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;I joined Twitter in 2015. My follower count was less than 400 in July. In December, I crossed 1100. This is far from being impressive (I know a few authors who added more than 15000 followers during that time period).&lt;&#x2F;p&gt;
+&lt;p&gt;Being active on Twitter led me to awesome opportunities mentioned earlier in the Book sales section. The best tips I can give is to tweet consistently, interact with your readers and don&#x27;t be afraid to participate in conversations initiated by top users. Oh, and reading articles&#x2F;books about social media audience building would help too.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;learn_byexample&quot;&gt;Follow me on Twitter&lt;&#x2F;a&gt; for interesting tech nuggets 😉&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;fictional-reading&quot;&gt;Fictional reading&lt;a class=&quot;zola-anchor&quot; href=&quot;#fictional-reading&quot; aria-label=&quot;Anchor link for: fictional-reading&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;I enjoy reading fantasy and science-fiction novels. I read 80+ SFF books this year and recently wrote a post listing &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;escapist-reviews&#x2F;lists&#x2F;2021-favorite-sff-novels&#x2F;&quot;&gt;my top 10 favorites&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;I also got a chance to beta read &lt;a href=&quot;https:&#x2F;&#x2F;www.goodreads.com&#x2F;book&#x2F;show&#x2F;57289544-the-siege-of-skyhold&quot;&gt;The Siege of Skyhold&lt;&#x2F;a&gt; and an ARC of &lt;a href=&quot;https:&#x2F;&#x2F;www.goodreads.com&#x2F;book&#x2F;show&#x2F;58656291-bastion&quot;&gt;Bastion&lt;&#x2F;a&gt;. I find these a good way to give back to the writing community, having myself received plenty of support from strangers.&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;goals-for-2022&quot;&gt;Goals for 2022&lt;a class=&quot;zola-anchor&quot; href=&quot;#goals-for-2022&quot; aria-label=&quot;Anchor link for: goals-for-2022&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Foremost goal is to continue taking care of physical&#x2F;mental health. And I&#x27;d be more than happy if I manage yet another year with $250+ average monthly income.&lt;&#x2F;p&gt;
+&lt;p&gt;Books:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;I&#x27;m currently working on &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;vim_reference&#x2F;&quot;&gt;Vim Reference Guide&lt;&#x2F;a&gt; ebook. Likely to publish in the first quarter&lt;&#x2F;li&gt;
+&lt;li&gt;I started working on &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;cli_text_processing_rust&#x2F;&quot;&gt;Command line text processing with Rust tools&lt;&#x2F;a&gt; ebook even before &amp;quot;Command line text processing with GNU Coreutils&amp;quot;, hope to publish in 2022&lt;&#x2F;li&gt;
+&lt;li&gt;Have several more book topics in mind, but not sure if I&#x27;ll start working on any of them. And it is possible that I&#x27;ll come up with something else I fancy and work on it instead of already planned topics&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Projects:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Interactive apps for exercises from other books, similar to the one I did for Python regex&lt;&#x2F;li&gt;
+&lt;li&gt;Games for fun&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Miscellaneous:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Continue to build an audience via Twitter, Newsletter, etc&lt;&#x2F;li&gt;
+&lt;li&gt;Contribute to other open source projects&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;br&gt;
+&lt;p&gt;Here&#x27;s wishing you a very happy, healthy and prosperous 2022 👍 😇&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>Vim tip 2: indent&#x2F;unindent lines</title>
 		<published>2021-12-29T00:00:00+00:00</published>
