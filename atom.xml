@@ -5,8 +5,33 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2021-12-30T00:00:00+00:00</updated>
+	<updated>2022-01-04T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Python tip 4: comparison chaining</title>
+		<published>2022-01-04T00:00:00+00:00</published>
+		<updated>2022-01-04T00:00:00+00:00</updated>
+		<link href="https://learnbyexample.github.io/tips/python-tip-4/" type="text/html"/>
+		<id>https://learnbyexample.github.io/tips/python-tip-4/</id>
+		<content type="html">&lt;p&gt;You can chain comparison operators arbitrarily. Apart from terser code, this also has the advantage of having to evaluate the middle expression only once.&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;gt;&amp;gt;&amp;gt; from &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;math &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;import &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;factorial
+
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# factorial function gets called twice for this example
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;factorial&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;3&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;gt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;2 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;and &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;factorial&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;3&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;lt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;10
+True
+
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# function needs to be called only once here
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;2 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;lt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;factorial&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;3&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;lt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;10
+True
+
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# another example
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;bat&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;lt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;cat&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;lt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;cater&amp;#39;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;True
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;100_page_python_intro&quot;&gt;100 Page Python Intro&lt;&#x2F;a&gt; ebook for a short, introductory guide for the Python programming language.&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>2021 was a wild ride</title>
 		<published>2021-12-30T00:00:00+00:00</published>
@@ -128,18 +153,24 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;&amp;gt;&amp;gt;&lt;&#x2F;code&gt; indent the current line&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;code&gt;3&amp;gt;&amp;gt;&lt;&#x2F;code&gt; indent the current line and two lines below (same as &lt;code&gt;2&amp;gt;j&lt;&#x2F;code&gt;)&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;code&gt;&amp;gt;k&lt;&#x2F;code&gt; indent the current line and the line above (same as &lt;code&gt;1&amp;gt;k&lt;&#x2F;code&gt;)&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;&amp;gt;k&lt;&#x2F;code&gt; indent the current line and the line above (same as &lt;code&gt;1&amp;gt;k&lt;&#x2F;code&gt; or &lt;code&gt;&amp;gt;1k&lt;&#x2F;code&gt;)&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;code&gt;&amp;lt;&amp;lt;&lt;&#x2F;code&gt; unindent the current line&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;code&gt;5&amp;lt;&amp;lt;&lt;&#x2F;code&gt; unindent the current line and four lines below (same as &lt;code&gt;4&amp;lt;j&lt;&#x2F;code&gt;)&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;code&gt;2&amp;lt;k&lt;&#x2F;code&gt; unindent the current line and two lines above&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;5&amp;lt;&amp;lt;&lt;&#x2F;code&gt; unindent the current line and four lines below (same as &lt;code&gt;4&amp;lt;j&lt;&#x2F;code&gt; or &lt;code&gt;&amp;lt;4j&lt;&#x2F;code&gt;)&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;2&amp;lt;k&lt;&#x2F;code&gt; unindent the current line and two lines above (same as &lt;code&gt;&amp;lt;2k&lt;&#x2F;code&gt;)&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;=&lt;&#x2F;code&gt; auto indent code, use motion commands to indicate the portion to be indented
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;=4j&lt;&#x2F;code&gt; auto indents the current line and four lines below&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;=ip&lt;&#x2F;code&gt; auto indents the current paragraph&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
-&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; You can use any movement command with &lt;code&gt;&amp;gt;&lt;&#x2F;code&gt; and &lt;code&gt;&amp;lt;&lt;&#x2F;code&gt;. For example, &lt;code&gt;&amp;gt;}&lt;&#x2F;code&gt; indents till the end of the paragraph.&lt;&#x2F;p&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; You can use any motion command with &lt;code&gt;&amp;gt;&lt;&#x2F;code&gt; and &lt;code&gt;&amp;lt;&lt;&#x2F;code&gt;. For example, &lt;code&gt;&amp;gt;}&lt;&#x2F;code&gt; indents till the end of the paragraph.&lt;&#x2F;p&gt;
 &lt;p&gt;&lt;strong&gt;Visual mode&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;&amp;gt;&lt;&#x2F;code&gt; indent the visually selected lines once&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;code&gt;3&amp;gt;&lt;&#x2F;code&gt; indent the visually selected lines three times&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;code&gt;&amp;lt;&lt;&#x2F;code&gt; unindent the visually selected lines once&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;code&gt;=&lt;&#x2F;code&gt; auto indent code, takes care of nesting too&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;=&lt;&#x2F;code&gt; auto indent code&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;p&gt;Consider the following unindented code:&lt;&#x2F;p&gt;
 &lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
@@ -152,7 +183,7 @@ statements
 statements
 }
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;p&gt;Here&#x27;s the result after applying &lt;code&gt;vip=&lt;&#x2F;code&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Here&#x27;s the result after applying &lt;code&gt;vip=&lt;&#x2F;code&gt; (you can also use &lt;code&gt;=ip&lt;&#x2F;code&gt; if you prefer Normal mode).&lt;&#x2F;p&gt;
 &lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
 &lt;code&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;for&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;(i&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;; i&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;5&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;; i&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;++&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;)
 {

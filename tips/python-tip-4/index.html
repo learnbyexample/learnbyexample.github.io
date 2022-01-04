@@ -7,7 +7,7 @@
       <!-- Enable responsiveness on mobile devices-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-      <title>Vim tip 2: indent&#x2F;unindent lines</title>
+      <title>Python tip 4: comparison chaining</title>
 
       
         <link rel="alternate" type="application/atom+xml" title="RSS" href="https://learnbyexample.github.io/atom.xml">
@@ -128,63 +128,32 @@
     
     <header class="post__header">
         <h1 class="post__title">
-            <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips&#x2F;vim-tip-2&#x2F;">Vim tip 2: indent&#x2F;unindent lines</a>
+            <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips&#x2F;python-tip-4&#x2F;">Python tip 4: comparison chaining</a>
         </h1>
         <div class="post__meta">
-            <span class="post__time">2021-12-29</span>
+            <span class="post__time">2022-01-04</span>
             
         </div>
     </header>
 
     <div class="post-content">
-      <p><strong>Normal mode</strong></p>
-<ul>
-<li><code>&gt;&gt;</code> indent the current line</li>
-<li><code>3&gt;&gt;</code> indent the current line and two lines below (same as <code>2&gt;j</code>)</li>
-<li><code>&gt;k</code> indent the current line and the line above (same as <code>1&gt;k</code> or <code>&gt;1k</code>)</li>
-<li><code>&lt;&lt;</code> unindent the current line</li>
-<li><code>5&lt;&lt;</code> unindent the current line and four lines below (same as <code>4&lt;j</code> or <code>&lt;4j</code>)</li>
-<li><code>2&lt;k</code> unindent the current line and two lines above (same as <code>&lt;2k</code>)</li>
-<li><code>=</code> auto indent code, use motion commands to indicate the portion to be indented
-<ul>
-<li><code>=4j</code> auto indents the current line and four lines below</li>
-<li><code>=ip</code> auto indents the current paragraph</li>
-</ul>
-</li>
-</ul>
-<p><img src="/images/info.svg" alt="info" /> You can use any motion command with <code>&gt;</code> and <code>&lt;</code>. For example, <code>&gt;}</code> indents till the end of the paragraph.</p>
-<p><strong>Visual mode</strong></p>
-<ul>
-<li><code>&gt;</code> indent the visually selected lines once</li>
-<li><code>3&gt;</code> indent the visually selected lines three times</li>
-<li><code>&lt;</code> unindent the visually selected lines once</li>
-<li><code>=</code> auto indent code</li>
-</ul>
-<p>Consider the following unindented code:</p>
+      <p>You can chain comparison operators arbitrarily. Apart from terser code, this also has the advantage of having to evaluate the middle expression only once.</p>
 <pre style="background-color:#f5f5f5;">
-<code><span style="color:#72ab00;">for</span><span style="color:#1f1f1f;">(i</span><span style="color:#72ab00;">=</span><span style="color:#b3933a;">1</span><span style="color:#1f1f1f;">; i</span><span style="color:#72ab00;">&lt;</span><span style="color:#b3933a;">5</span><span style="color:#1f1f1f;">; i</span><span style="color:#72ab00;">++</span><span style="color:#1f1f1f;">)
-{
-</span><span style="color:#72ab00;">for</span><span style="color:#1f1f1f;">(j</span><span style="color:#72ab00;">=</span><span style="color:#1f1f1f;">i; j</span><span style="color:#72ab00;">&lt;</span><span style="color:#b3933a;">10</span><span style="color:#1f1f1f;">; j</span><span style="color:#72ab00;">++</span><span style="color:#1f1f1f;">)
-{
-statements
-}
-statements
-}
+<code><span style="color:#72ab00;">&gt;&gt;&gt; from </span><span style="color:#1f1f1f;">math </span><span style="color:#72ab00;">import </span><span style="color:#1f1f1f;">factorial
+
+</span><span style="color:#7f8989;"># factorial function gets called twice for this example
+</span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#5597d6;">factorial</span><span style="color:#1f1f1f;">(</span><span style="color:#b3933a;">3</span><span style="color:#1f1f1f;">) </span><span style="color:#72ab00;">&gt; </span><span style="color:#b3933a;">2 </span><span style="color:#72ab00;">and </span><span style="color:#5597d6;">factorial</span><span style="color:#1f1f1f;">(</span><span style="color:#b3933a;">3</span><span style="color:#1f1f1f;">) </span><span style="color:#72ab00;">&lt; </span><span style="color:#b3933a;">10
+True
+
+</span><span style="color:#7f8989;"># function needs to be called only once here
+</span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#b3933a;">2 </span><span style="color:#72ab00;">&lt; </span><span style="color:#5597d6;">factorial</span><span style="color:#1f1f1f;">(</span><span style="color:#b3933a;">3</span><span style="color:#1f1f1f;">) </span><span style="color:#72ab00;">&lt; </span><span style="color:#b3933a;">10
+True
+
+</span><span style="color:#7f8989;"># another example
+</span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#d07711;">&#39;bat&#39; </span><span style="color:#72ab00;">&lt; </span><span style="color:#d07711;">&#39;cat&#39; </span><span style="color:#72ab00;">&lt; </span><span style="color:#d07711;">&#39;cater&#39;
+</span><span style="color:#b3933a;">True
 </span></code></pre>
-<p>Here's the result after applying <code>vip=</code> (you can also use <code>=ip</code> if you prefer Normal mode).</p>
-<pre style="background-color:#f5f5f5;">
-<code><span style="color:#72ab00;">for</span><span style="color:#1f1f1f;">(i</span><span style="color:#72ab00;">=</span><span style="color:#b3933a;">1</span><span style="color:#1f1f1f;">; i</span><span style="color:#72ab00;">&lt;</span><span style="color:#b3933a;">5</span><span style="color:#1f1f1f;">; i</span><span style="color:#72ab00;">++</span><span style="color:#1f1f1f;">)
-{
-    </span><span style="color:#72ab00;">for</span><span style="color:#1f1f1f;">(j</span><span style="color:#72ab00;">=</span><span style="color:#1f1f1f;">i; j</span><span style="color:#72ab00;">&lt;</span><span style="color:#b3933a;">10</span><span style="color:#1f1f1f;">; j</span><span style="color:#72ab00;">++</span><span style="color:#1f1f1f;">)
-    {
-        statements
-    }
-    statements
-}
-</span></code></pre>
-<p><img src="/images/info.svg" alt="info" /> Indentation depends on the <code>shiftwidth</code> setting.</p>
-<p><img src="/images/info.svg" alt="info" /> See <a href="https://vimhelp.org/change.txt.html#shift-left-right">:h shift-left-right</a>, <a href="https://vimhelp.org/change.txt.html#%3D">:h =</a> and <a href="https://vimhelp.org/options.txt.html#%27shiftwidth%27">:h 'shiftwidth'</a> for documentation.</p>
-<p><img src="/images/info.svg" alt="info" /> See also my <a href="https://learnbyexample.github.io/vim_reference/">Vim reference guide</a> and <a href="https://learnbyexample.github.io/curated_resources/vim.html">curated list of resources for Vim</a>.</p>
+<p><img src="/images/info.svg" alt="info" /> See my <a href="https://github.com/learnbyexample/100_page_python_intro">100 Page Python Intro</a> ebook for a short, introductory guide for the Python programming language.</p>
 
     </div>
 
@@ -196,7 +165,7 @@ statements
             
                 <div class="post-tags">
                     
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;vim&#x2F;">#vim</a>
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;python&#x2F;">#python</a>
                     
                         <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;tip&#x2F;">#tip</a>
                     
