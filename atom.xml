@@ -5,8 +5,32 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2022-01-04T00:00:00+00:00</updated>
+	<updated>2022-01-07T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Vim prank: alias vim=&#x27;vim -y&#x27;</title>
+		<published>2022-01-07T00:00:00+00:00</published>
+		<updated>2022-01-07T00:00:00+00:00</updated>
+		<link href="https://learnbyexample.github.io/mini/vim-prank/" type="text/html"/>
+		<id>https://learnbyexample.github.io/mini/vim-prank/</id>
+		<content type="html">&lt;p&gt;While going through &lt;a href=&quot;https:&#x2F;&#x2F;vimhelp.org&#x2F;starting.txt.html#vim-arguments&quot;&gt;:h vim-arguments&lt;&#x2F;a&gt; for my &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;vim_reference&#x2F;&quot;&gt;Vim reference guide&lt;&#x2F;a&gt; ebook, I came across the &lt;code&gt;-y&lt;&#x2F;code&gt; option:&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Easy mode. Implied for &lt;code&gt;evim&lt;&#x2F;code&gt; and &lt;code&gt;eview&lt;&#x2F;code&gt;. Starts with &lt;code&gt;&#x27;insertmode&#x27;&lt;&#x2F;code&gt; set and behaves like a click-and-type editor. This sources the script $VIMRUNTIME&#x2F;evim.vim. Mappings are set up to work like most click-and-type editors, see &lt;code&gt;evim-keys&lt;&#x2F;code&gt;. The GUI is started when available.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;It was so weird to use. Copy and paste works with &lt;code&gt;Ctrl+c&lt;&#x2F;code&gt; and &lt;code&gt;Ctrl+v&lt;&#x2F;code&gt; respectively. Text can be selected with mouse and typing new text overwrites this selected portion. &lt;code&gt;Esc&lt;&#x2F;code&gt; key doesn&#x27;t work (gasp!), so I couldn&#x27;t quit until I used the window buttons. Later I tried and found that &lt;code&gt;Ctrl+o&lt;&#x2F;code&gt; works, which would then allow you to use &lt;code&gt;:q&lt;&#x2F;code&gt; as usual.&lt;&#x2F;p&gt;
+&lt;p&gt;So, if you want to prank a Vim user:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;alias &lt;&#x2F;span&gt;&lt;span style=&quot;color:#c23f31;&quot;&gt;vim&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;vim -y&amp;#39;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;br&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; I didn&#x27;t expect such a good response on &lt;a href=&quot;https:&#x2F;&#x2F;www.reddit.com&#x2F;r&#x2F;vim&#x2F;comments&#x2F;rxedpj&#x2F;vim_prank_alias_vimvim_y&#x2F;&quot;&gt;&#x2F;r&#x2F;vim&#x2F;&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;learn_byexample&#x2F;status&#x2F;1478976141650059264&quot;&gt;twitter&lt;&#x2F;a&gt; for this &amp;quot;easy&amp;quot; feature. So, decided to make a mini blog post as well. Also, I got to know a few more ways to escape this madness from the &#x2F;r&#x2F;vim&#x2F; sub:&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;One hint: If you want to go to Normal mode to be able to type a sequence of commands, use &lt;code&gt;CTRL-L&lt;&#x2F;code&gt;. &lt;a href=&quot;https:&#x2F;&#x2F;vimhelp.org&#x2F;starting.txt.html#evim-keys&quot;&gt;https:&#x2F;&#x2F;vimhelp.org&#x2F;starting.txt.html#evim-keys&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Use &lt;code&gt;&amp;lt;c-\&amp;gt;&amp;lt;c-n&amp;gt;&lt;&#x2F;code&gt; See &lt;code&gt;:h CTRL-\_CTRL-N&lt;&#x2F;code&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>Python tip 4: comparison chaining</title>
 		<published>2022-01-04T00:00:00+00:00</published>

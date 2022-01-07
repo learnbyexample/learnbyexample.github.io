@@ -36,6 +36,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Mini blog posts
 
+* [Vim prank: alias vim='vim -y'](https://learnbyexample.github.io/mini/vim-prank/)
 * [Debug woes: 2](https://learnbyexample.github.io/mini/debug-woes-2/)
 * [Dreaming solutions](https://learnbyexample.github.io/mini/dreaming-solutions/)
 * [Debug woes: 1](https://learnbyexample.github.io/mini/debug-woes-1/)
