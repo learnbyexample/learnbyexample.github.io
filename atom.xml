@@ -5,12 +5,12 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2022-01-07T00:00:00+00:00</updated>
+	<updated>2022-01-08T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
 	<entry xml:lang="en">
 		<title>Vim prank: alias vim=&#x27;vim -y&#x27;</title>
 		<published>2022-01-07T00:00:00+00:00</published>
-		<updated>2022-01-07T00:00:00+00:00</updated>
+		<updated>2022-01-08T00:00:00+00:00</updated>
 		<link href="https://learnbyexample.github.io/mini/vim-prank/" type="text/html"/>
 		<id>https://learnbyexample.github.io/mini/vim-prank/</id>
 		<content type="html">&lt;p&gt;While going through &lt;a href=&quot;https:&#x2F;&#x2F;vimhelp.org&#x2F;starting.txt.html#vim-arguments&quot;&gt;:h vim-arguments&lt;&#x2F;a&gt; for my &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;vim_reference&#x2F;&quot;&gt;Vim reference guide&lt;&#x2F;a&gt; ebook, I came across the &lt;code&gt;-y&lt;&#x2F;code&gt; option:&lt;&#x2F;p&gt;
@@ -29,6 +29,10 @@
 &lt;blockquote&gt;
 &lt;p&gt;Use &lt;code&gt;&amp;lt;c-\&amp;gt;&amp;lt;c-n&amp;gt;&lt;&#x2F;code&gt; See &lt;code&gt;:h CTRL-\_CTRL-N&lt;&#x2F;code&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;strong&gt;Update&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;So, this post reached front page on &lt;a href=&quot;https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=29837543&quot;&gt;Hacker News&lt;&#x2F;a&gt;! Plenty of interesting comments and got to know about &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;tombh&#x2F;novim-mode&quot;&gt;novim-mode&lt;&#x2F;a&gt; plugin (which aims to make Vim behave more like a &#x27;normal&#x27; editor).&lt;&#x2F;p&gt;
+&lt;p&gt;I also found &lt;a href=&quot;https:&#x2F;&#x2F;www.reddit.com&#x2F;r&#x2F;vim&#x2F;comments&#x2F;5102o5&#x2F;an_evil_trick_to_prank_vimsters&#x2F;&quot;&gt;an old discussion on &#x2F;r&#x2F;vim&#x2F;&lt;&#x2F;a&gt; discussing ways to trick a Vim user.&lt;&#x2F;p&gt;
 </content>
 	</entry>
 	<entry xml:lang="en">
