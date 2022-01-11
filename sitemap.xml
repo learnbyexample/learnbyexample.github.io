@@ -15,6 +15,10 @@
         <loc>https://learnbyexample.github.io/about/</loc>
     </url>
     <url>
+        <loc>https://learnbyexample.github.io/automating-excel-with-python-review/</loc>
+        <lastmod>2022-01-11</lastmod>
+    </url>
+    <url>
         <loc>https://learnbyexample.github.io/books/</loc>
         <lastmod>2021-12-29</lastmod>
     </url>
@@ -105,6 +109,9 @@
         <loc>https://learnbyexample.github.io/page/5/</loc>
     </url>
     <url>
+        <loc>https://learnbyexample.github.io/page/6/</loc>
+    </url>
+    <url>
         <loc>https://learnbyexample.github.io/practice-python-projects-book-announcement/</loc>
         <lastmod>2021-08-02</lastmod>
     </url>
@@ -193,6 +200,9 @@
         <loc>https://learnbyexample.github.io/tags/examples/</loc>
     </url>
     <url>
+        <loc>https://learnbyexample.github.io/tags/excel/</loc>
+    </url>
+    <url>
         <loc>https://learnbyexample.github.io/tags/exercises/</loc>
     </url>
     <url>
@@ -236,6 +246,12 @@
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tags/newsletter/</loc>
+    </url>
+    <url>
+        <loc>https://learnbyexample.github.io/tags/openpyxl/</loc>
+    </url>
+    <url>
+        <loc>https://learnbyexample.github.io/tags/pandas/</loc>
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tags/pandoc/</loc>

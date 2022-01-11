@@ -5,8 +5,67 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2022-01-08T00:00:00+00:00</updated>
+	<updated>2022-01-11T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Automating Excel with Python - book review</title>
+		<published>2022-01-11T00:00:00+00:00</published>
+		<updated>2022-01-11T00:00:00+00:00</updated>
+		<link href="https://learnbyexample.github.io/automating-excel-with-python-review/" type="text/html"/>
+		<id>https://learnbyexample.github.io/automating-excel-with-python-review/</id>
+		<content type="html">&lt;p&gt;In this post, I review &lt;strong&gt;Automating Excel with Python&lt;&#x2F;strong&gt; by Michael Driscoll. From the introduction chapter of this book:&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The purpose of this book is to help you learn how to use Python to work with Excel. You will be using a package called OpenPyXL to create, read, and edit Excel documents with Python. While the focus of this book will be on OpenPyXL, you will also learn about other Python packages that you can use to interact with Excel using the Python programming language.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;&lt;h2 id=&quot;book-details&quot;&gt;Book details&lt;a class=&quot;zola-anchor&quot; href=&quot;#book-details&quot; aria-label=&quot;Anchor link for: book-details&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;automating_excel&#x2F;automating_excel_with_python.jpg&quot; alt=&quot;Automating Excel with Python book cover&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;Book cover&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.amazon.com&#x2F;dp&#x2F;B09M5551W2&quot;&gt;Amazon&lt;&#x2F;a&gt; — Paperback, Kindle&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;driscollis.gumroad.com&#x2F;l&#x2F;openpyxl&quot;&gt;Gumroad&lt;&#x2F;a&gt; — PDF, EPUB, Mobi&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;leanpub.com&#x2F;openpyxl&quot;&gt;Leanpub&lt;&#x2F;a&gt; — PDF, EPUB, Mobi&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;driscollis&#x2F;automating_excel_with_python&quot;&gt;GitHub&lt;&#x2F;a&gt; — code examples and sample spreadsheets used in the book&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.goodreads.com&#x2F;book&#x2F;show&#x2F;59974445-automating-excel-with-python&quot;&gt;Goodreads&lt;&#x2F;a&gt; — book reviews&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;review&quot;&gt;Review&lt;a class=&quot;zola-anchor&quot; href=&quot;#review&quot; aria-label=&quot;Anchor link for: review&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;My very first job assignment (at a semiconductor company) required me to use spreadsheets for tabulating results of various experiments, adding charts, etc. I used to manually copy-paste the results generated from a Perl script. There were multiple sheets and my work was complicated enough to require multiple months of refinement, feature modifications, etc. Not sure if a library like OpenPyXL existed back then, but I think I should&#x27;ve at least asked&#x2F;searched ways to automate the spreadsheet process.&lt;&#x2F;p&gt;
+&lt;p&gt;Going through this book felt like someone wrote a book just for that project, albeit 13 years late. Here&#x27;s a rough list of features that would&#x27;ve helped me:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Creating &lt;code&gt;xlsx&lt;&#x2F;code&gt; files with multiple sheets&lt;&#x2F;li&gt;
+&lt;li&gt;Adding data&lt;&#x2F;li&gt;
+&lt;li&gt;Formatting cells based on a known equation&lt;&#x2F;li&gt;
+&lt;li&gt;Creating charts&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Instructions and examples were clear and easy to follow. Snapshots were also shown for all the examples, so you can check if you&#x27;ve followed along as expected. While the book is best suited if you have MS Excel, most of the examples worked for me on LibreOffice Calc. Only the charts had major differences — some types weren&#x27;t supported and x&#x2F;y axis label&#x2F;data were problematic as shown below:&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;automating_excel&#x2F;bar_chart_excel.png&quot; alt=&quot;Bar Chart in Excel&quot; width=&quot;600px&quot; height=&quot;400px&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;Bar Chart in Excel (snapshot from the book)&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;automating_excel&#x2F;bar_chart_calc.png&quot; alt=&quot;Bar Chart in Calc&quot; width=&quot;600px&quot; height=&quot;400px&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;Bar Chart in LibreOffice Calc (what I got on my machine)&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;p&gt;Apart from the &lt;code&gt;openpyxl&lt;&#x2F;code&gt; module, the author also briefly covered how you can use &lt;code&gt;pandas&lt;&#x2F;code&gt;, &lt;code&gt;xlsxwriter&lt;&#x2F;code&gt; and &lt;code&gt;gspread&lt;&#x2F;code&gt; (for working with Google sheets). Some features were presented at the end as Appendix chapters.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;table-of-contents&quot;&gt;Table of Contents&lt;a class=&quot;zola-anchor&quot; href=&quot;#table-of-contents&quot; aria-label=&quot;Anchor link for: table-of-contents&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Introduction&lt;&#x2F;li&gt;
+&lt;li&gt;Chapter 1 - Setting Up Your Machine&lt;&#x2F;li&gt;
+&lt;li&gt;Chapter 2 - Reading Spreadsheets with OpenPyXL&lt;&#x2F;li&gt;
+&lt;li&gt;Chapter 3 - Creating a Spreadsheet with OpenPyXL&lt;&#x2F;li&gt;
+&lt;li&gt;Chapter 4 - Styling Cells&lt;&#x2F;li&gt;
+&lt;li&gt;Chapter 5 - Conditional Formatting&lt;&#x2F;li&gt;
+&lt;li&gt;Chapter 6 - Creating Charts&lt;&#x2F;li&gt;
+&lt;li&gt;Chapter 7 - Chart Types&lt;&#x2F;li&gt;
+&lt;li&gt;Chapter 8 - Converting CSV to Excel&lt;&#x2F;li&gt;
+&lt;li&gt;Chapter 9 - Using Pandas with Excel&lt;&#x2F;li&gt;
+&lt;li&gt;Chapter 10 - Python and Google Sheets&lt;&#x2F;li&gt;
+&lt;li&gt;Chapter 11 - XlsxWriter&lt;&#x2F;li&gt;
+&lt;li&gt;Appendix A - Cell Comments&lt;&#x2F;li&gt;
+&lt;li&gt;Appendix B - Print Settings Basics&lt;&#x2F;li&gt;
+&lt;li&gt;Appendix C - Formulas&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h2 id=&quot;feedback-and-reviews&quot;&gt;Feedback and Reviews&lt;a class=&quot;zola-anchor&quot; href=&quot;#feedback-and-reviews&quot; aria-label=&quot;Anchor link for: feedback-and-reviews&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;All in all, I would highly recommend this book for those wanting to use Python for automating spreadsheets. I&#x27;d request you to post reviews after going through the book (they help us indie authors a lot). And please do contact the author to let him know your feedback or if you have any clarifications.&lt;&#x2F;p&gt;
+&lt;p&gt;Happy learning :)&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>Vim prank: alias vim=&#x27;vim -y&#x27;</title>
 		<published>2022-01-07T00:00:00+00:00</published>
@@ -3437,12 +3496,12 @@ mission success
 		<updated>2019-05-13T00:00:00+00:00</updated>
 		<link href="https://learnbyexample.github.io/python-gui-book-review/" type="text/html"/>
 		<id>https://learnbyexample.github.io/python-gui-book-review/</id>
-		<content type="html">&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;python_gui&#x2F;GUI_example.jpg&quot; alt=&quot;GUI example&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+		<content type="html">&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;python_gui&#x2F;GUI_example.jpg&quot; alt=&quot;GUI example&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 &lt;p&gt;&lt;em&gt;Photo Credit: &lt;a href=&quot;https:&#x2F;&#x2F;www.pexels.com&#x2F;photo&#x2F;apple-computer-desk-devices-326501&#x2F;&quot;&gt;Tranmautritam&lt;&#x2F;a&gt; on &lt;a href=&quot;https:&#x2F;&#x2F;www.pexels.com&#x2F;&quot;&gt;Pexels&lt;&#x2F;a&gt;&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
-&lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;
+&lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;&lt;br&gt;
 &lt;p&gt;I&#x27;ve always wanted to create nice looking, useful GUI applications over the years. And I&#x27;ve given up most of the time as the programming seemed too difficult for me and GUI requires at least some level of design skills. I only managed to grit through one Android app for over a year as it was a dream game from school days and I had loads of free time having quit my job. At the end of it though, I had a spaghetti mess of several 1000+ lines programs and a strong aversion to Java and object oriented programming. Part of the reason is that I didn&#x27;t try to learn in a formal way, just started from a tutorial closest to the game I wanted to do.&lt;&#x2F;p&gt;
 &lt;p&gt;Several years later, here I am, trying my hand with GUI again. I have several small to medium scale apps in mind to implement and hopefully I&#x27;ll avoid previous mistakes, especially feature creep. When I saw &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;driscollis&#x2F;status&#x2F;1109106540160733184&quot;&gt;this tweet from Mike Driscoll&lt;&#x2F;a&gt;, I took up the offer. I got a free book in exchange for reviewing &lt;a href=&quot;https:&#x2F;&#x2F;www.blog.pythonlibrary.org&#x2F;2019&#x2F;05&#x2F;08&#x2F;creating-gui-applications-with-wxpython-now-available&#x2F;&quot;&gt;Creating GUI Applications with wxPython&lt;&#x2F;a&gt;. The book is currently on sale till May 15. Having to review has served as an extra incentive to read the book regularly, and so far I&#x27;m quite satisfied to have done so.&lt;&#x2F;p&gt;
-&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;python_gui&#x2F;wxPython_book_cover.png&quot; alt=&quot;book cover&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;python_gui&#x2F;wxPython_book_cover.png&quot; alt=&quot;book cover&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 &lt;p&gt;I hadn&#x27;t heard of &lt;a href=&quot;https:&#x2F;&#x2F;wxpython.org&quot;&gt;wxPython&lt;&#x2F;a&gt; before this book. When it comes to GUI in Python, I knew about &lt;code&gt;tkinter&lt;&#x2F;code&gt; which comes by default with standard libary, &lt;a href=&quot;https:&#x2F;&#x2F;kivy.org&quot;&gt;Kivy&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;www.pygame.org&quot;&gt;Pygame&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;pypi.org&#x2F;project&#x2F;PyQt5&#x2F;&quot;&gt;PyQt5&lt;&#x2F;a&gt;. This book starts with an introduction to &lt;code&gt;wxPython&lt;&#x2F;code&gt; and then dives into project-based approach. I&#x27;ve finished half the chapters so far, covering four project concepts:&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;Image viewer&lt;&#x2F;li&gt;
@@ -3450,7 +3509,7 @@ mission success
 &lt;li&gt;Calculator&lt;&#x2F;li&gt;
 &lt;li&gt;Archiver&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
-&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;python_gui&#x2F;calculator.png&quot; alt=&quot;calculator&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;python_gui&#x2F;calculator.png&quot; alt=&quot;calculator&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 &lt;p&gt;Rest of the chapters cover these topics:&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;MP3 tag editor&lt;&#x2F;li&gt;
