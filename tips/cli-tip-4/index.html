@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+      <title>CLI tip 4: serialize file contents to a single line</title>
+
+      
+        <link rel="alternate" type="application/atom+xml" title="RSS" href="https://learnbyexample.github.io/atom.xml">
+      
+
+      
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
+          
+      
+
+      
+          <link rel="stylesheet" href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;site.css">
+          
+      
+
+      
+      
+<link rel="icon" href="https://learnbyexample.github.io/favicon.svg">
+<link rel="shortcut icon" href="https://learnbyexample.github.io/favicon.png">
+    </head>
+
+    <body>
+        <div class="container">
+
+            <div id="mobile-navbar" class="mobile-navbar">
+              <div class="mobile-header-logo">
+                <a href="/" class="logo">learnbyexample</a>
+              </div>
+              <div class="mobile-navbar-icon icon-out">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+
+            <nav id="mobile-menu" class="mobile-menu slideout-menu slideout-menu-left">
+              <ul class="mobile-menu-list">
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;books">
+                            Books
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;mini">
+                            Mini
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips">
+                            Tips
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags">
+                            Tags
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;about">
+                            About
+                        </a>
+                    </li>
+                
+              </ul>
+            </nav>
+
+            <header id="header">
+                <div class="logo"><a href="https:&#x2F;&#x2F;learnbyexample.github.io">learnbyexample</a></div>
+                <nav class="menu">
+                    <ul>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;books">
+                                    Books
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;mini">
+                                    Mini
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips">
+                                    Tips
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags">
+                                    Tags
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;about">
+                                    About
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </nav>
+            </header>
+
+            <main>
+                <div class="content" id="mobile-panel">
+                    
+
+
+
+<article class="post">
+    
+    <header class="post__header">
+        <h1 class="post__title">
+            <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips&#x2F;cli-tip-4&#x2F;">CLI tip 4: serialize file contents to a single line</a>
+        </h1>
+        <div class="post__meta">
+            <span class="post__time">2022-01-12</span>
+            
+        </div>
+    </header>
+
+    <div class="post-content">
+      <p>The <code>-s</code> option is one of the useful, but lesser known feature of the <code>paste</code> command. It helps you to serialize input file contents to a single output line.</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#1f1f1f;">$ cat colors.txt
+</span><span style="color:#5597d6;">Blue
+White
+Orange</span><span style="color:#1f1f1f;">
+
+$ paste </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">sd, colors.txt
+</span><span style="color:#5597d6;">Blue</span><span style="color:#1f1f1f;">,</span><span style="color:#5597d6;">White</span><span style="color:#1f1f1f;">,</span><span style="color:#5597d6;">Orange
+</span></code></pre>
+<p>If multiple files are passed, serialization of each file is displayed on separate output lines.</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#1f1f1f;">$ paste </span><span style="color:#72ab00;">-</span><span style="color:#b3933a;">sd: </span><span style="color:#72ab00;">&lt;</span><span style="color:#1f1f1f;">(seq </span><span style="color:#b3933a;">3</span><span style="color:#1f1f1f;">) </span><span style="color:#72ab00;">&lt;</span><span style="color:#1f1f1f;">(seq </span><span style="color:#b3933a;">5 9</span><span style="color:#1f1f1f;">)
+</span><span style="color:#b3933a;">1</span><span style="color:#72ab00;">:</span><span style="color:#b3933a;">2</span><span style="color:#72ab00;">:</span><span style="color:#b3933a;">3
+5</span><span style="color:#72ab00;">:</span><span style="color:#b3933a;">6</span><span style="color:#72ab00;">:</span><span style="color:#b3933a;">7</span><span style="color:#72ab00;">:</span><span style="color:#b3933a;">8</span><span style="color:#72ab00;">:</span><span style="color:#b3933a;">9
+</span></code></pre>
+<p>The advantage of using <code>paste</code> instead of other options like <code>tr</code>, <code>awk</code>, etc is that you do not have to worry about trailing delimiters, newlines, etc. For example:</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#7f8989;"># issue 1: trailing comma
+# issue 2: no newline at the end
+</span><span style="color:#1f1f1f;">$ </span><span style="color:#72ab00;">&lt;</span><span style="color:#1f1f1f;">colors.txt tr </span><span style="color:#d07711;">&#39;\n&#39; &#39;,&#39;
+</span><span style="color:#5597d6;">Blue</span><span style="color:#1f1f1f;">,</span><span style="color:#5597d6;">White</span><span style="color:#1f1f1f;">,</span><span style="color:#5597d6;">Orange</span><span style="color:#1f1f1f;">,
+
+</span><span style="color:#7f8989;"># correcting the above two issues
+</span><span style="color:#1f1f1f;">$ </span><span style="color:#72ab00;">&lt;</span><span style="color:#1f1f1f;">colors.txt tr </span><span style="color:#d07711;">&#39;\n&#39; &#39;,&#39; </span><span style="color:#72ab00;">|</span><span style="color:#1f1f1f;"> sed </span><span style="color:#d07711;">&#39;s/,$/\n/&#39;
+</span><span style="color:#5597d6;">Blue</span><span style="color:#1f1f1f;">,</span><span style="color:#5597d6;">White</span><span style="color:#1f1f1f;">,</span><span style="color:#5597d6;">Orange
+</span></code></pre>
+<p>Here's an equivalent <code>awk</code> solution for single file input. While slower and complicated compared to the <code>paste</code> solution, you get more flexibility since <code>awk</code> is a programming language. For example, it is pretty easy to use multicharacter output delimiter.</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#1f1f1f;">$ awk </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">v </span><span style="color:#c23f31;">ORS</span><span style="color:#72ab00;">= </span><span style="color:#d07711;">&#39;NR&gt;1{print &quot;,&quot;} 1; END{print &quot;\n&quot;}&#39;</span><span style="color:#1f1f1f;"> colors.txt
+</span><span style="color:#5597d6;">Blue</span><span style="color:#1f1f1f;">,</span><span style="color:#5597d6;">White</span><span style="color:#1f1f1f;">,</span><span style="color:#5597d6;">Orange</span><span style="color:#1f1f1f;">
+
+$ awk </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">v </span><span style="color:#c23f31;">ORS</span><span style="color:#72ab00;">= </span><span style="color:#d07711;">&#39;NR&gt;1{print &quot; : &quot;} 1; END{print &quot;\n&quot;}&#39;</span><span style="color:#1f1f1f;"> colors.txt
+</span><span style="color:#5597d6;">Blue </span><span style="color:#72ab00;">: </span><span style="color:#5597d6;">White </span><span style="color:#72ab00;">: </span><span style="color:#5597d6;">Orange
+</span></code></pre><br>
+<p><img src="/images/info.svg" alt="info" /> See my <a href="https://learnbyexample.github.io/cli_text_processing_coreutils/paste.html">paste command</a> chapter from my <a href="https://github.com/learnbyexample/cli_text_processing_coreutils">Command line text processing with GNU Coreutils</a> ebook for more details.</p>
+<p><img src="/images/info.svg" alt="info" /> See my <a href="https://github.com/learnbyexample/learn_gnuawk">GNU awk one-liners</a> ebook if you are interested in learning about the <code>awk</code> command.</p>
+
+    </div>
+
+    
+    
+
+    <div class="post-footer">
+        
+            
+                <div class="post-tags">
+                    
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;linux&#x2F;">#linux</a>
+                    
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;command-line&#x2F;">#command-line</a>
+                    
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;tip&#x2F;">#tip</a>
+                    
+                </div>
+            
+            
+
+        
+
+    </div>
+
+    
+    
+</article>
+
+
+                </div>
+            </main>
+
+            
+            
+        </div>
+
+      
+          <script type="text/javascript" src="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;even.js" ></script>
+      
+    </body>
+
+</html>

@@ -5,15 +5,60 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2022-01-11T00:00:00+00:00</updated>
+	<updated>2022-01-12T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>CLI tip 4: serialize file contents to a single line</title>
+		<published>2022-01-12T00:00:00+00:00</published>
+		<updated>2022-01-12T00:00:00+00:00</updated>
+		<link href="https://learnbyexample.github.io/tips/cli-tip-4/" type="text/html"/>
+		<id>https://learnbyexample.github.io/tips/cli-tip-4/</id>
+		<content type="html">&lt;p&gt;The &lt;code&gt;-s&lt;&#x2F;code&gt; option is one of the useful, but lesser known feature of the &lt;code&gt;paste&lt;&#x2F;code&gt; command. It helps you to serialize input file contents to a single output line.&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ cat colors.txt
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Blue
+White
+Orange&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
+
+$ paste &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;sd, colors.txt
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Blue&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;White&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Orange
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;If multiple files are passed, serialization of each file is displayed on separate output lines.&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ paste &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;sd: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;(seq &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;3&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;(seq &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;5 9&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;)
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;2&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;3
+5&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;6&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;7&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;8&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;9
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;The advantage of using &lt;code&gt;paste&lt;&#x2F;code&gt; instead of other options like &lt;code&gt;tr&lt;&#x2F;code&gt;, &lt;code&gt;awk&lt;&#x2F;code&gt;, etc is that you do not have to worry about trailing delimiters, newlines, etc. For example:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# issue 1: trailing comma
+# issue 2: no newline at the end
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;colors.txt tr &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;\n&amp;#39; &amp;#39;,&amp;#39;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Blue&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;White&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Orange&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;,
+
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# correcting the above two issues
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;colors.txt tr &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;\n&amp;#39; &amp;#39;,&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;s&#x2F;,$&#x2F;\n&#x2F;&amp;#39;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Blue&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;White&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Orange
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Here&#x27;s an equivalent &lt;code&gt;awk&lt;&#x2F;code&gt; solution for single file input. While slower and complicated compared to the &lt;code&gt;paste&lt;&#x2F;code&gt; solution, you get more flexibility since &lt;code&gt;awk&lt;&#x2F;code&gt; is a programming language. For example, it is pretty easy to use multicharacter output delimiter.&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ awk &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;v &lt;&#x2F;span&gt;&lt;span style=&quot;color:#c23f31;&quot;&gt;ORS&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;NR&amp;gt;1{print &amp;quot;,&amp;quot;} 1; END{print &amp;quot;\n&amp;quot;}&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; colors.txt
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Blue&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;White&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Orange&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
+
+$ awk &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;v &lt;&#x2F;span&gt;&lt;span style=&quot;color:#c23f31;&quot;&gt;ORS&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;NR&amp;gt;1{print &amp;quot; : &amp;quot;} 1; END{print &amp;quot;\n&amp;quot;}&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; colors.txt
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Blue &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;White &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Orange
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;br&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See my &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;cli_text_processing_coreutils&#x2F;paste.html&quot;&gt;paste command&lt;&#x2F;a&gt; chapter from my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;cli_text_processing_coreutils&quot;&gt;Command line text processing with GNU Coreutils&lt;&#x2F;a&gt; ebook for more details.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;learn_gnuawk&quot;&gt;GNU awk one-liners&lt;&#x2F;a&gt; ebook if you are interested in learning about the &lt;code&gt;awk&lt;&#x2F;code&gt; command.&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>Automating Excel with Python - book review</title>
 		<published>2022-01-11T00:00:00+00:00</published>
 		<updated>2022-01-11T00:00:00+00:00</updated>
 		<link href="https://learnbyexample.github.io/automating-excel-with-python-review/" type="text/html"/>
 		<id>https://learnbyexample.github.io/automating-excel-with-python-review/</id>
-		<content type="html">&lt;p&gt;In this post, I review &lt;strong&gt;Automating Excel with Python&lt;&#x2F;strong&gt; by Michael Driscoll. From the introduction chapter of this book:&lt;&#x2F;p&gt;
+		<content type="html">&lt;p&gt;In this post, I review &lt;strong&gt;Automating Excel with Python&lt;&#x2F;strong&gt; by &lt;a href=&quot;https:&#x2F;&#x2F;www.blog.pythonlibrary.org&#x2F;&quot;&gt;Michael Driscoll&lt;&#x2F;a&gt;. From the introduction chapter of this book:&lt;&#x2F;p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;The purpose of this book is to help you learn how to use Python to work with Excel. You will be using a package called OpenPyXL to create, read, and edit Excel documents with Python. While the focus of this book will be on OpenPyXL, you will also learn about other Python packages that you can use to interact with Excel using the Python programming language.&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;

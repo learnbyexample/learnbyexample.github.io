@@ -47,6 +47,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Tips
 
+* [CLI tip 4: serialize file contents to a single line](https://learnbyexample.github.io/tips/cli-tip-4/)
 * [Python tip 4: comparison chaining](https://learnbyexample.github.io/tips/python-tip-4/)
 * [Vim tip 2: indent/unindent lines](https://learnbyexample.github.io/tips/vim-tip-2/)
 * [CLI tip 3: place backups in another directory with GNU sed](https://learnbyexample.github.io/tips/cli-tip-3/)
