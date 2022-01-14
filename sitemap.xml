@@ -78,6 +78,10 @@
         <lastmod>2021-05-26</lastmod>
     </url>
     <url>
+        <loc>https://learnbyexample.github.io/mini/regexp-gotcha-1/</loc>
+        <lastmod>2022-01-14</lastmod>
+    </url>
+    <url>
         <loc>https://learnbyexample.github.io/mini/vim-prank/</loc>
         <lastmod>2022-01-08</lastmod>
     </url>
@@ -216,6 +220,9 @@
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tags/gnu-sed/</loc>
+    </url>
+    <url>
+        <loc>https://learnbyexample.github.io/tags/gotcha/</loc>
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tags/gui/</loc>
