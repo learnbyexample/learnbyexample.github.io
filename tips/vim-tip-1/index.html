@@ -139,19 +139,19 @@
     <div class="post-content">
       <p>Did you know that you can easily increment or decrement a number in Vim?</p>
 <ul>
-<li><code>Ctrl+a</code> will increment the number under the cursor or the first occurrence of a number to the right of the cursor</li>
-<li><code>Ctrl+x</code> will decrement the number under the cursor or the first occurrence of a number to the right of the cursor</li>
+<li><kbd>Ctrl</kbd>+<kbd>a</kbd> will increment the number under the cursor or the first occurrence of a number to the right of the cursor</li>
+<li><kbd>Ctrl</kbd>+<kbd>x</kbd> will decrement the number under the cursor or the first occurrence of a number to the right of the cursor</li>
 </ul>
 <p>You can also provide a count prefix:</p>
 <ul>
-<li><code>3Ctrl+a</code> will add <code>3</code></li>
-<li><code>1000Ctrl+x</code> will subtract <code>1000</code></li>
+<li><kbd>3</kbd> followed by <kbd>Ctrl</kbd>+<kbd>a</kbd> will add <code>3</code></li>
+<li><kbd>1000</kbd> followed by <kbd>Ctrl</kbd>+<kbd>x</kbd> will subtract <code>1000</code></li>
 </ul>
 <p>Numbers prefixed with <code>0</code>, <code>0x</code> and <code>0b</code> will be treated as octal, hexadecimal and binary respectively. You can also use uppercase for <code>x</code> and <code>b</code>. What if you want numbers prefixed with <code>0</code> to be treated as decimal? You can use the <code>nrformats</code> setting as shown below:</p>
 <pre style="background-color:#f5f5f5;">
 <code><span style="color:#b39f04;">set</span><span style="color:#1f1f1f;"> nrformats-=octal
 </span></code></pre>
-<p>Decimal numbers prefixed with <code>-</code> will be treated as negative numbers. For example, using <code>Ctrl+a</code> on <code>-100</code> will give you <code>-99</code>. While this is handy, this trips me up often when dealing with date formats like 2021-12-08.</p>
+<p>Decimal numbers prefixed with <code>-</code> will be treated as negative numbers. For example, using <kbd>Ctrl</kbd>+<kbd>a</kbd> on <code>-100</code> will give you <code>-99</code>. While this is handy, this trips me up often when dealing with date formats like 2021-12-08.</p>
 <p><img src="/images/info.svg" alt="info" /> See <a href="https://vimhelp.org/change.txt.html#CTRL-A">:h ctrl-a</a>, <a href="https://vimhelp.org/change.txt.html#CTRL-X">:h ctrl-x</a> and <a href="https://vimhelp.org/options.txt.html#%27nrformats%27">:h nrformats</a> for documentation.</p>
 <p><img src="/images/info.svg" alt="info" /> See also my <a href="https://learnbyexample.github.io/curated_resources/vim.html">curated list of resources for Vim</a> and <a href="https://learnbyexample.github.io/vim_reference/">Vim reference guide</a>.</p>
 

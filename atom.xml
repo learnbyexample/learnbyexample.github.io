@@ -5,8 +5,42 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2022-01-14T00:00:00+00:00</updated>
+	<updated>2022-01-18T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Vim tip 3: auto complete words and lines in Insert mode</title>
+		<published>2022-01-18T00:00:00+00:00</published>
+		<updated>2022-01-18T00:00:00+00:00</updated>
+		<link href="https://learnbyexample.github.io/tips/vim-tip-3/" type="text/html"/>
+		<id>https://learnbyexample.github.io/tips/vim-tip-3/</id>
+		<content type="html">&lt;p&gt;&lt;strong&gt;Auto complete word&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;kbd&gt;Ctrl&lt;&#x2F;kbd&gt;+&lt;kbd&gt;p&lt;&#x2F;kbd&gt; auto complete word based on matching words in the backward direction&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;Ctrl&lt;&#x2F;kbd&gt;+&lt;kbd&gt;n&lt;&#x2F;kbd&gt; auto complete word based on matching words in the forward direction&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; If more than one word matches, they are displayed using a popup menu. You can use &lt;kbd&gt;↑&lt;&#x2F;kbd&gt;&#x2F;&lt;kbd&gt;↓&lt;&#x2F;kbd&gt; arrow keys or &lt;kbd&gt;Ctrl&lt;&#x2F;kbd&gt;+&lt;kbd&gt;p&lt;&#x2F;kbd&gt;&#x2F;&lt;kbd&gt;Ctrl&lt;&#x2F;kbd&gt;+&lt;kbd&gt;n&lt;&#x2F;kbd&gt; to move through this list.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Auto complete line&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;kbd&gt;Ctrl&lt;&#x2F;kbd&gt;+&lt;kbd&gt;x&lt;&#x2F;kbd&gt; followed by &lt;kbd&gt;Ctrl&lt;&#x2F;kbd&gt;+&lt;kbd&gt;l&lt;&#x2F;kbd&gt; auto complete line based on matching lines in the backward direction&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; If more than one line matches, they are displayed using a popup menu. You can use &lt;kbd&gt;↑&lt;&#x2F;kbd&gt;&#x2F;&lt;kbd&gt;↓&lt;&#x2F;kbd&gt; arrow keys or &lt;kbd&gt;Ctrl&lt;&#x2F;kbd&gt;+&lt;kbd&gt;p&lt;&#x2F;kbd&gt;&#x2F;&lt;kbd&gt;Ctrl&lt;&#x2F;kbd&gt;+&lt;kbd&gt;n&lt;&#x2F;kbd&gt; to move through this list. You can also use &lt;kbd&gt;Ctrl&lt;&#x2F;kbd&gt;+&lt;kbd&gt;l&lt;&#x2F;kbd&gt; to move up the list.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Auto complete assist&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;kbd&gt;Ctrl&lt;&#x2F;kbd&gt;+&lt;kbd&gt;e&lt;&#x2F;kbd&gt; cancels auto complete
+&lt;ul&gt;
+&lt;li&gt;you&#x27;ll retain the text you had typed before invoking auto complete&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;Ctrl&lt;&#x2F;kbd&gt;+&lt;kbd&gt;y&lt;&#x2F;kbd&gt; select the current item from the popup menu
+&lt;ul&gt;
+&lt;li&gt;you can also press the &lt;kbd&gt;Enter&lt;&#x2F;kbd&gt; key to choose the selection&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See &lt;a href=&quot;https:&#x2F;&#x2F;vimhelp.org&#x2F;insert.txt.html#ins-completion&quot;&gt;:h ins-completion&lt;&#x2F;a&gt; for more details and other auto complete features.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See also my &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;vim_reference&#x2F;&quot;&gt;Vim reference guide&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;curated_resources&#x2F;vim.html&quot;&gt;curated list of resources for Vim&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>Regexp gotcha: 1</title>
 		<published>2022-01-14T00:00:00+00:00</published>
@@ -309,26 +343,26 @@ True
 		<id>https://learnbyexample.github.io/tips/vim-tip-2/</id>
 		<content type="html">&lt;p&gt;&lt;strong&gt;Normal mode&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;&amp;gt;&amp;gt;&lt;&#x2F;code&gt; indent the current line&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;code&gt;3&amp;gt;&amp;gt;&lt;&#x2F;code&gt; indent the current line and two lines below (same as &lt;code&gt;2&amp;gt;j&lt;&#x2F;code&gt;)&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;code&gt;&amp;gt;k&lt;&#x2F;code&gt; indent the current line and the line above (same as &lt;code&gt;1&amp;gt;k&lt;&#x2F;code&gt; or &lt;code&gt;&amp;gt;1k&lt;&#x2F;code&gt;)&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;code&gt;&amp;lt;&amp;lt;&lt;&#x2F;code&gt; unindent the current line&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;code&gt;5&amp;lt;&amp;lt;&lt;&#x2F;code&gt; unindent the current line and four lines below (same as &lt;code&gt;4&amp;lt;j&lt;&#x2F;code&gt; or &lt;code&gt;&amp;lt;4j&lt;&#x2F;code&gt;)&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;code&gt;2&amp;lt;k&lt;&#x2F;code&gt; unindent the current line and two lines above (same as &lt;code&gt;&amp;lt;2k&lt;&#x2F;code&gt;)&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;code&gt;=&lt;&#x2F;code&gt; auto indent code, use motion commands to indicate the portion to be indented
+&lt;li&gt;&lt;kbd&gt;&amp;gt;&amp;gt;&lt;&#x2F;kbd&gt; indent the current line&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;3&amp;gt;&amp;gt;&lt;&#x2F;kbd&gt; indent the current line and two lines below (same as &lt;kbd&gt;2&amp;gt;j&lt;&#x2F;kbd&gt;)&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;&amp;gt;k&lt;&#x2F;kbd&gt; indent the current line and the line above (same as &lt;kbd&gt;1&amp;gt;k&lt;&#x2F;kbd&gt; or &lt;kbd&gt;&amp;gt;1k&lt;&#x2F;kbd&gt;)&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;&amp;lt;&amp;lt;&lt;&#x2F;kbd&gt; unindent the current line&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;5&amp;lt;&amp;lt;&lt;&#x2F;kbd&gt; unindent the current line and four lines below (same as &lt;kbd&gt;4&amp;lt;j&lt;&#x2F;kbd&gt; or &lt;kbd&gt;&amp;lt;4j&lt;&#x2F;kbd&gt;)&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;2&amp;lt;k&lt;&#x2F;kbd&gt; unindent the current line and two lines above (same as &lt;kbd&gt;&amp;lt;2k&lt;&#x2F;kbd&gt;)&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;=&lt;&#x2F;kbd&gt; auto indent code, use motion commands to indicate the portion to be indented
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;=4j&lt;&#x2F;code&gt; auto indents the current line and four lines below&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;code&gt;=ip&lt;&#x2F;code&gt; auto indents the current paragraph&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;=4j&lt;&#x2F;kbd&gt; auto indents the current line and four lines below&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;=ip&lt;&#x2F;kbd&gt; auto indents the current paragraph&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
-&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; You can use any motion command with &lt;code&gt;&amp;gt;&lt;&#x2F;code&gt; and &lt;code&gt;&amp;lt;&lt;&#x2F;code&gt;. For example, &lt;code&gt;&amp;gt;}&lt;&#x2F;code&gt; indents till the end of the paragraph.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; You can use any motion command with &lt;kbd&gt;&amp;gt;&lt;&#x2F;kbd&gt; and &lt;kbd&gt;&amp;lt;&lt;&#x2F;kbd&gt;. For example, &lt;kbd&gt;&amp;gt;}&lt;&#x2F;kbd&gt; indents till the end of the paragraph.&lt;&#x2F;p&gt;
 &lt;p&gt;&lt;strong&gt;Visual mode&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;&amp;gt;&lt;&#x2F;code&gt; indent the visually selected lines once&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;code&gt;3&amp;gt;&lt;&#x2F;code&gt; indent the visually selected lines three times&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;code&gt;&amp;lt;&lt;&#x2F;code&gt; unindent the visually selected lines once&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;code&gt;=&lt;&#x2F;code&gt; auto indent code&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;&amp;gt;&lt;&#x2F;kbd&gt; indent the visually selected lines once&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;3&amp;gt;&lt;&#x2F;kbd&gt; indent the visually selected lines three times&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;&amp;lt;&lt;&#x2F;kbd&gt; unindent the visually selected lines once&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;=&lt;&#x2F;kbd&gt; auto indent code&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;p&gt;Consider the following unindented code:&lt;&#x2F;p&gt;
 &lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
@@ -341,7 +375,7 @@ statements
 statements
 }
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;p&gt;Here&#x27;s the result after applying &lt;code&gt;vip=&lt;&#x2F;code&gt; (you can also use &lt;code&gt;=ip&lt;&#x2F;code&gt; if you prefer Normal mode).&lt;&#x2F;p&gt;
+&lt;p&gt;Here&#x27;s the result after applying &lt;kbd&gt;vip=&lt;&#x2F;kbd&gt; (you can also use &lt;kbd&gt;=ip&lt;&#x2F;kbd&gt; if you prefer Normal mode).&lt;&#x2F;p&gt;
 &lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
 &lt;code&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;for&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;(i&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;; i&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;5&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;; i&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;++&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;)
 {
@@ -532,19 +566,19 @@ $ perl -lne &amp;#39;$c=0; $c++ while(s&#x2F;\{[^{}]*\}&#x2F;&#x2F;g);
 		<id>https://learnbyexample.github.io/tips/vim-tip-1/</id>
 		<content type="html">&lt;p&gt;Did you know that you can easily increment or decrement a number in Vim?&lt;&#x2F;p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;Ctrl+a&lt;&#x2F;code&gt; will increment the number under the cursor or the first occurrence of a number to the right of the cursor&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;code&gt;Ctrl+x&lt;&#x2F;code&gt; will decrement the number under the cursor or the first occurrence of a number to the right of the cursor&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;Ctrl&lt;&#x2F;kbd&gt;+&lt;kbd&gt;a&lt;&#x2F;kbd&gt; will increment the number under the cursor or the first occurrence of a number to the right of the cursor&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;Ctrl&lt;&#x2F;kbd&gt;+&lt;kbd&gt;x&lt;&#x2F;kbd&gt; will decrement the number under the cursor or the first occurrence of a number to the right of the cursor&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;p&gt;You can also provide a count prefix:&lt;&#x2F;p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;3Ctrl+a&lt;&#x2F;code&gt; will add &lt;code&gt;3&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;code&gt;1000Ctrl+x&lt;&#x2F;code&gt; will subtract &lt;code&gt;1000&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;3&lt;&#x2F;kbd&gt; followed by &lt;kbd&gt;Ctrl&lt;&#x2F;kbd&gt;+&lt;kbd&gt;a&lt;&#x2F;kbd&gt; will add &lt;code&gt;3&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;1000&lt;&#x2F;kbd&gt; followed by &lt;kbd&gt;Ctrl&lt;&#x2F;kbd&gt;+&lt;kbd&gt;x&lt;&#x2F;kbd&gt; will subtract &lt;code&gt;1000&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;p&gt;Numbers prefixed with &lt;code&gt;0&lt;&#x2F;code&gt;, &lt;code&gt;0x&lt;&#x2F;code&gt; and &lt;code&gt;0b&lt;&#x2F;code&gt; will be treated as octal, hexadecimal and binary respectively. You can also use uppercase for &lt;code&gt;x&lt;&#x2F;code&gt; and &lt;code&gt;b&lt;&#x2F;code&gt;. What if you want numbers prefixed with &lt;code&gt;0&lt;&#x2F;code&gt; to be treated as decimal? You can use the &lt;code&gt;nrformats&lt;&#x2F;code&gt; setting as shown below:&lt;&#x2F;p&gt;
 &lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
 &lt;code&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;set&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; nrformats-=octal
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;p&gt;Decimal numbers prefixed with &lt;code&gt;-&lt;&#x2F;code&gt; will be treated as negative numbers. For example, using &lt;code&gt;Ctrl+a&lt;&#x2F;code&gt; on &lt;code&gt;-100&lt;&#x2F;code&gt; will give you &lt;code&gt;-99&lt;&#x2F;code&gt;. While this is handy, this trips me up often when dealing with date formats like 2021-12-08.&lt;&#x2F;p&gt;
+&lt;p&gt;Decimal numbers prefixed with &lt;code&gt;-&lt;&#x2F;code&gt; will be treated as negative numbers. For example, using &lt;kbd&gt;Ctrl&lt;&#x2F;kbd&gt;+&lt;kbd&gt;a&lt;&#x2F;kbd&gt; on &lt;code&gt;-100&lt;&#x2F;code&gt; will give you &lt;code&gt;-99&lt;&#x2F;code&gt;. While this is handy, this trips me up often when dealing with date formats like 2021-12-08.&lt;&#x2F;p&gt;
 &lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See &lt;a href=&quot;https:&#x2F;&#x2F;vimhelp.org&#x2F;change.txt.html#CTRL-A&quot;&gt;:h ctrl-a&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;vimhelp.org&#x2F;change.txt.html#CTRL-X&quot;&gt;:h ctrl-x&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;vimhelp.org&#x2F;options.txt.html#%27nrformats%27&quot;&gt;:h nrformats&lt;&#x2F;a&gt; for documentation.&lt;&#x2F;p&gt;
 &lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See also my &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;curated_resources&#x2F;vim.html&quot;&gt;curated list of resources for Vim&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;vim_reference&#x2F;&quot;&gt;Vim reference guide&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 </content>

@@ -7,7 +7,7 @@
       <!-- Enable responsiveness on mobile devices-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-      <title>Vim tip 2: indent&#x2F;unindent lines</title>
+      <title>Vim tip 3: auto complete words and lines in Insert mode</title>
 
       
         <link rel="alternate" type="application/atom+xml" title="RSS" href="https://learnbyexample.github.io/atom.xml">
@@ -128,62 +128,40 @@
     
     <header class="post__header">
         <h1 class="post__title">
-            <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips&#x2F;vim-tip-2&#x2F;">Vim tip 2: indent&#x2F;unindent lines</a>
+            <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips&#x2F;vim-tip-3&#x2F;">Vim tip 3: auto complete words and lines in Insert mode</a>
         </h1>
         <div class="post__meta">
-            <span class="post__time">2021-12-29</span>
+            <span class="post__time">2022-01-18</span>
             
         </div>
     </header>
 
     <div class="post-content">
-      <p><strong>Normal mode</strong></p>
+      <p><strong>Auto complete word</strong></p>
 <ul>
-<li><kbd>&gt;&gt;</kbd> indent the current line</li>
-<li><kbd>3&gt;&gt;</kbd> indent the current line and two lines below (same as <kbd>2&gt;j</kbd>)</li>
-<li><kbd>&gt;k</kbd> indent the current line and the line above (same as <kbd>1&gt;k</kbd> or <kbd>&gt;1k</kbd>)</li>
-<li><kbd>&lt;&lt;</kbd> unindent the current line</li>
-<li><kbd>5&lt;&lt;</kbd> unindent the current line and four lines below (same as <kbd>4&lt;j</kbd> or <kbd>&lt;4j</kbd>)</li>
-<li><kbd>2&lt;k</kbd> unindent the current line and two lines above (same as <kbd>&lt;2k</kbd>)</li>
-<li><kbd>=</kbd> auto indent code, use motion commands to indicate the portion to be indented
+<li><kbd>Ctrl</kbd>+<kbd>p</kbd> auto complete word based on matching words in the backward direction</li>
+<li><kbd>Ctrl</kbd>+<kbd>n</kbd> auto complete word based on matching words in the forward direction</li>
+</ul>
+<p><img src="/images/info.svg" alt="info" /> If more than one word matches, they are displayed using a popup menu. You can use <kbd>↑</kbd>/<kbd>↓</kbd> arrow keys or <kbd>Ctrl</kbd>+<kbd>p</kbd>/<kbd>Ctrl</kbd>+<kbd>n</kbd> to move through this list.</p>
+<p><strong>Auto complete line</strong></p>
 <ul>
-<li><kbd>=4j</kbd> auto indents the current line and four lines below</li>
-<li><kbd>=ip</kbd> auto indents the current paragraph</li>
+<li><kbd>Ctrl</kbd>+<kbd>x</kbd> followed by <kbd>Ctrl</kbd>+<kbd>l</kbd> auto complete line based on matching lines in the backward direction</li>
+</ul>
+<p><img src="/images/info.svg" alt="info" /> If more than one line matches, they are displayed using a popup menu. You can use <kbd>↑</kbd>/<kbd>↓</kbd> arrow keys or <kbd>Ctrl</kbd>+<kbd>p</kbd>/<kbd>Ctrl</kbd>+<kbd>n</kbd> to move through this list. You can also use <kbd>Ctrl</kbd>+<kbd>l</kbd> to move up the list.</p>
+<p><strong>Auto complete assist</strong></p>
+<ul>
+<li><kbd>Ctrl</kbd>+<kbd>e</kbd> cancels auto complete
+<ul>
+<li>you'll retain the text you had typed before invoking auto complete</li>
+</ul>
+</li>
+<li><kbd>Ctrl</kbd>+<kbd>y</kbd> select the current item from the popup menu
+<ul>
+<li>you can also press the <kbd>Enter</kbd> key to choose the selection</li>
 </ul>
 </li>
 </ul>
-<p><img src="/images/info.svg" alt="info" /> You can use any motion command with <kbd>&gt;</kbd> and <kbd>&lt;</kbd>. For example, <kbd>&gt;}</kbd> indents till the end of the paragraph.</p>
-<p><strong>Visual mode</strong></p>
-<ul>
-<li><kbd>&gt;</kbd> indent the visually selected lines once</li>
-<li><kbd>3&gt;</kbd> indent the visually selected lines three times</li>
-<li><kbd>&lt;</kbd> unindent the visually selected lines once</li>
-<li><kbd>=</kbd> auto indent code</li>
-</ul>
-<p>Consider the following unindented code:</p>
-<pre style="background-color:#f5f5f5;">
-<code><span style="color:#72ab00;">for</span><span style="color:#1f1f1f;">(i</span><span style="color:#72ab00;">=</span><span style="color:#b3933a;">1</span><span style="color:#1f1f1f;">; i</span><span style="color:#72ab00;">&lt;</span><span style="color:#b3933a;">5</span><span style="color:#1f1f1f;">; i</span><span style="color:#72ab00;">++</span><span style="color:#1f1f1f;">)
-{
-</span><span style="color:#72ab00;">for</span><span style="color:#1f1f1f;">(j</span><span style="color:#72ab00;">=</span><span style="color:#1f1f1f;">i; j</span><span style="color:#72ab00;">&lt;</span><span style="color:#b3933a;">10</span><span style="color:#1f1f1f;">; j</span><span style="color:#72ab00;">++</span><span style="color:#1f1f1f;">)
-{
-statements
-}
-statements
-}
-</span></code></pre>
-<p>Here's the result after applying <kbd>vip=</kbd> (you can also use <kbd>=ip</kbd> if you prefer Normal mode).</p>
-<pre style="background-color:#f5f5f5;">
-<code><span style="color:#72ab00;">for</span><span style="color:#1f1f1f;">(i</span><span style="color:#72ab00;">=</span><span style="color:#b3933a;">1</span><span style="color:#1f1f1f;">; i</span><span style="color:#72ab00;">&lt;</span><span style="color:#b3933a;">5</span><span style="color:#1f1f1f;">; i</span><span style="color:#72ab00;">++</span><span style="color:#1f1f1f;">)
-{
-    </span><span style="color:#72ab00;">for</span><span style="color:#1f1f1f;">(j</span><span style="color:#72ab00;">=</span><span style="color:#1f1f1f;">i; j</span><span style="color:#72ab00;">&lt;</span><span style="color:#b3933a;">10</span><span style="color:#1f1f1f;">; j</span><span style="color:#72ab00;">++</span><span style="color:#1f1f1f;">)
-    {
-        statements
-    }
-    statements
-}
-</span></code></pre>
-<p><img src="/images/info.svg" alt="info" /> Indentation depends on the <code>shiftwidth</code> setting.</p>
-<p><img src="/images/info.svg" alt="info" /> See <a href="https://vimhelp.org/change.txt.html#shift-left-right">:h shift-left-right</a>, <a href="https://vimhelp.org/change.txt.html#%3D">:h =</a> and <a href="https://vimhelp.org/options.txt.html#%27shiftwidth%27">:h 'shiftwidth'</a> for documentation.</p>
+<p><img src="/images/info.svg" alt="info" /> See <a href="https://vimhelp.org/insert.txt.html#ins-completion">:h ins-completion</a> for more details and other auto complete features.</p>
 <p><img src="/images/info.svg" alt="info" /> See also my <a href="https://learnbyexample.github.io/vim_reference/">Vim reference guide</a> and <a href="https://learnbyexample.github.io/curated_resources/vim.html">curated list of resources for Vim</a>.</p>
 
     </div>
