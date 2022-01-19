@@ -6,6 +6,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Posts
 
+* [Removing duplicates irrespective of field order](https://learnbyexample.github.io/duplicates-irrespective-field-order/)
 * [Automating Excel with Python - book review](https://learnbyexample.github.io/automating-excel-with-python-review/)
 * [2021 was a wild ride](https://learnbyexample.github.io/wild-ride-2021/)
 * [Counting nested braces](https://learnbyexample.github.io/counting-nested-braces/)

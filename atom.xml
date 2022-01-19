@@ -5,8 +5,91 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2022-01-18T00:00:00+00:00</updated>
+	<updated>2022-01-19T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Removing duplicates irrespective of field order</title>
+		<published>2022-01-19T00:00:00+00:00</published>
+		<updated>2022-01-19T00:00:00+00:00</updated>
+		<link href="https://learnbyexample.github.io/duplicates-irrespective-field-order/" type="text/html"/>
+		<id>https://learnbyexample.github.io/duplicates-irrespective-field-order/</id>
+		<content type="html">&lt;p&gt;I posted a coding challenge in the tenth issue of &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;learnbyexample-weekly&quot;&gt;learnbyexample weekly&lt;&#x2F;a&gt;. I discuss the problem and various solutions in this blog post.&lt;&#x2F;p&gt;
+&lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;&lt;br&gt;
+&lt;h2 id=&quot;problem-statement&quot;&gt;Problem statement&lt;a class=&quot;zola-anchor&quot; href=&quot;#problem-statement&quot; aria-label=&quot;Anchor link for: problem-statement&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Retain only the first copy of duplicate lines irrespective of the order of the fields. Input order should be maintained. Assume space as the field separator with exactly two fields on each line. For example, &lt;code&gt;hehe haha&lt;&#x2F;code&gt; and &lt;code&gt;haha hehe&lt;&#x2F;code&gt; will be considered as duplicates.&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ cat twos.txt
+hehe haha
+door floor
+haha hehe
+6;8 3-4
+true blue
+hehe bebe
+floor door
+3-4 6;8
+tru eblue
+haha hehe
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;&lt;strong&gt;Expected output for the above sample:&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;hehe haha
+door floor
+6;8 3-4
+true blue
+hehe bebe
+tru eblue
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;br&gt;
+&lt;h2 id=&quot;python-solution&quot;&gt;Python solution&lt;a class=&quot;zola-anchor&quot; href=&quot;#python-solution&quot; aria-label=&quot;Anchor link for: python-solution&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Here&#x27;s one possible solution for this problem:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;filename &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;twos.txt&amp;#39;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;keys &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a2a001;&quot;&gt;set&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;()
+
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;with &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;open&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;(filename) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;as &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;f:
+    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;for &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;line &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;in &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;f:
+        fields &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;line.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;split&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;()
+        key1 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#668f14;&quot;&gt;f&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;{fields[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;]} {fields[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;]}&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;
+        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;key2 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#668f14;&quot;&gt;f&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;{fields[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;]} {fields[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;]}&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;
+        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;if not &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;(key1 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;in &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;keys &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;or &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;key2 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;in &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;keys):
+            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;print&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;(line, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;end&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;)
+            keys.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;add&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;(key1)
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;The main trick in the above solution is to check the input field order as well as the reversed order against elements in a set. A subtle point to note is that the &lt;code&gt;split()&lt;&#x2F;code&gt; string method also removes whitespaces from the start and end of the input line. If you had to use another field delimiter (for example, comma) you&#x27;ll have to remove the line ending before splitting the input.&lt;&#x2F;p&gt;
+&lt;p&gt;And here&#x27;s a generic solution for any number of fields, which also makes the solution look simpler:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;filename &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;twos.txt&amp;#39;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;keys &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a2a001;&quot;&gt;set&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;()
+
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;with &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;open&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;(filename) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;as &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;f:
+    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;for &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;line &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;in &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;f:
+        fields &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;line.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;split&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;()
+        sorted_key &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39; &amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;join&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;sorted&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;(fields))
+        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;sorted_key &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;not in &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;keys:
+            &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;print&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;(line, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;end&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;)
+            keys.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;add&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;(sorted_key)
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;In case you are wondering why space is used between the field contents, it is necessary to avoid false matches. &lt;code&gt;tru eblue&lt;&#x2F;code&gt; shouldn&#x27;t be considered as a duplicate of &lt;code&gt;true blue&lt;&#x2F;code&gt; or &lt;code&gt;blue true&lt;&#x2F;code&gt;. Space is a safe character to use since it is the field separator.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;100_page_python_intro&quot;&gt;100 Page Python Intro&lt;&#x2F;a&gt; ebook if you already know programming basics but new to Python.&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;gnu-awk-one-liner&quot;&gt;GNU awk one-liner&lt;a class=&quot;zola-anchor&quot; href=&quot;#gnu-awk-one-liner&quot; aria-label=&quot;Anchor link for: gnu-awk-one-liner&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Here&#x27;s a solution for CLI enthusiasts:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ awk &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;!(($1,$2) in seen || ($2,$1) in seen); {seen[$1,$2]}&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;twos.txt
+hehe haha
+door floor
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;6&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;8 3&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;4
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;true blue
+hehe bebe
+tru eblue
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;The above solution is similar to the first Python solution with a notable difference. The fields are joined using &lt;code&gt;\034&lt;&#x2F;code&gt; (a non-printing character), which is usually not present in text files.&lt;&#x2F;p&gt;
+&lt;p&gt;A solution using the field separator instead of &lt;code&gt;\034&lt;&#x2F;code&gt; would look like:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;awk &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;!(($1 FS $2) in seen || ($2 FS $1) in seen); {seen[$1 FS $2]}&amp;#39;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;br&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;learn_gnuawk&quot;&gt;GNU awk&lt;&#x2F;a&gt; ebook if you are interested in such one-liners.&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>Vim tip 3: auto complete words and lines in Insert mode</title>
 		<published>2022-01-18T00:00:00+00:00</published>
