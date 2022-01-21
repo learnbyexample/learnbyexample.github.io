@@ -5,8 +5,33 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2022-01-19T00:00:00+00:00</updated>
+	<updated>2022-01-21T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Brag post: Hacker News Front Page entries</title>
+		<published>2022-01-21T00:00:00+00:00</published>
+		<updated>2022-01-21T00:00:00+00:00</updated>
+		<link href="https://learnbyexample.github.io/mini/hacker-news-front-page-brag/" type="text/html"/>
+		<id>https://learnbyexample.github.io/mini/hacker-news-front-page-brag/</id>
+		<content type="html">&lt;p&gt;In case you haven&#x27;t yet read this nice post &lt;a href=&quot;https:&#x2F;&#x2F;jvns.ca&#x2F;blog&#x2F;brag-documents&#x2F;&quot;&gt;&amp;quot;Get your work recognized: write a brag document&amp;quot;&lt;&#x2F;a&gt; by Julia Evans, please do that first.&lt;&#x2F;p&gt;
+&lt;p&gt;I definitely found it nice to collect which of my content have reached Hacker News front page over the past 4 years. As I wrote in &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;my-book-writing-experience&#x2F;&quot;&gt;my book writing experience post&lt;&#x2F;a&gt;, the responses I got for my GNU awk one-liners collection was one of the stepping stones towards my career as a technical author.&lt;&#x2F;p&gt;
+&lt;p&gt;Here&#x27;s the list so far, ordered by oldest first:&lt;&#x2F;p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=15549318&quot;&gt;Learn to use Awk with hundreds of examples&lt;&#x2F;a&gt; — &lt;em&gt;478 points, Oct 2017, 116 comments&lt;&#x2F;em&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=20212622&quot;&gt;Show HN: I wrote a book on GNU grep and ripgrep&lt;&#x2F;a&gt; — &lt;em&gt;182 points, June 2019, 53 comments&lt;&#x2F;em&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=20645319&quot;&gt;Show HN: I wrote a book on Python regular expressions&lt;&#x2F;a&gt; — &lt;em&gt;193 points, Aug 2019, 50 comments&lt;&#x2F;em&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=22758217&quot;&gt;Show HN: An eBook with hundreds of GNU Awk one-liners&lt;&#x2F;a&gt; — &lt;em&gt;539 points, April 2020, 48 comments&lt;&#x2F;em&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=24637797&quot;&gt;Show HN: Ruby One-Liners Cookbook&lt;&#x2F;a&gt; — &lt;em&gt;191 points, Sept 2020, 36 comments&lt;&#x2F;em&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=25006829&quot;&gt;Perl One-Liners Cookbook&lt;&#x2F;a&gt; — &lt;em&gt;126 points, Nov 2020, 47 comments&lt;&#x2F;em&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=26076721&quot;&gt;Show HN: &amp;quot;100 Page Python Intro&amp;quot; eBook&lt;&#x2F;a&gt; — &lt;em&gt;107 points, Feb 2021, 26 comments&lt;&#x2F;em&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=26356095&quot;&gt;Paying my bills with &#x27;free&#x27; ebooks&lt;&#x2F;a&gt; — &lt;em&gt;85 points, Mar 2021, 22 comments&lt;&#x2F;em&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=28798095&quot;&gt;Show HN: &amp;quot;Command line text processing with GNU Coreutils&amp;quot; eBook&lt;&#x2F;a&gt; — &lt;em&gt;117 points, Oct 2021, 20 comments&lt;&#x2F;em&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=29391107&quot;&gt;Show HN: Improve your Python regex skills with 75 interactive exercises&lt;&#x2F;a&gt; — &lt;em&gt;175 points, Nov 2021, 12 comments&lt;&#x2F;em&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=29837543&quot;&gt;Vim prank: alias vim=&#x27;vim -y&#x27;&lt;&#x2F;a&gt; — &lt;em&gt;341 points, Jan 2022, 259 comments&lt;&#x2F;em&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;As is the case with other social media platforms, being an active participant on Hacker News definitely helps. Apart from commenting on other topics, I also post links to projects and resources that I felt were useful. The number of such links reaching front page outnumbers my own content links.&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>Removing duplicates irrespective of field order</title>
 		<published>2022-01-19T00:00:00+00:00</published>
@@ -68,7 +93,7 @@ tru eblue
             &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;print&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;(line, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;end&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;)
             keys.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;add&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;(sorted_key)
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;p&gt;In case you are wondering why space is used between the field contents, it is necessary to avoid false matches. &lt;code&gt;tru eblue&lt;&#x2F;code&gt; shouldn&#x27;t be considered as a duplicate of &lt;code&gt;true blue&lt;&#x2F;code&gt; or &lt;code&gt;blue true&lt;&#x2F;code&gt;. Space is a safe character to use since it is the field separator.&lt;&#x2F;p&gt;
+&lt;p&gt;In case you are wondering why space is used to join the field contents, it is necessary to avoid false matches. &lt;code&gt;tru eblue&lt;&#x2F;code&gt; shouldn&#x27;t be considered as a duplicate of &lt;code&gt;true blue&lt;&#x2F;code&gt; or &lt;code&gt;blue true&lt;&#x2F;code&gt;. Space is a safe character to use since it is the field separator.&lt;&#x2F;p&gt;
 &lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;100_page_python_intro&quot;&gt;100 Page Python Intro&lt;&#x2F;a&gt; ebook if you already know programming basics but new to Python.&lt;&#x2F;p&gt;
 &lt;br&gt;
 &lt;h2 id=&quot;gnu-awk-one-liner&quot;&gt;GNU awk one-liner&lt;a class=&quot;zola-anchor&quot; href=&quot;#gnu-awk-one-liner&quot; aria-label=&quot;Anchor link for: gnu-awk-one-liner&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
@@ -2463,7 +2488,7 @@ $ diff &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F
 	<entry xml:lang="en">
 		<title>I know Python basics, what next?</title>
 		<published>2020-07-25T00:00:00+00:00</published>
-		<updated>2021-09-13T00:00:00+00:00</updated>
+		<updated>2022-01-21T00:00:00+00:00</updated>
 		<link href="https://learnbyexample.github.io/python-intermediate/" type="text/html"/>
 		<id>https://learnbyexample.github.io/python-intermediate/</id>
 		<content type="html">&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;what_next.png&quot; alt=&quot;what next&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
@@ -2479,7 +2504,7 @@ $ diff &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F
 &lt;h2 id=&quot;exercises-and-projects&quot;&gt;Exercises and Projects&lt;a class=&quot;zola-anchor&quot; href=&quot;#exercises-and-projects&quot; aria-label=&quot;Anchor link for: exercises-and-projects&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
 &lt;p&gt;I do not have a simple answer to this question either. If you feel comfortable with programming basics and Python syntax, then exercises are a good way to test your knowledge. The resource you used to learn Python will typically have some sort of exercises, so those would be ideal as a first choice. I&#x27;d also suggest using the below resources to improve your skills. If you get stuck, reread the material related to those topics, search online, ask for clarifications, etc  — in short, make an effort to solve it. It is okay to skip some troublesome problems (and come back to it later if you have the time), but you should be able to solve most of the beginner problems. Maintaining notes and cheatsheets will help too, especially for common mistakes.&lt;&#x2F;p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;exercism.org&#x2F;tracks&#x2F;python&#x2F;exercises&quot;&gt;Exercism&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;www.practicepython.org&#x2F;&quot;&gt;Practicepython&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;edabit.com&#x2F;challenges&#x2F;python3&quot;&gt;Edabit&lt;&#x2F;a&gt; — these are all beginner friendly and difficulty levels are marked&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;exercism.org&#x2F;tracks&#x2F;python&#x2F;exercises&quot;&gt;Exercism&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;www.hackinscience.org&#x2F;exercises&#x2F;&quot;&gt;Hackinscience&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;www.practicepython.org&#x2F;&quot;&gt;Practicepython&lt;&#x2F;a&gt; — these are all beginner friendly and difficulty levels are marked&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;100_page_python_intro&#x2F;blob&#x2F;main&#x2F;exercises&#x2F;Exercises.md&quot;&gt;100 Page Python Intro exercises&lt;&#x2F;a&gt; — exercises from my introductory guide&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.codewars.com&#x2F;&quot;&gt;Codewars&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;adventofcode.com&#x2F;&quot;&gt;Adventofcode&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;projecteuler.net&#x2F;&quot;&gt;Projecteuler&lt;&#x2F;a&gt; — more challenging&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;py.checkio.org&#x2F;&quot;&gt;Checkio&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;www.codingame.com&#x2F;start&quot;&gt;Codingame&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;codecombat.com&#x2F;&quot;&gt;Codecombat&lt;&#x2F;a&gt; — gaming based challenges&lt;&#x2F;li&gt;
@@ -2537,6 +2562,7 @@ $ diff &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;calmcode.io&#x2F;&quot;&gt;Calmcode&lt;&#x2F;a&gt; — videos on testing, code style, args kwargs, data science, etc&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;dabeaz-course.github.io&#x2F;practical-python&#x2F;Notes&#x2F;Contents.html&quot;&gt;Practical Python Programming&lt;&#x2F;a&gt; — covers foundational aspects of Python programming with an emphasis on script writing, data manipulation, and program organization&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;inventwithpython.com&#x2F;beyond&#x2F;chapter0.html&quot;&gt;Beyond the Basic Stuff with Python&lt;&#x2F;a&gt; — Best Practices, Tools, and Techniques, OOP, Practice Projects&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;mathspp.gumroad.com&#x2F;l&#x2F;pydonts&quot;&gt;Pydon&#x27;ts&lt;&#x2F;a&gt; — Write elegant Python code, make the best use of the core Python features&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.oreilly.com&#x2F;library&#x2F;view&#x2F;fluent-python-2nd&#x2F;9781492056348&#x2F;&quot;&gt;Fluent Python&lt;&#x2F;a&gt; — takes you through Python’s core language features and libraries, and shows you how to make your code shorter, faster, and more readable at the same time&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;nostarch.com&#x2F;seriouspython&quot;&gt;Serious Python&lt;&#x2F;a&gt; — deployment, scalability, testing, and more&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.manning.com&#x2F;books&#x2F;practices-of-the-python-pro&quot;&gt;Practices of the Python Pro&lt;&#x2F;a&gt; — learn to design professional-level, clean, easily maintainable software at scale, includes examples for software development best practices&lt;&#x2F;li&gt;
@@ -2544,7 +2570,7 @@ $ diff &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F
 &lt;p&gt;&lt;strong&gt;Algorithms and Design patterns&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;runestone.academy&#x2F;runestone&#x2F;static&#x2F;pythonds&#x2F;index.html&quot;&gt;Problem solving with algorithms and data structures&lt;&#x2F;a&gt; &lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;livebook.manning.com&#x2F;book&#x2F;classic-computer-science-problems-in-python&#x2F;about-this-book&#x2F;&quot;&gt;Classic Computer Science Problems in Python&lt;&#x2F;a&gt; — deepens your knowledge of problem solving techniques from the realm of computer science by challenging you with time-tested scenarios, exercises, and algorithms&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.manning.com&#x2F;books&#x2F;classic-computer-science-problems-in-python&quot;&gt;Classic Computer Science Problems in Python&lt;&#x2F;a&gt; — deepens your knowledge of problem solving techniques from the realm of computer science by challenging you with time-tested scenarios, exercises, and algorithms&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;faif&#x2F;python-patterns&quot;&gt;GitHub: Collection of design patterns and idioms&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.cosmicpython.com&#x2F;book&#x2F;preface.html&quot;&gt;Architecture Patterns with Python&lt;&#x2F;a&gt; — Enabling TDD, DDD, and Event-Driven Microservices&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;

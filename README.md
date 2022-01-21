@@ -38,6 +38,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Mini blog posts
 
+* [Brag post: Hacker News Front Page entries](https://learnbyexample.github.io/mini/hacker-news-front-page-brag/)
 * [Regexp gotcha: 1](https://learnbyexample.github.io/mini/regexp-gotcha-1/)
 * [Vim prank: alias vim='vim -y'](https://learnbyexample.github.io/mini/vim-prank/)
 * [Debug woes: 2](https://learnbyexample.github.io/mini/debug-woes-2/)
