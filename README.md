@@ -38,6 +38,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Mini blog posts
 
+* [PyDev of the Week](https://learnbyexample.github.io/mini/pydev-interview/)
 * [Brag post: Hacker News Front Page entries](https://learnbyexample.github.io/mini/hacker-news-front-page-brag/)
 * [Regexp gotcha: 1](https://learnbyexample.github.io/mini/regexp-gotcha-1/)
 * [Vim prank: alias vim='vim -y'](https://learnbyexample.github.io/mini/vim-prank/)
@@ -50,6 +51,8 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Tips
 
+* [CLI tip 5: aligning columns](https://learnbyexample.github.io/tips/cli-tip-5/)
+* [Python tip 5: random choice and sample](https://learnbyexample.github.io/tips/python-tip-5/)
 * [Vim tip 3: auto complete words and lines in Insert mode](https://learnbyexample.github.io/tips/vim-tip-3/)
 * [CLI tip 4: serialize file contents to a single line](https://learnbyexample.github.io/tips/cli-tip-4/)
 * [Python tip 4: comparison chaining](https://learnbyexample.github.io/tips/python-tip-4/)

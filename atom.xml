@@ -5,8 +5,62 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2022-01-25T00:00:00+00:00</updated>
+	<updated>2022-02-02T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>PyDev of the Week</title>
+		<published>2022-02-02T00:00:00+00:00</published>
+		<updated>2022-02-02T00:00:00+00:00</updated>
+		<link href="https://learnbyexample.github.io/mini/pydev-interview/" type="text/html"/>
+		<id>https://learnbyexample.github.io/mini/pydev-interview/</id>
+		<content type="html">&lt;p&gt;Last month I had the wonderful opportunity to be part of &lt;a href=&quot;https:&#x2F;&#x2F;www.blog.pythonlibrary.org&#x2F;category&#x2F;pydevoftheweek&#x2F;&quot;&gt;PyDev of the Week&lt;&#x2F;a&gt; series organized by &lt;strong&gt;Michael Driscoll&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;It was a pleasure to walk down the memory lane for this interview: &lt;a href=&quot;https:&#x2F;&#x2F;www.blog.pythonlibrary.org&#x2F;2022&#x2F;01&#x2F;31&#x2F;pydev-of-the-week-sundeep-agarwal&#x2F;&quot;&gt;https:&#x2F;&#x2F;www.blog.pythonlibrary.org&#x2F;2022&#x2F;01&#x2F;31&#x2F;pydev-of-the-week-sundeep-agarwal&#x2F;&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;I got to discuss about my education, career, writing ebooks and more. Hope you enjoy the interview!&lt;&#x2F;p&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>CLI tip 5: aligning columns</title>
+		<published>2022-02-02T00:00:00+00:00</published>
+		<updated>2022-02-02T00:00:00+00:00</updated>
+		<link href="https://learnbyexample.github.io/tips/cli-tip-5/" type="text/html"/>
+		<id>https://learnbyexample.github.io/tips/cli-tip-5/</id>
+		<content type="html">&lt;p&gt;The &lt;code&gt;column&lt;&#x2F;code&gt; command is a nifty tool to align input data column wise. By default, whitespace is used as the input delimiter. Space character is used to align the output columns, so whitespace characters like tab will get converted to spaces.&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;printf &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;one two three\nfour five six\n&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
+one two three
+four five six
+
+$ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;printf &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;one two three\nfour five six\n&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; column &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;t
+one   two   three
+four  five  six
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;You can use the &lt;code&gt;-s&lt;&#x2F;code&gt; option to customize the input delimiter. Note that the output delimiter will still be made up of spaces only.&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ cat scores.csv
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Name&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Maths&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Physics&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Chemistry
+Ith&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;100&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;100&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;100
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Cy&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;97&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;98&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;95
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Lin&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;78&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;83&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;80&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
+
+$ column &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;s, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;t scores.csv
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Name  Maths  Physics  Chemistry
+Ith   &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;100    100      100
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Cy    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;97     98       95
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Lin   &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;78     83       80&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
+
+$ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;printf &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;1:-:2:-:3\napple:-:banana:-:cherry\n&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; column &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;s:&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-: -&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;t
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;1      2       3&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
+apple  banana  cherry
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;warning.svg&quot; alt=&quot;warning&quot; &#x2F;&gt; Input should have a newline at the end, otherwise you&#x27;ll get an error:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;printf &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;1 2 3\na   b   c&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; column &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;t
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;column:&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; line too long
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;1  2  3
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;br&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;Command-line-text-processing&#x2F;blob&#x2F;master&#x2F;restructure_text.md#column&quot;&gt;column command tutorial&lt;&#x2F;a&gt; and &lt;code&gt;man column&lt;&#x2F;code&gt; for more details.&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>Python tip 5: random choice and sample</title>
 		<published>2022-01-25T00:00:00+00:00</published>
@@ -2548,6 +2602,7 @@ $ diff &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;inventwithpython.com&#x2F;bigbookpython&#x2F;&quot;&gt;The Big Book of Small Python Projects&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.manning.com&#x2F;books&#x2F;tiny-python-projects&quot;&gt;Tiny Python Projects&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;practicalpython.yasoob.me&#x2F;toc.html&quot;&gt;Practical Python Projects&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;nostarch.com&#x2F;impracticalpythonprojects&quot;&gt;Impractical Python Projects&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;nostarch.com&#x2F;real-world-python&quot;&gt;Real world Python&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;&#x2F;li&gt;
@@ -2597,7 +2652,7 @@ $ diff &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F
 &lt;&#x2F;ul&gt;
 &lt;p&gt;&lt;strong&gt;Algorithms and Design patterns&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;runestone.academy&#x2F;runestone&#x2F;static&#x2F;pythonds&#x2F;index.html&quot;&gt;Problem solving with algorithms and data structures&lt;&#x2F;a&gt; &lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;runestone.academy&#x2F;ns&#x2F;books&#x2F;published&#x2F;pythonds3&#x2F;index.html&quot;&gt;Problem solving with algorithms and data structures&lt;&#x2F;a&gt; &lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.manning.com&#x2F;books&#x2F;classic-computer-science-problems-in-python&quot;&gt;Classic Computer Science Problems in Python&lt;&#x2F;a&gt; — deepens your knowledge of problem solving techniques from the realm of computer science by challenging you with time-tested scenarios, exercises, and algorithms&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;faif&#x2F;python-patterns&quot;&gt;GitHub: Collection of design patterns and idioms&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.cosmicpython.com&#x2F;book&#x2F;preface.html&quot;&gt;Architecture Patterns with Python&lt;&#x2F;a&gt; — Enabling TDD, DDD, and Event-Driven Microservices&lt;&#x2F;li&gt;
