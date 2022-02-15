@@ -7,7 +7,7 @@
       <!-- Enable responsiveness on mobile devices-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-      <title>learnbyexample</title>
+      <title>Python tip 6: inplace file editing</title>
 
       
         <link rel="alternate" type="application/atom+xml" title="RSS" href="https://learnbyexample.github.io/atom.xml">
@@ -121,27 +121,67 @@
             <main>
                 <div class="content" id="mobile-panel">
                     
-    <div class="about">
-        <h1 id="list-of-all-tips"><p style="color: #c05b4d">List of all tips</h1>
-<ul>
-<li><a href="https://learnbyexample.github.io/tips/python-tip-6/">Python tip 6: inplace file editing</a></li>
-<li><a href="https://learnbyexample.github.io/tips/vim-tip-4/">Vim tip 4: reposition current line in Normal mode</a></li>
-<li><a href="https://learnbyexample.github.io/tips/cli-tip-5/">CLI tip 5: aligning columns</a></li>
-<li><a href="https://learnbyexample.github.io/tips/python-tip-5/">Python tip 5: random choice and sample</a></li>
-<li><a href="https://learnbyexample.github.io/tips/vim-tip-3/">Vim tip 3: auto complete words and lines in Insert mode</a></li>
-<li><a href="https://learnbyexample.github.io/tips/cli-tip-4/">CLI tip 4: serialize file contents to a single line</a></li>
-<li><a href="https://learnbyexample.github.io/tips/python-tip-4/">Python tip 4: comparison chaining</a></li>
-<li><a href="https://learnbyexample.github.io/tips/vim-tip-2/">Vim tip 2: indent/unindent lines</a></li>
-<li><a href="https://learnbyexample.github.io/tips/cli-tip-3/">CLI tip 3: place backups in another directory with GNU sed</a></li>
-<li><a href="https://learnbyexample.github.io/tips/python-tip-3/">Python tip 3: expression and result with f-string</a></li>
-<li><a href="https://learnbyexample.github.io/tips/vim-tip-1/">Vim tip 1: increment/decrement numbers</a></li>
-<li><a href="https://learnbyexample.github.io/tips/cli-tip-2/">CLI tip 2: counting number of matches</a></li>
-<li><a href="https://learnbyexample.github.io/tips/python-tip-2/">Python tip 2: membership operator</a></li>
-<li><a href="https://learnbyexample.github.io/tips/cli-tip-1/">CLI tip 1: remove metadata from images</a></li>
-<li><a href="https://learnbyexample.github.io/tips/python-tip-1/">Python tip 1: tuple argument for startswith/endswith methods</a></li>
-</ul>
+
+
+
+<article class="post">
+    
+    <header class="post__header">
+        <h1 class="post__title">
+            <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips&#x2F;python-tip-6&#x2F;">Python tip 6: inplace file editing</a>
+        </h1>
+        <div class="post__meta">
+            <span class="post__time">2022-02-15</span>
+            
+        </div>
+    </header>
+
+    <div class="post-content">
+      <p>The built-in <a href="https://docs.python.org/3/library/fileinput.html">fileinput module</a> has nice features for file processing, especially handy for multiple files and inplace editing. Here's an example:</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#7f8989;"># inplace.py
+</span><span style="color:#72ab00;">import </span><span style="color:#1f1f1f;">fileinput
+
+</span><span style="color:#72ab00;">with </span><span style="color:#1f1f1f;">fileinput.</span><span style="color:#5597d6;">input</span><span style="color:#1f1f1f;">(</span><span style="color:#5597d6;">inplace</span><span style="color:#72ab00;">=</span><span style="color:#b3933a;">True</span><span style="color:#1f1f1f;">) </span><span style="color:#72ab00;">as </span><span style="color:#1f1f1f;">f:
+    </span><span style="color:#72ab00;">for </span><span style="color:#1f1f1f;">line </span><span style="color:#72ab00;">in </span><span style="color:#1f1f1f;">f:
+        </span><span style="color:#7f8989;"># do some processing
+        </span><span style="color:#1f1f1f;">op </span><span style="color:#72ab00;">= </span><span style="color:#1f1f1f;">line.</span><span style="color:#5597d6;">replace</span><span style="color:#1f1f1f;">(</span><span style="color:#d07711;">&#39;search&#39;</span><span style="color:#1f1f1f;">, </span><span style="color:#d07711;">&#39;replace&#39;</span><span style="color:#1f1f1f;">)
+        </span><span style="color:#7f8989;"># print() the text you want to write back to the input files
+        </span><span style="color:#b39f04;">print</span><span style="color:#1f1f1f;">(op, </span><span style="color:#5597d6;">end</span><span style="color:#72ab00;">=</span><span style="color:#d07711;">&#39;&#39;</span><span style="color:#1f1f1f;">)
+</span></code></pre>
+<p>By default, files passed as CLI arguments will be processed:</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#5597d6;">$</span><span style="color:#1f1f1f;"> python3 inplace.py </span><span style="color:#72ab00;">*</span><span style="color:#1f1f1f;">.md
+</span></code></pre>
+<p><img src="/images/info.svg" alt="info" /> If you already know which inputs have to be processed, use the <code>files</code> argument. Use the <code>backup</code> argument if you want to make copies of original files in case something goes wrong. See my blog post <a href="https://www.python-engineer.com/posts/inplace-file-editing/">In-place file editing with fileinput module</a> for more details and examples.</p>
+<p><img src="/images/info.svg" alt="info" /> See my <a href="https://github.com/learnbyexample/100_page_python_intro">100 Page Python Intro</a> ebook for a short, introductory guide for the Python programming language.</p>
 
     </div>
+
+    
+    
+
+    <div class="post-footer">
+        
+            
+                <div class="post-tags">
+                    
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;python&#x2F;">#python</a>
+                    
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;tip&#x2F;">#tip</a>
+                    
+                </div>
+            
+            
+
+        
+
+    </div>
+
+    
+    
+</article>
+
 
                 </div>
             </main>

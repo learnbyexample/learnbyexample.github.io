@@ -5,8 +5,34 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2022-02-09T00:00:00+00:00</updated>
+	<updated>2022-02-15T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Python tip 6: inplace file editing</title>
+		<published>2022-02-15T00:00:00+00:00</published>
+		<updated>2022-02-15T00:00:00+00:00</updated>
+		<link href="https://learnbyexample.github.io/tips/python-tip-6/" type="text/html"/>
+		<id>https://learnbyexample.github.io/tips/python-tip-6/</id>
+		<content type="html">&lt;p&gt;The built-in &lt;a href=&quot;https:&#x2F;&#x2F;docs.python.org&#x2F;3&#x2F;library&#x2F;fileinput.html&quot;&gt;fileinput module&lt;&#x2F;a&gt; has nice features for file processing, especially handy for multiple files and inplace editing. Here&#x27;s an example:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# inplace.py
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;import &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;fileinput
+
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;with &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;fileinput.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;input&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;inplace&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;True&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;as &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;f:
+    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;for &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;line &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;in &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;f:
+        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# do some processing
+        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;op &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;line.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;replace&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;search&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;replace&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;)
+        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# print() the text you want to write back to the input files
+        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;print&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;(op, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;end&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;)
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;By default, files passed as CLI arguments will be processed:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; python3 inplace.py &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;.md
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; If you already know which inputs have to be processed, use the &lt;code&gt;files&lt;&#x2F;code&gt; argument. Use the &lt;code&gt;backup&lt;&#x2F;code&gt; argument if you want to make copies of original files in case something goes wrong. See my blog post &lt;a href=&quot;https:&#x2F;&#x2F;www.python-engineer.com&#x2F;posts&#x2F;inplace-file-editing&#x2F;&quot;&gt;In-place file editing with fileinput module&lt;&#x2F;a&gt; for more details and examples.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;100_page_python_intro&quot;&gt;100 Page Python Intro&lt;&#x2F;a&gt; ebook for a short, introductory guide for the Python programming language.&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>Vim tip 4: reposition current line in Normal mode</title>
 		<published>2022-02-09T00:00:00+00:00</published>
@@ -16,13 +42,13 @@
 		<content type="html">&lt;p&gt;You&#x27;re likely to be familiar with commands to scroll through the contents like &lt;kbd&gt;Ctrl&lt;&#x2F;kbd&gt; followed by &lt;kbd&gt;d&lt;&#x2F;kbd&gt; or &lt;kbd&gt;f&lt;&#x2F;kbd&gt; or &lt;kbd&gt;u&lt;&#x2F;kbd&gt; or &lt;kbd&gt;b&lt;&#x2F;kbd&gt;.&lt;&#x2F;p&gt;
 &lt;p&gt;Did you know that Vim also has handy options to keep the cursor on the current line while moving the contents around?&lt;&#x2F;p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;kbd&gt;zz&lt;&#x2F;kbd&gt; positions the current line to the middle of the visible window
+&lt;li&gt;&lt;kbd&gt;zz&lt;&#x2F;kbd&gt; reposition the current line to the middle of the visible window
 &lt;ul&gt;
 &lt;li&gt;useful to see context around lines that are nearer to the top&#x2F;bottom of the visible window&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;&#x2F;li&gt;
-&lt;li&gt;&lt;kbd&gt;zt&lt;&#x2F;kbd&gt; positions the current line to the top of the visible window&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;kbd&gt;zb&lt;&#x2F;kbd&gt; positions the current line to the bottom of the visible window&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;zt&lt;&#x2F;kbd&gt; reposition the current line to the top of the visible window&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;zb&lt;&#x2F;kbd&gt; reposition the current line to the bottom of the visible window&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See &lt;a href=&quot;https:&#x2F;&#x2F;vimhelp.org&#x2F;options.txt.html#%27scrolloff%27&quot;&gt;:h &#x27;scrolloff&#x27;&lt;&#x2F;a&gt; option if you want to always show context around the current line.&lt;&#x2F;p&gt;
 &lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See also my &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;vim_reference&#x2F;&quot;&gt;Vim reference guide&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;curated_resources&#x2F;vim.html&quot;&gt;curated list of resources for Vim&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;

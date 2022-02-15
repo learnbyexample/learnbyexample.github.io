@@ -51,6 +51,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Tips
 
+* [Python tip 6: inplace file editing](https://learnbyexample.github.io/tips/python-tip-6/)
 * [Vim tip 4: reposition current line in Normal mode](https://learnbyexample.github.io/tips/vim-tip-4/)
 * [CLI tip 5: aligning columns](https://learnbyexample.github.io/tips/cli-tip-5/)
 * [Python tip 5: random choice and sample](https://learnbyexample.github.io/tips/python-tip-5/)
