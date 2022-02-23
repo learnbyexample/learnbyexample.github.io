@@ -7,7 +7,7 @@
       <!-- Enable responsiveness on mobile devices-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-      <title>learnbyexample</title>
+      <title>CLI tip 6: filtering lines based on multiple conditions</title>
 
       
         <link rel="alternate" type="application/atom+xml" title="RSS" href="https://learnbyexample.github.io/atom.xml">
@@ -121,24 +121,72 @@
             <main>
                 <div class="content" id="mobile-panel">
                     
-    <div class="taxonomy">
-        <h2>mawk</h2>
-        
-            <div class="taxonomy__item">
-                <span class="taxonomy__item__time">2021-07-02</span>
-                <span class="taxonomy__item__title">
-                    <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;escaping-madness-awk-literal-field-separator&#x2F;">Escaping madness to get literal field separators in awk</a>
-                </span>
-            </div>
-        
-            <div class="taxonomy__item">
-                <span class="taxonomy__item__time">2021-06-10</span>
-                <span class="taxonomy__item__title">
-                    <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;mini&#x2F;dreaming-solutions&#x2F;">Dreaming solutions</a>
-                </span>
-            </div>
-        
+
+
+
+<article class="post">
+    
+    <header class="post__header">
+        <h1 class="post__title">
+            <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips&#x2F;cli-tip-6&#x2F;">CLI tip 6: filtering lines based on multiple conditions</a>
+        </h1>
+        <div class="post__meta">
+            <span class="post__time">2022-02-23</span>
+            
+        </div>
+    </header>
+
+    <div class="post-content">
+      <p>Usually, <code>grep</code> is used for filtering lines based on a regexp pattern. Matching multiple patterns as a conditional OR is easy to apply using alternation. For example, <code>grep -E 'apple|banana'</code> matches lines containing either <code>apple</code> or <code>banana</code>.</p>
+<p>However, conditional AND requires multiple <code>grep</code> commands or the use of lookarounds if PCRE feature is available. A simpler alternative is to use <code>awk</code>.</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#1f1f1f;">$ cat table.txt
+brown bread mat cake </span><span style="color:#b3933a;">42</span><span style="color:#1f1f1f;">
+blue cake mug shirt </span><span style="color:#72ab00;">-</span><span style="color:#b3933a;">7</span><span style="color:#1f1f1f;">
+yellow banana window shoes </span><span style="color:#b3933a;">3.14
+
+</span><span style="color:#7f8989;"># line containing &#39;cake&#39; but not &#39;at&#39;
+# same as: grep &#39;cake&#39; table.txt | grep -v &#39;at&#39;
+# with PCRE: grep -P &#39;^(?!.*at).*cake&#39; table.txt
+</span><span style="color:#1f1f1f;">$ awk </span><span style="color:#d07711;">&#39;/cake/ &amp;&amp; !/at/&#39;</span><span style="color:#1f1f1f;"> table.txt
+blue cake mug shirt </span><span style="color:#72ab00;">-</span><span style="color:#b3933a;">7
+
+</span><span style="color:#7f8989;"># first field containing &#39;low&#39; or the last field is less than 0
+# not easy to construct a grep solution here due to field/numeric comparison
+</span><span style="color:#1f1f1f;">$ awk </span><span style="color:#d07711;">&#39;$1 ~ /low/ || $NF&lt;0&#39;</span><span style="color:#1f1f1f;"> table.txt
+blue cake mug shirt </span><span style="color:#72ab00;">-</span><span style="color:#b3933a;">7</span><span style="color:#1f1f1f;">
+yellow banana window shoes </span><span style="color:#b3933a;">3.14
+</span></code></pre><br>
+<p><img src="/images/info.svg" alt="info" /> See my <a href="https://github.com/learnbyexample/learn_gnuawk">GNU AWK</a> ebook if you are interested in learning about the <code>awk</code> command in more detail.</p>
+
     </div>
+
+    
+    
+
+    <div class="post-footer">
+        
+            
+                <div class="post-tags">
+                    
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;linux&#x2F;">#linux</a>
+                    
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;command-line&#x2F;">#command-line</a>
+                    
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;tip&#x2F;">#tip</a>
+                    
+                </div>
+            
+            
+
+        
+
+    </div>
+
+    
+    
+</article>
+
 
                 </div>
             </main>
