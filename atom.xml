@@ -5,8 +5,26 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2022-02-23T00:00:00+00:00</updated>
+	<updated>2022-03-02T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Vim tip 5: jumping back and forth in Normal mode</title>
+		<published>2022-03-02T00:00:00+00:00</published>
+		<updated>2022-03-02T00:00:00+00:00</updated>
+		<link href="https://learnbyexample.github.io/tips/vim-tip-5/" type="text/html"/>
+		<id>https://learnbyexample.github.io/tips/vim-tip-5/</id>
+		<content type="html">&lt;p&gt;Find yourself working on a large file? Or perhaps handling multiple buffers? Vim makes it easy to navigate previous locations:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;kbd&gt;Ctrl&lt;&#x2F;kbd&gt;+&lt;kbd&gt;o&lt;&#x2F;kbd&gt; navigate to the previous location in the jump list (think &lt;code&gt;o&lt;&#x2F;code&gt; as old)&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;Ctrl&lt;&#x2F;kbd&gt;+&lt;kbd&gt;i&lt;&#x2F;kbd&gt; navigate to the next location in the jump list (&lt;code&gt;i&lt;&#x2F;code&gt; and &lt;code&gt;o&lt;&#x2F;code&gt; are usually next to each other)&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;g;&lt;&#x2F;kbd&gt; go to the previous change location&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;g,&lt;&#x2F;kbd&gt; go to the newer change location&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;gi&lt;&#x2F;kbd&gt; place the cursor at the same position where it was left last time in the Insert mode&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; Use &lt;kbd&gt;:jumps&lt;&#x2F;kbd&gt; to view the jump list. See &lt;a href=&quot;https:&#x2F;&#x2F;vimhelp.org&#x2F;motion.txt.html#jump-motions&quot;&gt;:h jump-motions&lt;&#x2F;a&gt; for more details.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See also my &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;vim_reference&#x2F;&quot;&gt;Vim reference guide&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;curated_resources&#x2F;vim.html&quot;&gt;curated list of resources for Vim&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>CLI tip 6: filtering lines based on multiple conditions</title>
 		<published>2022-02-23T00:00:00+00:00</published>
