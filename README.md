@@ -51,6 +51,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Tips
 
+* [Python tip 7: creating a deepcopy of collections](https://learnbyexample.github.io/tips/python-tip-7/)
 * [Vim tip 5: jumping back and forth in Normal mode](https://learnbyexample.github.io/tips/vim-tip-5/)
 * [CLI tip 6: filtering lines based on multiple conditions](https://learnbyexample.github.io/tips/cli-tip-6/)
 * [Python tip 6: inplace file editing](https://learnbyexample.github.io/tips/python-tip-6/)
