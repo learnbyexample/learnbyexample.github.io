@@ -20,7 +20,7 @@
     </url>
     <url>
         <loc>https://learnbyexample.github.io/books/</loc>
-        <lastmod>2021-12-29</lastmod>
+        <lastmod>2022-03-15</lastmod>
     </url>
     <url>
         <loc>https://learnbyexample.github.io/cli-text-processing-coreutils-announcement/</loc>
@@ -79,7 +79,7 @@
     </url>
     <url>
         <loc>https://learnbyexample.github.io/mini/hacker-news-front-page-brag/</loc>
-        <lastmod>2022-01-21</lastmod>
+        <lastmod>2022-03-16</lastmod>
     </url>
     <url>
         <loc>https://learnbyexample.github.io/mini/perl-oneliner-articles/</loc>
@@ -95,7 +95,7 @@
     </url>
     <url>
         <loc>https://learnbyexample.github.io/mini/vim-prank/</loc>
-        <lastmod>2022-01-08</lastmod>
+        <lastmod>2022-03-16</lastmod>
     </url>
     <url>
         <loc>https://learnbyexample.github.io/multiline-search-and-replace/</loc>
@@ -361,6 +361,10 @@
     <url>
         <loc>https://learnbyexample.github.io/tips/cli-tip-6/</loc>
         <lastmod>2022-02-23</lastmod>
+    </url>
+    <url>
+        <loc>https://learnbyexample.github.io/tips/cli-tip-7/</loc>
+        <lastmod>2022-03-16</lastmod>
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tips/python-tip-1/</loc>

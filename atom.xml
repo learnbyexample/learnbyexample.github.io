@@ -5,8 +5,57 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2022-03-15T00:00:00+00:00</updated>
+	<updated>2022-03-16T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>CLI tip 7: limiting number of filtered lines</title>
+		<published>2022-03-16T00:00:00+00:00</published>
+		<updated>2022-03-16T00:00:00+00:00</updated>
+		<link href="https://learnbyexample.github.io/tips/cli-tip-7/" type="text/html"/>
+		<id>https://learnbyexample.github.io/tips/cli-tip-7/</id>
+		<content type="html">&lt;p&gt;&lt;code&gt;grep&lt;&#x2F;code&gt; supports &lt;code&gt;-m&lt;&#x2F;code&gt; option to specify the maximum number of matching lines in the output.&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# all input lines containing &amp;#39;a&amp;#39;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;printf &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;goal\nrate\neat\npit&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; grep &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;a&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
+goal
+rate
+eat
+
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# maximum of 2 matching lines
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;printf &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;goal\nrate\neat\npit&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; grep &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;m2 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;a&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
+goal
+rate
+$ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;printf &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;goal\nrate\neat\npit&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; grep &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;m2 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;pi&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
+pit
+
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# example with -v option
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;printf &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;goal\nrate\neat\npit&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; grep &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;v &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;e&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
+goal
+pit
+$ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;printf &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;goal\nrate\neat\npit&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; grep &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;v &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;m1 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;e&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
+goal
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;With multiple file input, the restriction is applied for each file &lt;em&gt;separately&lt;&#x2F;em&gt;.&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ cat table.txt 
+brown bread mat cake &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;42&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
+blue cake mug shirt &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;7&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
+yellow banana window shoes &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;3.14&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
+$ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;printf &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;goal\nrate\neat\npit&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; ip.txt
+
+$ grep &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;m1 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;i&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; table.txt ip.txt
+table.txt&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;blue cake mug shirt &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;7&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
+ip.txt&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;pit
+
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# use &amp;#39;cat&amp;#39; if you want to operate on combined input
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ cat table.txt ip.txt &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; grep &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;m1 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;i&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
+blue cake mug shirt &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;7&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
+$ cat table.txt ip.txt &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; grep &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;m1 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;go&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
+goal
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;br&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;learn_gnugrep_ripgrep&quot;&gt;GNU GREP and RIPGREP&lt;&#x2F;a&gt; ebook if you are interested in learning about &lt;code&gt;GNU grep&lt;&#x2F;code&gt; and &lt;code&gt;ripgrep&lt;&#x2F;code&gt; commands in more detail.&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>Vim Reference Guide book announcement</title>
 		<published>2022-03-15T00:00:00+00:00</published>
@@ -285,7 +334,7 @@ apple  banana  cherry
 	<entry xml:lang="en">
 		<title>Brag post: Hacker News Front Page entries</title>
 		<published>2022-01-21T00:00:00+00:00</published>
-		<updated>2022-01-21T00:00:00+00:00</updated>
+		<updated>2022-03-16T00:00:00+00:00</updated>
 		<link href="https://learnbyexample.github.io/mini/hacker-news-front-page-brag/" type="text/html"/>
 		<id>https://learnbyexample.github.io/mini/hacker-news-front-page-brag/</id>
 		<content type="html">&lt;p&gt;In case you haven&#x27;t yet read this nice post &lt;a href=&quot;https:&#x2F;&#x2F;jvns.ca&#x2F;blog&#x2F;brag-documents&#x2F;&quot;&gt;&amp;quot;Get your work recognized: write a brag document&amp;quot;&lt;&#x2F;a&gt; by Julia Evans, please do that first.&lt;&#x2F;p&gt;
@@ -303,6 +352,7 @@ apple  banana  cherry
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=28798095&quot;&gt;Show HN: &amp;quot;Command line text processing with GNU Coreutils&amp;quot; eBook&lt;&#x2F;a&gt; — &lt;em&gt;117 points, Oct 2021, 20 comments&lt;&#x2F;em&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=29391107&quot;&gt;Show HN: Improve your Python regex skills with 75 interactive exercises&lt;&#x2F;a&gt; — &lt;em&gt;175 points, Nov 2021, 12 comments&lt;&#x2F;em&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=29837543&quot;&gt;Vim prank: alias vim=&#x27;vim -y&#x27;&lt;&#x2F;a&gt; — &lt;em&gt;341 points, Jan 2022, 259 comments&lt;&#x2F;em&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=30684232&quot;&gt;Vim Reference Guide&lt;&#x2F;a&gt; — &lt;em&gt;226 points, Mar 2022, 102 comments&lt;&#x2F;em&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ol&gt;
 &lt;p&gt;As is the case with other social media platforms, being an active participant on Hacker News definitely helps. Apart from commenting on other topics, I also post links to projects and resources that I felt were useful. The number of such links reaching front page outnumbers my own content links.&lt;&#x2F;p&gt;
 </content>
@@ -557,10 +607,10 @@ $ awk &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;
 	<entry xml:lang="en">
 		<title>Vim prank: alias vim=&#x27;vim -y&#x27;</title>
 		<published>2022-01-07T00:00:00+00:00</published>
-		<updated>2022-01-08T00:00:00+00:00</updated>
+		<updated>2022-03-16T00:00:00+00:00</updated>
 		<link href="https://learnbyexample.github.io/mini/vim-prank/" type="text/html"/>
 		<id>https://learnbyexample.github.io/mini/vim-prank/</id>
-		<content type="html">&lt;p&gt;While going through &lt;a href=&quot;https:&#x2F;&#x2F;vimhelp.org&#x2F;starting.txt.html#vim-arguments&quot;&gt;:h vim-arguments&lt;&#x2F;a&gt; for my &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;vim_reference&#x2F;&quot;&gt;Vim reference guide&lt;&#x2F;a&gt; ebook, I came across the &lt;code&gt;-y&lt;&#x2F;code&gt; option:&lt;&#x2F;p&gt;
+		<content type="html">&lt;p&gt;While going through &lt;a href=&quot;https:&#x2F;&#x2F;vimhelp.org&#x2F;starting.txt.html#vim-arguments&quot;&gt;:h vim-arguments&lt;&#x2F;a&gt; for my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;vim_reference&quot;&gt;Vim reference guide&lt;&#x2F;a&gt; ebook, I came across the &lt;code&gt;-y&lt;&#x2F;code&gt; option:&lt;&#x2F;p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Easy mode. Implied for &lt;code&gt;evim&lt;&#x2F;code&gt; and &lt;code&gt;eview&lt;&#x2F;code&gt;. Starts with &lt;code&gt;&#x27;insertmode&#x27;&lt;&#x2F;code&gt; set and behaves like a click-and-type editor. This sources the script $VIMRUNTIME&#x2F;evim.vim. Mappings are set up to work like most click-and-type editors, see &lt;code&gt;evim-keys&lt;&#x2F;code&gt;. The GUI is started when available.&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;

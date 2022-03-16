@@ -6,6 +6,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Posts
 
+* [Vim Reference Guide book announcement](https://learnbyexample.github.io/vim-reference-guide-announcement/)
 * [Removing duplicates irrespective of field order](https://learnbyexample.github.io/duplicates-irrespective-field-order/)
 * [Automating Excel with Python - book review](https://learnbyexample.github.io/automating-excel-with-python-review/)
 * [2021 was a wild ride](https://learnbyexample.github.io/wild-ride-2021/)
@@ -51,6 +52,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Tips
 
+* [CLI tip 7: limiting number of filtered lines](https://learnbyexample.github.io/tips/cli-tip-7/)
 * [Python tip 7: creating a deepcopy of collections](https://learnbyexample.github.io/tips/python-tip-7/)
 * [Vim tip 5: jumping back and forth in Normal mode](https://learnbyexample.github.io/tips/vim-tip-5/)
 * [CLI tip 6: filtering lines based on multiple conditions](https://learnbyexample.github.io/tips/cli-tip-6/)
