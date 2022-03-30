@@ -20,7 +20,7 @@
     </url>
     <url>
         <loc>https://learnbyexample.github.io/books/</loc>
-        <lastmod>2022-03-15</lastmod>
+        <lastmod>2022-03-30</lastmod>
     </url>
     <url>
         <loc>https://learnbyexample.github.io/cli-text-processing-coreutils-announcement/</loc>
@@ -393,6 +393,10 @@
     <url>
         <loc>https://learnbyexample.github.io/tips/python-tip-7/</loc>
         <lastmod>2022-03-09</lastmod>
+    </url>
+    <url>
+        <loc>https://learnbyexample.github.io/tips/python-tip-8/</loc>
+        <lastmod>2022-03-30</lastmod>
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tips/vim-tip-1/</loc>
