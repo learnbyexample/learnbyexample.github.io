@@ -5,8 +5,35 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2022-03-30T00:00:00+00:00</updated>
+	<updated>2022-03-31T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Vim Reference Guide: two week sales report</title>
+		<published>2022-03-31T00:00:00+00:00</published>
+		<updated>2022-03-31T00:00:00+00:00</updated>
+		<link href="https://learnbyexample.github.io/mini/vim-reference-guide-sales/" type="text/html"/>
+		<id>https://learnbyexample.github.io/mini/vim-reference-guide-sales/</id>
+		<content type="html">&lt;p&gt;I&#x27;ve previously written about events and strategies that led to &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;wild-ride-2021&#x2F;#book-sales&quot;&gt;increased ebook sales during the last quarter of 2021&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Very pleased to inform that I continue to see more than expected sales. I had released my 12th ebook &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;vim_reference&quot;&gt;Vim Reference Guide&lt;&#x2F;a&gt; on March 15th. Here&#x27;s how the sales looked on Gumroad during the first two weeks:&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;vim-release-gumroad-sales.png&quot; alt=&quot;Two week Gumroad sales chart&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;I used to offer my ebooks for free on release. For the past couple of releases, I have also added heavily discounted ebook bundles which seems to be the major factor in increased paid sales I&#x27;m seeing. Luck certainly plays a role too, reaching front page of Hacker News and top of subreddits cannot be always counted upon. Here are some of the ways I promoted my latest ebook:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;p&#x2F;announcing-vim-reference-guide-free-discount-offers-and-more&quot;&gt;Announcement post on Gumroad&lt;&#x2F;a&gt; and sending an email to existing readers&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=30684232&quot;&gt;Show HN post on Hacker News&lt;&#x2F;a&gt;, got lucky to be placed in top 10&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;learn_byexample&#x2F;status&#x2F;1503752985708736512&quot;&gt;Pinned tweet&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Posting on &lt;a href=&quot;https:&#x2F;&#x2F;www.reddit.com&#x2F;r&#x2F;commandline&#x2F;comments&#x2F;tjzxn9&#x2F;i_wrote_a_vim_reference_guide&#x2F;&quot;&gt;&#x2F;r&#x2F;commandline&#x2F;&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;www.reddit.com&#x2F;r&#x2F;linux&#x2F;comments&#x2F;toll6i&#x2F;i_wrote_a_vim_reference_guide&#x2F;&quot;&gt;&#x2F;r&#x2F;linux&#x2F;&lt;&#x2F;a&gt;
+&lt;ul&gt;
+&lt;li&gt;You might wonder why not &#x2F;r&#x2F;vim? Somebody else posted before I could, and unfortunately it got downvoted. I&#x27;ll probably make my own post after I release the next version&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;youtu.be&#x2F;SyQe6zzOGZ0&quot;&gt;Promo video on youtube&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;And of course, I wrote a release post &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;vim-reference-guide-announcement&#x2F;&quot;&gt;on this blog&lt;&#x2F;a&gt; and also mentioned it on my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&quot;&gt;GitHub Readme&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Apart from Gumroad, 500+ readers downloaded the guide from &lt;a href=&quot;https:&#x2F;&#x2F;leanpub.com&#x2F;vim_reference_guide&quot;&gt;Leanpub&lt;&#x2F;a&gt; and I got a few paid sales as well. I wrote about &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;my-book-writing-experience&#x2F;#leanpub-vs-gumroad&quot;&gt;pros and cons of Gumroad&#x2F;Leanpub here&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; PS: Make sure to read the rules and be a regular user before self-promoting your content on the social media platforms mentioned above.&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>Python tip 8: dict.fromkeys() method</title>
 		<published>2022-03-30T00:00:00+00:00</published>
