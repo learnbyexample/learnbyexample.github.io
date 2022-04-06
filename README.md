@@ -53,6 +53,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Tips
 
+* [CLI tip 8: extract from start of file until matching line](https://learnbyexample.github.io/tips/cli-tip-8/)
 * [Python tip 8: dict.fromkeys() method](https://learnbyexample.github.io/tips/python-tip-8/)
 * [Vim tip 6: search word nearest to the cursor](https://learnbyexample.github.io/tips/vim-tip-6/)
 * [CLI tip 7: limiting number of filtered lines](https://learnbyexample.github.io/tips/cli-tip-7/)

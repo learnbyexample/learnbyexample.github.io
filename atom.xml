@@ -5,8 +5,45 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2022-03-31T00:00:00+00:00</updated>
+	<updated>2022-04-06T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>CLI tip 8: extract from start of file until matching line</title>
+		<published>2022-04-06T00:00:00+00:00</published>
+		<updated>2022-04-06T00:00:00+00:00</updated>
+		<link href="https://learnbyexample.github.io/tips/cli-tip-8/" type="text/html"/>
+		<id>https://learnbyexample.github.io/tips/cli-tip-8/</id>
+		<content type="html">&lt;p&gt;The &lt;code&gt;GNU sed&lt;&#x2F;code&gt; command has a couple of handy commands to extract text from the start of input until a matching line is found. The &lt;code&gt;q&lt;&#x2F;code&gt; and &lt;code&gt;Q&lt;&#x2F;code&gt; commands are similar, except how they process the matching line.&lt;&#x2F;p&gt;
+&lt;p&gt;The &lt;code&gt;q&lt;&#x2F;code&gt; command will exit &lt;code&gt;sed&lt;&#x2F;code&gt; immediately, after printing the current pattern space if applicable.&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# quit after a line containing &amp;#39;st&amp;#39; is found
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;printf &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;apple\nsea\neast\ndust&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&#x2F;st&#x2F;q&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
+apple
+sea
+east
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;The &lt;code&gt;Q&lt;&#x2F;code&gt; command is similar to &lt;code&gt;q&lt;&#x2F;code&gt; but won&#x27;t print the matching line.&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# matching line won&amp;#39;t be printed in this case
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;printf &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;apple\nsea\neast\ndust&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&#x2F;st&#x2F;Q&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
+apple
+sea
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;&lt;code&gt;tac+sed+tac&lt;&#x2F;code&gt; will help you get lines starting from the last occurrence of the search string till the end of the input.&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;printf &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;apple\nsea\neast\ndust\n&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; tac &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&#x2F;ea&#x2F;q&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; tac
+east
+dust
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;warning.svg&quot; alt=&quot;warning&quot; &#x2F;&gt; Be careful if you want to use &lt;code&gt;q&lt;&#x2F;code&gt; or &lt;code&gt;Q&lt;&#x2F;code&gt; commands with multiple files, as &lt;code&gt;sed&lt;&#x2F;code&gt; will stop even if there are other files left to be processed. You can use &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;learn_gnused&#x2F;selective-editing.html#address-range&quot;&gt;mixed address ranges&lt;&#x2F;a&gt; as a workaround. See also &lt;a href=&quot;https:&#x2F;&#x2F;unix.stackexchange.com&#x2F;q&#x2F;309514&#x2F;109046&quot;&gt;unix.stackexchange: applying q to multiple files&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Video demo&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;OA6Onqw2bfA&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;&#x2F;iframe&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;learn_gnused&quot;&gt;GNU SED&lt;&#x2F;a&gt; ebook if you are interested in learning about the &lt;code&gt;GNU sed&lt;&#x2F;code&gt; command in more detail.&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>Vim Reference Guide: two week sales report</title>
 		<published>2022-03-31T00:00:00+00:00</published>
@@ -27,6 +64,7 @@
 &lt;&#x2F;ul&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;youtu.be&#x2F;SyQe6zzOGZ0&quot;&gt;Promo video on youtube&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Mentioned in two of my &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;learnbyexample-weekly&quot;&gt;learnbyexample weekly&lt;&#x2F;a&gt; newsletter issues&lt;&#x2F;li&gt;
 &lt;li&gt;And of course, I wrote a release post &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;vim-reference-guide-announcement&#x2F;&quot;&gt;on this blog&lt;&#x2F;a&gt; and also mentioned it on my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&quot;&gt;GitHub Readme&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;p&gt;Apart from Gumroad, 500+ readers downloaded the guide from &lt;a href=&quot;https:&#x2F;&#x2F;leanpub.com&#x2F;vim_reference_guide&quot;&gt;Leanpub&lt;&#x2F;a&gt; and I got a few paid sales as well. I wrote about &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;my-book-writing-experience&#x2F;#leanpub-vs-gumroad&quot;&gt;pros and cons of Gumroad&#x2F;Leanpub here&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
