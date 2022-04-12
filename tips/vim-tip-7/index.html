@@ -7,7 +7,7 @@
       <!-- Enable responsiveness on mobile devices-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-      <title>Vim tip 4: reposition current line in Normal mode</title>
+      <title>Vim tip 7: changing case in Normal mode</title>
 
       
         <link rel="alternate" type="application/atom+xml" title="RSS" href="https://learnbyexample.github.io/atom.xml">
@@ -128,29 +128,37 @@
     
     <header class="post__header">
         <h1 class="post__title">
-            <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips&#x2F;vim-tip-4&#x2F;">Vim tip 4: reposition current line in Normal mode</a>
+            <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips&#x2F;vim-tip-7&#x2F;">Vim tip 7: changing case in Normal mode</a>
         </h1>
         <div class="post__meta">
-            <span class="post__time">2022-02-09</span>
+            <span class="post__time">2022-04-12</span>
             
         </div>
     </header>
 
     <div class="post-content">
-      <p>You're likely to be familiar with commands to scroll through the contents like <kbd>Ctrl</kbd> followed by <kbd>d</kbd> or <kbd>f</kbd> or <kbd>u</kbd> or <kbd>b</kbd>.</p>
-<p>Did you know that Vim also has handy options to keep the cursor on the current line while moving the contents around?</p>
+      <p>You can use the following commands to change the case of characters:</p>
 <ul>
-<li><kbd>zz</kbd> reposition the current line to the middle of the visible window
+<li><kbd>~</kbd> invert the case of the character under the cursor (i.e. lowercase becomes UPPERCASE and vice versa)</li>
+<li><kbd>g~</kbd> followed by motion inverts the case of those characters
 <ul>
-<li>useful to see context around lines that are nearer to the top/bottom of the visible window</li>
+<li>for example: <kbd>g~e</kbd>, <kbd>g~$</kbd>, <kbd>g~iw</kbd>, etc </li>
 </ul>
 </li>
-<li><kbd>zt</kbd> reposition the current line to the top of the visible window</li>
-<li><kbd>zb</kbd> reposition the current line to the bottom of the visible window</li>
+<li><kbd>gu</kbd> followed by motion changes those characters to lowercase
+<ul>
+<li>for example: <kbd>gue</kbd>, <kbd>gu$</kbd>, <kbd>guiw</kbd>, etc </li>
 </ul>
-<p><img src="/images/info.svg" alt="info" /> See <a href="https://vimhelp.org/options.txt.html#%27scrolloff%27">:h 'scrolloff'</a> option if you want to always show context around the current line.</p>
+</li>
+<li><kbd>gU</kbd> followed by motion changes those characters to UPPERCASE
+<ul>
+<li>for example: <kbd>gUe</kbd>, <kbd>gU$</kbd>, <kbd>gUiw</kbd>, etc </li>
+</ul>
+</li>
+</ul>
+<p><img src="/images/info.svg" alt="info" /> You can also provide a count prefix to these commands. For example, <kbd>3~</kbd> will invert the case of the current character and two characters to the right.</p>
 <p><strong>Video demo</strong>:</p>
-<p align="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/XRXO4Ns8rPE" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+<p align="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/TLhEznBrEG8" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
 <br>
 <p><img src="/images/info.svg" alt="info" /> See also my <a href="https://github.com/learnbyexample/vim_reference">Vim Reference Guide</a> and <a href="https://learnbyexample.github.io/curated_resources/vim.html">curated list of resources for Vim</a>.</p>
 

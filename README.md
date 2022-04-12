@@ -53,6 +53,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Tips
 
+* [Vim tip 7: changing case in Normal mode](https://learnbyexample.github.io/tips/vim-tip-7/)
 * [CLI tip 8: extract from start of file until matching line](https://learnbyexample.github.io/tips/cli-tip-8/)
 * [Python tip 8: dict.fromkeys() method](https://learnbyexample.github.io/tips/python-tip-8/)
 * [Vim tip 6: search word nearest to the cursor](https://learnbyexample.github.io/tips/vim-tip-6/)
@@ -64,7 +65,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 * [Vim tip 4: reposition current line in Normal mode](https://learnbyexample.github.io/tips/vim-tip-4/)
 * [CLI tip 5: aligning columns](https://learnbyexample.github.io/tips/cli-tip-5/)
 * [Python tip 5: random choice and sample](https://learnbyexample.github.io/tips/python-tip-5/)
-* [Vim tip 3: auto complete words and lines in Insert mode](https://learnbyexample.github.io/tips/vim-tip-3/)
+* [Vim tip 3: autocomplete words and lines in Insert mode](https://learnbyexample.github.io/tips/vim-tip-3/)
 * [CLI tip 4: serialize file contents to a single line](https://learnbyexample.github.io/tips/cli-tip-4/)
 * [Python tip 4: comparison chaining](https://learnbyexample.github.io/tips/python-tip-4/)
 * [Vim tip 2: indent/unindent lines](https://learnbyexample.github.io/tips/vim-tip-2/)

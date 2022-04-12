@@ -7,7 +7,7 @@
       <!-- Enable responsiveness on mobile devices-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-      <title>Vim tip 3: auto complete words and lines in Insert mode</title>
+      <title>Vim tip 3: autocomplete words and lines in Insert mode</title>
 
       
         <link rel="alternate" type="application/atom+xml" title="RSS" href="https://learnbyexample.github.io/atom.xml">
@@ -128,7 +128,7 @@
     
     <header class="post__header">
         <h1 class="post__title">
-            <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips&#x2F;vim-tip-3&#x2F;">Vim tip 3: auto complete words and lines in Insert mode</a>
+            <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips&#x2F;vim-tip-3&#x2F;">Vim tip 3: autocomplete words and lines in Insert mode</a>
         </h1>
         <div class="post__meta">
             <span class="post__time">2022-01-18</span>
@@ -137,32 +137,32 @@
     </header>
 
     <div class="post-content">
-      <p><strong>Auto complete word</strong></p>
+      <p><strong>Autocomplete word</strong></p>
 <ul>
-<li><kbd>Ctrl</kbd>+<kbd>p</kbd> auto complete word based on matching words in the backward direction</li>
-<li><kbd>Ctrl</kbd>+<kbd>n</kbd> auto complete word based on matching words in the forward direction</li>
+<li><kbd>Ctrl</kbd>+<kbd>p</kbd> autocomplete word based on matching words in the backward direction</li>
+<li><kbd>Ctrl</kbd>+<kbd>n</kbd> autocomplete word based on matching words in the forward direction</li>
 </ul>
 <p><img src="/images/info.svg" alt="info" /> If more than one word matches, they are displayed using a popup menu. You can use <kbd>↑</kbd>/<kbd>↓</kbd> arrow keys or <kbd>Ctrl</kbd>+<kbd>p</kbd>/<kbd>Ctrl</kbd>+<kbd>n</kbd> to move through this list.</p>
-<p><strong>Auto complete line</strong></p>
+<p><img src="/images/info.svg" alt="info" /> With multiple matches, you'll notice that the first match is automatically inserted and moving through the list doesn't change the text that was inserted. You'll have to press <kbd>Ctrl</kbd>+<kbd>y</kbd> or <kbd>Enter</kbd> key to choose a different completion text. If you were satisfied with the first match, typing any character will make the popup menu disappear and insert whatever character you had typed. Or press <kbd>Esc</kbd> to select the first match and go to Normal mode.</p>
+<p><strong>Autocomplete line</strong></p>
 <ul>
-<li><kbd>Ctrl</kbd>+<kbd>x</kbd> followed by <kbd>Ctrl</kbd>+<kbd>l</kbd> auto complete line based on matching lines in the backward direction</li>
+<li><kbd>Ctrl</kbd>+<kbd>x</kbd> followed by <kbd>Ctrl</kbd>+<kbd>l</kbd> autocomplete line based on matching lines in the backward direction</li>
 </ul>
 <p><img src="/images/info.svg" alt="info" /> If more than one line matches, they are displayed using a popup menu. You can use <kbd>↑</kbd>/<kbd>↓</kbd> arrow keys or <kbd>Ctrl</kbd>+<kbd>p</kbd>/<kbd>Ctrl</kbd>+<kbd>n</kbd> to move through this list. You can also use <kbd>Ctrl</kbd>+<kbd>l</kbd> to move up the list.</p>
-<p><strong>Auto complete assist</strong></p>
+<p><strong>Autocomplete assist</strong></p>
 <ul>
-<li><kbd>Ctrl</kbd>+<kbd>e</kbd> cancels auto complete
+<li><kbd>Ctrl</kbd>+<kbd>e</kbd> cancels autocomplete
 <ul>
-<li>you'll retain the text you had typed before invoking auto complete</li>
+<li>you'll retain the text you had typed before invoking autocomplete</li>
 </ul>
 </li>
-<li><kbd>Ctrl</kbd>+<kbd>y</kbd> select the current item from the popup menu
-<ul>
-<li>you can also press the <kbd>Enter</kbd> key to choose the selection</li>
+<li><kbd>Ctrl</kbd>+<kbd>y</kbd> or <kbd>Enter</kbd> change the autocompletion text to the currently selected item from the popup menu</li>
 </ul>
-</li>
-</ul>
-<p><img src="/images/info.svg" alt="info" /> See <a href="https://vimhelp.org/insert.txt.html#ins-completion">:h ins-completion</a> for more details and other auto complete features.</p>
-<p><img src="/images/info.svg" alt="info" /> See also my <a href="https://github.com/learnbyexample/vim_reference">Vim reference guide</a> and <a href="https://learnbyexample.github.io/curated_resources/vim.html">curated list of resources for Vim</a>.</p>
+<p><img src="/images/info.svg" alt="info" /> See <a href="https://vimhelp.org/insert.txt.html#ins-completion">:h ins-completion</a> for more details and other autocomplete features.</p>
+<p><strong>Video demo</strong>:</p>
+<p align="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/GJrsWOtcmqM" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+<br>
+<p><img src="/images/info.svg" alt="info" /> See also my <a href="https://github.com/learnbyexample/vim_reference">Vim Reference Guide</a> and <a href="https://learnbyexample.github.io/curated_resources/vim.html">curated list of resources for Vim</a>.</p>
 
     </div>
 

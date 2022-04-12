@@ -5,8 +5,40 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2022-04-06T00:00:00+00:00</updated>
+	<updated>2022-04-12T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Vim tip 7: changing case in Normal mode</title>
+		<published>2022-04-12T00:00:00+00:00</published>
+		<updated>2022-04-12T00:00:00+00:00</updated>
+		<link href="https://learnbyexample.github.io/tips/vim-tip-7/" type="text/html"/>
+		<id>https://learnbyexample.github.io/tips/vim-tip-7/</id>
+		<content type="html">&lt;p&gt;You can use the following commands to change the case of characters:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;kbd&gt;~&lt;&#x2F;kbd&gt; invert the case of the character under the cursor (i.e. lowercase becomes UPPERCASE and vice versa)&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;g~&lt;&#x2F;kbd&gt; followed by motion inverts the case of those characters
+&lt;ul&gt;
+&lt;li&gt;for example: &lt;kbd&gt;g~e&lt;&#x2F;kbd&gt;, &lt;kbd&gt;g~$&lt;&#x2F;kbd&gt;, &lt;kbd&gt;g~iw&lt;&#x2F;kbd&gt;, etc &lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;gu&lt;&#x2F;kbd&gt; followed by motion changes those characters to lowercase
+&lt;ul&gt;
+&lt;li&gt;for example: &lt;kbd&gt;gue&lt;&#x2F;kbd&gt;, &lt;kbd&gt;gu$&lt;&#x2F;kbd&gt;, &lt;kbd&gt;guiw&lt;&#x2F;kbd&gt;, etc &lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;gU&lt;&#x2F;kbd&gt; followed by motion changes those characters to UPPERCASE
+&lt;ul&gt;
+&lt;li&gt;for example: &lt;kbd&gt;gUe&lt;&#x2F;kbd&gt;, &lt;kbd&gt;gU$&lt;&#x2F;kbd&gt;, &lt;kbd&gt;gUiw&lt;&#x2F;kbd&gt;, etc &lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; You can also provide a count prefix to these commands. For example, &lt;kbd&gt;3~&lt;&#x2F;kbd&gt; will invert the case of the current character and two characters to the right.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Video demo&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;TLhEznBrEG8&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;&#x2F;iframe&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See also my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;vim_reference&quot;&gt;Vim Reference Guide&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;curated_resources&#x2F;vim.html&quot;&gt;curated list of resources for Vim&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>CLI tip 8: extract from start of file until matching line</title>
 		<published>2022-04-06T00:00:00+00:00</published>
@@ -144,7 +176,10 @@ mango
 &lt;&#x2F;blockquote&gt;
 &lt;p&gt;Sequence of non-blank characters will be used only at the end of the line. Otherwise, the above commands will use the next word found on that line which is made up of letters, digits and underscores.&lt;&#x2F;p&gt;
 &lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; You can also provide a count prefix to these commands. For example, &lt;kbd&gt;2*&lt;&#x2F;kbd&gt; will take you to the second match in the forward direction.&lt;&#x2F;p&gt;
-&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See also my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;vim_reference&quot;&gt;Vim reference guide&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;curated_resources&#x2F;vim.html&quot;&gt;curated list of resources for Vim&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Video demo&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;abDN559M5yQ&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;&#x2F;iframe&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See also my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;vim_reference&quot;&gt;Vim Reference Guide&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;curated_resources&#x2F;vim.html&quot;&gt;curated list of resources for Vim&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 </content>
 	</entry>
 	<entry xml:lang="en">
@@ -310,7 +345,10 @@ goal
 &lt;li&gt;&lt;kbd&gt;gi&lt;&#x2F;kbd&gt; place the cursor at the same position where it was left last time in the Insert mode&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; Use &lt;kbd&gt;:jumps&lt;&#x2F;kbd&gt; to view the jump list. See &lt;a href=&quot;https:&#x2F;&#x2F;vimhelp.org&#x2F;motion.txt.html#jump-motions&quot;&gt;:h jump-motions&lt;&#x2F;a&gt; for more details.&lt;&#x2F;p&gt;
-&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See also my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;vim_reference&quot;&gt;Vim reference guide&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;curated_resources&#x2F;vim.html&quot;&gt;curated list of resources for Vim&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Video demo&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;eId_8aCcmQE&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;&#x2F;iframe&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See also my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;vim_reference&quot;&gt;Vim Reference Guide&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;curated_resources&#x2F;vim.html&quot;&gt;curated list of resources for Vim&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 </content>
 	</entry>
 	<entry xml:lang="en">
@@ -386,7 +424,10 @@ yellow banana window shoes &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;
 &lt;li&gt;&lt;kbd&gt;zb&lt;&#x2F;kbd&gt; reposition the current line to the bottom of the visible window&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See &lt;a href=&quot;https:&#x2F;&#x2F;vimhelp.org&#x2F;options.txt.html#%27scrolloff%27&quot;&gt;:h &#x27;scrolloff&#x27;&lt;&#x2F;a&gt; option if you want to always show context around the current line.&lt;&#x2F;p&gt;
-&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See also my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;vim_reference&quot;&gt;Vim reference guide&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;curated_resources&#x2F;vim.html&quot;&gt;curated list of resources for Vim&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Video demo&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;XRXO4Ns8rPE&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;&#x2F;iframe&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See also my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;vim_reference&quot;&gt;Vim Reference Guide&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;curated_resources&#x2F;vim.html&quot;&gt;curated list of resources for Vim&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 </content>
 	</entry>
 	<entry xml:lang="en">
@@ -581,37 +622,37 @@ tru eblue
 </content>
 	</entry>
 	<entry xml:lang="en">
-		<title>Vim tip 3: auto complete words and lines in Insert mode</title>
+		<title>Vim tip 3: autocomplete words and lines in Insert mode</title>
 		<published>2022-01-18T00:00:00+00:00</published>
 		<updated>2022-01-18T00:00:00+00:00</updated>
 		<link href="https://learnbyexample.github.io/tips/vim-tip-3/" type="text/html"/>
 		<id>https://learnbyexample.github.io/tips/vim-tip-3/</id>
-		<content type="html">&lt;p&gt;&lt;strong&gt;Auto complete word&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+		<content type="html">&lt;p&gt;&lt;strong&gt;Autocomplete word&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;kbd&gt;Ctrl&lt;&#x2F;kbd&gt;+&lt;kbd&gt;p&lt;&#x2F;kbd&gt; auto complete word based on matching words in the backward direction&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;kbd&gt;Ctrl&lt;&#x2F;kbd&gt;+&lt;kbd&gt;n&lt;&#x2F;kbd&gt; auto complete word based on matching words in the forward direction&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;Ctrl&lt;&#x2F;kbd&gt;+&lt;kbd&gt;p&lt;&#x2F;kbd&gt; autocomplete word based on matching words in the backward direction&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;Ctrl&lt;&#x2F;kbd&gt;+&lt;kbd&gt;n&lt;&#x2F;kbd&gt; autocomplete word based on matching words in the forward direction&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; If more than one word matches, they are displayed using a popup menu. You can use &lt;kbd&gt;↑&lt;&#x2F;kbd&gt;&#x2F;&lt;kbd&gt;↓&lt;&#x2F;kbd&gt; arrow keys or &lt;kbd&gt;Ctrl&lt;&#x2F;kbd&gt;+&lt;kbd&gt;p&lt;&#x2F;kbd&gt;&#x2F;&lt;kbd&gt;Ctrl&lt;&#x2F;kbd&gt;+&lt;kbd&gt;n&lt;&#x2F;kbd&gt; to move through this list.&lt;&#x2F;p&gt;
-&lt;p&gt;&lt;strong&gt;Auto complete line&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; With multiple matches, you&#x27;ll notice that the first match is automatically inserted and moving through the list doesn&#x27;t change the text that was inserted. You&#x27;ll have to press &lt;kbd&gt;Ctrl&lt;&#x2F;kbd&gt;+&lt;kbd&gt;y&lt;&#x2F;kbd&gt; or &lt;kbd&gt;Enter&lt;&#x2F;kbd&gt; key to choose a different completion text. If you were satisfied with the first match, typing any character will make the popup menu disappear and insert whatever character you had typed. Or press &lt;kbd&gt;Esc&lt;&#x2F;kbd&gt; to select the first match and go to Normal mode.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Autocomplete line&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;kbd&gt;Ctrl&lt;&#x2F;kbd&gt;+&lt;kbd&gt;x&lt;&#x2F;kbd&gt; followed by &lt;kbd&gt;Ctrl&lt;&#x2F;kbd&gt;+&lt;kbd&gt;l&lt;&#x2F;kbd&gt; auto complete line based on matching lines in the backward direction&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;Ctrl&lt;&#x2F;kbd&gt;+&lt;kbd&gt;x&lt;&#x2F;kbd&gt; followed by &lt;kbd&gt;Ctrl&lt;&#x2F;kbd&gt;+&lt;kbd&gt;l&lt;&#x2F;kbd&gt; autocomplete line based on matching lines in the backward direction&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; If more than one line matches, they are displayed using a popup menu. You can use &lt;kbd&gt;↑&lt;&#x2F;kbd&gt;&#x2F;&lt;kbd&gt;↓&lt;&#x2F;kbd&gt; arrow keys or &lt;kbd&gt;Ctrl&lt;&#x2F;kbd&gt;+&lt;kbd&gt;p&lt;&#x2F;kbd&gt;&#x2F;&lt;kbd&gt;Ctrl&lt;&#x2F;kbd&gt;+&lt;kbd&gt;n&lt;&#x2F;kbd&gt; to move through this list. You can also use &lt;kbd&gt;Ctrl&lt;&#x2F;kbd&gt;+&lt;kbd&gt;l&lt;&#x2F;kbd&gt; to move up the list.&lt;&#x2F;p&gt;
-&lt;p&gt;&lt;strong&gt;Auto complete assist&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Autocomplete assist&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;kbd&gt;Ctrl&lt;&#x2F;kbd&gt;+&lt;kbd&gt;e&lt;&#x2F;kbd&gt; cancels auto complete
+&lt;li&gt;&lt;kbd&gt;Ctrl&lt;&#x2F;kbd&gt;+&lt;kbd&gt;e&lt;&#x2F;kbd&gt; cancels autocomplete
 &lt;ul&gt;
-&lt;li&gt;you&#x27;ll retain the text you had typed before invoking auto complete&lt;&#x2F;li&gt;
+&lt;li&gt;you&#x27;ll retain the text you had typed before invoking autocomplete&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;&#x2F;li&gt;
-&lt;li&gt;&lt;kbd&gt;Ctrl&lt;&#x2F;kbd&gt;+&lt;kbd&gt;y&lt;&#x2F;kbd&gt; select the current item from the popup menu
-&lt;ul&gt;
-&lt;li&gt;you can also press the &lt;kbd&gt;Enter&lt;&#x2F;kbd&gt; key to choose the selection&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;Ctrl&lt;&#x2F;kbd&gt;+&lt;kbd&gt;y&lt;&#x2F;kbd&gt; or &lt;kbd&gt;Enter&lt;&#x2F;kbd&gt; change the autocompletion text to the currently selected item from the popup menu&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
-&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
-&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See &lt;a href=&quot;https:&#x2F;&#x2F;vimhelp.org&#x2F;insert.txt.html#ins-completion&quot;&gt;:h ins-completion&lt;&#x2F;a&gt; for more details and other auto complete features.&lt;&#x2F;p&gt;
-&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See also my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;vim_reference&quot;&gt;Vim reference guide&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;curated_resources&#x2F;vim.html&quot;&gt;curated list of resources for Vim&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See &lt;a href=&quot;https:&#x2F;&#x2F;vimhelp.org&#x2F;insert.txt.html#ins-completion&quot;&gt;:h ins-completion&lt;&#x2F;a&gt; for more details and other autocomplete features.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Video demo&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;GJrsWOtcmqM&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;&#x2F;iframe&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See also my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;vim_reference&quot;&gt;Vim Reference Guide&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;curated_resources&#x2F;vim.html&quot;&gt;curated list of resources for Vim&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 </content>
 	</entry>
 	<entry xml:lang="en">
@@ -961,7 +1002,10 @@ statements
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; Indentation depends on the &lt;code&gt;shiftwidth&lt;&#x2F;code&gt; setting.&lt;&#x2F;p&gt;
 &lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See &lt;a href=&quot;https:&#x2F;&#x2F;vimhelp.org&#x2F;change.txt.html#shift-left-right&quot;&gt;:h shift-left-right&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;vimhelp.org&#x2F;change.txt.html#%3D&quot;&gt;:h =&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;vimhelp.org&#x2F;options.txt.html#%27shiftwidth%27&quot;&gt;:h &#x27;shiftwidth&#x27;&lt;&#x2F;a&gt; for documentation.&lt;&#x2F;p&gt;
-&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See also my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;vim_reference&quot;&gt;Vim reference guide&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;curated_resources&#x2F;vim.html&quot;&gt;curated list of resources for Vim&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Video demo&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;HuySlxcoAIU&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;&#x2F;iframe&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See also my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;vim_reference&quot;&gt;Vim Reference Guide&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;curated_resources&#x2F;vim.html&quot;&gt;curated list of resources for Vim&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 </content>
 	</entry>
 	<entry xml:lang="en">
@@ -1153,7 +1197,7 @@ $ perl -lne &amp;#39;$c=0; $c++ while(s&#x2F;\{[^{}]*\}&#x2F;&#x2F;g);
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;Decimal numbers prefixed with &lt;code&gt;-&lt;&#x2F;code&gt; will be treated as negative numbers. For example, using &lt;kbd&gt;Ctrl&lt;&#x2F;kbd&gt;+&lt;kbd&gt;a&lt;&#x2F;kbd&gt; on &lt;code&gt;-100&lt;&#x2F;code&gt; will give you &lt;code&gt;-99&lt;&#x2F;code&gt;. While this is handy, this trips me up often when dealing with date formats like 2021-12-08.&lt;&#x2F;p&gt;
 &lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See &lt;a href=&quot;https:&#x2F;&#x2F;vimhelp.org&#x2F;change.txt.html#CTRL-A&quot;&gt;:h ctrl-a&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;vimhelp.org&#x2F;change.txt.html#CTRL-X&quot;&gt;:h ctrl-x&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;vimhelp.org&#x2F;options.txt.html#%27nrformats%27&quot;&gt;:h nrformats&lt;&#x2F;a&gt; for documentation.&lt;&#x2F;p&gt;
-&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See also my &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;curated_resources&#x2F;vim.html&quot;&gt;curated list of resources for Vim&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;vim_reference&quot;&gt;Vim reference guide&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See also my &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;curated_resources&#x2F;vim.html&quot;&gt;curated list of resources for Vim&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;vim_reference&quot;&gt;Vim Reference Guide&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 </content>
 	</entry>
 	<entry xml:lang="en">
