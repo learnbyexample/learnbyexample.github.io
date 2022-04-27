@@ -53,6 +53,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Tips
 
+* [CLI tip 9: awk paragraph mode](https://learnbyexample.github.io/tips/cli-tip-9/)
 * [Python tip 9: applying set-like operations for dictionaries](https://learnbyexample.github.io/tips/python-tip-9/)
 * [Vim tip 7: changing case in Normal mode](https://learnbyexample.github.io/tips/vim-tip-7/)
 * [CLI tip 8: extract from start of file until matching line](https://learnbyexample.github.io/tips/cli-tip-8/)
