@@ -137,11 +137,38 @@
     </header>
 
     <div class="post-content">
-      <p>Want to remove metadata (DateTime, Model, Orientation, ShutterSpeedValue, etc) from your images? Here's an example using <code>mogrify</code> for all files ending with <code>.jpg</code> in the current directory.</p>
+      <p>Want to remove metadata (DateTime, Model, Orientation, ShutterSpeedValue, etc) from your images? You can use <code>mogrify</code> or <code>convert</code> tools provided by ImageMagick.</p>
+<p>GUI image viewer applications will usually allow you to see some of the image metadata. You can also use the <code>identify</code> command line tool to get all the metadata:</p>
 <pre style="background-color:#f5f5f5;">
-<code><span style="color:#5597d6;">$</span><span style="color:#1f1f1f;"> mogrify</span><span style="color:#5597d6;"> -strip </span><span style="color:#72ab00;">*</span><span style="color:#1f1f1f;">.jpg
+<code><span style="color:#7f8989;"># remove &#39;head&#39; to get the entire list of metadata
+</span><span style="color:#1f1f1f;">$ identify </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">verbose insect.jpg </span><span style="color:#72ab00;">|</span><span style="color:#1f1f1f;"> grep </span><span style="color:#d07711;">&#39;exif&#39; </span><span style="color:#72ab00;">|</span><span style="color:#1f1f1f;"> head
+    </span><span style="color:#b3933a;">exif:ApertureValue: 113</span><span style="color:#72ab00;">/</span><span style="color:#b3933a;">32
+    exif:ColorSpace: 1
+    exif:ComponentsConfiguration: 1</span><span style="color:#1f1f1f;">, </span><span style="color:#b3933a;">2</span><span style="color:#1f1f1f;">, </span><span style="color:#b3933a;">3</span><span style="color:#1f1f1f;">, </span><span style="color:#b3933a;">0
+    exif:CompressedBitsPerPixel: 3</span><span style="color:#72ab00;">/</span><span style="color:#b3933a;">1
+    exif:CustomRendered: 0
+    exif:DateTime: 2016</span><span style="color:#72ab00;">:</span><span style="color:#b3933a;">12</span><span style="color:#72ab00;">:</span><span style="color:#b3933a;">03 11</span><span style="color:#72ab00;">:</span><span style="color:#b3933a;">26</span><span style="color:#72ab00;">:</span><span style="color:#b3933a;">10
+    exif:DateTimeDigitized: 2016</span><span style="color:#72ab00;">:</span><span style="color:#b3933a;">12</span><span style="color:#72ab00;">:</span><span style="color:#b3933a;">03 11</span><span style="color:#72ab00;">:</span><span style="color:#b3933a;">26</span><span style="color:#72ab00;">:</span><span style="color:#b3933a;">10
+    exif:DateTimeOriginal: 2016</span><span style="color:#72ab00;">:</span><span style="color:#b3933a;">12</span><span style="color:#72ab00;">:</span><span style="color:#b3933a;">03 11</span><span style="color:#72ab00;">:</span><span style="color:#b3933a;">26</span><span style="color:#72ab00;">:</span><span style="color:#b3933a;">10
+    exif:DigitalZoomRatio: 4000</span><span style="color:#72ab00;">/</span><span style="color:#b3933a;">4000
+    exif:ExifOffset: 240
 </span></code></pre>
-<p><img src="/images/info.svg" alt="info" /> Note that this will replace your original images and output size may vary because of recompression. See the below resource links for more details and alternate tools.</p>
+<p>And here's how you can remove such metadata from images:</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#7f8989;"># to create a new image with metadata removed
+</span><span style="color:#1f1f1f;">$ convert </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">strip insect.jpg op.jpg
+
+</span><span style="color:#7f8989;"># to modify the input image itself
+</span><span style="color:#1f1f1f;">$ mogrify </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">strip insect.jpg
+</span></code></pre>
+<p>You can also pass multiple images to <code>mogrify</code>:</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#1f1f1f;">$ mogrify </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">strip </span><span style="color:#72ab00;">*</span><span style="color:#1f1f1f;">.jpg
+</span></code></pre>
+<p><img src="/images/info.svg" alt="info" /> Note that the image size after metadata removal may vary because of recompression.</p>
+<p><strong>Video demo</strong>:</p>
+<p align="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/p0KCLusMd5Q" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+<br>
 <p><strong>Further Reading</strong>:</p>
 <ul>
 <li><a href="https://imagemagick.org/">ImageMagick</a> — create, edit, compose, or convert digital images</li>

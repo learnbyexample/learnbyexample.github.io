@@ -5,7 +5,7 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2022-04-27T00:00:00+00:00</updated>
+	<updated>2022-05-03T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
 	<entry xml:lang="en">
 		<title>CLI tip 9: awk paragraph mode</title>
@@ -1522,14 +1522,41 @@ $ perl -lne &amp;#39;$c=0; $c++ while(s&#x2F;\{[^{}]*\}&#x2F;&#x2F;g);
 	<entry xml:lang="en">
 		<title>CLI tip 1: remove metadata from images</title>
 		<published>2021-11-18T00:00:00+00:00</published>
-		<updated>2021-11-18T00:00:00+00:00</updated>
+		<updated>2022-05-03T00:00:00+00:00</updated>
 		<link href="https://learnbyexample.github.io/tips/cli-tip-1/" type="text/html"/>
 		<id>https://learnbyexample.github.io/tips/cli-tip-1/</id>
-		<content type="html">&lt;p&gt;Want to remove metadata (DateTime, Model, Orientation, ShutterSpeedValue, etc) from your images? Here&#x27;s an example using &lt;code&gt;mogrify&lt;&#x2F;code&gt; for all files ending with &lt;code&gt;.jpg&lt;&#x2F;code&gt; in the current directory.&lt;&#x2F;p&gt;
+		<content type="html">&lt;p&gt;Want to remove metadata (DateTime, Model, Orientation, ShutterSpeedValue, etc) from your images? You can use &lt;code&gt;mogrify&lt;&#x2F;code&gt; or &lt;code&gt;convert&lt;&#x2F;code&gt; tools provided by ImageMagick.&lt;&#x2F;p&gt;
+&lt;p&gt;GUI image viewer applications will usually allow you to see some of the image metadata. You can also use the &lt;code&gt;identify&lt;&#x2F;code&gt; command line tool to get all the metadata:&lt;&#x2F;p&gt;
 &lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
-&lt;code&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; mogrify&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt; -strip &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;.jpg
+&lt;code&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# remove &amp;#39;head&amp;#39; to get the entire list of metadata
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ identify &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;verbose insect.jpg &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; grep &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;exif&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; head
+    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;exif:ApertureValue: 113&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;32
+    exif:ColorSpace: 1
+    exif:ComponentsConfiguration: 1&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;2&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;3&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;0
+    exif:CompressedBitsPerPixel: 3&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;1
+    exif:CustomRendered: 0
+    exif:DateTime: 2016&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;12&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;03 11&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;26&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;10
+    exif:DateTimeDigitized: 2016&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;12&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;03 11&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;26&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;10
+    exif:DateTimeOriginal: 2016&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;12&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;03 11&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;26&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;10
+    exif:DigitalZoomRatio: 4000&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;4000
+    exif:ExifOffset: 240
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; Note that this will replace your original images and output size may vary because of recompression. See the below resource links for more details and alternate tools.&lt;&#x2F;p&gt;
+&lt;p&gt;And here&#x27;s how you can remove such metadata from images:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# to create a new image with metadata removed
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ convert &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;strip insect.jpg op.jpg
+
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# to modify the input image itself
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ mogrify &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;strip insect.jpg
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;You can also pass multiple images to &lt;code&gt;mogrify&lt;&#x2F;code&gt;:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ mogrify &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;strip &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;.jpg
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; Note that the image size after metadata removal may vary because of recompression.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Video demo&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;p0KCLusMd5Q&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;&#x2F;iframe&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
 &lt;p&gt;&lt;strong&gt;Further Reading&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;imagemagick.org&#x2F;&quot;&gt;ImageMagick&lt;&#x2F;a&gt; — create, edit, compose, or convert digital images&lt;&#x2F;li&gt;
