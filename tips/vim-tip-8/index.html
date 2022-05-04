@@ -7,7 +7,7 @@
       <!-- Enable responsiveness on mobile devices-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-      <title>learnbyexample</title>
+      <title>Vim tip 8: join lines</title>
 
       
         <link rel="alternate" type="application/atom+xml" title="RSS" href="https://learnbyexample.github.io/atom.xml">
@@ -121,48 +121,70 @@
             <main>
                 <div class="content" id="mobile-panel">
                     
-    <div class="about">
-        <h1 id="list-of-all-tips-bulb"><p style="color: #c05b4d">List of all tips 💡</h1>
-<p>This page links to tips about <u><a href="https://learnbyexample.github.io/tips/#python">Python</a></u>, <u><a href="https://learnbyexample.github.io/tips/#command-line-tools">Command line tools</a></u> and <u><a href="https://learnbyexample.github.io/tips/#vim">Vim</a></u></p>
-<h2 id="python-snake"><p style="color: #ff6600"><a name="python"></a>Python 🐍</h2>
+
+
+
+<article class="post">
+    
+    <header class="post__header">
+        <h1 class="post__title">
+            <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips&#x2F;vim-tip-8&#x2F;">Vim tip 8: join lines</a>
+        </h1>
+        <div class="post__meta">
+            <span class="post__time">2022-05-04</span>
+            
+        </div>
+    </header>
+
+    <div class="post-content">
+      <p>In Normal mode, you can join lines using <code>J</code> and <code>gJ</code> commands. These differ in how the end-of-line character and indentation at the start of lines being joined are handled.</p>
 <ul>
-<li><a href="https://learnbyexample.github.io/tips/python-tip-9/">Python tip 9: applying set-like operations for dictionaries</a></li>
-<li><a href="https://learnbyexample.github.io/tips/python-tip-8/">Python tip 8: dict.fromkeys() method</a></li>
-<li><a href="https://learnbyexample.github.io/tips/python-tip-7/">Python tip 7: creating a deepcopy of collections</a></li>
-<li><a href="https://learnbyexample.github.io/tips/python-tip-6/">Python tip 6: inplace file editing</a></li>
-<li><a href="https://learnbyexample.github.io/tips/python-tip-5/">Python tip 5: random choice and sample</a></li>
-<li><a href="https://learnbyexample.github.io/tips/python-tip-4/">Python tip 4: comparison chaining</a></li>
-<li><a href="https://learnbyexample.github.io/tips/python-tip-3/">Python tip 3: expression and result with f-string</a></li>
-<li><a href="https://learnbyexample.github.io/tips/python-tip-2/">Python tip 2: membership operator</a></li>
-<li><a href="https://learnbyexample.github.io/tips/python-tip-1/">Python tip 1: tuple argument for startswith/endswith methods</a></li>
-</ul>
-<hr>
-<h2 id="command-line-tools-penguin"><p style="color: #ff6600"><a name="command-line-tools"></a>Command line tools 🐧</h2>
+<li><kbd>J</kbd> joins the current line and the next line
 <ul>
-<li><a href="https://learnbyexample.github.io/tips/cli-tip-9/">CLI tip 9: awk paragraph mode</a></li>
-<li><a href="https://learnbyexample.github.io/tips/cli-tip-8/">CLI tip 8: extract from start of file until matching line</a></li>
-<li><a href="https://learnbyexample.github.io/tips/cli-tip-7/">CLI tip 7: limiting number of filtered lines</a></li>
-<li><a href="https://learnbyexample.github.io/tips/cli-tip-6/">CLI tip 6: filtering lines based on multiple conditions</a></li>
-<li><a href="https://learnbyexample.github.io/tips/cli-tip-5/">CLI tip 5: aligning columns</a></li>
-<li><a href="https://learnbyexample.github.io/tips/cli-tip-4/">CLI tip 4: serialize file contents to a single line</a></li>
-<li><a href="https://learnbyexample.github.io/tips/cli-tip-3/">CLI tip 3: place backups in another directory with GNU sed</a></li>
-<li><a href="https://learnbyexample.github.io/tips/cli-tip-2/">CLI tip 2: counting number of matches</a></li>
-<li><a href="https://learnbyexample.github.io/tips/cli-tip-1/">CLI tip 1: remove metadata from images</a></li>
+<li>the deleted <code>&lt;EOL&gt;</code> character is replaced with a space (unless there are trailing spaces or the next line starts with a <code>)</code> character)</li>
+<li>indentation from the lines being joined are removed, <em>except the current line</em></li>
 </ul>
-<hr>
-<h2 id="vim-memo"><p style="color: #ff6600"><a name="vim"></a>Vim 📝</h2>
+</li>
+<li><kbd>3J</kbd> joins the current line and next two lines with one space in between the lines</li>
+<li><kbd>gJ</kbd> joins the current line and the next line
 <ul>
-<li><a href="https://learnbyexample.github.io/tips/vim-tip-8/">Vim tip 8: join lines</a></li>
-<li><a href="https://learnbyexample.github.io/tips/vim-tip-7/">Vim tip 7: changing case in Normal mode</a></li>
-<li><a href="https://learnbyexample.github.io/tips/vim-tip-6/">Vim tip 6: search word nearest to the cursor</a></li>
-<li><a href="https://learnbyexample.github.io/tips/vim-tip-5/">Vim tip 5: jumping back and forth in Normal mode</a></li>
-<li><a href="https://learnbyexample.github.io/tips/vim-tip-4/">Vim tip 4: reposition current line in Normal mode</a></li>
-<li><a href="https://learnbyexample.github.io/tips/vim-tip-3/">Vim tip 3: autocomplete words and lines in Insert mode</a></li>
-<li><a href="https://learnbyexample.github.io/tips/vim-tip-2/">Vim tip 2: indent/unindent lines</a></li>
-<li><a href="https://learnbyexample.github.io/tips/vim-tip-1/">Vim tip 1: increment/decrement numbers</a></li>
+<li><code>&lt;EOL&gt;</code> character is deleted (space character won't be added)</li>
+<li>indentation won't be removed</li>
 </ul>
+</li>
+</ul>
+<p><img src="/images/info.svg" alt="info" /> <code>joinspaces</code>, <code>cpoptions</code> and <code>formatoptions</code> settings will affect the behavior of these commands. See <a href="https://vimhelp.org/change.txt.html#J">:h J</a> and scroll down for more details.</p>
+<p><strong>Video demo</strong>:</p>
+<p align="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/rubhH6v4lN0" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+<br>
+<p><img src="/images/info.svg" alt="info" /> See also my <a href="https://github.com/learnbyexample/vim_reference">Vim Reference Guide</a> and <a href="https://learnbyexample.github.io/curated_resources/vim.html">curated list of resources for Vim</a>.</p>
 
     </div>
+
+    
+    
+
+    <div class="post-footer">
+        
+            
+                <div class="post-tags">
+                    
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;vim&#x2F;">#vim</a>
+                    
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;tip&#x2F;">#tip</a>
+                    
+                </div>
+            
+            
+
+        
+
+    </div>
+
+    
+    
+</article>
+
 
                 </div>
             </main>

@@ -5,8 +5,37 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2022-05-03T00:00:00+00:00</updated>
+	<updated>2022-05-04T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Vim tip 8: join lines</title>
+		<published>2022-05-04T00:00:00+00:00</published>
+		<updated>2022-05-04T00:00:00+00:00</updated>
+		<link href="https://learnbyexample.github.io/tips/vim-tip-8/" type="text/html"/>
+		<id>https://learnbyexample.github.io/tips/vim-tip-8/</id>
+		<content type="html">&lt;p&gt;In Normal mode, you can join lines using &lt;code&gt;J&lt;&#x2F;code&gt; and &lt;code&gt;gJ&lt;&#x2F;code&gt; commands. These differ in how the end-of-line character and indentation at the start of lines being joined are handled.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;kbd&gt;J&lt;&#x2F;kbd&gt; joins the current line and the next line
+&lt;ul&gt;
+&lt;li&gt;the deleted &lt;code&gt;&amp;lt;EOL&amp;gt;&lt;&#x2F;code&gt; character is replaced with a space (unless there are trailing spaces or the next line starts with a &lt;code&gt;)&lt;&#x2F;code&gt; character)&lt;&#x2F;li&gt;
+&lt;li&gt;indentation from the lines being joined are removed, &lt;em&gt;except the current line&lt;&#x2F;em&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;3J&lt;&#x2F;kbd&gt; joins the current line and next two lines with one space in between the lines&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;gJ&lt;&#x2F;kbd&gt; joins the current line and the next line
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;&amp;lt;EOL&amp;gt;&lt;&#x2F;code&gt; character is deleted (space character won&#x27;t be added)&lt;&#x2F;li&gt;
+&lt;li&gt;indentation won&#x27;t be removed&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; &lt;code&gt;joinspaces&lt;&#x2F;code&gt;, &lt;code&gt;cpoptions&lt;&#x2F;code&gt; and &lt;code&gt;formatoptions&lt;&#x2F;code&gt; settings will affect the behavior of these commands. See &lt;a href=&quot;https:&#x2F;&#x2F;vimhelp.org&#x2F;change.txt.html#J&quot;&gt;:h J&lt;&#x2F;a&gt; and scroll down for more details.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Video demo&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;rubhH6v4lN0&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;&#x2F;iframe&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See also my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;vim_reference&quot;&gt;Vim Reference Guide&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;curated_resources&#x2F;vim.html&quot;&gt;curated list of resources for Vim&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>CLI tip 9: awk paragraph mode</title>
 		<published>2022-04-27T00:00:00+00:00</published>
@@ -3232,7 +3261,7 @@ $ diff &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F
 	<entry xml:lang="en">
 		<title>Customizing pandoc to generate beautiful pdf and epub from markdown</title>
 		<published>2020-07-21T00:00:00+00:00</published>
-		<updated>2022-01-25T00:00:00+00:00</updated>
+		<updated>2022-05-04T00:00:00+00:00</updated>
 		<link href="https://learnbyexample.github.io/customizing-pandoc/" type="text/html"/>
 		<id>https://learnbyexample.github.io/customizing-pandoc/</id>
 		<content type="html">&lt;p&gt;Either you&#x27;ve already heard of &lt;code&gt;pandoc&lt;&#x2F;code&gt; or if you have searched online for &lt;code&gt;markdown&lt;&#x2F;code&gt; to &lt;code&gt;pdf&lt;&#x2F;code&gt; or similar, you are sure to come across &lt;code&gt;pandoc&lt;&#x2F;code&gt;. This tutorial will help you use &lt;code&gt;pandoc&lt;&#x2F;code&gt; to generate &lt;code&gt;pdf&lt;&#x2F;code&gt; and &lt;code&gt;epub&lt;&#x2F;code&gt; from a &lt;a href=&quot;https:&#x2F;&#x2F;github.github.com&#x2F;gfm&#x2F;&quot;&gt;GitHub style markdown&lt;&#x2F;a&gt; file. The main motivation for this blog post is to highlight what customizations I did to generate &lt;code&gt;pdf&lt;&#x2F;code&gt; and &lt;code&gt;epub&lt;&#x2F;code&gt; versions for &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;books&#x2F;&quot;&gt;self-publishing my ebooks&lt;&#x2F;a&gt;. It wasn&#x27;t easy to arrive at the set-up I ended up with, so I hope this will be useful for those looking to use &lt;code&gt;pandoc&lt;&#x2F;code&gt; to generate &lt;code&gt;pdf&lt;&#x2F;code&gt; and &lt;code&gt;epub&lt;&#x2F;code&gt; formats. This guide is specifically aimed at technical books that has code snippets.&lt;&#x2F;p&gt;
@@ -3282,7 +3311,12 @@ Implies --standalone.&lt;&#x2F;p&gt;
 &lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
 &lt;code&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; pandoc sample_1.md&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt; -f&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; gfm&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt; -H&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; chapter_break.tex&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt; -o&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; sample_1_chapter_break.pdf
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;p&gt;You can add further customization to headings, for example use &lt;code&gt;\sectionfont{\underline\clearpage}&lt;&#x2F;code&gt; to underline chapter names or &lt;code&gt;\sectionfont{\LARGE\clearpage}&lt;&#x2F;code&gt; to allow chapter names to get even bigger. Here&#x27;s some more links to read about various customizations:&lt;&#x2F;p&gt;
+&lt;p&gt;You can add further customization to headings, for example:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;\sectionfont{\underline\clearpage}&lt;&#x2F;code&gt; to underline chapter names&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;\sectionfont{\LARGE\clearpage}&lt;&#x2F;code&gt; to allow chapter names to get even bigger&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Here are some more links to read about various customizations:&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;tex.stackexchange.com&#x2F;questions&#x2F;1455&#x2F;how-to-set-the-font-for-a-section-title-and-chapter-etc&quot;&gt;tex.stackexchange: section fonts&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;tex.stackexchange.com&#x2F;questions&#x2F;230730&#x2F;section-coming-up-as-undefined-when-using-sectsty&quot;&gt;tex.stackexchange: section colors&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;

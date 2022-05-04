@@ -32,7 +32,7 @@
     </url>
     <url>
         <loc>https://learnbyexample.github.io/customizing-pandoc/</loc>
-        <lastmod>2022-01-25</lastmod>
+        <lastmod>2022-05-04</lastmod>
     </url>
     <url>
         <loc>https://learnbyexample.github.io/duplicates-irrespective-field-order/</loc>
@@ -442,6 +442,10 @@
     <url>
         <loc>https://learnbyexample.github.io/tips/vim-tip-7/</loc>
         <lastmod>2022-04-12</lastmod>
+    </url>
+    <url>
+        <loc>https://learnbyexample.github.io/tips/vim-tip-8/</loc>
+        <lastmod>2022-05-04</lastmod>
     </url>
     <url>
         <loc>https://learnbyexample.github.io/vim-reference-guide-announcement/</loc>
