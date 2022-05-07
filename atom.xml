@@ -15,7 +15,7 @@
 		<id>https://learnbyexample.github.io/python-regex-possessive-quantifier/</id>
 		<content type="html">&lt;p&gt;Quoting from &lt;a href=&quot;https:&#x2F;&#x2F;docs.python.org&#x2F;3.11&#x2F;whatsnew&#x2F;3.11.html&quot;&gt;What&#x27;s New In Python 3.11&lt;&#x2F;a&gt;:&lt;&#x2F;p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Atomic grouping &lt;code&gt;((?&amp;gt;...))&lt;&#x2F;code&gt; and possessive quantifiers (&lt;code&gt;*+&lt;&#x2F;code&gt;, &lt;code&gt;++&lt;&#x2F;code&gt;, &lt;code&gt;?+&lt;&#x2F;code&gt;, &lt;code&gt;{m,n}+&lt;&#x2F;code&gt;) are now supported in regular expressions. (Contributed by Jeffrey C. Jacobs and Serhiy Storchaka in &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;python&#x2F;cpython&#x2F;issues&#x2F;34627&quot;&gt;bpo-433030&lt;&#x2F;a&gt;.)&lt;&#x2F;p&gt;
+&lt;p&gt;Atomic grouping (&lt;code&gt;(?&amp;gt;...)&lt;&#x2F;code&gt;) and possessive quantifiers (&lt;code&gt;*+&lt;&#x2F;code&gt;, &lt;code&gt;++&lt;&#x2F;code&gt;, &lt;code&gt;?+&lt;&#x2F;code&gt;, &lt;code&gt;{m,n}+&lt;&#x2F;code&gt;) are now supported in regular expressions. (Contributed by Jeffrey C. Jacobs and Serhiy Storchaka in &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;python&#x2F;cpython&#x2F;issues&#x2F;34627&quot;&gt;bpo-433030&lt;&#x2F;a&gt;.)&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;
 &lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; If you are not familiar with regular expressions, see my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;py_regular_expressions&quot;&gt;Python re(gex)?&lt;&#x2F;a&gt; ebook to get started.&lt;&#x2F;p&gt;
 &lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;&lt;br&gt;
@@ -96,14 +96,27 @@
 [&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;c = &amp;quot;#&amp;quot;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;abc&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;]
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;br&gt;
 &lt;h2 id=&quot;atomic-grouping&quot;&gt;Atomic grouping&lt;a class=&quot;zola-anchor&quot; href=&quot;#atomic-grouping&quot; aria-label=&quot;Anchor link for: atomic-grouping&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
-&lt;p&gt;Atomic grouping is an alternate syntax for possessive quantifiers. The syntax is &lt;code&gt;(?&amp;gt;pat)&lt;&#x2F;code&gt; where &lt;code&gt;pat&lt;&#x2F;code&gt; is specified using greedy quantifiers.&lt;&#x2F;p&gt;
+&lt;p&gt;Atomic grouping is an alternate way to prevent backtracking. The syntax is &lt;code&gt;(?&amp;gt;pat)&lt;&#x2F;code&gt; where &lt;code&gt;pat&lt;&#x2F;code&gt; is the pattern you want to safeguard from backtracking.&lt;&#x2F;p&gt;
 &lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
 &lt;code&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;numbers &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;42 314 001 12 00984&amp;#39;
 
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# same as: re.findall(r&amp;#39;0*+\d{3,}&amp;#39;, numbers)
-# 0* is greedy, but becomes possessive inside (?&amp;gt;) grouping
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# 0* is greedy and the (?&amp;gt;) grouping prevents backtracking
+# same as: re.findall(r&amp;#39;0*+\d{3,}&amp;#39;, numbers)
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;re.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;findall&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#668f14;&quot;&gt;r&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7c8f4c;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;?&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7c8f4c;&quot;&gt;&amp;gt;0&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7c8f4c;&quot;&gt;)&lt;&#x2F;span&gt;&lt;span style=&quot;color:#aeb52b;&quot;&gt;\d&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;{3,}&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;, numbers)
 [&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;314&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;00984&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;]
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Here&#x27;s an example with non-greedy quantifiers:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; ip &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;fig:mango:pineapple:guava:apples:orange&amp;#39;
+
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# matches from the first &amp;#39;:&amp;#39; minimally till &amp;#39;:apple&amp;#39; is found
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; re.search(r&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;:.*?:apple&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;, ip)&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;[0]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;:mango:pineapple:guava:apple&amp;#39;
+
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# (?&amp;gt;:.*?:) will not match more than two &amp;#39;:&amp;#39; characters
+# same as: re.search(r&amp;#39;:[^:]++:apple&amp;#39;, ip)[0]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; re.search(r&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;(?&amp;gt;:.*?:)apple&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;, ip)&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;[0]
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;:guava:apple&amp;#39;
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;br&gt;
 &lt;h2 id=&quot;catastrophic-backtracking&quot;&gt;Catastrophic Backtracking&lt;a class=&quot;zola-anchor&quot; href=&quot;#catastrophic-backtracking&quot; aria-label=&quot;Anchor link for: catastrophic-backtracking&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
 &lt;p&gt;Backtracking can become significantly time consuming for certain corner cases. Which is why some regex engines do not use them, at the cost of not supporting some features like lookarounds.&lt;&#x2F;p&gt;
