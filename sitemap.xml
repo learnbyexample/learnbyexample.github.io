@@ -164,6 +164,10 @@
         <lastmod>2021-12-14</lastmod>
     </url>
     <url>
+        <loc>https://learnbyexample.github.io/python-regex-possessive-quantifier/</loc>
+        <lastmod>2022-05-07</lastmod>
+    </url>
+    <url>
         <loc>https://learnbyexample.github.io/sed-lookarounds/</loc>
         <lastmod>2021-03-19</lastmod>
     </url>
@@ -287,6 +291,9 @@
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tags/perl/</loc>
+    </url>
+    <url>
+        <loc>https://learnbyexample.github.io/tags/possessive-quantifiers/</loc>
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tags/programming/</loc>
