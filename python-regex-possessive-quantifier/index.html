@@ -7,7 +7,7 @@
       <!-- Enable responsiveness on mobile devices-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-      <title>Python 3.11: possessive quantifiers added to re module</title>
+      <title>Python 3.11: possessive quantifiers and atomic grouping added to re module</title>
 
       
         <link rel="alternate" type="application/atom+xml" title="RSS" href="https://learnbyexample.github.io/atom.xml">
@@ -159,7 +159,7 @@
     
     <header class="post__header">
         <h1 class="post__title">
-            <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;python-regex-possessive-quantifier&#x2F;">Python 3.11: possessive quantifiers added to re module</a>
+            <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;python-regex-possessive-quantifier&#x2F;">Python 3.11: possessive quantifiers and atomic grouping added to re module</a>
         </h1>
         <div class="post__meta">
             <span class="post__time">2022-05-07</span>
@@ -203,11 +203,13 @@
 </blockquote>
 <br>
 <h2 id="possessive-quantifiers">Possessive quantifiers<a class="zola-anchor" href="#possessive-quantifiers" aria-label="Anchor link for: possessive-quantifiers">🔗</a></h2>
-<p>Until Python 3.10, you had to use alternatives like the third-party <a href="https://pypi.org/project/regex/">regex module</a> for possessive quantifiers. The <code>re</code> module supports possessive quantifiers from Python 3.11 version.</p>
-<p>The difference between greedy and possessive quantifiers is that possessive will not backtrack to find a match. In other words, possessive quantifiers will always consume every character that matches the pattern on which it is applied. Syntax wise, you need to append <code>+</code> to greedy quantifiers to get possessive quantifiers, similar to adding <code>?</code> for non-greedy case.</p>
+<p>Until Python 3.10, you had to use alternatives like the third-party <a href="https://pypi.org/project/regex/">regex module</a> for possessive quantifiers. The <code>re</code> module supports possessive quantifiers from Python 3.11 version. This version is currently under development, see <a href="https://www.python.org/download/pre-releases/">Pre-release</a> page on the Python site for download links and other details.</p>
+<p>The difference between greedy and possessive quantifiers is that possessive will not backtrack to find a match. In other words, possessive quantifiers will always consume every character that matches the pattern on which it is applied. Syntax wise, you need to append <code>+</code> to greedy quantifiers to make it possessive, similar to adding <code>?</code> for non-greedy case.</p>
 <p>Unlike greedy or non-greedy quantifiers, <code>:.*+apple</code> will never match, because <code>.*+</code> will consume rest of the line, leaving no way to match <code>apple</code>.</p>
 <pre style="background-color:#f5f5f5;">
 <code><span style="color:#1f1f1f;">$ python3</span><span style="color:#b3933a;">.11 </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">q
+</span><span style="color:#72ab00;">&gt;&gt;&gt; import </span><span style="color:#1f1f1f;">re
+
 </span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#1f1f1f;">ip </span><span style="color:#72ab00;">= </span><span style="color:#d07711;">&#39;fig:mango:pineapple:guava:apples:orange&#39;
 
 </span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#1f1f1f;">re.</span><span style="color:#5597d6;">search</span><span style="color:#1f1f1f;">(</span><span style="color:#668f14;">r</span><span style="color:#d07711;">&#39;</span><span style="color:#7c8f4c;">:</span><span style="color:#aeb52b;">.</span><span style="color:#72ab00;">*+</span><span style="color:#d07711;">&#39;</span><span style="color:#1f1f1f;">, ip)[</span><span style="color:#b3933a;">0</span><span style="color:#1f1f1f;">]
@@ -237,7 +239,7 @@
 <pre style="background-color:#f5f5f5;">
 <code><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#1f1f1f;">lines </span><span style="color:#72ab00;">= </span><span style="color:#1f1f1f;">[</span><span style="color:#d07711;">&#39;#comment&#39;</span><span style="color:#1f1f1f;">, </span><span style="color:#d07711;">&#39;c = &quot;#&quot;&#39;</span><span style="color:#1f1f1f;">, </span><span style="color:#d07711;">&#39;</span><span style="color:#aeb52b;">\t</span><span style="color:#d07711;"> #comment&#39;</span><span style="color:#1f1f1f;">, </span><span style="color:#d07711;">&#39;abc&#39;</span><span style="color:#1f1f1f;">, </span><span style="color:#d07711;">&#39;&#39;</span><span style="color:#1f1f1f;">, </span><span style="color:#d07711;">&#39; </span><span style="color:#aeb52b;">\t </span><span style="color:#d07711;">&#39;</span><span style="color:#1f1f1f;">]
 
-</span><span style="color:#7f8989;"># this solution fails because \s* can match zero times
+</span><span style="color:#7f8989;"># this solution fails because \s* can backtrack
 # and [^#] can match a whitespace character as well
 </span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#1f1f1f;">[e </span><span style="color:#72ab00;">for </span><span style="color:#1f1f1f;">e </span><span style="color:#72ab00;">in </span><span style="color:#1f1f1f;">lines </span><span style="color:#72ab00;">if </span><span style="color:#1f1f1f;">re.</span><span style="color:#5597d6;">match</span><span style="color:#1f1f1f;">(</span><span style="color:#668f14;">r</span><span style="color:#d07711;">&#39;</span><span style="color:#aeb52b;">\s</span><span style="color:#72ab00;">*</span><span style="color:#aeb52b;">[</span><span style="color:#72ab00;">^</span><span style="color:#aeb52b;">#]</span><span style="color:#d07711;">&#39;</span><span style="color:#1f1f1f;">, e)]
 [</span><span style="color:#d07711;">&#39;c = &quot;#&quot;&#39;</span><span style="color:#1f1f1f;">, </span><span style="color:#d07711;">&#39;</span><span style="color:#aeb52b;">\t</span><span style="color:#d07711;"> #comment&#39;</span><span style="color:#1f1f1f;">, </span><span style="color:#d07711;">&#39;abc&#39;</span><span style="color:#1f1f1f;">, </span><span style="color:#d07711;">&#39; </span><span style="color:#aeb52b;">\t </span><span style="color:#d07711;">&#39;</span><span style="color:#1f1f1f;">]
@@ -251,7 +253,8 @@
 [</span><span style="color:#d07711;">&#39;c = &quot;#&quot;&#39;</span><span style="color:#1f1f1f;">, </span><span style="color:#d07711;">&#39;abc&#39;</span><span style="color:#1f1f1f;">]
 </span></code></pre><br>
 <h2 id="atomic-grouping">Atomic grouping<a class="zola-anchor" href="#atomic-grouping" aria-label="Anchor link for: atomic-grouping">🔗</a></h2>
-<p>Atomic grouping is an alternate way to prevent backtracking. The syntax is <code>(?&gt;pat)</code> where <code>pat</code> is the pattern you want to safeguard from backtracking.</p>
+<p><code>(?&gt;pat)</code> is an atomic group, where <code>pat</code> is the pattern you want to safeguard from further backtracking by isolating it from other parts of the regex.</p>
+<p>Here's an example with greedy quantifiers:</p>
 <pre style="background-color:#f5f5f5;">
 <code><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#1f1f1f;">numbers </span><span style="color:#72ab00;">= </span><span style="color:#d07711;">&#39;42 314 001 12 00984&#39;
 
@@ -260,31 +263,65 @@
 </span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#1f1f1f;">re.</span><span style="color:#5597d6;">findall</span><span style="color:#1f1f1f;">(</span><span style="color:#668f14;">r</span><span style="color:#d07711;">&#39;</span><span style="color:#7c8f4c;">(</span><span style="color:#72ab00;">?</span><span style="color:#7c8f4c;">&gt;0</span><span style="color:#72ab00;">*</span><span style="color:#7c8f4c;">)</span><span style="color:#aeb52b;">\d</span><span style="color:#72ab00;">{3,}</span><span style="color:#d07711;">&#39;</span><span style="color:#1f1f1f;">, numbers)
 [</span><span style="color:#d07711;">&#39;314&#39;</span><span style="color:#1f1f1f;">, </span><span style="color:#d07711;">&#39;00984&#39;</span><span style="color:#1f1f1f;">]
 </span></code></pre>
-<p>Here's an example with non-greedy quantifiers:</p>
+<p>Here are a couple of examples with non-greedy quantifiers. A portion of the pattern is protected by atomic grouping to get a match as minimally as possible.</p>
 <pre style="background-color:#f5f5f5;">
 <code><span style="color:#72ab00;">&gt;&gt;&gt;</span><span style="color:#1f1f1f;"> ip </span><span style="color:#72ab00;">= </span><span style="color:#d07711;">&#39;fig:mango:pineapple:guava:apples:orange&#39;
-
-</span><span style="color:#7f8989;"># matches from the first &#39;:&#39; minimally till &#39;:apple&#39; is found
-</span><span style="color:#72ab00;">&gt;&gt;&gt;</span><span style="color:#1f1f1f;"> re.search(r</span><span style="color:#d07711;">&#39;:.*?:apple&#39;</span><span style="color:#1f1f1f;">, ip)</span><span style="color:#5597d6;">[0]
+</span><span style="color:#72ab00;">&gt;&gt;&gt;</span><span style="color:#1f1f1f;"> re.search(</span><span style="color:#5597d6;">r</span><span style="color:#d07711;">&#39;:.*?:apple&#39;</span><span style="color:#5597d6;">,</span><span style="color:#1f1f1f;"> ip)</span><span style="color:#72ab00;">[</span><span style="color:#1f1f1f;">0</span><span style="color:#72ab00;">]
 </span><span style="color:#d07711;">&#39;:mango:pineapple:guava:apple&#39;
-
-</span><span style="color:#7f8989;"># (?&gt;:.*?:) will not match more than two &#39;:&#39; characters
-# same as: re.search(r&#39;:[^:]++:apple&#39;, ip)[0]
-</span><span style="color:#72ab00;">&gt;&gt;&gt;</span><span style="color:#1f1f1f;"> re.search(r</span><span style="color:#d07711;">&#39;(?&gt;:.*?:)apple&#39;</span><span style="color:#1f1f1f;">, ip)</span><span style="color:#5597d6;">[0]
+</span><span style="color:#72ab00;">&gt;&gt;&gt;</span><span style="color:#1f1f1f;"> re.search(</span><span style="color:#5597d6;">r</span><span style="color:#d07711;">&#39;(?&gt;:.*?:)apple&#39;</span><span style="color:#5597d6;">,</span><span style="color:#1f1f1f;"> ip)</span><span style="color:#72ab00;">[</span><span style="color:#1f1f1f;">0</span><span style="color:#72ab00;">]
 </span><span style="color:#d07711;">&#39;:guava:apple&#39;
-</span></code></pre><br>
+
+</span><span style="color:#72ab00;">&gt;&gt;&gt;</span><span style="color:#1f1f1f;"> ip </span><span style="color:#72ab00;">= </span><span style="color:#d07711;">&#39;this book is good and that movie is bad&#39;
+</span><span style="color:#72ab00;">&gt;&gt;&gt;</span><span style="color:#1f1f1f;"> re.search(</span><span style="color:#5597d6;">r</span><span style="color:#d07711;">&#39;th.*?\bis bad&#39;</span><span style="color:#5597d6;">,</span><span style="color:#1f1f1f;"> ip)</span><span style="color:#72ab00;">[</span><span style="color:#1f1f1f;">0</span><span style="color:#72ab00;">]
+</span><span style="color:#d07711;">&#39;this book is good and that movie is bad&#39;
+</span><span style="color:#72ab00;">&gt;&gt;&gt;</span><span style="color:#1f1f1f;"> re.search(</span><span style="color:#5597d6;">r</span><span style="color:#d07711;">&#39;(?&gt;th.*?\bis )bad&#39;</span><span style="color:#5597d6;">,</span><span style="color:#1f1f1f;"> ip)</span><span style="color:#72ab00;">[</span><span style="color:#1f1f1f;">0</span><span style="color:#72ab00;">]
+</span><span style="color:#d07711;">&#39;that movie is bad&#39;
+</span></code></pre>
+<blockquote>
+<p><img src="/images/info.svg" alt="info" /> You can also use the <code>REVERSE</code> flag provided by <a href="https://pypi.org/project/regex/">regex module</a> for such cases:</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#72ab00;">&gt;&gt;&gt; import </span><span style="color:#1f1f1f;">regex
+</span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#1f1f1f;">ip </span><span style="color:#72ab00;">= </span><span style="color:#d07711;">&#39;this book is good and that movie is bad&#39;
+</span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#1f1f1f;">regex.</span><span style="color:#5597d6;">search</span><span style="color:#1f1f1f;">(</span><span style="color:#668f14;">r</span><span style="color:#d07711;">&#39;</span><span style="color:#7c8f4c;">th</span><span style="color:#aeb52b;">.</span><span style="color:#72ab00;">*?\b</span><span style="color:#7c8f4c;">is bad</span><span style="color:#d07711;">&#39;</span><span style="color:#1f1f1f;">, ip, </span><span style="color:#5597d6;">flags</span><span style="color:#72ab00;">=</span><span style="color:#1f1f1f;">regex.</span><span style="color:#5597d6;">REVERSE</span><span style="color:#1f1f1f;">)[</span><span style="color:#b3933a;">0</span><span style="color:#1f1f1f;">]
+</span><span style="color:#d07711;">&#39;that movie is bad&#39;
+</span></code></pre></blockquote>
+<br>
 <h2 id="catastrophic-backtracking">Catastrophic Backtracking<a class="zola-anchor" href="#catastrophic-backtracking" aria-label="Anchor link for: catastrophic-backtracking">🔗</a></h2>
-<p>Backtracking can become significantly time consuming for certain corner cases. Which is why some regex engines do not use them, at the cost of not supporting some features like lookarounds.</p>
-<p>Possessive quantifiers can help prevent catastrophic backtracking. See the following links for more details:</p>
+<p>Backtracking can become significantly time consuming for certain corner cases. Which is why some regex engines do not use them, at the cost of not supporting some features like lookarounds. If your application accepts user defined regex, you might need to protect against such catastrophic patterns. From <a href="https://en.wikipedia.org/wiki/Redos">wikipedia: ReDoS</a>:</p>
+<blockquote>
+<p>A regular expression denial of service (ReDoS) is an algorithmic complexity attack that produces a denial-of-service by providing a regular expression and/or an input that takes a long time to evaluate. The attack exploits the fact that many regular expression implementations have super-linear worst-case complexity; on certain regex-input pairs, the time taken can grow polynomially or exponentially in relation to the input size. An attacker can thus cause a program to spend substantial time by providing a specially crafted regular expression and/or input. The program will then slow down or becoming unresponsive.</p>
+</blockquote>
+<p>Here's an example:</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#72ab00;">&gt;&gt;&gt; from </span><span style="color:#1f1f1f;">timeit </span><span style="color:#72ab00;">import </span><span style="color:#1f1f1f;">timeit
+
+</span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#1f1f1f;">greedy </span><span style="color:#72ab00;">= </span><span style="color:#1f1f1f;">re.</span><span style="color:#5597d6;">compile</span><span style="color:#1f1f1f;">(</span><span style="color:#668f14;">r</span><span style="color:#d07711;">&#39;</span><span style="color:#7c8f4c;">(a</span><span style="color:#72ab00;">+|</span><span style="color:#aeb52b;">\w</span><span style="color:#72ab00;">+</span><span style="color:#7c8f4c;">)</span><span style="color:#72ab00;">*</span><span style="color:#7c8f4c;">:</span><span style="color:#d07711;">&#39;</span><span style="color:#1f1f1f;">)
+</span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#1f1f1f;">possessive </span><span style="color:#72ab00;">= </span><span style="color:#1f1f1f;">re.</span><span style="color:#5597d6;">compile</span><span style="color:#1f1f1f;">(</span><span style="color:#668f14;">r</span><span style="color:#d07711;">&#39;</span><span style="color:#7c8f4c;">(a</span><span style="color:#72ab00;">+|</span><span style="color:#aeb52b;">\w</span><span style="color:#72ab00;">+</span><span style="color:#7c8f4c;">)</span><span style="color:#72ab00;">*+</span><span style="color:#7c8f4c;">:</span><span style="color:#d07711;">&#39;</span><span style="color:#1f1f1f;">)
+
+</span><span style="color:#7f8989;"># string that&#39;ll match the above patterns
+</span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#1f1f1f;">s1 </span><span style="color:#72ab00;">= </span><span style="color:#d07711;">&#39;aaaaaaaaaaaaaaaa:123&#39;
+</span><span style="color:#7f8989;"># string that does NOT match the above patterns
+</span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#1f1f1f;">s2 </span><span style="color:#72ab00;">= </span><span style="color:#d07711;">&#39;aaaaaaaaaaaaaaaa-123&#39;
+
+</span><span style="color:#7f8989;"># no issues when input string has a match
+</span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#5597d6;">timeit</span><span style="color:#1f1f1f;">(</span><span style="color:#d07711;">&#39;greedy.search(s1)&#39;</span><span style="color:#1f1f1f;">, </span><span style="color:#5597d6;">number</span><span style="color:#72ab00;">=</span><span style="color:#b3933a;">10000</span><span style="color:#1f1f1f;">, </span><span style="color:#5597d6;">globals</span><span style="color:#72ab00;">=</span><span style="color:#b39f04;">globals</span><span style="color:#1f1f1f;">())
+</span><span style="color:#b3933a;">0.016464739997900324
+</span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#5597d6;">timeit</span><span style="color:#1f1f1f;">(</span><span style="color:#d07711;">&#39;possessive.search(s1)&#39;</span><span style="color:#1f1f1f;">, </span><span style="color:#5597d6;">number</span><span style="color:#72ab00;">=</span><span style="color:#b3933a;">10000</span><span style="color:#1f1f1f;">, </span><span style="color:#5597d6;">globals</span><span style="color:#72ab00;">=</span><span style="color:#b39f04;">globals</span><span style="color:#1f1f1f;">())
+</span><span style="color:#b3933a;">0.016358205997676123
+
+</span><span style="color:#7f8989;"># if input doesn&#39;t match, greedy version suffers from catastrophic backtracking
+# note that &#39;number&#39; parameter is reduced to 10 since it takes a long time
+</span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#5597d6;">timeit</span><span style="color:#1f1f1f;">(</span><span style="color:#d07711;">&#39;greedy.search(s2)&#39;</span><span style="color:#1f1f1f;">, </span><span style="color:#5597d6;">number</span><span style="color:#72ab00;">=</span><span style="color:#b3933a;">10</span><span style="color:#1f1f1f;">, </span><span style="color:#5597d6;">globals</span><span style="color:#72ab00;">=</span><span style="color:#b39f04;">globals</span><span style="color:#1f1f1f;">())
+</span><span style="color:#b3933a;">53.71723825200024
+</span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#5597d6;">timeit</span><span style="color:#1f1f1f;">(</span><span style="color:#d07711;">&#39;possessive.search(s2)&#39;</span><span style="color:#1f1f1f;">, </span><span style="color:#5597d6;">number</span><span style="color:#72ab00;">=</span><span style="color:#b3933a;">10</span><span style="color:#1f1f1f;">, </span><span style="color:#5597d6;">globals</span><span style="color:#72ab00;">=</span><span style="color:#b39f04;">globals</span><span style="color:#1f1f1f;">())
+</span><span style="color:#b3933a;">0.00019008600065717474
+</span></code></pre>
+<p><code>(a+|\w+)*:</code> is a silly regex pattern, since it can be rewritten as <code>\w*:</code> which will not suffer from catastrophic backtracking. But this example shows how quantifiers applied to a group with multiple alternatives using quantifiers can lead to explosive results. More such patterns and mitigation strategies can be found in the following links:</p>
 <ul>
 <li><a href="https://www.rexegg.com/regex-explosive-quantifiers.html">The Explosive Quantifier Trap</a></li>
 <li><a href="https://www.regular-expressions.info/catastrophic.html">Runaway Regular Expressions: Catastrophic Backtracking</a></li>
 <li><a href="https://blog.cloudflare.com/details-of-the-cloudflare-outage-on-july-2-2019/">Details of the Cloudflare outage on July 2, 2019</a></li>
 </ul>
-<p>If your application accepts user defined regex, you might need to protect against such catastrophic patterns. From <a href="https://en.wikipedia.org/wiki/Redos">wikipedia: ReDoS</a>:</p>
-<blockquote>
-<p>A regular expression denial of service (ReDoS) is an algorithmic complexity attack that produces a denial-of-service by providing a regular expression and/or an input that takes a long time to evaluate. The attack exploits the fact that many regular expression implementations have super-linear worst-case complexity; on certain regex-input pairs, the time taken can grow polynomially or exponentially in relation to the input size. An attacker can thus cause a program to spend substantial time by providing a specially crafted regular expression and/or input. The program will then slow down or becoming unresponsive.</p>
-</blockquote>
 
     </div>
 
@@ -301,6 +338,8 @@
                         <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;regular-expressions&#x2F;">#regular-expressions</a>
                     
                         <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;possessive-quantifiers&#x2F;">#possessive-quantifiers</a>
+                    
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;atomic-grouping&#x2F;">#atomic-grouping</a>
                     
                 </div>
             
