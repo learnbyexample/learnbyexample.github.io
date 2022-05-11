@@ -54,6 +54,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Tips
 
+* [Python tip 10: removeprefix and removesuffix string methods](https://learnbyexample.github.io/tips/python-tip-10/)
 * [Vim tip 8: join lines](https://learnbyexample.github.io/tips/vim-tip-8/)
 * [CLI tip 9: awk paragraph mode](https://learnbyexample.github.io/tips/cli-tip-9/)
 * [Python tip 9: applying set-like operations for dictionaries](https://learnbyexample.github.io/tips/python-tip-9/)

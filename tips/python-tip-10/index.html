@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+      <title>Python tip 10: removeprefix and removesuffix string methods</title>
+
+      
+        <link rel="alternate" type="application/atom+xml" title="RSS" href="https://learnbyexample.github.io/atom.xml">
+      
+
+      
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
+          
+      
+
+      
+          <link rel="stylesheet" href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;site.css">
+          
+      
+
+      
+      
+<link rel="icon" href="https://learnbyexample.github.io/favicon.svg">
+<link rel="shortcut icon" href="https://learnbyexample.github.io/favicon.png">
+    </head>
+
+    <body>
+        <div class="container">
+
+            <div id="mobile-navbar" class="mobile-navbar">
+              <div class="mobile-header-logo">
+                <a href="/" class="logo">learnbyexample</a>
+              </div>
+              <div class="mobile-navbar-icon icon-out">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+
+            <nav id="mobile-menu" class="mobile-menu slideout-menu slideout-menu-left">
+              <ul class="mobile-menu-list">
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;books">
+                            Books
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;mini">
+                            Mini
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips">
+                            Tips
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags">
+                            Tags
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;about">
+                            About
+                        </a>
+                    </li>
+                
+              </ul>
+            </nav>
+
+            <header id="header">
+                <div class="logo"><a href="https:&#x2F;&#x2F;learnbyexample.github.io">learnbyexample</a></div>
+                <nav class="menu">
+                    <ul>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;books">
+                                    Books
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;mini">
+                                    Mini
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips">
+                                    Tips
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags">
+                                    Tags
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;about">
+                                    About
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </nav>
+            </header>
+
+            <main>
+                <div class="content" id="mobile-panel">
+                    
+
+
+
+<article class="post">
+    
+    <header class="post__header">
+        <h1 class="post__title">
+            <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips&#x2F;python-tip-10&#x2F;">Python tip 10: removeprefix and removesuffix string methods</a>
+        </h1>
+        <div class="post__meta">
+            <span class="post__time">2022-05-11</span>
+            
+        </div>
+    </header>
+
+    <div class="post-content">
+      <p>Python supports a lot of string methods that reduces the need for regular expressions. The <code>removeprefix()</code> and <code>removesuffix()</code> string methods were added in Python 3.9 version. See <a href="https://peps.python.org/pep-0616/">PEP 616</a> for more details.</p>
+<p>These methods will help you delete an exact substring from the start and end of the input string respectively. Here are some examples:</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#7f8989;"># remove &#39;sp&#39; if it matches at the start of the input string
+</span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#d07711;">&#39;spare&#39;</span><span style="color:#1f1f1f;">.</span><span style="color:#5597d6;">removeprefix</span><span style="color:#1f1f1f;">(</span><span style="color:#d07711;">&#39;sp&#39;</span><span style="color:#1f1f1f;">)
+</span><span style="color:#d07711;">&#39;are&#39;
+</span><span style="color:#7f8989;"># &#39;par&#39; is present in the input, but not at the start
+</span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#d07711;">&#39;spare&#39;</span><span style="color:#1f1f1f;">.</span><span style="color:#5597d6;">removeprefix</span><span style="color:#1f1f1f;">(</span><span style="color:#d07711;">&#39;par&#39;</span><span style="color:#1f1f1f;">)
+</span><span style="color:#d07711;">&#39;spare&#39;
+
+</span><span style="color:#7f8989;"># remove &#39;me&#39; if it matches at the end of the input string
+# only one occurrence of the match will be removed
+</span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#d07711;">&#39;this meme&#39;</span><span style="color:#1f1f1f;">.</span><span style="color:#5597d6;">removesuffix</span><span style="color:#1f1f1f;">(</span><span style="color:#d07711;">&#39;me&#39;</span><span style="color:#1f1f1f;">)
+</span><span style="color:#d07711;">&#39;this me&#39;
+</span><span style="color:#7f8989;"># unlike strip methods, substring has to match exactly in the same order
+</span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#d07711;">&#39;this meme&#39;</span><span style="color:#1f1f1f;">.</span><span style="color:#5597d6;">removesuffix</span><span style="color:#1f1f1f;">(</span><span style="color:#d07711;">&#39;em&#39;</span><span style="color:#1f1f1f;">)
+</span><span style="color:#d07711;">&#39;this meme&#39;
+</span></code></pre>
+<p>These remove methods will delete the given substring only once from the start or end of the string. On the other hand, the strip methods treat the argument as a set of characters to be matched any number of times in any order until a non-matching character is found. Here's an example:</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#d07711;">&#39;these memes&#39;</span><span style="color:#1f1f1f;">.</span><span style="color:#5597d6;">removesuffix</span><span style="color:#1f1f1f;">(</span><span style="color:#d07711;">&#39;esm&#39;</span><span style="color:#1f1f1f;">)
+</span><span style="color:#d07711;">&#39;these memes&#39;
+
+</span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#d07711;">&#39;these memes&#39;</span><span style="color:#1f1f1f;">.</span><span style="color:#5597d6;">rstrip</span><span style="color:#1f1f1f;">(</span><span style="color:#d07711;">&#39;esm&#39;</span><span style="color:#1f1f1f;">)
+</span><span style="color:#d07711;">&#39;these &#39;
+</span></code></pre>
+<p><strong>Video demo</strong>:</p>
+<p align="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/b--A6OM3PyI" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+<br>
+<p><img src="/images/info.svg" alt="info" /> See also my <a href="https://github.com/learnbyexample/100_page_python_intro">100 Page Python Intro</a> ebook.</p>
+
+    </div>
+
+    
+    
+
+    <div class="post-footer">
+        
+            
+                <div class="post-tags">
+                    
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;python&#x2F;">#python</a>
+                    
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;tip&#x2F;">#tip</a>
+                    
+                </div>
+            
+            
+
+        
+
+    </div>
+
+    
+    
+</article>
+
+
+                </div>
+            </main>
+
+            
+            
+        </div>
+
+      
+          <script type="text/javascript" src="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;even.js" ></script>
+      
+    </body>
+
+</html>
