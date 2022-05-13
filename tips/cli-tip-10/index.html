@@ -7,7 +7,7 @@
       <!-- Enable responsiveness on mobile devices-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-      <title>learnbyexample</title>
+      <title>CLI tip 10: version sort</title>
 
       
         <link rel="alternate" type="application/atom+xml" title="RSS" href="https://learnbyexample.github.io/atom.xml">
@@ -121,22 +121,98 @@
             <main>
                 <div class="content" id="mobile-panel">
                     
-    <div class="about">
-        <h1 id="mini-blog-post-links"><p style="color: #c05b4d">Mini blog post links</h1>
-<ul>
-<li><a href="https://learnbyexample.github.io/mini/debug-woes-3/">Debug woes 3: matching uppercase alphabets</a></li>
-<li><a href="https://learnbyexample.github.io/mini/vim-reference-guide-sales/">Vim Reference Guide: two week sales report</a></li>
-<li><a href="https://learnbyexample.github.io/mini/pydev-interview/">PyDev of the Week</a></li>
-<li><a href="https://learnbyexample.github.io/mini/hacker-news-front-page-brag/">Brag post: Hacker News Front Page entries</a></li>
-<li><a href="https://learnbyexample.github.io/mini/regexp-gotcha-1/">Regexp gotcha 1: grouping common portions</a></li>
-<li><a href="https://learnbyexample.github.io/mini/vim-prank/">Vim prank: alias vim='vim -y'</a></li>
-<li><a href="https://learnbyexample.github.io/mini/debug-woes-2/">Debug woes 2: unexpected array in replacement string</a></li>
-<li><a href="https://learnbyexample.github.io/mini/dreaming-solutions/">Dreaming solutions</a></li>
-<li><a href="https://learnbyexample.github.io/mini/debug-woes-1/">Debug woes 1: multiple substitutions on the same line</a></li>
-<li><a href="https://learnbyexample.github.io/mini/perl-oneliner-articles/">Perl one-liner articles</a></li>
-</ul>
+
+
+
+<article class="post">
+    
+    <header class="post__header">
+        <h1 class="post__title">
+            <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips&#x2F;cli-tip-10&#x2F;">CLI tip 10: version sort</a>
+        </h1>
+        <div class="post__meta">
+            <span class="post__time">2022-05-13</span>
+            
+        </div>
+    </header>
+
+    <div class="post-content">
+      <p>You can use <code>sort -V</code> for sorting numerical input that is mixed with other characters. It also helps when you want to treat digits after a decimal point as whole numbers, for example if <code>1.10</code> should be greater than <code>1.2</code>.</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#1f1f1f;">$ </span><span style="color:#b39f04;">printf </span><span style="color:#d07711;">&#39;1.5\n1.10\n1.2&#39; </span><span style="color:#72ab00;">|</span><span style="color:#1f1f1f;"> sort </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">n
+</span><span style="color:#b3933a;">1.10
+1.2
+1.5</span><span style="color:#1f1f1f;">
+$ </span><span style="color:#b39f04;">printf </span><span style="color:#d07711;">&#39;1.5\n1.10\n1.2&#39; </span><span style="color:#72ab00;">|</span><span style="color:#1f1f1f;"> sort </span><span style="color:#72ab00;">-</span><span style="color:#5597d6;">V
+</span><span style="color:#b3933a;">1.2
+1.5
+1.10</span><span style="color:#1f1f1f;">
+
+$ cat versions.txt
+file2
+cmd5.</span><span style="color:#b3933a;">2</span><span style="color:#1f1f1f;">
+file10
+cmd1.</span><span style="color:#b3933a;">6</span><span style="color:#1f1f1f;">
+file5
+cmd5.</span><span style="color:#b3933a;">10</span><span style="color:#1f1f1f;">
+$ sort </span><span style="color:#72ab00;">-</span><span style="color:#5597d6;">V</span><span style="color:#1f1f1f;"> versions.txt
+cmd1.</span><span style="color:#b3933a;">6</span><span style="color:#1f1f1f;">
+cmd5.</span><span style="color:#b3933a;">2</span><span style="color:#1f1f1f;">
+cmd5.</span><span style="color:#b3933a;">10</span><span style="color:#1f1f1f;">
+file2
+file5
+file10
+</span></code></pre>
+<p>Here's an example of dealing with numbers reported by the <code>time</code> command (assuming all the entries have the same format).</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#1f1f1f;">$ cat timings.txt
+5m35.363s
+3m20.058s
+4m11.130s
+3m42.833s
+4m3.083s
+
+$ sort </span><span style="color:#72ab00;">-</span><span style="color:#5597d6;">V</span><span style="color:#1f1f1f;"> timings.txt
+3m20.058s
+3m42.833s
+4m3.083s
+4m11.130s
+5m35.363s
+</span></code></pre>
+<p><img src="/images/info.svg" alt="info" /> See <a href="https://www.gnu.org/software/coreutils/manual/html_node/Version-sort-overview.html">GNU coreutils manual: Version sort ordering</a> for more details. Also, note that the <code>ls</code> command uses lowercase <code>-v</code> for this task.</p>
+<p><strong>Video demo</strong>:</p>
+<p align="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/QKZbdZ-XmCQ" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+<br>
+<p><img src="/images/info.svg" alt="info" /> See <a href="https://learnbyexample.github.io/cli_text_processing_coreutils/sort.html">sort command</a> chapter from my <a href="https://github.com/learnbyexample/cli_text_processing_coreutils">Command line text processing with GNU Coreutils</a> ebook for more details.</p>
 
     </div>
+
+    
+    
+
+    <div class="post-footer">
+        
+            
+                <div class="post-tags">
+                    
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;linux&#x2F;">#linux</a>
+                    
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;command-line&#x2F;">#command-line</a>
+                    
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;tip&#x2F;">#tip</a>
+                    
+                </div>
+            
+            
+
+        
+
+    </div>
+
+    
+    
+</article>
+
 
                 </div>
             </main>

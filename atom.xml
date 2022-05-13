@@ -5,8 +5,112 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2022-05-11T00:00:00+00:00</updated>
+	<updated>2022-05-13T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Debug woes 3: matching uppercase letters</title>
+		<published>2022-05-13T00:00:00+00:00</published>
+		<updated>2022-05-13T00:00:00+00:00</updated>
+		<link href="https://learnbyexample.github.io/mini/debug-woes-3/" type="text/html"/>
+		<id>https://learnbyexample.github.io/mini/debug-woes-3/</id>
+		<content type="html">&lt;p&gt;So, I was going through &lt;a href=&quot;https:&#x2F;&#x2F;www.gnu.org&#x2F;software&#x2F;bash&#x2F;manual&#x2F;bash.html#Shell-Parameter-Expansion&quot;&gt;GNU bash manual: Shell Parameter Expansion&lt;&#x2F;a&gt; and trying out examples to check if I was understanding the features well.&lt;&#x2F;p&gt;
+&lt;p&gt;When it came to case conversion, it was a bit confusing to know that you can only use a single character length glob. Here are the examples for lowercase to uppercase conversion that I used:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ fruit=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;apple&amp;#39;
+
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# all characters to uppercase
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot;${fruit^^}&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;APPLE
+
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# convert any character that matches [g-z] to uppercase
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot;${fruit^^[g-z]}&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
+aPPLe
+
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# this won&amp;#39;t work since &amp;#39;sky-&amp;#39; is not a single character
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ c=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;sky-rose&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
+$ echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot;${c^^*-}&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
+sky&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;rose
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;To convert uppercase to lowercase, you just need to use &lt;code&gt;,&lt;&#x2F;code&gt; instead of &lt;code&gt;^&lt;&#x2F;code&gt;. Sounds simple right? It really is. But, I got stuck while trying to modify the above examples:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ fruit=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;APPLE&amp;#39;
+
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# worked as expected
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot;${fruit,,}&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
+apple
+
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# expected &amp;#39;ApplE&amp;#39; but got &amp;#39;APPLE&amp;#39;
+# can you spot the mistake?
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot;${fruit,,[g-z]}&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;APPLE
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;I usually go through documentation and stackexchange sites when I&#x27;m stuck. After going through some threads, I came across &lt;a href=&quot;https:&#x2F;&#x2F;unix.stackexchange.com&#x2F;q&#x2F;500274&#x2F;109046&quot;&gt;this unix.stackexchange&lt;&#x2F;a&gt; example:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ str=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot;HELLO&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
+$ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;printf &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#aeb52b;&quot;&gt;%s&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;\n&amp;#39; &amp;quot;${str,,[HEO]}&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
+heLLo
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Okay, I thought, this seems similar to what I wanted. Need to check out if this works on my machine. Before I even finished typing the example, my brain&#x27;s light bulb turned on. I should have used &lt;code&gt;G-Z&lt;&#x2F;code&gt; instead of lowercase range.&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot;${fruit,,[G-Z]}&amp;quot;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;ApplE
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>CLI tip 10: version sort</title>
+		<published>2022-05-13T00:00:00+00:00</published>
+		<updated>2022-05-13T00:00:00+00:00</updated>
+		<link href="https://learnbyexample.github.io/tips/cli-tip-10/" type="text/html"/>
+		<id>https://learnbyexample.github.io/tips/cli-tip-10/</id>
+		<content type="html">&lt;p&gt;You can use &lt;code&gt;sort -V&lt;&#x2F;code&gt; for sorting numerical input that is mixed with other characters. It also helps when you want to treat digits after a decimal point as whole numbers, for example if &lt;code&gt;1.10&lt;&#x2F;code&gt; should be greater than &lt;code&gt;1.2&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;printf &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;1.5\n1.10\n1.2&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; sort &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;n
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;1.10
+1.2
+1.5&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
+$ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;printf &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;1.5\n1.10\n1.2&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; sort &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;V
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;1.2
+1.5
+1.10&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
+
+$ cat versions.txt
+file2
+cmd5.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;2&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
+file10
+cmd1.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;6&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
+file5
+cmd5.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;10&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
+$ sort &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;V&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; versions.txt
+cmd1.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;6&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
+cmd5.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;2&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
+cmd5.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;10&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
+file2
+file5
+file10
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Here&#x27;s an example of dealing with numbers reported by the &lt;code&gt;time&lt;&#x2F;code&gt; command (assuming all the entries have the same format).&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ cat timings.txt
+5m35.363s
+3m20.058s
+4m11.130s
+3m42.833s
+4m3.083s
+
+$ sort &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;V&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; timings.txt
+3m20.058s
+3m42.833s
+4m3.083s
+4m11.130s
+5m35.363s
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See &lt;a href=&quot;https:&#x2F;&#x2F;www.gnu.org&#x2F;software&#x2F;coreutils&#x2F;manual&#x2F;html_node&#x2F;Version-sort-overview.html&quot;&gt;GNU coreutils manual: Version sort ordering&lt;&#x2F;a&gt; for more details. Also, note that the &lt;code&gt;ls&lt;&#x2F;code&gt; command uses lowercase &lt;code&gt;-v&lt;&#x2F;code&gt; for this task.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Video demo&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;QKZbdZ-XmCQ&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;&#x2F;iframe&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;cli_text_processing_coreutils&#x2F;sort.html&quot;&gt;sort command&lt;&#x2F;a&gt; chapter from my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;cli_text_processing_coreutils&quot;&gt;Command line text processing with GNU Coreutils&lt;&#x2F;a&gt; ebook for more details.&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>Python tip 10: removeprefix and removesuffix string methods</title>
 		<published>2022-05-11T00:00:00+00:00</published>
@@ -980,15 +1084,15 @@ tru eblue
 </content>
 	</entry>
 	<entry xml:lang="en">
-		<title>Regexp gotcha: 1</title>
+		<title>Regexp gotcha 1: grouping common portions</title>
 		<published>2022-01-14T00:00:00+00:00</published>
-		<updated>2022-01-14T00:00:00+00:00</updated>
+		<updated>2022-05-13T00:00:00+00:00</updated>
 		<link href="https://learnbyexample.github.io/mini/regexp-gotcha-1/" type="text/html"/>
 		<id>https://learnbyexample.github.io/mini/regexp-gotcha-1/</id>
 		<content type="html">&lt;p&gt;Similar to &lt;code&gt;a(b+c)d = abd+acd&lt;&#x2F;code&gt; in maths, you get &lt;code&gt;a(b|c)d = abd|acd&lt;&#x2F;code&gt; in regular expressions. However, you&#x27;ll have to be careful if quantifiers are involved.&lt;&#x2F;p&gt;
 &lt;p&gt;For example, &lt;code&gt;(a*|b*)&lt;&#x2F;code&gt; isn&#x27;t the same as &lt;code&gt;(a|b)*&lt;&#x2F;code&gt;. Can you reason out why? Here&#x27;s a railroad diagram to help you out:&lt;&#x2F;p&gt;
 &lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;mini&#x2F;regexp_gotcha_1.png&quot; alt=&quot;Regexp grouping with quantifiers gotcha&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
-&lt;p align=&quot;center&quot;&gt;Credit: &lt;a href=&quot;https:&#x2F;&#x2F;www.debuggex.com&#x2F;&quot;&gt;debuggex&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;Credit: &lt;a href=&quot;https:&#x2F;&#x2F;www.debuggex.com&#x2F;&quot;&gt;debuggex.com&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;p&gt;The difference is that &lt;code&gt;(a*|b*)&lt;&#x2F;code&gt; only matches same letter sequences like &lt;code&gt;a&lt;&#x2F;code&gt;, &lt;code&gt;bb&lt;&#x2F;code&gt;, &lt;code&gt;aaaaaa&lt;&#x2F;code&gt;, etc. But &lt;code&gt;(a|b)*&lt;&#x2F;code&gt; can match mixed sequences like &lt;code&gt;ababbba&lt;&#x2F;code&gt; too. You can also simplify &lt;code&gt;(a|b)*&lt;&#x2F;code&gt; to &lt;code&gt;[ab]*&lt;&#x2F;code&gt; since it is just single character alternation in this particular example.&lt;&#x2F;p&gt;
 &lt;p&gt;Here&#x27;s an illustration using Python:&lt;&#x2F;p&gt;
 &lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
@@ -1046,7 +1150,7 @@ $ paste &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2
 $ awk &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;v &lt;&#x2F;span&gt;&lt;span style=&quot;color:#c23f31;&quot;&gt;ORS&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;NR&amp;gt;1{print &amp;quot; : &amp;quot;} 1; END{print &amp;quot;\n&amp;quot;}&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; colors.txt
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Blue &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;White &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Orange
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;br&gt;
-&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See my &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;cli_text_processing_coreutils&#x2F;paste.html&quot;&gt;paste command&lt;&#x2F;a&gt; chapter from my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;cli_text_processing_coreutils&quot;&gt;Command line text processing with GNU Coreutils&lt;&#x2F;a&gt; ebook for more details.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;cli_text_processing_coreutils&#x2F;paste.html&quot;&gt;paste command&lt;&#x2F;a&gt; chapter from my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;cli_text_processing_coreutils&quot;&gt;Command line text processing with GNU Coreutils&lt;&#x2F;a&gt; ebook for more details.&lt;&#x2F;p&gt;
 &lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;learn_gnuawk&quot;&gt;GNU awk one-liners&lt;&#x2F;a&gt; ebook if you are interested in learning about the &lt;code&gt;awk&lt;&#x2F;code&gt; command.&lt;&#x2F;p&gt;
 </content>
 	</entry>
@@ -2129,7 +2233,7 @@ $&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; echo &lt;&#x2F;
 </content>
 	</entry>
 	<entry xml:lang="en">
-		<title>Debug woes: 2</title>
+		<title>Debug woes 2: unexpected array in replacement string</title>
 		<published>2021-06-17T00:00:00+00:00</published>
 		<updated>2021-06-17T00:00:00+00:00</updated>
 		<link href="https://learnbyexample.github.io/mini/debug-woes-2/" type="text/html"/>
@@ -2463,7 +2567,7 @@ a,,ce,d,,f
 </content>
 	</entry>
 	<entry xml:lang="en">
-		<title>Debug woes: 1</title>
+		<title>Debug woes 1: multiple substitutions on the same line</title>
 		<published>2021-05-29T00:00:00+00:00</published>
 		<updated>2021-05-29T00:00:00+00:00</updated>
 		<link href="https://learnbyexample.github.io/mini/debug-woes-1/" type="text/html"/>

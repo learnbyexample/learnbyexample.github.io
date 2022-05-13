@@ -74,6 +74,10 @@
         <lastmod>2021-06-17</lastmod>
     </url>
     <url>
+        <loc>https://learnbyexample.github.io/mini/debug-woes-3/</loc>
+        <lastmod>2022-05-13</lastmod>
+    </url>
+    <url>
         <loc>https://learnbyexample.github.io/mini/dreaming-solutions/</loc>
         <lastmod>2021-06-10</lastmod>
     </url>
@@ -91,7 +95,7 @@
     </url>
     <url>
         <loc>https://learnbyexample.github.io/mini/regexp-gotcha-1/</loc>
-        <lastmod>2022-01-14</lastmod>
+        <lastmod>2022-05-13</lastmod>
     </url>
     <url>
         <loc>https://learnbyexample.github.io/mini/vim-prank/</loc>
@@ -183,6 +187,9 @@
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tags/atomic-grouping/</loc>
+    </url>
+    <url>
+        <loc>https://learnbyexample.github.io/tags/bash/</loc>
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tags/book-review/</loc>
@@ -290,6 +297,9 @@
         <loc>https://learnbyexample.github.io/tags/pandoc/</loc>
     </url>
     <url>
+        <loc>https://learnbyexample.github.io/tags/parameter-expansion/</loc>
+    </url>
+    <url>
         <loc>https://learnbyexample.github.io/tags/pdf/</loc>
     </url>
     <url>
@@ -356,6 +366,10 @@
     <url>
         <loc>https://learnbyexample.github.io/tips/cli-tip-1/</loc>
         <lastmod>2022-05-03</lastmod>
+    </url>
+    <url>
+        <loc>https://learnbyexample.github.io/tips/cli-tip-10/</loc>
+        <lastmod>2022-05-13</lastmod>
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tips/cli-tip-2/</loc>

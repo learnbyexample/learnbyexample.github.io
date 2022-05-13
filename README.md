@@ -40,20 +40,22 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Mini blog posts
 
+* [Debug woes 3: matching uppercase alphabets](https://learnbyexample.github.io/mini/debug-woes-3/)
 * [Vim Reference Guide: two week sales report](https://learnbyexample.github.io/mini/vim-reference-guide-sales/)
 * [PyDev of the Week](https://learnbyexample.github.io/mini/pydev-interview/)
 * [Brag post: Hacker News Front Page entries](https://learnbyexample.github.io/mini/hacker-news-front-page-brag/)
-* [Regexp gotcha: 1](https://learnbyexample.github.io/mini/regexp-gotcha-1/)
+* [Regexp gotcha 1: grouping common portions](https://learnbyexample.github.io/mini/regexp-gotcha-1/)
 * [Vim prank: alias vim='vim -y'](https://learnbyexample.github.io/mini/vim-prank/)
-* [Debug woes: 2](https://learnbyexample.github.io/mini/debug-woes-2/)
+* [Debug woes 2: unexpected array in replacement string](https://learnbyexample.github.io/mini/debug-woes-2/)
 * [Dreaming solutions](https://learnbyexample.github.io/mini/dreaming-solutions/)
-* [Debug woes: 1](https://learnbyexample.github.io/mini/debug-woes-1/)
+* [Debug woes 1: multiple substitutions on the same line](https://learnbyexample.github.io/mini/debug-woes-1/)
 * [Perl one-liner articles](https://learnbyexample.github.io/mini/perl-oneliner-articles/)
 
 <br>
 
 ## Tips
 
+* [CLI tip 10: version sort](https://learnbyexample.github.io/tips/cli-tip-10/)
 * [Python tip 10: removeprefix and removesuffix string methods](https://learnbyexample.github.io/tips/python-tip-10/)
 * [Vim tip 8: join lines](https://learnbyexample.github.io/tips/vim-tip-8/)
 * [CLI tip 9: awk paragraph mode](https://learnbyexample.github.io/tips/cli-tip-9/)
