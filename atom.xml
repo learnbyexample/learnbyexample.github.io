@@ -5,7 +5,7 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2022-05-13T00:00:00+00:00</updated>
+	<updated>2022-05-16T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
 	<entry xml:lang="en">
 		<title>Debug woes 3: matching uppercase letters</title>
@@ -1576,7 +1576,7 @@ $ perl -lne &amp;#39;$c=0; $c++ while(s&#x2F;\{[^{}]*\}&#x2F;&#x2F;g);
 	<entry xml:lang="en">
 		<title>Python tip 3: expression and result with f-string</title>
 		<published>2021-12-14T00:00:00+00:00</published>
-		<updated>2021-12-14T00:00:00+00:00</updated>
+		<updated>2022-05-16T00:00:00+00:00</updated>
 		<link href="https://learnbyexample.github.io/tips/python-tip-3/" type="text/html"/>
 		<id>https://learnbyexample.github.io/tips/python-tip-3/</id>
 		<content type="html">&lt;p&gt;In case you haven&#x27;t yet discovered this awesome &lt;strong&gt;f-string&lt;&#x2F;strong&gt; feature, you can add &lt;code&gt;=&lt;&#x2F;code&gt; after an expression to get both the expression and the result in the output.&lt;&#x2F;p&gt;
@@ -1599,7 +1599,10 @@ $ perl -lne &amp;#39;$c=0; $c++ while(s&#x2F;\{[^{}]*\}&#x2F;&#x2F;g);
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;print&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#668f14;&quot;&gt;f&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;{&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;isodd&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;123&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;) = }&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;)
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;isodd&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;123&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;True
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See &lt;a href=&quot;https:&#x2F;&#x2F;docs.python.org&#x2F;3&#x2F;library&#x2F;string.html#formatstrings&quot;&gt;docs.python: Format String Syntax&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;docs.python.org&#x2F;3&#x2F;reference&#x2F;lexical_analysis.html#formatted-string-literals&quot;&gt;docs.python: Formatted string literals&lt;&#x2F;a&gt; for documentation and examples.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See &lt;a href=&quot;https:&#x2F;&#x2F;docs.python.org&#x2F;3&#x2F;library&#x2F;string.html#formatstrings&quot;&gt;docs.python: Format String Syntax&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;docs.python.org&#x2F;3&#x2F;reference&#x2F;lexical_analysis.html#formatted-string-literals&quot;&gt;docs.python: Formatted string literals&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;fstring.help&#x2F;&quot;&gt;fstring.help&lt;&#x2F;a&gt; for documentation and examples.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Video demo&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;QPJoqvq0toA&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;&#x2F;iframe&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
 &lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;100_page_python_intro&quot;&gt;100 Page Python Intro&lt;&#x2F;a&gt; ebook for a short, introductory guide for the Python programming language.&lt;&#x2F;p&gt;
 </content>
 	</entry>
@@ -1808,7 +1811,7 @@ $ perl -lne &amp;#39;$c=0; $c++ while(s&#x2F;\{[^{}]*\}&#x2F;&#x2F;g);
 	<entry xml:lang="en">
 		<title>Python tip 2: membership operator</title>
 		<published>2021-11-25T00:00:00+00:00</published>
-		<updated>2021-11-25T00:00:00+00:00</updated>
+		<updated>2022-05-16T00:00:00+00:00</updated>
 		<link href="https://learnbyexample.github.io/tips/python-tip-2/" type="text/html"/>
 		<id>https://learnbyexample.github.io/tips/python-tip-2/</id>
 		<content type="html">&lt;p&gt;The &lt;code&gt;in&lt;&#x2F;code&gt; membership operator checks if a given value is part of a collection of values. Here&#x27;s an example with &lt;code&gt;range()&lt;&#x2F;code&gt; function:&lt;&#x2F;p&gt;
@@ -1849,7 +1852,10 @@ $ perl -lne &amp;#39;$c=0; $c++ while(s&#x2F;\{[^{}]*\}&#x2F;&#x2F;g);
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;pet &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;not in &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;bat&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;cat&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;dog&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;)
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;True
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See &lt;a href=&quot;https:&#x2F;&#x2F;docs.python.org&#x2F;3&#x2F;reference&#x2F;expressions.html#membership-test-operations&quot;&gt;docs.python: Membership test operations&lt;&#x2F;a&gt; for documentation.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Video demo&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;TmVJPtZBRv4&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;&#x2F;iframe&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See &lt;a href=&quot;https:&#x2F;&#x2F;docs.python.org&#x2F;3&#x2F;reference&#x2F;expressions.html#membership-test-operations&quot;&gt;docs.python: Membership test operations&lt;&#x2F;a&gt; for documentation. See also my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;100_page_python_intro&quot;&gt;100 Page Python Intro&lt;&#x2F;a&gt; ebook.&lt;&#x2F;p&gt;
 </content>
 	</entry>
 	<entry xml:lang="en">
@@ -1903,7 +1909,7 @@ $ perl -lne &amp;#39;$c=0; $c++ while(s&#x2F;\{[^{}]*\}&#x2F;&#x2F;g);
 	<entry xml:lang="en">
 		<title>Python tip 1: tuple argument for startswith&#x2F;endswith methods</title>
 		<published>2021-11-16T00:00:00+00:00</published>
-		<updated>2021-11-16T00:00:00+00:00</updated>
+		<updated>2022-04-29T00:00:00+00:00</updated>
 		<link href="https://learnbyexample.github.io/tips/python-tip-1/" type="text/html"/>
 		<id>https://learnbyexample.github.io/tips/python-tip-1/</id>
 		<content type="html">&lt;p&gt;You&#x27;d probably know about the &lt;code&gt;startswith()&lt;&#x2F;code&gt; and &lt;code&gt;endswith()&lt;&#x2F;code&gt; string methods.&lt;&#x2F;p&gt;
