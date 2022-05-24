@@ -5,8 +5,34 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2022-05-16T00:00:00+00:00</updated>
+	<updated>2022-05-24T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Vim tip 9: named registers</title>
+		<published>2022-05-24T00:00:00+00:00</published>
+		<updated>2022-05-24T00:00:00+00:00</updated>
+		<link href="https://learnbyexample.github.io/tips/vim-tip-9/" type="text/html"/>
+		<id>https://learnbyexample.github.io/tips/vim-tip-9/</id>
+		<content type="html">&lt;p&gt;In Normal mode, you can use lowercase alphabets &lt;code&gt;a-z&lt;&#x2F;code&gt; to save some content for future use. You can also append some more content to those registers by using the corresponding uppercase alphabets &lt;code&gt;A-Z&lt;&#x2F;code&gt; at a later stage.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;kbd&gt;&amp;quot;ayy&lt;&#x2F;kbd&gt; copy the current line to the &lt;code&gt;&amp;quot;a&lt;&#x2F;code&gt; register&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;&amp;quot;bdip&lt;&#x2F;kbd&gt; delete the current paragraph, contents will also be saved to the &lt;code&gt;&amp;quot;b&lt;&#x2F;code&gt; register&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;&amp;quot;Ayj&lt;&#x2F;kbd&gt; append the current line and the line below to the &lt;code&gt;&amp;quot;a&lt;&#x2F;code&gt; register
+&lt;ul&gt;
+&lt;li&gt;&lt;kbd&gt;&amp;quot;ayy&lt;&#x2F;kbd&gt; followed by &lt;kbd&gt;&amp;quot;Ayj&lt;&#x2F;kbd&gt; will result in total three lines in the &lt;code&gt;&amp;quot;a&lt;&#x2F;code&gt; register&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;&amp;quot;ap&lt;&#x2F;kbd&gt; paste content from the &lt;code&gt;&amp;quot;a&lt;&#x2F;code&gt; register&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;&amp;quot;eyiw&lt;&#x2F;kbd&gt; copy word under the cursor to the &lt;code&gt;&amp;quot;e&lt;&#x2F;code&gt; register&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; You can use &lt;kbd&gt;:reg&lt;&#x2F;kbd&gt; (short for &lt;code&gt;:registers&lt;&#x2F;code&gt;) to view the contents of the registers. Specifying one or more characters (next to each other as a single string) will display contents only for those registers.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; The named registers are also used for saving macros. You can record an empty macro to clear the contents, for example &lt;kbd&gt;qbq&lt;&#x2F;kbd&gt; clears the &lt;code&gt;&amp;quot;b&lt;&#x2F;code&gt; register.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Video demo&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;GBOtpKFcZSA&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;&#x2F;iframe&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See also my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;vim_reference&quot;&gt;Vim Reference Guide&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;curated_resources&#x2F;vim.html&quot;&gt;curated list of resources for Vim&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>Debug woes 3: matching uppercase letters</title>
 		<published>2022-05-13T00:00:00+00:00</published>
