@@ -140,44 +140,48 @@
       <p>Use <code>grep -c</code> to count the number of input <em>lines</em> containing a given pattern.</p>
 <pre style="background-color:#f5f5f5;">
 <code><span style="color:#7f8989;"># number of input lines containing &#39;a&#39;
-</span><span style="color:#5597d6;">$</span><span style="color:#1f1f1f;"> printf </span><span style="color:#d07711;">&#39;goal\nrate\neat\npit&#39; </span><span style="color:#72ab00;">| </span><span style="color:#5597d6;">grep -c </span><span style="color:#d07711;">&#39;a&#39;
-</span><span style="color:#5597d6;">3
+</span><span style="color:#1f1f1f;">$ </span><span style="color:#b39f04;">printf </span><span style="color:#d07711;">&#39;goal\nrate\neat\npit&#39; </span><span style="color:#72ab00;">|</span><span style="color:#1f1f1f;"> grep </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">c </span><span style="color:#d07711;">&#39;a&#39;
+</span><span style="color:#b3933a;">3
 
 </span><span style="color:#7f8989;"># number of input lines containing all the vowels
-</span><span style="color:#5597d6;">$</span><span style="color:#1f1f1f;"> grep</span><span style="color:#5597d6;"> -icP </span><span style="color:#d07711;">&#39;^(?=.*a)(?=.*e)(?=.*i)(?=.*o).*u&#39;</span><span style="color:#1f1f1f;"> /usr/share/dict/words
-</span><span style="color:#5597d6;">640
+</span><span style="color:#1f1f1f;">$ grep </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">icP </span><span style="color:#d07711;">&#39;^(?=.*a)(?=.*e)(?=.*i)(?=.*o).*u&#39; </span><span style="color:#72ab00;">/</span><span style="color:#1f1f1f;">usr</span><span style="color:#72ab00;">/</span><span style="color:#1f1f1f;">share</span><span style="color:#72ab00;">/</span><span style="color:#1f1f1f;">dict</span><span style="color:#72ab00;">/</span><span style="color:#1f1f1f;">words
+</span><span style="color:#b3933a;">640
 
 </span><span style="color:#7f8989;"># number of input lines NOT containing &#39;at&#39;
-</span><span style="color:#5597d6;">$</span><span style="color:#1f1f1f;"> printf </span><span style="color:#d07711;">&#39;goal\nrate\neat\npit&#39; </span><span style="color:#72ab00;">| </span><span style="color:#5597d6;">grep -vc </span><span style="color:#d07711;">&#39;at&#39;
-</span><span style="color:#5597d6;">2
+</span><span style="color:#1f1f1f;">$ </span><span style="color:#b39f04;">printf </span><span style="color:#d07711;">&#39;goal\nrate\neat\npit&#39; </span><span style="color:#72ab00;">|</span><span style="color:#1f1f1f;"> grep </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">vc </span><span style="color:#d07711;">&#39;at&#39;
+</span><span style="color:#b3933a;">2
 </span></code></pre>
 <p>With multiple file input, count is displayed for each file <em>separately</em>. Use <code>cat</code> if you need a combined count.</p>
 <pre style="background-color:#f5f5f5;">
 <code><span style="color:#7f8989;"># separate count for each input file
-</span><span style="color:#5597d6;">$</span><span style="color:#1f1f1f;"> seq 15 </span><span style="color:#72ab00;">| </span><span style="color:#5597d6;">grep -c </span><span style="color:#d07711;">&#39;1&#39;</span><span style="color:#1f1f1f;"> programming_quotes.txt -
-</span><span style="color:#5597d6;">programming_quotes.txt:1
-</span><span style="color:#1f1f1f;">(</span><span style="color:#5597d6;">standard</span><span style="color:#1f1f1f;"> input):7
+</span><span style="color:#1f1f1f;">$ grep </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">c </span><span style="color:#d07711;">&#39;a&#39;</span><span style="color:#1f1f1f;"> names.txt purchases.txt 
+names.txt</span><span style="color:#72ab00;">:</span><span style="color:#b3933a;">2</span><span style="color:#1f1f1f;">
+purchases.txt</span><span style="color:#72ab00;">:</span><span style="color:#b3933a;">6
 
 </span><span style="color:#7f8989;"># total count for all the input files
-</span><span style="color:#1f1f1f;">$ cat </span><span style="color:#72ab00;">&lt;</span><span style="color:#1f1f1f;">(</span><span style="color:#5597d6;">seq</span><span style="color:#1f1f1f;"> 15) programming_quotes.txt </span><span style="color:#72ab00;">| </span><span style="color:#5597d6;">grep -c </span><span style="color:#d07711;">&#39;1&#39;
-</span><span style="color:#5597d6;">8
+</span><span style="color:#1f1f1f;">$ cat names.txt purchases.txt </span><span style="color:#72ab00;">|</span><span style="color:#1f1f1f;"> grep </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">c </span><span style="color:#d07711;">&#39;a&#39;
+</span><span style="color:#b3933a;">8
 </span></code></pre>
 <p>If total number of matches is required, use the <code>-o</code> option to display only the matching portions (one per line) and then use <code>wc</code> to get the count.</p>
 <pre style="background-color:#f5f5f5;">
 <code><span style="color:#7f8989;"># -c gives count of matching lines only
-</span><span style="color:#5597d6;">$</span><span style="color:#1f1f1f;"> printf </span><span style="color:#d07711;">&#39;goal\nrate\neat\npit&#39; </span><span style="color:#72ab00;">| </span><span style="color:#5597d6;">grep -c </span><span style="color:#d07711;">&#39;[aeiou]&#39;
-</span><span style="color:#5597d6;">4
+</span><span style="color:#1f1f1f;">$ </span><span style="color:#b39f04;">printf </span><span style="color:#d07711;">&#39;goal\nrate\neat\npit&#39; </span><span style="color:#72ab00;">|</span><span style="color:#1f1f1f;"> grep </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">c </span><span style="color:#d07711;">&#39;[aeiou]&#39;
+</span><span style="color:#b3933a;">4
 
 </span><span style="color:#7f8989;"># use -o to get each match on a separate line
-</span><span style="color:#5597d6;">$</span><span style="color:#1f1f1f;"> printf </span><span style="color:#d07711;">&#39;goal\nrate\neat\npit&#39; </span><span style="color:#72ab00;">| </span><span style="color:#5597d6;">grep -o </span><span style="color:#d07711;">&#39;[aeiou]&#39; </span><span style="color:#72ab00;">| </span><span style="color:#5597d6;">wc -l
-7
+</span><span style="color:#1f1f1f;">$ </span><span style="color:#b39f04;">printf </span><span style="color:#d07711;">&#39;goal\nrate\neat\npit&#39; </span><span style="color:#72ab00;">|</span><span style="color:#1f1f1f;"> grep </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">o </span><span style="color:#d07711;">&#39;[aeiou]&#39; </span><span style="color:#72ab00;">|</span><span style="color:#1f1f1f;"> wc </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">l
+</span><span style="color:#b3933a;">7
 </span></code></pre>
-<p>Note that if you use <a href="https://github.com/BurntSushi/ripgrep">ripgrep</a>, you can also use <code>-co</code> or <code>--count-matches</code> instead of piping to <code>wc</code> command.</p>
+<blockquote>
+<p><img src="/images/info.svg" alt="info" /> Note that if you use <a href="https://github.com/BurntSushi/ripgrep">ripgrep</a>, you can simply use <code>-co</code> or <code>--count-matches</code> instead of piping to the <code>wc</code> command.</p>
 <pre style="background-color:#f5f5f5;">
 <code><span style="color:#7f8989;"># this behavior is different compared to GNU grep
-</span><span style="color:#5597d6;">$</span><span style="color:#1f1f1f;"> printf </span><span style="color:#d07711;">&#39;goal\nrate\neat\npit&#39; </span><span style="color:#72ab00;">| </span><span style="color:#5597d6;">rg -co </span><span style="color:#d07711;">&#39;[aeiou]&#39;
-</span><span style="color:#5597d6;">7
-</span></code></pre><br>
+</span><span style="color:#1f1f1f;">$ </span><span style="color:#b39f04;">printf </span><span style="color:#d07711;">&#39;goal\nrate\neat\npit&#39; </span><span style="color:#72ab00;">|</span><span style="color:#1f1f1f;"> rg </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">co </span><span style="color:#d07711;">&#39;[aeiou]&#39;
+</span><span style="color:#b3933a;">7
+</span></code></pre></blockquote>
+<p><strong>Video demo</strong>:</p>
+<p align="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/pZ4btzZKYVg" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+<br>
 <p><img src="/images/info.svg" alt="info" /> See my <a href="https://github.com/learnbyexample/learn_gnugrep_ripgrep">GNU GREP and RIPGREP</a> ebook if you are interested in learning about <code>GNU grep</code> and <code>ripgrep</code> commands in more detail.</p>
 
     </div>
