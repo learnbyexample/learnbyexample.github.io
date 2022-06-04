@@ -40,6 +40,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Mini blog posts
 
+* [Bash compound commands and redirection](https://learnbyexample.github.io/mini/bash-compound-commands-redirection/)
 * [Debug woes 3: matching uppercase alphabets](https://learnbyexample.github.io/mini/debug-woes-3/)
 * [Vim Reference Guide: two week sales report](https://learnbyexample.github.io/mini/vim-reference-guide-sales/)
 * [PyDev of the Week](https://learnbyexample.github.io/mini/pydev-interview/)

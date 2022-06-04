@@ -66,6 +66,10 @@
         <loc>https://learnbyexample.github.io/mini/</loc>
     </url>
     <url>
+        <loc>https://learnbyexample.github.io/mini/bash-compound-commands-redirection/</loc>
+        <lastmod>2022-06-04</lastmod>
+    </url>
+    <url>
         <loc>https://learnbyexample.github.io/mini/debug-woes-1/</loc>
         <lastmod>2021-05-29</lastmod>
     </url>
@@ -319,6 +323,9 @@
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tags/re-module/</loc>
+    </url>
+    <url>
+        <loc>https://learnbyexample.github.io/tags/redirection/</loc>
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tags/regex-module/</loc>

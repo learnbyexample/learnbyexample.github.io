@@ -7,7 +7,7 @@
       <!-- Enable responsiveness on mobile devices-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-      <title>learnbyexample</title>
+      <title>Bash compound commands and redirection</title>
 
       
         <link rel="alternate" type="application/atom+xml" title="RSS" href="https://learnbyexample.github.io/atom.xml">
@@ -121,24 +121,71 @@
             <main>
                 <div class="content" id="mobile-panel">
                     
-    <div class="taxonomy">
-        <h2>bash</h2>
-        
-            <div class="taxonomy__item">
-                <span class="taxonomy__item__time">2022-06-04</span>
-                <span class="taxonomy__item__title">
-                    <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;mini&#x2F;bash-compound-commands-redirection&#x2F;">Bash compound commands and redirection</a>
-                </span>
-            </div>
-        
-            <div class="taxonomy__item">
-                <span class="taxonomy__item__time">2022-05-13</span>
-                <span class="taxonomy__item__title">
-                    <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;mini&#x2F;debug-woes-3&#x2F;">Debug woes 3: matching uppercase letters</a>
-                </span>
-            </div>
-        
+
+
+
+<article class="post">
+    
+    <header class="post__header">
+        <h1 class="post__title">
+            <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;mini&#x2F;bash-compound-commands-redirection&#x2F;">Bash compound commands and redirection</a>
+        </h1>
+        <div class="post__meta">
+            <span class="post__time">2022-06-04</span>
+            
+        </div>
+    </header>
+
+    <div class="post-content">
+      <p>I've been using Linux for about 15 years. There are a lot of features I don't know and some that I've used but not often enough or to the full extent of possibilities.</p>
+<p>Recently, I had written a <code>bash</code> function, which required saving the output of a <code>for</code> loop to a file. I knew that <a href="https://www.gnu.org/software/bash/manual/bash.html#Compound-Commands">compound commands</a> support <a href="https://www.gnu.org/software/bash/manual/bash.html#Redirections">redirection</a>, but it didn't strike me at that time as I haven't had to use them often.</p>
+<p>Here's a simplified version of the function I wrote first:</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#c23f31;">pf</span><span style="color:#1f1f1f;">()
+{
+    </span><span style="color:#72ab00;">&gt;</span><span style="color:#1f1f1f;"> input.txt
+    </span><span style="color:#72ab00;">for</span><span style="color:#1f1f1f;"> f </span><span style="color:#72ab00;">in </span><span style="color:#d07711;">&quot;$</span><span style="color:#acb3c2;">@</span><span style="color:#d07711;">&quot; </span><span style="color:#72ab00;">; do </span><span style="color:#b39f04;">echo </span><span style="color:#d07711;">&quot;$</span><span style="color:#acb3c2;">f </span><span style="color:#d07711;">$</span><span style="color:#acb3c2;">f</span><span style="color:#d07711;">.bkp&quot; </span><span style="color:#72ab00;">&gt;&gt;</span><span style="color:#1f1f1f;"> input.txt </span><span style="color:#72ab00;">; done
+    </span><span style="color:#5597d6;">cmd</span><span style="color:#1f1f1f;"> input.txt </span><span style="color:#72ab00;">&gt;</span><span style="color:#1f1f1f;"> output.txt
+}
+</span></code></pre>
+<p>Having to empty the file using <code>&gt; input.txt</code> got me thinking that perhaps I was missing some obvious solution. Few days later, I realized that instead of using <code>&gt;&gt;</code> during every iteration of the loop, I should have just applied <code>&gt;</code> to the loop itself.</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#c23f31;">pf</span><span style="color:#1f1f1f;">()
+{
+    </span><span style="color:#72ab00;">for</span><span style="color:#1f1f1f;"> f </span><span style="color:#72ab00;">in </span><span style="color:#d07711;">&quot;$</span><span style="color:#acb3c2;">@</span><span style="color:#d07711;">&quot; </span><span style="color:#72ab00;">; do </span><span style="color:#b39f04;">echo </span><span style="color:#d07711;">&quot;$</span><span style="color:#acb3c2;">f </span><span style="color:#d07711;">$</span><span style="color:#acb3c2;">f</span><span style="color:#d07711;">.bkp&quot; </span><span style="color:#72ab00;">; done &gt;</span><span style="color:#1f1f1f;"> input.txt
+    </span><span style="color:#5597d6;">cmd</span><span style="color:#1f1f1f;"> input.txt </span><span style="color:#72ab00;">&gt;</span><span style="color:#1f1f1f;"> output.txt
+}
+</span></code></pre>
+<p><img src="/images/info.svg" alt="info" /> <code>echo</code> and <code>cmd</code> in the above examples are just placeholders for illustration purposes. I needed both <code>input.txt</code> and <code>output.txt</code> after calling the function, which is why I didn't use <code>|</code> or process substitution.</p>
+
     </div>
+
+    
+    
+
+    <div class="post-footer">
+        
+            
+                <div class="post-tags">
+                    
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;bash&#x2F;">#bash</a>
+                    
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;redirection&#x2F;">#redirection</a>
+                    
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;linux&#x2F;">#linux</a>
+                    
+                </div>
+            
+            
+
+        
+
+    </div>
+
+    
+    
+</article>
+
 
                 </div>
             </main>

@@ -5,8 +5,36 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2022-06-01T00:00:00+00:00</updated>
+	<updated>2022-06-04T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Bash compound commands and redirection</title>
+		<published>2022-06-04T00:00:00+00:00</published>
+		<updated>2022-06-04T00:00:00+00:00</updated>
+		<link href="https://learnbyexample.github.io/mini/bash-compound-commands-redirection/" type="text/html"/>
+		<id>https://learnbyexample.github.io/mini/bash-compound-commands-redirection/</id>
+		<content type="html">&lt;p&gt;I&#x27;ve been using Linux for about 15 years. There are a lot of features I don&#x27;t know and some that I&#x27;ve used but not often enough or to the full extent of possibilities.&lt;&#x2F;p&gt;
+&lt;p&gt;Recently, I had written a &lt;code&gt;bash&lt;&#x2F;code&gt; function, which required saving the output of a &lt;code&gt;for&lt;&#x2F;code&gt; loop to a file. I knew that &lt;a href=&quot;https:&#x2F;&#x2F;www.gnu.org&#x2F;software&#x2F;bash&#x2F;manual&#x2F;bash.html#Compound-Commands&quot;&gt;compound commands&lt;&#x2F;a&gt; support &lt;a href=&quot;https:&#x2F;&#x2F;www.gnu.org&#x2F;software&#x2F;bash&#x2F;manual&#x2F;bash.html#Redirections&quot;&gt;redirection&lt;&#x2F;a&gt;, but it didn&#x27;t strike me at that time as I haven&#x27;t had to use them often.&lt;&#x2F;p&gt;
+&lt;p&gt;Here&#x27;s a simplified version of the function I wrote first:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#c23f31;&quot;&gt;pf&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;()
+{
+    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; input.txt
+    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;for&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; f &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;in &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#acb3c2;&quot;&gt;@&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;; do &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#acb3c2;&quot;&gt;f &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#acb3c2;&quot;&gt;f&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;.bkp&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;gt;&amp;gt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; input.txt &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;; done
+    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;cmd&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; input.txt &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; output.txt
+}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Having to empty the file using &lt;code&gt;&amp;gt; input.txt&lt;&#x2F;code&gt; got me thinking that perhaps I was missing some obvious solution. Few days later, I realized that instead of using &lt;code&gt;&amp;gt;&amp;gt;&lt;&#x2F;code&gt; during every iteration of the loop, I should have just applied &lt;code&gt;&amp;gt;&lt;&#x2F;code&gt; to the loop itself.&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#c23f31;&quot;&gt;pf&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;()
+{
+    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;for&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; f &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;in &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#acb3c2;&quot;&gt;@&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;; do &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#acb3c2;&quot;&gt;f &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#acb3c2;&quot;&gt;f&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;.bkp&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;; done &amp;gt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; input.txt
+    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;cmd&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; input.txt &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; output.txt
+}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; &lt;code&gt;echo&lt;&#x2F;code&gt; and &lt;code&gt;cmd&lt;&#x2F;code&gt; in the above examples are just placeholders for illustration purposes. I needed both &lt;code&gt;input.txt&lt;&#x2F;code&gt; and &lt;code&gt;output.txt&lt;&#x2F;code&gt; after calling the function, which is why I didn&#x27;t use &lt;code&gt;|&lt;&#x2F;code&gt; or process substitution.&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>Python tip 11: capture external command output</title>
 		<published>2022-06-01T00:00:00+00:00</published>
