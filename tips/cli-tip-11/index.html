@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+      <title>CLI tip 11: longest line length</title>
+
+      
+        <link rel="alternate" type="application/atom+xml" title="RSS" href="https://learnbyexample.github.io/atom.xml">
+      
+
+      
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
+          
+      
+
+      
+          <link rel="stylesheet" href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;site.css">
+          
+      
+
+      
+      
+<link rel="icon" href="https://learnbyexample.github.io/favicon.svg">
+<link rel="shortcut icon" href="https://learnbyexample.github.io/favicon.png">
+    </head>
+
+    <body>
+        <div class="container">
+
+            <div id="mobile-navbar" class="mobile-navbar">
+              <div class="mobile-header-logo">
+                <a href="/" class="logo">learnbyexample</a>
+              </div>
+              <div class="mobile-navbar-icon icon-out">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+
+            <nav id="mobile-menu" class="mobile-menu slideout-menu slideout-menu-left">
+              <ul class="mobile-menu-list">
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;books">
+                            Books
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;mini">
+                            Mini
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips">
+                            Tips
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags">
+                            Tags
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;about">
+                            About
+                        </a>
+                    </li>
+                
+              </ul>
+            </nav>
+
+            <header id="header">
+                <div class="logo"><a href="https:&#x2F;&#x2F;learnbyexample.github.io">learnbyexample</a></div>
+                <nav class="menu">
+                    <ul>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;books">
+                                    Books
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;mini">
+                                    Mini
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips">
+                                    Tips
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags">
+                                    Tags
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;about">
+                                    About
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </nav>
+            </header>
+
+            <main>
+                <div class="content" id="mobile-panel">
+                    
+
+
+
+<article class="post">
+    
+    <header class="post__header">
+        <h1 class="post__title">
+            <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips&#x2F;cli-tip-11&#x2F;">CLI tip 11: longest line length</a>
+        </h1>
+        <div class="post__meta">
+            <span class="post__time">2022-06-08</span>
+            
+        </div>
+    </header>
+
+    <div class="post-content">
+      <p>You can use <code>wc -L</code> to report the length of the longest line in the input (excluding the newline character of a line).</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#1f1f1f;">$ echo </span><span style="color:#d07711;">&#39;apple&#39; </span><span style="color:#72ab00;">|</span><span style="color:#1f1f1f;"> wc </span><span style="color:#72ab00;">-</span><span style="color:#5597d6;">L
+</span><span style="color:#b3933a;">5
+
+</span><span style="color:#7f8989;"># last line not ending with newline won&#39;t be a problem
+</span><span style="color:#1f1f1f;">$ </span><span style="color:#b39f04;">printf </span><span style="color:#d07711;">&#39;apple\nbanana&#39; </span><span style="color:#72ab00;">|</span><span style="color:#1f1f1f;"> wc </span><span style="color:#72ab00;">-</span><span style="color:#5597d6;">L
+</span><span style="color:#b3933a;">6</span><span style="color:#1f1f1f;">
+
+$ cat greeting.txt
+hi there
+have a nice day
+$ wc </span><span style="color:#72ab00;">-</span><span style="color:#5597d6;">L </span><span style="color:#72ab00;">&lt;</span><span style="color:#1f1f1f;">greeting.txt
+</span><span style="color:#b3933a;">15
+</span></code></pre>
+<p>If multiple files are passed, the last line summary will show the maximum length among the given inputs.</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#1f1f1f;">$ wc </span><span style="color:#72ab00;">-</span><span style="color:#5597d6;">L</span><span style="color:#1f1f1f;"> greeting.txt sample.txt para.txt
+ </span><span style="color:#b3933a;">15</span><span style="color:#1f1f1f;"> greeting.txt
+ </span><span style="color:#b3933a;">26</span><span style="color:#1f1f1f;"> sample.txt
+ </span><span style="color:#b3933a;">11</span><span style="color:#1f1f1f;"> para.txt
+ </span><span style="color:#b3933a;">26</span><span style="color:#1f1f1f;"> total
+</span></code></pre>
+<p><code>-L</code> won't count non-printable characters and tabs are converted to equivalent spaces. You can use <code>awk</code> if these are not acceptable.</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#7f8989;"># tab characters can occupy up to 8 columns
+</span><span style="color:#1f1f1f;">$ </span><span style="color:#b39f04;">printf </span><span style="color:#d07711;">&#39;\t&#39; </span><span style="color:#72ab00;">|</span><span style="color:#1f1f1f;"> wc </span><span style="color:#72ab00;">-</span><span style="color:#5597d6;">L
+</span><span style="color:#b3933a;">8</span><span style="color:#1f1f1f;">
+$ </span><span style="color:#b39f04;">printf </span><span style="color:#d07711;">&#39;(\t)&#39; </span><span style="color:#72ab00;">|</span><span style="color:#1f1f1f;"> wc </span><span style="color:#72ab00;">-</span><span style="color:#5597d6;">L
+</span><span style="color:#b3933a;">9</span><span style="color:#1f1f1f;">
+$ </span><span style="color:#b39f04;">printf </span><span style="color:#d07711;">&#39;(\t)&#39; </span><span style="color:#72ab00;">|</span><span style="color:#1f1f1f;"> awk </span><span style="color:#d07711;">&#39;{print length()}&#39;
+</span><span style="color:#b3933a;">3
+
+</span><span style="color:#7f8989;"># non-printable characters aren&#39;t counted
+</span><span style="color:#1f1f1f;">$ </span><span style="color:#b39f04;">printf </span><span style="color:#d07711;">&#39;(\34)&#39; </span><span style="color:#72ab00;">|</span><span style="color:#1f1f1f;"> wc </span><span style="color:#72ab00;">-</span><span style="color:#5597d6;">L
+</span><span style="color:#b3933a;">2</span><span style="color:#1f1f1f;">
+$ </span><span style="color:#b39f04;">printf </span><span style="color:#d07711;">&#39;(\34)&#39; </span><span style="color:#72ab00;">|</span><span style="color:#1f1f1f;"> awk </span><span style="color:#d07711;">&#39;{print length()}&#39;
+</span><span style="color:#b3933a;">3
+</span></code></pre>
+<p>Note that the <code>awk</code> command in the above illustration is similar to <code>wc -L</code> only for single line inputs. For multiple lines, you can use the following command:</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#1f1f1f;">awk </span><span style="color:#d07711;">&#39;{len = length(); if(len &gt; max) max = len} END{print max}&#39;
+</span></code></pre>
+<p>Multibyte characters and <a href="https://unicode.org/reports/tr29/#Grapheme_Cluster_Boundaries">grapheme clusters</a> will each be counted as <code>1</code>, assuming the current locale is set appropriately:</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#7f8989;"># multibyte characters are counted as 1 each in supported locales
+</span><span style="color:#1f1f1f;">$ </span><span style="color:#b39f04;">printf </span><span style="color:#d07711;">&#39;αλεπού&#39; </span><span style="color:#72ab00;">|</span><span style="color:#1f1f1f;"> wc </span><span style="color:#72ab00;">-</span><span style="color:#5597d6;">L
+</span><span style="color:#b3933a;">6
+
+</span><span style="color:#7f8989;"># grapheme cluster example
+</span><span style="color:#1f1f1f;">$ </span><span style="color:#b39f04;">printf </span><span style="color:#d07711;">&#39;cag̈e&#39; </span><span style="color:#72ab00;">|</span><span style="color:#1f1f1f;"> wc </span><span style="color:#72ab00;">-</span><span style="color:#5597d6;">L
+</span><span style="color:#b3933a;">4
+
+</span><span style="color:#7f8989;"># non-supported locales can cause them to be treated as non-printable
+</span><span style="color:#1f1f1f;">$ </span><span style="color:#b39f04;">printf </span><span style="color:#d07711;">&#39;αλεπού&#39; </span><span style="color:#72ab00;">| </span><span style="color:#c23f31;">LC_ALL</span><span style="color:#72ab00;">=</span><span style="color:#5597d6;">C</span><span style="color:#1f1f1f;"> wc </span><span style="color:#72ab00;">-</span><span style="color:#5597d6;">L
+</span><span style="color:#b3933a;">0
+</span></code></pre>
+<p><strong>Video demo</strong>:</p>
+<p align="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/a6Mk0d0bqWU" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+<br>
+<p><img src="/images/info.svg" alt="info" /> See also my <a href="https://github.com/learnbyexample/cli_text_processing_coreutils">Command line text processing with GNU Coreutils</a> ebook.</p>
+
+    </div>
+
+    
+    
+
+    <div class="post-footer">
+        
+            
+                <div class="post-tags">
+                    
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;linux&#x2F;">#linux</a>
+                    
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;command-line&#x2F;">#command-line</a>
+                    
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;tip&#x2F;">#tip</a>
+                    
+                </div>
+            
+            
+
+        
+
+    </div>
+
+    
+    
+</article>
+
+
+                </div>
+            </main>
+
+            
+            
+        </div>
+
+      
+          <script type="text/javascript" src="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;even.js" ></script>
+      
+    </body>
+
+</html>
