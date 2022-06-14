@@ -140,12 +140,12 @@
       <p>The <code>-s</code> option is one of the useful, but lesser known feature of the <code>paste</code> command. It helps you to serialize input file contents to a single output line.</p>
 <pre style="background-color:#f5f5f5;">
 <code><span style="color:#1f1f1f;">$ cat colors.txt
-</span><span style="color:#5597d6;">Blue
-White
-Orange</span><span style="color:#1f1f1f;">
+blue
+white
+orange
 
 $ paste </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">sd, colors.txt
-</span><span style="color:#5597d6;">Blue</span><span style="color:#1f1f1f;">,</span><span style="color:#5597d6;">White</span><span style="color:#1f1f1f;">,</span><span style="color:#5597d6;">Orange
+blue,white,orange
 </span></code></pre>
 <p>If multiple files are passed, serialization of each file is displayed on separate output lines.</p>
 <pre style="background-color:#f5f5f5;">
@@ -157,21 +157,24 @@ $ paste </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;"
 <pre style="background-color:#f5f5f5;">
 <code><span style="color:#7f8989;"># issue 1: trailing comma
 # issue 2: no newline at the end
-</span><span style="color:#1f1f1f;">$ </span><span style="color:#72ab00;">&lt;</span><span style="color:#1f1f1f;">colors.txt tr </span><span style="color:#d07711;">&#39;\n&#39; &#39;,&#39;
-</span><span style="color:#5597d6;">Blue</span><span style="color:#1f1f1f;">,</span><span style="color:#5597d6;">White</span><span style="color:#1f1f1f;">,</span><span style="color:#5597d6;">Orange</span><span style="color:#1f1f1f;">,
+</span><span style="color:#1f1f1f;">$ </span><span style="color:#72ab00;">&lt;</span><span style="color:#1f1f1f;">colors.txt tr </span><span style="color:#d07711;">&#39;\n&#39; &#39;,&#39;</span><span style="color:#1f1f1f;">
+blue,white,orange,
 
 </span><span style="color:#7f8989;"># correcting the above two issues
-</span><span style="color:#1f1f1f;">$ </span><span style="color:#72ab00;">&lt;</span><span style="color:#1f1f1f;">colors.txt tr </span><span style="color:#d07711;">&#39;\n&#39; &#39;,&#39; </span><span style="color:#72ab00;">|</span><span style="color:#1f1f1f;"> sed </span><span style="color:#d07711;">&#39;s/,$/\n/&#39;
-</span><span style="color:#5597d6;">Blue</span><span style="color:#1f1f1f;">,</span><span style="color:#5597d6;">White</span><span style="color:#1f1f1f;">,</span><span style="color:#5597d6;">Orange
+</span><span style="color:#1f1f1f;">$ </span><span style="color:#72ab00;">&lt;</span><span style="color:#1f1f1f;">colors.txt tr </span><span style="color:#d07711;">&#39;\n&#39; &#39;,&#39; </span><span style="color:#72ab00;">|</span><span style="color:#1f1f1f;"> sed </span><span style="color:#d07711;">&#39;s/,$/\n/&#39;</span><span style="color:#1f1f1f;">
+blue,white,orange
 </span></code></pre>
 <p>Here's an equivalent <code>awk</code> solution for single file input. While slower and complicated compared to the <code>paste</code> solution, you get more flexibility since <code>awk</code> is a programming language. For example, it is pretty easy to use multicharacter output delimiter.</p>
 <pre style="background-color:#f5f5f5;">
 <code><span style="color:#1f1f1f;">$ awk </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">v </span><span style="color:#c23f31;">ORS</span><span style="color:#72ab00;">= </span><span style="color:#d07711;">&#39;NR&gt;1{print &quot;,&quot;} 1; END{print &quot;\n&quot;}&#39;</span><span style="color:#1f1f1f;"> colors.txt
-</span><span style="color:#5597d6;">Blue</span><span style="color:#1f1f1f;">,</span><span style="color:#5597d6;">White</span><span style="color:#1f1f1f;">,</span><span style="color:#5597d6;">Orange</span><span style="color:#1f1f1f;">
+blue,white,orange
 
 $ awk </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">v </span><span style="color:#c23f31;">ORS</span><span style="color:#72ab00;">= </span><span style="color:#d07711;">&#39;NR&gt;1{print &quot; : &quot;} 1; END{print &quot;\n&quot;}&#39;</span><span style="color:#1f1f1f;"> colors.txt
-</span><span style="color:#5597d6;">Blue </span><span style="color:#72ab00;">: </span><span style="color:#5597d6;">White </span><span style="color:#72ab00;">: </span><span style="color:#5597d6;">Orange
-</span></code></pre><br>
+blue </span><span style="color:#72ab00;">:</span><span style="color:#1f1f1f;"> white </span><span style="color:#72ab00;">:</span><span style="color:#1f1f1f;"> orange
+</span></code></pre>
+<p><strong>Video demo</strong>:</p>
+<p align="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/NX91QlHWAio" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+<br>
 <p><img src="/images/info.svg" alt="info" /> See <a href="https://learnbyexample.github.io/cli_text_processing_coreutils/paste.html">paste command</a> chapter from my <a href="https://github.com/learnbyexample/cli_text_processing_coreutils">Command line text processing with GNU Coreutils</a> ebook for more details.</p>
 <p><img src="/images/info.svg" alt="info" /> See my <a href="https://github.com/learnbyexample/learn_gnuawk">GNU awk one-liners</a> ebook if you are interested in learning about the <code>awk</code> command.</p>
 

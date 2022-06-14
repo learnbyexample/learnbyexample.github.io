@@ -5,7 +5,7 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2022-06-10T00:00:00+00:00</updated>
+	<updated>2022-06-14T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
 	<entry xml:lang="en">
 		<title>CLI tip 11: longest line length</title>
@@ -1090,7 +1090,7 @@ apple  banana  cherry
 	<entry xml:lang="en">
 		<title>Python tip 5: random choice and sample</title>
 		<published>2022-01-25T00:00:00+00:00</published>
-		<updated>2022-01-25T00:00:00+00:00</updated>
+		<updated>2022-06-14T00:00:00+00:00</updated>
 		<link href="https://learnbyexample.github.io/tips/python-tip-5/" type="text/html"/>
 		<id>https://learnbyexample.github.io/tips/python-tip-5/</id>
 		<content type="html">&lt;p&gt;Here are a couple of commonly used methods for the built-in &lt;code&gt;random&lt;&#x2F;code&gt; module:&lt;&#x2F;p&gt;
@@ -1112,6 +1112,9 @@ apple  banana  cherry
 [&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;490&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;26&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;9&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;745&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;919&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;]
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; Both these methods will work on any sequence object. The &lt;code&gt;sample()&lt;&#x2F;code&gt; method also accepts a &lt;code&gt;set&lt;&#x2F;code&gt; object, but that will be deprecated.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Video demo&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;KMEQ0zto3l4&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;&#x2F;iframe&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
 &lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;100_page_python_intro&quot;&gt;100 Page Python Intro&lt;&#x2F;a&gt; ebook for a short, introductory guide for the Python programming language.&lt;&#x2F;p&gt;
 </content>
 	</entry>
@@ -1287,18 +1290,18 @@ tru eblue
 	<entry xml:lang="en">
 		<title>CLI tip 4: serialize file contents to a single line</title>
 		<published>2022-01-12T00:00:00+00:00</published>
-		<updated>2022-01-12T00:00:00+00:00</updated>
+		<updated>2022-06-14T00:00:00+00:00</updated>
 		<link href="https://learnbyexample.github.io/tips/cli-tip-4/" type="text/html"/>
 		<id>https://learnbyexample.github.io/tips/cli-tip-4/</id>
 		<content type="html">&lt;p&gt;The &lt;code&gt;-s&lt;&#x2F;code&gt; option is one of the useful, but lesser known feature of the &lt;code&gt;paste&lt;&#x2F;code&gt; command. It helps you to serialize input file contents to a single output line.&lt;&#x2F;p&gt;
 &lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
 &lt;code&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ cat colors.txt
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Blue
-White
-Orange&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
+blue
+white
+orange
 
 $ paste &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;sd, colors.txt
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Blue&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;White&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Orange
+blue,white,orange
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;If multiple files are passed, serialization of each file is displayed on separate output lines.&lt;&#x2F;p&gt;
 &lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
@@ -1310,21 +1313,24 @@ $ paste &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2
 &lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
 &lt;code&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# issue 1: trailing comma
 # issue 2: no newline at the end
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;colors.txt tr &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;\n&amp;#39; &amp;#39;,&amp;#39;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Blue&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;White&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Orange&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;,
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;colors.txt tr &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;\n&amp;#39; &amp;#39;,&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
+blue,white,orange,
 
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# correcting the above two issues
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;colors.txt tr &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;\n&amp;#39; &amp;#39;,&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;s&#x2F;,$&#x2F;\n&#x2F;&amp;#39;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Blue&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;White&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Orange
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;colors.txt tr &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;\n&amp;#39; &amp;#39;,&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;s&#x2F;,$&#x2F;\n&#x2F;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
+blue,white,orange
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;Here&#x27;s an equivalent &lt;code&gt;awk&lt;&#x2F;code&gt; solution for single file input. While slower and complicated compared to the &lt;code&gt;paste&lt;&#x2F;code&gt; solution, you get more flexibility since &lt;code&gt;awk&lt;&#x2F;code&gt; is a programming language. For example, it is pretty easy to use multicharacter output delimiter.&lt;&#x2F;p&gt;
 &lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
 &lt;code&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ awk &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;v &lt;&#x2F;span&gt;&lt;span style=&quot;color:#c23f31;&quot;&gt;ORS&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;NR&amp;gt;1{print &amp;quot;,&amp;quot;} 1; END{print &amp;quot;\n&amp;quot;}&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; colors.txt
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Blue&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;White&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Orange&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
+blue,white,orange
 
 $ awk &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;v &lt;&#x2F;span&gt;&lt;span style=&quot;color:#c23f31;&quot;&gt;ORS&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;NR&amp;gt;1{print &amp;quot; : &amp;quot;} 1; END{print &amp;quot;\n&amp;quot;}&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; colors.txt
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Blue &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;White &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Orange
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;br&gt;
+blue &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; white &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; orange
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;&lt;strong&gt;Video demo&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;NX91QlHWAio&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;&#x2F;iframe&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
 &lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;cli_text_processing_coreutils&#x2F;paste.html&quot;&gt;paste command&lt;&#x2F;a&gt; chapter from my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;cli_text_processing_coreutils&quot;&gt;Command line text processing with GNU Coreutils&lt;&#x2F;a&gt; ebook for more details.&lt;&#x2F;p&gt;
 &lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;learn_gnuawk&quot;&gt;GNU awk one-liners&lt;&#x2F;a&gt; ebook if you are interested in learning about the &lt;code&gt;awk&lt;&#x2F;code&gt; command.&lt;&#x2F;p&gt;
 </content>
@@ -1617,7 +1623,7 @@ statements
 	<entry xml:lang="en">
 		<title>CLI tip 3: place backups in another directory with GNU sed</title>
 		<published>2021-12-21T00:00:00+00:00</published>
-		<updated>2021-12-21T00:00:00+00:00</updated>
+		<updated>2022-06-14T00:00:00+00:00</updated>
 		<link href="https://learnbyexample.github.io/tips/cli-tip-3/" type="text/html"/>
 		<id>https://learnbyexample.github.io/tips/cli-tip-3/</id>
 		<content type="html">&lt;p&gt;You can use &lt;code&gt;*&lt;&#x2F;code&gt; to place backups of original files in another directory when using the &lt;code&gt;-i&lt;&#x2F;code&gt; option with &lt;code&gt;GNU sed&lt;&#x2F;code&gt;. Consider these two sample input files in the current directory:&lt;&#x2F;p&gt;
@@ -1655,9 +1661,12 @@ goodie goodbye
 
 $ ls &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;colors&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
 bkp.colors.txt  colors.txt
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;br&gt;
-&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;learn_gnused&quot;&gt;GNU SED&lt;&#x2F;a&gt; ebook if you are interested in learning about the &lt;code&gt;GNU sed&lt;&#x2F;code&gt; command in more detail.&lt;&#x2F;p&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; The &lt;code&gt;*&lt;&#x2F;code&gt; trick works with Perl as well, see &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;learn_perl_oneliners&#x2F;in-place-file-editing.html&quot;&gt;In-place file editing&lt;&#x2F;a&gt; chapter from my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;learn_perl_oneliners&quot;&gt;Perl one-liners&lt;&#x2F;a&gt; ebook for examples.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Video demo&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;ehxtbxR6qA0&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;&#x2F;iframe&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;learn_gnused&quot;&gt;GNU SED&lt;&#x2F;a&gt; ebook if you are interested in learning about the &lt;code&gt;GNU sed&lt;&#x2F;code&gt; command in more detail.&lt;&#x2F;p&gt;
 </content>
 	</entry>
 	<entry xml:lang="en">
