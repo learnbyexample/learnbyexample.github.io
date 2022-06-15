@@ -7,7 +7,7 @@
       <!-- Enable responsiveness on mobile devices-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-      <title>Vim tip 5: jumping back and forth in Normal mode</title>
+      <title>Vim tip 10: Undo and Redo</title>
 
       
         <link rel="alternate" type="application/atom+xml" title="RSS" href="https://learnbyexample.github.io/atom.xml">
@@ -128,26 +128,29 @@
     
     <header class="post__header">
         <h1 class="post__title">
-            <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips&#x2F;vim-tip-5&#x2F;">Vim tip 5: jumping back and forth in Normal mode</a>
+            <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips&#x2F;vim-tip-10&#x2F;">Vim tip 10: Undo and Redo</a>
         </h1>
         <div class="post__meta">
-            <span class="post__time">2022-03-02</span>
+            <span class="post__time">2022-06-15</span>
             
         </div>
     </header>
 
     <div class="post-content">
-      <p>Find yourself working on a large file? Or perhaps handling multiple buffers? Vim makes it easy to navigate previous locations:</p>
+      <p>In Normal mode, you can undo and redo changes using the following commands:</p>
 <ul>
-<li><kbd>Ctrl</kbd>+<kbd>o</kbd> navigate to the previous location in the jump list (think <code>o</code> as old)</li>
-<li><kbd>Ctrl</kbd>+<kbd>i</kbd> navigate to the next location in the jump list (<code>i</code> and <code>o</code> are usually next to each other)</li>
-<li><kbd>g;</kbd> go to the previous change location</li>
-<li><kbd>g,</kbd> go to the newer change location</li>
-<li><kbd>gi</kbd> place the cursor at the same position where it was left last time in the Insert mode</li>
+<li><kbd>u</kbd> undo last change
+<ul>
+<li>press <kbd>u</kbd> again for further undos</li>
 </ul>
-<p><img src="/images/info.svg" alt="info" /> Use <kbd>:jumps</kbd> to view the jump list. See <a href="https://vimhelp.org/motion.txt.html#jump-motions">:h jump-motions</a> for more details.</p>
+</li>
+<li><kbd>U</kbd> undo latest changes on last edited line</li>
+<li><kbd>Ctrl</kbd>+<kbd>r</kbd> redo a change undone by <kbd>u</kbd></li>
+<li><kbd>U</kbd> redo changes undone by <kbd>U</kbd></li>
+</ul>
+<p><img src="/images/info.svg" alt="info" /> See <a href="https://vimhelp.org/usr_32.txt.html#32.3">:h 32.3</a> for details on <kbd>g-</kbd> and <kbd>g+</kbd> commands that you can use to undo branches.</p>
 <p><strong>Video demo</strong>:</p>
-<p align="center"><iframe width="560" height="315" loading="lazy" src="https://www.youtube.com/embed/eId_8aCcmQE" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+<p align="center"><iframe width="560" height="315" loading="lazy" src="https://www.youtube.com/embed/ScTAZ0f6e-Q" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
 <br>
 <p><img src="/images/info.svg" alt="info" /> See also my <a href="https://github.com/learnbyexample/vim_reference">Vim Reference Guide</a> and <a href="https://learnbyexample.github.io/curated_resources/vim.html">curated list of resources for Vim</a>.</p>
 

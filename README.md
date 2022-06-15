@@ -56,6 +56,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Tips
 
+* [Vim tip 10: Undo and Redo](https://learnbyexample.github.io/tips/vim-tip-10/)
 * [CLI tip 11: longest line length](https://learnbyexample.github.io/tips/cli-tip-11/)
 * [Python tip 11: capture external command output](https://learnbyexample.github.io/tips/python-tip-11/)
 * [Vim tip 9: named registers](https://learnbyexample.github.io/tips/vim-tip-9/)
