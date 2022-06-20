@@ -140,23 +140,23 @@
       <p><code>grep</code> supports <code>-m</code> option to specify the maximum number of matching lines in the output.</p>
 <pre style="background-color:#f5f5f5;">
 <code><span style="color:#7f8989;"># all input lines containing &#39;a&#39;
-</span><span style="color:#1f1f1f;">$ </span><span style="color:#b39f04;">printf </span><span style="color:#d07711;">&#39;goal\nrate\neat\npit&#39; </span><span style="color:#72ab00;">|</span><span style="color:#1f1f1f;"> grep </span><span style="color:#d07711;">&#39;a&#39;</span><span style="color:#1f1f1f;">
+</span><span style="color:#1f1f1f;">$ </span><span style="color:#b39f04;">printf </span><span style="color:#d07711;">&#39;goal\nrate\neat\npit\n&#39; </span><span style="color:#72ab00;">|</span><span style="color:#1f1f1f;"> grep </span><span style="color:#d07711;">&#39;a&#39;</span><span style="color:#1f1f1f;">
 goal
 rate
 eat
 
 </span><span style="color:#7f8989;"># maximum of 2 matching lines
-</span><span style="color:#1f1f1f;">$ </span><span style="color:#b39f04;">printf </span><span style="color:#d07711;">&#39;goal\nrate\neat\npit&#39; </span><span style="color:#72ab00;">|</span><span style="color:#1f1f1f;"> grep </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">m2 </span><span style="color:#d07711;">&#39;a&#39;</span><span style="color:#1f1f1f;">
+</span><span style="color:#1f1f1f;">$ </span><span style="color:#b39f04;">printf </span><span style="color:#d07711;">&#39;goal\nrate\neat\npit\n&#39; </span><span style="color:#72ab00;">|</span><span style="color:#1f1f1f;"> grep </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">m2 </span><span style="color:#d07711;">&#39;a&#39;</span><span style="color:#1f1f1f;">
 goal
 rate
-$ </span><span style="color:#b39f04;">printf </span><span style="color:#d07711;">&#39;goal\nrate\neat\npit&#39; </span><span style="color:#72ab00;">|</span><span style="color:#1f1f1f;"> grep </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">m2 </span><span style="color:#d07711;">&#39;pi&#39;</span><span style="color:#1f1f1f;">
+$ </span><span style="color:#b39f04;">printf </span><span style="color:#d07711;">&#39;goal\nrate\neat\npit\n&#39; </span><span style="color:#72ab00;">|</span><span style="color:#1f1f1f;"> grep </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">m2 </span><span style="color:#d07711;">&#39;pi&#39;</span><span style="color:#1f1f1f;">
 pit
 
 </span><span style="color:#7f8989;"># example with -v option
-</span><span style="color:#1f1f1f;">$ </span><span style="color:#b39f04;">printf </span><span style="color:#d07711;">&#39;goal\nrate\neat\npit&#39; </span><span style="color:#72ab00;">|</span><span style="color:#1f1f1f;"> grep </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">v </span><span style="color:#d07711;">&#39;e&#39;</span><span style="color:#1f1f1f;">
+</span><span style="color:#1f1f1f;">$ </span><span style="color:#b39f04;">printf </span><span style="color:#d07711;">&#39;goal\nrate\neat\npit\n&#39; </span><span style="color:#72ab00;">|</span><span style="color:#1f1f1f;"> grep </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">v </span><span style="color:#d07711;">&#39;e&#39;</span><span style="color:#1f1f1f;">
 goal
 pit
-$ </span><span style="color:#b39f04;">printf </span><span style="color:#d07711;">&#39;goal\nrate\neat\npit&#39; </span><span style="color:#72ab00;">|</span><span style="color:#1f1f1f;"> grep </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">v </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">m1 </span><span style="color:#d07711;">&#39;e&#39;</span><span style="color:#1f1f1f;">
+$ </span><span style="color:#b39f04;">printf </span><span style="color:#d07711;">&#39;goal\nrate\neat\npit\n&#39; </span><span style="color:#72ab00;">|</span><span style="color:#1f1f1f;"> grep </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">v </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">m1 </span><span style="color:#d07711;">&#39;e&#39;</span><span style="color:#1f1f1f;">
 goal
 </span></code></pre>
 <p>With multiple file input, the restriction is applied for each file <em>separately</em>.</p>
@@ -165,7 +165,7 @@ goal
 brown bread mat cake </span><span style="color:#b3933a;">42</span><span style="color:#1f1f1f;">
 blue cake mug shirt </span><span style="color:#72ab00;">-</span><span style="color:#b3933a;">7</span><span style="color:#1f1f1f;">
 yellow banana window shoes </span><span style="color:#b3933a;">3.14</span><span style="color:#1f1f1f;">
-$ </span><span style="color:#b39f04;">printf </span><span style="color:#d07711;">&#39;goal\nrate\neat\npit&#39; </span><span style="color:#72ab00;">&gt;</span><span style="color:#1f1f1f;"> ip.txt
+$ </span><span style="color:#b39f04;">printf </span><span style="color:#d07711;">&#39;goal\nrate\neat\npit\n&#39; </span><span style="color:#72ab00;">&gt;</span><span style="color:#1f1f1f;"> ip.txt
 
 $ grep </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">m1 </span><span style="color:#d07711;">&#39;i&#39;</span><span style="color:#1f1f1f;"> table.txt ip.txt
 table.txt</span><span style="color:#72ab00;">:</span><span style="color:#1f1f1f;">blue cake mug shirt </span><span style="color:#72ab00;">-</span><span style="color:#b3933a;">7</span><span style="color:#1f1f1f;">
@@ -176,7 +176,10 @@ ip.txt</span><span style="color:#72ab00;">:</span><span style="color:#1f1f1f;">p
 blue cake mug shirt </span><span style="color:#72ab00;">-</span><span style="color:#b3933a;">7</span><span style="color:#1f1f1f;">
 $ cat table.txt ip.txt </span><span style="color:#72ab00;">|</span><span style="color:#1f1f1f;"> grep </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">m1 </span><span style="color:#d07711;">&#39;go&#39;</span><span style="color:#1f1f1f;">
 goal
-</span></code></pre><br>
+</span></code></pre>
+<p><strong>Video demo</strong>:</p>
+<p align="center"><iframe width="560" height="315" loading="lazy" src="https://www.youtube.com/embed/9W5jNjmE_04" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+<br>
 <p><img src="/images/info.svg" alt="info" /> See my <a href="https://github.com/learnbyexample/learn_gnugrep_ripgrep">GNU GREP and RIPGREP</a> ebook if you are interested in learning about <code>GNU grep</code> and <code>ripgrep</code> commands in more detail.</p>
 
     </div>

@@ -5,7 +5,7 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2022-06-17T00:00:00+00:00</updated>
+	<updated>2022-06-20T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
 	<entry xml:lang="en">
 		<title>Vim tip 10: Undo and Redo</title>
@@ -812,29 +812,29 @@ mango
 	<entry xml:lang="en">
 		<title>CLI tip 7: limiting number of filtered lines</title>
 		<published>2022-03-16T00:00:00+00:00</published>
-		<updated>2022-03-16T00:00:00+00:00</updated>
+		<updated>2022-06-20T00:00:00+00:00</updated>
 		<link href="https://learnbyexample.github.io/tips/cli-tip-7/" type="text/html"/>
 		<id>https://learnbyexample.github.io/tips/cli-tip-7/</id>
 		<content type="html">&lt;p&gt;&lt;code&gt;grep&lt;&#x2F;code&gt; supports &lt;code&gt;-m&lt;&#x2F;code&gt; option to specify the maximum number of matching lines in the output.&lt;&#x2F;p&gt;
 &lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
 &lt;code&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# all input lines containing &amp;#39;a&amp;#39;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;printf &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;goal\nrate\neat\npit&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; grep &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;a&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;printf &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;goal\nrate\neat\npit\n&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; grep &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;a&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
 goal
 rate
 eat
 
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# maximum of 2 matching lines
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;printf &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;goal\nrate\neat\npit&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; grep &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;m2 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;a&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;printf &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;goal\nrate\neat\npit\n&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; grep &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;m2 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;a&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
 goal
 rate
-$ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;printf &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;goal\nrate\neat\npit&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; grep &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;m2 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;pi&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
+$ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;printf &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;goal\nrate\neat\npit\n&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; grep &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;m2 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;pi&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
 pit
 
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# example with -v option
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;printf &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;goal\nrate\neat\npit&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; grep &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;v &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;e&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;printf &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;goal\nrate\neat\npit\n&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; grep &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;v &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;e&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
 goal
 pit
-$ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;printf &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;goal\nrate\neat\npit&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; grep &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;v &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;m1 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;e&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
+$ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;printf &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;goal\nrate\neat\npit\n&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; grep &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;v &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;m1 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;e&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
 goal
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;With multiple file input, the restriction is applied for each file &lt;em&gt;separately&lt;&#x2F;em&gt;.&lt;&#x2F;p&gt;
@@ -843,7 +843,7 @@ goal
 brown bread mat cake &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;42&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
 blue cake mug shirt &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;7&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
 yellow banana window shoes &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;3.14&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
-$ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;printf &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;goal\nrate\neat\npit&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; ip.txt
+$ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;printf &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;goal\nrate\neat\npit\n&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; ip.txt
 
 $ grep &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;m1 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;i&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; table.txt ip.txt
 table.txt&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;blue cake mug shirt &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;7&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
@@ -854,7 +854,10 @@ ip.txt&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;:&lt;&#x2F;
 blue cake mug shirt &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;7&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
 $ cat table.txt ip.txt &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; grep &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;m1 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;go&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
 goal
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;&lt;br&gt;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;&lt;strong&gt;Video demo&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; loading=&quot;lazy&quot; src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;9W5jNjmE_04&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;&#x2F;iframe&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
 &lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;learn_gnugrep_ripgrep&quot;&gt;GNU GREP and RIPGREP&lt;&#x2F;a&gt; ebook if you are interested in learning about &lt;code&gt;GNU grep&lt;&#x2F;code&gt; and &lt;code&gt;ripgrep&lt;&#x2F;code&gt; commands in more detail.&lt;&#x2F;p&gt;
 </content>
 	</entry>
@@ -923,7 +926,7 @@ goal
 	<entry xml:lang="en">
 		<title>Python tip 7: creating a deepcopy of collections</title>
 		<published>2022-03-09T00:00:00+00:00</published>
-		<updated>2022-03-09T00:00:00+00:00</updated>
+		<updated>2022-06-20T00:00:00+00:00</updated>
 		<link href="https://learnbyexample.github.io/tips/python-tip-7/" type="text/html"/>
 		<id>https://learnbyexample.github.io/tips/python-tip-7/</id>
 		<content type="html">&lt;p&gt;From &lt;a href=&quot;https:&#x2F;&#x2F;docs.python.org&#x2F;3&#x2F;library&#x2F;copy.html#module-copy&quot;&gt;copy&lt;&#x2F;a&gt; built-in module:&lt;&#x2F;p&gt;
@@ -954,6 +957,9 @@ goal
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;nums_2d
 [[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;3&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;2&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;10&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;], [&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;1.2&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;0.2&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;2&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;], [&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;100&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;200&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;]]
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;&lt;strong&gt;Video demo&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; loading=&quot;lazy&quot; src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;nbBYeNPQ-no&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;&#x2F;iframe&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
 &lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;100_page_python_intro&#x2F;mutability.html&quot;&gt;Mutability&lt;&#x2F;a&gt; chapter from my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;100_page_python_intro&quot;&gt;100 Page Python Intro&lt;&#x2F;a&gt; ebook for more details on this topic.&lt;&#x2F;p&gt;
 </content>
 	</entry>
