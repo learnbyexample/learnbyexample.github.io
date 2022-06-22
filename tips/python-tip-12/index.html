@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+      <title>Python tip 12: negate a regex grouping</title>
+
+      
+        <link rel="alternate" type="application/atom+xml" title="RSS" href="https://learnbyexample.github.io/atom.xml">
+      
+
+      
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
+          
+      
+
+      
+          <link rel="stylesheet" href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;site.css">
+          
+      
+
+      
+      
+<link rel="icon" href="https://learnbyexample.github.io/favicon.svg">
+<link rel="shortcut icon" href="https://learnbyexample.github.io/favicon.png">
+    </head>
+
+    <body>
+        <div class="container">
+
+            <div id="mobile-navbar" class="mobile-navbar">
+              <div class="mobile-header-logo">
+                <a href="/" class="logo">learnbyexample</a>
+              </div>
+              <div class="mobile-navbar-icon icon-out">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+
+            <nav id="mobile-menu" class="mobile-menu slideout-menu slideout-menu-left">
+              <ul class="mobile-menu-list">
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;books">
+                            Books
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;mini">
+                            Mini
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips">
+                            Tips
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags">
+                            Tags
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;about">
+                            About
+                        </a>
+                    </li>
+                
+              </ul>
+            </nav>
+
+            <header id="header">
+                <div class="logo"><a href="https:&#x2F;&#x2F;learnbyexample.github.io">learnbyexample</a></div>
+                <nav class="menu">
+                    <ul>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;books">
+                                    Books
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;mini">
+                                    Mini
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips">
+                                    Tips
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags">
+                                    Tags
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;about">
+                                    About
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </nav>
+            </header>
+
+            <main>
+                <div class="content" id="mobile-panel">
+                    
+
+
+
+<article class="post">
+    
+    <header class="post__header">
+        <h1 class="post__title">
+            <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips&#x2F;python-tip-12&#x2F;">Python tip 12: negate a regex grouping</a>
+        </h1>
+        <div class="post__meta">
+            <span class="post__time">2022-06-22</span>
+            
+        </div>
+    </header>
+
+    <div class="post-content">
+      <p>You might be familiar with negating a character class, for example:</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#72ab00;">&gt;&gt;&gt; import </span><span style="color:#1f1f1f;">re
+
+</span><span style="color:#7f8989;"># remove first two columns
+</span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#1f1f1f;">re.</span><span style="color:#5597d6;">sub</span><span style="color:#1f1f1f;">(</span><span style="color:#668f14;">r</span><span style="color:#d07711;">&#39;</span><span style="color:#72ab00;">\A</span><span style="color:#7c8f4c;">(</span><span style="color:#aeb52b;">[</span><span style="color:#72ab00;">^</span><span style="color:#aeb52b;">:]</span><span style="color:#72ab00;">+</span><span style="color:#7c8f4c;">:)</span><span style="color:#72ab00;">{2}</span><span style="color:#d07711;">&#39;</span><span style="color:#1f1f1f;">, </span><span style="color:#d07711;">&#39;&#39;</span><span style="color:#1f1f1f;">, </span><span style="color:#d07711;">&#39;apple:42:banana:1000:cherry:512&#39;</span><span style="color:#1f1f1f;">)
+</span><span style="color:#d07711;">&#39;banana:1000:cherry:512&#39;
+
+</span><span style="color:#7f8989;"># filter all elements not ending with `r` or `t`
+</span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#1f1f1f;">words </span><span style="color:#72ab00;">= </span><span style="color:#1f1f1f;">[</span><span style="color:#d07711;">&#39;surrender&#39;</span><span style="color:#1f1f1f;">, </span><span style="color:#d07711;">&#39;unicorn&#39;</span><span style="color:#1f1f1f;">, </span><span style="color:#d07711;">&#39;newer&#39;</span><span style="color:#1f1f1f;">, </span><span style="color:#d07711;">&#39;door&#39;</span><span style="color:#1f1f1f;">, </span><span style="color:#d07711;">&#39;empty&#39;</span><span style="color:#1f1f1f;">, </span><span style="color:#d07711;">&#39;eel&#39;</span><span style="color:#1f1f1f;">, </span><span style="color:#d07711;">&#39;pest&#39;</span><span style="color:#1f1f1f;">]
+</span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#1f1f1f;">[w </span><span style="color:#72ab00;">for </span><span style="color:#1f1f1f;">w </span><span style="color:#72ab00;">in </span><span style="color:#1f1f1f;">words </span><span style="color:#72ab00;">if </span><span style="color:#1f1f1f;">re.</span><span style="color:#5597d6;">search</span><span style="color:#1f1f1f;">(</span><span style="color:#668f14;">r</span><span style="color:#d07711;">&#39;</span><span style="color:#aeb52b;">[</span><span style="color:#72ab00;">^</span><span style="color:#aeb52b;">rt]</span><span style="color:#72ab00;">\Z</span><span style="color:#d07711;">&#39;</span><span style="color:#1f1f1f;">, w)]
+[</span><span style="color:#d07711;">&#39;unicorn&#39;</span><span style="color:#1f1f1f;">, </span><span style="color:#d07711;">&#39;empty&#39;</span><span style="color:#1f1f1f;">, </span><span style="color:#d07711;">&#39;eel&#39;</span><span style="color:#1f1f1f;">]
+</span></code></pre>
+<p>But do you know how to match characters based on a negated group? You can use a combination of negative lookahead and quantifiers as shown in the examples below:</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#1f1f1f;">pets </span><span style="color:#72ab00;">= </span><span style="color:#d07711;">&#39;fox,cat,dog,parrot&#39;
+
+</span><span style="color:#7f8989;"># match if &#39;do&#39; is not present between &#39;at&#39; and &#39;par&#39;
+</span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#a2a001;">bool</span><span style="color:#1f1f1f;">(re.</span><span style="color:#5597d6;">search</span><span style="color:#1f1f1f;">(</span><span style="color:#668f14;">r</span><span style="color:#d07711;">&#39;</span><span style="color:#7c8f4c;">at((</span><span style="color:#aeb52b;">?!</span><span style="color:#7c8f4c;">do)</span><span style="color:#aeb52b;">.</span><span style="color:#7c8f4c;">)</span><span style="color:#72ab00;">*</span><span style="color:#7c8f4c;">par</span><span style="color:#d07711;">&#39;</span><span style="color:#1f1f1f;">, pets))
+</span><span style="color:#b3933a;">False
+
+</span><span style="color:#7f8989;"># match if &#39;go&#39; is not present between &#39;at&#39; and &#39;par&#39;
+</span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#a2a001;">bool</span><span style="color:#1f1f1f;">(re.</span><span style="color:#5597d6;">search</span><span style="color:#1f1f1f;">(</span><span style="color:#668f14;">r</span><span style="color:#d07711;">&#39;</span><span style="color:#7c8f4c;">at((</span><span style="color:#aeb52b;">?!</span><span style="color:#7c8f4c;">go)</span><span style="color:#aeb52b;">.</span><span style="color:#7c8f4c;">)</span><span style="color:#72ab00;">*</span><span style="color:#7c8f4c;">par</span><span style="color:#d07711;">&#39;</span><span style="color:#1f1f1f;">, pets))
+</span><span style="color:#b3933a;">True
+
+</span><span style="color:#7f8989;"># easier to understand by looking at the matched portions
+</span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#1f1f1f;">re.</span><span style="color:#5597d6;">search</span><span style="color:#1f1f1f;">(</span><span style="color:#668f14;">r</span><span style="color:#d07711;">&#39;</span><span style="color:#7c8f4c;">at((</span><span style="color:#aeb52b;">?!</span><span style="color:#7c8f4c;">go)</span><span style="color:#aeb52b;">.</span><span style="color:#7c8f4c;">)</span><span style="color:#72ab00;">*</span><span style="color:#7c8f4c;">par</span><span style="color:#d07711;">&#39;</span><span style="color:#1f1f1f;">, pets)[</span><span style="color:#b3933a;">0</span><span style="color:#1f1f1f;">]
+</span><span style="color:#d07711;">&#39;at,dog,par&#39;
+</span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#1f1f1f;">re.</span><span style="color:#5597d6;">search</span><span style="color:#1f1f1f;">(</span><span style="color:#668f14;">r</span><span style="color:#d07711;">&#39;</span><span style="color:#72ab00;">\A</span><span style="color:#7c8f4c;">((</span><span style="color:#aeb52b;">?!</span><span style="color:#7c8f4c;">par)</span><span style="color:#aeb52b;">.</span><span style="color:#7c8f4c;">)</span><span style="color:#72ab00;">*</span><span style="color:#d07711;">&#39;</span><span style="color:#1f1f1f;">, pets)[</span><span style="color:#b3933a;">0</span><span style="color:#1f1f1f;">]
+</span><span style="color:#d07711;">&#39;fox,cat,dog,&#39;
+</span></code></pre>
+<p>The <code>.</code> in <code>((?!go).)*</code> will match a character only if the sequence of current and next characters are not <code>go</code>. Similarly, the <code>.</code> in <code>((?!par).)*</code> matches a character only if the current and next two characters are not <code>par</code>. The <code>*</code> quantifier is applied on the outer group to match zero or more characters satisfying the given condition.</p>
+<p>The outer group in the above examples are capturing groups, though it wasn't required. Just makes the pattern concise. However, capturing groups affect the behavior of functions like <code>re.split</code> and <code>re.findall</code>. You can use non-capturing groups in such cases:</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#7f8989;"># capture group affects the behavior of &#39;re.findall&#39;
+</span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#1f1f1f;">re.</span><span style="color:#5597d6;">findall</span><span style="color:#1f1f1f;">(</span><span style="color:#668f14;">r</span><span style="color:#d07711;">&#39;</span><span style="color:#72ab00;">\b</span><span style="color:#7c8f4c;">((</span><span style="color:#aeb52b;">?!</span><span style="color:#7c8f4c;">42)</span><span style="color:#aeb52b;">\w</span><span style="color:#7c8f4c;">)</span><span style="color:#72ab00;">+\b</span><span style="color:#d07711;">&#39;</span><span style="color:#1f1f1f;">, </span><span style="color:#d07711;">&#39;a422b good bad42 nice100&#39;</span><span style="color:#1f1f1f;">)
+[</span><span style="color:#d07711;">&#39;d&#39;</span><span style="color:#1f1f1f;">, </span><span style="color:#d07711;">&#39;0&#39;</span><span style="color:#1f1f1f;">]
+
+</span><span style="color:#7f8989;"># so, use a non-capturing group here
+</span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#1f1f1f;">re.</span><span style="color:#5597d6;">findall</span><span style="color:#1f1f1f;">(</span><span style="color:#668f14;">r</span><span style="color:#d07711;">&#39;</span><span style="color:#72ab00;">\b</span><span style="color:#7c8f4c;">(?:(</span><span style="color:#aeb52b;">?!</span><span style="color:#7c8f4c;">42)</span><span style="color:#aeb52b;">\w</span><span style="color:#7c8f4c;">)</span><span style="color:#72ab00;">+\b</span><span style="color:#d07711;">&#39;</span><span style="color:#1f1f1f;">, </span><span style="color:#d07711;">&#39;a422b good bad42 nice100&#39;</span><span style="color:#1f1f1f;">)
+[</span><span style="color:#d07711;">&#39;good&#39;</span><span style="color:#1f1f1f;">, </span><span style="color:#d07711;">&#39;nice100&#39;</span><span style="color:#1f1f1f;">]
+</span></code></pre>
+<blockquote>
+<p><img src="/images/info.svg" alt="info" /> Test your understanding by solving this exercise. Construct a regex solution that works for all three sample transformations shown below:</p>
+<ul>
+<li><code>Power(x,2)</code> should be replaced with <code>(x)*(x)</code></li>
+<li><code>Power(Power(x,2) + x,2)</code> should be changed to <code>((x)*(x) + x)*((x)*(x) + x)</code></li>
+<li><code>Power(x + Power(x,2),2)</code> should be changed to <code>(x + (x)*(x))*(x + (x)*(x))</code></li>
+</ul>
+<p>If that was easy, make it work for general powers instead of just <code>2</code>:</p>
+<ul>
+<li><code>Power(Power(x,2),3)</code> translates to <code>((x)*(x))*((x)*(x))*((x)*(x))</code></li>
+</ul>
+<p>The above exercise is based on <a href="https://stackoverflow.com/q/67214116/4082052">this stackoverflow Q&amp;A</a>.</p>
+</blockquote>
+<p><strong>Video demo</strong>:</p>
+<p align="center"><iframe width="560" height="315" loading="lazy" src="https://www.youtube.com/embed/bkPS1dWZ2xU" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+<br>
+<p><img src="/images/info.svg" alt="info" /> See also my <a href="https://github.com/learnbyexample/py_regular_expressions">Python re(gex)?</a> ebook.</p>
+
+    </div>
+
+    
+    
+
+    <div class="post-footer">
+        
+            
+                <div class="post-tags">
+                    
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;python&#x2F;">#python</a>
+                    
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;tip&#x2F;">#tip</a>
+                    
+                </div>
+            
+            
+
+        
+
+    </div>
+
+    
+    
+</article>
+
+
+                </div>
+            </main>
+
+            
+            
+        </div>
+
+      
+          <script type="text/javascript" src="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;even.js" ></script>
+      
+    </body>
+
+</html>
