@@ -56,6 +56,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Tips
 
+* [Vim tip 11: replace characters in Normal mode](https://learnbyexample.github.io/tips/vim-tip-11/)
 * [CLI tip 12: squeeze empty lines](https://learnbyexample.github.io/tips/cli-tip-12/)
 * [Python tip 12: negate a regex grouping](https://learnbyexample.github.io/tips/python-tip-12/)
 * [Vim tip 10: Undo and Redo](https://learnbyexample.github.io/tips/vim-tip-10/)

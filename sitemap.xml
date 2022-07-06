@@ -20,7 +20,7 @@
     </url>
     <url>
         <loc>https://learnbyexample.github.io/books/</loc>
-        <lastmod>2022-06-08</lastmod>
+        <lastmod>2022-07-06</lastmod>
     </url>
     <url>
         <loc>https://learnbyexample.github.io/cli-text-processing-coreutils-announcement/</loc>
@@ -368,7 +368,7 @@
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tips/</loc>
-        <lastmod>2022-04-12</lastmod>
+        <lastmod>2022-07-06</lastmod>
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tips/cli-tip-1/</loc>
@@ -473,6 +473,10 @@
     <url>
         <loc>https://learnbyexample.github.io/tips/vim-tip-10/</loc>
         <lastmod>2022-06-15</lastmod>
+    </url>
+    <url>
+        <loc>https://learnbyexample.github.io/tips/vim-tip-11/</loc>
+        <lastmod>2022-07-06</lastmod>
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tips/vim-tip-2/</loc>

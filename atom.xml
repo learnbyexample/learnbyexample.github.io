@@ -5,8 +5,41 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2022-06-29T00:00:00+00:00</updated>
+	<updated>2022-07-06T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Vim tip 11: replace characters in Normal mode</title>
+		<published>2022-07-06T00:00:00+00:00</published>
+		<updated>2022-07-06T00:00:00+00:00</updated>
+		<link href="https://learnbyexample.github.io/tips/vim-tip-11/" type="text/html"/>
+		<id>https://learnbyexample.github.io/tips/vim-tip-11/</id>
+		<content type="html">&lt;p&gt;Often, you just need to change one character. For example, changing &lt;code&gt;i&lt;&#x2F;code&gt; to &lt;code&gt;j&lt;&#x2F;code&gt;, &lt;code&gt;2&lt;&#x2F;code&gt; to &lt;code&gt;4&lt;&#x2F;code&gt;, &lt;code&gt;&#x27;&lt;&#x2F;code&gt; to &lt;code&gt;&amp;quot;&lt;&#x2F;code&gt; and so on.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;kbd&gt;rj&lt;&#x2F;kbd&gt; replace the character under the cursor with &lt;code&gt;j&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;ry&lt;&#x2F;kbd&gt; replace the character under the cursor with &lt;code&gt;y&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;3ra&lt;&#x2F;kbd&gt; replace the character under cursor as well as the two characters to the right with &lt;code&gt;aaa&lt;&#x2F;code&gt;
+&lt;ul&gt;
+&lt;li&gt;no changes will be made if there aren&#x27;t sufficient characters to match&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;To replace multiple characters with different characters, use &lt;code&gt;R&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;kbd&gt;Rlion&lt;&#x2F;kbd&gt; followed by &lt;kbd&gt;Esc&lt;&#x2F;kbd&gt; replace the character under cursor and three characters to the right with &lt;code&gt;lion&lt;&#x2F;code&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;kbd&gt;Esc&lt;&#x2F;kbd&gt; key marks the completion of &lt;code&gt;R&lt;&#x2F;code&gt; command&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;Backspace&lt;&#x2F;kbd&gt; key will act as an undo command to give back the character that was replaced&lt;&#x2F;li&gt;
+&lt;li&gt;if you are replacing at the end of a line, the line will be automatically extended if needed&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;The advantage of &lt;code&gt;r&lt;&#x2F;code&gt; and &lt;code&gt;R&lt;&#x2F;code&gt; commands is that you remain in the Normal mode, without needing to switch to Insert mode and back.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Video demo&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; loading=&quot;lazy&quot; src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;cNRNiwIcqNc&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;&#x2F;iframe&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See also my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;vim_reference&quot;&gt;Vim Reference Guide&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;curated_resources&#x2F;vim.html&quot;&gt;curated list of resources for Vim&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>CLI tip 12: squeeze empty lines</title>
 		<published>2022-06-29T00:00:00+00:00</published>
