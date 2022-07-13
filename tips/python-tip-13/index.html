@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+      <title>Python tip 13: formatting numbers with underscore separation</title>
+
+      
+        <link rel="alternate" type="application/atom+xml" title="RSS" href="https://learnbyexample.github.io/atom.xml">
+      
+
+      
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
+          
+      
+
+      
+          <link rel="stylesheet" href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;site.css">
+          
+      
+
+      
+      
+<link rel="icon" href="https://learnbyexample.github.io/favicon.svg">
+<link rel="shortcut icon" href="https://learnbyexample.github.io/favicon.png">
+    </head>
+
+    <body>
+        <div class="container">
+
+            <div id="mobile-navbar" class="mobile-navbar">
+              <div class="mobile-header-logo">
+                <a href="/" class="logo">learnbyexample</a>
+              </div>
+              <div class="mobile-navbar-icon icon-out">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+
+            <nav id="mobile-menu" class="mobile-menu slideout-menu slideout-menu-left">
+              <ul class="mobile-menu-list">
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;books">
+                            Books
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;mini">
+                            Mini
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips">
+                            Tips
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags">
+                            Tags
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;about">
+                            About
+                        </a>
+                    </li>
+                
+              </ul>
+            </nav>
+
+            <header id="header">
+                <div class="logo"><a href="https:&#x2F;&#x2F;learnbyexample.github.io">learnbyexample</a></div>
+                <nav class="menu">
+                    <ul>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;books">
+                                    Books
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;mini">
+                                    Mini
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips">
+                                    Tips
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags">
+                                    Tags
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;about">
+                                    About
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </nav>
+            </header>
+
+            <main>
+                <div class="content" id="mobile-panel">
+                    
+
+
+
+<article class="post">
+    
+    <header class="post__header">
+        <h1 class="post__title">
+            <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips&#x2F;python-tip-13&#x2F;">Python tip 13: formatting numbers with underscore separation</a>
+        </h1>
+        <div class="post__meta">
+            <span class="post__time">2022-07-13</span>
+            
+        </div>
+    </header>
+
+    <div class="post-content">
+      <p>For readability purposes, you can use underscores while declaring large numbers. For example:</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#b3933a;">1_000_000_000
+1000000000
+
+</span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#b3933a;">0b1000_1111
+143
+</span></code></pre>
+<p>Did you know that you can also format numbers with underscore separation?</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#1f1f1f;">n </span><span style="color:#72ab00;">= </span><span style="color:#b3933a;">14310023
+
+</span><span style="color:#7f8989;"># underscore separation
+</span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#668f14;">f</span><span style="color:#d07711;">&#39;</span><span style="color:#1f1f1f;">{n</span><span style="color:#b3933a;">:_</span><span style="color:#1f1f1f;">}</span><span style="color:#d07711;">&#39;
+&#39;14_310_023&#39;
+
+</span><span style="color:#7f8989;"># you can also use comma separation for integers
+</span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#668f14;">f</span><span style="color:#d07711;">&#39;</span><span style="color:#1f1f1f;">{n</span><span style="color:#b3933a;">:,</span><span style="color:#1f1f1f;">}</span><span style="color:#d07711;">&#39;
+&#39;14,310,023&#39;
+</span></code></pre>
+<p>Here are some examples for displaying numbers in binary, octal and hexadecimal formats:</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#1f1f1f;">n </span><span style="color:#72ab00;">= </span><span style="color:#b3933a;">14310023
+
+</span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#668f14;">f</span><span style="color:#d07711;">&#39;</span><span style="color:#1f1f1f;">{n</span><span style="color:#b3933a;">:_b</span><span style="color:#1f1f1f;">}</span><span style="color:#d07711;">&#39;
+&#39;1101_1010_0101_1010_1000_0111&#39;
+</span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#668f14;">f</span><span style="color:#d07711;">&#39;</span><span style="color:#1f1f1f;">{n</span><span style="color:#b3933a;">:#_b</span><span style="color:#1f1f1f;">}</span><span style="color:#d07711;">&#39;
+&#39;0b1101_1010_0101_1010_1000_0111&#39;
+
+</span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#668f14;">f</span><span style="color:#d07711;">&#39;</span><span style="color:#1f1f1f;">{n</span><span style="color:#b3933a;">:#_x</span><span style="color:#1f1f1f;">}</span><span style="color:#d07711;">&#39;
+&#39;0xda_5a87&#39;
+
+</span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#668f14;">f</span><span style="color:#d07711;">&#39;</span><span style="color:#1f1f1f;">{n</span><span style="color:#b3933a;">:#_o</span><span style="color:#1f1f1f;">}</span><span style="color:#d07711;">&#39;
+&#39;0o6645_5207&#39;
+</span></code></pre>
+<p>And here's an example with zero filling:</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#72ab00;">&gt;&gt;&gt; for </span><span style="color:#1f1f1f;">n </span><span style="color:#72ab00;">in </span><span style="color:#1f1f1f;">(</span><span style="color:#b3933a;">3</span><span style="color:#1f1f1f;">, </span><span style="color:#b3933a;">20</span><span style="color:#1f1f1f;">, </span><span style="color:#b3933a;">28</span><span style="color:#1f1f1f;">):
+</span><span style="color:#b3933a;">...     </span><span style="color:#b39f04;">print</span><span style="color:#1f1f1f;">(</span><span style="color:#668f14;">f</span><span style="color:#d07711;">&#39;</span><span style="color:#1f1f1f;">{n</span><span style="color:#b3933a;">:09_b</span><span style="color:#1f1f1f;">}</span><span style="color:#d07711;">&#39;</span><span style="color:#1f1f1f;">)
+... 
+</span><span style="color:#b3933a;">0000</span><span style="color:#1f1f1f;">_0011
+</span><span style="color:#b3933a;">0001</span><span style="color:#1f1f1f;">_0100
+</span><span style="color:#b3933a;">0001</span><span style="color:#1f1f1f;">_1100
+</span></code></pre>
+<p><img src="/images/info.svg" alt="info" /> See <a href="https://docs.python.org/3/reference/lexical_analysis.html#f-strings">docs.python: Formatted string literals</a> for documentation and other examples.</p>
+<p><strong>Video demo</strong>:</p>
+<p align="center"><iframe width="560" height="315" loading="lazy" src="https://www.youtube.com/embed/wFg0wS8nY4o" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+<br>
+<p><img src="/images/info.svg" alt="info" /> See also my <a href="https://github.com/learnbyexample/100_page_python_intro">100 Page Python Intro</a> ebook.</p>
+
+    </div>
+
+    
+    
+
+    <div class="post-footer">
+        
+            
+                <div class="post-tags">
+                    
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;python&#x2F;">#python</a>
+                    
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;tip&#x2F;">#tip</a>
+                    
+                </div>
+            
+            
+
+        
+
+    </div>
+
+    
+    
+</article>
+
+
+                </div>
+            </main>
+
+            
+            
+        </div>
+
+      
+          <script type="text/javascript" src="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;even.js" ></script>
+      
+    </body>
+
+</html>
