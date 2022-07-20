@@ -5,8 +5,45 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2022-07-13T00:00:00+00:00</updated>
+	<updated>2022-07-20T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>CLI tip 13: join lines of two files based on the first field</title>
+		<published>2022-07-20T00:00:00+00:00</published>
+		<updated>2022-07-20T00:00:00+00:00</updated>
+		<link href="https://learnbyexample.github.io/tips/cli-tip-13/" type="text/html"/>
+		<id>https://learnbyexample.github.io/tips/cli-tip-13/</id>
+		<content type="html">&lt;p&gt;By default, &lt;code&gt;join&lt;&#x2F;code&gt; combines two files based on the first field content (also referred as &lt;strong&gt;key&lt;&#x2F;strong&gt;). Only the lines with common keys will be part of the output. The key field will be displayed first in the output (this distinction will come into play if the first field isn&#x27;t the key). Rest of the line will have the remaining fields from the first and second files, in that order. One or more blanks (space or tab) will be considered as the input field separator and a single space will be used as the output field separator. If present, blank characters at the start of the input lines will be ignored.&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# sample sorted input files
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ cat jan.txt
+apple   &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;10&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
+banana  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;20&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
+soap    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;3&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
+tshirt  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;3&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
+$ cat feb.txt
+banana  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;15&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
+fig     &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;100&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
+pen     &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;2&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
+soap    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;1
+
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# combine common lines based on the first field
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ join jan.txt feb.txt
+banana &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;20 15&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
+soap &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;3 1
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Here&#x27;s an &lt;code&gt;awk&lt;&#x2F;code&gt; version to do the same. Helpful if you want to do some additional processing that won&#x27;t be possible with the &lt;code&gt;join&lt;&#x2F;code&gt; command. Another advantage is that this solution will work even if the input files are not sorted.&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;&quot;&gt;
+&lt;code&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;$ awk &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;NR==FNR{a[$1]=$2; next} $1 in a{print $1, a[$1], $2}&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt; jan.txt feb.txt
+banana &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;20 15&lt;&#x2F;span&gt;&lt;span style=&quot;color:#1f1f1f;&quot;&gt;
+soap &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;3 1
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;&lt;strong&gt;Video demo&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; loading=&quot;lazy&quot; src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;Pjku4w7J6Zg&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;&#x2F;iframe&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;cli_text_processing_coreutils&#x2F;join.html&quot;&gt;join chapter&lt;&#x2F;a&gt; from my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;cli_text_processing_coreutils&quot;&gt;Command line text processing with GNU Coreutils&lt;&#x2F;a&gt; ebook for more details and examples.&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>Python tip 13: formatting numbers with underscore separation</title>
 		<published>2022-07-13T00:00:00+00:00</published>

@@ -56,6 +56,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Tips
 
+* [CLI tip 13: join lines of two files based on the first field](https://learnbyexample.github.io/tips/cli-tip-13/)
 * [Python tip 13: formatting numbers with underscore separation](https://learnbyexample.github.io/tips/python-tip-13/)
 * [Vim tip 11: replace characters in Normal mode](https://learnbyexample.github.io/tips/vim-tip-11/)
 * [CLI tip 12: squeeze empty lines](https://learnbyexample.github.io/tips/cli-tip-12/)

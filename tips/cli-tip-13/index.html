@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+      <title>CLI tip 13: join lines of two files based on the first field</title>
+
+      
+        <link rel="alternate" type="application/atom+xml" title="RSS" href="https://learnbyexample.github.io/atom.xml">
+      
+
+      
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
+          
+      
+
+      
+          <link rel="stylesheet" href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;site.css">
+          
+      
+
+      
+      
+<link rel="icon" href="https://learnbyexample.github.io/favicon.svg">
+<link rel="shortcut icon" href="https://learnbyexample.github.io/favicon.png">
+    </head>
+
+    <body>
+        <div class="container">
+
+            <div id="mobile-navbar" class="mobile-navbar">
+              <div class="mobile-header-logo">
+                <a href="/" class="logo">learnbyexample</a>
+              </div>
+              <div class="mobile-navbar-icon icon-out">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+
+            <nav id="mobile-menu" class="mobile-menu slideout-menu slideout-menu-left">
+              <ul class="mobile-menu-list">
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;books">
+                            Books
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;mini">
+                            Mini
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips">
+                            Tips
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags">
+                            Tags
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;about">
+                            About
+                        </a>
+                    </li>
+                
+              </ul>
+            </nav>
+
+            <header id="header">
+                <div class="logo"><a href="https:&#x2F;&#x2F;learnbyexample.github.io">learnbyexample</a></div>
+                <nav class="menu">
+                    <ul>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;books">
+                                    Books
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;mini">
+                                    Mini
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips">
+                                    Tips
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags">
+                                    Tags
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;about">
+                                    About
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </nav>
+            </header>
+
+            <main>
+                <div class="content" id="mobile-panel">
+                    
+
+
+
+<article class="post">
+    
+    <header class="post__header">
+        <h1 class="post__title">
+            <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips&#x2F;cli-tip-13&#x2F;">CLI tip 13: join lines of two files based on the first field</a>
+        </h1>
+        <div class="post__meta">
+            <span class="post__time">2022-07-20</span>
+            
+        </div>
+    </header>
+
+    <div class="post-content">
+      <p>By default, <code>join</code> combines two files based on the first field content (also referred as <strong>key</strong>). Only the lines with common keys will be part of the output. The key field will be displayed first in the output (this distinction will come into play if the first field isn't the key). Rest of the line will have the remaining fields from the first and second files, in that order. One or more blanks (space or tab) will be considered as the input field separator and a single space will be used as the output field separator. If present, blank characters at the start of the input lines will be ignored.</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#7f8989;"># sample sorted input files
+</span><span style="color:#1f1f1f;">$ cat jan.txt
+apple   </span><span style="color:#b3933a;">10</span><span style="color:#1f1f1f;">
+banana  </span><span style="color:#b3933a;">20</span><span style="color:#1f1f1f;">
+soap    </span><span style="color:#b3933a;">3</span><span style="color:#1f1f1f;">
+tshirt  </span><span style="color:#b3933a;">3</span><span style="color:#1f1f1f;">
+$ cat feb.txt
+banana  </span><span style="color:#b3933a;">15</span><span style="color:#1f1f1f;">
+fig     </span><span style="color:#b3933a;">100</span><span style="color:#1f1f1f;">
+pen     </span><span style="color:#b3933a;">2</span><span style="color:#1f1f1f;">
+soap    </span><span style="color:#b3933a;">1
+
+</span><span style="color:#7f8989;"># combine common lines based on the first field
+</span><span style="color:#1f1f1f;">$ join jan.txt feb.txt
+banana </span><span style="color:#b3933a;">20 15</span><span style="color:#1f1f1f;">
+soap </span><span style="color:#b3933a;">3 1
+</span></code></pre>
+<p>Here's an <code>awk</code> version to do the same. Helpful if you want to do some additional processing that won't be possible with the <code>join</code> command. Another advantage is that this solution will work even if the input files are not sorted.</p>
+<pre style="background-color:#f5f5f5;">
+<code><span style="color:#1f1f1f;">$ awk </span><span style="color:#d07711;">&#39;NR==FNR{a[$1]=$2; next} $1 in a{print $1, a[$1], $2}&#39;</span><span style="color:#1f1f1f;"> jan.txt feb.txt
+banana </span><span style="color:#b3933a;">20 15</span><span style="color:#1f1f1f;">
+soap </span><span style="color:#b3933a;">3 1
+</span></code></pre>
+<p><strong>Video demo</strong>:</p>
+<p align="center"><iframe width="560" height="315" loading="lazy" src="https://www.youtube.com/embed/Pjku4w7J6Zg" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+<br>
+<p><img src="/images/info.svg" alt="info" /> See <a href="https://learnbyexample.github.io/cli_text_processing_coreutils/join.html">join chapter</a> from my <a href="https://github.com/learnbyexample/cli_text_processing_coreutils">Command line text processing with GNU Coreutils</a> ebook for more details and examples.</p>
+
+    </div>
+
+    
+    
+
+    <div class="post-footer">
+        
+            
+                <div class="post-tags">
+                    
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;linux&#x2F;">#linux</a>
+                    
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;command-line&#x2F;">#command-line</a>
+                    
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;tip&#x2F;">#tip</a>
+                    
+                </div>
+            
+            
+
+        
+
+    </div>
+
+    
+    
+</article>
+
+
+                </div>
+            </main>
+
+            
+            
+        </div>
+
+      
+          <script type="text/javascript" src="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;even.js" ></script>
+      
+    </body>
+
+</html>
