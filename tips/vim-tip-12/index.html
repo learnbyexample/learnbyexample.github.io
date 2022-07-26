@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+      <title>Vim tip 12: save and restore sessions</title>
+
+      
+        <link rel="alternate" type="application/atom+xml" title="RSS" href="https://learnbyexample.github.io/atom.xml">
+      
+
+      
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
+          
+      
+
+      
+          <link rel="stylesheet" href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;site.css">
+          
+      
+
+      
+      
+<link rel="icon" href="https://learnbyexample.github.io/favicon.svg">
+<link rel="shortcut icon" href="https://learnbyexample.github.io/favicon.png">
+    </head>
+
+    <body>
+        <div class="container">
+
+            <div id="mobile-navbar" class="mobile-navbar">
+              <div class="mobile-header-logo">
+                <a href="/" class="logo">learnbyexample</a>
+              </div>
+              <div class="mobile-navbar-icon icon-out">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+
+            <nav id="mobile-menu" class="mobile-menu slideout-menu slideout-menu-left">
+              <ul class="mobile-menu-list">
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;books">
+                            Books
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;mini">
+                            Mini
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips">
+                            Tips
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags">
+                            Tags
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;about">
+                            About
+                        </a>
+                    </li>
+                
+              </ul>
+            </nav>
+
+            <header id="header">
+                <div class="logo"><a href="https:&#x2F;&#x2F;learnbyexample.github.io">learnbyexample</a></div>
+                <nav class="menu">
+                    <ul>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;books">
+                                    Books
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;mini">
+                                    Mini
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips">
+                                    Tips
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags">
+                                    Tags
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;about">
+                                    About
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </nav>
+            </header>
+
+            <main>
+                <div class="content" id="mobile-panel">
+                    
+
+
+
+<article class="post">
+    
+    <header class="post__header">
+        <h1 class="post__title">
+            <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips&#x2F;vim-tip-12&#x2F;">Vim tip 12: save and restore sessions</a>
+        </h1>
+        <div class="post__meta">
+            <span class="post__time">2022-07-26</span>
+            
+        </div>
+    </header>
+
+    <div class="post-content">
+      <p>You can save and restore Vim sessions to continue working with the same setup before you had to quit Vim for reasons like switching off the machine, switching to another project, etc.</p>
+<ul>
+<li><kbd>:mksession proj.vim</kbd> save the current Vim session with details like cursor position, file list, layout, etc
+<ul>
+<li>you can customize things to be saved using the <code>sessionoptions</code> setting</li>
+<li>for example, <kbd>:set sessionoptions+=resize</kbd> will save resized window information as well</li>
+</ul>
+</li>
+<li><kbd>:mksession! proj.vim</kbd> overwrite existing session</li>
+<li><kbd>:source proj.vim</kbd> restore Vim session from <code>proj.vim</code> file
+<ul>
+<li><code>vim -S proj.vim</code> restore a session from the command line when launching Vim</li>
+</ul>
+</li>
+</ul>
+<p><img src="/images/info.svg" alt="info" /> See <a href="https://vimhelp.org/usr_21.txt.html#21.4">:h 21.4</a>, <a href="https://vimhelp.org/starting.txt.html#views-sessions">:h views-sessions</a> and <a href="https://vimhelp.org/options.txt.html#%27sessionoptions%27">:h 'sessionoptions'</a> for more details.</p>
+<p><img src="/images/info.svg" alt="info" /> See <a href="https://stackoverflow.com/q/1642611/4082052">stackoverflow: How to save and restore multiple different sessions in Vim?</a> for custom settings to automate the save and restore process and other tips and tricks. See also <a href="https://github.com/iggredible/Learn-Vim/blob/master/ch20_views_sessions_viminfo.md">Learn-Vim: Views, Sessions, and Viminfo</a>.</p>
+<p><strong>Video demo</strong>:</p>
+<p align="center"><iframe width="560" height="315" loading="lazy" src="https://www.youtube.com/embed/8FERF0M2Dm4" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+<br>
+<p><img src="/images/info.svg" alt="info" /> See also my <a href="https://github.com/learnbyexample/vim_reference">Vim Reference Guide</a> and <a href="https://learnbyexample.github.io/curated_resources/vim.html">curated list of resources for Vim</a>.</p>
+
+    </div>
+
+    
+    
+
+    <div class="post-footer">
+        
+            
+                <div class="post-tags">
+                    
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;vim&#x2F;">#vim</a>
+                    
+                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;tip&#x2F;">#tip</a>
+                    
+                </div>
+            
+            
+
+        
+
+    </div>
+
+    
+    
+</article>
+
+
+                </div>
+            </main>
+
+            
+            
+        </div>
+
+      
+          <script type="text/javascript" src="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;even.js" ></script>
+      
+    </body>
+
+</html>

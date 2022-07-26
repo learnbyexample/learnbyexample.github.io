@@ -5,8 +5,37 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2022-07-20T00:00:00+00:00</updated>
+	<updated>2022-07-26T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Vim tip 12: save and restore sessions</title>
+		<published>2022-07-26T00:00:00+00:00</published>
+		<updated>2022-07-26T00:00:00+00:00</updated>
+		<link href="https://learnbyexample.github.io/tips/vim-tip-12/" type="text/html"/>
+		<id>https://learnbyexample.github.io/tips/vim-tip-12/</id>
+		<content type="html">&lt;p&gt;You can save and restore Vim sessions to continue working with the same setup before you had to quit Vim for reasons like switching off the machine, switching to another project, etc.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;kbd&gt;:mksession proj.vim&lt;&#x2F;kbd&gt; save the current Vim session with details like cursor position, file list, layout, etc
+&lt;ul&gt;
+&lt;li&gt;you can customize things to be saved using the &lt;code&gt;sessionoptions&lt;&#x2F;code&gt; setting&lt;&#x2F;li&gt;
+&lt;li&gt;for example, &lt;kbd&gt;:set sessionoptions+=resize&lt;&#x2F;kbd&gt; will save resized window information as well&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;:mksession! proj.vim&lt;&#x2F;kbd&gt; overwrite existing session&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;:source proj.vim&lt;&#x2F;kbd&gt; restore Vim session from &lt;code&gt;proj.vim&lt;&#x2F;code&gt; file
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;vim -S proj.vim&lt;&#x2F;code&gt; restore a session from the command line when launching Vim&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See &lt;a href=&quot;https:&#x2F;&#x2F;vimhelp.org&#x2F;usr_21.txt.html#21.4&quot;&gt;:h 21.4&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;vimhelp.org&#x2F;starting.txt.html#views-sessions&quot;&gt;:h views-sessions&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;vimhelp.org&#x2F;options.txt.html#%27sessionoptions%27&quot;&gt;:h &#x27;sessionoptions&#x27;&lt;&#x2F;a&gt; for more details.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See &lt;a href=&quot;https:&#x2F;&#x2F;stackoverflow.com&#x2F;q&#x2F;1642611&#x2F;4082052&quot;&gt;stackoverflow: How to save and restore multiple different sessions in Vim?&lt;&#x2F;a&gt; for custom settings to automate the save and restore process and other tips and tricks. See also &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;iggredible&#x2F;Learn-Vim&#x2F;blob&#x2F;master&#x2F;ch20_views_sessions_viminfo.md&quot;&gt;Learn-Vim: Views, Sessions, and Viminfo&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Video demo&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; loading=&quot;lazy&quot; src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;8FERF0M2Dm4&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;&#x2F;iframe&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See also my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;vim_reference&quot;&gt;Vim Reference Guide&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;curated_resources&#x2F;vim.html&quot;&gt;curated list of resources for Vim&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>CLI tip 13: join lines of two files based on the first field</title>
 		<published>2022-07-20T00:00:00+00:00</published>
