@@ -1,222 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta http-equiv="content-type" content="text/html; charset=utf-8">
-
-      <!-- Enable responsiveness on mobile devices-->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-
-      <title>Python tip 2: membership operator</title>
-
-      
-        <link rel="alternate" type="application/atom+xml" title="RSS" href="https://learnbyexample.github.io/atom.xml">
-      
-
-      
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
-          
-      
-
-      
-          <link rel="stylesheet" href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;site.css">
-          
-      
-
-      
-      
-<link rel="icon" href="https://learnbyexample.github.io/favicon.svg">
-<link rel="shortcut icon" href="https://learnbyexample.github.io/favicon.png">
-    </head>
-
-    <body>
-        <div class="container">
-
-            <div id="mobile-navbar" class="mobile-navbar">
-              <div class="mobile-header-logo">
-                <a href="/" class="logo">learnbyexample</a>
-              </div>
-              <div class="mobile-navbar-icon icon-out">
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-            </div>
-
-            <nav id="mobile-menu" class="mobile-menu slideout-menu slideout-menu-left">
-              <ul class="mobile-menu-list">
-                
-                    <li class="mobile-menu-item">
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;books">
-                            Books
-                        </a>
-                    </li>
-                
-                    <li class="mobile-menu-item">
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;mini">
-                            Mini
-                        </a>
-                    </li>
-                
-                    <li class="mobile-menu-item">
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips">
-                            Tips
-                        </a>
-                    </li>
-                
-                    <li class="mobile-menu-item">
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags">
-                            Tags
-                        </a>
-                    </li>
-                
-                    <li class="mobile-menu-item">
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;about">
-                            About
-                        </a>
-                    </li>
-                
-              </ul>
-            </nav>
-
-            <header id="header">
-                <div class="logo"><a href="https:&#x2F;&#x2F;learnbyexample.github.io">learnbyexample</a></div>
-                <nav class="menu">
-                    <ul>
-                        
-                            <li>
-                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;books">
-                                    Books
-                                </a>
-                            </li>
-                        
-                            <li>
-                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;mini">
-                                    Mini
-                                </a>
-                            </li>
-                        
-                            <li>
-                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips">
-                                    Tips
-                                </a>
-                            </li>
-                        
-                            <li>
-                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags">
-                                    Tags
-                                </a>
-                            </li>
-                        
-                            <li>
-                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;about">
-                                    About
-                                </a>
-                            </li>
-                        
-                    </ul>
-                </nav>
-            </header>
-
-            <main>
-                <div class="content" id="mobile-panel">
-                    
-
-
-
-<article class="post">
-    
-    <header class="post__header">
-        <h1 class="post__title">
-            <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips&#x2F;python-tip-2&#x2F;">Python tip 2: membership operator</a>
-        </h1>
-        <div class="post__meta">
-            <span class="post__time">2021-11-25</span>
-            
-        </div>
-    </header>
-
-    <div class="post-content">
-      <p>The <code>in</code> membership operator checks if a given value is part of a collection of values. Here's an example with <code>range()</code> function:</p>
-<pre style="background-color:#f5f5f5;">
-<code><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#1f1f1f;">num </span><span style="color:#72ab00;">= </span><span style="color:#b3933a;">5
-
-</span><span style="color:#7f8989;"># checks if num is present among the integers 3 or 4 or 5
-</span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#1f1f1f;">num </span><span style="color:#72ab00;">in </span><span style="color:#b39f04;">range</span><span style="color:#1f1f1f;">(</span><span style="color:#b3933a;">3</span><span style="color:#1f1f1f;">, </span><span style="color:#b3933a;">6</span><span style="color:#1f1f1f;">)
-</span><span style="color:#b3933a;">True
-</span></code></pre>
-<p>Instead of a series of <code>==</code> comparisons combined with the <code>or</code> boolean operator, you can utilize the <code>in</code> operator.</p>
-<pre style="background-color:#f5f5f5;">
-<code><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#1f1f1f;">pet </span><span style="color:#72ab00;">= </span><span style="color:#d07711;">&#39;cat&#39;
-
-</span><span style="color:#7f8989;"># instead of doing this
-</span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#1f1f1f;">pet </span><span style="color:#72ab00;">== </span><span style="color:#d07711;">&#39;bat&#39; </span><span style="color:#72ab00;">or </span><span style="color:#1f1f1f;">pet </span><span style="color:#72ab00;">== </span><span style="color:#d07711;">&#39;cat&#39; </span><span style="color:#72ab00;">or </span><span style="color:#1f1f1f;">pet </span><span style="color:#72ab00;">== </span><span style="color:#d07711;">&#39;dog&#39;
-</span><span style="color:#b3933a;">True
-
-</span><span style="color:#7f8989;"># use the membership operator
-</span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#1f1f1f;">pet </span><span style="color:#72ab00;">in </span><span style="color:#1f1f1f;">(</span><span style="color:#d07711;">&#39;bat&#39;</span><span style="color:#1f1f1f;">, </span><span style="color:#d07711;">&#39;cat&#39;</span><span style="color:#1f1f1f;">, </span><span style="color:#d07711;">&#39;dog&#39;</span><span style="color:#1f1f1f;">)
-</span><span style="color:#b3933a;">True
-</span></code></pre>
-<p>When applied to strings, the <code>in</code> operator performs substring comparison.</p>
-<pre style="background-color:#f5f5f5;">
-<code><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#1f1f1f;">fruit </span><span style="color:#72ab00;">= </span><span style="color:#d07711;">&#39;mango&#39;
-
-</span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#d07711;">&#39;an&#39; </span><span style="color:#72ab00;">in </span><span style="color:#1f1f1f;">fruit
-</span><span style="color:#b3933a;">True
-</span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#d07711;">&#39;at&#39; </span><span style="color:#72ab00;">in </span><span style="color:#1f1f1f;">fruit
-</span><span style="color:#b3933a;">False
-</span></code></pre>
-<p>To invert the membership test, use the <code>not in</code> operator.</p>
-<pre style="background-color:#f5f5f5;">
-<code><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#1f1f1f;">pet </span><span style="color:#72ab00;">= </span><span style="color:#d07711;">&#39;parrot&#39;
-
-</span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#1f1f1f;">pet </span><span style="color:#72ab00;">in </span><span style="color:#1f1f1f;">(</span><span style="color:#d07711;">&#39;bat&#39;</span><span style="color:#1f1f1f;">, </span><span style="color:#d07711;">&#39;cat&#39;</span><span style="color:#1f1f1f;">, </span><span style="color:#d07711;">&#39;dog&#39;</span><span style="color:#1f1f1f;">)
-</span><span style="color:#b3933a;">False
-</span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#1f1f1f;">pet </span><span style="color:#72ab00;">not in </span><span style="color:#1f1f1f;">(</span><span style="color:#d07711;">&#39;bat&#39;</span><span style="color:#1f1f1f;">, </span><span style="color:#d07711;">&#39;cat&#39;</span><span style="color:#1f1f1f;">, </span><span style="color:#d07711;">&#39;dog&#39;</span><span style="color:#1f1f1f;">)
-</span><span style="color:#b3933a;">True
-</span></code></pre>
-<p><strong>Video demo</strong>:</p>
-<p align="center"><iframe width="560" height="315" loading="lazy" src="https://www.youtube.com/embed/TmVJPtZBRv4" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
-<br>
-<p><img src="/images/info.svg" alt="info" /> See <a href="https://docs.python.org/3/reference/expressions.html#membership-test-operations">docs.python: Membership test operations</a> for documentation. See also my <a href="https://github.com/learnbyexample/100_page_python_intro">100 Page Python Intro</a> ebook.</p>
-
-    </div>
-
-    
-    
-
-    <div class="post-footer">
-        
-            
-                <div class="post-tags">
-                    
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;python&#x2F;">#python</a>
-                    
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;tip&#x2F;">#tip</a>
-                    
-                </div>
-            
-            
-
-        
-
-    </div>
-
-    
-    
-</article>
-
-
-                </div>
-            </main>
-
-            
-            
-        </div>
-
-      
-          <script type="text/javascript" src="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;even.js" ></script>
-      
-    </body>
-
-</html>
+<!doctype html><html lang=en><head><meta content="IE=edge" http-equiv=X-UA-Compatible><meta content="text/html; charset=utf-8" http-equiv=content-type><meta content="width=device-width,initial-scale=1.0,maximum-scale=1" name=viewport><title>Python tip 2: membership operator</title><link href=https://learnbyexample.github.io/atom.xml rel=alternate title=RSS type=application/atom+xml><script src=https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js></script><link href=https://learnbyexample.github.io/site.css rel=stylesheet><link href=https://learnbyexample.github.io/favicon.svg rel=icon><link rel="shortcut icon" href=https://learnbyexample.github.io/favicon.png><body><div class=container><div class=mobile-navbar id=mobile-navbar><div class=mobile-header-logo><a class=logo href=/>learnbyexample</a></div><div class="mobile-navbar-icon icon-out"><span></span><span></span><span></span></div></div><nav class="mobile-menu slideout-menu slideout-menu-left" id=mobile-menu><ul class=mobile-menu-list><li class=mobile-menu-item><a href=https://learnbyexample.github.io/books> Books </a><li class=mobile-menu-item><a href=https://learnbyexample.github.io/mini> Mini </a><li class=mobile-menu-item><a href=https://learnbyexample.github.io/tips> Tips </a><li class=mobile-menu-item><a href=https://learnbyexample.github.io/tags> Tags </a><li class=mobile-menu-item><a href=https://learnbyexample.github.io/about> About </a></ul></nav><header id=header><div class=logo><a href=https://learnbyexample.github.io>learnbyexample</a></div><nav class=menu><ul><li><a href=https://learnbyexample.github.io/books> Books </a><li><a href=https://learnbyexample.github.io/mini> Mini </a><li><a href=https://learnbyexample.github.io/tips> Tips </a><li><a href=https://learnbyexample.github.io/tags> Tags </a><li><a href=https://learnbyexample.github.io/about> About </a></ul></nav></header><main><div class=content id=mobile-panel><article class=post><header class=post__header><h1 class=post__title><a href=https://learnbyexample.github.io/tips/python-tip-2/>Python tip 2: membership operator</a></h1><div class=post__meta><span class=post__time>2021-11-25</span></div></header><div class=post-content><p>The <code>in</code> membership operator checks if a given value is part of a collection of values. Here's an example with <code>range()</code> function:<pre class=language-python data-lang=python style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-python data-lang=python><span style=color:#72ab00;>>>> </span><span>num </span><span style=color:#72ab00;>= </span><span style=color:#b3933a;>5
+</span><span>
+</span><span style=color:#7f8989;># checks if num is present among the integers 3 or 4 or 5
+</span><span style=color:#72ab00;>>>> </span><span>num </span><span style=color:#72ab00;>in </span><span style=color:#b39f04;>range</span><span>(</span><span style=color:#b3933a;>3</span><span>, </span><span style=color:#b3933a;>6</span><span>)
+</span><span style=color:#b3933a;>True
+</span></code></pre><p>Instead of a series of <code>==</code> comparisons combined with the <code>or</code> boolean operator, you can utilize the <code>in</code> operator.<pre class=language-python data-lang=python style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-python data-lang=python><span style=color:#72ab00;>>>> </span><span>pet </span><span style=color:#72ab00;>= </span><span style=color:#d07711;>'cat'
+</span><span>
+</span><span style=color:#7f8989;># instead of doing this
+</span><span style=color:#72ab00;>>>> </span><span>pet </span><span style=color:#72ab00;>== </span><span style=color:#d07711;>'bat' </span><span style=color:#72ab00;>or </span><span>pet </span><span style=color:#72ab00;>== </span><span style=color:#d07711;>'cat' </span><span style=color:#72ab00;>or </span><span>pet </span><span style=color:#72ab00;>== </span><span style=color:#d07711;>'dog'
+</span><span style=color:#b3933a;>True
+</span><span>
+</span><span style=color:#7f8989;># use the membership operator
+</span><span style=color:#72ab00;>>>> </span><span>pet </span><span style=color:#72ab00;>in </span><span>(</span><span style=color:#d07711;>'bat'</span><span>, </span><span style=color:#d07711;>'cat'</span><span>, </span><span style=color:#d07711;>'dog'</span><span>)
+</span><span style=color:#b3933a;>True
+</span></code></pre><p>When applied to strings, the <code>in</code> operator performs substring comparison.<pre class=language-python data-lang=python style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-python data-lang=python><span style=color:#72ab00;>>>> </span><span>fruit </span><span style=color:#72ab00;>= </span><span style=color:#d07711;>'mango'
+</span><span>
+</span><span style=color:#72ab00;>>>> </span><span style=color:#d07711;>'an' </span><span style=color:#72ab00;>in </span><span>fruit
+</span><span style=color:#b3933a;>True
+</span><span style=color:#72ab00;>>>> </span><span style=color:#d07711;>'at' </span><span style=color:#72ab00;>in </span><span>fruit
+</span><span style=color:#b3933a;>False
+</span></code></pre><p>To invert the membership test, use the <code>not in</code> operator.<pre class=language-python data-lang=python style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-python data-lang=python><span style=color:#72ab00;>>>> </span><span>pet </span><span style=color:#72ab00;>= </span><span style=color:#d07711;>'parrot'
+</span><span>
+</span><span style=color:#72ab00;>>>> </span><span>pet </span><span style=color:#72ab00;>in </span><span>(</span><span style=color:#d07711;>'bat'</span><span>, </span><span style=color:#d07711;>'cat'</span><span>, </span><span style=color:#d07711;>'dog'</span><span>)
+</span><span style=color:#b3933a;>False
+</span><span style=color:#72ab00;>>>> </span><span>pet </span><span style=color:#72ab00;>not in </span><span>(</span><span style=color:#d07711;>'bat'</span><span>, </span><span style=color:#d07711;>'cat'</span><span>, </span><span style=color:#d07711;>'dog'</span><span>)
+</span><span style=color:#b3933a;>True
+</span></code></pre><p><strong>Video demo</strong>:<p align=center><iframe allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" title="YouTube video player" allowfullscreen frameborder=0 height=315 loading=lazy src=https://www.youtube.com/embed/TmVJPtZBRv4 width=560></iframe></p><br><p><img alt=info src=/images/info.svg> See <a href=https://docs.python.org/3/reference/expressions.html#membership-test-operations>docs.python: Membership test operations</a> for documentation. See also my <a href=https://github.com/learnbyexample/100_page_python_intro>100 Page Python Intro</a> ebook.</div><div class=post-footer><div class=post-tags><a href=https://learnbyexample.github.io/tags/python/>#python</a><a href=https://learnbyexample.github.io/tags/tip/>#tip</a></div><p>👉 Use <a href=https://learnbyexample.github.io/atom.xml>this link</a> for the Atom feed. <br> 👉 Follow me on <a href=https://twitter.com/learn_byexample>Twitter</a>, <a href=https://github.com/learnbyexample>GitHub</a> and <a href=https://www.youtube.com/channel/UCKdFGbeOUPYM9GocmrIFGcw/playlists>Youtube</a> for interesting tech nuggets.<hr color=#e6e6e6></div></article></div></main></div><script src=https://learnbyexample.github.io/even.js></script>

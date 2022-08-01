@@ -1,219 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta http-equiv="content-type" content="text/html; charset=utf-8">
-
-      <!-- Enable responsiveness on mobile devices-->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-
-      <title>CLI tip 9: awk paragraph mode</title>
-
-      
-        <link rel="alternate" type="application/atom+xml" title="RSS" href="https://learnbyexample.github.io/atom.xml">
-      
-
-      
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
-          
-      
-
-      
-          <link rel="stylesheet" href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;site.css">
-          
-      
-
-      
-      
-<link rel="icon" href="https://learnbyexample.github.io/favicon.svg">
-<link rel="shortcut icon" href="https://learnbyexample.github.io/favicon.png">
-    </head>
-
-    <body>
-        <div class="container">
-
-            <div id="mobile-navbar" class="mobile-navbar">
-              <div class="mobile-header-logo">
-                <a href="/" class="logo">learnbyexample</a>
-              </div>
-              <div class="mobile-navbar-icon icon-out">
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-            </div>
-
-            <nav id="mobile-menu" class="mobile-menu slideout-menu slideout-menu-left">
-              <ul class="mobile-menu-list">
-                
-                    <li class="mobile-menu-item">
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;books">
-                            Books
-                        </a>
-                    </li>
-                
-                    <li class="mobile-menu-item">
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;mini">
-                            Mini
-                        </a>
-                    </li>
-                
-                    <li class="mobile-menu-item">
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips">
-                            Tips
-                        </a>
-                    </li>
-                
-                    <li class="mobile-menu-item">
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags">
-                            Tags
-                        </a>
-                    </li>
-                
-                    <li class="mobile-menu-item">
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;about">
-                            About
-                        </a>
-                    </li>
-                
-              </ul>
-            </nav>
-
-            <header id="header">
-                <div class="logo"><a href="https:&#x2F;&#x2F;learnbyexample.github.io">learnbyexample</a></div>
-                <nav class="menu">
-                    <ul>
-                        
-                            <li>
-                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;books">
-                                    Books
-                                </a>
-                            </li>
-                        
-                            <li>
-                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;mini">
-                                    Mini
-                                </a>
-                            </li>
-                        
-                            <li>
-                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips">
-                                    Tips
-                                </a>
-                            </li>
-                        
-                            <li>
-                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags">
-                                    Tags
-                                </a>
-                            </li>
-                        
-                            <li>
-                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;about">
-                                    About
-                                </a>
-                            </li>
-                        
-                    </ul>
-                </nav>
-            </header>
-
-            <main>
-                <div class="content" id="mobile-panel">
-                    
-
-
-
-<article class="post">
-    
-    <header class="post__header">
-        <h1 class="post__title">
-            <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips&#x2F;cli-tip-9&#x2F;">CLI tip 9: awk paragraph mode</a>
-        </h1>
-        <div class="post__meta">
-            <span class="post__time">2022-04-27</span>
-            
-        </div>
-    </header>
-
-    <div class="post-content">
-      <p><code>awk</code> provides a handy shortcut to process input content paragraph wise. When <code>RS</code> is set to empty string, one or more consecutive empty lines is used as the input record separator. Consider the below sample file:</p>
-<pre style="background-color:#f5f5f5;">
-<code><span style="color:#1f1f1f;">$ cat para.txt
-hi there
-how are you
-
-</span><span style="color:#b3933a;">2</span><span style="color:#1f1f1f;"> apples
-</span><span style="color:#b3933a;">12</span><span style="color:#1f1f1f;"> bananas
-
-
-blue sky
-yellow sun
-brown earth
-</span></code></pre>
-<p>Here are some simple examples to filter paragraphs based on some criteria:</p>
-<pre style="background-color:#f5f5f5;">
-<code><span style="color:#7f8989;"># paragraphs containing &#39;sun&#39;
-</span><span style="color:#1f1f1f;">$ awk </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">v </span><span style="color:#c23f31;">RS</span><span style="color:#72ab00;">= </span><span style="color:#d07711;">&#39;/sun/&#39;</span><span style="color:#1f1f1f;"> para.txt
-blue sky
-yellow sun
-brown earth
-
-</span><span style="color:#7f8989;"># paragraphs containing any digit character
-</span><span style="color:#1f1f1f;">$ awk </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">v </span><span style="color:#c23f31;">RS</span><span style="color:#72ab00;">= </span><span style="color:#d07711;">&#39;/[0-9]/&#39;</span><span style="color:#1f1f1f;"> para.txt
-</span><span style="color:#b3933a;">2</span><span style="color:#1f1f1f;"> apples
-</span><span style="color:#b3933a;">12</span><span style="color:#1f1f1f;"> bananas
-
-</span><span style="color:#7f8989;"># print the first paragraph
-</span><span style="color:#1f1f1f;">$ awk </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">v </span><span style="color:#c23f31;">RS</span><span style="color:#72ab00;">= </span><span style="color:#d07711;">&#39;NR==1&#39;</span><span style="color:#1f1f1f;"> para.txt
-hi there
-how are you
-</span></code></pre>
-<p><img src="/images/info.svg" alt="info" /> See <a href="https://learnbyexample.github.io/learn_gnuawk/record-separators.html#paragraph-mode">Paragraph mode section from my GNU awk ebook</a> for more examples and corner cases.</p>
-<p><strong>Video demo</strong>:</p>
-<p align="center"><iframe width="560" height="315" loading="lazy" src="https://www.youtube.com/embed/OmljHVH-SCw" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
-<br>
-<p><img src="/images/info.svg" alt="info" /> See my <a href="https://github.com/learnbyexample/learn_gnuawk">GNU AWK</a> ebook if you are interested in learning about the <code>GNU awk</code> command in more detail.</p>
-
-    </div>
-
-    
-    
-
-    <div class="post-footer">
-        
-            
-                <div class="post-tags">
-                    
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;linux&#x2F;">#linux</a>
-                    
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;command-line&#x2F;">#command-line</a>
-                    
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;tip&#x2F;">#tip</a>
-                    
-                </div>
-            
-            
-
-        
-
-    </div>
-
-    
-    
-</article>
-
-
-                </div>
-            </main>
-
-            
-            
-        </div>
-
-      
-          <script type="text/javascript" src="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;even.js" ></script>
-      
-    </body>
-
-</html>
+<!doctype html><html lang=en><head><meta content="IE=edge" http-equiv=X-UA-Compatible><meta content="text/html; charset=utf-8" http-equiv=content-type><meta content="width=device-width,initial-scale=1.0,maximum-scale=1" name=viewport><title>CLI tip 9: awk paragraph mode</title><link href=https://learnbyexample.github.io/atom.xml rel=alternate title=RSS type=application/atom+xml><script src=https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js></script><link href=https://learnbyexample.github.io/site.css rel=stylesheet><link href=https://learnbyexample.github.io/favicon.svg rel=icon><link rel="shortcut icon" href=https://learnbyexample.github.io/favicon.png><body><div class=container><div class=mobile-navbar id=mobile-navbar><div class=mobile-header-logo><a class=logo href=/>learnbyexample</a></div><div class="mobile-navbar-icon icon-out"><span></span><span></span><span></span></div></div><nav class="mobile-menu slideout-menu slideout-menu-left" id=mobile-menu><ul class=mobile-menu-list><li class=mobile-menu-item><a href=https://learnbyexample.github.io/books> Books </a><li class=mobile-menu-item><a href=https://learnbyexample.github.io/mini> Mini </a><li class=mobile-menu-item><a href=https://learnbyexample.github.io/tips> Tips </a><li class=mobile-menu-item><a href=https://learnbyexample.github.io/tags> Tags </a><li class=mobile-menu-item><a href=https://learnbyexample.github.io/about> About </a></ul></nav><header id=header><div class=logo><a href=https://learnbyexample.github.io>learnbyexample</a></div><nav class=menu><ul><li><a href=https://learnbyexample.github.io/books> Books </a><li><a href=https://learnbyexample.github.io/mini> Mini </a><li><a href=https://learnbyexample.github.io/tips> Tips </a><li><a href=https://learnbyexample.github.io/tags> Tags </a><li><a href=https://learnbyexample.github.io/about> About </a></ul></nav></header><main><div class=content id=mobile-panel><article class=post><header class=post__header><h1 class=post__title><a href=https://learnbyexample.github.io/tips/cli-tip-9/>CLI tip 9: awk paragraph mode</a></h1><div class=post__meta><span class=post__time>2022-04-27</span></div></header><div class=post-content><p><code>awk</code> provides a handy shortcut to process input content paragraph wise. When <code>RS</code> is set to empty string, one or more consecutive empty lines is used as the input record separator. Consider the below sample file:<pre class=language-ruby data-lang=ruby style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-ruby data-lang=ruby><span>$ cat para.txt
+</span><span>hi there
+</span><span>how are you
+</span><span>
+</span><span style=color:#b3933a;>2</span><span> apples
+</span><span style=color:#b3933a;>12</span><span> bananas
+</span><span>
+</span><span>
+</span><span>blue sky
+</span><span>yellow sun
+</span><span>brown earth
+</span></code></pre><p>Here are some simple examples to filter paragraphs based on some criteria:<pre class=language-ruby data-lang=ruby style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-ruby data-lang=ruby><span style=color:#7f8989;># paragraphs containing 'sun'
+</span><span>$ awk </span><span style=color:#72ab00;>-</span><span>v </span><span style=color:#c23f31;>RS</span><span style=color:#72ab00;>= </span><span style=color:#d07711;>'/sun/'</span><span> para.txt
+</span><span>blue sky
+</span><span>yellow sun
+</span><span>brown earth
+</span><span>
+</span><span style=color:#7f8989;># paragraphs containing any digit character
+</span><span>$ awk </span><span style=color:#72ab00;>-</span><span>v </span><span style=color:#c23f31;>RS</span><span style=color:#72ab00;>= </span><span style=color:#d07711;>'/[0-9]/'</span><span> para.txt
+</span><span style=color:#b3933a;>2</span><span> apples
+</span><span style=color:#b3933a;>12</span><span> bananas
+</span><span>
+</span><span style=color:#7f8989;># print the first paragraph
+</span><span>$ awk </span><span style=color:#72ab00;>-</span><span>v </span><span style=color:#c23f31;>RS</span><span style=color:#72ab00;>= </span><span style=color:#d07711;>'NR==1'</span><span> para.txt
+</span><span>hi there
+</span><span>how are you
+</span></code></pre><p><img alt=info src=/images/info.svg> See <a href=https://learnbyexample.github.io/learn_gnuawk/record-separators.html#paragraph-mode>Paragraph mode section from my GNU awk ebook</a> for more examples and corner cases.<p><strong>Video demo</strong>:<p align=center><iframe allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" title="YouTube video player" allowfullscreen frameborder=0 height=315 loading=lazy src=https://www.youtube.com/embed/OmljHVH-SCw width=560></iframe></p><br><p><img alt=info src=/images/info.svg> See my <a href=https://github.com/learnbyexample/learn_gnuawk>GNU AWK</a> ebook if you are interested in learning about the <code>GNU awk</code> command in more detail.</div><div class=post-footer><div class=post-tags><a href=https://learnbyexample.github.io/tags/linux/>#linux</a><a href=https://learnbyexample.github.io/tags/command-line/>#command-line</a><a href=https://learnbyexample.github.io/tags/tip/>#tip</a></div><p>👉 Use <a href=https://learnbyexample.github.io/atom.xml>this link</a> for the Atom feed. <br> 👉 Follow me on <a href=https://twitter.com/learn_byexample>Twitter</a>, <a href=https://github.com/learnbyexample>GitHub</a> and <a href=https://www.youtube.com/channel/UCKdFGbeOUPYM9GocmrIFGcw/playlists>Youtube</a> for interesting tech nuggets.<hr color=#e6e6e6></div></article></div></main></div><script src=https://learnbyexample.github.io/even.js></script>

@@ -1,224 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta http-equiv="content-type" content="text/html; charset=utf-8">
-
-      <!-- Enable responsiveness on mobile devices-->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-
-      <title>Python tip 11: capture external command output</title>
-
-      
-        <link rel="alternate" type="application/atom+xml" title="RSS" href="https://learnbyexample.github.io/atom.xml">
-      
-
-      
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
-          
-      
-
-      
-          <link rel="stylesheet" href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;site.css">
-          
-      
-
-      
-      
-<link rel="icon" href="https://learnbyexample.github.io/favicon.svg">
-<link rel="shortcut icon" href="https://learnbyexample.github.io/favicon.png">
-    </head>
-
-    <body>
-        <div class="container">
-
-            <div id="mobile-navbar" class="mobile-navbar">
-              <div class="mobile-header-logo">
-                <a href="/" class="logo">learnbyexample</a>
-              </div>
-              <div class="mobile-navbar-icon icon-out">
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-            </div>
-
-            <nav id="mobile-menu" class="mobile-menu slideout-menu slideout-menu-left">
-              <ul class="mobile-menu-list">
-                
-                    <li class="mobile-menu-item">
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;books">
-                            Books
-                        </a>
-                    </li>
-                
-                    <li class="mobile-menu-item">
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;mini">
-                            Mini
-                        </a>
-                    </li>
-                
-                    <li class="mobile-menu-item">
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips">
-                            Tips
-                        </a>
-                    </li>
-                
-                    <li class="mobile-menu-item">
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags">
-                            Tags
-                        </a>
-                    </li>
-                
-                    <li class="mobile-menu-item">
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;about">
-                            About
-                        </a>
-                    </li>
-                
-              </ul>
-            </nav>
-
-            <header id="header">
-                <div class="logo"><a href="https:&#x2F;&#x2F;learnbyexample.github.io">learnbyexample</a></div>
-                <nav class="menu">
-                    <ul>
-                        
-                            <li>
-                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;books">
-                                    Books
-                                </a>
-                            </li>
-                        
-                            <li>
-                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;mini">
-                                    Mini
-                                </a>
-                            </li>
-                        
-                            <li>
-                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips">
-                                    Tips
-                                </a>
-                            </li>
-                        
-                            <li>
-                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags">
-                                    Tags
-                                </a>
-                            </li>
-                        
-                            <li>
-                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;about">
-                                    About
-                                </a>
-                            </li>
-                        
-                    </ul>
-                </nav>
-            </header>
-
-            <main>
-                <div class="content" id="mobile-panel">
-                    
-
-
-
-<article class="post">
-    
-    <header class="post__header">
-        <h1 class="post__title">
-            <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips&#x2F;python-tip-11&#x2F;">Python tip 11: capture external command output</a>
-        </h1>
-        <div class="post__meta">
-            <span class="post__time">2022-06-01</span>
-            
-        </div>
-    </header>
-
-    <div class="post-content">
-      <p>The <code>subprocess</code> module provides plethora of features to execute external commands, capturing output being one of them. There are two ways to do so:</p>
-<ul>
-<li>passing <code>capture_output=True</code> to <code>subprocess.run()</code></li>
-<li><code>subprocess.check_output()</code> if you only want <code>stdout</code></li>
-</ul>
-<p>By default, results are provided as <code>bytes</code> data type. You can change that by passing <code>text=True</code>.</p>
-<pre style="background-color:#f5f5f5;">
-<code><span style="color:#72ab00;">&gt;&gt;&gt; import </span><span style="color:#1f1f1f;">subprocess
-</span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#1f1f1f;">cmd </span><span style="color:#72ab00;">= </span><span style="color:#1f1f1f;">(</span><span style="color:#d07711;">&#39;date&#39;</span><span style="color:#1f1f1f;">, </span><span style="color:#d07711;">&#39;-u&#39;</span><span style="color:#1f1f1f;">, </span><span style="color:#d07711;">&#39;+</span><span style="color:#aeb52b;">%A</span><span style="color:#d07711;">&#39;</span><span style="color:#1f1f1f;">)
-
-</span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#1f1f1f;">p </span><span style="color:#72ab00;">= </span><span style="color:#1f1f1f;">subprocess.</span><span style="color:#5597d6;">run</span><span style="color:#1f1f1f;">(cmd, </span><span style="color:#5597d6;">capture_output</span><span style="color:#72ab00;">=</span><span style="color:#b3933a;">True</span><span style="color:#1f1f1f;">, </span><span style="color:#5597d6;">text</span><span style="color:#72ab00;">=</span><span style="color:#b3933a;">True</span><span style="color:#1f1f1f;">)
-</span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#1f1f1f;">p
-</span><span style="color:#5597d6;">CompletedProcess</span><span style="color:#1f1f1f;">(</span><span style="color:#5597d6;">args</span><span style="color:#72ab00;">=</span><span style="color:#1f1f1f;">(</span><span style="color:#d07711;">&#39;date&#39;</span><span style="color:#1f1f1f;">, </span><span style="color:#d07711;">&#39;-u&#39;</span><span style="color:#1f1f1f;">, </span><span style="color:#d07711;">&#39;+</span><span style="color:#aeb52b;">%A</span><span style="color:#d07711;">&#39;</span><span style="color:#1f1f1f;">), </span><span style="color:#5597d6;">returncode</span><span style="color:#72ab00;">=</span><span style="color:#b3933a;">0</span><span style="color:#1f1f1f;">,
-                 </span><span style="color:#5597d6;">stdout</span><span style="color:#72ab00;">=</span><span style="color:#d07711;">&#39;Wednesday</span><span style="color:#aeb52b;">\n</span><span style="color:#d07711;">&#39;</span><span style="color:#1f1f1f;">, </span><span style="color:#5597d6;">stderr</span><span style="color:#72ab00;">=</span><span style="color:#d07711;">&#39;&#39;</span><span style="color:#1f1f1f;">)
-</span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#1f1f1f;">p.stdout
-</span><span style="color:#d07711;">&#39;Wednesday</span><span style="color:#aeb52b;">\n</span><span style="color:#d07711;">&#39;
-
-</span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#1f1f1f;">subprocess.</span><span style="color:#5597d6;">check_output</span><span style="color:#1f1f1f;">(cmd, </span><span style="color:#5597d6;">text</span><span style="color:#72ab00;">=</span><span style="color:#b3933a;">True</span><span style="color:#1f1f1f;">)
-</span><span style="color:#d07711;">&#39;Wednesday</span><span style="color:#aeb52b;">\n</span><span style="color:#d07711;">&#39;
-</span></code></pre>
-<p>With <code>check_output()</code>, you'll get an exception if something goes wrong with the command being executed. With <code>run()</code>, you'll get that information from <code>stderr</code> and <code>returncode</code> as part of the <code>CompletedProcess</code> object.</p>
-<pre style="background-color:#f5f5f5;">
-<code><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#1f1f1f;">cmd </span><span style="color:#72ab00;">= </span><span style="color:#1f1f1f;">(</span><span style="color:#d07711;">&#39;ls&#39;</span><span style="color:#1f1f1f;">, </span><span style="color:#d07711;">&#39;xyz.txt&#39;</span><span style="color:#1f1f1f;">)
-
-</span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#1f1f1f;">subprocess.</span><span style="color:#5597d6;">run</span><span style="color:#1f1f1f;">(cmd, </span><span style="color:#5597d6;">capture_output</span><span style="color:#72ab00;">=</span><span style="color:#b3933a;">True</span><span style="color:#1f1f1f;">, </span><span style="color:#5597d6;">text</span><span style="color:#72ab00;">=</span><span style="color:#b3933a;">True</span><span style="color:#1f1f1f;">)
-</span><span style="color:#5597d6;">CompletedProcess</span><span style="color:#1f1f1f;">(</span><span style="color:#5597d6;">args</span><span style="color:#72ab00;">=</span><span style="color:#1f1f1f;">(</span><span style="color:#d07711;">&#39;ls&#39;</span><span style="color:#1f1f1f;">, </span><span style="color:#d07711;">&#39;xyz.txt&#39;</span><span style="color:#1f1f1f;">), </span><span style="color:#5597d6;">returncode</span><span style="color:#72ab00;">=</span><span style="color:#b3933a;">2</span><span style="color:#1f1f1f;">, </span><span style="color:#5597d6;">stdout</span><span style="color:#72ab00;">=</span><span style="color:#d07711;">&#39;&#39;</span><span style="color:#1f1f1f;">,
-         </span><span style="color:#5597d6;">stderr</span><span style="color:#72ab00;">=</span><span style="color:#d07711;">&quot;ls: cannot access &#39;xyz.txt&#39;: No such file or directory</span><span style="color:#aeb52b;">\n</span><span style="color:#d07711;">&quot;</span><span style="color:#1f1f1f;">)
-
-</span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#1f1f1f;">subprocess.</span><span style="color:#5597d6;">check_output</span><span style="color:#1f1f1f;">(cmd, </span><span style="color:#5597d6;">text</span><span style="color:#72ab00;">=</span><span style="color:#b3933a;">True</span><span style="color:#1f1f1f;">)
-ls: cannot access </span><span style="color:#d07711;">&#39;xyz.txt&#39;</span><span style="color:#1f1f1f;">: No such file </span><span style="color:#72ab00;">or </span><span style="color:#1f1f1f;">directory
-</span><span style="color:#5597d6;">Traceback </span><span style="color:#1f1f1f;">(most recent call last):
-  File </span><span style="color:#d07711;">&quot;&lt;stdin&gt;&quot;</span><span style="color:#1f1f1f;">, line </span><span style="color:#b3933a;">1</span><span style="color:#1f1f1f;">, </span><span style="color:#72ab00;">in &lt;</span><span style="color:#1f1f1f;">module</span><span style="color:#72ab00;">&gt;
-  </span><span style="color:#1f1f1f;">File </span><span style="color:#d07711;">&quot;/usr/lib/python3.8/subprocess.py&quot;</span><span style="color:#1f1f1f;">, line </span><span style="color:#b3933a;">415</span><span style="color:#1f1f1f;">, </span><span style="color:#72ab00;">in </span><span style="color:#1f1f1f;">check_output
-    </span><span style="color:#72ab00;">return </span><span style="color:#5597d6;">run</span><span style="color:#1f1f1f;">(</span><span style="color:#72ab00;">*</span><span style="color:#1f1f1f;">popenargs, </span><span style="color:#5597d6;">stdout</span><span style="color:#72ab00;">=</span><span style="color:#5597d6;">PIPE</span><span style="color:#1f1f1f;">, </span><span style="color:#5597d6;">timeout</span><span style="color:#72ab00;">=</span><span style="color:#1f1f1f;">timeout, </span><span style="color:#5597d6;">check</span><span style="color:#72ab00;">=</span><span style="color:#b3933a;">True</span><span style="color:#1f1f1f;">,
-  File </span><span style="color:#d07711;">&quot;/usr/lib/python3.8/subprocess.py&quot;</span><span style="color:#1f1f1f;">, line </span><span style="color:#b3933a;">516</span><span style="color:#1f1f1f;">, </span><span style="color:#72ab00;">in </span><span style="color:#1f1f1f;">run
-    </span><span style="background-color:#562d56bf;color:#f8f8f8;">raise</span><span style="color:#1f1f1f;"> </span><span style="color:#5597d6;">CalledProcessError</span><span style="color:#1f1f1f;">(retcode, process.args,
-subprocess.CalledProcessError: Command </span><span style="color:#d07711;">&#39;(&#39;</span><span style="color:#1f1f1f;">ls</span><span style="color:#d07711;">&#39;, &#39;</span><span style="color:#1f1f1f;">xyz.txt</span><span style="color:#d07711;">&#39;)&#39; </span><span style="color:#1f1f1f;">returned
-                               non</span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">zero exit status </span><span style="color:#b3933a;">2.
-</span></code></pre>
-<p><img src="/images/info.svg" alt="info" /> You can also use legacy methods <code>subprocess.getstatusoutput()</code> and <code>subprocess.getoutput()</code> but they lack in features and do not provide secure options. See <a href="https://docs.python.org/3/library/subprocess.html#legacy-shell-invocation-functions">docs.python: subprocess Legacy Shell Invocation Functions</a> for details.</p>
-<p><strong>Video demo</strong>:</p>
-<p align="center"><iframe width="560" height="315" loading="lazy" src="https://www.youtube.com/embed/uffQilOq9PA" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
-<br>
-<p><img src="/images/info.svg" alt="info" /> See also my <a href="https://github.com/learnbyexample/100_page_python_intro">100 Page Python Intro</a> ebook.</p>
-
-    </div>
-
-    
-    
-
-    <div class="post-footer">
-        
-            
-                <div class="post-tags">
-                    
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;python&#x2F;">#python</a>
-                    
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;tip&#x2F;">#tip</a>
-                    
-                </div>
-            
-            
-
-        
-
-    </div>
-
-    
-    
-</article>
-
-
-                </div>
-            </main>
-
-            
-            
-        </div>
-
-      
-          <script type="text/javascript" src="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;even.js" ></script>
-      
-    </body>
-
-</html>
+<!doctype html><html lang=en><head><meta content="IE=edge" http-equiv=X-UA-Compatible><meta content="text/html; charset=utf-8" http-equiv=content-type><meta content="width=device-width,initial-scale=1.0,maximum-scale=1" name=viewport><title>Python tip 11: capture external command output</title><link href=https://learnbyexample.github.io/atom.xml rel=alternate title=RSS type=application/atom+xml><script src=https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js></script><link href=https://learnbyexample.github.io/site.css rel=stylesheet><link href=https://learnbyexample.github.io/favicon.svg rel=icon><link rel="shortcut icon" href=https://learnbyexample.github.io/favicon.png><body><div class=container><div class=mobile-navbar id=mobile-navbar><div class=mobile-header-logo><a class=logo href=/>learnbyexample</a></div><div class="mobile-navbar-icon icon-out"><span></span><span></span><span></span></div></div><nav class="mobile-menu slideout-menu slideout-menu-left" id=mobile-menu><ul class=mobile-menu-list><li class=mobile-menu-item><a href=https://learnbyexample.github.io/books> Books </a><li class=mobile-menu-item><a href=https://learnbyexample.github.io/mini> Mini </a><li class=mobile-menu-item><a href=https://learnbyexample.github.io/tips> Tips </a><li class=mobile-menu-item><a href=https://learnbyexample.github.io/tags> Tags </a><li class=mobile-menu-item><a href=https://learnbyexample.github.io/about> About </a></ul></nav><header id=header><div class=logo><a href=https://learnbyexample.github.io>learnbyexample</a></div><nav class=menu><ul><li><a href=https://learnbyexample.github.io/books> Books </a><li><a href=https://learnbyexample.github.io/mini> Mini </a><li><a href=https://learnbyexample.github.io/tips> Tips </a><li><a href=https://learnbyexample.github.io/tags> Tags </a><li><a href=https://learnbyexample.github.io/about> About </a></ul></nav></header><main><div class=content id=mobile-panel><article class=post><header class=post__header><h1 class=post__title><a href=https://learnbyexample.github.io/tips/python-tip-11/>Python tip 11: capture external command output</a></h1><div class=post__meta><span class=post__time>2022-06-01</span></div></header><div class=post-content><p>The <code>subprocess</code> module provides plethora of features to execute external commands, capturing output being one of them. There are two ways to do so:<ul><li>passing <code>capture_output=True</code> to <code>subprocess.run()</code><li><code>subprocess.check_output()</code> if you only want <code>stdout</code></ul><p>By default, results are provided as <code>bytes</code> data type. You can change that by passing <code>text=True</code>.<pre class=language-python data-lang=python style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-python data-lang=python><span style=color:#72ab00;>>>> import </span><span>subprocess
+</span><span style=color:#72ab00;>>>> </span><span>cmd </span><span style=color:#72ab00;>= </span><span>(</span><span style=color:#d07711;>'date'</span><span>, </span><span style=color:#d07711;>'-u'</span><span>, </span><span style=color:#d07711;>'+</span><span style=color:#aeb52b;>%A</span><span style=color:#d07711;>'</span><span>)
+</span><span>
+</span><span style=color:#72ab00;>>>> </span><span>p </span><span style=color:#72ab00;>= </span><span>subprocess.</span><span style=color:#5597d6;>run</span><span>(cmd, </span><span style=color:#5597d6;>capture_output</span><span style=color:#72ab00;>=</span><span style=color:#b3933a;>True</span><span>, </span><span style=color:#5597d6;>text</span><span style=color:#72ab00;>=</span><span style=color:#b3933a;>True</span><span>)
+</span><span style=color:#72ab00;>>>> </span><span>p
+</span><span style=color:#5597d6;>CompletedProcess</span><span>(</span><span style=color:#5597d6;>args</span><span style=color:#72ab00;>=</span><span>(</span><span style=color:#d07711;>'date'</span><span>, </span><span style=color:#d07711;>'-u'</span><span>, </span><span style=color:#d07711;>'+</span><span style=color:#aeb52b;>%A</span><span style=color:#d07711;>'</span><span>), </span><span style=color:#5597d6;>returncode</span><span style=color:#72ab00;>=</span><span style=color:#b3933a;>0</span><span>,
+</span><span>                 </span><span style=color:#5597d6;>stdout</span><span style=color:#72ab00;>=</span><span style=color:#d07711;>'Wednesday</span><span style=color:#aeb52b;>\n</span><span style=color:#d07711;>'</span><span>, </span><span style=color:#5597d6;>stderr</span><span style=color:#72ab00;>=</span><span style=color:#d07711;>''</span><span>)
+</span><span style=color:#72ab00;>>>> </span><span>p.stdout
+</span><span style=color:#d07711;>'Wednesday</span><span style=color:#aeb52b;>\n</span><span style=color:#d07711;>'
+</span><span>
+</span><span style=color:#72ab00;>>>> </span><span>subprocess.</span><span style=color:#5597d6;>check_output</span><span>(cmd, </span><span style=color:#5597d6;>text</span><span style=color:#72ab00;>=</span><span style=color:#b3933a;>True</span><span>)
+</span><span style=color:#d07711;>'Wednesday</span><span style=color:#aeb52b;>\n</span><span style=color:#d07711;>'
+</span></code></pre><p>With <code>check_output()</code>, you'll get an exception if something goes wrong with the command being executed. With <code>run()</code>, you'll get that information from <code>stderr</code> and <code>returncode</code> as part of the <code>CompletedProcess</code> object.<pre class=language-python data-lang=python style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-python data-lang=python><span style=color:#72ab00;>>>> </span><span>cmd </span><span style=color:#72ab00;>= </span><span>(</span><span style=color:#d07711;>'ls'</span><span>, </span><span style=color:#d07711;>'xyz.txt'</span><span>)
+</span><span>
+</span><span style=color:#72ab00;>>>> </span><span>subprocess.</span><span style=color:#5597d6;>run</span><span>(cmd, </span><span style=color:#5597d6;>capture_output</span><span style=color:#72ab00;>=</span><span style=color:#b3933a;>True</span><span>, </span><span style=color:#5597d6;>text</span><span style=color:#72ab00;>=</span><span style=color:#b3933a;>True</span><span>)
+</span><span style=color:#5597d6;>CompletedProcess</span><span>(</span><span style=color:#5597d6;>args</span><span style=color:#72ab00;>=</span><span>(</span><span style=color:#d07711;>'ls'</span><span>, </span><span style=color:#d07711;>'xyz.txt'</span><span>), </span><span style=color:#5597d6;>returncode</span><span style=color:#72ab00;>=</span><span style=color:#b3933a;>2</span><span>, </span><span style=color:#5597d6;>stdout</span><span style=color:#72ab00;>=</span><span style=color:#d07711;>''</span><span>,
+</span><span>         </span><span style=color:#5597d6;>stderr</span><span style=color:#72ab00;>=</span><span style=color:#d07711;>"ls: cannot access 'xyz.txt': No such file or directory</span><span style=color:#aeb52b;>\n</span><span style=color:#d07711;>"</span><span>)
+</span><span>
+</span><span style=color:#72ab00;>>>> </span><span>subprocess.</span><span style=color:#5597d6;>check_output</span><span>(cmd, </span><span style=color:#5597d6;>text</span><span style=color:#72ab00;>=</span><span style=color:#b3933a;>True</span><span>)
+</span><span>ls: cannot access </span><span style=color:#d07711;>'xyz.txt'</span><span>: No such file </span><span style=color:#72ab00;>or </span><span>directory
+</span><span style=color:#5597d6;>Traceback </span><span>(most recent call last):
+</span><span>  File </span><span style=color:#d07711;>"&LTstdin>"</span><span>, line </span><span style=color:#b3933a;>1</span><span>, </span><span style=color:#72ab00;>in <</span><span>module</span><span style=color:#72ab00;>>
+</span><span>  File </span><span style=color:#d07711;>"/usr/lib/python3.8/subprocess.py"</span><span>, line </span><span style=color:#b3933a;>415</span><span>, </span><span style=color:#72ab00;>in </span><span>check_output
+</span><span>    </span><span style=color:#72ab00;>return </span><span style=color:#5597d6;>run</span><span>(</span><span style=color:#72ab00;>*</span><span>popenargs, </span><span style=color:#5597d6;>stdout</span><span style=color:#72ab00;>=</span><span style=color:#5597d6;>PIPE</span><span>, </span><span style=color:#5597d6;>timeout</span><span style=color:#72ab00;>=</span><span>timeout, </span><span style=color:#5597d6;>check</span><span style=color:#72ab00;>=</span><span style=color:#b3933a;>True</span><span>,
+</span><span>  File </span><span style=color:#d07711;>"/usr/lib/python3.8/subprocess.py"</span><span>, line </span><span style=color:#b3933a;>516</span><span>, </span><span style=color:#72ab00;>in </span><span>run
+</span><span>    </span><span style=background-color:#562d56bf;color:#f8f8f8;>raise</span><span> </span><span style=color:#5597d6;>CalledProcessError</span><span>(retcode, process.args,
+</span><span>subprocess.CalledProcessError: Command </span><span style=color:#d07711;>'('</span><span>ls</span><span style=color:#d07711;>', '</span><span>xyz.txt</span><span style=color:#d07711;>')' </span><span>returned
+</span><span>                               non</span><span style=color:#72ab00;>-</span><span>zero exit status </span><span style=color:#b3933a;>2.
+</span></code></pre><p><img alt=info src=/images/info.svg> You can also use legacy methods <code>subprocess.getstatusoutput()</code> and <code>subprocess.getoutput()</code> but they lack in features and do not provide secure options. See <a href=https://docs.python.org/3/library/subprocess.html#legacy-shell-invocation-functions>docs.python: subprocess Legacy Shell Invocation Functions</a> for details.<p><strong>Video demo</strong>:<p align=center><iframe allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" title="YouTube video player" allowfullscreen frameborder=0 height=315 loading=lazy src=https://www.youtube.com/embed/uffQilOq9PA width=560></iframe></p><br><p><img alt=info src=/images/info.svg> See also my <a href=https://github.com/learnbyexample/100_page_python_intro>100 Page Python Intro</a> ebook.</div><div class=post-footer><div class=post-tags><a href=https://learnbyexample.github.io/tags/python/>#python</a><a href=https://learnbyexample.github.io/tags/tip/>#tip</a></div><p>👉 Use <a href=https://learnbyexample.github.io/atom.xml>this link</a> for the Atom feed. <br> 👉 Follow me on <a href=https://twitter.com/learn_byexample>Twitter</a>, <a href=https://github.com/learnbyexample>GitHub</a> and <a href=https://www.youtube.com/channel/UCKdFGbeOUPYM9GocmrIFGcw/playlists>Youtube</a> for interesting tech nuggets.<hr color=#e6e6e6></div></article></div></main></div><script src=https://learnbyexample.github.io/even.js></script>

@@ -1,223 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta http-equiv="content-type" content="text/html; charset=utf-8">
-
-      <!-- Enable responsiveness on mobile devices-->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-
-      <title>CLI tip 3: place backups in another directory with GNU sed</title>
-
-      
-        <link rel="alternate" type="application/atom+xml" title="RSS" href="https://learnbyexample.github.io/atom.xml">
-      
-
-      
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
-          
-      
-
-      
-          <link rel="stylesheet" href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;site.css">
-          
-      
-
-      
-      
-<link rel="icon" href="https://learnbyexample.github.io/favicon.svg">
-<link rel="shortcut icon" href="https://learnbyexample.github.io/favicon.png">
-    </head>
-
-    <body>
-        <div class="container">
-
-            <div id="mobile-navbar" class="mobile-navbar">
-              <div class="mobile-header-logo">
-                <a href="/" class="logo">learnbyexample</a>
-              </div>
-              <div class="mobile-navbar-icon icon-out">
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-            </div>
-
-            <nav id="mobile-menu" class="mobile-menu slideout-menu slideout-menu-left">
-              <ul class="mobile-menu-list">
-                
-                    <li class="mobile-menu-item">
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;books">
-                            Books
-                        </a>
-                    </li>
-                
-                    <li class="mobile-menu-item">
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;mini">
-                            Mini
-                        </a>
-                    </li>
-                
-                    <li class="mobile-menu-item">
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips">
-                            Tips
-                        </a>
-                    </li>
-                
-                    <li class="mobile-menu-item">
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags">
-                            Tags
-                        </a>
-                    </li>
-                
-                    <li class="mobile-menu-item">
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;about">
-                            About
-                        </a>
-                    </li>
-                
-              </ul>
-            </nav>
-
-            <header id="header">
-                <div class="logo"><a href="https:&#x2F;&#x2F;learnbyexample.github.io">learnbyexample</a></div>
-                <nav class="menu">
-                    <ul>
-                        
-                            <li>
-                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;books">
-                                    Books
-                                </a>
-                            </li>
-                        
-                            <li>
-                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;mini">
-                                    Mini
-                                </a>
-                            </li>
-                        
-                            <li>
-                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips">
-                                    Tips
-                                </a>
-                            </li>
-                        
-                            <li>
-                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags">
-                                    Tags
-                                </a>
-                            </li>
-                        
-                            <li>
-                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;about">
-                                    About
-                                </a>
-                            </li>
-                        
-                    </ul>
-                </nav>
-            </header>
-
-            <main>
-                <div class="content" id="mobile-panel">
-                    
-
-
-
-<article class="post">
-    
-    <header class="post__header">
-        <h1 class="post__title">
-            <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips&#x2F;cli-tip-3&#x2F;">CLI tip 3: place backups in another directory with GNU sed</a>
-        </h1>
-        <div class="post__meta">
-            <span class="post__time">2021-12-21</span>
-            
-        </div>
-    </header>
-
-    <div class="post-content">
-      <p>You can use <code>*</code> to place backups of original files in another directory when using the <code>-i</code> option with <code>GNU sed</code>. Consider these two sample input files in the current directory:</p>
-<pre style="background-color:#f5f5f5;">
-<code><span style="color:#1f1f1f;">$ cat f1.txt
-good morning
-that was good, just too good!
-$ cat f2.txt 
-goodie goodbye
-</span></code></pre>
-<p>Create a <code>backups</code> directory and use <code>*</code> under this directory as a placeholder for the filenames passed to the <code>sed</code> command.</p>
-<pre style="background-color:#f5f5f5;">
-<code><span style="color:#1f1f1f;">$ mkdir backups
-$ sed </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">i</span><span style="color:#d07711;">&#39;backups/*&#39; &#39;s/good/nice/&#39;</span><span style="color:#1f1f1f;"> f1.txt f2.txt
-$ ls backups</span><span style="color:#72ab00;">/</span><span style="color:#1f1f1f;">
-f1.txt  f2.txt
-
-</span><span style="color:#7f8989;"># modified content
-</span><span style="color:#1f1f1f;">$ cat f1.txt
-nice morning
-that was nice, just too good!
-$ cat f2.txt
-niceie goodbye
-
-</span><span style="color:#7f8989;"># backed-up original content
-</span><span style="color:#1f1f1f;">$ cat backups</span><span style="color:#72ab00;">/</span><span style="color:#1f1f1f;">f1.txt 
-good morning
-that was good, just too good!
-$ cat backups</span><span style="color:#72ab00;">/</span><span style="color:#1f1f1f;">f2.txt
-goodie goodbye
-</span></code></pre>
-<p>Since <code>*</code> expands to the name of the input files, you can also use this feature when you need to add a prefix for the backups.</p>
-<pre style="background-color:#f5f5f5;">
-<code><span style="color:#1f1f1f;">$ sed </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">i</span><span style="color:#d07711;">&#39;bkp.*&#39; &#39;s/green/yellow/&#39;</span><span style="color:#1f1f1f;"> colors.txt
-
-$ ls </span><span style="color:#72ab00;">*</span><span style="color:#1f1f1f;">colors</span><span style="color:#72ab00;">*</span><span style="color:#1f1f1f;">
-bkp.colors.txt  colors.txt
-</span></code></pre>
-<p><img src="/images/info.svg" alt="info" /> The <code>*</code> trick works with Perl as well, see <a href="https://learnbyexample.github.io/learn_perl_oneliners/in-place-file-editing.html">In-place file editing</a> chapter from my <a href="https://github.com/learnbyexample/learn_perl_oneliners">Perl one-liners</a> ebook for examples.</p>
-<p><strong>Video demo</strong>:</p>
-<p align="center"><iframe width="560" height="315" loading="lazy" src="https://www.youtube.com/embed/ehxtbxR6qA0" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
-<br>
-<p><img src="/images/info.svg" alt="info" /> See my <a href="https://github.com/learnbyexample/learn_gnused">GNU SED</a> ebook if you are interested in learning about the <code>GNU sed</code> command in more detail.</p>
-
-    </div>
-
-    
-    
-
-    <div class="post-footer">
-        
-            
-                <div class="post-tags">
-                    
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;linux&#x2F;">#linux</a>
-                    
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;command-line&#x2F;">#command-line</a>
-                    
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;tip&#x2F;">#tip</a>
-                    
-                </div>
-            
-            
-
-        
-
-    </div>
-
-    
-    
-</article>
-
-
-                </div>
-            </main>
-
-            
-            
-        </div>
-
-      
-          <script type="text/javascript" src="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;even.js" ></script>
-      
-    </body>
-
-</html>
+<!doctype html><html lang=en><head><meta content="IE=edge" http-equiv=X-UA-Compatible><meta content="text/html; charset=utf-8" http-equiv=content-type><meta content="width=device-width,initial-scale=1.0,maximum-scale=1" name=viewport><title>CLI tip 3: place backups in another directory with GNU sed</title><link href=https://learnbyexample.github.io/atom.xml rel=alternate title=RSS type=application/atom+xml><script src=https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js></script><link href=https://learnbyexample.github.io/site.css rel=stylesheet><link href=https://learnbyexample.github.io/favicon.svg rel=icon><link rel="shortcut icon" href=https://learnbyexample.github.io/favicon.png><body><div class=container><div class=mobile-navbar id=mobile-navbar><div class=mobile-header-logo><a class=logo href=/>learnbyexample</a></div><div class="mobile-navbar-icon icon-out"><span></span><span></span><span></span></div></div><nav class="mobile-menu slideout-menu slideout-menu-left" id=mobile-menu><ul class=mobile-menu-list><li class=mobile-menu-item><a href=https://learnbyexample.github.io/books> Books </a><li class=mobile-menu-item><a href=https://learnbyexample.github.io/mini> Mini </a><li class=mobile-menu-item><a href=https://learnbyexample.github.io/tips> Tips </a><li class=mobile-menu-item><a href=https://learnbyexample.github.io/tags> Tags </a><li class=mobile-menu-item><a href=https://learnbyexample.github.io/about> About </a></ul></nav><header id=header><div class=logo><a href=https://learnbyexample.github.io>learnbyexample</a></div><nav class=menu><ul><li><a href=https://learnbyexample.github.io/books> Books </a><li><a href=https://learnbyexample.github.io/mini> Mini </a><li><a href=https://learnbyexample.github.io/tips> Tips </a><li><a href=https://learnbyexample.github.io/tags> Tags </a><li><a href=https://learnbyexample.github.io/about> About </a></ul></nav></header><main><div class=content id=mobile-panel><article class=post><header class=post__header><h1 class=post__title><a href=https://learnbyexample.github.io/tips/cli-tip-3/>CLI tip 3: place backups in another directory with GNU sed</a></h1><div class=post__meta><span class=post__time>2021-12-21</span></div></header><div class=post-content><p>You can use <code>*</code> to place backups of original files in another directory when using the <code>-i</code> option with <code>GNU sed</code>. Consider these two sample input files in the current directory:<pre class=language-ruby data-lang=ruby style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-ruby data-lang=ruby><span>$ cat f1.txt
+</span><span>good morning
+</span><span>that was good, just too good!
+</span><span>$ cat f2.txt 
+</span><span>goodie goodbye
+</span></code></pre><p>Create a <code>backups</code> directory and use <code>*</code> under this directory as a placeholder for the filenames passed to the <code>sed</code> command.<pre class=language-ruby data-lang=ruby style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-ruby data-lang=ruby><span>$ mkdir backups
+</span><span>$ sed </span><span style=color:#72ab00;>-</span><span>i</span><span style=color:#d07711;>'backups/*' 's/good/nice/'</span><span> f1.txt f2.txt
+</span><span>$ ls backups</span><span style=color:#72ab00;>/
+</span><span>f1.txt  f2.txt
+</span><span>
+</span><span style=color:#7f8989;># modified content
+</span><span>$ cat f1.txt
+</span><span>nice morning
+</span><span>that was nice, just too good!
+</span><span>$ cat f2.txt
+</span><span>niceie goodbye
+</span><span>
+</span><span style=color:#7f8989;># backed-up original content
+</span><span>$ cat backups</span><span style=color:#72ab00;>/</span><span>f1.txt 
+</span><span>good morning
+</span><span>that was good, just too good!
+</span><span>$ cat backups</span><span style=color:#72ab00;>/</span><span>f2.txt
+</span><span>goodie goodbye
+</span></code></pre><p>Since <code>*</code> expands to the name of the input files, you can also use this feature when you need to add a prefix for the backups.<pre class=language-ruby data-lang=ruby style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-ruby data-lang=ruby><span>$ sed </span><span style=color:#72ab00;>-</span><span>i</span><span style=color:#d07711;>'bkp.*' 's/green/yellow/'</span><span> colors.txt
+</span><span>
+</span><span>$ ls </span><span style=color:#72ab00;>*</span><span>colors</span><span style=color:#72ab00;>*
+</span><span>bkp.colors.txt  colors.txt
+</span></code></pre><p><img alt=info src=/images/info.svg> The <code>*</code> trick works with Perl as well, see <a href=https://learnbyexample.github.io/learn_perl_oneliners/in-place-file-editing.html>In-place file editing</a> chapter from my <a href=https://github.com/learnbyexample/learn_perl_oneliners>Perl one-liners</a> ebook for examples.<p><strong>Video demo</strong>:<p align=center><iframe allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" title="YouTube video player" allowfullscreen frameborder=0 height=315 loading=lazy src=https://www.youtube.com/embed/ehxtbxR6qA0 width=560></iframe></p><br><p><img alt=info src=/images/info.svg> See my <a href=https://github.com/learnbyexample/learn_gnused>GNU SED</a> ebook if you are interested in learning about the <code>GNU sed</code> command in more detail.</div><div class=post-footer><div class=post-tags><a href=https://learnbyexample.github.io/tags/linux/>#linux</a><a href=https://learnbyexample.github.io/tags/command-line/>#command-line</a><a href=https://learnbyexample.github.io/tags/tip/>#tip</a></div><p>👉 Use <a href=https://learnbyexample.github.io/atom.xml>this link</a> for the Atom feed. <br> 👉 Follow me on <a href=https://twitter.com/learn_byexample>Twitter</a>, <a href=https://github.com/learnbyexample>GitHub</a> and <a href=https://www.youtube.com/channel/UCKdFGbeOUPYM9GocmrIFGcw/playlists>Youtube</a> for interesting tech nuggets.<hr color=#e6e6e6></div></article></div></main></div><script src=https://learnbyexample.github.io/even.js></script>

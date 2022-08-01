@@ -1,296 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta http-equiv="content-type" content="text/html; charset=utf-8">
-
-      <!-- Enable responsiveness on mobile devices-->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-
-      <title>Removing duplicates irrespective of field order</title>
-
-      
-        <link rel="alternate" type="application/atom+xml" title="RSS" href="https://learnbyexample.github.io/atom.xml">
-      
-
-      
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
-          
-      
-
-      
-          <link rel="stylesheet" href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;site.css">
-          
-      
-
-      
-      
-<link rel="icon" href="https://learnbyexample.github.io/favicon.svg">
-<link rel="shortcut icon" href="https://learnbyexample.github.io/favicon.png">
-    </head>
-
-    <body>
-        <div class="container">
-
-            <div id="mobile-navbar" class="mobile-navbar">
-              <div class="mobile-header-logo">
-                <a href="/" class="logo">learnbyexample</a>
-              </div>
-              <div class="mobile-navbar-icon icon-out">
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-            </div>
-
-            <nav id="mobile-menu" class="mobile-menu slideout-menu slideout-menu-left">
-              <ul class="mobile-menu-list">
-                
-                    <li class="mobile-menu-item">
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;books">
-                            Books
-                        </a>
-                    </li>
-                
-                    <li class="mobile-menu-item">
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;mini">
-                            Mini
-                        </a>
-                    </li>
-                
-                    <li class="mobile-menu-item">
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips">
-                            Tips
-                        </a>
-                    </li>
-                
-                    <li class="mobile-menu-item">
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags">
-                            Tags
-                        </a>
-                    </li>
-                
-                    <li class="mobile-menu-item">
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;about">
-                            About
-                        </a>
-                    </li>
-                
-              </ul>
-            </nav>
-
-            <header id="header">
-                <div class="logo"><a href="https:&#x2F;&#x2F;learnbyexample.github.io">learnbyexample</a></div>
-                <nav class="menu">
-                    <ul>
-                        
-                            <li>
-                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;books">
-                                    Books
-                                </a>
-                            </li>
-                        
-                            <li>
-                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;mini">
-                                    Mini
-                                </a>
-                            </li>
-                        
-                            <li>
-                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips">
-                                    Tips
-                                </a>
-                            </li>
-                        
-                            <li>
-                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags">
-                                    Tags
-                                </a>
-                            </li>
-                        
-                            <li>
-                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;about">
-                                    About
-                                </a>
-                            </li>
-                        
-                    </ul>
-                </nav>
-            </header>
-
-            <main>
-                <div class="content" id="mobile-panel">
-                    
-
-
-<div class="post-toc" id="post-toc">
-    <h2 class="post-toc-title">Contents</h2>
-    <div class="post-toc-content always-active">
-        <nav id="TableOfContents">
-            <ul>
-                
-                <li>
-                    <a href="https://learnbyexample.github.io/duplicates-irrespective-field-order/#problem-statement" class="toc-link">Problem statement</a>
-                    
-                </li>
-                
-                <li>
-                    <a href="https://learnbyexample.github.io/duplicates-irrespective-field-order/#python-solution" class="toc-link">Python solution</a>
-                    
-                </li>
-                
-                <li>
-                    <a href="https://learnbyexample.github.io/duplicates-irrespective-field-order/#gnu-awk-one-liner" class="toc-link">GNU awk one-liner</a>
-                    
-                </li>
-                
-            </ul>
-        </nav>
-    </div>
-</div>
-
-
-<article class="post">
-    
-    <header class="post__header">
-        <h1 class="post__title">
-            <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;duplicates-irrespective-field-order&#x2F;">Removing duplicates irrespective of field order</a>
-        </h1>
-        <div class="post__meta">
-            <span class="post__time">2022-01-19</span>
-            
-        </div>
-    </header>
-
-    <div class="post-content">
-      <p>I posted a coding challenge in the tenth issue of <a href="https://learnbyexample.gumroad.com/l/learnbyexample-weekly">learnbyexample weekly</a>. I discuss the problem and various solutions in this blog post.</p>
-<span id="continue-reading"></span><br>
-<h2 id="problem-statement">Problem statement<a class="zola-anchor" href="#problem-statement" aria-label="Anchor link for: problem-statement">🔗</a></h2>
-<p>Retain only the first copy of duplicate lines irrespective of the order of the fields. Input order should be maintained. Assume space as the field separator with exactly two fields on each line. For example, <code>hehe haha</code> and <code>haha hehe</code> will be considered as duplicates.</p>
-<pre style="background-color:#f5f5f5;">
-<code><span style="color:#1f1f1f;">$ cat twos.txt
-hehe haha
-door floor
-haha hehe
-6;8 3-4
-true blue
-hehe bebe
-floor door
-3-4 6;8
-tru eblue
-haha hehe
-</span></code></pre>
-<p><strong>Expected output for the above sample:</strong></p>
-<pre style="background-color:#f5f5f5;">
-<code><span style="color:#1f1f1f;">hehe haha
-door floor
-6;8 3-4
-true blue
-hehe bebe
-tru eblue
-</span></code></pre><br>
-<h2 id="python-solution">Python solution<a class="zola-anchor" href="#python-solution" aria-label="Anchor link for: python-solution">🔗</a></h2>
-<p>Here's one possible solution for this problem:</p>
-<pre style="background-color:#f5f5f5;">
-<code><span style="color:#1f1f1f;">filename </span><span style="color:#72ab00;">= </span><span style="color:#d07711;">&#39;twos.txt&#39;
-</span><span style="color:#1f1f1f;">keys </span><span style="color:#72ab00;">= </span><span style="color:#a2a001;">set</span><span style="color:#1f1f1f;">()
-
-</span><span style="color:#72ab00;">with </span><span style="color:#b39f04;">open</span><span style="color:#1f1f1f;">(filename) </span><span style="color:#72ab00;">as </span><span style="color:#1f1f1f;">f:
-    </span><span style="color:#72ab00;">for </span><span style="color:#1f1f1f;">line </span><span style="color:#72ab00;">in </span><span style="color:#1f1f1f;">f:
-        fields </span><span style="color:#72ab00;">= </span><span style="color:#1f1f1f;">line.</span><span style="color:#5597d6;">split</span><span style="color:#1f1f1f;">()
-        key1 </span><span style="color:#72ab00;">= </span><span style="color:#668f14;">f</span><span style="color:#d07711;">&#39;</span><span style="color:#1f1f1f;">{fields[</span><span style="color:#b3933a;">0</span><span style="color:#1f1f1f;">]} {fields[</span><span style="color:#b3933a;">1</span><span style="color:#1f1f1f;">]}</span><span style="color:#d07711;">&#39;
-        </span><span style="color:#1f1f1f;">key2 </span><span style="color:#72ab00;">= </span><span style="color:#668f14;">f</span><span style="color:#d07711;">&#39;</span><span style="color:#1f1f1f;">{fields[</span><span style="color:#b3933a;">1</span><span style="color:#1f1f1f;">]} {fields[</span><span style="color:#b3933a;">0</span><span style="color:#1f1f1f;">]}</span><span style="color:#d07711;">&#39;
-        </span><span style="color:#72ab00;">if not </span><span style="color:#1f1f1f;">(key1 </span><span style="color:#72ab00;">in </span><span style="color:#1f1f1f;">keys </span><span style="color:#72ab00;">or </span><span style="color:#1f1f1f;">key2 </span><span style="color:#72ab00;">in </span><span style="color:#1f1f1f;">keys):
-            </span><span style="color:#b39f04;">print</span><span style="color:#1f1f1f;">(line, </span><span style="color:#5597d6;">end</span><span style="color:#72ab00;">=</span><span style="color:#d07711;">&#39;&#39;</span><span style="color:#1f1f1f;">)
-            keys.</span><span style="color:#5597d6;">add</span><span style="color:#1f1f1f;">(key1)
-</span></code></pre>
-<p>The main trick in the above solution is to check the input field order as well as the reversed order against elements in a set. A subtle point to note is that the <code>split()</code> string method also removes whitespaces from the start and end of the input line. If you had to use another field delimiter (for example, comma) you'll have to remove the line ending before splitting the input.</p>
-<p>And here's a generic solution for any number of fields, which also makes the solution look simpler:</p>
-<pre style="background-color:#f5f5f5;">
-<code><span style="color:#1f1f1f;">filename </span><span style="color:#72ab00;">= </span><span style="color:#d07711;">&#39;twos.txt&#39;
-</span><span style="color:#1f1f1f;">keys </span><span style="color:#72ab00;">= </span><span style="color:#a2a001;">set</span><span style="color:#1f1f1f;">()
-
-</span><span style="color:#72ab00;">with </span><span style="color:#b39f04;">open</span><span style="color:#1f1f1f;">(filename) </span><span style="color:#72ab00;">as </span><span style="color:#1f1f1f;">f:
-    </span><span style="color:#72ab00;">for </span><span style="color:#1f1f1f;">line </span><span style="color:#72ab00;">in </span><span style="color:#1f1f1f;">f:
-        fields </span><span style="color:#72ab00;">= </span><span style="color:#1f1f1f;">line.</span><span style="color:#5597d6;">split</span><span style="color:#1f1f1f;">()
-        sorted_key </span><span style="color:#72ab00;">= </span><span style="color:#d07711;">&#39; &#39;</span><span style="color:#1f1f1f;">.</span><span style="color:#5597d6;">join</span><span style="color:#1f1f1f;">(</span><span style="color:#b39f04;">sorted</span><span style="color:#1f1f1f;">(fields))
-        </span><span style="color:#72ab00;">if </span><span style="color:#1f1f1f;">sorted_key </span><span style="color:#72ab00;">not in </span><span style="color:#1f1f1f;">keys:
-            </span><span style="color:#b39f04;">print</span><span style="color:#1f1f1f;">(line, </span><span style="color:#5597d6;">end</span><span style="color:#72ab00;">=</span><span style="color:#d07711;">&#39;&#39;</span><span style="color:#1f1f1f;">)
-            keys.</span><span style="color:#5597d6;">add</span><span style="color:#1f1f1f;">(sorted_key)
-</span></code></pre>
-<p>In case you are wondering why space is used to join the field contents, it is necessary to avoid false matches. <code>tru eblue</code> shouldn't be considered as a duplicate of <code>true blue</code> or <code>blue true</code>. Space is a safe character to use since it is the field separator.</p>
-<p><img src="/images/info.svg" alt="info" /> See my <a href="https://github.com/learnbyexample/100_page_python_intro">100 Page Python Intro</a> ebook if you already know programming basics but new to Python.</p>
-<br>
-<h2 id="gnu-awk-one-liner">GNU awk one-liner<a class="zola-anchor" href="#gnu-awk-one-liner" aria-label="Anchor link for: gnu-awk-one-liner">🔗</a></h2>
-<p>Here's a solution for CLI enthusiasts:</p>
-<pre style="background-color:#f5f5f5;">
-<code><span style="color:#1f1f1f;">$ awk </span><span style="color:#d07711;">&#39;!(($1,$2) in seen || ($2,$1) in seen); {seen[$1,$2]}&#39; </span><span style="color:#1f1f1f;">twos.txt
-hehe haha
-door floor
-</span><span style="color:#b3933a;">6</span><span style="color:#1f1f1f;">;</span><span style="color:#b3933a;">8 3</span><span style="color:#72ab00;">-</span><span style="color:#b3933a;">4
-</span><span style="color:#1f1f1f;">true blue
-hehe bebe
-tru eblue
-</span></code></pre>
-<p>The above solution is similar to the first Python solution with a notable difference. The fields are joined using <code>\034</code> (a non-printing character), which is usually not present in text files.</p>
-<p>A solution using the field separator instead of <code>\034</code> would look like:</p>
-<pre style="background-color:#f5f5f5;">
-<code><span style="color:#1f1f1f;">awk </span><span style="color:#d07711;">&#39;!(($1 FS $2) in seen || ($2 FS $1) in seen); {seen[$1 FS $2]}&#39;
-</span></code></pre><br>
-<p><img src="/images/info.svg" alt="info" /> See my <a href="https://github.com/learnbyexample/learn_gnuawk">GNU awk</a> ebook if you are interested in such one-liners.</p>
-
-    </div>
-
-    
-    
-
-    <div class="post-footer">
-        
-            
-                <div class="post-tags">
-                    
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;python&#x2F;">#python</a>
-                    
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;gnu-awk&#x2F;">#gnu-awk</a>
-                    
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;command-line&#x2F;">#command-line</a>
-                    
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;coding-challenge&#x2F;">#coding-challenge</a>
-                    
-                </div>
-            
-            
-                <div class="post-nav">
-                    
-                        <a class="previous" href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;automating-excel-with-python-review&#x2F;">‹ Automating Excel with Python - book review</a>
-                    
-                    
-                        <a class="next" href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;vim-reference-guide-announcement&#x2F;">Vim Reference Guide book announcement ›</a>
-                    
-                    
-                    
-                </div>
-            
-
-        
-
-    </div>
-
-    
-    
-</article>
-
-
-                </div>
-            </main>
-
-            
-            
-        </div>
-
-      
-          <script type="text/javascript" src="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;even.js" ></script>
-      
-    </body>
-
-</html>
+<!doctype html><html lang=en><head><meta content="IE=edge" http-equiv=X-UA-Compatible><meta content="text/html; charset=utf-8" http-equiv=content-type><meta content="width=device-width,initial-scale=1.0,maximum-scale=1" name=viewport><title>Removing duplicates irrespective of field order</title><link href=https://learnbyexample.github.io/atom.xml rel=alternate title=RSS type=application/atom+xml><script src=https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js></script><link href=https://learnbyexample.github.io/site.css rel=stylesheet><link href=https://learnbyexample.github.io/favicon.svg rel=icon><link rel="shortcut icon" href=https://learnbyexample.github.io/favicon.png><body><div class=container><div class=mobile-navbar id=mobile-navbar><div class=mobile-header-logo><a class=logo href=/>learnbyexample</a></div><div class="mobile-navbar-icon icon-out"><span></span><span></span><span></span></div></div><nav class="mobile-menu slideout-menu slideout-menu-left" id=mobile-menu><ul class=mobile-menu-list><li class=mobile-menu-item><a href=https://learnbyexample.github.io/books> Books </a><li class=mobile-menu-item><a href=https://learnbyexample.github.io/mini> Mini </a><li class=mobile-menu-item><a href=https://learnbyexample.github.io/tips> Tips </a><li class=mobile-menu-item><a href=https://learnbyexample.github.io/tags> Tags </a><li class=mobile-menu-item><a href=https://learnbyexample.github.io/about> About </a></ul></nav><header id=header><div class=logo><a href=https://learnbyexample.github.io>learnbyexample</a></div><nav class=menu><ul><li><a href=https://learnbyexample.github.io/books> Books </a><li><a href=https://learnbyexample.github.io/mini> Mini </a><li><a href=https://learnbyexample.github.io/tips> Tips </a><li><a href=https://learnbyexample.github.io/tags> Tags </a><li><a href=https://learnbyexample.github.io/about> About </a></ul></nav></header><main><div class=content id=mobile-panel><div class=post-toc id=post-toc><h2 class=post-toc-title>Contents</h2><div class="post-toc-content always-active"><nav id=TableOfContents><ul><li><a class=toc-link href=https://learnbyexample.github.io/duplicates-irrespective-field-order/#problem-statement>Problem statement</a><li><a class=toc-link href=https://learnbyexample.github.io/duplicates-irrespective-field-order/#python-solution>Python solution</a><li><a class=toc-link href=https://learnbyexample.github.io/duplicates-irrespective-field-order/#gnu-awk-one-liner>GNU awk one-liner</a></ul></nav></div></div><article class=post><header class=post__header><h1 class=post__title><a href=https://learnbyexample.github.io/duplicates-irrespective-field-order/>Removing duplicates irrespective of field order</a></h1><div class=post__meta><span class=post__time>2022-01-19</span></div></header><div class=post-content><p>I posted a coding challenge in the tenth issue of <a href=https://learnbyexample.gumroad.com/l/learnbyexample-weekly>learnbyexample weekly</a>. I discuss the problem and various solutions in this blog post.</p><span id=continue-reading></span><br><h2 id=problem-statement>Problem statement<a aria-label="Anchor link for: problem-statement" class=zola-anchor href=#problem-statement>🔗</a></h2><p>Retain only the first copy of duplicate lines irrespective of the order of the fields. Input order should be maintained. Assume space as the field separator with exactly two fields on each line. For example, <code>hehe haha</code> and <code>haha hehe</code> will be considered as duplicates.<pre style=background-color:#f5f5f5;color:#1f1f1f;><code><span>$ cat twos.txt
+</span><span>hehe haha
+</span><span>door floor
+</span><span>haha hehe
+</span><span>6;8 3-4
+</span><span>true blue
+</span><span>hehe bebe
+</span><span>floor door
+</span><span>3-4 6;8
+</span><span>tru eblue
+</span><span>haha hehe
+</span></code></pre><p><strong>Expected output for the above sample:</strong><pre style=background-color:#f5f5f5;color:#1f1f1f;><code><span>hehe haha
+</span><span>door floor
+</span><span>6;8 3-4
+</span><span>true blue
+</span><span>hehe bebe
+</span><span>tru eblue
+</span></code></pre><br><h2 id=python-solution>Python solution<a aria-label="Anchor link for: python-solution" class=zola-anchor href=#python-solution>🔗</a></h2><p>Here's one possible solution for this problem:<pre class=language-python data-lang=python style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-python data-lang=python><span>filename </span><span style=color:#72ab00;>= </span><span style=color:#d07711;>'twos.txt'
+</span><span>keys </span><span style=color:#72ab00;>= </span><span style=color:#a2a001;>set</span><span>()
+</span><span>
+</span><span style=color:#72ab00;>with </span><span style=color:#b39f04;>open</span><span>(filename) </span><span style=color:#72ab00;>as </span><span>f:
+</span><span>    </span><span style=color:#72ab00;>for </span><span>line </span><span style=color:#72ab00;>in </span><span>f:
+</span><span>        fields </span><span style=color:#72ab00;>= </span><span>line.</span><span style=color:#5597d6;>split</span><span>()
+</span><span>        key1 </span><span style=color:#72ab00;>= </span><span style=color:#668f14;>f</span><span style=color:#d07711;>'</span><span>{fields[</span><span style=color:#b3933a;>0</span><span>]} {fields[</span><span style=color:#b3933a;>1</span><span>]}</span><span style=color:#d07711;>'
+</span><span>        key2 </span><span style=color:#72ab00;>= </span><span style=color:#668f14;>f</span><span style=color:#d07711;>'</span><span>{fields[</span><span style=color:#b3933a;>1</span><span>]} {fields[</span><span style=color:#b3933a;>0</span><span>]}</span><span style=color:#d07711;>'
+</span><span>        </span><span style=color:#72ab00;>if not </span><span>(key1 </span><span style=color:#72ab00;>in </span><span>keys </span><span style=color:#72ab00;>or </span><span>key2 </span><span style=color:#72ab00;>in </span><span>keys):
+</span><span>            </span><span style=color:#b39f04;>print</span><span>(line, </span><span style=color:#5597d6;>end</span><span style=color:#72ab00;>=</span><span style=color:#d07711;>''</span><span>)
+</span><span>            keys.</span><span style=color:#5597d6;>add</span><span>(key1)
+</span></code></pre><p>The main trick in the above solution is to check the input field order as well as the reversed order against elements in a set. A subtle point to note is that the <code>split()</code> string method also removes whitespaces from the start and end of the input line. If you had to use another field delimiter (for example, comma) you'll have to remove the line ending before splitting the input.<p>And here's a generic solution for any number of fields, which also makes the solution look simpler:<pre class=language-python data-lang=python style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-python data-lang=python><span>filename </span><span style=color:#72ab00;>= </span><span style=color:#d07711;>'twos.txt'
+</span><span>keys </span><span style=color:#72ab00;>= </span><span style=color:#a2a001;>set</span><span>()
+</span><span>
+</span><span style=color:#72ab00;>with </span><span style=color:#b39f04;>open</span><span>(filename) </span><span style=color:#72ab00;>as </span><span>f:
+</span><span>    </span><span style=color:#72ab00;>for </span><span>line </span><span style=color:#72ab00;>in </span><span>f:
+</span><span>        fields </span><span style=color:#72ab00;>= </span><span>line.</span><span style=color:#5597d6;>split</span><span>()
+</span><span>        sorted_key </span><span style=color:#72ab00;>= </span><span style=color:#d07711;>' '</span><span>.</span><span style=color:#5597d6;>join</span><span>(</span><span style=color:#b39f04;>sorted</span><span>(fields))
+</span><span>        </span><span style=color:#72ab00;>if </span><span>sorted_key </span><span style=color:#72ab00;>not in </span><span>keys:
+</span><span>            </span><span style=color:#b39f04;>print</span><span>(line, </span><span style=color:#5597d6;>end</span><span style=color:#72ab00;>=</span><span style=color:#d07711;>''</span><span>)
+</span><span>            keys.</span><span style=color:#5597d6;>add</span><span>(sorted_key)
+</span></code></pre><p>In case you are wondering why space is used to join the field contents, it is necessary to avoid false matches. <code>tru eblue</code> shouldn't be considered as a duplicate of <code>true blue</code> or <code>blue true</code>. Space is a safe character to use since it is the field separator.<p><img alt=info src=/images/info.svg> See my <a href=https://github.com/learnbyexample/100_page_python_intro>100 Page Python Intro</a> ebook if you already know programming basics but new to Python.</p><br><h2 id=gnu-awk-one-liner>GNU awk one-liner<a aria-label="Anchor link for: gnu-awk-one-liner" class=zola-anchor href=#gnu-awk-one-liner>🔗</a></h2><p>Here's a solution for CLI enthusiasts:<pre class=language-python data-lang=python style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-python data-lang=python><span>$ awk </span><span style=color:#d07711;>'!(($1,$2) in seen || ($2,$1) in seen); {seen[$1,$2]}' </span><span>twos.txt
+</span><span>hehe haha
+</span><span>door floor
+</span><span style=color:#b3933a;>6</span><span>;</span><span style=color:#b3933a;>8 3</span><span style=color:#72ab00;>-</span><span style=color:#b3933a;>4
+</span><span>true blue
+</span><span>hehe bebe
+</span><span>tru eblue
+</span></code></pre><p>The above solution is similar to the first Python solution with a notable difference. The fields are joined using <code>\034</code> (a non-printing character), which is usually not present in text files.<p>A solution using the field separator instead of <code>\034</code> would look like:<pre class=language-ruby data-lang=ruby style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-ruby data-lang=ruby><span>awk </span><span style=color:#d07711;>'!(($1 FS $2) in seen || ($2 FS $1) in seen); {seen[$1 FS $2]}'
+</span></code></pre><br><p><img alt=info src=/images/info.svg> See my <a href=https://github.com/learnbyexample/learn_gnuawk>GNU awk</a> ebook if you are interested in such one-liners.</div><div class=post-footer><div class=post-tags><a href=https://learnbyexample.github.io/tags/python/>#python</a><a href=https://learnbyexample.github.io/tags/gnu-awk/>#gnu-awk</a><a href=https://learnbyexample.github.io/tags/command-line/>#command-line</a><a href=https://learnbyexample.github.io/tags/coding-challenge/>#coding-challenge</a></div><p>👉 Use <a href=https://learnbyexample.github.io/atom.xml>this link</a> for the Atom feed. <br> 👉 Follow me on <a href=https://twitter.com/learn_byexample>Twitter</a>, <a href=https://github.com/learnbyexample>GitHub</a> and <a href=https://www.youtube.com/channel/UCKdFGbeOUPYM9GocmrIFGcw/playlists>Youtube</a> for interesting tech nuggets.<hr color=#e6e6e6></div></article></div></main></div><script src=https://learnbyexample.github.io/even.js></script>

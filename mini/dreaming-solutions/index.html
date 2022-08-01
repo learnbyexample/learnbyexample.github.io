@@ -1,223 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta http-equiv="content-type" content="text/html; charset=utf-8">
-
-      <!-- Enable responsiveness on mobile devices-->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-
-      <title>Dreaming solutions</title>
-
-      
-        <link rel="alternate" type="application/atom+xml" title="RSS" href="https://learnbyexample.github.io/atom.xml">
-      
-
-      
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
-          
-      
-
-      
-          <link rel="stylesheet" href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;site.css">
-          
-      
-
-      
-      
-<link rel="icon" href="https://learnbyexample.github.io/favicon.svg">
-<link rel="shortcut icon" href="https://learnbyexample.github.io/favicon.png">
-    </head>
-
-    <body>
-        <div class="container">
-
-            <div id="mobile-navbar" class="mobile-navbar">
-              <div class="mobile-header-logo">
-                <a href="/" class="logo">learnbyexample</a>
-              </div>
-              <div class="mobile-navbar-icon icon-out">
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-            </div>
-
-            <nav id="mobile-menu" class="mobile-menu slideout-menu slideout-menu-left">
-              <ul class="mobile-menu-list">
-                
-                    <li class="mobile-menu-item">
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;books">
-                            Books
-                        </a>
-                    </li>
-                
-                    <li class="mobile-menu-item">
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;mini">
-                            Mini
-                        </a>
-                    </li>
-                
-                    <li class="mobile-menu-item">
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips">
-                            Tips
-                        </a>
-                    </li>
-                
-                    <li class="mobile-menu-item">
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags">
-                            Tags
-                        </a>
-                    </li>
-                
-                    <li class="mobile-menu-item">
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;about">
-                            About
-                        </a>
-                    </li>
-                
-              </ul>
-            </nav>
-
-            <header id="header">
-                <div class="logo"><a href="https:&#x2F;&#x2F;learnbyexample.github.io">learnbyexample</a></div>
-                <nav class="menu">
-                    <ul>
-                        
-                            <li>
-                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;books">
-                                    Books
-                                </a>
-                            </li>
-                        
-                            <li>
-                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;mini">
-                                    Mini
-                                </a>
-                            </li>
-                        
-                            <li>
-                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips">
-                                    Tips
-                                </a>
-                            </li>
-                        
-                            <li>
-                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags">
-                                    Tags
-                                </a>
-                            </li>
-                        
-                            <li>
-                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;about">
-                                    About
-                                </a>
-                            </li>
-                        
-                    </ul>
-                </nav>
-            </header>
-
-            <main>
-                <div class="content" id="mobile-panel">
-                    
-
-
-
-<article class="post">
-    
-    <header class="post__header">
-        <h1 class="post__title">
-            <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;mini&#x2F;dreaming-solutions&#x2F;">Dreaming solutions</a>
-        </h1>
-        <div class="post__meta">
-            <span class="post__time">2021-06-10</span>
-            
-        </div>
-    </header>
-
-    <div class="post-content">
-      <p><a href="https://stackoverflow.com/q/67886163/4082052">This SO question</a> was interesting and had various approaches to solve it. Here's a sample example to explain the problem to be solved:</p>
-<pre style="background-color:#f5f5f5;">
-<code><span style="color:#1f1f1f;">$ cat ip.txt
-caller_number=</span><span style="color:#b3933a;">034082394234324</span><span style="color:#1f1f1f;">, clear_number=</span><span style="color:#b3933a;">33335345435</span><span style="color:#1f1f1f;">,  direction=</span><span style="color:#b3933a;">1</span><span style="color:#1f1f1f;">,
-caller_number=</span><span style="color:#b3933a;">83479234234</span><span style="color:#1f1f1f;">,     clear_number=</span><span style="color:#b3933a;">34836424733</span><span style="color:#1f1f1f;">, direction=</span><span style="color:#b3933a;">2</span><span style="color:#1f1f1f;">,
-caller_number=</span><span style="color:#b3933a;">83479234234</span><span style="color:#1f1f1f;">,     clear_number=</span><span style="color:#b3933a;">64237384533</span><span style="color:#1f1f1f;">, direction=</span><span style="color:#b3933a;">2</span><span style="color:#1f1f1f;">,
-
-$ cat list.txt
-</span><span style="color:#b3933a;">642
-3333
-534234235</span><span style="color:#1f1f1f;">
-
-$ cat op.txt
-caller_number=</span><span style="color:#b3933a;">83479234234</span><span style="color:#1f1f1f;">,     clear_number=</span><span style="color:#b3933a;">64237384533</span><span style="color:#1f1f1f;">, direction=</span><span style="color:#b3933a;">2</span><span style="color:#1f1f1f;">,
-</span></code></pre>
-<p>Any data present in <code>list.txt</code> has to be matched immediately after <code>clear_number=</code> and the input line should also have <code>direction=2,</code>. In the sample above, first line matches <code>3333</code> but not the second criteria. The second line fails even though it has <code>642</code> since it is not immediately after <code>clear_number=</code>. The <code>list.txt</code> file can have 10K-50K lines and <code>ip.txt</code> is around 10GB.</p>
-<p>Here's a slightly modified answer based on existing solutions on that thread. Since the data present in <code>list.txt</code> has to be partially matched after <code>clear_number=</code>, a <em>single</em> direct comparison with the keys saved in <code>arr</code> is not possible. This solution loops over all the keys for every input line that matches the <code>direction=2,</code> criteria (breaks the loop if a match is found early).</p>
-<pre style="background-color:#f5f5f5;">
-<code><span style="color:#5597d6;">FNR</span><span style="color:#72ab00;">==</span><span style="color:#5597d6;">NR</span><span style="color:#1f1f1f;">{ </span><span style="color:#5597d6;">arr</span><span style="color:#72ab00;">[</span><span style="color:#d07711;">&quot;=&quot; </span><span style="color:#5597d6;">$0</span><span style="color:#72ab00;">]</span><span style="color:#1f1f1f;">; </span><span style="color:#72ab00;">next</span><span style="color:#1f1f1f;"> }
-
-</span><span style="color:#5597d6;">$3</span><span style="color:#72ab00;">==</span><span style="color:#d07711;">&quot;direction=2,&quot;</span><span style="color:#1f1f1f;">{
-    </span><span style="color:#72ab00;">for</span><span style="color:#1f1f1f;">(</span><span style="color:#5597d6;">i </span><span style="color:#72ab00;">in </span><span style="color:#5597d6;">arr</span><span style="color:#1f1f1f;">)
-        </span><span style="color:#c23f31;">if</span><span style="color:#1f1f1f;">(</span><span style="color:#b39f04;">index</span><span style="color:#1f1f1f;">(</span><span style="color:#5597d6;">$2</span><span style="color:#1f1f1f;">,</span><span style="color:#5597d6;">i</span><span style="color:#1f1f1f;">)){
-            </span><span style="color:#72ab00;">print
-            next
-        </span><span style="color:#1f1f1f;">}
-}
-</span></code></pre>
-<p><img src="/images/info.svg" alt="info" /> <em>To run the solutions, use <code>mawk -f script.awk list.txt ip.txt</code></em></p>
-<p><strong>In my dreams that night</strong>, I realized that the solution can be improved drastically by looping over the digits after <code>clear_number=</code> instead of looping over keys saved in <code>arr</code>. Matching a key is <code>O(1)</code>, so the time saving is huge since the inner loop is now a maximum of 12 (length of digits after <code>clear_number=</code>) instead of looping a maximum of 10K-50K times! With a 35M sample input file and 12K keys that I created for testing, I found this solution to be about <strong>200</strong> times faster.</p>
-<pre style="background-color:#f5f5f5;">
-<code><span style="color:#5597d6;">FNR</span><span style="color:#72ab00;">==</span><span style="color:#5597d6;">NR</span><span style="color:#1f1f1f;">{ </span><span style="color:#5597d6;">arr</span><span style="color:#72ab00;">[</span><span style="color:#5597d6;">$0</span><span style="color:#72ab00;">]</span><span style="color:#1f1f1f;">; </span><span style="color:#72ab00;">next</span><span style="color:#1f1f1f;"> }
-
-</span><span style="color:#5597d6;">$3</span><span style="color:#72ab00;">==</span><span style="color:#d07711;">&quot;direction=2,&quot;</span><span style="color:#1f1f1f;">{
-    </span><span style="color:#5597d6;">val</span><span style="color:#72ab00;">=</span><span style="color:#b39f04;">substr</span><span style="color:#1f1f1f;">(</span><span style="color:#5597d6;">$2</span><span style="color:#1f1f1f;">,</span><span style="color:#b3933a;">14</span><span style="color:#1f1f1f;">)
-    </span><span style="color:#c23f31;">for</span><span style="color:#1f1f1f;">(</span><span style="color:#5597d6;">i</span><span style="color:#72ab00;">=</span><span style="color:#b3933a;">1</span><span style="color:#1f1f1f;">; </span><span style="color:#5597d6;">i</span><span style="color:#72ab00;">&lt;</span><span style="color:#b39f04;">length</span><span style="color:#1f1f1f;">(</span><span style="color:#5597d6;">val</span><span style="color:#1f1f1f;">); </span><span style="color:#5597d6;">i</span><span style="color:#72ab00;">++</span><span style="color:#1f1f1f;">)
-        </span><span style="color:#c23f31;">if</span><span style="color:#1f1f1f;">(</span><span style="color:#b39f04;">substr</span><span style="color:#1f1f1f;">(</span><span style="color:#5597d6;">val</span><span style="color:#1f1f1f;">,</span><span style="color:#b3933a;">1</span><span style="color:#1f1f1f;">,</span><span style="color:#5597d6;">i</span><span style="color:#1f1f1f;">) </span><span style="color:#72ab00;">in </span><span style="color:#5597d6;">arr</span><span style="color:#1f1f1f;">){
-            </span><span style="color:#72ab00;">print
-            next
-        </span><span style="color:#1f1f1f;">}
-}
-</span></code></pre>
-    </div>
-
-    
-    
-
-    <div class="post-footer">
-        
-            
-                <div class="post-tags">
-                    
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;algorithm&#x2F;">#algorithm</a>
-                    
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;command-line&#x2F;">#command-line</a>
-                    
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;mawk&#x2F;">#mawk</a>
-                    
-                </div>
-            
-            
-
-        
-
-    </div>
-
-    
-    
-</article>
-
-
-                </div>
-            </main>
-
-            
-            
-        </div>
-
-      
-          <script type="text/javascript" src="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;even.js" ></script>
-      
-    </body>
-
-</html>
+<!doctype html><html lang=en><head><meta content="IE=edge" http-equiv=X-UA-Compatible><meta content="text/html; charset=utf-8" http-equiv=content-type><meta content="width=device-width,initial-scale=1.0,maximum-scale=1" name=viewport><title>Dreaming solutions</title><link href=https://learnbyexample.github.io/atom.xml rel=alternate title=RSS type=application/atom+xml><script src=https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js></script><link href=https://learnbyexample.github.io/site.css rel=stylesheet><link href=https://learnbyexample.github.io/favicon.svg rel=icon><link rel="shortcut icon" href=https://learnbyexample.github.io/favicon.png><body><div class=container><div class=mobile-navbar id=mobile-navbar><div class=mobile-header-logo><a class=logo href=/>learnbyexample</a></div><div class="mobile-navbar-icon icon-out"><span></span><span></span><span></span></div></div><nav class="mobile-menu slideout-menu slideout-menu-left" id=mobile-menu><ul class=mobile-menu-list><li class=mobile-menu-item><a href=https://learnbyexample.github.io/books> Books </a><li class=mobile-menu-item><a href=https://learnbyexample.github.io/mini> Mini </a><li class=mobile-menu-item><a href=https://learnbyexample.github.io/tips> Tips </a><li class=mobile-menu-item><a href=https://learnbyexample.github.io/tags> Tags </a><li class=mobile-menu-item><a href=https://learnbyexample.github.io/about> About </a></ul></nav><header id=header><div class=logo><a href=https://learnbyexample.github.io>learnbyexample</a></div><nav class=menu><ul><li><a href=https://learnbyexample.github.io/books> Books </a><li><a href=https://learnbyexample.github.io/mini> Mini </a><li><a href=https://learnbyexample.github.io/tips> Tips </a><li><a href=https://learnbyexample.github.io/tags> Tags </a><li><a href=https://learnbyexample.github.io/about> About </a></ul></nav></header><main><div class=content id=mobile-panel><article class=post><header class=post__header><h1 class=post__title><a href=https://learnbyexample.github.io/mini/dreaming-solutions/>Dreaming solutions</a></h1><div class=post__meta><span class=post__time>2021-06-10</span></div></header><div class=post-content><p><a href=https://stackoverflow.com/q/67886163/4082052>This SO question</a> was interesting and had various approaches to solve it. Here's a sample example to explain the problem to be solved:<pre class=language-ruby data-lang=ruby style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-ruby data-lang=ruby><span>$ cat ip.txt
+</span><span>caller_number=</span><span style=color:#b3933a;>034082394234324</span><span>, clear_number=</span><span style=color:#b3933a;>33335345435</span><span>,  direction=</span><span style=color:#b3933a;>1</span><span>,
+</span><span>caller_number=</span><span style=color:#b3933a;>83479234234</span><span>,     clear_number=</span><span style=color:#b3933a;>34836424733</span><span>, direction=</span><span style=color:#b3933a;>2</span><span>,
+</span><span>caller_number=</span><span style=color:#b3933a;>83479234234</span><span>,     clear_number=</span><span style=color:#b3933a;>64237384533</span><span>, direction=</span><span style=color:#b3933a;>2</span><span>,
+</span><span>
+</span><span>$ cat list.txt
+</span><span style=color:#b3933a;>642
+</span><span style=color:#b3933a;>3333
+</span><span style=color:#b3933a;>534234235
+</span><span>
+</span><span>$ cat op.txt
+</span><span>caller_number=</span><span style=color:#b3933a;>83479234234</span><span>,     clear_number=</span><span style=color:#b3933a;>64237384533</span><span>, direction=</span><span style=color:#b3933a;>2</span><span>,
+</span></code></pre><p>Any data present in <code>list.txt</code> has to be matched immediately after <code>clear_number=</code> and the input line should also have <code>direction=2,</code>. In the sample above, first line matches <code>3333</code> but not the second criteria. The second line fails even though it has <code>642</code> since it is not immediately after <code>clear_number=</code>. The <code>list.txt</code> file can have 10K-50K lines and <code>ip.txt</code> is around 10GB.<p>Here's a slightly modified answer based on existing solutions on that thread. Since the data present in <code>list.txt</code> has to be partially matched after <code>clear_number=</code>, a <em>single</em> direct comparison with the keys saved in <code>arr</code> is not possible. This solution loops over all the keys for every input line that matches the <code>direction=2,</code> criteria (breaks the loop if a match is found early).<pre class=language-awk data-lang=awk style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-awk data-lang=awk><span style=color:#5597d6;>FNR</span><span style=color:#72ab00;>==</span><span style=color:#5597d6;>NR</span><span>{ </span><span style=color:#5597d6;>arr</span><span style=color:#72ab00;>[</span><span style=color:#d07711;>"=" </span><span style=color:#5597d6;>$0</span><span style=color:#72ab00;>]</span><span>; </span><span style=color:#72ab00;>next</span><span> }
+</span><span>
+</span><span style=color:#5597d6;>$3</span><span style=color:#72ab00;>==</span><span style=color:#d07711;>"direction=2,"</span><span>{
+</span><span>    </span><span style=color:#72ab00;>for</span><span>(</span><span style=color:#5597d6;>i </span><span style=color:#72ab00;>in </span><span style=color:#5597d6;>arr</span><span>)
+</span><span>        </span><span style=color:#c23f31;>if</span><span>(</span><span style=color:#b39f04;>index</span><span>(</span><span style=color:#5597d6;>$2</span><span>,</span><span style=color:#5597d6;>i</span><span>)){
+</span><span>            </span><span style=color:#72ab00;>print
+</span><span>            </span><span style=color:#72ab00;>next
+</span><span>        }
+</span><span>}
+</span></code></pre><p><img alt=info src=/images/info.svg> <em>To run the solutions, use <code>mawk -f script.awk list.txt ip.txt</code></em><p><strong>In my dreams that night</strong>, I realized that the solution can be improved drastically by looping over the digits after <code>clear_number=</code> instead of looping over keys saved in <code>arr</code>. Matching a key is <code>O(1)</code>, so the time saving is huge since the inner loop is now a maximum of 12 (length of digits after <code>clear_number=</code>) instead of looping a maximum of 10K-50K times! With a 35M sample input file and 12K keys that I created for testing, I found this solution to be about <strong>200</strong> times faster.<pre class=language-awk data-lang=awk style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-awk data-lang=awk><span style=color:#5597d6;>FNR</span><span style=color:#72ab00;>==</span><span style=color:#5597d6;>NR</span><span>{ </span><span style=color:#5597d6;>arr</span><span style=color:#72ab00;>[</span><span style=color:#5597d6;>$0</span><span style=color:#72ab00;>]</span><span>; </span><span style=color:#72ab00;>next</span><span> }
+</span><span>
+</span><span style=color:#5597d6;>$3</span><span style=color:#72ab00;>==</span><span style=color:#d07711;>"direction=2,"</span><span>{
+</span><span>    </span><span style=color:#5597d6;>val</span><span style=color:#72ab00;>=</span><span style=color:#b39f04;>substr</span><span>(</span><span style=color:#5597d6;>$2</span><span>,</span><span style=color:#b3933a;>14</span><span>)
+</span><span>    </span><span style=color:#c23f31;>for</span><span>(</span><span style=color:#5597d6;>i</span><span style=color:#72ab00;>=</span><span style=color:#b3933a;>1</span><span>; </span><span style=color:#5597d6;>i</span><span style=color:#72ab00;><</span><span style=color:#b39f04;>length</span><span>(</span><span style=color:#5597d6;>val</span><span>); </span><span style=color:#5597d6;>i</span><span style=color:#72ab00;>++</span><span>)
+</span><span>        </span><span style=color:#c23f31;>if</span><span>(</span><span style=color:#b39f04;>substr</span><span>(</span><span style=color:#5597d6;>val</span><span>,</span><span style=color:#b3933a;>1</span><span>,</span><span style=color:#5597d6;>i</span><span>) </span><span style=color:#72ab00;>in </span><span style=color:#5597d6;>arr</span><span>){
+</span><span>            </span><span style=color:#72ab00;>print
+</span><span>            </span><span style=color:#72ab00;>next
+</span><span>        }
+</span><span>}
+</span></code></pre></div><div class=post-footer><div class=post-tags><a href=https://learnbyexample.github.io/tags/algorithm/>#algorithm</a><a href=https://learnbyexample.github.io/tags/command-line/>#command-line</a><a href=https://learnbyexample.github.io/tags/mawk/>#mawk</a></div><p>👉 Use <a href=https://learnbyexample.github.io/atom.xml>this link</a> for the Atom feed. <br> 👉 Follow me on <a href=https://twitter.com/learn_byexample>Twitter</a>, <a href=https://github.com/learnbyexample>GitHub</a> and <a href=https://www.youtube.com/channel/UCKdFGbeOUPYM9GocmrIFGcw/playlists>Youtube</a> for interesting tech nuggets.<hr color=#e6e6e6></div></article></div></main></div><script src=https://learnbyexample.github.io/even.js></script>

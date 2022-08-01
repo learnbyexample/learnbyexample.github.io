@@ -1,229 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta http-equiv="content-type" content="text/html; charset=utf-8">
-
-      <!-- Enable responsiveness on mobile devices-->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-
-      <title>CLI tip 10: version sort</title>
-
-      
-        <link rel="alternate" type="application/atom+xml" title="RSS" href="https://learnbyexample.github.io/atom.xml">
-      
-
-      
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
-          
-      
-
-      
-          <link rel="stylesheet" href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;site.css">
-          
-      
-
-      
-      
-<link rel="icon" href="https://learnbyexample.github.io/favicon.svg">
-<link rel="shortcut icon" href="https://learnbyexample.github.io/favicon.png">
-    </head>
-
-    <body>
-        <div class="container">
-
-            <div id="mobile-navbar" class="mobile-navbar">
-              <div class="mobile-header-logo">
-                <a href="/" class="logo">learnbyexample</a>
-              </div>
-              <div class="mobile-navbar-icon icon-out">
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-            </div>
-
-            <nav id="mobile-menu" class="mobile-menu slideout-menu slideout-menu-left">
-              <ul class="mobile-menu-list">
-                
-                    <li class="mobile-menu-item">
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;books">
-                            Books
-                        </a>
-                    </li>
-                
-                    <li class="mobile-menu-item">
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;mini">
-                            Mini
-                        </a>
-                    </li>
-                
-                    <li class="mobile-menu-item">
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips">
-                            Tips
-                        </a>
-                    </li>
-                
-                    <li class="mobile-menu-item">
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags">
-                            Tags
-                        </a>
-                    </li>
-                
-                    <li class="mobile-menu-item">
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;about">
-                            About
-                        </a>
-                    </li>
-                
-              </ul>
-            </nav>
-
-            <header id="header">
-                <div class="logo"><a href="https:&#x2F;&#x2F;learnbyexample.github.io">learnbyexample</a></div>
-                <nav class="menu">
-                    <ul>
-                        
-                            <li>
-                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;books">
-                                    Books
-                                </a>
-                            </li>
-                        
-                            <li>
-                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;mini">
-                                    Mini
-                                </a>
-                            </li>
-                        
-                            <li>
-                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips">
-                                    Tips
-                                </a>
-                            </li>
-                        
-                            <li>
-                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags">
-                                    Tags
-                                </a>
-                            </li>
-                        
-                            <li>
-                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;about">
-                                    About
-                                </a>
-                            </li>
-                        
-                    </ul>
-                </nav>
-            </header>
-
-            <main>
-                <div class="content" id="mobile-panel">
-                    
-
-
-
-<article class="post">
-    
-    <header class="post__header">
-        <h1 class="post__title">
-            <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips&#x2F;cli-tip-10&#x2F;">CLI tip 10: version sort</a>
-        </h1>
-        <div class="post__meta">
-            <span class="post__time">2022-05-13</span>
-            
-        </div>
-    </header>
-
-    <div class="post-content">
-      <p>You can use <code>sort -V</code> for sorting numerical input that is mixed with other characters. It also helps when you want to treat digits after a decimal point as whole numbers, for example if <code>1.10</code> should be greater than <code>1.2</code>.</p>
-<pre style="background-color:#f5f5f5;">
-<code><span style="color:#1f1f1f;">$ </span><span style="color:#b39f04;">printf </span><span style="color:#d07711;">&#39;1.5\n1.10\n1.2&#39; </span><span style="color:#72ab00;">|</span><span style="color:#1f1f1f;"> sort </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">n
-</span><span style="color:#b3933a;">1.10
-1.2
-1.5</span><span style="color:#1f1f1f;">
-$ </span><span style="color:#b39f04;">printf </span><span style="color:#d07711;">&#39;1.5\n1.10\n1.2&#39; </span><span style="color:#72ab00;">|</span><span style="color:#1f1f1f;"> sort </span><span style="color:#72ab00;">-</span><span style="color:#5597d6;">V
-</span><span style="color:#b3933a;">1.2
-1.5
-1.10</span><span style="color:#1f1f1f;">
-
-$ cat versions.txt
-file2
-cmd5.</span><span style="color:#b3933a;">2</span><span style="color:#1f1f1f;">
-file10
-cmd1.</span><span style="color:#b3933a;">6</span><span style="color:#1f1f1f;">
-file5
-cmd5.</span><span style="color:#b3933a;">10</span><span style="color:#1f1f1f;">
-$ sort </span><span style="color:#72ab00;">-</span><span style="color:#5597d6;">V</span><span style="color:#1f1f1f;"> versions.txt
-cmd1.</span><span style="color:#b3933a;">6</span><span style="color:#1f1f1f;">
-cmd5.</span><span style="color:#b3933a;">2</span><span style="color:#1f1f1f;">
-cmd5.</span><span style="color:#b3933a;">10</span><span style="color:#1f1f1f;">
-file2
-file5
-file10
-</span></code></pre>
-<p>Here's an example of dealing with numbers reported by the <code>time</code> command (assuming all the entries have the same format).</p>
-<pre style="background-color:#f5f5f5;">
-<code><span style="color:#1f1f1f;">$ cat timings.txt
-5m35.363s
-3m20.058s
-4m11.130s
-3m42.833s
-4m3.083s
-
-$ sort </span><span style="color:#72ab00;">-</span><span style="color:#5597d6;">V</span><span style="color:#1f1f1f;"> timings.txt
-3m20.058s
-3m42.833s
-4m3.083s
-4m11.130s
-5m35.363s
-</span></code></pre>
-<p><img src="/images/info.svg" alt="info" /> See <a href="https://www.gnu.org/software/coreutils/manual/html_node/Version-sort-overview.html">GNU coreutils manual: Version sort ordering</a> for more details. Also, note that the <code>ls</code> command uses lowercase <code>-v</code> for this task.</p>
-<p><strong>Video demo</strong>:</p>
-<p align="center"><iframe width="560" height="315" loading="lazy" src="https://www.youtube.com/embed/QKZbdZ-XmCQ" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
-<br>
-<p><img src="/images/info.svg" alt="info" /> See <a href="https://learnbyexample.github.io/cli_text_processing_coreutils/sort.html">sort command</a> chapter from my <a href="https://github.com/learnbyexample/cli_text_processing_coreutils">Command line text processing with GNU Coreutils</a> ebook for more details.</p>
-
-    </div>
-
-    
-    
-
-    <div class="post-footer">
-        
-            
-                <div class="post-tags">
-                    
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;linux&#x2F;">#linux</a>
-                    
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;command-line&#x2F;">#command-line</a>
-                    
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;tip&#x2F;">#tip</a>
-                    
-                </div>
-            
-            
-
-        
-
-    </div>
-
-    
-    
-</article>
-
-
-                </div>
-            </main>
-
-            
-            
-        </div>
-
-      
-          <script type="text/javascript" src="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;even.js" ></script>
-      
-    </body>
-
-</html>
+<!doctype html><html lang=en><head><meta content="IE=edge" http-equiv=X-UA-Compatible><meta content="text/html; charset=utf-8" http-equiv=content-type><meta content="width=device-width,initial-scale=1.0,maximum-scale=1" name=viewport><title>CLI tip 10: version sort</title><link href=https://learnbyexample.github.io/atom.xml rel=alternate title=RSS type=application/atom+xml><script src=https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js></script><link href=https://learnbyexample.github.io/site.css rel=stylesheet><link href=https://learnbyexample.github.io/favicon.svg rel=icon><link rel="shortcut icon" href=https://learnbyexample.github.io/favicon.png><body><div class=container><div class=mobile-navbar id=mobile-navbar><div class=mobile-header-logo><a class=logo href=/>learnbyexample</a></div><div class="mobile-navbar-icon icon-out"><span></span><span></span><span></span></div></div><nav class="mobile-menu slideout-menu slideout-menu-left" id=mobile-menu><ul class=mobile-menu-list><li class=mobile-menu-item><a href=https://learnbyexample.github.io/books> Books </a><li class=mobile-menu-item><a href=https://learnbyexample.github.io/mini> Mini </a><li class=mobile-menu-item><a href=https://learnbyexample.github.io/tips> Tips </a><li class=mobile-menu-item><a href=https://learnbyexample.github.io/tags> Tags </a><li class=mobile-menu-item><a href=https://learnbyexample.github.io/about> About </a></ul></nav><header id=header><div class=logo><a href=https://learnbyexample.github.io>learnbyexample</a></div><nav class=menu><ul><li><a href=https://learnbyexample.github.io/books> Books </a><li><a href=https://learnbyexample.github.io/mini> Mini </a><li><a href=https://learnbyexample.github.io/tips> Tips </a><li><a href=https://learnbyexample.github.io/tags> Tags </a><li><a href=https://learnbyexample.github.io/about> About </a></ul></nav></header><main><div class=content id=mobile-panel><article class=post><header class=post__header><h1 class=post__title><a href=https://learnbyexample.github.io/tips/cli-tip-10/>CLI tip 10: version sort</a></h1><div class=post__meta><span class=post__time>2022-05-13</span></div></header><div class=post-content><p>You can use <code>sort -V</code> for sorting numerical input that is mixed with other characters. It also helps when you want to treat digits after a decimal point as whole numbers, for example if <code>1.10</code> should be greater than <code>1.2</code>.<pre class=language-ruby data-lang=ruby style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-ruby data-lang=ruby><span>$ </span><span style=color:#b39f04;>printf </span><span style=color:#d07711;>'1.5\n1.10\n1.2' </span><span style=color:#72ab00;>|</span><span> sort </span><span style=color:#72ab00;>-</span><span>n
+</span><span style=color:#b3933a;>1.10
+</span><span style=color:#b3933a;>1.2
+</span><span style=color:#b3933a;>1.5
+</span><span>$ </span><span style=color:#b39f04;>printf </span><span style=color:#d07711;>'1.5\n1.10\n1.2' </span><span style=color:#72ab00;>|</span><span> sort </span><span style=color:#72ab00;>-</span><span style=color:#5597d6;>V
+</span><span style=color:#b3933a;>1.2
+</span><span style=color:#b3933a;>1.5
+</span><span style=color:#b3933a;>1.10
+</span><span>
+</span><span>$ cat versions.txt
+</span><span>file2
+</span><span>cmd5.</span><span style=color:#b3933a;>2
+</span><span>file10
+</span><span>cmd1.</span><span style=color:#b3933a;>6
+</span><span>file5
+</span><span>cmd5.</span><span style=color:#b3933a;>10
+</span><span>$ sort </span><span style=color:#72ab00;>-</span><span style=color:#5597d6;>V</span><span> versions.txt
+</span><span>cmd1.</span><span style=color:#b3933a;>6
+</span><span>cmd5.</span><span style=color:#b3933a;>2
+</span><span>cmd5.</span><span style=color:#b3933a;>10
+</span><span>file2
+</span><span>file5
+</span><span>file10
+</span></code></pre><p>Here's an example of dealing with numbers reported by the <code>time</code> command (assuming all the entries have the same format).<pre class=language-ruby data-lang=ruby style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-ruby data-lang=ruby><span>$ cat timings.txt
+</span><span>5m35.363s
+</span><span>3m20.058s
+</span><span>4m11.130s
+</span><span>3m42.833s
+</span><span>4m3.083s
+</span><span>
+</span><span>$ sort </span><span style=color:#72ab00;>-</span><span style=color:#5597d6;>V</span><span> timings.txt
+</span><span>3m20.058s
+</span><span>3m42.833s
+</span><span>4m3.083s
+</span><span>4m11.130s
+</span><span>5m35.363s
+</span></code></pre><p><img alt=info src=/images/info.svg> See <a href=https://www.gnu.org/software/coreutils/manual/html_node/Version-sort-overview.html>GNU coreutils manual: Version sort ordering</a> for more details. Also, note that the <code>ls</code> command uses lowercase <code>-v</code> for this task.<p><strong>Video demo</strong>:<p align=center><iframe allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" title="YouTube video player" allowfullscreen frameborder=0 height=315 loading=lazy src=https://www.youtube.com/embed/QKZbdZ-XmCQ width=560></iframe></p><br><p><img alt=info src=/images/info.svg> See <a href=https://learnbyexample.github.io/cli_text_processing_coreutils/sort.html>sort command</a> chapter from my <a href=https://github.com/learnbyexample/cli_text_processing_coreutils>Command line text processing with GNU Coreutils</a> ebook for more details.</div><div class=post-footer><div class=post-tags><a href=https://learnbyexample.github.io/tags/linux/>#linux</a><a href=https://learnbyexample.github.io/tags/command-line/>#command-line</a><a href=https://learnbyexample.github.io/tags/tip/>#tip</a></div><p>👉 Use <a href=https://learnbyexample.github.io/atom.xml>this link</a> for the Atom feed. <br> 👉 Follow me on <a href=https://twitter.com/learn_byexample>Twitter</a>, <a href=https://github.com/learnbyexample>GitHub</a> and <a href=https://www.youtube.com/channel/UCKdFGbeOUPYM9GocmrIFGcw/playlists>Youtube</a> for interesting tech nuggets.<hr color=#e6e6e6></div></article></div></main></div><script src=https://learnbyexample.github.io/even.js></script>

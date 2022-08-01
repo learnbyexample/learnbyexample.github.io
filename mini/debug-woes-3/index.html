@@ -1,225 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta http-equiv="content-type" content="text/html; charset=utf-8">
-
-      <!-- Enable responsiveness on mobile devices-->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-
-      <title>Debug woes 3: matching uppercase letters</title>
-
-      
-        <link rel="alternate" type="application/atom+xml" title="RSS" href="https://learnbyexample.github.io/atom.xml">
-      
-
-      
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
-          
-      
-
-      
-          <link rel="stylesheet" href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;site.css">
-          
-      
-
-      
-      
-<link rel="icon" href="https://learnbyexample.github.io/favicon.svg">
-<link rel="shortcut icon" href="https://learnbyexample.github.io/favicon.png">
-    </head>
-
-    <body>
-        <div class="container">
-
-            <div id="mobile-navbar" class="mobile-navbar">
-              <div class="mobile-header-logo">
-                <a href="/" class="logo">learnbyexample</a>
-              </div>
-              <div class="mobile-navbar-icon icon-out">
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-            </div>
-
-            <nav id="mobile-menu" class="mobile-menu slideout-menu slideout-menu-left">
-              <ul class="mobile-menu-list">
-                
-                    <li class="mobile-menu-item">
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;books">
-                            Books
-                        </a>
-                    </li>
-                
-                    <li class="mobile-menu-item">
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;mini">
-                            Mini
-                        </a>
-                    </li>
-                
-                    <li class="mobile-menu-item">
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips">
-                            Tips
-                        </a>
-                    </li>
-                
-                    <li class="mobile-menu-item">
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags">
-                            Tags
-                        </a>
-                    </li>
-                
-                    <li class="mobile-menu-item">
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;about">
-                            About
-                        </a>
-                    </li>
-                
-              </ul>
-            </nav>
-
-            <header id="header">
-                <div class="logo"><a href="https:&#x2F;&#x2F;learnbyexample.github.io">learnbyexample</a></div>
-                <nav class="menu">
-                    <ul>
-                        
-                            <li>
-                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;books">
-                                    Books
-                                </a>
-                            </li>
-                        
-                            <li>
-                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;mini">
-                                    Mini
-                                </a>
-                            </li>
-                        
-                            <li>
-                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips">
-                                    Tips
-                                </a>
-                            </li>
-                        
-                            <li>
-                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags">
-                                    Tags
-                                </a>
-                            </li>
-                        
-                            <li>
-                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;about">
-                                    About
-                                </a>
-                            </li>
-                        
-                    </ul>
-                </nav>
-            </header>
-
-            <main>
-                <div class="content" id="mobile-panel">
-                    
-
-
-
-<article class="post">
-    
-    <header class="post__header">
-        <h1 class="post__title">
-            <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;mini&#x2F;debug-woes-3&#x2F;">Debug woes 3: matching uppercase letters</a>
-        </h1>
-        <div class="post__meta">
-            <span class="post__time">2022-05-13</span>
-            
-        </div>
-    </header>
-
-    <div class="post-content">
-      <p>So, I was going through <a href="https://www.gnu.org/software/bash/manual/bash.html#Shell-Parameter-Expansion">GNU bash manual: Shell Parameter Expansion</a> and trying out examples to check if I was understanding the features well.</p>
-<p>When it came to case conversion, it was a bit confusing to know that you can only use a single character length glob. Here are the examples for lowercase to uppercase conversion that I used:</p>
-<pre style="background-color:#f5f5f5;">
-<code><span style="color:#1f1f1f;">$ fruit=</span><span style="color:#d07711;">&#39;apple&#39;
-
-</span><span style="color:#7f8989;"># all characters to uppercase
-</span><span style="color:#1f1f1f;">$ echo </span><span style="color:#d07711;">&quot;${fruit^^}&quot;
-</span><span style="color:#5597d6;">APPLE
-
-</span><span style="color:#7f8989;"># convert any character that matches [g-z] to uppercase
-</span><span style="color:#1f1f1f;">$ echo </span><span style="color:#d07711;">&quot;${fruit^^[g-z]}&quot;</span><span style="color:#1f1f1f;">
-aPPLe
-
-</span><span style="color:#7f8989;"># this won&#39;t work since &#39;sky-&#39; is not a single character
-</span><span style="color:#1f1f1f;">$ c=</span><span style="color:#d07711;">&#39;sky-rose&#39;</span><span style="color:#1f1f1f;">
-$ echo </span><span style="color:#d07711;">&quot;${c^^*-}&quot;</span><span style="color:#1f1f1f;">
-sky</span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">rose
-</span></code></pre>
-<p>To convert uppercase to lowercase, you just need to use <code>,</code> instead of <code>^</code>. Sounds simple right? It really is. But, I got stuck while trying to modify the above examples:</p>
-<pre style="background-color:#f5f5f5;">
-<code><span style="color:#1f1f1f;">$ fruit=</span><span style="color:#d07711;">&#39;APPLE&#39;
-
-</span><span style="color:#7f8989;"># worked as expected
-</span><span style="color:#1f1f1f;">$ echo </span><span style="color:#d07711;">&quot;${fruit,,}&quot;</span><span style="color:#1f1f1f;">
-apple
-
-</span><span style="color:#7f8989;"># expected &#39;ApplE&#39; but got &#39;APPLE&#39;
-# can you spot the mistake?
-</span><span style="color:#1f1f1f;">$ echo </span><span style="color:#d07711;">&quot;${fruit,,[g-z]}&quot;
-</span><span style="color:#5597d6;">APPLE
-</span></code></pre>
-<p>I usually go through documentation and stackexchange sites when I'm stuck. After going through some threads, I came across <a href="https://unix.stackexchange.com/q/500274/109046">this unix.stackexchange</a> example:</p>
-<pre style="background-color:#f5f5f5;">
-<code><span style="color:#1f1f1f;">$ str=</span><span style="color:#d07711;">&quot;HELLO&quot;</span><span style="color:#1f1f1f;">
-$ </span><span style="color:#b39f04;">printf </span><span style="color:#d07711;">&#39;</span><span style="color:#aeb52b;">%s</span><span style="color:#d07711;">\n&#39; &quot;${str,,[HEO]}&quot;</span><span style="color:#1f1f1f;">
-heLLo
-</span></code></pre>
-<p>Okay, I thought, this seems similar to what I wanted. Need to check out if this works on my machine. Before I even finished typing the example, my brain's light bulb turned on. I should have used <code>G-Z</code> instead of lowercase range.</p>
-<pre style="background-color:#f5f5f5;">
-<code><span style="color:#1f1f1f;">$ echo </span><span style="color:#d07711;">&quot;${fruit,,[G-Z]}&quot;
-</span><span style="color:#5597d6;">ApplE
-</span></code></pre>
-    </div>
-
-    
-    
-
-    <div class="post-footer">
-        
-            
-                <div class="post-tags">
-                    
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;bash&#x2F;">#bash</a>
-                    
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;parameter-expansion&#x2F;">#parameter-expansion</a>
-                    
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;debugging&#x2F;">#debugging</a>
-                    
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;command-line&#x2F;">#command-line</a>
-                    
-                </div>
-            
-            
-
-        
-
-    </div>
-
-    
-    
-</article>
-
-
-                </div>
-            </main>
-
-            
-            
-        </div>
-
-      
-          <script type="text/javascript" src="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;even.js" ></script>
-      
-    </body>
-
-</html>
+<!doctype html><html lang=en><head><meta content="IE=edge" http-equiv=X-UA-Compatible><meta content="text/html; charset=utf-8" http-equiv=content-type><meta content="width=device-width,initial-scale=1.0,maximum-scale=1" name=viewport><title>Debug woes 3: matching uppercase letters</title><link href=https://learnbyexample.github.io/atom.xml rel=alternate title=RSS type=application/atom+xml><script src=https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js></script><link href=https://learnbyexample.github.io/site.css rel=stylesheet><link href=https://learnbyexample.github.io/favicon.svg rel=icon><link rel="shortcut icon" href=https://learnbyexample.github.io/favicon.png><body><div class=container><div class=mobile-navbar id=mobile-navbar><div class=mobile-header-logo><a class=logo href=/>learnbyexample</a></div><div class="mobile-navbar-icon icon-out"><span></span><span></span><span></span></div></div><nav class="mobile-menu slideout-menu slideout-menu-left" id=mobile-menu><ul class=mobile-menu-list><li class=mobile-menu-item><a href=https://learnbyexample.github.io/books> Books </a><li class=mobile-menu-item><a href=https://learnbyexample.github.io/mini> Mini </a><li class=mobile-menu-item><a href=https://learnbyexample.github.io/tips> Tips </a><li class=mobile-menu-item><a href=https://learnbyexample.github.io/tags> Tags </a><li class=mobile-menu-item><a href=https://learnbyexample.github.io/about> About </a></ul></nav><header id=header><div class=logo><a href=https://learnbyexample.github.io>learnbyexample</a></div><nav class=menu><ul><li><a href=https://learnbyexample.github.io/books> Books </a><li><a href=https://learnbyexample.github.io/mini> Mini </a><li><a href=https://learnbyexample.github.io/tips> Tips </a><li><a href=https://learnbyexample.github.io/tags> Tags </a><li><a href=https://learnbyexample.github.io/about> About </a></ul></nav></header><main><div class=content id=mobile-panel><article class=post><header class=post__header><h1 class=post__title><a href=https://learnbyexample.github.io/mini/debug-woes-3/>Debug woes 3: matching uppercase letters</a></h1><div class=post__meta><span class=post__time>2022-05-13</span></div></header><div class=post-content><p>So, I was going through <a href=https://www.gnu.org/software/bash/manual/bash.html#Shell-Parameter-Expansion>GNU bash manual: Shell Parameter Expansion</a> and trying out examples to check if I was understanding the features well.<p>When it came to case conversion, it was a bit confusing to know that you can only use a single character length glob. Here are the examples for lowercase to uppercase conversion that I used:<pre class=language-ruby data-lang=ruby style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-ruby data-lang=ruby><span>$ fruit=</span><span style=color:#d07711;>'apple'
+</span><span>
+</span><span style=color:#7f8989;># all characters to uppercase
+</span><span>$ echo </span><span style=color:#d07711;>"${fruit^^}"
+</span><span style=color:#5597d6;>APPLE
+</span><span>
+</span><span style=color:#7f8989;># convert any character that matches [g-z] to uppercase
+</span><span>$ echo </span><span style=color:#d07711;>"${fruit^^[g-z]}"
+</span><span>aPPLe
+</span><span>
+</span><span style=color:#7f8989;># this won't work since 'sky-' is not a single character
+</span><span>$ c=</span><span style=color:#d07711;>'sky-rose'
+</span><span>$ echo </span><span style=color:#d07711;>"${c^^*-}"
+</span><span>sky</span><span style=color:#72ab00;>-</span><span>rose
+</span></code></pre><p>To convert uppercase to lowercase, you just need to use <code>,</code> instead of <code>^</code>. Sounds simple right? It really is. But, I got stuck while trying to modify the above examples:<pre class=language-ruby data-lang=ruby style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-ruby data-lang=ruby><span>$ fruit=</span><span style=color:#d07711;>'APPLE'
+</span><span>
+</span><span style=color:#7f8989;># worked as expected
+</span><span>$ echo </span><span style=color:#d07711;>"${fruit,,}"
+</span><span>apple
+</span><span>
+</span><span style=color:#7f8989;># expected 'ApplE' but got 'APPLE'
+</span><span style=color:#7f8989;># can you spot the mistake?
+</span><span>$ echo </span><span style=color:#d07711;>"${fruit,,[g-z]}"
+</span><span style=color:#5597d6;>APPLE
+</span></code></pre><p>I usually go through documentation and stackexchange sites when I'm stuck. After going through some threads, I came across <a href=https://unix.stackexchange.com/q/500274/109046>this unix.stackexchange</a> example:<pre class=language-ruby data-lang=ruby style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-ruby data-lang=ruby><span>$ str=</span><span style=color:#d07711;>"HELLO"
+</span><span>$ </span><span style=color:#b39f04;>printf </span><span style=color:#d07711;>'</span><span style=color:#aeb52b;>%s</span><span style=color:#d07711;>\n' "${str,,[HEO]}"
+</span><span>heLLo
+</span></code></pre><p>Okay, I thought, this seems similar to what I wanted. Need to check out if this works on my machine. Before I even finished typing the example, my brain's light bulb turned on. I should have used <code>G-Z</code> instead of lowercase range.<pre class=language-ruby data-lang=ruby style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-ruby data-lang=ruby><span>$ echo </span><span style=color:#d07711;>"${fruit,,[G-Z]}"
+</span><span style=color:#5597d6;>ApplE
+</span></code></pre></div><div class=post-footer><div class=post-tags><a href=https://learnbyexample.github.io/tags/bash/>#bash</a><a href=https://learnbyexample.github.io/tags/parameter-expansion/>#parameter-expansion</a><a href=https://learnbyexample.github.io/tags/debugging/>#debugging</a><a href=https://learnbyexample.github.io/tags/command-line/>#command-line</a></div><p>👉 Use <a href=https://learnbyexample.github.io/atom.xml>this link</a> for the Atom feed. <br> 👉 Follow me on <a href=https://twitter.com/learn_byexample>Twitter</a>, <a href=https://github.com/learnbyexample>GitHub</a> and <a href=https://www.youtube.com/channel/UCKdFGbeOUPYM9GocmrIFGcw/playlists>Youtube</a> for interesting tech nuggets.<hr color=#e6e6e6></div></article></div></main></div><script src=https://learnbyexample.github.io/even.js></script>

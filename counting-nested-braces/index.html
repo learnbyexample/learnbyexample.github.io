@@ -1,306 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta http-equiv="content-type" content="text/html; charset=utf-8">
-
-      <!-- Enable responsiveness on mobile devices-->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-
-      <title>Counting nested braces</title>
-
-      
-        <link rel="alternate" type="application/atom+xml" title="RSS" href="https://learnbyexample.github.io/atom.xml">
-      
-
-      
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
-          
-      
-
-      
-          <link rel="stylesheet" href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;site.css">
-          
-      
-
-      
-      
-<link rel="icon" href="https://learnbyexample.github.io/favicon.svg">
-<link rel="shortcut icon" href="https://learnbyexample.github.io/favicon.png">
-    </head>
-
-    <body>
-        <div class="container">
-
-            <div id="mobile-navbar" class="mobile-navbar">
-              <div class="mobile-header-logo">
-                <a href="/" class="logo">learnbyexample</a>
-              </div>
-              <div class="mobile-navbar-icon icon-out">
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-            </div>
-
-            <nav id="mobile-menu" class="mobile-menu slideout-menu slideout-menu-left">
-              <ul class="mobile-menu-list">
-                
-                    <li class="mobile-menu-item">
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;books">
-                            Books
-                        </a>
-                    </li>
-                
-                    <li class="mobile-menu-item">
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;mini">
-                            Mini
-                        </a>
-                    </li>
-                
-                    <li class="mobile-menu-item">
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips">
-                            Tips
-                        </a>
-                    </li>
-                
-                    <li class="mobile-menu-item">
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags">
-                            Tags
-                        </a>
-                    </li>
-                
-                    <li class="mobile-menu-item">
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;about">
-                            About
-                        </a>
-                    </li>
-                
-              </ul>
-            </nav>
-
-            <header id="header">
-                <div class="logo"><a href="https:&#x2F;&#x2F;learnbyexample.github.io">learnbyexample</a></div>
-                <nav class="menu">
-                    <ul>
-                        
-                            <li>
-                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;books">
-                                    Books
-                                </a>
-                            </li>
-                        
-                            <li>
-                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;mini">
-                                    Mini
-                                </a>
-                            </li>
-                        
-                            <li>
-                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips">
-                                    Tips
-                                </a>
-                            </li>
-                        
-                            <li>
-                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags">
-                                    Tags
-                                </a>
-                            </li>
-                        
-                            <li>
-                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;about">
-                                    About
-                                </a>
-                            </li>
-                        
-                    </ul>
-                </nav>
-            </header>
-
-            <main>
-                <div class="content" id="mobile-panel">
-                    
-
-
-<div class="post-toc" id="post-toc">
-    <h2 class="post-toc-title">Contents</h2>
-    <div class="post-toc-content always-active">
-        <nav id="TableOfContents">
-            <ul>
-                
-                <li>
-                    <a href="https://learnbyexample.github.io/counting-nested-braces/#problem-statement" class="toc-link">Problem statement</a>
-                    
-                </li>
-                
-                <li>
-                    <a href="https://learnbyexample.github.io/counting-nested-braces/#python-solution" class="toc-link">Python solution</a>
-                    
-                </li>
-                
-                <li>
-                    <a href="https://learnbyexample.github.io/counting-nested-braces/#perl-one-liner" class="toc-link">Perl one-liner</a>
-                    
-                </li>
-                
-            </ul>
-        </nav>
-    </div>
-</div>
-
-
-<article class="post">
-    
-    <header class="post__header">
-        <h1 class="post__title">
-            <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;counting-nested-braces&#x2F;">Counting nested braces</a>
-        </h1>
-        <div class="post__meta">
-            <span class="post__time">2021-12-15</span>
-            
-        </div>
-    </header>
-
-    <div class="post-content">
-      <p>I posted a coding challenge in the fifth issue of <a href="https://learnbyexample.gumroad.com/l/learnbyexample-weekly">learnbyexample weekly</a>. I discuss the problem and Python/Perl solutions in this blog post.</p>
-<span id="continue-reading"></span><br>
-<h2 id="problem-statement">Problem statement<a class="zola-anchor" href="#problem-statement" aria-label="Anchor link for: problem-statement">🔗</a></h2>
-<p>Write a function that returns the maximum nested depth of curly braces for a given string input. For example:</p>
-<ul>
-<li><code>'a*{b+c}'</code> should return <code>1</code></li>
-<li><code>'{{a+2}*{{b+{c*d}}+e*d}}'</code> should return <code>4</code></li>
-<li>unbalanced or wrongly ordered braces like <code>'{{a}*b'</code> and <code>'}a+b{'</code> should return <code>-1</code></li>
-</ul>
-<br>
-<h2 id="python-solution">Python solution<a class="zola-anchor" href="#python-solution" aria-label="Anchor link for: python-solution">🔗</a></h2>
-<p>Here's one possible solution for this problem:</p>
-<pre style="background-color:#f5f5f5;">
-<code><span style="color:#72ab00;">def </span><span style="color:#c23f31;">max_nested_braces</span><span style="color:#1f1f1f;">(</span><span style="color:#5597d6;">expr</span><span style="color:#1f1f1f;">):
-    max_count </span><span style="color:#72ab00;">= </span><span style="color:#1f1f1f;">count </span><span style="color:#72ab00;">= </span><span style="color:#b3933a;">0
-    </span><span style="color:#72ab00;">for </span><span style="color:#1f1f1f;">char </span><span style="color:#72ab00;">in </span><span style="color:#1f1f1f;">expr:
-        </span><span style="color:#72ab00;">if </span><span style="color:#1f1f1f;">char </span><span style="color:#72ab00;">== </span><span style="color:#d07711;">&#39;{&#39;</span><span style="color:#1f1f1f;">:
-            count </span><span style="color:#72ab00;">+= </span><span style="color:#b3933a;">1
-            </span><span style="color:#72ab00;">if </span><span style="color:#1f1f1f;">count </span><span style="color:#72ab00;">&gt; </span><span style="color:#1f1f1f;">max_count:
-                max_count </span><span style="color:#72ab00;">= </span><span style="color:#1f1f1f;">count
-        </span><span style="color:#72ab00;">elif </span><span style="color:#1f1f1f;">char </span><span style="color:#72ab00;">== </span><span style="color:#d07711;">&#39;}&#39;</span><span style="color:#1f1f1f;">:
-            </span><span style="color:#72ab00;">if </span><span style="color:#1f1f1f;">count </span><span style="color:#72ab00;">== </span><span style="color:#b3933a;">0</span><span style="color:#1f1f1f;">:
-                </span><span style="color:#72ab00;">return -</span><span style="color:#b3933a;">1
-            </span><span style="color:#1f1f1f;">count </span><span style="color:#72ab00;">-= </span><span style="color:#b3933a;">1
-
-    </span><span style="color:#72ab00;">if </span><span style="color:#1f1f1f;">count </span><span style="color:#72ab00;">!= </span><span style="color:#b3933a;">0</span><span style="color:#1f1f1f;">:
-        </span><span style="color:#72ab00;">return -</span><span style="color:#b3933a;">1
-    </span><span style="color:#72ab00;">return </span><span style="color:#1f1f1f;">max_count
-</span></code></pre>
-<blockquote>
-<p><img src="/images/info.svg" alt="info" /> In case you have trouble understanding the above code, you can use <a href="https://www.pythontutor.com/visualize.html#mode=edit">pythontutor</a> to visualize the code execution step-by-step.</p>
-</blockquote>
-<p>Here's an alternate solution using regular expressions:</p>
-<pre style="background-color:#f5f5f5;">
-<code><span style="color:#72ab00;">import </span><span style="color:#1f1f1f;">re
-
-</span><span style="color:#72ab00;">def </span><span style="color:#c23f31;">max_nested_braces</span><span style="color:#1f1f1f;">(</span><span style="color:#5597d6;">expr</span><span style="color:#1f1f1f;">):
-    count </span><span style="color:#72ab00;">= </span><span style="color:#b3933a;">0
-    </span><span style="color:#72ab00;">while </span><span style="color:#b3933a;">True</span><span style="color:#1f1f1f;">:
-        expr, no_of_subs </span><span style="color:#72ab00;">= </span><span style="color:#1f1f1f;">re.</span><span style="color:#5597d6;">subn</span><span style="color:#1f1f1f;">(</span><span style="color:#668f14;">r</span><span style="color:#d07711;">&#39;</span><span style="color:#aeb52b;">\{[</span><span style="color:#72ab00;">^</span><span style="color:#aeb52b;">{}]</span><span style="color:#72ab00;">*</span><span style="color:#aeb52b;">\}</span><span style="color:#d07711;">&#39;</span><span style="color:#1f1f1f;">, </span><span style="color:#d07711;">&#39;&#39;</span><span style="color:#1f1f1f;">, expr)
-        </span><span style="color:#72ab00;">if </span><span style="color:#1f1f1f;">no_of_subs </span><span style="color:#72ab00;">== </span><span style="color:#b3933a;">0</span><span style="color:#1f1f1f;">:
-            </span><span style="color:#72ab00;">break
-        </span><span style="color:#1f1f1f;">count </span><span style="color:#72ab00;">+= </span><span style="color:#b3933a;">1
-
-    </span><span style="color:#72ab00;">if </span><span style="color:#1f1f1f;">re.</span><span style="color:#5597d6;">search</span><span style="color:#1f1f1f;">(</span><span style="color:#668f14;">r</span><span style="color:#d07711;">&#39;</span><span style="color:#aeb52b;">[{}]</span><span style="color:#d07711;">&#39;</span><span style="color:#1f1f1f;">, expr):
-        </span><span style="color:#72ab00;">return -</span><span style="color:#b3933a;">1
-    </span><span style="color:#72ab00;">return </span><span style="color:#1f1f1f;">count
-</span></code></pre>
-<p>And if you are a fan of assignment expressions:</p>
-<pre style="background-color:#f5f5f5;">
-<code><span style="color:#72ab00;">import </span><span style="color:#1f1f1f;">re
-
-</span><span style="color:#72ab00;">def </span><span style="color:#c23f31;">max_nested_braces</span><span style="color:#1f1f1f;">(</span><span style="color:#5597d6;">expr</span><span style="color:#1f1f1f;">):
-    count </span><span style="color:#72ab00;">= </span><span style="color:#b3933a;">0
-    </span><span style="color:#72ab00;">while </span><span style="color:#1f1f1f;">(op </span><span style="color:#72ab00;">:= </span><span style="color:#1f1f1f;">re.</span><span style="color:#5597d6;">subn</span><span style="color:#1f1f1f;">(</span><span style="color:#668f14;">r</span><span style="color:#d07711;">&#39;</span><span style="color:#aeb52b;">\{[</span><span style="color:#72ab00;">^</span><span style="color:#aeb52b;">{}]</span><span style="color:#72ab00;">*</span><span style="color:#aeb52b;">\}</span><span style="color:#d07711;">&#39;</span><span style="color:#1f1f1f;">, </span><span style="color:#d07711;">&#39;&#39;</span><span style="color:#1f1f1f;">, expr)) </span><span style="color:#72ab00;">and </span><span style="color:#1f1f1f;">op[</span><span style="color:#b3933a;">1</span><span style="color:#1f1f1f;">]:
-        expr </span><span style="color:#72ab00;">= </span><span style="color:#1f1f1f;">op[</span><span style="color:#b3933a;">0</span><span style="color:#1f1f1f;">]
-        count </span><span style="color:#72ab00;">+= </span><span style="color:#b3933a;">1
-
-    </span><span style="color:#72ab00;">if </span><span style="color:#1f1f1f;">re.</span><span style="color:#5597d6;">search</span><span style="color:#1f1f1f;">(</span><span style="color:#668f14;">r</span><span style="color:#d07711;">&#39;</span><span style="color:#aeb52b;">[{}]</span><span style="color:#d07711;">&#39;</span><span style="color:#1f1f1f;">, expr):
-        </span><span style="color:#72ab00;">return -</span><span style="color:#b3933a;">1
-    </span><span style="color:#72ab00;">return </span><span style="color:#1f1f1f;">count
-</span></code></pre>
-<p><img src="/images/info.svg" alt="info" /> I verified these solutions using <code>assert</code> statements. See <a href="https://learnbyexample.github.io/100_page_python_intro/testing.html">Testing</a> chapter from my <a href="https://github.com/learnbyexample/100_page_python_intro">100 Page Python Intro</a> ebook for more details.</p>
-<p><img src="/images/info.svg" alt="info" /> See <a href="https://learnbyexample.github.io/py_regular_expressions/working-with-matched-portions.html#resubn">Working with matched portions</a> chapter from my <a href="https://github.com/learnbyexample/py_regular_expressions">Python re(gex)?</a> ebook for more details about the <code>re.subn()</code> function.</p>
-<br>
-<h2 id="perl-one-liner">Perl one-liner<a class="zola-anchor" href="#perl-one-liner" aria-label="Anchor link for: perl-one-liner">🔗</a></h2>
-<p>Here's a solution for CLI enthusiasts:</p>
-<pre style="background-color:#f5f5f5;">
-<code><span style="color:#1f1f1f;">$ cat ip.txt 
-{a+2}*{b+c}
-{{a+2}*{{b+{c*d}}+e*d}}
-a*b{
-{{a+2}*{{b}+{c*d}}+e*d}}
-
-$ perl -lne &#39;$c=0; $c++ while(s/\{[^{}]*\}//g);
-             print /[{}]/ ? -1 : $c&#39; ip.txt
-1
-4
--1
--1
-</span></code></pre><br>
-<p><img src="/images/info.svg" alt="info" /> See my <a href="https://github.com/learnbyexample/learn_perl_oneliners">Perl one-liners</a> ebook if you are interested in learning to use Perl from the command-line.</p>
-<p><img src="/images/info.svg" alt="info" /> If you are interested in <code>awk</code> and <code>bash</code> solutions, see <a href="https://unix.stackexchange.com/q/680920/109046">this unix.stackexchange thread</a>.</p>
-
-    </div>
-
-    
-    
-
-    <div class="post-footer">
-        
-            
-                <div class="post-tags">
-                    
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;python&#x2F;">#python</a>
-                    
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;perl&#x2F;">#perl</a>
-                    
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;command-line&#x2F;">#command-line</a>
-                    
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;regular-expressions&#x2F;">#regular-expressions</a>
-                    
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;coding-challenge&#x2F;">#coding-challenge</a>
-                    
-                </div>
-            
-            
-                <div class="post-nav">
-                    
-                        <a class="previous" href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;python-25-days-of-regex&#x2F;">‹ Improve your Python regex skills with 75 interactive exercises</a>
-                    
-                    
-                        <a class="next" href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;wild-ride-2021&#x2F;">2021 was a wild ride ›</a>
-                    
-                    
-                    
-                </div>
-            
-
-        
-
-    </div>
-
-    
-    
-</article>
-
-
-                </div>
-            </main>
-
-            
-            
-        </div>
-
-      
-          <script type="text/javascript" src="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;even.js" ></script>
-      
-    </body>
-
-</html>
+<!doctype html><html lang=en><head><meta content="IE=edge" http-equiv=X-UA-Compatible><meta content="text/html; charset=utf-8" http-equiv=content-type><meta content="width=device-width,initial-scale=1.0,maximum-scale=1" name=viewport><title>Counting nested braces</title><link href=https://learnbyexample.github.io/atom.xml rel=alternate title=RSS type=application/atom+xml><script src=https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js></script><link href=https://learnbyexample.github.io/site.css rel=stylesheet><link href=https://learnbyexample.github.io/favicon.svg rel=icon><link rel="shortcut icon" href=https://learnbyexample.github.io/favicon.png><body><div class=container><div class=mobile-navbar id=mobile-navbar><div class=mobile-header-logo><a class=logo href=/>learnbyexample</a></div><div class="mobile-navbar-icon icon-out"><span></span><span></span><span></span></div></div><nav class="mobile-menu slideout-menu slideout-menu-left" id=mobile-menu><ul class=mobile-menu-list><li class=mobile-menu-item><a href=https://learnbyexample.github.io/books> Books </a><li class=mobile-menu-item><a href=https://learnbyexample.github.io/mini> Mini </a><li class=mobile-menu-item><a href=https://learnbyexample.github.io/tips> Tips </a><li class=mobile-menu-item><a href=https://learnbyexample.github.io/tags> Tags </a><li class=mobile-menu-item><a href=https://learnbyexample.github.io/about> About </a></ul></nav><header id=header><div class=logo><a href=https://learnbyexample.github.io>learnbyexample</a></div><nav class=menu><ul><li><a href=https://learnbyexample.github.io/books> Books </a><li><a href=https://learnbyexample.github.io/mini> Mini </a><li><a href=https://learnbyexample.github.io/tips> Tips </a><li><a href=https://learnbyexample.github.io/tags> Tags </a><li><a href=https://learnbyexample.github.io/about> About </a></ul></nav></header><main><div class=content id=mobile-panel><div class=post-toc id=post-toc><h2 class=post-toc-title>Contents</h2><div class="post-toc-content always-active"><nav id=TableOfContents><ul><li><a class=toc-link href=https://learnbyexample.github.io/counting-nested-braces/#problem-statement>Problem statement</a><li><a class=toc-link href=https://learnbyexample.github.io/counting-nested-braces/#python-solution>Python solution</a><li><a class=toc-link href=https://learnbyexample.github.io/counting-nested-braces/#perl-one-liner>Perl one-liner</a></ul></nav></div></div><article class=post><header class=post__header><h1 class=post__title><a href=https://learnbyexample.github.io/counting-nested-braces/>Counting nested braces</a></h1><div class=post__meta><span class=post__time>2021-12-15</span></div></header><div class=post-content><p>I posted a coding challenge in the fifth issue of <a href=https://learnbyexample.gumroad.com/l/learnbyexample-weekly>learnbyexample weekly</a>. I discuss the problem and Python/Perl solutions in this blog post.</p><span id=continue-reading></span><br><h2 id=problem-statement>Problem statement<a aria-label="Anchor link for: problem-statement" class=zola-anchor href=#problem-statement>🔗</a></h2><p>Write a function that returns the maximum nested depth of curly braces for a given string input. For example:<ul><li><code>'a*{b+c}'</code> should return <code>1</code><li><code>'{{a+2}*{{b+{c*d}}+e*d}}'</code> should return <code>4</code><li>unbalanced or wrongly ordered braces like <code>'{{a}*b'</code> and <code>'}a+b{'</code> should return <code>-1</code></ul><br><h2 id=python-solution>Python solution<a aria-label="Anchor link for: python-solution" class=zola-anchor href=#python-solution>🔗</a></h2><p>Here's one possible solution for this problem:<pre class=language-python data-lang=python style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-python data-lang=python><span style=color:#72ab00;>def </span><span style=color:#c23f31;>max_nested_braces</span><span>(</span><span style=color:#5597d6;>expr</span><span>):
+</span><span>    max_count </span><span style=color:#72ab00;>= </span><span>count </span><span style=color:#72ab00;>= </span><span style=color:#b3933a;>0
+</span><span>    </span><span style=color:#72ab00;>for </span><span>char </span><span style=color:#72ab00;>in </span><span>expr:
+</span><span>        </span><span style=color:#72ab00;>if </span><span>char </span><span style=color:#72ab00;>== </span><span style=color:#d07711;>'{'</span><span>:
+</span><span>            count </span><span style=color:#72ab00;>+= </span><span style=color:#b3933a;>1
+</span><span>            </span><span style=color:#72ab00;>if </span><span>count </span><span style=color:#72ab00;>> </span><span>max_count:
+</span><span>                max_count </span><span style=color:#72ab00;>= </span><span>count
+</span><span>        </span><span style=color:#72ab00;>elif </span><span>char </span><span style=color:#72ab00;>== </span><span style=color:#d07711;>'}'</span><span>:
+</span><span>            </span><span style=color:#72ab00;>if </span><span>count </span><span style=color:#72ab00;>== </span><span style=color:#b3933a;>0</span><span>:
+</span><span>                </span><span style=color:#72ab00;>return -</span><span style=color:#b3933a;>1
+</span><span>            count </span><span style=color:#72ab00;>-= </span><span style=color:#b3933a;>1
+</span><span>
+</span><span>    </span><span style=color:#72ab00;>if </span><span>count </span><span style=color:#72ab00;>!= </span><span style=color:#b3933a;>0</span><span>:
+</span><span>        </span><span style=color:#72ab00;>return -</span><span style=color:#b3933a;>1
+</span><span>    </span><span style=color:#72ab00;>return </span><span>max_count
+</span></code></pre><blockquote><p><img alt=info src=/images/info.svg> In case you have trouble understanding the above code, you can use <a href="https://www.pythontutor.com/visualize.html#mode=edit">pythontutor</a> to visualize the code execution step-by-step.</blockquote><p>Here's an alternate solution using regular expressions:<pre class=language-python data-lang=python style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-python data-lang=python><span style=color:#72ab00;>import </span><span>re
+</span><span>
+</span><span style=color:#72ab00;>def </span><span style=color:#c23f31;>max_nested_braces</span><span>(</span><span style=color:#5597d6;>expr</span><span>):
+</span><span>    count </span><span style=color:#72ab00;>= </span><span style=color:#b3933a;>0
+</span><span>    </span><span style=color:#72ab00;>while </span><span style=color:#b3933a;>True</span><span>:
+</span><span>        expr, no_of_subs </span><span style=color:#72ab00;>= </span><span>re.</span><span style=color:#5597d6;>subn</span><span>(</span><span style=color:#668f14;>r</span><span style=color:#d07711;>'</span><span style=color:#aeb52b;>\{[</span><span style=color:#72ab00;>^</span><span style=color:#aeb52b;>{}]</span><span style=color:#72ab00;>*</span><span style=color:#aeb52b;>\}</span><span style=color:#d07711;>'</span><span>, </span><span style=color:#d07711;>''</span><span>, expr)
+</span><span>        </span><span style=color:#72ab00;>if </span><span>no_of_subs </span><span style=color:#72ab00;>== </span><span style=color:#b3933a;>0</span><span>:
+</span><span>            </span><span style=color:#72ab00;>break
+</span><span>        count </span><span style=color:#72ab00;>+= </span><span style=color:#b3933a;>1
+</span><span>
+</span><span>    </span><span style=color:#72ab00;>if </span><span>re.</span><span style=color:#5597d6;>search</span><span>(</span><span style=color:#668f14;>r</span><span style=color:#d07711;>'</span><span style=color:#aeb52b;>[{}]</span><span style=color:#d07711;>'</span><span>, expr):
+</span><span>        </span><span style=color:#72ab00;>return -</span><span style=color:#b3933a;>1
+</span><span>    </span><span style=color:#72ab00;>return </span><span>count
+</span></code></pre><p>And if you are a fan of assignment expressions:<pre class=language-python data-lang=python style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-python data-lang=python><span style=color:#72ab00;>import </span><span>re
+</span><span>
+</span><span style=color:#72ab00;>def </span><span style=color:#c23f31;>max_nested_braces</span><span>(</span><span style=color:#5597d6;>expr</span><span>):
+</span><span>    count </span><span style=color:#72ab00;>= </span><span style=color:#b3933a;>0
+</span><span>    </span><span style=color:#72ab00;>while </span><span>(op </span><span style=color:#72ab00;>:= </span><span>re.</span><span style=color:#5597d6;>subn</span><span>(</span><span style=color:#668f14;>r</span><span style=color:#d07711;>'</span><span style=color:#aeb52b;>\{[</span><span style=color:#72ab00;>^</span><span style=color:#aeb52b;>{}]</span><span style=color:#72ab00;>*</span><span style=color:#aeb52b;>\}</span><span style=color:#d07711;>'</span><span>, </span><span style=color:#d07711;>''</span><span>, expr)) </span><span style=color:#72ab00;>and </span><span>op[</span><span style=color:#b3933a;>1</span><span>]:
+</span><span>        expr </span><span style=color:#72ab00;>= </span><span>op[</span><span style=color:#b3933a;>0</span><span>]
+</span><span>        count </span><span style=color:#72ab00;>+= </span><span style=color:#b3933a;>1
+</span><span>
+</span><span>    </span><span style=color:#72ab00;>if </span><span>re.</span><span style=color:#5597d6;>search</span><span>(</span><span style=color:#668f14;>r</span><span style=color:#d07711;>'</span><span style=color:#aeb52b;>[{}]</span><span style=color:#d07711;>'</span><span>, expr):
+</span><span>        </span><span style=color:#72ab00;>return -</span><span style=color:#b3933a;>1
+</span><span>    </span><span style=color:#72ab00;>return </span><span>count
+</span></code></pre><p><img alt=info src=/images/info.svg> I verified these solutions using <code>assert</code> statements. See <a href=https://learnbyexample.github.io/100_page_python_intro/testing.html>Testing</a> chapter from my <a href=https://github.com/learnbyexample/100_page_python_intro>100 Page Python Intro</a> ebook for more details.<p><img alt=info src=/images/info.svg> See <a href=https://learnbyexample.github.io/py_regular_expressions/working-with-matched-portions.html#resubn>Working with matched portions</a> chapter from my <a href=https://github.com/learnbyexample/py_regular_expressions>Python re(gex)?</a> ebook for more details about the <code>re.subn()</code> function.</p><br><h2 id=perl-one-liner>Perl one-liner<a aria-label="Anchor link for: perl-one-liner" class=zola-anchor href=#perl-one-liner>🔗</a></h2><p>Here's a solution for CLI enthusiasts:<pre style=background-color:#f5f5f5;color:#1f1f1f;><code><span>$ cat ip.txt 
+</span><span>{a+2}*{b+c}
+</span><span>{{a+2}*{{b+{c*d}}+e*d}}
+</span><span>a*b{
+</span><span>{{a+2}*{{b}+{c*d}}+e*d}}
+</span><span>
+</span><span>$ perl -lne '$c=0; $c++ while(s/\{[^{}]*\}//g);
+</span><span>             print /[{}]/ ? -1 : $c' ip.txt
+</span><span>1
+</span><span>4
+</span><span>-1
+</span><span>-1
+</span></code></pre><br><p><img alt=info src=/images/info.svg> See my <a href=https://github.com/learnbyexample/learn_perl_oneliners>Perl one-liners</a> ebook if you are interested in learning to use Perl from the command-line.<p><img alt=info src=/images/info.svg> If you are interested in <code>awk</code> and <code>bash</code> solutions, see <a href=https://unix.stackexchange.com/q/680920/109046>this unix.stackexchange thread</a>.</div><div class=post-footer><div class=post-tags><a href=https://learnbyexample.github.io/tags/python/>#python</a><a href=https://learnbyexample.github.io/tags/perl/>#perl</a><a href=https://learnbyexample.github.io/tags/command-line/>#command-line</a><a href=https://learnbyexample.github.io/tags/regular-expressions/>#regular-expressions</a><a href=https://learnbyexample.github.io/tags/coding-challenge/>#coding-challenge</a></div><p>👉 Use <a href=https://learnbyexample.github.io/atom.xml>this link</a> for the Atom feed. <br> 👉 Follow me on <a href=https://twitter.com/learn_byexample>Twitter</a>, <a href=https://github.com/learnbyexample>GitHub</a> and <a href=https://www.youtube.com/channel/UCKdFGbeOUPYM9GocmrIFGcw/playlists>Youtube</a> for interesting tech nuggets.<hr color=#e6e6e6></div></article></div></main></div><script src=https://learnbyexample.github.io/even.js></script>

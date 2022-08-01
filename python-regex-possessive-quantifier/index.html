@@ -1,378 +1,98 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta http-equiv="content-type" content="text/html; charset=utf-8">
-
-      <!-- Enable responsiveness on mobile devices-->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-
-      <title>Python 3.11: possessive quantifiers and atomic grouping added to re module</title>
-
-      
-        <link rel="alternate" type="application/atom+xml" title="RSS" href="https://learnbyexample.github.io/atom.xml">
-      
-
-      
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
-          
-      
-
-      
-          <link rel="stylesheet" href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;site.css">
-          
-      
-
-      
-      
-<link rel="icon" href="https://learnbyexample.github.io/favicon.svg">
-<link rel="shortcut icon" href="https://learnbyexample.github.io/favicon.png">
-    </head>
-
-    <body>
-        <div class="container">
-
-            <div id="mobile-navbar" class="mobile-navbar">
-              <div class="mobile-header-logo">
-                <a href="/" class="logo">learnbyexample</a>
-              </div>
-              <div class="mobile-navbar-icon icon-out">
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-            </div>
-
-            <nav id="mobile-menu" class="mobile-menu slideout-menu slideout-menu-left">
-              <ul class="mobile-menu-list">
-                
-                    <li class="mobile-menu-item">
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;books">
-                            Books
-                        </a>
-                    </li>
-                
-                    <li class="mobile-menu-item">
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;mini">
-                            Mini
-                        </a>
-                    </li>
-                
-                    <li class="mobile-menu-item">
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips">
-                            Tips
-                        </a>
-                    </li>
-                
-                    <li class="mobile-menu-item">
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags">
-                            Tags
-                        </a>
-                    </li>
-                
-                    <li class="mobile-menu-item">
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;about">
-                            About
-                        </a>
-                    </li>
-                
-              </ul>
-            </nav>
-
-            <header id="header">
-                <div class="logo"><a href="https:&#x2F;&#x2F;learnbyexample.github.io">learnbyexample</a></div>
-                <nav class="menu">
-                    <ul>
-                        
-                            <li>
-                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;books">
-                                    Books
-                                </a>
-                            </li>
-                        
-                            <li>
-                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;mini">
-                                    Mini
-                                </a>
-                            </li>
-                        
-                            <li>
-                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips">
-                                    Tips
-                                </a>
-                            </li>
-                        
-                            <li>
-                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags">
-                                    Tags
-                                </a>
-                            </li>
-                        
-                            <li>
-                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;about">
-                                    About
-                                </a>
-                            </li>
-                        
-                    </ul>
-                </nav>
-            </header>
-
-            <main>
-                <div class="content" id="mobile-panel">
-                    
-
-
-<div class="post-toc" id="post-toc">
-    <h2 class="post-toc-title">Contents</h2>
-    <div class="post-toc-content always-active">
-        <nav id="TableOfContents">
-            <ul>
-                
-                <li>
-                    <a href="https://learnbyexample.github.io/python-regex-possessive-quantifier/#backtracking" class="toc-link">Backtracking</a>
-                    
-                </li>
-                
-                <li>
-                    <a href="https://learnbyexample.github.io/python-regex-possessive-quantifier/#possessive-quantifiers" class="toc-link">Possessive quantifiers</a>
-                    
-                </li>
-                
-                <li>
-                    <a href="https://learnbyexample.github.io/python-regex-possessive-quantifier/#atomic-grouping" class="toc-link">Atomic grouping</a>
-                    
-                </li>
-                
-                <li>
-                    <a href="https://learnbyexample.github.io/python-regex-possessive-quantifier/#catastrophic-backtracking" class="toc-link">Catastrophic Backtracking</a>
-                    
-                </li>
-                
-            </ul>
-        </nav>
-    </div>
-</div>
-
-
-<article class="post">
-    
-    <header class="post__header">
-        <h1 class="post__title">
-            <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;python-regex-possessive-quantifier&#x2F;">Python 3.11: possessive quantifiers and atomic grouping added to re module</a>
-        </h1>
-        <div class="post__meta">
-            <span class="post__time">2022-05-07</span>
-            
-        </div>
-    </header>
-
-    <div class="post-content">
-      <p>Quoting from <a href="https://docs.python.org/3.11/whatsnew/3.11.html">What's New In Python 3.11</a>:</p>
-<blockquote>
-<p>Atomic grouping (<code>(?&gt;...)</code>) and possessive quantifiers (<code>*+</code>, <code>++</code>, <code>?+</code>, <code>{m,n}+</code>) are now supported in regular expressions. (Contributed by Jeffrey C. Jacobs and Serhiy Storchaka in <a href="https://github.com/python/cpython/issues/34627">bpo-433030</a>.)</p>
-</blockquote>
-<p><img src="/images/info.svg" alt="info" /> If you are not familiar with regular expressions, see my <a href="https://github.com/learnbyexample/py_regular_expressions">Python re(gex)?</a> ebook to get started.</p>
-<span id="continue-reading"></span><br>
-<h2 id="backtracking">Backtracking<a class="zola-anchor" href="#backtracking" aria-label="Anchor link for: backtracking">🔗</a></h2>
-<p>Greedy quantifiers match as much as possible, provided the overall regex is satisfied. For example, <code>:.*</code> will match <code>:</code> followed by rest of the input line. However, if you change the pattern to <code>:.*apple</code>, the <code>.*</code> portion cannot simply consume the rest of the input line. The regex engine will have to find the largest portion such that <code>apple</code> is also part of the match (provided the input has such a string, of course).</p>
-<pre style="background-color:#f5f5f5;">
-<code><span style="color:#72ab00;">&gt;&gt;&gt; import </span><span style="color:#1f1f1f;">re
-
-</span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#1f1f1f;">ip </span><span style="color:#72ab00;">= </span><span style="color:#d07711;">&#39;fig:mango:pineapple:guava:apples:orange&#39;
-
-</span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#1f1f1f;">re.</span><span style="color:#5597d6;">search</span><span style="color:#1f1f1f;">(</span><span style="color:#668f14;">r</span><span style="color:#d07711;">&#39;</span><span style="color:#7c8f4c;">:</span><span style="color:#aeb52b;">.</span><span style="color:#72ab00;">*</span><span style="color:#d07711;">&#39;</span><span style="color:#1f1f1f;">, ip)[</span><span style="color:#b3933a;">0</span><span style="color:#1f1f1f;">]
-</span><span style="color:#d07711;">&#39;:mango:pineapple:guava:apples:orange&#39;
-
-</span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#1f1f1f;">re.</span><span style="color:#5597d6;">search</span><span style="color:#1f1f1f;">(</span><span style="color:#668f14;">r</span><span style="color:#d07711;">&#39;</span><span style="color:#7c8f4c;">:</span><span style="color:#aeb52b;">.</span><span style="color:#72ab00;">*</span><span style="color:#7c8f4c;">apple</span><span style="color:#d07711;">&#39;</span><span style="color:#1f1f1f;">, ip)[</span><span style="color:#b3933a;">0</span><span style="color:#1f1f1f;">]
-</span><span style="color:#d07711;">&#39;:mango:pineapple:guava:apple&#39;
-</span></code></pre>
-<p>For the <code>:.*apple</code> case, the Python regular expression engine actually does consume all the characters on seeing <code>.*</code>. Then realizing that the overall match failed, it gives back one character from the end of line and checks again. This process is repeated until a match is found or failure is confirmed. In regular expression parlance, this is called <strong>backtracking</strong>.</p>
-<p>This type of exploring matches to satisfy overall regex also applies to non-greedy quantifiers. <code>.*?</code> will start with zero characters followed by one, two, three and so on until a match is found.</p>
-<pre style="background-color:#f5f5f5;">
-<code><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#1f1f1f;">ip </span><span style="color:#72ab00;">= </span><span style="color:#d07711;">&#39;fig:mango:pineapple:guava:apples:orange&#39;
-
-</span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#1f1f1f;">re.</span><span style="color:#5597d6;">search</span><span style="color:#1f1f1f;">(</span><span style="color:#668f14;">r</span><span style="color:#d07711;">&#39;</span><span style="color:#7c8f4c;">:</span><span style="color:#aeb52b;">.</span><span style="color:#72ab00;">*?</span><span style="color:#d07711;">&#39;</span><span style="color:#1f1f1f;">, ip)[</span><span style="color:#b3933a;">0</span><span style="color:#1f1f1f;">]
-</span><span style="color:#d07711;">&#39;:&#39;
-
-</span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#1f1f1f;">re.</span><span style="color:#5597d6;">search</span><span style="color:#1f1f1f;">(</span><span style="color:#668f14;">r</span><span style="color:#d07711;">&#39;</span><span style="color:#7c8f4c;">:</span><span style="color:#aeb52b;">.</span><span style="color:#72ab00;">*?</span><span style="color:#7c8f4c;">apple</span><span style="color:#d07711;">&#39;</span><span style="color:#1f1f1f;">, ip)[</span><span style="color:#b3933a;">0</span><span style="color:#1f1f1f;">]
-</span><span style="color:#d07711;">&#39;:mango:pineapple&#39;
-</span></code></pre>
-<blockquote>
-<p><img src="/images/info.svg" alt="info" /> Note that some regex engines like <a href="https://github.com/google/re2">re2</a> do not use backtracking.</p>
-</blockquote>
-<br>
-<h2 id="possessive-quantifiers">Possessive quantifiers<a class="zola-anchor" href="#possessive-quantifiers" aria-label="Anchor link for: possessive-quantifiers">🔗</a></h2>
-<p>Until Python 3.10, you had to use alternatives like the third-party <a href="https://pypi.org/project/regex/">regex module</a> for possessive quantifiers. The <code>re</code> module supports possessive quantifiers from Python 3.11 version. This version is currently under development, see <a href="https://www.python.org/download/pre-releases/">Pre-release</a> page on the Python site for download links and other details.</p>
-<p>The difference between greedy and possessive quantifiers is that possessive will not backtrack to find a match. In other words, possessive quantifiers will always consume every character that matches the pattern on which it is applied. Syntax wise, you need to append <code>+</code> to greedy quantifiers to make it possessive, similar to adding <code>?</code> for non-greedy case.</p>
-<p>Unlike greedy or non-greedy quantifiers, <code>:.*+apple</code> will never match, because <code>.*+</code> will consume rest of the line, leaving no way to match <code>apple</code>.</p>
-<pre style="background-color:#f5f5f5;">
-<code><span style="color:#1f1f1f;">$ python3</span><span style="color:#b3933a;">.11 </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">q
-</span><span style="color:#72ab00;">&gt;&gt;&gt; import </span><span style="color:#1f1f1f;">re
-
-</span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#1f1f1f;">ip </span><span style="color:#72ab00;">= </span><span style="color:#d07711;">&#39;fig:mango:pineapple:guava:apples:orange&#39;
-
-</span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#1f1f1f;">re.</span><span style="color:#5597d6;">search</span><span style="color:#1f1f1f;">(</span><span style="color:#668f14;">r</span><span style="color:#d07711;">&#39;</span><span style="color:#7c8f4c;">:</span><span style="color:#aeb52b;">.</span><span style="color:#72ab00;">*+</span><span style="color:#d07711;">&#39;</span><span style="color:#1f1f1f;">, ip)[</span><span style="color:#b3933a;">0</span><span style="color:#1f1f1f;">]
-</span><span style="color:#d07711;">&#39;:mango:pineapple:guava:apples:orange&#39;
-
-</span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#a2a001;">bool</span><span style="color:#1f1f1f;">(re.</span><span style="color:#5597d6;">search</span><span style="color:#1f1f1f;">(</span><span style="color:#668f14;">r</span><span style="color:#d07711;">&#39;</span><span style="color:#7c8f4c;">:</span><span style="color:#aeb52b;">.</span><span style="color:#72ab00;">*+</span><span style="color:#7c8f4c;">apple</span><span style="color:#d07711;">&#39;</span><span style="color:#1f1f1f;">, ip))
-</span><span style="color:#b3933a;">False
-</span></code></pre>
-<p>Here's a more practical example. Suppose you want to match integer numbers greater than or equal to <code>100</code> where these numbers can optionally have leading zeros.</p>
-<pre style="background-color:#f5f5f5;">
-<code><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#1f1f1f;">numbers </span><span style="color:#72ab00;">= </span><span style="color:#d07711;">&#39;42 314 001 12 00984&#39;
-
-</span><span style="color:#7f8989;"># this solution fails because 0* and \d{3,} can both match leading zeros
-# and greedy quantifiers will give up characters to help overall regex succeed
-</span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#1f1f1f;">re.</span><span style="color:#5597d6;">findall</span><span style="color:#1f1f1f;">(</span><span style="color:#668f14;">r</span><span style="color:#d07711;">&#39;</span><span style="color:#7c8f4c;">0</span><span style="color:#72ab00;">*</span><span style="color:#aeb52b;">\d</span><span style="color:#72ab00;">{3,}</span><span style="color:#d07711;">&#39;</span><span style="color:#1f1f1f;">, numbers)
-[</span><span style="color:#d07711;">&#39;314&#39;</span><span style="color:#1f1f1f;">, </span><span style="color:#d07711;">&#39;001&#39;</span><span style="color:#1f1f1f;">, </span><span style="color:#d07711;">&#39;00984&#39;</span><span style="color:#1f1f1f;">]
-
-</span><span style="color:#7f8989;"># here 0*+ will not give back leading zeros after they are consumed
-</span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#1f1f1f;">re.</span><span style="color:#5597d6;">findall</span><span style="color:#1f1f1f;">(</span><span style="color:#668f14;">r</span><span style="color:#d07711;">&#39;</span><span style="color:#7c8f4c;">0</span><span style="color:#72ab00;">*+</span><span style="color:#aeb52b;">\d</span><span style="color:#72ab00;">{3,}</span><span style="color:#d07711;">&#39;</span><span style="color:#1f1f1f;">, numbers)
-[</span><span style="color:#d07711;">&#39;314&#39;</span><span style="color:#1f1f1f;">, </span><span style="color:#d07711;">&#39;00984&#39;</span><span style="color:#1f1f1f;">]
-
-</span><span style="color:#7f8989;"># workaround if possessive quantifiers are not supported
-</span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#1f1f1f;">re.</span><span style="color:#5597d6;">findall</span><span style="color:#1f1f1f;">(</span><span style="color:#668f14;">r</span><span style="color:#d07711;">&#39;</span><span style="color:#7c8f4c;">0</span><span style="color:#72ab00;">*</span><span style="color:#aeb52b;">[</span><span style="color:#b3933a;">1-9</span><span style="color:#aeb52b;">]\d</span><span style="color:#72ab00;">{2,}</span><span style="color:#d07711;">&#39;</span><span style="color:#1f1f1f;">, numbers)
-[</span><span style="color:#d07711;">&#39;314&#39;</span><span style="color:#1f1f1f;">, </span><span style="color:#d07711;">&#39;00984&#39;</span><span style="color:#1f1f1f;">]
-</span></code></pre>
-<p>Here's another example. The goal is to match lines whose first non-whitespace character is not a <code>#</code> character. A matching line should have at least one non-<code>#</code> character, so empty lines and those with only whitespace characters should not match.</p>
-<pre style="background-color:#f5f5f5;">
-<code><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#1f1f1f;">lines </span><span style="color:#72ab00;">= </span><span style="color:#1f1f1f;">[</span><span style="color:#d07711;">&#39;#comment&#39;</span><span style="color:#1f1f1f;">, </span><span style="color:#d07711;">&#39;c = &quot;#&quot;&#39;</span><span style="color:#1f1f1f;">, </span><span style="color:#d07711;">&#39;</span><span style="color:#aeb52b;">\t</span><span style="color:#d07711;"> #comment&#39;</span><span style="color:#1f1f1f;">, </span><span style="color:#d07711;">&#39;abc&#39;</span><span style="color:#1f1f1f;">, </span><span style="color:#d07711;">&#39;&#39;</span><span style="color:#1f1f1f;">, </span><span style="color:#d07711;">&#39; </span><span style="color:#aeb52b;">\t </span><span style="color:#d07711;">&#39;</span><span style="color:#1f1f1f;">]
-
-</span><span style="color:#7f8989;"># this solution fails because \s* can backtrack
-# and [^#] can match a whitespace character as well
-</span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#1f1f1f;">[e </span><span style="color:#72ab00;">for </span><span style="color:#1f1f1f;">e </span><span style="color:#72ab00;">in </span><span style="color:#1f1f1f;">lines </span><span style="color:#72ab00;">if </span><span style="color:#1f1f1f;">re.</span><span style="color:#5597d6;">match</span><span style="color:#1f1f1f;">(</span><span style="color:#668f14;">r</span><span style="color:#d07711;">&#39;</span><span style="color:#aeb52b;">\s</span><span style="color:#72ab00;">*</span><span style="color:#aeb52b;">[</span><span style="color:#72ab00;">^</span><span style="color:#aeb52b;">#]</span><span style="color:#d07711;">&#39;</span><span style="color:#1f1f1f;">, e)]
-[</span><span style="color:#d07711;">&#39;c = &quot;#&quot;&#39;</span><span style="color:#1f1f1f;">, </span><span style="color:#d07711;">&#39;</span><span style="color:#aeb52b;">\t</span><span style="color:#d07711;"> #comment&#39;</span><span style="color:#1f1f1f;">, </span><span style="color:#d07711;">&#39;abc&#39;</span><span style="color:#1f1f1f;">, </span><span style="color:#d07711;">&#39; </span><span style="color:#aeb52b;">\t </span><span style="color:#d07711;">&#39;</span><span style="color:#1f1f1f;">]
-
-</span><span style="color:#7f8989;"># this works because \s*+ will not give back any whitespace characters
-</span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#1f1f1f;">[e </span><span style="color:#72ab00;">for </span><span style="color:#1f1f1f;">e </span><span style="color:#72ab00;">in </span><span style="color:#1f1f1f;">lines </span><span style="color:#72ab00;">if </span><span style="color:#1f1f1f;">re.</span><span style="color:#5597d6;">match</span><span style="color:#1f1f1f;">(</span><span style="color:#668f14;">r</span><span style="color:#d07711;">&#39;</span><span style="color:#aeb52b;">\s</span><span style="color:#72ab00;">*+</span><span style="color:#aeb52b;">[</span><span style="color:#72ab00;">^</span><span style="color:#aeb52b;">#]</span><span style="color:#d07711;">&#39;</span><span style="color:#1f1f1f;">, e)]
-[</span><span style="color:#d07711;">&#39;c = &quot;#&quot;&#39;</span><span style="color:#1f1f1f;">, </span><span style="color:#d07711;">&#39;abc&#39;</span><span style="color:#1f1f1f;">]
-
-</span><span style="color:#7f8989;"># workaround if possessive quantifiers are not supported
-</span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#1f1f1f;">[e </span><span style="color:#72ab00;">for </span><span style="color:#1f1f1f;">e </span><span style="color:#72ab00;">in </span><span style="color:#1f1f1f;">lines </span><span style="color:#72ab00;">if </span><span style="color:#1f1f1f;">re.</span><span style="color:#5597d6;">match</span><span style="color:#1f1f1f;">(</span><span style="color:#668f14;">r</span><span style="color:#d07711;">&#39;</span><span style="color:#aeb52b;">\s</span><span style="color:#72ab00;">*</span><span style="color:#aeb52b;">[</span><span style="color:#72ab00;">^</span><span style="color:#aeb52b;">#</span><span style="color:#b3933a;">\s</span><span style="color:#aeb52b;">]</span><span style="color:#d07711;">&#39;</span><span style="color:#1f1f1f;">, e)]
-[</span><span style="color:#d07711;">&#39;c = &quot;#&quot;&#39;</span><span style="color:#1f1f1f;">, </span><span style="color:#d07711;">&#39;abc&#39;</span><span style="color:#1f1f1f;">]
-</span></code></pre><br>
-<h2 id="atomic-grouping">Atomic grouping<a class="zola-anchor" href="#atomic-grouping" aria-label="Anchor link for: atomic-grouping">🔗</a></h2>
-<p><code>(?&gt;pat)</code> is an atomic group, where <code>pat</code> is the pattern you want to safeguard from further backtracking by isolating it from other parts of the regex.</p>
-<p>Here's an example with greedy quantifiers:</p>
-<pre style="background-color:#f5f5f5;">
-<code><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#1f1f1f;">numbers </span><span style="color:#72ab00;">= </span><span style="color:#d07711;">&#39;42 314 001 12 00984&#39;
-
-</span><span style="color:#7f8989;"># 0* is greedy and the (?&gt;) grouping prevents backtracking
-# same as: re.findall(r&#39;0*+\d{3,}&#39;, numbers)
-</span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#1f1f1f;">re.</span><span style="color:#5597d6;">findall</span><span style="color:#1f1f1f;">(</span><span style="color:#668f14;">r</span><span style="color:#d07711;">&#39;</span><span style="color:#7c8f4c;">(</span><span style="color:#72ab00;">?</span><span style="color:#7c8f4c;">&gt;0</span><span style="color:#72ab00;">*</span><span style="color:#7c8f4c;">)</span><span style="color:#aeb52b;">\d</span><span style="color:#72ab00;">{3,}</span><span style="color:#d07711;">&#39;</span><span style="color:#1f1f1f;">, numbers)
-[</span><span style="color:#d07711;">&#39;314&#39;</span><span style="color:#1f1f1f;">, </span><span style="color:#d07711;">&#39;00984&#39;</span><span style="color:#1f1f1f;">]
-</span></code></pre>
-<p>Here are a couple of examples with non-greedy quantifiers. A portion of the pattern is protected by atomic grouping to get a match as minimally as possible.</p>
-<pre style="background-color:#f5f5f5;">
-<code><span style="color:#72ab00;">&gt;&gt;&gt;</span><span style="color:#1f1f1f;"> ip </span><span style="color:#72ab00;">= </span><span style="color:#d07711;">&#39;fig:mango:pineapple:guava:apples:orange&#39;
-</span><span style="color:#72ab00;">&gt;&gt;&gt;</span><span style="color:#1f1f1f;"> re.search(</span><span style="color:#5597d6;">r</span><span style="color:#d07711;">&#39;:.*?:apple&#39;</span><span style="color:#5597d6;">,</span><span style="color:#1f1f1f;"> ip)</span><span style="color:#72ab00;">[</span><span style="color:#1f1f1f;">0</span><span style="color:#72ab00;">]
-</span><span style="color:#d07711;">&#39;:mango:pineapple:guava:apple&#39;
-</span><span style="color:#72ab00;">&gt;&gt;&gt;</span><span style="color:#1f1f1f;"> re.search(</span><span style="color:#5597d6;">r</span><span style="color:#d07711;">&#39;(?&gt;:.*?:)apple&#39;</span><span style="color:#5597d6;">,</span><span style="color:#1f1f1f;"> ip)</span><span style="color:#72ab00;">[</span><span style="color:#1f1f1f;">0</span><span style="color:#72ab00;">]
-</span><span style="color:#d07711;">&#39;:guava:apple&#39;
-
-</span><span style="color:#72ab00;">&gt;&gt;&gt;</span><span style="color:#1f1f1f;"> ip </span><span style="color:#72ab00;">= </span><span style="color:#d07711;">&#39;this book is good and that movie is bad&#39;
-</span><span style="color:#72ab00;">&gt;&gt;&gt;</span><span style="color:#1f1f1f;"> re.search(</span><span style="color:#5597d6;">r</span><span style="color:#d07711;">&#39;th.*?\bis bad&#39;</span><span style="color:#5597d6;">,</span><span style="color:#1f1f1f;"> ip)</span><span style="color:#72ab00;">[</span><span style="color:#1f1f1f;">0</span><span style="color:#72ab00;">]
-</span><span style="color:#d07711;">&#39;this book is good and that movie is bad&#39;
-</span><span style="color:#72ab00;">&gt;&gt;&gt;</span><span style="color:#1f1f1f;"> re.search(</span><span style="color:#5597d6;">r</span><span style="color:#d07711;">&#39;(?&gt;th.*?\bis )bad&#39;</span><span style="color:#5597d6;">,</span><span style="color:#1f1f1f;"> ip)</span><span style="color:#72ab00;">[</span><span style="color:#1f1f1f;">0</span><span style="color:#72ab00;">]
-</span><span style="color:#d07711;">&#39;that movie is bad&#39;
-</span></code></pre>
-<blockquote>
-<p><img src="/images/info.svg" alt="info" /> You can also use the <code>REVERSE</code> flag provided by <a href="https://pypi.org/project/regex/">regex module</a> for such cases:</p>
-<pre style="background-color:#f5f5f5;">
-<code><span style="color:#72ab00;">&gt;&gt;&gt; import </span><span style="color:#1f1f1f;">regex
-</span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#1f1f1f;">ip </span><span style="color:#72ab00;">= </span><span style="color:#d07711;">&#39;this book is good and that movie is bad&#39;
-</span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#1f1f1f;">regex.</span><span style="color:#5597d6;">search</span><span style="color:#1f1f1f;">(</span><span style="color:#668f14;">r</span><span style="color:#d07711;">&#39;</span><span style="color:#7c8f4c;">th</span><span style="color:#aeb52b;">.</span><span style="color:#72ab00;">*?\b</span><span style="color:#7c8f4c;">is bad</span><span style="color:#d07711;">&#39;</span><span style="color:#1f1f1f;">, ip, </span><span style="color:#5597d6;">flags</span><span style="color:#72ab00;">=</span><span style="color:#1f1f1f;">regex.</span><span style="color:#5597d6;">REVERSE</span><span style="color:#1f1f1f;">)[</span><span style="color:#b3933a;">0</span><span style="color:#1f1f1f;">]
-</span><span style="color:#d07711;">&#39;that movie is bad&#39;
-</span></code></pre></blockquote>
-<br>
-<h2 id="catastrophic-backtracking">Catastrophic Backtracking<a class="zola-anchor" href="#catastrophic-backtracking" aria-label="Anchor link for: catastrophic-backtracking">🔗</a></h2>
-<p>Backtracking can become significantly time consuming for certain corner cases. Which is why some regex engines do not use them, at the cost of not supporting some features like lookarounds. If your application accepts user defined regex, you might need to protect against such catastrophic patterns. From <a href="https://en.wikipedia.org/wiki/Redos">wikipedia: ReDoS</a>:</p>
-<blockquote>
-<p>A regular expression denial of service (ReDoS) is an algorithmic complexity attack that produces a denial-of-service by providing a regular expression and/or an input that takes a long time to evaluate. The attack exploits the fact that many regular expression implementations have super-linear worst-case complexity; on certain regex-input pairs, the time taken can grow polynomially or exponentially in relation to the input size. An attacker can thus cause a program to spend substantial time by providing a specially crafted regular expression and/or input. The program will then slow down or becoming unresponsive.</p>
-</blockquote>
-<p>Here's an example:</p>
-<pre style="background-color:#f5f5f5;">
-<code><span style="color:#72ab00;">&gt;&gt;&gt; from </span><span style="color:#1f1f1f;">timeit </span><span style="color:#72ab00;">import </span><span style="color:#1f1f1f;">timeit
-
-</span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#1f1f1f;">greedy </span><span style="color:#72ab00;">= </span><span style="color:#1f1f1f;">re.</span><span style="color:#5597d6;">compile</span><span style="color:#1f1f1f;">(</span><span style="color:#668f14;">r</span><span style="color:#d07711;">&#39;</span><span style="color:#7c8f4c;">(a</span><span style="color:#72ab00;">+|</span><span style="color:#aeb52b;">\w</span><span style="color:#72ab00;">+</span><span style="color:#7c8f4c;">)</span><span style="color:#72ab00;">*</span><span style="color:#7c8f4c;">:</span><span style="color:#d07711;">&#39;</span><span style="color:#1f1f1f;">)
-</span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#1f1f1f;">possessive </span><span style="color:#72ab00;">= </span><span style="color:#1f1f1f;">re.</span><span style="color:#5597d6;">compile</span><span style="color:#1f1f1f;">(</span><span style="color:#668f14;">r</span><span style="color:#d07711;">&#39;</span><span style="color:#7c8f4c;">(a</span><span style="color:#72ab00;">+|</span><span style="color:#aeb52b;">\w</span><span style="color:#72ab00;">+</span><span style="color:#7c8f4c;">)</span><span style="color:#72ab00;">*+</span><span style="color:#7c8f4c;">:</span><span style="color:#d07711;">&#39;</span><span style="color:#1f1f1f;">)
-
-</span><span style="color:#7f8989;"># string that&#39;ll match the above patterns
-</span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#1f1f1f;">s1 </span><span style="color:#72ab00;">= </span><span style="color:#d07711;">&#39;aaaaaaaaaaaaaaaa:123&#39;
-</span><span style="color:#7f8989;"># string that does NOT match the above patterns
-</span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#1f1f1f;">s2 </span><span style="color:#72ab00;">= </span><span style="color:#d07711;">&#39;aaaaaaaaaaaaaaaa-123&#39;
-
-</span><span style="color:#7f8989;"># no issues when input string has a match
-</span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#5597d6;">timeit</span><span style="color:#1f1f1f;">(</span><span style="color:#d07711;">&#39;greedy.search(s1)&#39;</span><span style="color:#1f1f1f;">, </span><span style="color:#5597d6;">number</span><span style="color:#72ab00;">=</span><span style="color:#b3933a;">10000</span><span style="color:#1f1f1f;">, </span><span style="color:#5597d6;">globals</span><span style="color:#72ab00;">=</span><span style="color:#b39f04;">globals</span><span style="color:#1f1f1f;">())
-</span><span style="color:#b3933a;">0.016464739997900324
-</span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#5597d6;">timeit</span><span style="color:#1f1f1f;">(</span><span style="color:#d07711;">&#39;possessive.search(s1)&#39;</span><span style="color:#1f1f1f;">, </span><span style="color:#5597d6;">number</span><span style="color:#72ab00;">=</span><span style="color:#b3933a;">10000</span><span style="color:#1f1f1f;">, </span><span style="color:#5597d6;">globals</span><span style="color:#72ab00;">=</span><span style="color:#b39f04;">globals</span><span style="color:#1f1f1f;">())
-</span><span style="color:#b3933a;">0.016358205997676123
-
-</span><span style="color:#7f8989;"># if input doesn&#39;t match, greedy version suffers from catastrophic backtracking
-# note that &#39;number&#39; parameter is reduced to 10 since it takes a long time
-</span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#5597d6;">timeit</span><span style="color:#1f1f1f;">(</span><span style="color:#d07711;">&#39;greedy.search(s2)&#39;</span><span style="color:#1f1f1f;">, </span><span style="color:#5597d6;">number</span><span style="color:#72ab00;">=</span><span style="color:#b3933a;">10</span><span style="color:#1f1f1f;">, </span><span style="color:#5597d6;">globals</span><span style="color:#72ab00;">=</span><span style="color:#b39f04;">globals</span><span style="color:#1f1f1f;">())
-</span><span style="color:#b3933a;">53.71723825200024
-</span><span style="color:#72ab00;">&gt;&gt;&gt; </span><span style="color:#5597d6;">timeit</span><span style="color:#1f1f1f;">(</span><span style="color:#d07711;">&#39;possessive.search(s2)&#39;</span><span style="color:#1f1f1f;">, </span><span style="color:#5597d6;">number</span><span style="color:#72ab00;">=</span><span style="color:#b3933a;">10</span><span style="color:#1f1f1f;">, </span><span style="color:#5597d6;">globals</span><span style="color:#72ab00;">=</span><span style="color:#b39f04;">globals</span><span style="color:#1f1f1f;">())
-</span><span style="color:#b3933a;">0.00019008600065717474
-</span></code></pre>
-<p><code>(a+|\w+)*:</code> is a silly regex pattern, since it can be rewritten as <code>\w*:</code> which will not suffer from catastrophic backtracking. But this example shows how quantifiers applied to a group with multiple alternatives using quantifiers can lead to explosive results. More such patterns and mitigation strategies can be found in the following links:</p>
-<ul>
-<li><a href="https://www.rexegg.com/regex-explosive-quantifiers.html">The Explosive Quantifier Trap</a></li>
-<li><a href="https://www.regular-expressions.info/catastrophic.html">Runaway Regular Expressions: Catastrophic Backtracking</a></li>
-<li><a href="https://blog.cloudflare.com/details-of-the-cloudflare-outage-on-july-2-2019/">Details of the Cloudflare outage on July 2, 2019</a></li>
-</ul>
-
-    </div>
-
-    
-    
-
-    <div class="post-footer">
-        
-            
-                <div class="post-tags">
-                    
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;python&#x2F;">#python</a>
-                    
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;regular-expressions&#x2F;">#regular-expressions</a>
-                    
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;possessive-quantifiers&#x2F;">#possessive-quantifiers</a>
-                    
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;atomic-grouping&#x2F;">#atomic-grouping</a>
-                    
-                </div>
-            
-            
-                <div class="post-nav">
-                    
-                        <a class="previous" href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;vim-reference-guide-announcement&#x2F;">‹ Vim Reference Guide book announcement</a>
-                    
-                    
-                    
-                    
-                </div>
-            
-
-        
-
-    </div>
-
-    
-    
-</article>
-
-
-                </div>
-            </main>
-
-            
-            
-        </div>
-
-      
-          <script type="text/javascript" src="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;even.js" ></script>
-      
-    </body>
-
-</html>
+<!doctype html><html lang=en><head><meta content="IE=edge" http-equiv=X-UA-Compatible><meta content="text/html; charset=utf-8" http-equiv=content-type><meta content="width=device-width,initial-scale=1.0,maximum-scale=1" name=viewport><title>Python 3.11: possessive quantifiers and atomic grouping added to re module</title><link href=https://learnbyexample.github.io/atom.xml rel=alternate title=RSS type=application/atom+xml><script src=https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js></script><link href=https://learnbyexample.github.io/site.css rel=stylesheet><link href=https://learnbyexample.github.io/favicon.svg rel=icon><link rel="shortcut icon" href=https://learnbyexample.github.io/favicon.png><body><div class=container><div class=mobile-navbar id=mobile-navbar><div class=mobile-header-logo><a class=logo href=/>learnbyexample</a></div><div class="mobile-navbar-icon icon-out"><span></span><span></span><span></span></div></div><nav class="mobile-menu slideout-menu slideout-menu-left" id=mobile-menu><ul class=mobile-menu-list><li class=mobile-menu-item><a href=https://learnbyexample.github.io/books> Books </a><li class=mobile-menu-item><a href=https://learnbyexample.github.io/mini> Mini </a><li class=mobile-menu-item><a href=https://learnbyexample.github.io/tips> Tips </a><li class=mobile-menu-item><a href=https://learnbyexample.github.io/tags> Tags </a><li class=mobile-menu-item><a href=https://learnbyexample.github.io/about> About </a></ul></nav><header id=header><div class=logo><a href=https://learnbyexample.github.io>learnbyexample</a></div><nav class=menu><ul><li><a href=https://learnbyexample.github.io/books> Books </a><li><a href=https://learnbyexample.github.io/mini> Mini </a><li><a href=https://learnbyexample.github.io/tips> Tips </a><li><a href=https://learnbyexample.github.io/tags> Tags </a><li><a href=https://learnbyexample.github.io/about> About </a></ul></nav></header><main><div class=content id=mobile-panel><div class=post-toc id=post-toc><h2 class=post-toc-title>Contents</h2><div class="post-toc-content always-active"><nav id=TableOfContents><ul><li><a class=toc-link href=https://learnbyexample.github.io/python-regex-possessive-quantifier/#backtracking>Backtracking</a><li><a class=toc-link href=https://learnbyexample.github.io/python-regex-possessive-quantifier/#possessive-quantifiers>Possessive quantifiers</a><li><a class=toc-link href=https://learnbyexample.github.io/python-regex-possessive-quantifier/#atomic-grouping>Atomic grouping</a><li><a class=toc-link href=https://learnbyexample.github.io/python-regex-possessive-quantifier/#catastrophic-backtracking>Catastrophic Backtracking</a></ul></nav></div></div><article class=post><header class=post__header><h1 class=post__title><a href=https://learnbyexample.github.io/python-regex-possessive-quantifier/>Python 3.11: possessive quantifiers and atomic grouping added to re module</a></h1><div class=post__meta><span class=post__time>2022-05-07</span></div></header><div class=post-content><p>Quoting from <a href=https://docs.python.org/3.11/whatsnew/3.11.html>What's New In Python 3.11</a>:<blockquote><p>Atomic grouping (<code>(?>...)</code>) and possessive quantifiers (<code>*+</code>, <code>++</code>, <code>?+</code>, <code>{m,n}+</code>) are now supported in regular expressions. (Contributed by Jeffrey C. Jacobs and Serhiy Storchaka in <a href=https://github.com/python/cpython/issues/34627>bpo-433030</a>.)</blockquote><p><img alt=info src=/images/info.svg> If you are not familiar with regular expressions, see my <a href=https://github.com/learnbyexample/py_regular_expressions>Python re(gex)?</a> ebook to get started.</p><span id=continue-reading></span><br><h2 id=backtracking>Backtracking<a aria-label="Anchor link for: backtracking" class=zola-anchor href=#backtracking>🔗</a></h2><p>Greedy quantifiers match as much as possible, provided the overall regex is satisfied. For example, <code>:.*</code> will match <code>:</code> followed by rest of the input line. However, if you change the pattern to <code>:.*apple</code>, the <code>.*</code> portion cannot simply consume the rest of the input line. The regex engine will have to find the largest portion such that <code>apple</code> is also part of the match (provided the input has such a string, of course).<pre class=language-python data-lang=python style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-python data-lang=python><span style=color:#72ab00;>>>> import </span><span>re
+</span><span>
+</span><span style=color:#72ab00;>>>> </span><span>ip </span><span style=color:#72ab00;>= </span><span style=color:#d07711;>'fig:mango:pineapple:guava:apples:orange'
+</span><span>
+</span><span style=color:#72ab00;>>>> </span><span>re.</span><span style=color:#5597d6;>search</span><span>(</span><span style=color:#668f14;>r</span><span style=color:#d07711;>'</span><span style=color:#7c8f4c;>:</span><span style=color:#aeb52b;>.</span><span style=color:#72ab00;>*</span><span style=color:#d07711;>'</span><span>, ip)[</span><span style=color:#b3933a;>0</span><span>]
+</span><span style=color:#d07711;>':mango:pineapple:guava:apples:orange'
+</span><span>
+</span><span style=color:#72ab00;>>>> </span><span>re.</span><span style=color:#5597d6;>search</span><span>(</span><span style=color:#668f14;>r</span><span style=color:#d07711;>'</span><span style=color:#7c8f4c;>:</span><span style=color:#aeb52b;>.</span><span style=color:#72ab00;>*</span><span style=color:#7c8f4c;>apple</span><span style=color:#d07711;>'</span><span>, ip)[</span><span style=color:#b3933a;>0</span><span>]
+</span><span style=color:#d07711;>':mango:pineapple:guava:apple'
+</span></code></pre><p>For the <code>:.*apple</code> case, the Python regular expression engine actually does consume all the characters on seeing <code>.*</code>. Then realizing that the overall match failed, it gives back one character from the end of line and checks again. This process is repeated until a match is found or failure is confirmed. In regular expression parlance, this is called <strong>backtracking</strong>.<p>This type of exploring matches to satisfy overall regex also applies to non-greedy quantifiers. <code>.*?</code> will start with zero characters followed by one, two, three and so on until a match is found.<pre class=language-python data-lang=python style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-python data-lang=python><span style=color:#72ab00;>>>> </span><span>ip </span><span style=color:#72ab00;>= </span><span style=color:#d07711;>'fig:mango:pineapple:guava:apples:orange'
+</span><span>
+</span><span style=color:#72ab00;>>>> </span><span>re.</span><span style=color:#5597d6;>search</span><span>(</span><span style=color:#668f14;>r</span><span style=color:#d07711;>'</span><span style=color:#7c8f4c;>:</span><span style=color:#aeb52b;>.</span><span style=color:#72ab00;>*?</span><span style=color:#d07711;>'</span><span>, ip)[</span><span style=color:#b3933a;>0</span><span>]
+</span><span style=color:#d07711;>':'
+</span><span>
+</span><span style=color:#72ab00;>>>> </span><span>re.</span><span style=color:#5597d6;>search</span><span>(</span><span style=color:#668f14;>r</span><span style=color:#d07711;>'</span><span style=color:#7c8f4c;>:</span><span style=color:#aeb52b;>.</span><span style=color:#72ab00;>*?</span><span style=color:#7c8f4c;>apple</span><span style=color:#d07711;>'</span><span>, ip)[</span><span style=color:#b3933a;>0</span><span>]
+</span><span style=color:#d07711;>':mango:pineapple'
+</span></code></pre><blockquote><p><img alt=info src=/images/info.svg> Note that some regex engines like <a href=https://github.com/google/re2>re2</a> do not use backtracking.</blockquote><br><h2 id=possessive-quantifiers>Possessive quantifiers<a aria-label="Anchor link for: possessive-quantifiers" class=zola-anchor href=#possessive-quantifiers>🔗</a></h2><p>Until Python 3.10, you had to use alternatives like the third-party <a href=https://pypi.org/project/regex/>regex module</a> for possessive quantifiers. The <code>re</code> module supports possessive quantifiers from Python 3.11 version. This version is currently under development, see <a href=https://www.python.org/download/pre-releases/>Pre-release</a> page on the Python site for download links and other details.<p>The difference between greedy and possessive quantifiers is that possessive will not backtrack to find a match. In other words, possessive quantifiers will always consume every character that matches the pattern on which it is applied. Syntax wise, you need to append <code>+</code> to greedy quantifiers to make it possessive, similar to adding <code>?</code> for non-greedy case.<p>Unlike greedy or non-greedy quantifiers, <code>:.*+apple</code> will never match, because <code>.*+</code> will consume rest of the line, leaving no way to match <code>apple</code>.<pre class=language-python data-lang=python style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-python data-lang=python><span>$ python3</span><span style=color:#b3933a;>.11 </span><span style=color:#72ab00;>-</span><span>q
+</span><span style=color:#72ab00;>>>> import </span><span>re
+</span><span>
+</span><span style=color:#72ab00;>>>> </span><span>ip </span><span style=color:#72ab00;>= </span><span style=color:#d07711;>'fig:mango:pineapple:guava:apples:orange'
+</span><span>
+</span><span style=color:#72ab00;>>>> </span><span>re.</span><span style=color:#5597d6;>search</span><span>(</span><span style=color:#668f14;>r</span><span style=color:#d07711;>'</span><span style=color:#7c8f4c;>:</span><span style=color:#aeb52b;>.</span><span style=color:#72ab00;>*+</span><span style=color:#d07711;>'</span><span>, ip)[</span><span style=color:#b3933a;>0</span><span>]
+</span><span style=color:#d07711;>':mango:pineapple:guava:apples:orange'
+</span><span>
+</span><span style=color:#72ab00;>>>> </span><span style=color:#a2a001;>bool</span><span>(re.</span><span style=color:#5597d6;>search</span><span>(</span><span style=color:#668f14;>r</span><span style=color:#d07711;>'</span><span style=color:#7c8f4c;>:</span><span style=color:#aeb52b;>.</span><span style=color:#72ab00;>*+</span><span style=color:#7c8f4c;>apple</span><span style=color:#d07711;>'</span><span>, ip))
+</span><span style=color:#b3933a;>False
+</span></code></pre><p>Here's a more practical example. Suppose you want to match integer numbers greater than or equal to <code>100</code> where these numbers can optionally have leading zeros.<pre class=language-python data-lang=python style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-python data-lang=python><span style=color:#72ab00;>>>> </span><span>numbers </span><span style=color:#72ab00;>= </span><span style=color:#d07711;>'42 314 001 12 00984'
+</span><span>
+</span><span style=color:#7f8989;># this solution fails because 0* and \d{3,} can both match leading zeros
+</span><span style=color:#7f8989;># and greedy quantifiers will give up characters to help overall regex succeed
+</span><span style=color:#72ab00;>>>> </span><span>re.</span><span style=color:#5597d6;>findall</span><span>(</span><span style=color:#668f14;>r</span><span style=color:#d07711;>'</span><span style=color:#7c8f4c;>0</span><span style=color:#72ab00;>*</span><span style=color:#aeb52b;>\d</span><span style=color:#72ab00;>{3,}</span><span style=color:#d07711;>'</span><span>, numbers)
+</span><span>[</span><span style=color:#d07711;>'314'</span><span>, </span><span style=color:#d07711;>'001'</span><span>, </span><span style=color:#d07711;>'00984'</span><span>]
+</span><span>
+</span><span style=color:#7f8989;># here 0*+ will not give back leading zeros after they are consumed
+</span><span style=color:#72ab00;>>>> </span><span>re.</span><span style=color:#5597d6;>findall</span><span>(</span><span style=color:#668f14;>r</span><span style=color:#d07711;>'</span><span style=color:#7c8f4c;>0</span><span style=color:#72ab00;>*+</span><span style=color:#aeb52b;>\d</span><span style=color:#72ab00;>{3,}</span><span style=color:#d07711;>'</span><span>, numbers)
+</span><span>[</span><span style=color:#d07711;>'314'</span><span>, </span><span style=color:#d07711;>'00984'</span><span>]
+</span><span>
+</span><span style=color:#7f8989;># workaround if possessive quantifiers are not supported
+</span><span style=color:#72ab00;>>>> </span><span>re.</span><span style=color:#5597d6;>findall</span><span>(</span><span style=color:#668f14;>r</span><span style=color:#d07711;>'</span><span style=color:#7c8f4c;>0</span><span style=color:#72ab00;>*</span><span style=color:#aeb52b;>[</span><span style=color:#b3933a;>1-9</span><span style=color:#aeb52b;>]\d</span><span style=color:#72ab00;>{2,}</span><span style=color:#d07711;>'</span><span>, numbers)
+</span><span>[</span><span style=color:#d07711;>'314'</span><span>, </span><span style=color:#d07711;>'00984'</span><span>]
+</span></code></pre><p>Here's another example. The goal is to match lines whose first non-whitespace character is not a <code>#</code> character. A matching line should have at least one non-<code>#</code> character, so empty lines and those with only whitespace characters should not match.<pre class=language-python data-lang=python style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-python data-lang=python><span style=color:#72ab00;>>>> </span><span>lines </span><span style=color:#72ab00;>= </span><span>[</span><span style=color:#d07711;>'#comment'</span><span>, </span><span style=color:#d07711;>'c = "#"'</span><span>, </span><span style=color:#d07711;>'</span><span style=color:#aeb52b;>\t</span><span style=color:#d07711;> #comment'</span><span>, </span><span style=color:#d07711;>'abc'</span><span>, </span><span style=color:#d07711;>''</span><span>, </span><span style=color:#d07711;>' </span><span style=color:#aeb52b;>\t </span><span style=color:#d07711;>'</span><span>]
+</span><span>
+</span><span style=color:#7f8989;># this solution fails because \s* can backtrack
+</span><span style=color:#7f8989;># and [^#] can match a whitespace character as well
+</span><span style=color:#72ab00;>>>> </span><span>[e </span><span style=color:#72ab00;>for </span><span>e </span><span style=color:#72ab00;>in </span><span>lines </span><span style=color:#72ab00;>if </span><span>re.</span><span style=color:#5597d6;>match</span><span>(</span><span style=color:#668f14;>r</span><span style=color:#d07711;>'</span><span style=color:#aeb52b;>\s</span><span style=color:#72ab00;>*</span><span style=color:#aeb52b;>[</span><span style=color:#72ab00;>^</span><span style=color:#aeb52b;>#]</span><span style=color:#d07711;>'</span><span>, e)]
+</span><span>[</span><span style=color:#d07711;>'c = "#"'</span><span>, </span><span style=color:#d07711;>'</span><span style=color:#aeb52b;>\t</span><span style=color:#d07711;> #comment'</span><span>, </span><span style=color:#d07711;>'abc'</span><span>, </span><span style=color:#d07711;>' </span><span style=color:#aeb52b;>\t </span><span style=color:#d07711;>'</span><span>]
+</span><span>
+</span><span style=color:#7f8989;># this works because \s*+ will not give back any whitespace characters
+</span><span style=color:#72ab00;>>>> </span><span>[e </span><span style=color:#72ab00;>for </span><span>e </span><span style=color:#72ab00;>in </span><span>lines </span><span style=color:#72ab00;>if </span><span>re.</span><span style=color:#5597d6;>match</span><span>(</span><span style=color:#668f14;>r</span><span style=color:#d07711;>'</span><span style=color:#aeb52b;>\s</span><span style=color:#72ab00;>*+</span><span style=color:#aeb52b;>[</span><span style=color:#72ab00;>^</span><span style=color:#aeb52b;>#]</span><span style=color:#d07711;>'</span><span>, e)]
+</span><span>[</span><span style=color:#d07711;>'c = "#"'</span><span>, </span><span style=color:#d07711;>'abc'</span><span>]
+</span><span>
+</span><span style=color:#7f8989;># workaround if possessive quantifiers are not supported
+</span><span style=color:#72ab00;>>>> </span><span>[e </span><span style=color:#72ab00;>for </span><span>e </span><span style=color:#72ab00;>in </span><span>lines </span><span style=color:#72ab00;>if </span><span>re.</span><span style=color:#5597d6;>match</span><span>(</span><span style=color:#668f14;>r</span><span style=color:#d07711;>'</span><span style=color:#aeb52b;>\s</span><span style=color:#72ab00;>*</span><span style=color:#aeb52b;>[</span><span style=color:#72ab00;>^</span><span style=color:#aeb52b;>#</span><span style=color:#b3933a;>\s</span><span style=color:#aeb52b;>]</span><span style=color:#d07711;>'</span><span>, e)]
+</span><span>[</span><span style=color:#d07711;>'c = "#"'</span><span>, </span><span style=color:#d07711;>'abc'</span><span>]
+</span></code></pre><br><h2 id=atomic-grouping>Atomic grouping<a aria-label="Anchor link for: atomic-grouping" class=zola-anchor href=#atomic-grouping>🔗</a></h2><p><code>(?>pat)</code> is an atomic group, where <code>pat</code> is the pattern you want to safeguard from further backtracking by isolating it from other parts of the regex.<p>Here's an example with greedy quantifiers:<pre class=language-python data-lang=python style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-python data-lang=python><span style=color:#72ab00;>>>> </span><span>numbers </span><span style=color:#72ab00;>= </span><span style=color:#d07711;>'42 314 001 12 00984'
+</span><span>
+</span><span style=color:#7f8989;># 0* is greedy and the (?>) grouping prevents backtracking
+</span><span style=color:#7f8989;># same as: re.findall(r'0*+\d{3,}', numbers)
+</span><span style=color:#72ab00;>>>> </span><span>re.</span><span style=color:#5597d6;>findall</span><span>(</span><span style=color:#668f14;>r</span><span style=color:#d07711;>'</span><span style=color:#7c8f4c;>(</span><span style=color:#72ab00;>?</span><span style=color:#7c8f4c;>>0</span><span style=color:#72ab00;>*</span><span style=color:#7c8f4c;>)</span><span style=color:#aeb52b;>\d</span><span style=color:#72ab00;>{3,}</span><span style=color:#d07711;>'</span><span>, numbers)
+</span><span>[</span><span style=color:#d07711;>'314'</span><span>, </span><span style=color:#d07711;>'00984'</span><span>]
+</span></code></pre><p>Here are a couple of examples with non-greedy quantifiers. A portion of the pattern is protected by atomic grouping to get a match as minimally as possible.<pre class=language-bash data-lang=bash style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-bash data-lang=bash><span style=color:#72ab00;>>>></span><span> ip </span><span style=color:#72ab00;>= </span><span style=color:#d07711;>'fig:mango:pineapple:guava:apples:orange'
+</span><span style=color:#72ab00;>>>></span><span> re.search(</span><span style=color:#5597d6;>r</span><span style=color:#d07711;>':.*?:apple'</span><span style=color:#5597d6;>,</span><span> ip)</span><span style=color:#72ab00;>[</span><span>0</span><span style=color:#72ab00;>]
+</span><span style=color:#d07711;>':mango:pineapple:guava:apple'
+</span><span style=color:#72ab00;>>>></span><span> re.search(</span><span style=color:#5597d6;>r</span><span style=color:#d07711;>'(?>:.*?:)apple'</span><span style=color:#5597d6;>,</span><span> ip)</span><span style=color:#72ab00;>[</span><span>0</span><span style=color:#72ab00;>]
+</span><span style=color:#d07711;>':guava:apple'
+</span><span>
+</span><span style=color:#72ab00;>>>></span><span> ip </span><span style=color:#72ab00;>= </span><span style=color:#d07711;>'this book is good and that movie is bad'
+</span><span style=color:#72ab00;>>>></span><span> re.search(</span><span style=color:#5597d6;>r</span><span style=color:#d07711;>'th.*?\bis bad'</span><span style=color:#5597d6;>,</span><span> ip)</span><span style=color:#72ab00;>[</span><span>0</span><span style=color:#72ab00;>]
+</span><span style=color:#d07711;>'this book is good and that movie is bad'
+</span><span style=color:#72ab00;>>>></span><span> re.search(</span><span style=color:#5597d6;>r</span><span style=color:#d07711;>'(?>th.*?\bis )bad'</span><span style=color:#5597d6;>,</span><span> ip)</span><span style=color:#72ab00;>[</span><span>0</span><span style=color:#72ab00;>]
+</span><span style=color:#d07711;>'that movie is bad'
+</span></code></pre><blockquote><p><img alt=info src=/images/info.svg> You can also use the <code>REVERSE</code> flag provided by <a href=https://pypi.org/project/regex/>regex module</a> for such cases:<pre class=language-python data-lang=python style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-python data-lang=python><span style=color:#72ab00;>>>> import </span><span>regex
+</span><span style=color:#72ab00;>>>> </span><span>ip </span><span style=color:#72ab00;>= </span><span style=color:#d07711;>'this book is good and that movie is bad'
+</span><span style=color:#72ab00;>>>> </span><span>regex.</span><span style=color:#5597d6;>search</span><span>(</span><span style=color:#668f14;>r</span><span style=color:#d07711;>'</span><span style=color:#7c8f4c;>th</span><span style=color:#aeb52b;>.</span><span style=color:#72ab00;>*?\b</span><span style=color:#7c8f4c;>is bad</span><span style=color:#d07711;>'</span><span>, ip, </span><span style=color:#5597d6;>flags</span><span style=color:#72ab00;>=</span><span>regex.</span><span style=color:#5597d6;>REVERSE</span><span>)[</span><span style=color:#b3933a;>0</span><span>]
+</span><span style=color:#d07711;>'that movie is bad'
+</span></code></pre></blockquote><br><h2 id=catastrophic-backtracking>Catastrophic Backtracking<a aria-label="Anchor link for: catastrophic-backtracking" class=zola-anchor href=#catastrophic-backtracking>🔗</a></h2><p>Backtracking can become significantly time consuming for certain corner cases. Which is why some regex engines do not use them, at the cost of not supporting some features like lookarounds. If your application accepts user defined regex, you might need to protect against such catastrophic patterns. From <a href=https://en.wikipedia.org/wiki/Redos>wikipedia: ReDoS</a>:<blockquote><p>A regular expression denial of service (ReDoS) is an algorithmic complexity attack that produces a denial-of-service by providing a regular expression and/or an input that takes a long time to evaluate. The attack exploits the fact that many regular expression implementations have super-linear worst-case complexity; on certain regex-input pairs, the time taken can grow polynomially or exponentially in relation to the input size. An attacker can thus cause a program to spend substantial time by providing a specially crafted regular expression and/or input. The program will then slow down or becoming unresponsive.</blockquote><p>Here's an example:<pre class=language-python data-lang=python style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-python data-lang=python><span style=color:#72ab00;>>>> from </span><span>timeit </span><span style=color:#72ab00;>import </span><span>timeit
+</span><span>
+</span><span style=color:#72ab00;>>>> </span><span>greedy </span><span style=color:#72ab00;>= </span><span>re.</span><span style=color:#5597d6;>compile</span><span>(</span><span style=color:#668f14;>r</span><span style=color:#d07711;>'</span><span style=color:#7c8f4c;>(a</span><span style=color:#72ab00;>+|</span><span style=color:#aeb52b;>\w</span><span style=color:#72ab00;>+</span><span style=color:#7c8f4c;>)</span><span style=color:#72ab00;>*</span><span style=color:#7c8f4c;>:</span><span style=color:#d07711;>'</span><span>)
+</span><span style=color:#72ab00;>>>> </span><span>possessive </span><span style=color:#72ab00;>= </span><span>re.</span><span style=color:#5597d6;>compile</span><span>(</span><span style=color:#668f14;>r</span><span style=color:#d07711;>'</span><span style=color:#7c8f4c;>(a</span><span style=color:#72ab00;>+|</span><span style=color:#aeb52b;>\w</span><span style=color:#72ab00;>+</span><span style=color:#7c8f4c;>)</span><span style=color:#72ab00;>*+</span><span style=color:#7c8f4c;>:</span><span style=color:#d07711;>'</span><span>)
+</span><span>
+</span><span style=color:#7f8989;># string that'll match the above patterns
+</span><span style=color:#72ab00;>>>> </span><span>s1 </span><span style=color:#72ab00;>= </span><span style=color:#d07711;>'aaaaaaaaaaaaaaaa:123'
+</span><span style=color:#7f8989;># string that does NOT match the above patterns
+</span><span style=color:#72ab00;>>>> </span><span>s2 </span><span style=color:#72ab00;>= </span><span style=color:#d07711;>'aaaaaaaaaaaaaaaa-123'
+</span><span>
+</span><span style=color:#7f8989;># no issues when input string has a match
+</span><span style=color:#72ab00;>>>> </span><span style=color:#5597d6;>timeit</span><span>(</span><span style=color:#d07711;>'greedy.search(s1)'</span><span>, </span><span style=color:#5597d6;>number</span><span style=color:#72ab00;>=</span><span style=color:#b3933a;>10000</span><span>, </span><span style=color:#5597d6;>globals</span><span style=color:#72ab00;>=</span><span style=color:#b39f04;>globals</span><span>())
+</span><span style=color:#b3933a;>0.016464739997900324
+</span><span style=color:#72ab00;>>>> </span><span style=color:#5597d6;>timeit</span><span>(</span><span style=color:#d07711;>'possessive.search(s1)'</span><span>, </span><span style=color:#5597d6;>number</span><span style=color:#72ab00;>=</span><span style=color:#b3933a;>10000</span><span>, </span><span style=color:#5597d6;>globals</span><span style=color:#72ab00;>=</span><span style=color:#b39f04;>globals</span><span>())
+</span><span style=color:#b3933a;>0.016358205997676123
+</span><span>
+</span><span style=color:#7f8989;># if input doesn't match, greedy version suffers from catastrophic backtracking
+</span><span style=color:#7f8989;># note that 'number' parameter is reduced to 10 since it takes a long time
+</span><span style=color:#72ab00;>>>> </span><span style=color:#5597d6;>timeit</span><span>(</span><span style=color:#d07711;>'greedy.search(s2)'</span><span>, </span><span style=color:#5597d6;>number</span><span style=color:#72ab00;>=</span><span style=color:#b3933a;>10</span><span>, </span><span style=color:#5597d6;>globals</span><span style=color:#72ab00;>=</span><span style=color:#b39f04;>globals</span><span>())
+</span><span style=color:#b3933a;>53.71723825200024
+</span><span style=color:#72ab00;>>>> </span><span style=color:#5597d6;>timeit</span><span>(</span><span style=color:#d07711;>'possessive.search(s2)'</span><span>, </span><span style=color:#5597d6;>number</span><span style=color:#72ab00;>=</span><span style=color:#b3933a;>10</span><span>, </span><span style=color:#5597d6;>globals</span><span style=color:#72ab00;>=</span><span style=color:#b39f04;>globals</span><span>())
+</span><span style=color:#b3933a;>0.00019008600065717474
+</span></code></pre><p><code>(a+|\w+)*:</code> is a silly regex pattern, since it can be rewritten as <code>\w*:</code> which will not suffer from catastrophic backtracking. But this example shows how quantifiers applied to a group with multiple alternatives using quantifiers can lead to explosive results. More such patterns and mitigation strategies can be found in the following links:<ul><li><a href=https://www.rexegg.com/regex-explosive-quantifiers.html>The Explosive Quantifier Trap</a><li><a href=https://www.regular-expressions.info/catastrophic.html>Runaway Regular Expressions: Catastrophic Backtracking</a><li><a href=https://blog.cloudflare.com/details-of-the-cloudflare-outage-on-july-2-2019/>Details of the Cloudflare outage on July 2, 2019</a></ul></div><div class=post-footer><div class=post-tags><a href=https://learnbyexample.github.io/tags/python/>#python</a><a href=https://learnbyexample.github.io/tags/regular-expressions/>#regular-expressions</a><a href=https://learnbyexample.github.io/tags/possessive-quantifiers/>#possessive-quantifiers</a><a href=https://learnbyexample.github.io/tags/atomic-grouping/>#atomic-grouping</a></div><p>👉 Use <a href=https://learnbyexample.github.io/atom.xml>this link</a> for the Atom feed. <br> 👉 Follow me on <a href=https://twitter.com/learn_byexample>Twitter</a>, <a href=https://github.com/learnbyexample>GitHub</a> and <a href=https://www.youtube.com/channel/UCKdFGbeOUPYM9GocmrIFGcw/playlists>Youtube</a> for interesting tech nuggets.<hr color=#e6e6e6></div></article></div></main></div><script src=https://learnbyexample.github.io/even.js></script>

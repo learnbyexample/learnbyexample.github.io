@@ -1,222 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta http-equiv="content-type" content="text/html; charset=utf-8">
-
-      <!-- Enable responsiveness on mobile devices-->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-
-      <title>CLI tip 4: serialize file contents to a single line</title>
-
-      
-        <link rel="alternate" type="application/atom+xml" title="RSS" href="https://learnbyexample.github.io/atom.xml">
-      
-
-      
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
-          
-      
-
-      
-          <link rel="stylesheet" href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;site.css">
-          
-      
-
-      
-      
-<link rel="icon" href="https://learnbyexample.github.io/favicon.svg">
-<link rel="shortcut icon" href="https://learnbyexample.github.io/favicon.png">
-    </head>
-
-    <body>
-        <div class="container">
-
-            <div id="mobile-navbar" class="mobile-navbar">
-              <div class="mobile-header-logo">
-                <a href="/" class="logo">learnbyexample</a>
-              </div>
-              <div class="mobile-navbar-icon icon-out">
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-            </div>
-
-            <nav id="mobile-menu" class="mobile-menu slideout-menu slideout-menu-left">
-              <ul class="mobile-menu-list">
-                
-                    <li class="mobile-menu-item">
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;books">
-                            Books
-                        </a>
-                    </li>
-                
-                    <li class="mobile-menu-item">
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;mini">
-                            Mini
-                        </a>
-                    </li>
-                
-                    <li class="mobile-menu-item">
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips">
-                            Tips
-                        </a>
-                    </li>
-                
-                    <li class="mobile-menu-item">
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags">
-                            Tags
-                        </a>
-                    </li>
-                
-                    <li class="mobile-menu-item">
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;about">
-                            About
-                        </a>
-                    </li>
-                
-              </ul>
-            </nav>
-
-            <header id="header">
-                <div class="logo"><a href="https:&#x2F;&#x2F;learnbyexample.github.io">learnbyexample</a></div>
-                <nav class="menu">
-                    <ul>
-                        
-                            <li>
-                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;books">
-                                    Books
-                                </a>
-                            </li>
-                        
-                            <li>
-                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;mini">
-                                    Mini
-                                </a>
-                            </li>
-                        
-                            <li>
-                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips">
-                                    Tips
-                                </a>
-                            </li>
-                        
-                            <li>
-                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags">
-                                    Tags
-                                </a>
-                            </li>
-                        
-                            <li>
-                                <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;about">
-                                    About
-                                </a>
-                            </li>
-                        
-                    </ul>
-                </nav>
-            </header>
-
-            <main>
-                <div class="content" id="mobile-panel">
-                    
-
-
-
-<article class="post">
-    
-    <header class="post__header">
-        <h1 class="post__title">
-            <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips&#x2F;cli-tip-4&#x2F;">CLI tip 4: serialize file contents to a single line</a>
-        </h1>
-        <div class="post__meta">
-            <span class="post__time">2022-01-12</span>
-            
-        </div>
-    </header>
-
-    <div class="post-content">
-      <p>The <code>-s</code> option is one of the useful, but lesser known feature of the <code>paste</code> command. It helps you to serialize input file contents to a single output line.</p>
-<pre style="background-color:#f5f5f5;">
-<code><span style="color:#1f1f1f;">$ cat colors.txt
-blue
-white
-orange
-
-$ paste </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">sd, colors.txt
-blue,white,orange
-</span></code></pre>
-<p>If multiple files are passed, serialization of each file is displayed on separate output lines.</p>
-<pre style="background-color:#f5f5f5;">
-<code><span style="color:#1f1f1f;">$ paste </span><span style="color:#72ab00;">-</span><span style="color:#b3933a;">sd: </span><span style="color:#72ab00;">&lt;</span><span style="color:#1f1f1f;">(seq </span><span style="color:#b3933a;">3</span><span style="color:#1f1f1f;">) </span><span style="color:#72ab00;">&lt;</span><span style="color:#1f1f1f;">(seq </span><span style="color:#b3933a;">5 9</span><span style="color:#1f1f1f;">)
-</span><span style="color:#b3933a;">1</span><span style="color:#72ab00;">:</span><span style="color:#b3933a;">2</span><span style="color:#72ab00;">:</span><span style="color:#b3933a;">3
-5</span><span style="color:#72ab00;">:</span><span style="color:#b3933a;">6</span><span style="color:#72ab00;">:</span><span style="color:#b3933a;">7</span><span style="color:#72ab00;">:</span><span style="color:#b3933a;">8</span><span style="color:#72ab00;">:</span><span style="color:#b3933a;">9
-</span></code></pre>
-<p>The advantage of using <code>paste</code> instead of other options like <code>tr</code>, <code>awk</code>, etc is that you do not have to worry about trailing delimiters, newlines, etc. For example:</p>
-<pre style="background-color:#f5f5f5;">
-<code><span style="color:#7f8989;"># issue 1: trailing comma
-# issue 2: no newline at the end
-</span><span style="color:#1f1f1f;">$ </span><span style="color:#72ab00;">&lt;</span><span style="color:#1f1f1f;">colors.txt tr </span><span style="color:#d07711;">&#39;\n&#39; &#39;,&#39;</span><span style="color:#1f1f1f;">
-blue,white,orange,
-
-</span><span style="color:#7f8989;"># correcting the above two issues
-</span><span style="color:#1f1f1f;">$ </span><span style="color:#72ab00;">&lt;</span><span style="color:#1f1f1f;">colors.txt tr </span><span style="color:#d07711;">&#39;\n&#39; &#39;,&#39; </span><span style="color:#72ab00;">|</span><span style="color:#1f1f1f;"> sed </span><span style="color:#d07711;">&#39;s/,$/\n/&#39;</span><span style="color:#1f1f1f;">
-blue,white,orange
-</span></code></pre>
-<p>Here's an equivalent <code>awk</code> solution for single file input. While slower and complicated compared to the <code>paste</code> solution, you get more flexibility since <code>awk</code> is a programming language. For example, it is pretty easy to use multicharacter output delimiter.</p>
-<pre style="background-color:#f5f5f5;">
-<code><span style="color:#1f1f1f;">$ awk </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">v </span><span style="color:#c23f31;">ORS</span><span style="color:#72ab00;">= </span><span style="color:#d07711;">&#39;NR&gt;1{print &quot;,&quot;} 1; END{print &quot;\n&quot;}&#39;</span><span style="color:#1f1f1f;"> colors.txt
-blue,white,orange
-
-$ awk </span><span style="color:#72ab00;">-</span><span style="color:#1f1f1f;">v </span><span style="color:#c23f31;">ORS</span><span style="color:#72ab00;">= </span><span style="color:#d07711;">&#39;NR&gt;1{print &quot; : &quot;} 1; END{print &quot;\n&quot;}&#39;</span><span style="color:#1f1f1f;"> colors.txt
-blue </span><span style="color:#72ab00;">:</span><span style="color:#1f1f1f;"> white </span><span style="color:#72ab00;">:</span><span style="color:#1f1f1f;"> orange
-</span></code></pre>
-<p><strong>Video demo</strong>:</p>
-<p align="center"><iframe width="560" height="315" loading="lazy" src="https://www.youtube.com/embed/NX91QlHWAio" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
-<br>
-<p><img src="/images/info.svg" alt="info" /> See <a href="https://learnbyexample.github.io/cli_text_processing_coreutils/paste.html">paste command</a> chapter from my <a href="https://github.com/learnbyexample/cli_text_processing_coreutils">Command line text processing with GNU Coreutils</a> ebook for more details.</p>
-<p><img src="/images/info.svg" alt="info" /> See my <a href="https://github.com/learnbyexample/learn_gnuawk">GNU awk one-liners</a> ebook if you are interested in learning about the <code>awk</code> command.</p>
-
-    </div>
-
-    
-    
-
-    <div class="post-footer">
-        
-            
-                <div class="post-tags">
-                    
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;linux&#x2F;">#linux</a>
-                    
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;command-line&#x2F;">#command-line</a>
-                    
-                        <a href="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tags&#x2F;tip&#x2F;">#tip</a>
-                    
-                </div>
-            
-            
-
-        
-
-    </div>
-
-    
-    
-</article>
-
-
-                </div>
-            </main>
-
-            
-            
-        </div>
-
-      
-          <script type="text/javascript" src="https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;even.js" ></script>
-      
-    </body>
-
-</html>
+<!doctype html><html lang=en><head><meta content="IE=edge" http-equiv=X-UA-Compatible><meta content="text/html; charset=utf-8" http-equiv=content-type><meta content="width=device-width,initial-scale=1.0,maximum-scale=1" name=viewport><title>CLI tip 4: serialize file contents to a single line</title><link href=https://learnbyexample.github.io/atom.xml rel=alternate title=RSS type=application/atom+xml><script src=https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js></script><link href=https://learnbyexample.github.io/site.css rel=stylesheet><link href=https://learnbyexample.github.io/favicon.svg rel=icon><link rel="shortcut icon" href=https://learnbyexample.github.io/favicon.png><body><div class=container><div class=mobile-navbar id=mobile-navbar><div class=mobile-header-logo><a class=logo href=/>learnbyexample</a></div><div class="mobile-navbar-icon icon-out"><span></span><span></span><span></span></div></div><nav class="mobile-menu slideout-menu slideout-menu-left" id=mobile-menu><ul class=mobile-menu-list><li class=mobile-menu-item><a href=https://learnbyexample.github.io/books> Books </a><li class=mobile-menu-item><a href=https://learnbyexample.github.io/mini> Mini </a><li class=mobile-menu-item><a href=https://learnbyexample.github.io/tips> Tips </a><li class=mobile-menu-item><a href=https://learnbyexample.github.io/tags> Tags </a><li class=mobile-menu-item><a href=https://learnbyexample.github.io/about> About </a></ul></nav><header id=header><div class=logo><a href=https://learnbyexample.github.io>learnbyexample</a></div><nav class=menu><ul><li><a href=https://learnbyexample.github.io/books> Books </a><li><a href=https://learnbyexample.github.io/mini> Mini </a><li><a href=https://learnbyexample.github.io/tips> Tips </a><li><a href=https://learnbyexample.github.io/tags> Tags </a><li><a href=https://learnbyexample.github.io/about> About </a></ul></nav></header><main><div class=content id=mobile-panel><article class=post><header class=post__header><h1 class=post__title><a href=https://learnbyexample.github.io/tips/cli-tip-4/>CLI tip 4: serialize file contents to a single line</a></h1><div class=post__meta><span class=post__time>2022-01-12</span></div></header><div class=post-content><p>The <code>-s</code> option is one of the useful, but lesser known feature of the <code>paste</code> command. It helps you to serialize input file contents to a single output line.<pre class=language-ruby data-lang=ruby style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-ruby data-lang=ruby><span>$ cat colors.txt
+</span><span>blue
+</span><span>white
+</span><span>orange
+</span><span>
+</span><span>$ paste </span><span style=color:#72ab00;>-</span><span>sd, colors.txt
+</span><span>blue,white,orange
+</span></code></pre><p>If multiple files are passed, serialization of each file is displayed on separate output lines.<pre class=language-ruby data-lang=ruby style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-ruby data-lang=ruby><span>$ paste </span><span style=color:#72ab00;>-</span><span style=color:#b3933a;>sd: </span><span style=color:#72ab00;><</span><span>(seq </span><span style=color:#b3933a;>3</span><span>) </span><span style=color:#72ab00;><</span><span>(seq </span><span style=color:#b3933a;>5 9</span><span>)
+</span><span style=color:#b3933a;>1</span><span style=color:#72ab00;>:</span><span style=color:#b3933a;>2</span><span style=color:#72ab00;>:</span><span style=color:#b3933a;>3
+</span><span style=color:#b3933a;>5</span><span style=color:#72ab00;>:</span><span style=color:#b3933a;>6</span><span style=color:#72ab00;>:</span><span style=color:#b3933a;>7</span><span style=color:#72ab00;>:</span><span style=color:#b3933a;>8</span><span style=color:#72ab00;>:</span><span style=color:#b3933a;>9
+</span></code></pre><p>The advantage of using <code>paste</code> instead of other options like <code>tr</code>, <code>awk</code>, etc is that you do not have to worry about trailing delimiters, newlines, etc. For example:<pre class=language-ruby data-lang=ruby style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-ruby data-lang=ruby><span style=color:#7f8989;># issue 1: trailing comma
+</span><span style=color:#7f8989;># issue 2: no newline at the end
+</span><span>$ </span><span style=color:#72ab00;><</span><span>colors.txt tr </span><span style=color:#d07711;>'\n' ','
+</span><span>blue,white,orange,
+</span><span>
+</span><span style=color:#7f8989;># correcting the above two issues
+</span><span>$ </span><span style=color:#72ab00;><</span><span>colors.txt tr </span><span style=color:#d07711;>'\n' ',' </span><span style=color:#72ab00;>|</span><span> sed </span><span style=color:#d07711;>'s/,$/\n/'
+</span><span>blue,white,orange
+</span></code></pre><p>Here's an equivalent <code>awk</code> solution for single file input. While slower and complicated compared to the <code>paste</code> solution, you get more flexibility since <code>awk</code> is a programming language. For example, it is pretty easy to use multicharacter output delimiter.<pre class=language-ruby data-lang=ruby style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-ruby data-lang=ruby><span>$ awk </span><span style=color:#72ab00;>-</span><span>v </span><span style=color:#c23f31;>ORS</span><span style=color:#72ab00;>= </span><span style=color:#d07711;>'NR>1{print ","} 1; END{print "\n"}'</span><span> colors.txt
+</span><span>blue,white,orange
+</span><span>
+</span><span>$ awk </span><span style=color:#72ab00;>-</span><span>v </span><span style=color:#c23f31;>ORS</span><span style=color:#72ab00;>= </span><span style=color:#d07711;>'NR>1{print " : "} 1; END{print "\n"}'</span><span> colors.txt
+</span><span>blue </span><span style=color:#72ab00;>:</span><span> white </span><span style=color:#72ab00;>:</span><span> orange
+</span></code></pre><p><strong>Video demo</strong>:<p align=center><iframe allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" title="YouTube video player" allowfullscreen frameborder=0 height=315 loading=lazy src=https://www.youtube.com/embed/NX91QlHWAio width=560></iframe></p><br><p><img alt=info src=/images/info.svg> See <a href=https://learnbyexample.github.io/cli_text_processing_coreutils/paste.html>paste command</a> chapter from my <a href=https://github.com/learnbyexample/cli_text_processing_coreutils>Command line text processing with GNU Coreutils</a> ebook for more details.<p><img alt=info src=/images/info.svg> See my <a href=https://github.com/learnbyexample/learn_gnuawk>GNU awk one-liners</a> ebook if you are interested in learning about the <code>awk</code> command.</div><div class=post-footer><div class=post-tags><a href=https://learnbyexample.github.io/tags/linux/>#linux</a><a href=https://learnbyexample.github.io/tags/command-line/>#command-line</a><a href=https://learnbyexample.github.io/tags/tip/>#tip</a></div><p>👉 Use <a href=https://learnbyexample.github.io/atom.xml>this link</a> for the Atom feed. <br> 👉 Follow me on <a href=https://twitter.com/learn_byexample>Twitter</a>, <a href=https://github.com/learnbyexample>GitHub</a> and <a href=https://www.youtube.com/channel/UCKdFGbeOUPYM9GocmrIFGcw/playlists>Youtube</a> for interesting tech nuggets.<hr color=#e6e6e6></div></article></div></main></div><script src=https://learnbyexample.github.io/even.js></script>
