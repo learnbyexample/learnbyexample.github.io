@@ -5,7 +5,7 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2022-08-03T00:00:00+00:00</updated>
+	<updated>2022-08-06T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
 	<entry xml:lang="en">
 		<title>Python tip 14: sequence unpacking</title>
@@ -3970,29 +3970,33 @@ The substitution works from start of the line for every iteration of the while l
 	<entry xml:lang="en">
 		<title>I know Python basics, what next?</title>
 		<published>2020-07-25T00:00:00+00:00</published>
-		<updated>2022-05-11T00:00:00+00:00</updated>
+		<updated>2022-08-06T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/python-intermediate/" type="text/html"/>
 		<id>https://learnbyexample.github.io/python-intermediate/</id>
-		<content type="html">&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;what_next.png&quot; alt=&quot;what next&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+		<content type="html">&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;python_what_next.png&quot; alt=&quot;Python what next&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;Poster created using &lt;a href=&quot;https:&#x2F;&#x2F;www.canva.com&#x2F;&quot;&gt;Canva&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;&lt;br&gt;
 &lt;h2 id=&quot;next-step&quot;&gt;Next step&lt;a class=&quot;zola-anchor&quot; href=&quot;#next-step&quot; aria-label=&quot;Anchor link for: next-step&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
-&lt;p&gt;What to learn next is an often asked question. &lt;a href=&quot;https:&#x2F;&#x2F;www.reddit.com&#x2F;r&#x2F;learnpython&#x2F;search?q=what+next&amp;amp;restrict_sr=on&quot;&gt;Searching for &lt;code&gt;what next&lt;&#x2F;code&gt; on &#x2F;r&#x2F;learnpython&lt;&#x2F;a&gt; gives you too many results. Here&#x27;s some wonderful articles on this topic:&lt;&#x2F;p&gt;
+&lt;p&gt;Programmers often wonder what to do after learning the basics. &lt;a href=&quot;https:&#x2F;&#x2F;www.reddit.com&#x2F;r&#x2F;learnpython&#x2F;search?q=what+next&amp;amp;restrict_sr=on&quot;&gt;Searching for &lt;code&gt;what next&lt;&#x2F;code&gt; on &#x2F;r&#x2F;learnpython&lt;&#x2F;a&gt; will give you too many results. And here are some wonderful articles related to this topic:&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.devdungeon.com&#x2F;content&#x2F;i-know-how-program-i-dont-know-what-program&quot;&gt;I know how to program, but I don&#x27;t know what to program&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.techinasia.com&#x2F;talk&#x2F;27-things-started-programming&quot;&gt;Things you might encounter in your programming journey&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.flyingmachinestudios.com&#x2F;programming&#x2F;learn-programming-languages-efficiently&#x2F;&quot;&gt;Techniques for Efficiently Learning Programming Languages&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.techinasia.com&#x2F;talk&#x2F;27-things-started-programming&quot;&gt;Things you might encounter in your programming journey&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
+&lt;p&gt;I do not have a simple answer to this question. However, I&#x27;ll list a few topics along with resources that might help you take the next step in your Python learning journey.&lt;&#x2F;p&gt;
 &lt;br&gt;
 &lt;h2 id=&quot;exercises-and-projects&quot;&gt;Exercises and Projects&lt;a class=&quot;zola-anchor&quot; href=&quot;#exercises-and-projects&quot; aria-label=&quot;Anchor link for: exercises-and-projects&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
-&lt;p&gt;I do not have a simple answer to this question either. If you feel comfortable with programming basics and Python syntax, then exercises are a good way to test your knowledge. The resource you used to learn Python will typically have some sort of exercises, so those would be ideal as a first choice. I&#x27;d also suggest using the below resources to improve your skills. If you get stuck, reread the material related to those topics, search online, ask for clarifications, etc  — in short, make an effort to solve it. It is okay to skip some troublesome problems (and come back to it later if you have the time), but you should be able to solve most of the beginner problems. Maintaining notes and cheatsheets will help too, especially for common mistakes.&lt;&#x2F;p&gt;
+&lt;p&gt;If you feel comfortable with programming basics and Python syntax, then exercises are a good way to test your knowledge. The resource you used to learn Python will typically have some sort of exercises, so those would be ideal as a first choice. I&#x27;d also suggest using the below resources to improve your skills. If you get stuck, reread the material related to those topics, search online, ask for clarifications, etc  — in short, make an effort to solve it. It is okay to skip some troublesome problems (and come back to it later if you have the time), but you should be able to solve most of the beginner problems. Maintaining notes and cheatsheets will help too, especially for common mistakes.&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;exercism.org&#x2F;tracks&#x2F;python&#x2F;exercises&quot;&gt;Exercism&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;www.hackinscience.org&#x2F;exercises&#x2F;&quot;&gt;Hackinscience&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;www.practicepython.org&#x2F;&quot;&gt;Practicepython&lt;&#x2F;a&gt; — these are all beginner friendly and difficulty levels are marked&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;100_page_python_intro&#x2F;blob&#x2F;main&#x2F;exercises&#x2F;Exercises.md&quot;&gt;100 Page Python Intro exercises&lt;&#x2F;a&gt; — exercises from my introductory guide&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;100_page_python_intro&#x2F;blob&#x2F;main&#x2F;exercises&#x2F;Exercises.md&quot;&gt;100 Page Python Intro exercises&lt;&#x2F;a&gt; — practice problems from my introductory guide&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;adventofcode.com&#x2F;&quot;&gt;Adventofcode&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;www.codewars.com&#x2F;&quot;&gt;Codewars&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;www.pythonmorsels.com&#x2F;&quot;&gt;Python Morsels&lt;&#x2F;a&gt; — includes more challenging exercises for intermediate to advanced level users&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;py.checkio.org&#x2F;&quot;&gt;Checkio&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;www.codingame.com&#x2F;start&quot;&gt;Codingame&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;codecombat.com&#x2F;&quot;&gt;Codecombat&lt;&#x2F;a&gt; — gaming based challenges&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.reddit.com&#x2F;r&#x2F;dailyprogrammer&quot;&gt;&#x2F;r&#x2F;dailyprogrammer&lt;&#x2F;a&gt; — not active currently, but there&#x27;s plenty of past challenges with discussions&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
-&lt;p&gt;Once you are comfortable with basics and syntax, the next step is projects. I use a 10-line program that solves a common problem for me — adding &lt;code&gt;body { text-align: justify }&lt;&#x2F;code&gt; to &lt;code&gt;epub&lt;&#x2F;code&gt; files that are not justify aligned. I didn&#x27;t know that this line would help beforehand. Found a solution online and then automated the process of unzipping &lt;code&gt;epub&lt;&#x2F;code&gt;, adding the line and then packing it again. That will likely need you to lookup documentation and go through some stackoverflow Q&amp;amp;A as well. And once you have written the solution and use it regularly, you&#x27;ll likely encounter corner cases and features to be added. I feel this is a great way to learn and understand programming.&lt;&#x2F;p&gt;
+&lt;p&gt;Once you are comfortable with basics and syntax, the next step is projects. I wrote a 10-line program that solved a common problem for me — adding &lt;code&gt;body { text-align: justify }&lt;&#x2F;code&gt; to &lt;code&gt;epub&lt;&#x2F;code&gt; files that are not justify aligned. I didn&#x27;t know that this line would help beforehand. Found a solution online and then automated the process of unzipping &lt;code&gt;epub&lt;&#x2F;code&gt;, adding the line and then packing it again. That will likely need you to lookup documentation and go through some stackoverflow Q&amp;amp;A as well. And once you have written the solution and use it regularly, you&#x27;ll likely encounter corner cases and features to be added. I feel this is a great way to learn and understand programming.&lt;&#x2F;p&gt;
+&lt;p&gt;These days, I use a better EPUB reader that allows me to customize alignments. Here&#x27;s another real world example. I&#x27;m on Linux and use the terminal for many things. I wanted a CLI tool to do simple calculations. There&#x27;s &lt;code&gt;bc&lt;&#x2F;code&gt; command, but it doesn&#x27;t accept direct string argument and you need to set &lt;code&gt;scale&lt;&#x2F;code&gt; and so on. So, I looked up how to write a CLI tool in Python and &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;practice_python_projects&#x2F;calculator&#x2F;calculator.html&quot;&gt;wrote one using the built-in &lt;code&gt;argparse&lt;&#x2F;code&gt; module&lt;&#x2F;a&gt; that works for my particular use cases.&lt;&#x2F;p&gt;
+&lt;p&gt;Here are some resources to help you get started on projects:&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;practice_python_projects&#x2F;&quot;&gt;Practice Python Projects&lt;&#x2F;a&gt; — my book on beginner to intermediate level projects&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;karan&#x2F;Projects-Solutions&quot;&gt;Projects with solutions&lt;&#x2F;a&gt; — algorithms, data structures, networking, security, databases, etc&lt;&#x2F;li&gt;
@@ -4015,6 +4019,7 @@ The substitution works from start of the line for every iteration of the while l
 &lt;p&gt;Debugging is often a frustrating experience. Taking a break helps (and sometimes I find the solution or spot a problem in my dreams). Try to reduce the code as much as possible so that you are left with minimal code necessary to reproduce the issue. Talking about the problem to a friend&#x2F;colleague&#x2F;inanimate-objects&#x2F;etc can help too — known as &lt;a href=&quot;https:&#x2F;&#x2F;rubberduckdebugging.com&#x2F;&quot;&gt;Rubber duck debugging&lt;&#x2F;a&gt;. I have often found the issue while formulating a question to be asked on forums like stackoverflow&#x2F;reddit because writing down your problem is another way to bring clarity than just having a vague idea in your mind. Here&#x27;s some more articles on this challenging topic:&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;jvns.ca&#x2F;blog&#x2F;2019&#x2F;06&#x2F;23&#x2F;a-few-debugging-resources&#x2F;&quot;&gt;What does debugging a program look like?&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;thepythoncodingbook.com&#x2F;2022&#x2F;04&#x2F;17&#x2F;debugging-python-code-is-like-detective-work-lets-investigate&#x2F;&quot;&gt;Debugging Python code is like detective work&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;ericlippert.com&#x2F;2014&#x2F;03&#x2F;05&#x2F;how-to-debug-small-programs&#x2F;&quot;&gt;How to debug small programs&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;uchicago-cs.github.io&#x2F;debugging-guide&#x2F;&quot;&gt;Debugging guide&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;ryanstutorials.net&#x2F;problem-solving-skills&#x2F;&quot;&gt;Problem solving skills&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
@@ -4033,29 +4038,32 @@ The substitution works from start of the line for every iteration of the while l
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;realpython.com&#x2F;python-testing&#x2F;&quot;&gt;Getting started with testing in Python&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;blog.thea.codes&#x2F;my-python-testing-style-guide&#x2F;&quot;&gt;Python testing style guide&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;calmcode.io&#x2F;pytest&#x2F;introduction.html&quot;&gt;calmcode: pytest&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.thedigitalcatonline.com&#x2F;blog&#x2F;2020&#x2F;09&#x2F;10&#x2F;tdd-in-python-with-pytest-part-1&#x2F;&quot;&gt;TDD in Python with pytest&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.obeythetestinggoat.com&#x2F;&quot;&gt;obeythetestinggoat&lt;&#x2F;a&gt; — TDD for the Web, with Python, Selenium, Django, JavaScript and pals&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;testdriven.io&#x2F;blog&#x2F;modern-tdd&#x2F;&quot;&gt;Modern Test-Driven Development in Python&lt;&#x2F;a&gt; — TDD guide, has a real world application example&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;br&gt;
 &lt;h2 id=&quot;intermediate-to-advanced-python-resources&quot;&gt;Intermediate to Advanced Python resources&lt;a class=&quot;zola-anchor&quot; href=&quot;#intermediate-to-advanced-python-resources&quot; aria-label=&quot;Anchor link for: intermediate-to-advanced-python-resources&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;strong&gt;Intermediate&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;docs.python.org&#x2F;3&#x2F;index.html&quot;&gt;Official Python docs&lt;&#x2F;a&gt; — Python docs are a treasure trove of information&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;mathspp.gumroad.com&#x2F;l&#x2F;pydonts&quot;&gt;Pydon&#x27;ts&lt;&#x2F;a&gt; — Write elegant Python code, make the best use of the core Python features&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;calmcode.io&#x2F;&quot;&gt;Calmcode&lt;&#x2F;a&gt; — videos on testing, code style, args kwargs, data science, etc&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;dabeaz-course.github.io&#x2F;practical-python&#x2F;Notes&#x2F;Contents.html&quot;&gt;Practical Python Programming&lt;&#x2F;a&gt; — covers foundational aspects of Python programming with an emphasis on script writing, data manipulation, and program organization&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;inventwithpython.com&#x2F;beyond&#x2F;chapter0.html&quot;&gt;Beyond the Basic Stuff with Python&lt;&#x2F;a&gt; — Best Practices, Tools, and Techniques, OOP, Practice Projects&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;mathspp.gumroad.com&#x2F;l&#x2F;pydonts&quot;&gt;Pydon&#x27;ts&lt;&#x2F;a&gt; — Write elegant Python code, make the best use of the core Python features&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.oreilly.com&#x2F;library&#x2F;view&#x2F;fluent-python-2nd&#x2F;9781492056348&#x2F;&quot;&gt;Fluent Python&lt;&#x2F;a&gt; — takes you through Python’s core language features and libraries, and shows you how to make your code shorter, faster, and more readable at the same time&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;nostarch.com&#x2F;seriouspython&quot;&gt;Serious Python&lt;&#x2F;a&gt; — deployment, scalability, testing, and more&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.manning.com&#x2F;books&#x2F;practices-of-the-python-pro&quot;&gt;Practices of the Python Pro&lt;&#x2F;a&gt; — learn to design professional-level, clean, easily maintainable software at scale, includes examples for software development best practices&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.oreilly.com&#x2F;library&#x2F;view&#x2F;python-distilled&#x2F;9780134173399&#x2F;&quot;&gt;Python Distilled&lt;&#x2F;a&gt; — this pragmatic guide provides a concise narrative related to fundamental programming topics such as data abstraction, control flow, program structure, functions, objects, and modules&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;p&gt;&lt;strong&gt;Algorithms and Design patterns&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;runestone.academy&#x2F;ns&#x2F;books&#x2F;published&#x2F;pythonds3&#x2F;index.html&quot;&gt;Problem solving with algorithms and data structures&lt;&#x2F;a&gt; &lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.manning.com&#x2F;books&#x2F;classic-computer-science-problems-in-python&quot;&gt;Classic Computer Science Problems in Python&lt;&#x2F;a&gt; — deepens your knowledge of problem solving techniques from the realm of computer science by challenging you with time-tested scenarios, exercises, and algorithms&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;faif&#x2F;python-patterns&quot;&gt;GitHub: Collection of design patterns and idioms&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.cosmicpython.com&#x2F;book&#x2F;preface.html&quot;&gt;Architecture Patterns with Python&lt;&#x2F;a&gt; — Enabling TDD, DDD, and Event-Driven Microservices&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.thedigitalcatbooks.com&#x2F;pycabook-introduction&#x2F;&quot;&gt;Clean Architectures in Python&lt;&#x2F;a&gt; — software design methodology&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;&lt;strong&gt;Advanced&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.oreilly.com&#x2F;library&#x2F;view&#x2F;fluent-python-2nd&#x2F;9781492056348&#x2F;&quot;&gt;Fluent Python&lt;&#x2F;a&gt; — takes you through Python’s core language features and libraries, and shows you how to make your code shorter, faster, and more readable at the same time&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;nostarch.com&#x2F;seriouspython&quot;&gt;Serious Python&lt;&#x2F;a&gt; — deployment, scalability, testing, and more&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.manning.com&#x2F;books&#x2F;practices-of-the-python-pro&quot;&gt;Practices of the Python Pro&lt;&#x2F;a&gt; — learn to design professional-level, clean, easily maintainable software at scale, includes examples for software development best practices&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;br&gt;
 &lt;h2 id=&quot;handy-cheatsheets&quot;&gt;Handy cheatsheets&lt;a class=&quot;zola-anchor&quot; href=&quot;#handy-cheatsheets&quot; aria-label=&quot;Anchor link for: handy-cheatsheets&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
