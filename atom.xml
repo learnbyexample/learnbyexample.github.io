@@ -5,12 +5,12 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2022-08-06T00:00:00+00:00</updated>
+	<updated>2022-08-08T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
 	<entry xml:lang="en">
 		<title>Python tip 14: sequence unpacking</title>
 		<published>2022-08-03T00:00:00+00:00</published>
-		<updated>2022-08-03T00:00:00+00:00</updated>
+		<updated>2022-08-08T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/tips/python-tip-14/" type="text/html"/>
 		<id>https://learnbyexample.github.io/tips/python-tip-14/</id>
 		<content type="html">&lt;p&gt;You can assign the individual elements of a sequence to multiple variables. This is known as &lt;strong&gt;sequence unpacking&lt;&#x2F;strong&gt; and it is handy in many situations.&lt;&#x2F;p&gt;
@@ -3970,7 +3970,7 @@ The substitution works from start of the line for every iteration of the while l
 	<entry xml:lang="en">
 		<title>I know Python basics, what next?</title>
 		<published>2020-07-25T00:00:00+00:00</published>
-		<updated>2022-08-06T00:00:00+00:00</updated>
+		<updated>2022-08-08T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/python-intermediate/" type="text/html"/>
 		<id>https://learnbyexample.github.io/python-intermediate/</id>
 		<content type="html">&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;python_what_next.png&quot; alt=&quot;Python what next&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
@@ -4012,6 +4012,7 @@ The substitution works from start of the line for every iteration of the while l
 &lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.reddit.com&#x2F;r&#x2F;learnpython&#x2F;comments&#x2F;k5k1h0&#x2F;what_do_you_automate_with_python_at_home&#x2F;&quot;&gt;&#x2F;r&#x2F;learnpython: What do you automate with Python at home?&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See also &lt;a href=&quot;https:&#x2F;&#x2F;goodresearch.dev&#x2F;&quot;&gt;The Good Research Code Handbook&lt;&#x2F;a&gt; to learn how to organize your code so that it is easy to understand and works reliably.&lt;&#x2F;p&gt;
 &lt;br&gt;
 &lt;h2 id=&quot;debugging&quot;&gt;Debugging&lt;a class=&quot;zola-anchor&quot; href=&quot;#debugging&quot; aria-label=&quot;Anchor link for: debugging&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
 &lt;p&gt;Knowing how to debug your programs is crucial and should be ideally taught right from the beginning instead of a chapter at the end of the book. &lt;a href=&quot;https:&#x2F;&#x2F;greenteapress.com&#x2F;wp&#x2F;think-python-2e&#x2F;&quot;&gt;Think Python&lt;&#x2F;a&gt; is an awesome example for such a resource material.&lt;&#x2F;p&gt;
@@ -4028,7 +4029,7 @@ The substitution works from start of the line for every iteration of the while l
 &lt;blockquote&gt;
 &lt;p&gt;A jpeg parser choked whenever the CEO came into the room, because he always had a shirt with a square pattern on it, which triggered some special case of contrast and block boundary algorithms.&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;
-&lt;p&gt;See also &lt;a href=&quot;https:&#x2F;&#x2F;500mile.email&#x2F;&quot;&gt;this curated list of absurd software bug stories&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See also &lt;a href=&quot;https:&#x2F;&#x2F;500mile.email&#x2F;&quot;&gt;this curated list of absurd software bug stories&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;br&gt;
 &lt;h2 id=&quot;testing&quot;&gt;Testing&lt;a class=&quot;zola-anchor&quot; href=&quot;#testing&quot; aria-label=&quot;Anchor link for: testing&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
 &lt;p&gt;Another crucial aspect in the programming journey is knowing how to write tests. In bigger projects, usually there are separate engineers (often in much larger number than code developers) to test the code. Even in those cases, writing a few sanity test cases yourself can help you develop faster knowing that the changes aren&#x27;t breaking basic functionality.&lt;&#x2F;p&gt;
