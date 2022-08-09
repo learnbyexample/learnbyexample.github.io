@@ -5,8 +5,325 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2022-08-08T00:00:00+00:00</updated>
+	<updated>2022-08-09T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Programming ebooks by Sundeep Agarwal</title>
+		<published>2022-08-09T00:00:00+00:00</published>
+		<updated>2022-08-09T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://learnbyexample.github.io/books/" type="text/html"/>
+		<id>https://learnbyexample.github.io/books/</id>
+		<content type="html">&lt;p&gt;This post lists my programming ebooks with details like PDF&#x2F;EPUB purchase links, GitHub repos, web versions, testimonials, etc. All my ebooks are self-published. You can get these ebooks individually or as part of bundles. You can also read them online for free.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;bundles-books&quot;&gt;&lt;p style=&quot;color: #c05b4d&quot;&gt;Bundles 📚&lt;&#x2F;h1&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;all-books&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;books&#x2F;all_books_bundle.png&quot; alt=&quot;All books bundle&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;Poster created using &lt;a href=&quot;https:&#x2F;&#x2F;www.canva.com&#x2F;&quot;&gt;Canva&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;All books bundle&lt;&#x2F;strong&gt;: &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;all-books&quot;&gt;gumroad&lt;&#x2F;a&gt;
+&lt;ul&gt;
+&lt;li&gt;🛒 Use &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;all-books&#x2F;HappyPrice&quot;&gt;this coupon link&lt;&#x2F;a&gt; for 25% discount&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Awesome regex&lt;&#x2F;strong&gt;: &lt;a href=&quot;https:&#x2F;&#x2F;leanpub.com&#x2F;b&#x2F;regex&quot;&gt;leanpub&lt;&#x2F;a&gt; or &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;regex&quot;&gt;gumroad&lt;&#x2F;a&gt;
+&lt;ul&gt;
+&lt;li&gt;Python, Ruby, JavaScript Regular expressions&lt;&#x2F;li&gt;
+&lt;li&gt;GNU grep, ripgrep, GNU sed, GNU awk cli tools (BRE&#x2F;ERE, PCRE, Rust regex crate, PCRE2)&lt;&#x2F;li&gt;
+&lt;li&gt;Vim regexp&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Magical one-liners&lt;&#x2F;strong&gt;: &lt;a href=&quot;https:&#x2F;&#x2F;leanpub.com&#x2F;b&#x2F;oneliners&quot;&gt;leanpub&lt;&#x2F;a&gt; or &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;oneliners&quot;&gt;gumroad&lt;&#x2F;a&gt;
+&lt;ul&gt;
+&lt;li&gt;GNU grep, ripgrep, GNU sed, GNU awk, Ruby, Perl cli tools&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Learn by example Python bundle&lt;&#x2F;strong&gt;: &lt;a href=&quot;https:&#x2F;&#x2F;leanpub.com&#x2F;b&#x2F;python-bundle&quot;&gt;leanpub&lt;&#x2F;a&gt; or &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;python-bundle&quot;&gt;gumroad&lt;&#x2F;a&gt;
+&lt;ul&gt;
+&lt;li&gt;Intro, Regular expressions and Projects&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Ruby Text processing&lt;&#x2F;strong&gt;: &lt;a href=&quot;https:&#x2F;&#x2F;leanpub.com&#x2F;b&#x2F;ruby-textprocessing&quot;&gt;leanpub&lt;&#x2F;a&gt; or &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;ruby-textprocessing&quot;&gt;gumroad&lt;&#x2F;a&gt;
+&lt;ul&gt;
+&lt;li&gt;Ruby regular expressions, Ruby one-liners cookbook&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Bundles with other indie authors:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;leanpub.com&#x2F;b&#x2F;theindiepythonextravaganza&quot;&gt;The Indie Python Extravaganza&lt;&#x2F;a&gt;
+&lt;ul&gt;
+&lt;li&gt;Python re(gex)?, Practice Python Projects (my books)&lt;&#x2F;li&gt;
+&lt;li&gt;Python 101, Pydon&#x27;ts, Clean Architectures in Python (authored by others)&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;leanpub.com&#x2F;b&#x2F;python101pythonregex&quot;&gt;Python 101 + Python re(gex)?&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;leanpub.com&#x2F;b&#x2F;python201_and_regex&quot;&gt;Python 201: Intermediate Python + Python re(gex)?&lt;&#x2F;a&gt;
+&lt;ul&gt;
+&lt;li&gt;Python 101&#x2F;201 is authored by &lt;a href=&quot;https:&#x2F;&#x2F;www.blog.pythonlibrary.org&#x2F;&quot;&gt;Michael Driscoll&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;br&gt;
+&lt;h1 id=&quot;testimonials-heart-eyes&quot;&gt;&lt;p style=&quot;color: #c05b4d&quot;&gt;Testimonials 😍&lt;&#x2F;h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;I love your books on regex...As a student from the Digital VLSI space, it is indeed useful now and definitely in the future. It&#x27;s really well written and really easy to understand the examples.&lt;&#x2F;p&gt;
+&lt;p&gt;— &lt;a href=&quot;https:&#x2F;&#x2F;old.reddit.com&#x2F;r&#x2F;Python&#x2F;comments&#x2F;i0m2sy&#x2F;i_know_python_basics_what_next&#x2F;fzql5gh&#x2F;&quot;&gt;feedback on reddit&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;It&#x27;s very thorough, written with care, and presented in a way that makes sense. Even as an intermediate Python programmer, I found use in this book.&lt;&#x2F;p&gt;
+&lt;p&gt;— feedback by &lt;a href=&quot;https:&#x2F;&#x2F;healeycodes.com&#x2F;&quot;&gt;Andrew Healey&lt;&#x2F;a&gt; on &lt;a href=&quot;https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=26082464&quot;&gt;Hacker News&lt;&#x2F;a&gt; for &amp;quot;100 Page Python Intro&amp;quot;&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Step up your cli fu with this fabulous intro &amp;amp; deep dive into awk. I learned a ton of tricks!&lt;&#x2F;p&gt;
+&lt;p&gt;— &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;killchain&#x2F;status&#x2F;1246820137455452163&quot;&gt;feedback on twitter&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Your Practice Python Projects book is really helping me to reinforce my knowledge and mastery of Python as I&#x27;m learning.&lt;&#x2F;p&gt;
+&lt;p&gt;— &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;tayporware&#x2F;status&#x2F;1446499855988400129&quot;&gt;feedback on twitter&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;In my opinion the book does a great job of quickly presenting examples of how commands can be used and then paired up to achieve new or interesting ways of manipulating data. Throughout the text there are little highlights offering tips on extra functionality or limitations of certain commands. For instance, when discussing the &lt;em&gt;shuf&lt;&#x2F;em&gt; command we&#x27;re warned that &lt;em&gt;shuf&lt;&#x2F;em&gt; will not work with multiple files. However, we can merge multiple files together (using the &lt;em&gt;cat&lt;&#x2F;em&gt; command) and then pass them to &lt;em&gt;shuf&lt;&#x2F;em&gt;. These little gems of wisdom add a dimension to the book and will likely save the reader some time wondering why their scripts are not working as expected.&lt;&#x2F;p&gt;
+&lt;p&gt;— book review by Jesse Smith on &lt;a href=&quot;https:&#x2F;&#x2F;distrowatch.com&#x2F;weekly.php?issue=20211206#book&quot;&gt;distrowatch.com&lt;&#x2F;a&gt; for &amp;quot;Command line text processing with GNU Coreutils&amp;quot;&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Literally was having a mini-breakdown about not understanding Regex in algorithm solutions the other day and now I&#x27;m feeling so much better, so thank YOU! I genuinely feel like I&#x27;m developing the skill for spotting when and where to use them after so much practice!&lt;&#x2F;p&gt;
+&lt;p&gt;— &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;codingwithlucy&#x2F;status&#x2F;1450668315635036160&quot;&gt;feedback on twitter&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This Ruby one-liners cookbook is incredible. Pretty mind boggling all the stuff you can do.&lt;&#x2F;p&gt;
+&lt;p&gt;— &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;jbrancha&#x2F;status&#x2F;1506766118756786189&quot;&gt;feedback on twitter&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Hi, great work releasing this! Trying to explain vim concisely is always an interesting challenge and I had a great time reading your attempt in this book. I always find it really interesting on how people try to group certain vim functions in a way that makes sense to people that don&#x27;t use vim. I think you cover that idea pretty well in your &#x27;Vim philosophy and features&#x27; section whilst not making it overly abstract and keeping it relatable.&lt;&#x2F;p&gt;
+&lt;p&gt;— &lt;a href=&quot;https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=30684232&quot;&gt;feedback on Hacker News&lt;&#x2F;a&gt; by doix for &amp;quot;Vim Reference Guide&amp;quot;&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;I consider myself pretty experienced at shell-fu and capable of doing most things I set out to achieve in either bash scripts or fearless one-liners. However, my awk is rudimentary at best, I think mostly because it&#x27;s such an unforgiving environment to experiment in. These books you&#x27;ve written are great for a bit of first principles insight and then quickly building up to functional usage. I will have no hesitation in referring colleagues to them!&lt;&#x2F;p&gt;
+&lt;p&gt;— &lt;a href=&quot;https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=31930840&quot;&gt;feedback on Hacker News&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;br&gt;
+&lt;h1 id=&quot;100-page-python-intro&quot;&gt;&lt;p style=&quot;color: #ff9933&quot;&gt;100 Page Python Intro&lt;&#x2F;h1&gt;
+&lt;p&gt;Short, introductory guide for the Python programming language, suited for those already familiar with programming basics.&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;books&#x2F;python_intro.png&quot; alt=&quot;100 Page Python Intro book cover image&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;Cover art: &lt;a href=&quot;https:&#x2F;&#x2F;ko-fi.com&#x2F;profetessaoscura&quot;&gt;Ilsa Olson&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;100_page_python_intro&#x2F;blob&#x2F;main&#x2F;sample_chapters&#x2F;100_page_python_intro_sample.pdf&quot;&gt;Sample chapters&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Buy pdf&#x2F;epub from:
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;100pagepythonintro&quot;&gt;gumroad&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;leanpub.com&#x2F;100pagepythonintro&quot;&gt;leanpub&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;100_page_python_intro&quot;&gt;GitHub repo for code snippets and more&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;100_page_python_intro&#x2F;&quot;&gt;web version&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Feedback: &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;learn_byexample&quot;&gt;Twitter&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;br&gt;
+&lt;h1 id=&quot;python-re-gex&quot;&gt;&lt;p style=&quot;color: #ff9933&quot;&gt;Python re(gex)?&lt;&#x2F;h1&gt;
+&lt;p&gt;Learn Python Regular Expressions step by step from beginner to advanced levels with 200+ examples. Both &lt;code&gt;re&lt;&#x2F;code&gt; and &lt;code&gt;regex&lt;&#x2F;code&gt; modules are covered. Exercises are also included to test your understanding.&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;books&#x2F;pyregex.png&quot; alt=&quot;Python re(gex)? cover image&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;py_regular_expressions&#x2F;blob&#x2F;master&#x2F;sample_chapters&#x2F;Python_Regex_sample.pdf&quot;&gt;Sample chapters&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Buy pdf&#x2F;epub from:
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;py_regex&quot;&gt;gumroad&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;leanpub.com&#x2F;py_regex&quot;&gt;leanpub&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;py_regular_expressions&quot;&gt;GitHub repo for code snippets and more&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;py_regular_expressions&#x2F;&quot;&gt;web version&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Feedback: &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;learn_byexample&quot;&gt;Twitter&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;br&gt;
+&lt;h1 id=&quot;practice-python-projects&quot;&gt;&lt;p style=&quot;color: #ff9933&quot;&gt;Practice Python Projects&lt;&#x2F;h1&gt;
+&lt;p&gt;Know Python basics but don&#x27;t know what to do next? Take the next step in your programming journey with real world inspired Python projects.&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;books&#x2F;py_projects.png&quot; alt=&quot;Practice Python Projects cover image&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;practice_python_projects&#x2F;blob&#x2F;main&#x2F;sample_chapters&#x2F;practice_python_projects_sample.pdf&quot;&gt;Sample chapters&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Buy pdf&#x2F;epub from:
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;py_projects&quot;&gt;gumroad&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;leanpub.com&#x2F;py_projects&quot;&gt;leanpub&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;practice_python_projects&quot;&gt;GitHub repo for code snippets and more&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;practice_python_projects&#x2F;&quot;&gt;web version&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Feedback: &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;learn_byexample&quot;&gt;Twitter&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;br&gt;
+&lt;h1 id=&quot;javascript-regexp&quot;&gt;&lt;p style=&quot;color: #ff9933&quot;&gt;JavaScript RegExp&lt;&#x2F;h1&gt;
+&lt;p&gt;Learn JavaScript Regular Expressions step by step from beginner to advanced levels with 200+ examples. Exercises are also included to test your understanding.&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;books&#x2F;js_regexp.png&quot; alt=&quot;JavaScript cover image&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;learn_js_regexp&#x2F;blob&#x2F;master&#x2F;sample_chapters&#x2F;js_regexp_sample_chapters.pdf&quot;&gt;Sample chapters&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Buy pdf&#x2F;epub from:
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;js_regexp&quot;&gt;gumroad&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;leanpub.com&#x2F;js_regexp&quot;&gt;leanpub&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;learn_js_regexp&quot;&gt;GitHub repo for code snippets and more&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;learn_js_regexp&#x2F;&quot;&gt;web version&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Feedback: &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;learn_byexample&quot;&gt;Twitter&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;br&gt;
+&lt;h1 id=&quot;gnu-grep-and-ripgrep&quot;&gt;&lt;p style=&quot;color: #ff9933&quot;&gt;GNU grep and ripgrep&lt;&#x2F;h1&gt;
+&lt;p&gt;Example based guide to mastering GNU grep and ripgrep. Exercises are also included to test your understanding.&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;books&#x2F;grep.png&quot; alt=&quot;grep cover image&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;learn_gnugrep_ripgrep&#x2F;blob&#x2F;master&#x2F;sample_chapters&#x2F;grep_sample_chapters.pdf&quot;&gt;Sample chapters&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Buy pdf&#x2F;epub from:
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;gnugrep_ripgrep&quot;&gt;gumroad&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;leanpub.com&#x2F;gnugrep_ripgrep&quot;&gt;leanpub&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;learn_gnugrep_ripgrep&quot;&gt;GitHub repo for code snippets and more&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;learn_gnugrep_ripgrep&#x2F;&quot;&gt;web version&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Feedback: &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;learn_byexample&quot;&gt;Twitter&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;br&gt;
+&lt;h1 id=&quot;gnu-sed&quot;&gt;&lt;p style=&quot;color: #ff9933&quot;&gt;GNU sed&lt;&#x2F;h1&gt;
+&lt;p&gt;Example based guide to mastering GNU sed. Exercises are also included to test your understanding.&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;books&#x2F;sed.png&quot; alt=&quot;sed cover image&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;learn_gnused&#x2F;blob&#x2F;master&#x2F;sample_chapters&#x2F;sed_sample_chapters.pdf&quot;&gt;Sample chapters&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Buy pdf&#x2F;epub from:
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;gnu_sed&quot;&gt;gumroad&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;leanpub.com&#x2F;gnu_sed&quot;&gt;leanpub&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;learn_gnused&quot;&gt;GitHub repo for code snippets and more&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;learn_gnused&#x2F;&quot;&gt;web version&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Feedback: &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;learn_byexample&quot;&gt;Twitter&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;br&gt;
+&lt;h1 id=&quot;gnu-awk&quot;&gt;&lt;p style=&quot;color: #ff9933&quot;&gt;GNU awk&lt;&#x2F;h1&gt;
+&lt;p&gt;Example based guide to mastering GNU awk one-liners.&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;books&#x2F;gawk.png&quot; alt=&quot;awk cover image&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;learn_gnuawk&#x2F;blob&#x2F;master&#x2F;sample_chapters&#x2F;awk_sample_chapters.pdf&quot;&gt;Sample chapters&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Buy pdf&#x2F;epub from:
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;gnu_awk&quot;&gt;gumroad&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;leanpub.com&#x2F;gnu_awk&quot;&gt;leanpub&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;learn_gnuawk&quot;&gt;GitHub repo for code snippets and more&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;learn_gnuawk&#x2F;&quot;&gt;web version&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Feedback: &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;learn_byexample&quot;&gt;Twitter&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;br&gt;
+&lt;h1 id=&quot;ruby-regexp&quot;&gt;&lt;p style=&quot;color: #ff9933&quot;&gt;Ruby Regexp&lt;&#x2F;h1&gt;
+&lt;p&gt;Learn Ruby Regexp step by step from beginner to advanced levels with 200+ examples. Exercises are also included to test your understanding.&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;books&#x2F;rubyregex.png&quot; alt=&quot;Ruby Regexp cover image&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;Ruby_Regexp&#x2F;blob&#x2F;master&#x2F;sample_chapters&#x2F;ruby_regexp_sample.pdf&quot;&gt;Sample chapters&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Pay what you want for pdf&#x2F;epub:
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;rubyregexp&quot;&gt;gumroad&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;leanpub.com&#x2F;rubyregexp&quot;&gt;leanpub&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;Ruby_Regexp&quot;&gt;GitHub repo for code snippets and more&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;Ruby_Regexp&#x2F;&quot;&gt;web version&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Feedback: &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;learn_byexample&quot;&gt;Twitter&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;br&gt;
+&lt;h1 id=&quot;ruby-one-liners-cookbook&quot;&gt;&lt;p style=&quot;color: #ff9933&quot;&gt;Ruby one-liners cookbook&lt;&#x2F;h1&gt;
+&lt;p&gt;Example based guide for text processing with Ruby from the command line. Exercises are also included to test your understanding.&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;books&#x2F;ruby_oneliners.png&quot; alt=&quot;Ruby one-liners cookbook cover image&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;learn_ruby_oneliners&#x2F;blob&#x2F;master&#x2F;sample_chapters&#x2F;ruby_oneliners_sample.pdf&quot;&gt;Sample chapters&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Buy pdf&#x2F;epub from:
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;ruby-oneliners&quot;&gt;gumroad&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;leanpub.com&#x2F;ruby-oneliners&quot;&gt;leanpub&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;learn_ruby_oneliners&quot;&gt;GitHub repo for code snippets and more&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;learn_ruby_oneliners&#x2F;&quot;&gt;web version&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Feedback: &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;learn_byexample&quot;&gt;Twitter&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;br&gt;
+&lt;h1 id=&quot;perl-one-liners-cookbook&quot;&gt;&lt;p style=&quot;color: #ff9933&quot;&gt;Perl one-liners cookbook&lt;&#x2F;h1&gt;
+&lt;p&gt;Example based guide for text processing with Perl from the command line. Exercises are also included to test your understanding.&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;books&#x2F;perl_oneliners.png&quot; alt=&quot;Perl one-liners cookbook cover image&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;learn_perl_oneliners&#x2F;blob&#x2F;main&#x2F;sample_chapters&#x2F;perl_oneliners_sample.pdf&quot;&gt;Sample chapters&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Buy pdf&#x2F;epub from:
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;perl-oneliners&quot;&gt;gumroad&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;leanpub.com&#x2F;perl-oneliners&quot;&gt;leanpub&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;learn_perl_oneliners&quot;&gt;GitHub repo for code snippets and more&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;learn_perl_oneliners&#x2F;&quot;&gt;web version&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Feedback: &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;learn_byexample&quot;&gt;Twitter&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;br&gt;
+&lt;h1 id=&quot;command-line-text-processing-with-gnu-coreutils&quot;&gt;&lt;p style=&quot;color: #ff9933&quot;&gt;Command line text processing with GNU Coreutils&lt;&#x2F;h1&gt;
+&lt;p&gt;You might be already aware of popular coreutils commands like &lt;code&gt;head&lt;&#x2F;code&gt;, &lt;code&gt;tail&lt;&#x2F;code&gt;, &lt;code&gt;tr&lt;&#x2F;code&gt;, &lt;code&gt;sort&lt;&#x2F;code&gt;, etc. This book will teach you more than twenty of such specialized text processing tools provided by the &lt;code&gt;GNU coreutils&lt;&#x2F;code&gt; package.&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;books&#x2F;cli_coreutils.png&quot; alt=&quot;Command line text processing with GNU Coreutils cover image&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;cli_text_processing_coreutils&#x2F;blob&#x2F;main&#x2F;sample_chapters&#x2F;cli_text_processing_coreutils_sample.pdf&quot;&gt;Sample chapters&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Buy pdf&#x2F;epub from:
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;cli_coreutils&quot;&gt;gumroad&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;leanpub.com&#x2F;cli_coreutils&quot;&gt;leanpub&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;cli_text_processing_coreutils&quot;&gt;GitHub repo for code snippets and more&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;cli_text_processing_coreutils&#x2F;&quot;&gt;web version&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Feedback: &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;learn_byexample&quot;&gt;Twitter&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;br&gt;
+&lt;h1 id=&quot;vim-reference-guide&quot;&gt;&lt;p style=&quot;color: #ff9933&quot;&gt;Vim Reference Guide&lt;&#x2F;h1&gt;
+&lt;p&gt;This is intended as a &lt;em&gt;concise&lt;&#x2F;em&gt; learning resource for beginner to intermediate level Vim users. It has more in common with cheatsheets than a typical text book. Topics like Regular Expressions and Macros have more detailed explanations and examples due to their complexity. I hope this guide would make it much easier for you to discover Vim features and learning resources than my own blundering experience.&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;books&#x2F;vim_reference_guide.png&quot; alt=&quot;Vim Reference Guide cover image&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;vim_reference&#x2F;blob&#x2F;master&#x2F;sample_chapters&#x2F;vim_reference_guide_sample.pdf&quot;&gt;Sample chapters&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Buy pdf&#x2F;epub from:
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;vim_reference_guide&quot;&gt;gumroad&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;leanpub.com&#x2F;vim_reference_guide&quot;&gt;leanpub&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;vim_reference&quot;&gt;GitHub repo&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;vim_reference&#x2F;&quot;&gt;web version&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Feedback: &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;learn_byexample&quot;&gt;Twitter&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>CLI tip 14: specify permissions during directory creation</title>
+		<published>2022-08-09T00:00:00+00:00</published>
+		<updated>2022-08-09T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://learnbyexample.github.io/tips/cli-tip-14/" type="text/html"/>
+		<id>https://learnbyexample.github.io/tips/cli-tip-14/</id>
+		<content type="html">&lt;p&gt;You can use &lt;code&gt;mkdir -m&lt;&#x2F;code&gt; instead of creating a directory with &lt;code&gt;mkdir&lt;&#x2F;code&gt; first and then changing the directory permissions with the &lt;code&gt;chmod&lt;&#x2F;code&gt; command. The argument to the &lt;code&gt;-m&lt;&#x2F;code&gt; (mode) option uses the same syntax as the &lt;code&gt;chmod&lt;&#x2F;code&gt; command.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;ruby&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# instead of this
+&lt;&#x2F;span&gt;&lt;span&gt;$ mkdir back_up
+&lt;&#x2F;span&gt;&lt;span&gt;$ chmod &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;750&lt;&#x2F;span&gt;&lt;span&gt; back_up
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# do this
+&lt;&#x2F;span&gt;&lt;span&gt;$ mkdir &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt;m &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;750&lt;&#x2F;span&gt;&lt;span&gt; back_up
+&lt;&#x2F;span&gt;&lt;span&gt;$ stat &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt;c &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#aeb52b;&quot;&gt;%a %A&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt; back_up
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;750&lt;&#x2F;span&gt;&lt;span&gt; drwxr&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt;x&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;---
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Here are some more examples:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;ruby&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span&gt;$ mkdir &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt;m &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span&gt;rx dummy_dir
+&lt;&#x2F;span&gt;&lt;span&gt;$ stat &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt;c &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#aeb52b;&quot;&gt;%a %A&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt; dummy_dir
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;555&lt;&#x2F;span&gt;&lt;span&gt; dr&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt;xr&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt;xr&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt;x
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;$ mkdir &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt;m go&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt;rwx dot_files
+&lt;&#x2F;span&gt;&lt;span&gt;$ stat &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt;c &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#aeb52b;&quot;&gt;%a %A&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt; dot_files
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;700&lt;&#x2F;span&gt;&lt;span&gt; drwx&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;------
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;&lt;strong&gt;Video demo&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; loading=&quot;lazy&quot; src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;8PFWbzFue14&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;&#x2F;iframe&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See also my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;cli-computing&quot;&gt;Computing from the Command Line&lt;&#x2F;a&gt; ebook.&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>Python tip 14: sequence unpacking</title>
 		<published>2022-08-03T00:00:00+00:00</published>

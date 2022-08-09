@@ -56,6 +56,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Tips
 
+* [CLI tip 14: specify permissions during directory creation](https://learnbyexample.github.io/tips/cli-tip-14/)
 * [Python tip 14: sequence unpacking](https://learnbyexample.github.io/tips/python-tip-14/)
 * [Vim tip 12: save and restore sessions](https://learnbyexample.github.io/tips/vim-tip-12/)
 * [CLI tip 13: join lines of two files based on the first field](https://learnbyexample.github.io/tips/cli-tip-13/)
