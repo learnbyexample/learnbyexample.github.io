@@ -5,7 +5,7 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2022-08-09T00:00:00+00:00</updated>
+	<updated>2022-08-11T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
 	<entry xml:lang="en">
 		<title>Programming ebooks by Sundeep Agarwal</title>
@@ -4402,10 +4402,12 @@ The substitution works from start of the line for every iteration of the while l
 	<entry xml:lang="en">
 		<title>Customizing pandoc to generate beautiful pdf and epub from markdown</title>
 		<published>2020-07-21T00:00:00+00:00</published>
-		<updated>2022-05-04T00:00:00+00:00</updated>
+		<updated>2022-08-11T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/customizing-pandoc/" type="text/html"/>
 		<id>https://learnbyexample.github.io/customizing-pandoc/</id>
-		<content type="html">&lt;p&gt;Either you&#x27;ve already heard of &lt;code&gt;pandoc&lt;&#x2F;code&gt; or if you have searched online for &lt;code&gt;markdown&lt;&#x2F;code&gt; to &lt;code&gt;pdf&lt;&#x2F;code&gt; or similar, you are sure to come across &lt;code&gt;pandoc&lt;&#x2F;code&gt;. This tutorial will help you use &lt;code&gt;pandoc&lt;&#x2F;code&gt; to generate &lt;code&gt;pdf&lt;&#x2F;code&gt; and &lt;code&gt;epub&lt;&#x2F;code&gt; from a &lt;a href=&quot;https:&#x2F;&#x2F;github.github.com&#x2F;gfm&#x2F;&quot;&gt;GitHub style markdown&lt;&#x2F;a&gt; file. The main motivation for this blog post is to highlight what customizations I did to generate &lt;code&gt;pdf&lt;&#x2F;code&gt; and &lt;code&gt;epub&lt;&#x2F;code&gt; versions for &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;books&#x2F;&quot;&gt;self-publishing my ebooks&lt;&#x2F;a&gt;. It wasn&#x27;t easy to arrive at the set-up I ended up with, so I hope this will be useful for those looking to use &lt;code&gt;pandoc&lt;&#x2F;code&gt; to generate &lt;code&gt;pdf&lt;&#x2F;code&gt; and &lt;code&gt;epub&lt;&#x2F;code&gt; formats. This guide is specifically aimed at technical books that has code snippets.&lt;&#x2F;p&gt;
+		<content type="html">&lt;p&gt;Either you&#x27;ve already heard of &lt;code&gt;pandoc&lt;&#x2F;code&gt; or if you have searched online for &lt;code&gt;markdown&lt;&#x2F;code&gt; to &lt;code&gt;pdf&lt;&#x2F;code&gt; or similar, you are sure to come across &lt;code&gt;pandoc&lt;&#x2F;code&gt;. This tutorial will help you use &lt;code&gt;pandoc&lt;&#x2F;code&gt; to generate &lt;code&gt;pdf&lt;&#x2F;code&gt; and &lt;code&gt;epub&lt;&#x2F;code&gt; from a &lt;a href=&quot;https:&#x2F;&#x2F;github.github.com&#x2F;gfm&#x2F;&quot;&gt;GitHub style markdown&lt;&#x2F;a&gt; file. The main motivation for this blog post is to highlight what customizations I did to generate &lt;code&gt;pdf&lt;&#x2F;code&gt; and &lt;code&gt;epub&lt;&#x2F;code&gt; versions for &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;books&#x2F;&quot;&gt;self-publishing my ebooks&lt;&#x2F;a&gt;. It wasn&#x27;t easy to arrive at the setup I ended up with, so I hope this will be useful for those looking to use &lt;code&gt;pandoc&lt;&#x2F;code&gt; to generate &lt;code&gt;pdf&lt;&#x2F;code&gt; and &lt;code&gt;epub&lt;&#x2F;code&gt; formats. This guide is specifically aimed at technical books that has code snippets.&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;pandoc_pdf&#x2F;customizing_pandoc.png&quot; alt=&quot;Customizing pandoc&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;Poster created using &lt;a href=&quot;https:&#x2F;&#x2F;www.canva.com&#x2F;&quot;&gt;Canva&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;&lt;br&gt;
 &lt;h2 id=&quot;installation&quot;&gt;Installation&lt;a class=&quot;zola-anchor&quot; href=&quot;#installation&quot; aria-label=&quot;Anchor link for: installation&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
 &lt;p&gt;If you use a debian based distro like Ubuntu, the below steps are enough for the demos in this tutorial. If you get an error or warning, search that issue online and you&#x27;ll likely find what else has to be installed.&lt;&#x2F;p&gt;
@@ -4429,7 +4431,7 @@ The substitution works from start of the line for every iteration of the while l
 &lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; &lt;code&gt;pandoc&lt;&#x2F;code&gt; has its own flavor of &lt;code&gt;markdown&lt;&#x2F;code&gt; with many useful extensions — see &lt;a href=&quot;https:&#x2F;&#x2F;pandoc.org&#x2F;MANUAL.html#pandocs-markdown&quot;&gt;pandoc: pandocs-markdown&lt;&#x2F;a&gt; for details. GitHub style markdown is recommended if you wish to use the same source (or with minor changes) in multiple places.&lt;&#x2F;p&gt;
 &lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; It is advised to use &lt;code&gt;markdown&lt;&#x2F;code&gt; headers in order without skipping — for example, &lt;code&gt;H1&lt;&#x2F;code&gt; for chapter heading and &lt;code&gt;H2&lt;&#x2F;code&gt; for chapter sub-section, etc is fine. &lt;code&gt;H1&lt;&#x2F;code&gt; for chapter heading and &lt;code&gt;H3&lt;&#x2F;code&gt; for sub-section is not. Using the former can give automatic index navigation on ebook readers.&lt;&#x2F;p&gt;
 &lt;p&gt;On &lt;a href=&quot;https:&#x2F;&#x2F;wiki.gnome.org&#x2F;Apps&#x2F;Evince&quot;&gt;Evince&lt;&#x2F;a&gt; reader, the index navigation for above sample looks like this:&lt;&#x2F;p&gt;
-&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;pandoc_pdf&#x2F;chapter_index.png&quot; alt=&quot;index navigation&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;pandoc_pdf&#x2F;chapter_index.png&quot; alt=&quot;index navigation&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 &lt;br&gt;
 &lt;h2 id=&quot;chapter-breaks&quot;&gt;Chapter breaks&lt;a class=&quot;zola-anchor&quot; href=&quot;#chapter-breaks&quot; aria-label=&quot;Anchor link for: chapter-breaks&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
 &lt;p&gt;As observed from previous demo, by default there are no chapter breaks. Searching for a &lt;a href=&quot;https:&#x2F;&#x2F;superuser.com&#x2F;questions&#x2F;601469&#x2F;getting-chapters-to-start-on-a-new-page-in-a-pandoc-generated-pdf&quot;&gt;solution online&lt;&#x2F;a&gt;, I got this piece of &lt;code&gt;tex&lt;&#x2F;code&gt; code:&lt;&#x2F;p&gt;
@@ -4568,7 +4570,7 @@ no VAL is specified, the key will be given the value true.&lt;&#x2F;p&gt;
 &lt;&#x2F;span&gt;&lt;span&gt;}
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;&lt;code&gt;.&#x2F;md2pdf_syn_bullet_prop.sh sample_4.md sample_4_bullet_prop.pdf&lt;&#x2F;code&gt; gives:&lt;&#x2F;p&gt;
-&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;pandoc_pdf&#x2F;pdf_properties.png&quot; alt=&quot;pdf properties&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;pandoc_pdf&#x2F;pdf_properties.png&quot; alt=&quot;pdf properties&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 &lt;br&gt;
 &lt;h2 id=&quot;adding-table-of-contents&quot;&gt;Adding table of contents&lt;a class=&quot;zola-anchor&quot; href=&quot;#adding-table-of-contents&quot; aria-label=&quot;Anchor link for: adding-table-of-contents&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
 &lt;p&gt;There&#x27;s a handy option &lt;code&gt;--toc&lt;&#x2F;code&gt; to automatically include table of contents at top of the generated &lt;code&gt;pdf&lt;&#x2F;code&gt;. You can control number of levels using &lt;code&gt;--toc-depth&lt;&#x2F;code&gt; option, the default is 3 levels. You can also change the default string &lt;code&gt;Contents&lt;&#x2F;code&gt; to something else using &lt;code&gt;-V toc-title&lt;&#x2F;code&gt; option.&lt;&#x2F;p&gt;
@@ -4592,7 +4594,7 @@ no VAL is specified, the key will be given the value true.&lt;&#x2F;p&gt;
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;\renewenvironment&lt;&#x2F;span&gt;&lt;span&gt;{quote}{&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;\begin&lt;&#x2F;span&gt;&lt;span&gt;{&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;myquote&lt;&#x2F;span&gt;&lt;span&gt;}}{&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;\end&lt;&#x2F;span&gt;&lt;span&gt;{&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;myquote&lt;&#x2F;span&gt;&lt;span&gt;}}
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;The &lt;code&gt;bash&lt;&#x2F;code&gt; script invocation is now &lt;code&gt;.&#x2F;md2pdf_syn_bullet_prop_toc_cover_quote.sh sample_5.md sample_5_quote.pdf&lt;&#x2F;code&gt;. The difference between default and styled blockquote is shown below.&lt;&#x2F;p&gt;
-&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;pandoc_pdf&#x2F;styled_blockquote.png&quot; alt=&quot;styling blockquotes&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;pandoc_pdf&#x2F;styled_blockquote.png&quot; alt=&quot;styling blockquotes&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 &lt;br&gt;
 &lt;h2 id=&quot;customizing-epub&quot;&gt;Customizing epub&lt;a class=&quot;zola-anchor&quot; href=&quot;#customizing-epub&quot; aria-label=&quot;Anchor link for: customizing-epub&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
 &lt;p&gt;For a long time, I thought &lt;code&gt;epub&lt;&#x2F;code&gt; didn&#x27;t make sense for programming books. Turned out, I wasn&#x27;t using the right ebook readers. &lt;strong&gt;FBReader&lt;&#x2F;strong&gt; is good for novels but not ebooks with code snippets. When I used &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;mate-desktop&#x2F;atril&quot;&gt;atril&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;calibre-ebook.com&#x2F;&quot;&gt;calibre ebook-viewer&lt;&#x2F;a&gt;, the results were good.&lt;&#x2F;p&gt;
@@ -4623,6 +4625,7 @@ no VAL is specified, the key will be given the value true.&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;Wandmalfarbe&#x2F;pandoc-latex-template&quot;&gt;pandoc-latex-template&lt;&#x2F;a&gt; — a clean pandoc LaTeX template to convert your markdown files to PDF or LaTeX&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;keleshev.com&#x2F;my-book-writing-setup&#x2F;&quot;&gt;Writing a book with pandoc, make, and vim&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;quarto.org&#x2F;&quot;&gt;Quarto&lt;&#x2F;a&gt; — open source scientific and technical publishing system built on Pandoc&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;jupyterbook.org&#x2F;intro.html&quot;&gt;Jupyter Book&lt;&#x2F;a&gt; — open source project for building beautiful, publication-quality books and documents from computational material
 &lt;ul&gt;
 &lt;li&gt;See also &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;fastai&#x2F;fastdoc&quot;&gt;fastdoc&lt;&#x2F;a&gt; — the output of fastdoc is an asciidoc file for each input notebook. You can then use asciidoctor to convert that to HTML, DocBook, epub, mobi, and so forth&lt;&#x2F;li&gt;
@@ -4649,7 +4652,7 @@ no VAL is specified, the key will be given the value true.&lt;&#x2F;p&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;joecmarshall.com&#x2F;posts&#x2F;book-writing-environment&#x2F;&quot;&gt;Writing a Book with Unix&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;askubuntu.com&#x2F;questions&#x2F;3697&#x2F;how-do-i-install-fonts&quot;&gt;askubuntu: How do I install fonts?&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;tex.stackexchange.com&#x2F;questions&#x2F;9533&#x2F;what-best-combination-of-fonts-for-serif-sans-and-mono-do-you-recommend&quot;&gt;tex.stackexchange: What best combination of fonts for Serif, Sans, and Mono do you recommend?&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;tug.org&#x2F;FontCatalogue&#x2F;&quot;&gt;LATEX font catalogue&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;tug.org&#x2F;FontCatalogue&#x2F;&quot;&gt;LaTeX font catalogue&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;karthik&#x2F;markdown_science&#x2F;wiki&#x2F;Tools-to-support-your-markdown-authoring&quot;&gt;Tools to support markdown authoring&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;picular.co&#x2F;&quot;&gt;picular: search engine for colors&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;www.colorhexa.com&#x2F;&quot;&gt;colorhexa&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;ebooks.stackexchange.com&#x2F;questions?sort=votes&quot;&gt;ebooks.stackexchange&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
