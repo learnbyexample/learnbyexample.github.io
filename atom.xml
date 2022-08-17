@@ -5,7 +5,7 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2022-08-16T00:00:00+00:00</updated>
+	<updated>2022-08-17T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
 	<entry xml:lang="en">
 		<title>Vim tip 13: repeat last change</title>
@@ -51,7 +51,7 @@
 		<content type="html">&lt;p&gt;This post lists my programming ebooks with details like PDF&#x2F;EPUB purchase links, GitHub repos, web versions, testimonials, etc. All my ebooks are self-published. You can get these ebooks individually or as part of bundles. You can also read them online for free.&lt;&#x2F;p&gt;
 &lt;h1 id=&quot;bundles-books&quot;&gt;&lt;p style=&quot;color: #c05b4d&quot;&gt;Bundles 📚&lt;&#x2F;h1&gt;
 &lt;p align=&quot;center&quot;&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;all-books&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;books&#x2F;all_books_bundle.png&quot; alt=&quot;All books bundle&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;p align=&quot;center&quot;&gt;Poster created using &lt;a href=&quot;https:&#x2F;&#x2F;www.canva.com&#x2F;&quot;&gt;Canva&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;i&gt;Poster created using &lt;a href=&quot;https:&#x2F;&#x2F;www.canva.com&#x2F;&quot;&gt;Canva&lt;&#x2F;a&gt;&lt;&#x2F;i&gt;&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;All books bundle&lt;&#x2F;strong&gt;: &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;all-books&quot;&gt;gumroad&lt;&#x2F;a&gt;
 &lt;ul&gt;
@@ -2117,10 +2117,12 @@
 	<entry xml:lang="en">
 		<title>Vim prank: alias vim=&#x27;vim -y&#x27;</title>
 		<published>2022-01-07T00:00:00+00:00</published>
-		<updated>2022-03-16T00:00:00+00:00</updated>
+		<updated>2022-08-17T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/mini/vim-prank/" type="text/html"/>
 		<id>https://learnbyexample.github.io/mini/vim-prank/</id>
-		<content type="html">&lt;p&gt;While going through &lt;a href=&quot;https:&#x2F;&#x2F;vimhelp.org&#x2F;starting.txt.html#vim-arguments&quot;&gt;:h vim-arguments&lt;&#x2F;a&gt; for my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;vim_reference&quot;&gt;Vim reference guide&lt;&#x2F;a&gt; ebook, I came across the &lt;code&gt;-y&lt;&#x2F;code&gt; option:&lt;&#x2F;p&gt;
+		<content type="html">&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;vim_prank.png&quot; alt=&quot;Vim Prank&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;i&gt;Poster created using &lt;a href=&quot;https:&#x2F;&#x2F;www.canva.com&#x2F;&quot;&gt;Canva&lt;&#x2F;a&gt;&lt;&#x2F;i&gt;&lt;&#x2F;p&gt;&lt;br&gt;
+&lt;p&gt;While going through &lt;a href=&quot;https:&#x2F;&#x2F;vimhelp.org&#x2F;starting.txt.html#vim-arguments&quot;&gt;:h vim-arguments&lt;&#x2F;a&gt; for my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;vim_reference&quot;&gt;Vim reference guide&lt;&#x2F;a&gt; ebook, I came across the &lt;code&gt;-y&lt;&#x2F;code&gt; option:&lt;&#x2F;p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Easy mode. Implied for &lt;code&gt;evim&lt;&#x2F;code&gt; and &lt;code&gt;eview&lt;&#x2F;code&gt;. Starts with &lt;code&gt;&#x27;insertmode&#x27;&lt;&#x2F;code&gt; set and behaves like a click-and-type editor. This sources the script $VIMRUNTIME&#x2F;evim.vim. Mappings are set up to work like most click-and-type editors, see &lt;code&gt;evim-keys&lt;&#x2F;code&gt;. The GUI is started when available.&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;
@@ -2129,7 +2131,7 @@
 &lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;alias &lt;&#x2F;span&gt;&lt;span style=&quot;color:#c23f31;&quot;&gt;vim&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;vim -y&amp;#39;
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;br&gt;
-&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; I didn&#x27;t expect such a good response on &lt;a href=&quot;https:&#x2F;&#x2F;www.reddit.com&#x2F;r&#x2F;vim&#x2F;comments&#x2F;rxedpj&#x2F;vim_prank_alias_vimvim_y&#x2F;&quot;&gt;&#x2F;r&#x2F;vim&#x2F;&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;learn_byexample&#x2F;status&#x2F;1478976141650059264&quot;&gt;twitter&lt;&#x2F;a&gt; for this &amp;quot;easy&amp;quot; feature. So, decided to make a mini blog post as well. Also, I got to know a few more ways to escape this madness from the &#x2F;r&#x2F;vim&#x2F; sub:&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; I didn&#x27;t expect such a good response on &lt;a href=&quot;https:&#x2F;&#x2F;www.reddit.com&#x2F;r&#x2F;vim&#x2F;comments&#x2F;rxedpj&#x2F;vim_prank_alias_vimvim_y&#x2F;&quot;&gt;&#x2F;r&#x2F;vim&#x2F;&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;learn_byexample&#x2F;status&#x2F;1478976141650059264&quot;&gt;twitter&lt;&#x2F;a&gt; for this &amp;quot;easy&amp;quot; feature. So, decided to write this mini blog post as well. Also, I got to know a few more ways to escape this madness from the &#x2F;r&#x2F;vim&#x2F; sub:&lt;&#x2F;p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;One hint: If you want to go to Normal mode to be able to type a sequence of commands, use &lt;code&gt;CTRL-L&lt;&#x2F;code&gt;. &lt;a href=&quot;https:&#x2F;&#x2F;vimhelp.org&#x2F;starting.txt.html#evim-keys&quot;&gt;https:&#x2F;&#x2F;vimhelp.org&#x2F;starting.txt.html#evim-keys&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;
@@ -3206,10 +3208,11 @@
 	<entry xml:lang="en">
 		<title>GNU BRE&#x2F;ERE cheatsheet and differences between grep, sed and awk</title>
 		<published>2021-05-31T00:00:00+00:00</published>
-		<updated>2021-09-07T00:00:00+00:00</updated>
+		<updated>2022-08-17T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/gnu-bre-ere-cheatsheet/" type="text/html"/>
 		<id>https://learnbyexample.github.io/gnu-bre-ere-cheatsheet/</id>
 		<content type="html">&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;bre_ere_cheatsheet.png&quot; alt=&quot;GNU BRE&#x2F;ERE cheatsheet&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;i&gt;Poster created using &lt;a href=&quot;https:&#x2F;&#x2F;www.canva.com&#x2F;&quot;&gt;Canva&lt;&#x2F;a&gt;&lt;&#x2F;i&gt;&lt;&#x2F;p&gt;
 &lt;p&gt;This post covers &lt;strong&gt;Basic Regular Expressions&lt;&#x2F;strong&gt; (BRE) and &lt;strong&gt;Extended Regular Expressions&lt;&#x2F;strong&gt; (ERE) syntax supported by GNU &lt;code&gt;grep&lt;&#x2F;code&gt;, &lt;code&gt;sed&lt;&#x2F;code&gt; and &lt;code&gt;awk&lt;&#x2F;code&gt;. You&#x27;ll also learn the differences between these tools — for example, &lt;code&gt;awk&lt;&#x2F;code&gt; doesn&#x27;t support backreferences within regexp definition (i.e. the search portion).&lt;&#x2F;p&gt;
 &lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;&lt;br&gt;
 &lt;h2 id=&quot;bre-and-ere&quot;&gt;BRE and ERE&lt;a class=&quot;zola-anchor&quot; href=&quot;#bre-and-ere&quot; aria-label=&quot;Anchor link for: bre-and-ere&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
@@ -4326,7 +4329,7 @@ The substitution works from start of the line for every iteration of the while l
 		<link rel="alternate" href="https://learnbyexample.github.io/python-intermediate/" type="text/html"/>
 		<id>https://learnbyexample.github.io/python-intermediate/</id>
 		<content type="html">&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;python_what_next.png&quot; alt=&quot;Python what next&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
-&lt;p align=&quot;center&quot;&gt;Poster created using &lt;a href=&quot;https:&#x2F;&#x2F;www.canva.com&#x2F;&quot;&gt;Canva&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;i&gt;Poster created using &lt;a href=&quot;https:&#x2F;&#x2F;www.canva.com&#x2F;&quot;&gt;Canva&lt;&#x2F;a&gt;&lt;&#x2F;i&gt;&lt;&#x2F;p&gt;
 &lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;&lt;br&gt;
 &lt;h2 id=&quot;next-step&quot;&gt;Next step&lt;a class=&quot;zola-anchor&quot; href=&quot;#next-step&quot; aria-label=&quot;Anchor link for: next-step&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
 &lt;p&gt;Programmers often wonder what to do after learning the basics. &lt;a href=&quot;https:&#x2F;&#x2F;www.reddit.com&#x2F;r&#x2F;learnpython&#x2F;search?q=what+next&amp;amp;restrict_sr=on&quot;&gt;Searching for &lt;code&gt;what next&lt;&#x2F;code&gt; on &#x2F;r&#x2F;learnpython&lt;&#x2F;a&gt; will give you too many results. And here are some wonderful articles related to this topic:&lt;&#x2F;p&gt;
@@ -4442,7 +4445,7 @@ The substitution works from start of the line for every iteration of the while l
 		<id>https://learnbyexample.github.io/customizing-pandoc/</id>
 		<content type="html">&lt;p&gt;Either you&#x27;ve already heard of &lt;code&gt;pandoc&lt;&#x2F;code&gt; or if you have searched online for &lt;code&gt;markdown&lt;&#x2F;code&gt; to &lt;code&gt;pdf&lt;&#x2F;code&gt; or similar, you are sure to come across &lt;code&gt;pandoc&lt;&#x2F;code&gt;. This tutorial will help you use &lt;code&gt;pandoc&lt;&#x2F;code&gt; to generate &lt;code&gt;pdf&lt;&#x2F;code&gt; and &lt;code&gt;epub&lt;&#x2F;code&gt; from a &lt;a href=&quot;https:&#x2F;&#x2F;github.github.com&#x2F;gfm&#x2F;&quot;&gt;GitHub style markdown&lt;&#x2F;a&gt; file. The main motivation for this blog post is to highlight what customizations I did to generate &lt;code&gt;pdf&lt;&#x2F;code&gt; and &lt;code&gt;epub&lt;&#x2F;code&gt; versions for &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;books&#x2F;&quot;&gt;self-publishing my ebooks&lt;&#x2F;a&gt;. It wasn&#x27;t easy to arrive at the setup I ended up with, so I hope this will be useful for those looking to use &lt;code&gt;pandoc&lt;&#x2F;code&gt; to generate &lt;code&gt;pdf&lt;&#x2F;code&gt; and &lt;code&gt;epub&lt;&#x2F;code&gt; formats. This guide is specifically aimed at technical books that has code snippets.&lt;&#x2F;p&gt;
 &lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;pandoc_pdf&#x2F;customizing_pandoc.png&quot; alt=&quot;Customizing pandoc&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
-&lt;p align=&quot;center&quot;&gt;Poster created using &lt;a href=&quot;https:&#x2F;&#x2F;www.canva.com&#x2F;&quot;&gt;Canva&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;i&gt;Poster created using &lt;a href=&quot;https:&#x2F;&#x2F;www.canva.com&#x2F;&quot;&gt;Canva&lt;&#x2F;a&gt;&lt;&#x2F;i&gt;&lt;&#x2F;p&gt;
 &lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;&lt;br&gt;
 &lt;h2 id=&quot;installation&quot;&gt;Installation&lt;a class=&quot;zola-anchor&quot; href=&quot;#installation&quot; aria-label=&quot;Anchor link for: installation&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
 &lt;p&gt;If you use a debian based distro like Ubuntu, the below steps are enough for the demos in this tutorial. If you get an error or warning, search that issue online and you&#x27;ll likely find what else has to be installed.&lt;&#x2F;p&gt;
