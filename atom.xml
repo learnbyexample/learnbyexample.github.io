@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
 	<title>learnbyexample</title>
-	<subtitle>Doing is often better than thinking of doing</subtitle>
+	<subtitle>Learn Python, Regex, Linux, Scripting, Vim, Ebooks, Self-Publishing and Interesting Tech Nuggets.</subtitle>
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
