@@ -56,6 +56,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Tips
 
+* [CLI tip 15: text generation with printf and brace expansion](https://learnbyexample.github.io/tips/cli-tip-15/)
 * [Python tip 15: string transliteration](https://learnbyexample.github.io/tips/python-tip-15/)
 * [Vim tip 13: repeat last change](https://learnbyexample.github.io/tips/vim-tip-13/)
 * [CLI tip 14: specify permissions during directory creation](https://learnbyexample.github.io/tips/cli-tip-14/)
