@@ -5,8 +5,54 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2022-08-31T00:00:00+00:00</updated>
+	<updated>2022-09-06T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Vim tip 14: horizontal and vertical splits</title>
+		<published>2022-09-06T00:00:00+00:00</published>
+		<updated>2022-09-06T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://learnbyexample.github.io/tips/vim-tip-14/" type="text/html"/>
+		<id>https://learnbyexample.github.io/tips/vim-tip-14/</id>
+		<content type="html">&lt;p&gt;You can have multiple windows within the same tab page.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;kbd&gt;:split filename&lt;&#x2F;kbd&gt; open file for editing in a new horizontal window, above the current window
+&lt;ul&gt;
+&lt;li&gt;you can also use &lt;kbd&gt;:sp&lt;&#x2F;kbd&gt; instead of &lt;kbd&gt;:split&lt;&#x2F;kbd&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;:set splitbelow&lt;&#x2F;kbd&gt; open horizontal splits below the current window&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;:vsplit filename&lt;&#x2F;kbd&gt; open file for editing in a new vertical window, to the left of the current window
+&lt;ul&gt;
+&lt;li&gt;you can also use &lt;kbd&gt;:vs&lt;&#x2F;kbd&gt; instead of &lt;kbd&gt;:vsplit&lt;&#x2F;kbd&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;:set splitright&lt;&#x2F;kbd&gt; open vertical splits to the right of the current window&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Here are some shortcuts to navigate between windows:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;kbd&gt;Ctrl&lt;&#x2F;kbd&gt;+&lt;kbd&gt;w&lt;&#x2F;kbd&gt; followed by &lt;kbd&gt;w&lt;&#x2F;kbd&gt; switch to the below&#x2F;right window for horizontal&#x2F;vertical splits respectively
+&lt;ul&gt;
+&lt;li&gt;&lt;kbd&gt;Ctrl&lt;&#x2F;kbd&gt;+&lt;kbd&gt;w&lt;&#x2F;kbd&gt; followed by &lt;kbd&gt;Ctrl&lt;&#x2F;kbd&gt;+&lt;kbd&gt;w&lt;&#x2F;kbd&gt; also performs the same function&lt;&#x2F;li&gt;
+&lt;li&gt;switches to the first split if you are on the last split&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;Ctrl&lt;&#x2F;kbd&gt;+&lt;kbd&gt;w&lt;&#x2F;kbd&gt; followed by &lt;kbd&gt;W&lt;&#x2F;kbd&gt; switch to the above&#x2F;left window for horizontal&#x2F;vertical splits respectively
+&lt;ul&gt;
+&lt;li&gt;switches to the last split if you are on the first split&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;Ctrl&lt;&#x2F;kbd&gt;+&lt;kbd&gt;w&lt;&#x2F;kbd&gt; followed by &lt;code&gt;hjkl&lt;&#x2F;code&gt; or arrow keys, switch in the respective direction&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;Ctrl&lt;&#x2F;kbd&gt;+&lt;kbd&gt;w&lt;&#x2F;kbd&gt; followed by &lt;kbd&gt;t&lt;&#x2F;kbd&gt; or &lt;kbd&gt;b&lt;&#x2F;kbd&gt; switch to the top (first) or bottom (last) window&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;Ctrl&lt;&#x2F;kbd&gt;+&lt;kbd&gt;w&lt;&#x2F;kbd&gt; followed by &lt;code&gt;HJKL&lt;&#x2F;code&gt; (uppercase), moves the current split to the farthest possible location in the respective direction&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; If filename is not provided, the current one is used.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; Vim adds a highlighted horizontal bar containing the filename for each split.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Video demo&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; loading=&quot;lazy&quot; src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;6xtHzEdFtFs&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;&#x2F;iframe&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See also my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;vim_reference&quot;&gt;Vim Reference Guide&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;curated_resources&#x2F;vim.html&quot;&gt;curated list of resources for Vim&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>CLI tip 15: text generation with printf and brace expansion</title>
 		<published>2022-08-31T00:00:00+00:00</published>
