@@ -5,8 +5,52 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2022-09-06T00:00:00+00:00</updated>
+	<updated>2022-09-10T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Sufficiently Advanced AI feels magical</title>
+		<published>2022-09-10T00:00:00+00:00</published>
+		<updated>2022-09-10T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://learnbyexample.github.io/sufficiently-advanced-ai/" type="text/html"/>
+		<id>https://learnbyexample.github.io/sufficiently-advanced-ai/</id>
+		<content type="html">&lt;p&gt;I guess that by now you&#x27;ve heard all about various &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Artificial_intelligence_art&quot;&gt;AI art generators&lt;&#x2F;a&gt;. Here&#x27;s a prompt I got to try yesterday:&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;ai_art_generator&#x2F;fantasy_creatures_alien_landscape.jpg&quot; alt=&quot;fantasy creatures in alien landscape&quot; loading=&quot;lazy&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;Prompt: &lt;i&gt;Concept art of fantasy creatures in alien landscape, dragons, unicorns, spaceships, futuristic transport, artstation&lt;&#x2F;i&gt;&lt;&#x2F;p&gt;
+&lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;
+&lt;p&gt;This was the 14th sample out of 20 images generated using &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;CompVis&#x2F;stable-diffusion&quot;&gt;Stable Diffusion&lt;&#x2F;a&gt; (latent text-to-image diffusion model). I don&#x27;t have a setup yet, &lt;a href=&quot;https:&#x2F;&#x2F;mathspp.com&quot;&gt;Rodrigo Girão Serrão&lt;&#x2F;a&gt; did me a favor by generating these images based on my prompts (you can also submit prompts to his &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;stablediffbot&quot;&gt;stablediffbot&lt;&#x2F;a&gt;). Here&#x27;s a collage of some more results that I liked:&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;ai_art_generator&#x2F;fantasy_creatures_alien_landscape_collage.jpg&quot; alt=&quot;fantasy creatures in alien landscape collage&quot; loading=&quot;lazy&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; The last keyword &lt;em&gt;artstation&lt;&#x2F;em&gt; was added based on some of the prompt tricks I&#x27;ve seen on the &lt;a href=&quot;https:&#x2F;&#x2F;old.reddit.com&#x2F;r&#x2F;StableDiffusion&quot;&gt;&#x2F;r&#x2F;StableDiffusion&lt;&#x2F;a&gt; subreddit. You can visit the &lt;a href=&quot;https:&#x2F;&#x2F;www.artstation.com&#x2F;&quot;&gt;artstation&lt;&#x2F;a&gt; site to understand why this helps.&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;first-impressions&quot;&gt;First impressions&lt;a class=&quot;zola-anchor&quot; href=&quot;#first-impressions&quot; aria-label=&quot;Anchor link for: first-impressions&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;So. Generating an image just based on a few words of text definitely feels magical to me. Especially when I have zero chances of being able to draw anywhere close to the quality seen above. Not to mention that you can work on the image further using tools like &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;upscayl&#x2F;upscayl&quot;&gt;Upscayl&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;I had a bit of an existential crisis moment as I was looking through these images. I had been following the news related to AI art generators for a while. However, even if it was just a few words, getting results for &lt;em&gt;my&lt;&#x2F;em&gt; prompts caught me off guard. Trying to come up with exercise ideas for my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;cli-computing&quot;&gt;Computing from the Command Line&lt;&#x2F;a&gt; ebook felt insignificant compared to the magic of art generators.&lt;&#x2F;p&gt;
+&lt;p&gt;On the other hand, the results I got from the model wasn&#x27;t what I was hoping for. All I got were dragon like fantasy creatues in an alien landscape (and I suppose the unicorn horns were blended in instead of separate beings). The spaceships and futuristic transport were entirely absent, unless some of the hovering dragons were yet another instance of blending. To be fair, I haven&#x27;t yet fully understood what this model is capable of, what are the limitations, and so on.&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;motivation&quot;&gt;Motivation&lt;a class=&quot;zola-anchor&quot; href=&quot;#motivation&quot; aria-label=&quot;Anchor link for: motivation&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;The prompt presented earlier wasn&#x27;t some random thing I tried. One of the reasons I&#x27;m interested in AI generated art is that it could be a potential way for me to make posters for my blog posts.&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;escapist-reviews&#x2F;&quot;&gt;&lt;img src=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;escapist-reviews&#x2F;images&#x2F;escapist_reviews.jpg&quot; alt=&quot;Escapist Reviews poster&quot; loading=&quot;lazy&quot;&#x2F;&gt;&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;i&gt;Poster from my &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;escapist-reviews&#x2F;&quot;&gt;Escapist Reviews&lt;&#x2F;a&gt; site for fantasy and science fiction book reviews&lt;&#x2F;i&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;I created the above poster using &lt;a href=&quot;https:&#x2F;&#x2F;www.canva.com&#x2F;&quot;&gt;Canva&lt;&#x2F;a&gt;, trying to present both fantasy and science fiction elements. If I can get better at using the AI models, I&#x27;ll probably start using the generated art for creating posters. I want to also experiment with generating illustrations for pivotal scenes from the SFF book I&#x27;m reviewing. Though, I&#x27;m still undecided on the ethics of using such AI generators.&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;another-example&quot;&gt;Another example&lt;a class=&quot;zola-anchor&quot; href=&quot;#another-example&quot; aria-label=&quot;Anchor link for: another-example&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;This one was just for fun. I had read a book (&lt;a href=&quot;https:&#x2F;&#x2F;www.goodreads.com&#x2F;book&#x2F;show&#x2F;56169039-baking-bad&quot;&gt;Baking Bad&lt;&#x2F;a&gt;) that had pet-sized dragons, deploying all sorts of shenanigans trying to solve a mystery. So, I wondered how would a classroom of such dragons look like in a magical academy setting.&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;ai_art_generator&#x2F;dragons_magical_academy.jpg&quot; alt=&quot;dragons attending a magical academy&quot; loading=&quot;lazy&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;Prompt: &lt;i&gt;Pet-sized dragons attending a magical academy, trending on artstation, masterpiece&lt;&#x2F;i&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Most of the images had &lt;em&gt;normal&lt;&#x2F;em&gt; sized dragons and hints of learning&#x2F;academy were rarely present in the 32 images generated. Here&#x27;s a collage of some more results that I liked:&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;ai_art_generator&#x2F;dragons_magical_academy_collage.jpg&quot; alt=&quot;dragons attending a magical academy collage&quot; loading=&quot;lazy&quot;&#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;resource-links&quot;&gt;Resource links&lt;a class=&quot;zola-anchor&quot; href=&quot;#resource-links&quot; aria-label=&quot;Anchor link for: resource-links&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;old.reddit.com&#x2F;r&#x2F;StableDiffusion&quot;&gt;&#x2F;r&#x2F;StableDiffusion&lt;&#x2F;a&gt; — subreddit for all things related to Stable Diffusion&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;AUTOMATIC1111&#x2F;stable-diffusion-webui&quot;&gt;Stable Diffusion web UI&lt;&#x2F;a&gt; — browser interface based on Gradio library for Stable Diffusion&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;bes-dev&#x2F;stable_diffusion.openvino&quot;&gt;stable_diffusion.openvino&lt;&#x2F;a&gt; — don&#x27;t have a GPU? you might be able to use this on certain CPUs&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;prompthero.com&#x2F;&quot;&gt;Prompt hero&lt;&#x2F;a&gt; — explore the world&#x27;s best AI prompts&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;andys.page&#x2F;posts&#x2F;how-to-draw&#x2F;&quot;&gt;4.2 Gigabytes, or: How to Draw Anything&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;replicate.com&#x2F;andreasjansson&#x2F;stable-diffusion-animation&quot;&gt;Stable Diffusion animation&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;upscayl&#x2F;upscayl&quot;&gt;Upscayl&lt;&#x2F;a&gt; — image upscaler&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>Vim tip 14: horizontal and vertical splits</title>
 		<published>2022-09-06T00:00:00+00:00</published>
