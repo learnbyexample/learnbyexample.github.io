@@ -56,6 +56,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Tips
 
+* [Python tip 16: delete list elements using index or slice](https://learnbyexample.github.io/tips/python-tip-16/)
 * [Vim tip 14: horizontal and vertical splits](https://learnbyexample.github.io/tips/vim-tip-14/)
 * [CLI tip 15: text generation with printf and brace expansion](https://learnbyexample.github.io/tips/cli-tip-15/)
 * [Python tip 15: string transliteration](https://learnbyexample.github.io/tips/python-tip-15/)
