@@ -56,6 +56,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Tips
 
+* [Vim tip 15: moving within current line](https://learnbyexample.github.io/tips/vim-tip-15/)
 * [CLI tip 16: transpose tables](https://learnbyexample.github.io/tips/cli-tip-16/)
 * [Python tip 16: delete list elements using index or slice](https://learnbyexample.github.io/tips/python-tip-16/)
 * [Vim tip 14: horizontal and vertical splits](https://learnbyexample.github.io/tips/vim-tip-14/)
