@@ -1,0 +1,45 @@
+<!doctype html><html lang=en><head><meta content="IE=edge" http-equiv=X-UA-Compatible><meta content="text/html; charset=utf-8" http-equiv=content-type><meta content="width=device-width,initial-scale=1.0,maximum-scale=1" name=viewport><title>CLI tip 17: common and unique lines</title><link href=https://learnbyexample.github.io/atom.xml rel=alternate title=RSS type=application/atom+xml><script src=https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js></script><link href=https://learnbyexample.github.io/site.css rel=stylesheet><meta content=learnbyexample property=og:title><meta content=website property=og:type><meta content="Learn Python, Regex, Linux, Scripting, Vim, Ebooks, Self-Publishing and Interesting Tech Nuggets." property=og:description><meta content=https://learnbyexample.github.io property=og:url><meta content=https://learnbyexample.github.io/images/learnbyexample.png property=og:image><meta content=1280 property=og:image:width><meta content=640 property=og:image:height><meta content=summary_large_image property=twitter:card><meta content=@learn_byexample property=twitter:site><link href=https://learnbyexample.github.io/favicon.svg rel=icon><link rel="shortcut icon" href=https://learnbyexample.github.io/favicon.png><body><div class=container><div class=mobile-navbar id=mobile-navbar><div class=mobile-header-logo><a class=logo href=/>learnbyexample</a></div><div class="mobile-navbar-icon icon-out"><span></span><span></span><span></span></div></div><nav class="mobile-menu slideout-menu slideout-menu-left" id=mobile-menu><ul class=mobile-menu-list><li class=mobile-menu-item><a href=https://learnbyexample.github.io/books> Books </a><li class=mobile-menu-item><a href=https://learnbyexample.github.io/mini> Mini </a><li class=mobile-menu-item><a href=https://learnbyexample.github.io/tips> Tips </a><li class=mobile-menu-item><a href=https://learnbyexample.github.io/tags> Tags </a><li class=mobile-menu-item><a href=https://learnbyexample.github.io/about> About </a></ul></nav><header id=header><div class=logo><a href=https://learnbyexample.github.io>learnbyexample</a></div><nav class=menu><ul><li><a href=https://learnbyexample.github.io/books> Books </a><li><a href=https://learnbyexample.github.io/mini> Mini </a><li><a href=https://learnbyexample.github.io/tips> Tips </a><li><a href=https://learnbyexample.github.io/tags> Tags </a><li><a href=https://learnbyexample.github.io/about> About </a></ul></nav></header><main><div class=content id=mobile-panel><article class=post><header class=post__header><h1 class=post__title><a href=https://learnbyexample.github.io/tips/cli-tip-17/>CLI tip 17: common and unique lines</a></h1><div class=post__meta><span class=post__time>2022-10-12</span></div></header><div class=post-content><p>Consider these sample input files that are already sorted and the default output from <code>comm</code>:<pre class=language-ruby data-lang=ruby style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-ruby data-lang=ruby><span>$ paste colors_1.txt colors_2.txt
+</span><span style=color:#5597d6;>Blue    Black
+</span><span style=color:#5597d6;>Brown   Blue
+</span><span style=color:#5597d6;>Orange  Green
+</span><span style=color:#5597d6;>Purple  Orange
+</span><span style=color:#5597d6;>Red     Pink
+</span><span style=color:#5597d6;>Teal    Red
+</span><span style=color:#5597d6;>White   White
+</span><span>
+</span><span>$ comm colors_1.txt colors_2.txt
+</span><span>        </span><span style=color:#5597d6;>Black
+</span><span>                </span><span style=color:#5597d6;>Blue
+</span><span style=color:#5597d6;>Brown
+</span><span>        </span><span style=color:#5597d6;>Green
+</span><span>                </span><span style=color:#5597d6;>Orange
+</span><span>        </span><span style=color:#5597d6;>Pink
+</span><span style=color:#5597d6;>Purple
+</span><span>                </span><span style=color:#5597d6;>Red
+</span><span style=color:#5597d6;>Teal
+</span><span>                </span><span style=color:#5597d6;>White
+</span></code></pre><p>The following <code>comm</code> options will help you construct solutions to get common and unique lines:<ul><li><code>-1</code> suppress lines unique to the first file<li><code>-2</code> suppress lines unique to the second file<li><code>-3</code> suppress lines common to both the files</ul><pre class=language-ruby data-lang=ruby style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-ruby data-lang=ruby><span style=color:#7f8989;># common lines
+</span><span>$ comm </span><span style=color:#72ab00;>-</span><span style=color:#b3933a;>12</span><span> colors_1.txt colors_2.txt
+</span><span style=color:#5597d6;>Blue
+</span><span style=color:#5597d6;>Orange
+</span><span style=color:#5597d6;>Red
+</span><span style=color:#5597d6;>White
+</span><span>
+</span><span style=color:#7f8989;># lines unique to colors_2.txt
+</span><span>$ comm </span><span style=color:#72ab00;>-</span><span style=color:#b3933a;>13</span><span> colors_1.txt colors_2.txt
+</span><span style=color:#5597d6;>Black
+</span><span style=color:#5597d6;>Green
+</span><span style=color:#5597d6;>Pink
+</span></code></pre><p>If the input files are not already sorted, or if you want to preserve the order of input lines, you can use <code>awk</code> instead:<pre class=language-ruby data-lang=ruby style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-ruby data-lang=ruby><span style=color:#7f8989;># common lines
+</span><span>$ awk </span><span style=color:#d07711;>'NR==FNR{a[$0]; next} $0 in a'</span><span> colors_1.txt colors_2.txt
+</span><span style=color:#5597d6;>Blue
+</span><span style=color:#5597d6;>Orange
+</span><span style=color:#5597d6;>Red
+</span><span style=color:#5597d6;>White
+</span><span>
+</span><span style=color:#7f8989;># lines unique to colors_2.txt
+</span><span>$ awk </span><span style=color:#d07711;>'NR==FNR{a[$0]; next} !($0 in a)'</span><span> colors_1.txt colors_2.txt
+</span><span style=color:#5597d6;>Black
+</span><span style=color:#5597d6;>Green
+</span><span style=color:#5597d6;>Pink
+</span></code></pre><p><img alt=info src=/images/info.svg> You can also use <code>grep -Fxf colors_1.txt colors_2.txt</code> (add <code>-v</code> for unique lines) but this wouldn't scale well for larger input files.<p><strong>Video demo</strong>:<p align=center><iframe allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" title="YouTube video player" allowfullscreen frameborder=0 height=315 loading=lazy src=https://www.youtube.com/embed/LbAZMZteDpw width=560></iframe></p><br><p><img alt=info src=/images/info.svg> See also my <a href=https://github.com/learnbyexample/cli-computing>Computing from the Command Line</a> ebook.</div><div class=post-footer><div class=post-tags><a href=https://learnbyexample.github.io/tags/linux/>#linux</a><a href=https://learnbyexample.github.io/tags/command-line/>#command-line</a><a href=https://learnbyexample.github.io/tags/tip/>#tip</a></div><hr color=#e6e6e6><div class=post-nav><p><a class=next href=https://learnbyexample.github.io/tips/cli-tip-16/>CLI tip 16: transpose tables →</a><br></div><hr color=#e6e6e6><p>📰 Use <a href=https://learnbyexample.github.io/atom.xml>this link</a> for the Atom feed. <br> ✅ Follow me on <a href=https://twitter.com/learn_byexample>Twitter</a>, <a href=https://github.com/learnbyexample>GitHub</a> and <a href=https://www.youtube.com/c/learnbyexample42>Youtube</a> for interesting tech nuggets. <br> 📧 Subscribe to <a href=https://learnbyexample.gumroad.com/l/learnbyexample-weekly>learnbyexample weekly</a> for programming resources, tips, tools, free ebooks and more (free newsletter, delivered every Friday).<hr color=#e6e6e6></div></article></div></main></div><script src=https://learnbyexample.github.io/even.js></script>

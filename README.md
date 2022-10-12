@@ -56,6 +56,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Tips
 
+* [CLI tip 17: common and unique lines](https://learnbyexample.github.io/tips/cli-tip-17/)
 * [Python tip 17: counting frequency of items](https://learnbyexample.github.io/tips/python-tip-17/)
 * [Vim tip 15: moving within current line](https://learnbyexample.github.io/tips/vim-tip-15/)
 * [CLI tip 16: transpose tables](https://learnbyexample.github.io/tips/cli-tip-16/)

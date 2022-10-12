@@ -5,8 +5,76 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2022-10-06T00:00:00+00:00</updated>
+	<updated>2022-10-12T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>CLI tip 17: common and unique lines</title>
+		<published>2022-10-12T00:00:00+00:00</published>
+		<updated>2022-10-12T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://learnbyexample.github.io/tips/cli-tip-17/" type="text/html"/>
+		<id>https://learnbyexample.github.io/tips/cli-tip-17/</id>
+		<content type="html">&lt;p&gt;Consider these sample input files that are already sorted and the default output from &lt;code&gt;comm&lt;&#x2F;code&gt;:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;ruby&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span&gt;$ paste colors_1.txt colors_2.txt
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Blue    Black
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Brown   Blue
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Orange  Green
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Purple  Orange
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Red     Pink
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Teal    Red
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;White   White
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;$ comm colors_1.txt colors_2.txt
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Black
+&lt;&#x2F;span&gt;&lt;span&gt;                &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Blue
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Brown
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Green
+&lt;&#x2F;span&gt;&lt;span&gt;                &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Orange
+&lt;&#x2F;span&gt;&lt;span&gt;        &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Pink
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Purple
+&lt;&#x2F;span&gt;&lt;span&gt;                &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Red
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Teal
+&lt;&#x2F;span&gt;&lt;span&gt;                &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;White
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;The following &lt;code&gt;comm&lt;&#x2F;code&gt; options will help you construct solutions to get common and unique lines:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;-1&lt;&#x2F;code&gt; suppress lines unique to the first file&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;-2&lt;&#x2F;code&gt; suppress lines unique to the second file&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;-3&lt;&#x2F;code&gt; suppress lines common to both the files&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;pre data-lang=&quot;ruby&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# common lines
+&lt;&#x2F;span&gt;&lt;span&gt;$ comm &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;12&lt;&#x2F;span&gt;&lt;span&gt; colors_1.txt colors_2.txt
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Blue
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Orange
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Red
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;White
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# lines unique to colors_2.txt
+&lt;&#x2F;span&gt;&lt;span&gt;$ comm &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;13&lt;&#x2F;span&gt;&lt;span&gt; colors_1.txt colors_2.txt
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Black
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Green
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Pink
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;If the input files are not already sorted, or if you want to preserve the order of input lines, you can use &lt;code&gt;awk&lt;&#x2F;code&gt; instead:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;ruby&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# common lines
+&lt;&#x2F;span&gt;&lt;span&gt;$ awk &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;NR==FNR{a[$0]; next} $0 in a&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt; colors_1.txt colors_2.txt
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Blue
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Orange
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Red
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;White
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# lines unique to colors_2.txt
+&lt;&#x2F;span&gt;&lt;span&gt;$ awk &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;NR==FNR{a[$0]; next} !($0 in a)&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt; colors_1.txt colors_2.txt
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Black
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Green
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Pink
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; You can also use &lt;code&gt;grep -Fxf colors_1.txt colors_2.txt&lt;&#x2F;code&gt; (add &lt;code&gt;-v&lt;&#x2F;code&gt; for unique lines) but this wouldn&#x27;t scale well for larger input files.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Video demo&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; loading=&quot;lazy&quot; src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;LbAZMZteDpw&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;&#x2F;iframe&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See also my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;cli-computing&quot;&gt;Computing from the Command Line&lt;&#x2F;a&gt; ebook.&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>Python tip 17: counting frequency of items</title>
 		<published>2022-10-06T00:00:00+00:00</published>
