@@ -5,8 +5,51 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2022-10-12T00:00:00+00:00</updated>
+	<updated>2022-10-18T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Vim tip 16: terminal mode</title>
+		<published>2022-10-18T00:00:00+00:00</published>
+		<updated>2022-10-18T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://learnbyexample.github.io/tips/vim-tip-16/" type="text/html"/>
+		<id>https://learnbyexample.github.io/tips/vim-tip-16/</id>
+		<content type="html">&lt;p&gt;Terminal mode is one way to use shell commands from within Vim.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;kbd&gt;:terminal&lt;&#x2F;kbd&gt; open a new terminal window as a horizontal split
+&lt;ul&gt;
+&lt;li&gt;opens above the current window unless &lt;code&gt;splitbelow&lt;&#x2F;code&gt; option is set&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;:vertical :terminal&lt;&#x2F;kbd&gt; open a new terminal window as a vertical split
+&lt;ul&gt;
+&lt;li&gt;opens to the left of the current window unless &lt;code&gt;splitright&lt;&#x2F;code&gt; option is set&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Here are some shortcuts to navigate between windows and change modes:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;kbd&gt;Ctrl&lt;&#x2F;kbd&gt;+&lt;kbd&gt;w&lt;&#x2F;kbd&gt; followed by &lt;kbd&gt;w&lt;&#x2F;kbd&gt; or &lt;kbd&gt;Ctrl&lt;&#x2F;kbd&gt;+&lt;kbd&gt;w&lt;&#x2F;kbd&gt; move to the next window
+&lt;ul&gt;
+&lt;li&gt;helps you to easily switch back and forth if you have one text editing window and one terminal window&lt;&#x2F;li&gt;
+&lt;li&gt;see the &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips&#x2F;vim-tip-14&#x2F;&quot;&gt;Splitting&lt;&#x2F;a&gt; tip for more such commands&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;Ctrl&lt;&#x2F;kbd&gt;+&lt;kbd&gt;w&lt;&#x2F;kbd&gt; followed by &lt;kbd&gt;N&lt;&#x2F;kbd&gt; goes to Terminal-Normal mode which will help you to move around using Normal mode commands, copy text, etc (note that you need to use uppercase &lt;code&gt;N&lt;&#x2F;code&gt; here)
+&lt;ul&gt;
+&lt;li&gt;&lt;kbd&gt;Ctrl&lt;&#x2F;kbd&gt;+&lt;kbd&gt;\&lt;&#x2F;kbd&gt; followed by &lt;kbd&gt;Ctrl&lt;&#x2F;kbd&gt;+&lt;kbd&gt;n&lt;&#x2F;kbd&gt; another way to go to Terminal-Normal mode&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;:tnoremap &amp;lt;Esc&amp;gt; &amp;lt;C-w&amp;gt;N&lt;&#x2F;kbd&gt; map &lt;kbd&gt;Esc&lt;&#x2F;kbd&gt; key to go to Terminal-Normal mode&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;Ctrl&lt;&#x2F;kbd&gt;+&lt;kbd&gt;w&lt;&#x2F;kbd&gt; followed by &lt;kbd&gt;:&lt;&#x2F;kbd&gt; go to Command-line mode from terminal window&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; Depending on your shell, you can use the &lt;code&gt;exit&lt;&#x2F;code&gt; command to end the terminal session. &lt;code&gt;Ctrl+d&lt;&#x2F;code&gt; might work too.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; There are lot of features in this mode, see &lt;a href=&quot;https:&#x2F;&#x2F;vimhelp.org&#x2F;terminal.txt.html&quot;&gt;:h terminal.txt&lt;&#x2F;a&gt; for more details.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Video demo&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; loading=&quot;lazy&quot; src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;fuBCeOEE1jo&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;&#x2F;iframe&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See also my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;vim_reference&quot;&gt;Vim Reference Guide&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;curated_resources&#x2F;vim.html&quot;&gt;curated list of resources for Vim&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>CLI tip 17: common and unique lines</title>
 		<published>2022-10-12T00:00:00+00:00</published>

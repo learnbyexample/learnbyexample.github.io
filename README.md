@@ -56,6 +56,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Tips
 
+* [Vim tip 16: terminal mode](https://learnbyexample.github.io/tips/vim-tip-16/)
 * [CLI tip 17: common and unique lines](https://learnbyexample.github.io/tips/cli-tip-17/)
 * [Python tip 17: counting frequency of items](https://learnbyexample.github.io/tips/python-tip-17/)
 * [Vim tip 15: moving within current line](https://learnbyexample.github.io/tips/vim-tip-15/)
