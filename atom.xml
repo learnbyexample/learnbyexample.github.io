@@ -623,7 +623,7 @@
 	<entry xml:lang="en">
 		<title>Programming ebooks by Sundeep Agarwal</title>
 		<published>2022-08-09T00:00:00+00:00</published>
-		<updated>2022-08-09T00:00:00+00:00</updated>
+		<updated>2022-11-01T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/books/" type="text/html"/>
 		<id>https://learnbyexample.github.io/books/</id>
 		<content type="html">&lt;p&gt;This post lists my programming ebooks with details like PDF&#x2F;EPUB purchase links, GitHub repos, web versions, testimonials, etc. All my ebooks are self-published. You can get these ebooks individually or as part of bundles. You can also read them online for free.&lt;&#x2F;p&gt;
@@ -902,6 +902,22 @@
 &lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;vim_reference&quot;&gt;GitHub repo&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;vim_reference&#x2F;&quot;&gt;web version&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Feedback: &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;learn_byexample&quot;&gt;Twitter&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;br&gt;
+&lt;h1 id=&quot;computing-from-the-command-line&quot;&gt;&lt;p style=&quot;color: #ff9933&quot;&gt;Computing from the Command Line&lt;&#x2F;h1&gt;
+&lt;p&gt;This ebook aims to teach &lt;strong&gt;Linux command line tools and Shell Scripting&lt;&#x2F;strong&gt; for &lt;strong&gt;beginner to intermediate&lt;&#x2F;strong&gt; level users. The main focus is towards &lt;strong&gt;managing your files&lt;&#x2F;strong&gt; and performing &lt;strong&gt;text processing tasks&lt;&#x2F;strong&gt;. Plenty of &lt;strong&gt;examples&lt;&#x2F;strong&gt; are provided to make it easier to understand a particular tool and its various features. &lt;strong&gt;Exercises&lt;&#x2F;strong&gt; at the end of chapters will help you practice what you&#x27;ve learned and &lt;strong&gt;solutions&lt;&#x2F;strong&gt; are provided for reference. I hope this ebook would make it much easier for you to discover CLI tools, features and learning resources than my own blundering experience.&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;cli-computing&#x2F;images&#x2F;cli_computing_ls.png&quot; alt=&quot;Computing from the Command Line cover image&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;cli-computing&#x2F;blob&#x2F;master&#x2F;sample_chapters&#x2F;cli_computing_sample.pdf&quot;&gt;Sample chapters&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Buy pdf&#x2F;epub from:
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;cli_computing&quot;&gt;gumroad&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;leanpub.com&#x2F;cli_computing&quot;&gt;leanpub&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;cli-computing&quot;&gt;GitHub repo&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;cli-computing&#x2F;&quot;&gt;web version&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;Feedback: &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;learn_byexample&quot;&gt;Twitter&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 </content>
