@@ -5,8 +5,79 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2022-10-26T00:00:00+00:00</updated>
+	<updated>2022-11-01T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Computing from the Command Line book announcement</title>
+		<published>2022-11-01T00:00:00+00:00</published>
+		<updated>2022-11-01T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://learnbyexample.github.io/computing-from-the-command-line-announcement/" type="text/html"/>
+		<id>https://learnbyexample.github.io/computing-from-the-command-line-announcement/</id>
+		<content type="html">&lt;p&gt;Hello!&lt;&#x2F;p&gt;
+&lt;p&gt;I am pleased to announce my thirteenth ebook &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;cli-computing&quot;&gt;Computing from the Command Line&lt;&#x2F;a&gt;. This is the longest book I&#x27;ve published so far (203 pages) and it took me more than 7 months to complete the first version.&lt;&#x2F;p&gt;
+&lt;p&gt;This ebook aims to teach &lt;strong&gt;Linux command line tools and Shell Scripting&lt;&#x2F;strong&gt; for &lt;strong&gt;beginner to intermediate&lt;&#x2F;strong&gt; level users. The main focus is towards &lt;strong&gt;managing your files&lt;&#x2F;strong&gt; and performing &lt;strong&gt;text processing tasks&lt;&#x2F;strong&gt;. Plenty of &lt;strong&gt;examples&lt;&#x2F;strong&gt; are provided to make it easier to understand a particular tool and its various features. &lt;strong&gt;Exercises&lt;&#x2F;strong&gt; at the end of chapters will help you practice what you&#x27;ve learned and &lt;strong&gt;solutions&lt;&#x2F;strong&gt; are provided for reference. I hope this ebook would make it much easier for you to discover CLI tools, features and learning resources than my own blundering experience.&lt;&#x2F;p&gt;
+&lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;&lt;br&gt;
+&lt;h2 id=&quot;release-offers&quot;&gt;Release offers&lt;a class=&quot;zola-anchor&quot; href=&quot;#release-offers&quot; aria-label=&quot;Anchor link for: release-offers&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;To celebrate my latest ebook release, you can download PDF&#x2F;EPUB versions of &lt;strong&gt;Computing from the Command Line&lt;&#x2F;strong&gt; for FREE till 08-Nov-2022. You can still pay if you wish ;)&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;cli_computing&quot;&gt;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;cli_computing&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;leanpub.com&#x2F;cli_computing&quot;&gt;https:&#x2F;&#x2F;leanpub.com&#x2F;cli_computing&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Some of my ebooks and bundles are on sale as well till 08-Nov-2022:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;cli_coreutils&#x2F;cli_computing_release&quot;&gt;Command line text processing with GNU Coreutils&lt;&#x2F;a&gt; is FREE&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;oneliners&#x2F;cli_computing_release&quot;&gt;Magical one-liners&lt;&#x2F;a&gt; bundle is $5 (normal price $15) — grep, sed, awk, perl and ruby one-liners&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;all-books&#x2F;cli_computing_release&quot;&gt;All books bundle&lt;&#x2F;a&gt; is $10 (normal price $28) — all my 13 programming ebooks&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;videos&quot;&gt;Videos&lt;a class=&quot;zola-anchor&quot; href=&quot;#videos&quot; aria-label=&quot;Anchor link for: videos&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Here&#x27;s a short video about the &lt;strong&gt;Computing from the Command Line&lt;&#x2F;strong&gt; ebook:&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;PS5XEemn164&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;&#x2F;iframe&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Last November, I started &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips&#x2F;&quot;&gt;posting tips&lt;&#x2F;a&gt; covering Python, command line tools and Vim. After getting comfortable with recording videos, I added demos for these tips as well:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=THSMmCZQn1A&amp;amp;list=PLTv2U3HnAL4PlFDiH3FXTHXRbhWs2sB3F&quot;&gt;Python tips&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=p0KCLusMd5Q&amp;amp;list=PLTv2U3HnAL4PNTmRqZBSUgKaiHbRL2zeY&quot;&gt;Linux command line tips&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;table-of-contents&quot;&gt;Table of Contents&lt;a class=&quot;zola-anchor&quot; href=&quot;#table-of-contents&quot; aria-label=&quot;Anchor link for: table-of-contents&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Preface&lt;&#x2F;li&gt;
+&lt;li&gt;Introduction and Setup&lt;&#x2F;li&gt;
+&lt;li&gt;Command Line Overview&lt;&#x2F;li&gt;
+&lt;li&gt;Managing Files and Directories&lt;&#x2F;li&gt;
+&lt;li&gt;Shell Features&lt;&#x2F;li&gt;
+&lt;li&gt;Viewing Part or Whole File Contents&lt;&#x2F;li&gt;
+&lt;li&gt;Searching Files and Filenames&lt;&#x2F;li&gt;
+&lt;li&gt;File Properties&lt;&#x2F;li&gt;
+&lt;li&gt;Managing Processes&lt;&#x2F;li&gt;
+&lt;li&gt;Multipurpose Text Processing Tools&lt;&#x2F;li&gt;
+&lt;li&gt;Sorting Stuff&lt;&#x2F;li&gt;
+&lt;li&gt;Comparing Files&lt;&#x2F;li&gt;
+&lt;li&gt;Assorted Text Processing Tools&lt;&#x2F;li&gt;
+&lt;li&gt;Shell Scripting&lt;&#x2F;li&gt;
+&lt;li&gt;Shell Customization&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;web-version&quot;&gt;Web version&lt;a class=&quot;zola-anchor&quot; href=&quot;#web-version&quot; aria-label=&quot;Anchor link for: web-version&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;You can also read the book online here: &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;cli-computing&#x2F;&quot;&gt;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;cli-computing&#x2F;&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;github-repo&quot;&gt;GitHub repo&lt;a class=&quot;zola-anchor&quot; href=&quot;#github-repo&quot; aria-label=&quot;Anchor link for: github-repo&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Visit &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;cli-computing&quot;&gt;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;cli-computing&lt;&#x2F;a&gt; for markdown source, example files, exercise solutions, sample chapters and other details related to the book.&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;newsletter&quot;&gt;Newsletter&lt;a class=&quot;zola-anchor&quot; href=&quot;#newsletter&quot; aria-label=&quot;Anchor link for: newsletter&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Subscribe to &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;learnbyexample-weekly&quot;&gt;learnbyexample weekly&lt;&#x2F;a&gt; — free newsletter covering programming resources, updates on what I am creating, tips, tools, free ebooks and more, delivered every Friday.&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;feedback-and-errata&quot;&gt;Feedback and Errata&lt;a class=&quot;zola-anchor&quot; href=&quot;#feedback-and-errata&quot; aria-label=&quot;Anchor link for: feedback-and-errata&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;I would highly appreciate if you&#x27;d &lt;strong&gt;let me know how you felt about this book&lt;&#x2F;strong&gt;. It could be anything from a simple thank you, Gumroad rating, pointing out a typo, mistakes in code snippets, which aspects of the book worked for you (or didn&#x27;t!) and so on. Reader feedback is essential and especially so for self-published authors.&lt;&#x2F;p&gt;
+&lt;p&gt;You can reach me via:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Issue Manager: &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;cli-computing&#x2F;issues&quot;&gt;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;cli-computing&#x2F;issues&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;E-mail: &lt;code&gt;echo &#x27;bGVhcm5ieWV4YW1wbGUubmV0QGdtYWlsLmNvbQo=&#x27; | base64 --decode&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Twitter: &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;learn_byexample&quot;&gt;https:&#x2F;&#x2F;twitter.com&#x2F;learn_byexample&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Happy learning :)&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>Python tip 18: arbitrary number of arguments</title>
 		<published>2022-10-26T00:00:00+00:00</published>
