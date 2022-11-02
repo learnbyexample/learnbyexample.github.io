@@ -5,8 +5,54 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2022-11-01T00:00:00+00:00</updated>
+	<updated>2022-11-02T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>CLI tip 18: inserting file contents using GNU sed</title>
+		<published>2022-11-02T00:00:00+00:00</published>
+		<updated>2022-11-02T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://learnbyexample.github.io/tips/cli-tip-18/" type="text/html"/>
+		<id>https://learnbyexample.github.io/tips/cli-tip-18/</id>
+		<content type="html">&lt;p&gt;The &lt;code&gt;r&lt;&#x2F;code&gt; command accepts a filename as argument and when the address is satisfied, entire contents of the given file is added &lt;em&gt;after&lt;&#x2F;em&gt; the matching line. This is a robust way to add multiline text literally.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;ruby&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span&gt;$ cat ip.txt
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span&gt; sky
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span&gt; apple
+&lt;&#x2F;span&gt;&lt;span&gt;$ cat fav_colors.txt
+&lt;&#x2F;span&gt;&lt;span&gt;deep red
+&lt;&#x2F;span&gt;&lt;span&gt;yellow
+&lt;&#x2F;span&gt;&lt;span&gt;reddish
+&lt;&#x2F;span&gt;&lt;span&gt;brown
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# space between r and filename is optional
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# adds entire contents of &amp;#39;ip.txt&amp;#39; after each line containing &amp;#39;red&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;$ sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&#x2F;red&#x2F;r ip.txt&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt; fav_colors.txt
+&lt;&#x2F;span&gt;&lt;span&gt;deep red
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span&gt; sky
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span&gt; apple
+&lt;&#x2F;span&gt;&lt;span&gt;yellow
+&lt;&#x2F;span&gt;&lt;span&gt;reddish
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span&gt; sky
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span&gt; apple
+&lt;&#x2F;span&gt;&lt;span&gt;brown
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;The &lt;code&gt;e&lt;&#x2F;code&gt; flag is the easiest way to insert file contents &lt;em&gt;before&lt;&#x2F;em&gt; the matching lines. Similar to the &lt;code&gt;r&lt;&#x2F;code&gt; command, the output of an external command (&lt;code&gt;cat&lt;&#x2F;code&gt; in the below example) is inserted literally.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;ruby&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span&gt;$ sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&#x2F;red&#x2F;e cat ip.txt&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt; fav_colors.txt
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span&gt; sky
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span&gt; apple
+&lt;&#x2F;span&gt;&lt;span&gt;deep red
+&lt;&#x2F;span&gt;&lt;span&gt;yellow
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span&gt; sky
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span&gt; apple
+&lt;&#x2F;span&gt;&lt;span&gt;reddish
+&lt;&#x2F;span&gt;&lt;span&gt;brown
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;learn_gnused&#x2F;adding-content-from-file.html&quot;&gt;Adding content from file&lt;&#x2F;a&gt; chapter from my &lt;strong&gt;GNU sed&lt;&#x2F;strong&gt; ebook for many more examples, gotchas, details about the &lt;code&gt;R&lt;&#x2F;code&gt; command and so on.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Video demo&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; loading=&quot;lazy&quot; src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;p1CFOCs3gGM&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;&#x2F;iframe&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See also my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;learn_gnused&quot;&gt;GNU sed&lt;&#x2F;a&gt; ebook.&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>Computing from the Command Line book announcement</title>
 		<published>2022-11-01T00:00:00+00:00</published>
