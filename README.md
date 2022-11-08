@@ -58,6 +58,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Tips
 
+* [Vim tip 17: setting options](https://learnbyexample.github.io/tips/vim-tip-17/)
 * [CLI tip 18: inserting file contents using GNU sed](https://learnbyexample.github.io/tips/cli-tip-18/)
 * [Python tip 18: arbitrary number of arguments](https://learnbyexample.github.io/tips/python-tip-18/)
 * [Vim tip 16: terminal mode](https://learnbyexample.github.io/tips/vim-tip-16/)
