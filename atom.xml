@@ -5,8 +5,32 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2022-11-08T00:00:00+00:00</updated>
+	<updated>2022-11-14T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Computing from the Command Line: sales report</title>
+		<published>2022-11-14T00:00:00+00:00</published>
+		<updated>2022-11-14T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://learnbyexample.github.io/mini/cli-computing-sales/" type="text/html"/>
+		<id>https://learnbyexample.github.io/mini/cli-computing-sales/</id>
+		<content type="html">&lt;p&gt;I&#x27;ve previously written about events and strategies that led to &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;wild-ride-2021&#x2F;#book-sales&quot;&gt;increased ebook sales during the last quarter of 2021&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Very pleased to inform that I continue to see more than expected sales during release week. My 13th ebook &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;cli-computing&quot;&gt;Computing from the Command Line&lt;&#x2F;a&gt; was published on November 1st. Here&#x27;s how the sales looked on Gumroad during the first ten days:&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;cli-computing-release-gumroad-sales.png&quot; alt=&quot;Ten days Gumroad sales chart&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;I used to offer my ebooks for free on release. For the past few releases, I have also added heavily discounted ebook bundles which seems to be the major factor in increased paid sales I&#x27;m seeing. Luck certainly plays a role too in reaching users through social media. Here are some of the ways I promoted my latest ebook:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;p&#x2F;announcing-computing-from-the-command-line-free-discount-offers-and-more&quot;&gt;Announcement post on Gumroad&lt;&#x2F;a&gt; and sending an email to existing readers (1000+ users opened the email as per Gumroad analytics)&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;learn_byexample&#x2F;status&#x2F;1587443517823275009&quot;&gt;Pinned tweet&lt;&#x2F;a&gt; — more than 300 link clicks as per Twitter analytics&lt;&#x2F;li&gt;
+&lt;li&gt;Posting on &lt;a href=&quot;https:&#x2F;&#x2F;old.reddit.com&#x2F;r&#x2F;commandline&#x2F;comments&#x2F;yk1izp&#x2F;i_wrote_a_book_on_linux_cli_tools_and_shell&#x2F;&quot;&gt;&#x2F;r&#x2F;commandline&#x2F;&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;old.reddit.com&#x2F;r&#x2F;linux&#x2F;comments&#x2F;yk1n8y&#x2F;i_wrote_a_book_on_linux_cli_tools_and_shell&#x2F;&quot;&gt;&#x2F;r&#x2F;linux&#x2F;&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;old.reddit.com&#x2F;r&#x2F;linux4noobs&#x2F;comments&#x2F;ykzuia&#x2F;i_wrote_a_book_on_linux_cli_tools_and_shell&#x2F;&quot;&gt;&#x2F;r&#x2F;linux4noobs&#x2F;&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;old.reddit.com&#x2F;r&#x2F;FreeEBOOKS&#x2F;comments&#x2F;yoj33g&#x2F;computing_from_the_command_line_linux_tools_and&#x2F;&quot;&gt;&#x2F;r&#x2F;FreeEBOOKS&#x2F;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=33449401&quot;&gt;Show HN post on Hacker News&lt;&#x2F;a&gt; — wasn&#x27;t lucky this time to reach front page&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;youtu.be&#x2F;PS5XEemn164&quot;&gt;Promo video on youtube&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Mentioned in my &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;learnbyexample-weekly&quot;&gt;learnbyexample weekly&lt;&#x2F;a&gt; newsletter&lt;&#x2F;li&gt;
+&lt;li&gt;And of course, I wrote a release post &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;computing-from-the-command-line-announcement&#x2F;&quot;&gt;on this blog&lt;&#x2F;a&gt; and also mentioned it on my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&quot;&gt;GitHub Readme&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Apart from Gumroad, 400+ readers downloaded the ebook from &lt;a href=&quot;https:&#x2F;&#x2F;leanpub.com&#x2F;cli_computing&quot;&gt;Leanpub&lt;&#x2F;a&gt; and I got a few paid sales as well. I wrote about &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;my-book-writing-experience&#x2F;#leanpub-vs-gumroad&quot;&gt;pros and cons of Gumroad&#x2F;Leanpub here&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;hr &#x2F;&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; PS: Make sure to read the rules and be a regular user before self-promoting your content on the social media platforms mentioned above.&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>Vim tip 17: setting options</title>
 		<published>2022-11-08T00:00:00+00:00</published>

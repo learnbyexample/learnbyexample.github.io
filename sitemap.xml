@@ -68,10 +68,15 @@
     </url>
     <url>
         <loc>https://learnbyexample.github.io/mini/</loc>
+        <lastmod>2022-11-14</lastmod>
     </url>
     <url>
         <loc>https://learnbyexample.github.io/mini/bash-compound-commands-redirection/</loc>
         <lastmod>2022-06-04</lastmod>
+    </url>
+    <url>
+        <loc>https://learnbyexample.github.io/mini/cli-computing-sales/</loc>
+        <lastmod>2022-11-14</lastmod>
     </url>
     <url>
         <loc>https://learnbyexample.github.io/mini/debug-woes-1/</loc>
