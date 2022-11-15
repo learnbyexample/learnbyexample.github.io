@@ -5,8 +5,57 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2022-11-14T00:00:00+00:00</updated>
+	<updated>2022-11-15T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Building TUIs with textual: first impressions</title>
+		<published>2022-11-15T00:00:00+00:00</published>
+		<updated>2022-11-15T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://learnbyexample.github.io/textual-first-impressions/" type="text/html"/>
+		<id>https://learnbyexample.github.io/textual-first-impressions/</id>
+		<content type="html">&lt;p&gt;Last week, I finally started exploring &lt;a href=&quot;https:&#x2F;&#x2F;textual.textualize.io&#x2F;&quot;&gt;textual&lt;&#x2F;a&gt;. The main motivation was to start implementing a few project ideas I&#x27;ve had in my todo list for years. I don&#x27;t particularly have a preference between TUI (terminal user interface) and GUI (graphical user interface) for these projects. Seeing a few Textual demos on twitter (courtesy &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;willmcgugan&quot;&gt;Will McGugan&lt;&#x2F;a&gt;) over the past few months, I felt like exploring this framework first.&lt;&#x2F;p&gt;
+&lt;p&gt;For my first app, I picked a 4x4 board game — like Tic Tac Toe but form a square instead of a line. I came up with this variation in high school and been fond of coding it since college days.&lt;&#x2F;p&gt;
+&lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;&lt;br&gt;
+&lt;h2 id=&quot;installation-and-tutorials&quot;&gt;Installation and Tutorials&lt;a class=&quot;zola-anchor&quot; href=&quot;#installation-and-tutorials&quot; aria-label=&quot;Anchor link for: installation-and-tutorials&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;The &lt;a href=&quot;https:&#x2F;&#x2F;textual.textualize.io&#x2F;getting_started&#x2F;&quot;&gt;Getting started&lt;&#x2F;a&gt; page of the documentation will give you all the relevant installation instructions. I used &lt;code&gt;pip install &#x27;textual[dev]&#x27;&lt;&#x2F;code&gt; since the development mode has nice features like &lt;em&gt;live editing&lt;&#x2F;em&gt;. As I looked up the &lt;a href=&quot;https:&#x2F;&#x2F;textual.textualize.io&#x2F;guide&#x2F;devtools&#x2F;&quot;&gt;Devtools&lt;&#x2F;a&gt; page to link here in this blog post, I found that there&#x27;s a &lt;code&gt;console&lt;&#x2F;code&gt; command for &lt;code&gt;print()&lt;&#x2F;code&gt; based debugging! That would&#x27;ve been handy while I was working on the game — sigh, I should&#x27;ve been more proactive in exploring the documentation site.&lt;&#x2F;p&gt;
+&lt;p&gt;In the &lt;em&gt;Getting started&lt;&#x2F;em&gt; page, you&#x27;ll also be informed about &lt;code&gt;python -m textual&lt;&#x2F;code&gt; (builtin demo) and &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;Textualize&#x2F;textual&#x2F;tree&#x2F;main&#x2F;examples&quot;&gt;other examples&lt;&#x2F;a&gt; in the GitHub repo.&lt;&#x2F;p&gt;
+&lt;p&gt;After playing with the demo a bit, I went through the &lt;a href=&quot;https:&#x2F;&#x2F;textual.textualize.io&#x2F;tutorial&#x2F;&quot;&gt;tutorial&lt;&#x2F;a&gt; — shows how to build a Stopwatch app step-by-step.&lt;&#x2F;p&gt;
+&lt;p&gt;The documentation also includes &lt;a href=&quot;https:&#x2F;&#x2F;textual.textualize.io&#x2F;guide&#x2F;&quot;&gt;Guide&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;textual.textualize.io&#x2F;reference&#x2F;&quot;&gt;Reference&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;textual.textualize.io&#x2F;api&#x2F;&quot;&gt;API&lt;&#x2F;a&gt;, etc. I gave them a cursory glance and decided to start building my game.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; I should note that while I got introduced to programming in school about 20 years ago, I don&#x27;t have much experience with projects that need more than a few hundred lines. I&#x27;m good with command-line tools and text processing with scripting languages like Python. I had a horrible experience writing an Android app a few years back, mainly due to object-oriented programming and the complexity of the project. I&#x27;ve improved a bit since then, but still feel like a newbie when it comes to working with classes.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;building-square-tic-tac-toe-board-game&quot;&gt;Building Square Tic Tac Toe board game&lt;a class=&quot;zola-anchor&quot; href=&quot;#building-square-tic-tac-toe-board-game&quot; aria-label=&quot;Anchor link for: building-square-tic-tac-toe-board-game&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Similar to the step-by-step Textual tutorial, I built the game by adding features incrementally. I &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;learn_byexample&#x2F;status&#x2F;1590357173519155200&quot;&gt;tweeted my progress&lt;&#x2F;a&gt; along with screenshots and recordings. Here&#x27;s a summary:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Managed to place 16 buttons in a grid layout&lt;&#x2F;li&gt;
+&lt;li&gt;Buttons now respond to clicking! And in response, the computer plays a random move&lt;&#x2F;li&gt;
+&lt;li&gt;Recording below shows 3 games: User wins, AI wins, Tie&lt;&#x2F;li&gt;
+&lt;li&gt;Added Easy&#x2F;Hard modes — it is impossible to beat the AI in hard mode&lt;&#x2F;li&gt;
+&lt;li&gt;Almost done! Layout is better now and starting new game is now a button instead of a shortcut keybinding&lt;&#x2F;li&gt;
+&lt;li&gt;Cleaned up code a bit and posted on GitHub&lt;&#x2F;li&gt;
+&lt;li&gt;Next step: write a blog post (this post!)&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; Visit &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;TUI-apps&#x2F;tree&#x2F;main&#x2F;SquareTicTacToe&quot;&gt;my GitHub repo&lt;&#x2F;a&gt; for the code, game rules and other details.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;I had made a &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;practice_python_projects&#x2F;square_tic_tac_toe&#x2F;square_tic_tac_toe.html&quot;&gt;GUI version of this game using tkinter&lt;&#x2F;a&gt; last year. I copied most of the game logic from there, so I didn&#x27;t much struggle with object-oriented programming in this case. Here&#x27;s a sample screenshot from the finished code:&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;textual&#x2F;square_tictactoe.png&quot; alt=&quot;Sample screenshot for Square Tic Tac Toe game&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;what-i-liked&quot;&gt;What I liked&lt;a class=&quot;zola-anchor&quot; href=&quot;#what-i-liked&quot; aria-label=&quot;Anchor link for: what-i-liked&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;As mentioned before, Textual supports &lt;em&gt;live editing&lt;&#x2F;em&gt; mode. The command is &lt;code&gt;textual run --dev script.py&lt;&#x2F;code&gt; and this helps you experiment with CSS. I found this very helpful while trying out layout combinations, margin, padding, etc.&lt;&#x2F;p&gt;
+&lt;p&gt;The default colors were great too. I didn&#x27;t have to think about choosing colors (except for setting background color for header and game status). The framework even provides an easy way to allow users to switch between dark and light themes! Though, I haven&#x27;t yet figured out how to set light theme as the default (I worked around by explicitly adding a call to the theme toggle method).&lt;&#x2F;p&gt;
+&lt;p&gt;Overall, the code was significantly shorter compared to the &lt;code&gt;tkinter&lt;&#x2F;code&gt; version I did last year. That version had a few more features, but I&#x27;d say Textual felt much easier to reason about. I remember having to spend days shifting through stackoverflow threads and &lt;a href=&quot;https:&#x2F;&#x2F;tkdocs.com&#x2F;index.html&quot;&gt;tkdocs&lt;&#x2F;a&gt; to get the GUI version working.&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;what-gave-me-trouble&quot;&gt;What gave me trouble&lt;a class=&quot;zola-anchor&quot; href=&quot;#what-gave-me-trouble&quot; aria-label=&quot;Anchor link for: what-gave-me-trouble&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Struggling with layout isn&#x27;t new for me. I started with 4x4 grid for the board, which was fairly straightforward. Problems arose when I wanted to add status text area to the left and control buttons to the right. Placing them left&#x2F;right was easy to do with &lt;em&gt;dock&lt;&#x2F;em&gt; in CSS. But, I couldn&#x27;t get them to align well — too much spacing around the 4x4 board. I was trying to give 50% to 60% for the board and the remaining evenly divided for the other two elements. After some experimentation, what worked was giving 20% to status, 25% to control and &lt;em&gt;not&lt;&#x2F;em&gt; assigning a width value for the board.&lt;&#x2F;p&gt;
+&lt;p&gt;I initially used a button for the status because I couldn&#x27;t find a &lt;em&gt;textbox&lt;&#x2F;em&gt; widget. I knew that &lt;a href=&quot;https:&#x2F;&#x2F;textual.textualize.io&#x2F;widgets&#x2F;static&#x2F;&quot;&gt;Static&lt;&#x2F;a&gt; widget can display text, but I didn&#x27;t find how to dynamically change the text from that documentation page. I thought I&#x27;ll have to make a custom widget, but when I went to &lt;a href=&quot;https:&#x2F;&#x2F;textual.textualize.io&#x2F;guide&#x2F;widgets&#x2F;&quot;&gt;Widgets guide&lt;&#x2F;a&gt;, I found that &lt;code&gt;Static&lt;&#x2F;code&gt; already has an &lt;code&gt;update()&lt;&#x2F;code&gt; method!&lt;&#x2F;p&gt;
+&lt;p&gt;I probably missed something (or perhaps part of the roadmap), but I found it strange to have a single &lt;code&gt;on_button_pressed()&lt;&#x2F;code&gt; method to handle on click event for every &lt;code&gt;Button&lt;&#x2F;code&gt; widget. I&#x27;d prefer a way to bind a method to the buttons, like &lt;code&gt;tkinter&lt;&#x2F;code&gt; provides.&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;next-steps&quot;&gt;Next steps&lt;a class=&quot;zola-anchor&quot; href=&quot;#next-steps&quot; aria-label=&quot;Anchor link for: next-steps&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;As mentioned before, I have several projects in my todo list. The next one I want to try is an app for interactive exercises for &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;books&#x2F;&quot;&gt;my ebooks&lt;&#x2F;a&gt;. Last year, I made one for &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;py_regular_expressions&#x2F;tree&#x2F;master&#x2F;interactive_exercises&quot;&gt;Python regular expressions&lt;&#x2F;a&gt; using &lt;code&gt;tkinter&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>Computing from the Command Line: sales report</title>
 		<published>2022-11-14T00:00:00+00:00</published>

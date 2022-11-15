@@ -368,7 +368,13 @@
         <loc>https://learnbyexample.github.io/tags/text-processing/</loc>
     </url>
     <url>
+        <loc>https://learnbyexample.github.io/tags/textual/</loc>
+    </url>
+    <url>
         <loc>https://learnbyexample.github.io/tags/tip/</loc>
+    </url>
+    <url>
+        <loc>https://learnbyexample.github.io/tags/tui/</loc>
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tags/tutorial/</loc>
@@ -381,6 +387,10 @@
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tags/xelatex/</loc>
+    </url>
+    <url>
+        <loc>https://learnbyexample.github.io/textual-first-impressions/</loc>
+        <lastmod>2022-11-15</lastmod>
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tips/</loc>
