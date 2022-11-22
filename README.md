@@ -6,6 +6,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Posts
 
+* [Festive deals for books on Python, Linux, JavaScript, Regular Expressions and more](https://learnbyexample.github.io/programming-deals-2022/)
 * [Building TUIs with textual: first impressions](https://learnbyexample.github.io/textual-first-impressions/)
 * [Computing from the Command Line book announcement](https://learnbyexample.github.io/computing-from-the-command-line-announcement/)
 * [Sufficiently Advanced AI feels magical](https://learnbyexample.github.io/sufficiently-advanced-ai/)

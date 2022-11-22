@@ -5,8 +5,54 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2022-11-16T00:00:00+00:00</updated>
+	<updated>2022-11-22T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Festive deals for books on Python, Linux, JavaScript, Regular Expressions and more</title>
+		<published>2022-11-22T00:00:00+00:00</published>
+		<updated>2022-11-22T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://learnbyexample.github.io/programming-deals-2022/" type="text/html"/>
+		<id>https://learnbyexample.github.io/programming-deals-2022/</id>
+		<content type="html">&lt;p&gt;Hello!&lt;&#x2F;p&gt;
+&lt;p&gt;Here are some exciting deals for my programming ebooks as well as from other creators.&lt;&#x2F;p&gt;
+&lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;&lt;br&gt;
+&lt;h2 id=&quot;my-ebooks&quot;&gt;My ebooks&lt;a class=&quot;zola-anchor&quot; href=&quot;#my-ebooks&quot; aria-label=&quot;Anchor link for: my-ebooks&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Offers valid till 30-Nov-2022:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;all-books&#x2F;FestiveOffer&quot;&gt;All 13 Books Bundle&lt;&#x2F;a&gt; — $10 (normal price $28)&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;py_projects&#x2F;FestiveOffer&quot;&gt;Practice Python Projects&lt;&#x2F;a&gt; — FREE (normal price $10)&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;js_regexp&#x2F;FestiveOffer&quot;&gt;JavaScript RegExp&lt;&#x2F;a&gt; — FREE (normal price $10)&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;python-bundle&#x2F;FestiveOffer&quot;&gt;Learn by example Python bundle&lt;&#x2F;a&gt; — $3 (normal price $15)&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;all-books&#x2F;FestiveOffer&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;books&#x2F;all_books_bundle.png&quot; alt=&quot;All books bundle&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;indie-creators&quot;&gt;Indie creators&lt;a class=&quot;zola-anchor&quot; href=&quot;#indie-creators&quot; aria-label=&quot;Anchor link for: indie-creators&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.pythonmorsels.com&#x2F;pricing&#x2F;&quot;&gt;Python Morsels&lt;&#x2F;a&gt; — save up to $108 a year on Python Morsels, until Nov 28 (skill-honing system that helps developers deepen their Python skills)
+&lt;ul&gt;
+&lt;li&gt;see also author&#x27;s &lt;a href=&quot;https:&#x2F;&#x2F;treyhunner.com&#x2F;2022&#x2F;11&#x2F;python-black-friday-and-cyber-monday-sales-2022&#x2F;&quot;&gt;blog post&lt;&#x2F;a&gt; for comprehensive links to other Python deals&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;adamchainz.gumroad.com&#x2F;l&#x2F;byddx&quot;&gt;Boost Your Django DX&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;adamchainz.gumroad.com&#x2F;l&#x2F;suydt&quot;&gt;Speed Up Your Django Tests&lt;&#x2F;a&gt; — 50% off (plus further 50% off based on GDP) until Nov 28
+&lt;ul&gt;
+&lt;li&gt;see also author&#x27;s &lt;a href=&quot;https:&#x2F;&#x2F;adamj.eu&#x2F;tech&#x2F;2022&#x2F;11&#x2F;21&#x2F;django-black-friday-deals-2022&#x2F;&quot;&gt;blog post&lt;&#x2F;a&gt; for comprehensive links to other Django-related deals&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;More to come...&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;miscellaneous&quot;&gt;Miscellaneous&lt;a class=&quot;zola-anchor&quot; href=&quot;#miscellaneous&quot; aria-label=&quot;Anchor link for: miscellaneous&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;nostarch.com&#x2F;blog&#x2F;2022-holiday-gift-guide&quot;&gt;NoStarch Press&lt;&#x2F;a&gt; — Holiday Gift Guide&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;realpython.com&#x2F;giveaway&#x2F;black-friday&#x2F;&quot;&gt;Real Python Giveaway&lt;&#x2F;a&gt; — a chance to win one of three prizes, until Nov 25&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;0x90n&#x2F;InfoSec-Black-Friday&quot;&gt;InfoSec Hack Friday&lt;&#x2F;a&gt; — InfoSec related software&#x2F;tools&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;opsdisk.gumroad.com&#x2F;l&#x2F;cphlab&#x2F;blackfriday2022&quot;&gt;The Cyber Plumber&#x27;s Lab Guide and Interactive Access&lt;&#x2F;a&gt; — 50% OFF&lt;&#x2F;li&gt;
+&lt;li&gt;More to come...&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;br&gt;
+&lt;p&gt;Happy learning :)&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>Python tip 19: manipulating string case</title>
 		<published>2022-11-16T00:00:00+00:00</published>
@@ -52,7 +98,7 @@
 	<entry xml:lang="en">
 		<title>Building TUIs with textual: first impressions</title>
 		<published>2022-11-15T00:00:00+00:00</published>
-		<updated>2022-11-15T00:00:00+00:00</updated>
+		<updated>2022-11-22T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/textual-first-impressions/" type="text/html"/>
 		<id>https://learnbyexample.github.io/textual-first-impressions/</id>
 		<content type="html">&lt;p&gt;Last week, I finally started exploring &lt;a href=&quot;https:&#x2F;&#x2F;textual.textualize.io&#x2F;&quot;&gt;textual&lt;&#x2F;a&gt;. The main motivation was to start implementing a few project ideas I&#x27;ve had in my todo list for years. I don&#x27;t particularly have a preference between TUI (terminal user interface) and GUI (graphical user interface) for these projects. Seeing a few Textual demos on twitter (courtesy &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;willmcgugan&quot;&gt;Will McGugan&lt;&#x2F;a&gt;) over the past few months, I felt like exploring this framework first.&lt;&#x2F;p&gt;
@@ -91,7 +137,7 @@
 &lt;br&gt;
 &lt;h2 id=&quot;what-gave-me-trouble&quot;&gt;What gave me trouble&lt;a class=&quot;zola-anchor&quot; href=&quot;#what-gave-me-trouble&quot; aria-label=&quot;Anchor link for: what-gave-me-trouble&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
 &lt;p&gt;Struggling with layout isn&#x27;t new for me. I started with 4x4 grid for the board, which was fairly straightforward. Problems arose when I wanted to add status text area to the left and control buttons to the right. Placing them left&#x2F;right was easy to do with &lt;em&gt;dock&lt;&#x2F;em&gt; in CSS. But, I couldn&#x27;t get them to align well — too much spacing around the 4x4 board. I was trying to give 50% to 60% for the board and the remaining evenly divided for the other two elements. After some experimentation, what worked was giving 20% to status, 25% to control and &lt;em&gt;not&lt;&#x2F;em&gt; assigning a width value for the board.&lt;&#x2F;p&gt;
-&lt;p&gt;I initially used a button for the status because I couldn&#x27;t find a &lt;em&gt;textbox&lt;&#x2F;em&gt; widget. I knew that &lt;a href=&quot;https:&#x2F;&#x2F;textual.textualize.io&#x2F;widgets&#x2F;static&#x2F;&quot;&gt;Static&lt;&#x2F;a&gt; widget can display text, but I didn&#x27;t find how to dynamically change the text from that documentation page. I thought I&#x27;ll have to make a custom widget, but when I went to &lt;a href=&quot;https:&#x2F;&#x2F;textual.textualize.io&#x2F;guide&#x2F;widgets&#x2F;&quot;&gt;Widgets guide&lt;&#x2F;a&gt;, I found that &lt;code&gt;Static&lt;&#x2F;code&gt; already has an &lt;code&gt;update()&lt;&#x2F;code&gt; method!&lt;&#x2F;p&gt;
+&lt;p&gt;I initially used a button for the status because I couldn&#x27;t find a &lt;em&gt;textbox&lt;&#x2F;em&gt; widget (edit: Textual now has a &lt;code&gt;Label&lt;&#x2F;code&gt; widget). I knew that &lt;a href=&quot;https:&#x2F;&#x2F;textual.textualize.io&#x2F;widgets&#x2F;static&#x2F;&quot;&gt;Static&lt;&#x2F;a&gt; widget can display text, but I didn&#x27;t find how to dynamically change the text from that documentation page. I thought I&#x27;ll have to make a custom widget, but when I went to &lt;a href=&quot;https:&#x2F;&#x2F;textual.textualize.io&#x2F;guide&#x2F;widgets&#x2F;&quot;&gt;Widgets guide&lt;&#x2F;a&gt;, I found that &lt;code&gt;Static&lt;&#x2F;code&gt; already has an &lt;code&gt;update()&lt;&#x2F;code&gt; method!&lt;&#x2F;p&gt;
 &lt;p&gt;I probably missed something (or perhaps part of the roadmap), but I found it strange to have a single &lt;code&gt;on_button_pressed()&lt;&#x2F;code&gt; method to handle on click event for every &lt;code&gt;Button&lt;&#x2F;code&gt; widget. I&#x27;d prefer a way to bind a method to the buttons, like &lt;code&gt;tkinter&lt;&#x2F;code&gt; provides.&lt;&#x2F;p&gt;
 &lt;br&gt;
 &lt;h2 id=&quot;next-steps&quot;&gt;Next steps&lt;a class=&quot;zola-anchor&quot; href=&quot;#next-steps&quot; aria-label=&quot;Anchor link for: next-steps&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
