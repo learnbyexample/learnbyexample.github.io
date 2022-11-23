@@ -61,6 +61,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Tips
 
+* [CLI tip 19: extended globs](https://learnbyexample.github.io/tips/cli-tip-19/)
 * [Python tip 19: manipulating string case](https://learnbyexample.github.io/tips/python-tip-19/)
 * [Vim tip 17: setting options](https://learnbyexample.github.io/tips/vim-tip-17/)
 * [CLI tip 18: inserting file contents using GNU sed](https://learnbyexample.github.io/tips/cli-tip-18/)

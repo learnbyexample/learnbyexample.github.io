@@ -5,12 +5,57 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2022-11-22T00:00:00+00:00</updated>
+	<updated>2022-11-23T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>CLI tip 19: extended globs</title>
+		<published>2022-11-23T00:00:00+00:00</published>
+		<updated>2022-11-23T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://learnbyexample.github.io/tips/cli-tip-19/" type="text/html"/>
+		<id>https://learnbyexample.github.io/tips/cli-tip-19/</id>
+		<content type="html">&lt;p&gt;The Bash shell provides &lt;code&gt;extglob&lt;&#x2F;code&gt; option for advanced pattern matching of filenames. These will help you apply regexp like quantifiers, provide alternate patterns and negation. From &lt;code&gt;man bash&lt;&#x2F;code&gt;:&lt;&#x2F;p&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Extended glob&lt;&#x2F;th&gt;&lt;th&gt;Description&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;&lt;code&gt;?(pattern-list)&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;Matches zero or one occurrence of the given patterns&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;code&gt;*(pattern-list)&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;Matches zero or more occurrences of the given patterns&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;code&gt;+(pattern-list)&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;Matches one or more occurrences of the given patterns&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;code&gt;@(pattern-list)&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;Matches one of the given patterns&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;code&gt;!(pattern-list)&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;Matches anything except one of the given patterns&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;p&gt;Extended globs are disabled by default. You can use &lt;code&gt;shopt -s extglob&lt;&#x2F;code&gt; and &lt;code&gt;shopt -u extglob&lt;&#x2F;code&gt; to set and unset this option respectively.&lt;&#x2F;p&gt;
+&lt;p&gt;Here are some examples (visit &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;cli-computing&#x2F;raw&#x2F;master&#x2F;example_files&#x2F;scripts&#x2F;globs.sh&quot;&gt;globs.sh&lt;&#x2F;a&gt; to get the script used below).&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;ruby&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span&gt;$ source globs.sh
+&lt;&#x2F;span&gt;&lt;span&gt;$ ls
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;100&lt;&#x2F;span&gt;&lt;span&gt;.sh   f1.txt      f4.txt    hi.sh   math.h         report&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;02&lt;&#x2F;span&gt;&lt;span&gt;.log
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;42&lt;&#x2F;span&gt;&lt;span&gt;.txt   f2_old.txt  f7.txt    ip.txt  notes.txt      report&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;04&lt;&#x2F;span&gt;&lt;span&gt;.log
+&lt;&#x2F;span&gt;&lt;span&gt;calc.py  f2.txt      hello.py  main.c  report&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;00&lt;&#x2F;span&gt;&lt;span&gt;.log  report&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;98&lt;&#x2F;span&gt;&lt;span&gt;.log
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# one or more digits followed by &amp;#39;.&amp;#39; and then zero or more characters
+&lt;&#x2F;span&gt;&lt;span&gt;$ ls &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;+&lt;&#x2F;span&gt;&lt;span&gt;([&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;9&lt;&#x2F;span&gt;&lt;span&gt;]).&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;*
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;100&lt;&#x2F;span&gt;&lt;span&gt;.sh  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;42&lt;&#x2F;span&gt;&lt;span&gt;.txt
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# same as: ls *.c *.sh
+&lt;&#x2F;span&gt;&lt;span&gt;$ ls &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span&gt;.@(c&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span&gt;sh)
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;100&lt;&#x2F;span&gt;&lt;span&gt;.sh  hi.sh  main.c
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# not ending with &amp;#39;.txt&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;$ ls &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;!&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span&gt;.txt)
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;100&lt;&#x2F;span&gt;&lt;span&gt;.sh   hello.py  main.c  report&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;00&lt;&#x2F;span&gt;&lt;span&gt;.log  report&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;04&lt;&#x2F;span&gt;&lt;span&gt;.log
+&lt;&#x2F;span&gt;&lt;span&gt;calc.py  hi.sh     math.h  report&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;02&lt;&#x2F;span&gt;&lt;span&gt;.log  report&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;98&lt;&#x2F;span&gt;&lt;span&gt;.log
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# not ending with &amp;#39;.txt&amp;#39; or &amp;#39;.log&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;$ ls &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span&gt;.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;!&lt;&#x2F;span&gt;&lt;span&gt;(txt&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span&gt;log)
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;100&lt;&#x2F;span&gt;&lt;span&gt;.sh  calc.py  hello.py  hi.sh  main.c  math.h
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;&lt;strong&gt;Video demo&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; loading=&quot;lazy&quot; src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;9DF0PBWfiX0&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;&#x2F;iframe&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See also my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;cli-computing&quot;&gt;Computing from the Command Line&lt;&#x2F;a&gt; ebook.&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>Festive deals for books on Python, Linux, JavaScript, Regular Expressions and more</title>
 		<published>2022-11-22T00:00:00+00:00</published>
-		<updated>2022-11-22T00:00:00+00:00</updated>
+		<updated>2022-11-23T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/programming-deals-2022/" type="text/html"/>
 		<id>https://learnbyexample.github.io/programming-deals-2022/</id>
 		<content type="html">&lt;p&gt;Hello!&lt;&#x2F;p&gt;
@@ -28,6 +73,7 @@
 &lt;br&gt;
 &lt;h2 id=&quot;indie-creators&quot;&gt;Indie creators&lt;a class=&quot;zola-anchor&quot; href=&quot;#indie-creators&quot; aria-label=&quot;Anchor link for: indie-creators&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
 &lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.blog.pythonlibrary.org&#x2F;2022&#x2F;11&#x2F;22&#x2F;python-black-friday-cyber-monday-sales-2022&#x2F;&quot;&gt;Python books by Michael Driscoll&lt;&#x2F;a&gt; — $10 off for all books, 20% off for Teach Me Python&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.pythonmorsels.com&#x2F;pricing&#x2F;&quot;&gt;Python Morsels&lt;&#x2F;a&gt; — save up to $108 a year on Python Morsels, until Nov 28 (skill-honing system that helps developers deepen their Python skills)
 &lt;ul&gt;
 &lt;li&gt;see also author&#x27;s &lt;a href=&quot;https:&#x2F;&#x2F;treyhunner.com&#x2F;2022&#x2F;11&#x2F;python-black-friday-and-cyber-monday-sales-2022&#x2F;&quot;&gt;blog post&lt;&#x2F;a&gt; for comprehensive links to other Python deals&lt;&#x2F;li&gt;
@@ -38,7 +84,8 @@
 &lt;li&gt;see also author&#x27;s &lt;a href=&quot;https:&#x2F;&#x2F;adamj.eu&#x2F;tech&#x2F;2022&#x2F;11&#x2F;21&#x2F;django-black-friday-deals-2022&#x2F;&quot;&gt;blog post&lt;&#x2F;a&gt; for comprehensive links to other Django-related deals&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;&#x2F;li&gt;
-&lt;li&gt;More to come...&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;bhavaniravi.gumroad.com&#x2F;l&#x2F;technical-blogging&#x2F;WRITELIKEPRO&quot;&gt;Practical Guide to Technical Blogging&lt;&#x2F;a&gt; is 34% off and &lt;a href=&quot;https:&#x2F;&#x2F;bhavaniravi.gumroad.com&#x2F;l&#x2F;LaFSj&#x2F;BLACKPYTHON&quot;&gt;Python To Projects bootcamp&lt;&#x2F;a&gt; is 20% off&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;shrutibalasa.gumroad.com&#x2F;l&#x2F;css-flex-and-grid&#x2F;BlackFriday22&quot;&gt;Complete Guide to CSS Flex and Grid&lt;&#x2F;a&gt; — 60% off on all versions of the eBook (4 days starting from Nov 24)&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;br&gt;
 &lt;h2 id=&quot;miscellaneous&quot;&gt;Miscellaneous&lt;a class=&quot;zola-anchor&quot; href=&quot;#miscellaneous&quot; aria-label=&quot;Anchor link for: miscellaneous&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
@@ -47,7 +94,6 @@
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;realpython.com&#x2F;giveaway&#x2F;black-friday&#x2F;&quot;&gt;Real Python Giveaway&lt;&#x2F;a&gt; — a chance to win one of three prizes, until Nov 25&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;0x90n&#x2F;InfoSec-Black-Friday&quot;&gt;InfoSec Hack Friday&lt;&#x2F;a&gt; — InfoSec related software&#x2F;tools&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;opsdisk.gumroad.com&#x2F;l&#x2F;cphlab&#x2F;blackfriday2022&quot;&gt;The Cyber Plumber&#x27;s Lab Guide and Interactive Access&lt;&#x2F;a&gt; — 50% OFF&lt;&#x2F;li&gt;
-&lt;li&gt;More to come...&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;br&gt;
 &lt;p&gt;Happy learning :)&lt;&#x2F;p&gt;
