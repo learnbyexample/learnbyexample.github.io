@@ -5,7 +5,7 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2022-11-24T00:00:00+00:00</updated>
+	<updated>2022-11-25T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
 	<entry xml:lang="en">
 		<title>CLI tip 19: extended globs</title>
@@ -55,7 +55,7 @@
 	<entry xml:lang="en">
 		<title>Festive deals for books on Python, Linux, JavaScript, Regular Expressions and more</title>
 		<published>2022-11-22T00:00:00+00:00</published>
-		<updated>2022-11-24T00:00:00+00:00</updated>
+		<updated>2022-11-25T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/programming-deals-2022/" type="text/html"/>
 		<id>https://learnbyexample.github.io/programming-deals-2022/</id>
 		<content type="html">&lt;p&gt;Hello!&lt;&#x2F;p&gt;
@@ -87,6 +87,7 @@
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;reuvenmlerner&#x2F;status&#x2F;1595402066213601280&quot;&gt;Python, Git, and Pandas courses&lt;&#x2F;a&gt; — 40% off&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;bhavaniravi.gumroad.com&#x2F;l&#x2F;technical-blogging&#x2F;WRITELIKEPRO&quot;&gt;Practical Guide to Technical Blogging&lt;&#x2F;a&gt; is 34% off and &lt;a href=&quot;https:&#x2F;&#x2F;bhavaniravi.gumroad.com&#x2F;l&#x2F;LaFSj&#x2F;BLACKPYTHON&quot;&gt;Python To Projects bootcamp&lt;&#x2F;a&gt; is 20% off&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;shrutibalasa.gumroad.com&#x2F;l&#x2F;css-flex-and-grid&#x2F;BlackFriday22&quot;&gt;Complete Guide to CSS Flex and Grid&lt;&#x2F;a&gt; — 60% off on all versions of the eBook (4 days starting from Nov 24)&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;OzolinsJanis&#x2F;status&#x2F;1595743978531348480&quot;&gt;Explain Ideas Visually&lt;&#x2F;a&gt; — 50% OFF&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;br&gt;
 &lt;h2 id=&quot;miscellaneous&quot;&gt;Miscellaneous&lt;a class=&quot;zola-anchor&quot; href=&quot;#miscellaneous&quot; aria-label=&quot;Anchor link for: miscellaneous&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
@@ -94,9 +95,11 @@
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;nostarch.com&#x2F;blog&#x2F;2022-holiday-gift-guide&quot;&gt;NoStarch Press&lt;&#x2F;a&gt; — Holiday Gift Guide, 35% off until Nov 28&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;media.pragprog.com&#x2F;newsletters&#x2F;2022-11-18.html&quot;&gt;The Pragmatic Bookshelf&lt;&#x2F;a&gt; — 40% off on all ebooks and audio books&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;deals.manning.com&#x2F;thanksgiving&#x2F;&quot;&gt;Manning Publications&lt;&#x2F;a&gt; — save 50% when you buy 2 or more eBooks, liveProjects, or liveVideos&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;mailchi.mp&#x2F;leanpub&#x2F;weekly-sale-2022-nov-black-friday&quot;&gt;Leanpub Weekly Sale&lt;&#x2F;a&gt; — offers for programming books, bundles and courses&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;realpython.com&#x2F;giveaway&#x2F;black-friday&#x2F;&quot;&gt;Real Python Giveaway&lt;&#x2F;a&gt; — a chance to win one of three prizes, until Nov 25&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;0x90n&#x2F;InfoSec-Black-Friday&quot;&gt;InfoSec Hack Friday&lt;&#x2F;a&gt; — InfoSec related software&#x2F;tools&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;opsdisk.gumroad.com&#x2F;l&#x2F;cphlab&#x2F;blackfriday2022&quot;&gt;The Cyber Plumber&#x27;s Lab Guide and Interactive Access&lt;&#x2F;a&gt; — 50% OFF&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;trungdq88&#x2F;Awesome-Black-Friday-Cyber-Monday&quot;&gt;Huge list of awesome deals&lt;&#x2F;a&gt; — tools, productivity, books, courses, etc&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;br&gt;
 &lt;p&gt;Happy learning :)&lt;&#x2F;p&gt;
