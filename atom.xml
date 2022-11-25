@@ -95,7 +95,7 @@
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;nostarch.com&#x2F;blog&#x2F;2022-holiday-gift-guide&quot;&gt;NoStarch Press&lt;&#x2F;a&gt; — Holiday Gift Guide, 35% off until Nov 28&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;media.pragprog.com&#x2F;newsletters&#x2F;2022-11-18.html&quot;&gt;The Pragmatic Bookshelf&lt;&#x2F;a&gt; — 40% off on all ebooks and audio books&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;deals.manning.com&#x2F;thanksgiving&#x2F;&quot;&gt;Manning Publications&lt;&#x2F;a&gt; — save 50% when you buy 2 or more eBooks, liveProjects, or liveVideos&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;mailchi.mp&#x2F;leanpub&#x2F;weekly-sale-2022-nov-black-friday&quot;&gt;Leanpub Weekly Sale&lt;&#x2F;a&gt; — offers for programming books, bundles and courses&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;mailchi.mp&#x2F;leanpub&#x2F;monthly-sale-2022-november-black-friday&quot;&gt;Leanpub Monthly Sale&lt;&#x2F;a&gt; — offers for programming books, bundles and courses&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;realpython.com&#x2F;giveaway&#x2F;black-friday&#x2F;&quot;&gt;Real Python Giveaway&lt;&#x2F;a&gt; — a chance to win one of three prizes, until Nov 25&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;0x90n&#x2F;InfoSec-Black-Friday&quot;&gt;InfoSec Hack Friday&lt;&#x2F;a&gt; — InfoSec related software&#x2F;tools&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;opsdisk.gumroad.com&#x2F;l&#x2F;cphlab&#x2F;blackfriday2022&quot;&gt;The Cyber Plumber&#x27;s Lab Guide and Interactive Access&lt;&#x2F;a&gt; — 50% OFF&lt;&#x2F;li&gt;
@@ -1983,7 +1983,7 @@
 	<entry xml:lang="en">
 		<title>Python 3.11: possessive quantifiers and atomic grouping added to re module</title>
 		<published>2022-05-07T00:00:00+00:00</published>
-		<updated>2022-08-24T00:00:00+00:00</updated>
+		<updated>2022-11-25T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/python-regex-possessive-quantifier/" type="text/html"/>
 		<id>https://learnbyexample.github.io/python-regex-possessive-quantifier/</id>
 		<content type="html">&lt;p&gt;Quoting from &lt;a href=&quot;https:&#x2F;&#x2F;docs.python.org&#x2F;3.11&#x2F;whatsnew&#x2F;3.11.html&quot;&gt;What&#x27;s New In Python 3.11&lt;&#x2F;a&gt;:&lt;&#x2F;p&gt;
@@ -2021,7 +2021,7 @@
 &lt;&#x2F;blockquote&gt;
 &lt;br&gt;
 &lt;h2 id=&quot;possessive-quantifiers&quot;&gt;Possessive quantifiers&lt;a class=&quot;zola-anchor&quot; href=&quot;#possessive-quantifiers&quot; aria-label=&quot;Anchor link for: possessive-quantifiers&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
-&lt;p&gt;Until Python 3.10, you had to use alternatives like the third-party &lt;a href=&quot;https:&#x2F;&#x2F;pypi.org&#x2F;project&#x2F;regex&#x2F;&quot;&gt;regex module&lt;&#x2F;a&gt; for possessive quantifiers. The &lt;code&gt;re&lt;&#x2F;code&gt; module supports possessive quantifiers from Python 3.11 version. This version is currently under development, see &lt;a href=&quot;https:&#x2F;&#x2F;www.python.org&#x2F;download&#x2F;pre-releases&#x2F;&quot;&gt;Pre-release&lt;&#x2F;a&gt; page on the Python site for download links and other details.&lt;&#x2F;p&gt;
+&lt;p&gt;Until Python 3.10, you had to use alternatives like the third-party &lt;a href=&quot;https:&#x2F;&#x2F;pypi.org&#x2F;project&#x2F;regex&#x2F;&quot;&gt;regex module&lt;&#x2F;a&gt; for possessive quantifiers. The &lt;code&gt;re&lt;&#x2F;code&gt; module supports possessive quantifiers from Python 3.11 version.&lt;&#x2F;p&gt;
 &lt;p&gt;The difference between greedy and possessive quantifiers is that possessive will not backtrack to find a match. In other words, possessive quantifiers will always consume every character that matches the pattern on which it is applied. Syntax wise, you need to append &lt;code&gt;+&lt;&#x2F;code&gt; to greedy quantifiers to make it possessive, similar to adding &lt;code&gt;?&lt;&#x2F;code&gt; for non-greedy case.&lt;&#x2F;p&gt;
 &lt;p&gt;Unlike greedy or non-greedy quantifiers, &lt;code&gt;:.*+apple&lt;&#x2F;code&gt; will never match, because &lt;code&gt;.*+&lt;&#x2F;code&gt; will consume rest of the line, leaving no way to match &lt;code&gt;apple&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
 &lt;pre data-lang=&quot;python&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-python &quot;&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span&gt;$ python3&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;.11 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt;q
