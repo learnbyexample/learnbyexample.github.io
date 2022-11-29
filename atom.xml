@@ -5,8 +5,39 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2022-11-25T00:00:00+00:00</updated>
+	<updated>2022-11-29T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Vim tip 18: moving within long lines</title>
+		<published>2022-11-29T00:00:00+00:00</published>
+		<updated>2022-11-29T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://learnbyexample.github.io/tips/vim-tip-18/" type="text/html"/>
+		<id>https://learnbyexample.github.io/tips/vim-tip-18/</id>
+		<content type="html">&lt;p&gt;Here are Normal mode commands you can use to move within long lines that are spread over multiple screen lines:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;kbd&gt;g0&lt;&#x2F;kbd&gt; move to the beginning of the current screen line&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;g^&lt;&#x2F;kbd&gt; move to the first non-blank character of the current screen line&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;g$&lt;&#x2F;kbd&gt; move to the end of the current screen line&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;gj&lt;&#x2F;kbd&gt; move down by one screen line, prefix a count to move down by that many screen lines&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;gk&lt;&#x2F;kbd&gt; move up by one screen line, prefix a count to move up by that many screen lines&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;gm&lt;&#x2F;kbd&gt; move to the middle of the current screen line
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Note&lt;&#x2F;strong&gt; that this is based on the screen width, not the number of characters in the line!&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;gM&lt;&#x2F;kbd&gt; move to the middle of the current line
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Note&lt;&#x2F;strong&gt; that this is based on the total number of characters in the line&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See &lt;a href=&quot;https:&#x2F;&#x2F;vimhelp.org&#x2F;motion.txt.html#left-right-motions&quot;&gt;:h left-right-motions&lt;&#x2F;a&gt; for more details.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Video demo&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; loading=&quot;lazy&quot; src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;VfN_LJIiyaI&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;&#x2F;iframe&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See also my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;vim_reference&quot;&gt;Vim Reference Guide&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;curated_resources&#x2F;vim.html&quot;&gt;curated list of resources for Vim&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>CLI tip 19: extended globs</title>
 		<published>2022-11-23T00:00:00+00:00</published>
@@ -5356,7 +5387,7 @@ The substitution works from start of the line for every iteration of the while l
 	<entry xml:lang="en">
 		<title>Customizing pandoc to generate beautiful pdf and epub from markdown</title>
 		<published>2020-07-21T00:00:00+00:00</published>
-		<updated>2022-08-11T00:00:00+00:00</updated>
+		<updated>2022-11-29T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/customizing-pandoc/" type="text/html"/>
 		<id>https://learnbyexample.github.io/customizing-pandoc/</id>
 		<content type="html">&lt;p&gt;Either you&#x27;ve already heard of &lt;code&gt;pandoc&lt;&#x2F;code&gt; or if you have searched online for &lt;code&gt;markdown&lt;&#x2F;code&gt; to &lt;code&gt;pdf&lt;&#x2F;code&gt; or similar, you are sure to come across &lt;code&gt;pandoc&lt;&#x2F;code&gt;. This tutorial will help you use &lt;code&gt;pandoc&lt;&#x2F;code&gt; to generate &lt;code&gt;pdf&lt;&#x2F;code&gt; and &lt;code&gt;epub&lt;&#x2F;code&gt; from a &lt;a href=&quot;https:&#x2F;&#x2F;github.github.com&#x2F;gfm&#x2F;&quot;&gt;GitHub style markdown&lt;&#x2F;a&gt; file. The main motivation for this blog post is to highlight what customizations I did to generate &lt;code&gt;pdf&lt;&#x2F;code&gt; and &lt;code&gt;epub&lt;&#x2F;code&gt; versions for &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;books&#x2F;&quot;&gt;self-publishing my ebooks&lt;&#x2F;a&gt;. It wasn&#x27;t easy to arrive at the setup I ended up with, so I hope this will be useful for those looking to use &lt;code&gt;pandoc&lt;&#x2F;code&gt; to generate &lt;code&gt;pdf&lt;&#x2F;code&gt; and &lt;code&gt;epub&lt;&#x2F;code&gt; formats. This guide is specifically aimed at technical books that has code snippets.&lt;&#x2F;p&gt;
@@ -5588,6 +5619,7 @@ no VAL is specified, the key will be given the value true.&lt;&#x2F;p&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.thedigitalcatbooks.com&#x2F;maubook-introduction&#x2F;&quot;&gt;Mau&lt;&#x2F;a&gt; — template-based markup language, heavily inspired by AsciiDoc&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;asciidoctor.org&#x2F;docs&#x2F;what-is-asciidoc&#x2F;&quot;&gt;Asciidoctor&lt;&#x2F;a&gt;
 &lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;daneah&#x2F;asciidoc-book-template&quot;&gt;Asciidoc book template&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;shape-of-code.coding-guidelines.com&#x2F;2019&#x2F;08&#x2F;11&#x2F;my-books-pdf-generation-workflow&#x2F;&quot;&gt;pdf generation workflow with Asciidoc&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;&#x2F;li&gt;
