@@ -100,7 +100,7 @@
     </url>
     <url>
         <loc>https://learnbyexample.github.io/mini/hacker-news-front-page-brag/</loc>
-        <lastmod>2022-03-16</lastmod>
+        <lastmod>2022-12-14</lastmod>
     </url>
     <url>
         <loc>https://learnbyexample.github.io/mini/perl-oneliner-articles/</loc>
@@ -402,7 +402,7 @@
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tips/</loc>
-        <lastmod>2022-11-16</lastmod>
+        <lastmod>2022-12-14</lastmod>
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tips/cli-tip-1/</loc>
@@ -451,6 +451,10 @@
     <url>
         <loc>https://learnbyexample.github.io/tips/cli-tip-2/</loc>
         <lastmod>2022-05-27</lastmod>
+    </url>
+    <url>
+        <loc>https://learnbyexample.github.io/tips/cli-tip-20/</loc>
+        <lastmod>2022-12-14</lastmod>
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tips/cli-tip-3/</loc>

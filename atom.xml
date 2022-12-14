@@ -5,8 +5,46 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2022-12-09T00:00:00+00:00</updated>
+	<updated>2022-12-14T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>CLI tip 20: expand and unexpand</title>
+		<published>2022-12-14T00:00:00+00:00</published>
+		<updated>2022-12-14T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://learnbyexample.github.io/tips/cli-tip-20/" type="text/html"/>
+		<id>https://learnbyexample.github.io/tips/cli-tip-20/</id>
+		<content type="html">&lt;p&gt;These two commands will help you convert tabs to spaces and vice versa. Both these commands support options to customize the width of tab stops and which occurrences should be converted.&lt;&#x2F;p&gt;
+&lt;p&gt;The default expansion aligns at multiples of &lt;code&gt;8&lt;&#x2F;code&gt; columns (calculated in terms of bytes).&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;ruby&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# &amp;#39;apple&amp;#39; = 5 bytes, \t converts to 3 spaces
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# &amp;#39;banana&amp;#39; = 6 bytes, \t converts to 2 spaces
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# &amp;#39;a&amp;#39; and &amp;#39;b&amp;#39; = 1 byte, \t converts to 7 spaces
+&lt;&#x2F;span&gt;&lt;span&gt;$ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;printf &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;apple\tbanana\tcherry\na\tb\tc\n&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span&gt; expand
+&lt;&#x2F;span&gt;&lt;span&gt;apple   banana  cherry
+&lt;&#x2F;span&gt;&lt;span&gt;a       b       c
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# &amp;#39;αλε&amp;#39; = 6 bytes, \t converts to 2 spaces
+&lt;&#x2F;span&gt;&lt;span&gt;$ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;printf &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;αλε\tπού\n&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span&gt; expand
+&lt;&#x2F;span&gt;&lt;span&gt;αλε  πού
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;By default, the &lt;code&gt;unexpand&lt;&#x2F;code&gt; command converts initial blank (space or tab) characters to tabs. The first occurrence of a non-blank character will stop the conversion. By default, every &lt;code&gt;8&lt;&#x2F;code&gt; columns worth of blanks is converted to a tab.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;ruby&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# input is 8 spaces followed by &amp;#39;a&amp;#39; and then more characters
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# the initial 8 spaces is converted to a tab character
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# &amp;#39;a&amp;#39; stops any further conversion, since it is a non-blank character
+&lt;&#x2F;span&gt;&lt;span&gt;$ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;printf &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;        a       b       c\n&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span&gt; unexpand &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span&gt; cat &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;T
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;^&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Ia&lt;&#x2F;span&gt;&lt;span&gt;       b       c
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# input is 9 spaces followed by &amp;#39;a&amp;#39; and then more characters
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# the initial 8 spaces is converted to a tab character
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# remaining space is left as is
+&lt;&#x2F;span&gt;&lt;span&gt;$ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;printf &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;         a       b       c\n&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span&gt; unexpand &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span&gt; cat &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;T
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;^&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;I&lt;&#x2F;span&gt;&lt;span&gt; a       b       c
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;&lt;strong&gt;Video demo&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; loading=&quot;lazy&quot; src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;tsJCtE6oZDs&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;&#x2F;iframe&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;cli_text_processing_coreutils&#x2F;expand-unexpand.html&quot;&gt;expand and unexpand&lt;&#x2F;a&gt; chapter my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;cli_text_processing_coreutils&quot;&gt;Command line text processing with GNU Coreutils&lt;&#x2F;a&gt; ebook for more examples, options, etc.&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>Interactive Linux CLI Text Processing Exercises</title>
 		<published>2022-12-09T00:00:00+00:00</published>
@@ -2888,7 +2926,7 @@
 	<entry xml:lang="en">
 		<title>Brag post: Hacker News Front Page entries</title>
 		<published>2022-01-21T00:00:00+00:00</published>
-		<updated>2022-03-16T00:00:00+00:00</updated>
+		<updated>2022-12-14T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/mini/hacker-news-front-page-brag/" type="text/html"/>
 		<id>https://learnbyexample.github.io/mini/hacker-news-front-page-brag/</id>
 		<content type="html">&lt;p&gt;In case you haven&#x27;t yet read this nice post &lt;a href=&quot;https:&#x2F;&#x2F;jvns.ca&#x2F;blog&#x2F;brag-documents&#x2F;&quot;&gt;&amp;quot;Get your work recognized: write a brag document&amp;quot;&lt;&#x2F;a&gt; by Julia Evans, please do that first.&lt;&#x2F;p&gt;
@@ -2907,6 +2945,7 @@
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=29391107&quot;&gt;Show HN: Improve your Python regex skills with 75 interactive exercises&lt;&#x2F;a&gt; — &lt;em&gt;175 points, Nov 2021, 12 comments&lt;&#x2F;em&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=29837543&quot;&gt;Vim prank: alias vim=&#x27;vim -y&#x27;&lt;&#x2F;a&gt; — &lt;em&gt;341 points, Jan 2022, 259 comments&lt;&#x2F;em&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=30684232&quot;&gt;Vim Reference Guide&lt;&#x2F;a&gt; — &lt;em&gt;244 points, Mar 2022, 110 comments&lt;&#x2F;em&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=33931677&quot;&gt;Show HN: Interactive exercises for Linux CLI text processing commands&lt;&#x2F;a&gt; — &lt;em&gt;68 points, Dec 2022, 7 comments&lt;&#x2F;em&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ol&gt;
 &lt;p&gt;As is the case with other social media platforms, being an active participant on Hacker News definitely helps. Apart from commenting on other topics, I also post links to projects and resources that I felt were useful. The number of such links reaching front page outnumbers my own content links.&lt;&#x2F;p&gt;
 </content>

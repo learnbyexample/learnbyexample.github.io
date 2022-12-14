@@ -62,6 +62,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Tips
 
+* [CLI tip 20: expand and unexpand](https://learnbyexample.github.io/tips/cli-tip-20/)
 * [Python tip 20: saving and loading json](https://learnbyexample.github.io/tips/python-tip-20/)
 * [Vim tip 18: moving within long lines](https://learnbyexample.github.io/tips/vim-tip-18/)
 * [CLI tip 19: extended globs](https://learnbyexample.github.io/tips/cli-tip-19/)
