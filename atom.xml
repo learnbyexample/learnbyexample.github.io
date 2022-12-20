@@ -5,8 +5,57 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2022-12-14T00:00:00+00:00</updated>
+	<updated>2022-12-20T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Vim tip 19: working with buffers</title>
+		<published>2022-12-20T00:00:00+00:00</published>
+		<updated>2022-12-20T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://learnbyexample.github.io/tips/vim-tip-19/" type="text/html"/>
+		<id>https://learnbyexample.github.io/tips/vim-tip-19/</id>
+		<content type="html">&lt;p&gt;Multiple files can be opened in Vim within the same tab page and&#x2F;or in different tabs. From &lt;a href=&quot;https:&#x2F;&#x2F;vimhelp.org&#x2F;windows.txt.html#windows-intro&quot;&gt;:h windows-intro&lt;&#x2F;a&gt;:&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;A buffer is the in-memory text of a file.&lt;&#x2F;li&gt;
+&lt;li&gt;A window is a viewport on a buffer.&lt;&#x2F;li&gt;
+&lt;li&gt;A tab page is a collection of windows.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;kbd&gt;:e&lt;&#x2F;kbd&gt; refreshes the current buffer (&lt;code&gt;:e&lt;&#x2F;code&gt; is short for &lt;code&gt;:edit&lt;&#x2F;code&gt;)&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;:e filename&lt;&#x2F;kbd&gt; open a particular file by its path, in the same window&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;:e #&lt;&#x2F;kbd&gt; switch back to the previous buffer, won&#x27;t work if that buffer is not named&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;Ctrl&lt;&#x2F;kbd&gt;+&lt;kbd&gt;6&lt;&#x2F;kbd&gt; switch back to the previous buffer, works even if that buffer is not named
+&lt;ul&gt;
+&lt;li&gt;&lt;kbd&gt;Ctrl&lt;&#x2F;kbd&gt;+&lt;kbd&gt;^&lt;&#x2F;kbd&gt; can also be used&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;:e #1&lt;&#x2F;kbd&gt; open the first buffer, and so on&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;:buffers&lt;&#x2F;kbd&gt; show all buffers
+&lt;ul&gt;
+&lt;li&gt;&lt;kbd&gt;:ls&lt;&#x2F;kbd&gt; or &lt;kbd&gt;:files&lt;&#x2F;kbd&gt; can also be used&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;:bn&lt;&#x2F;kbd&gt; open the next file in the buffer list (&lt;code&gt;:bn&lt;&#x2F;code&gt; is short for &lt;code&gt;:bnext&lt;&#x2F;code&gt;)
+&lt;ul&gt;
+&lt;li&gt;opens the first buffer if you are on the last buffer&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;:bp&lt;&#x2F;kbd&gt; open the previous file in the buffer list (&lt;code&gt;:bp&lt;&#x2F;code&gt; is short for &lt;code&gt;:bprevious&lt;&#x2F;code&gt;)
+&lt;ul&gt;
+&lt;li&gt;opens the last buffer if you are on the first buffer&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; Use &lt;kbd&gt;:set hidden&lt;&#x2F;kbd&gt; if you want to switch to another buffer even if there are unsaved changes in the current buffer. Instead of this setting, you can also use &lt;kbd&gt;:hide edit filename&lt;&#x2F;kbd&gt; to hide the current unsaved buffer. You&#x27;ll still get an error if you try to quit Vim without saving such buffers, unless you use the &lt;code&gt;!&lt;&#x2F;code&gt; modifier.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See &lt;a href=&quot;https:&#x2F;&#x2F;vimhelp.org&#x2F;options.txt.html#%27autowrite%27&quot;&gt;:h &#x27;autowrite&#x27;&lt;&#x2F;a&gt; option if you want to automatically save changes when moving to another buffer.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See &lt;a href=&quot;https:&#x2F;&#x2F;vimhelp.org&#x2F;usr_22.txt.html#22.4&quot;&gt;:h 22.4&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;vimhelp.org&#x2F;windows.txt.html#buffer-hidden&quot;&gt;:h buffer-hidden&lt;&#x2F;a&gt; for user and reference manuals on working with buffer list.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Video demo&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; loading=&quot;lazy&quot; src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;dJO16IwfSko&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;&#x2F;iframe&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See also my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;vim_reference&quot;&gt;Vim Reference Guide&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;curated_resources&#x2F;vim.html&quot;&gt;curated list of resources for Vim&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>CLI tip 20: expand and unexpand</title>
 		<published>2022-12-14T00:00:00+00:00</published>
