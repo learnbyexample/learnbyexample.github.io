@@ -5,7 +5,7 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2022-12-20T00:00:00+00:00</updated>
+	<updated>2022-12-21T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
 	<entry xml:lang="en">
 		<title>Vim tip 19: working with buffers</title>
@@ -2688,7 +2688,7 @@
 	<entry xml:lang="en">
 		<title>Vim Reference Guide book announcement</title>
 		<published>2022-03-15T00:00:00+00:00</published>
-		<updated>2022-03-15T00:00:00+00:00</updated>
+		<updated>2022-12-21T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/vim-reference-guide-announcement/" type="text/html"/>
 		<id>https://learnbyexample.github.io/vim-reference-guide-announcement/</id>
 		<content type="html">&lt;p&gt;Hello!&lt;&#x2F;p&gt;
@@ -2994,7 +2994,7 @@
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=29391107&quot;&gt;Show HN: Improve your Python regex skills with 75 interactive exercises&lt;&#x2F;a&gt; — &lt;em&gt;175 points, Nov 2021, 12 comments&lt;&#x2F;em&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=29837543&quot;&gt;Vim prank: alias vim=&#x27;vim -y&#x27;&lt;&#x2F;a&gt; — &lt;em&gt;341 points, Jan 2022, 259 comments&lt;&#x2F;em&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=30684232&quot;&gt;Vim Reference Guide&lt;&#x2F;a&gt; — &lt;em&gt;244 points, Mar 2022, 110 comments&lt;&#x2F;em&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=33931677&quot;&gt;Show HN: Interactive exercises for Linux CLI text processing commands&lt;&#x2F;a&gt; — &lt;em&gt;68 points, Dec 2022, 7 comments&lt;&#x2F;em&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=33931677&quot;&gt;Show HN: Interactive exercises for Linux CLI text processing commands&lt;&#x2F;a&gt; — &lt;em&gt;69 points, Dec 2022, 7 comments&lt;&#x2F;em&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ol&gt;
 &lt;p&gt;As is the case with other social media platforms, being an active participant on Hacker News definitely helps. Apart from commenting on other topics, I also post links to projects and resources that I felt were useful. The number of such links reaching front page outnumbers my own content links.&lt;&#x2F;p&gt;
 </content>
@@ -3185,7 +3185,7 @@
 	<entry xml:lang="en">
 		<title>Automating Excel with Python - book review</title>
 		<published>2022-01-11T00:00:00+00:00</published>
-		<updated>2022-01-11T00:00:00+00:00</updated>
+		<updated>2022-12-21T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/automating-excel-with-python-review/" type="text/html"/>
 		<id>https://learnbyexample.github.io/automating-excel-with-python-review/</id>
 		<content type="html">&lt;p&gt;In this post, I review &lt;strong&gt;Automating Excel with Python&lt;&#x2F;strong&gt; by &lt;a href=&quot;https:&#x2F;&#x2F;www.blog.pythonlibrary.org&#x2F;&quot;&gt;Michael Driscoll&lt;&#x2F;a&gt;. From the introduction chapter of this book:&lt;&#x2F;p&gt;
@@ -3301,7 +3301,7 @@
 	<entry xml:lang="en">
 		<title>2021 was a wild ride</title>
 		<published>2021-12-30T00:00:00+00:00</published>
-		<updated>2021-12-30T00:00:00+00:00</updated>
+		<updated>2022-12-21T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/wild-ride-2021/" type="text/html"/>
 		<id>https://learnbyexample.github.io/wild-ride-2021/</id>
 		<content type="html">&lt;p&gt;&lt;strong&gt;TL;DR&lt;&#x2F;strong&gt;: Started and ended the year well, with a depressing period in the middle. Published three programming ebooks, several blog posts, started a newsletter, improved Twitter readership, read 80+ novels, and so on. Had a good year in terms of ebook sales 😇&lt;&#x2F;p&gt;
