@@ -5,8 +5,82 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2022-12-28T00:00:00+00:00</updated>
+	<updated>2022-12-30T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>2022: year in perspective</title>
+		<published>2022-12-30T00:00:00+00:00</published>
+		<updated>2022-12-30T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://learnbyexample.github.io/2022-year-in-perspective/" type="text/html"/>
+		<id>https://learnbyexample.github.io/2022-year-in-perspective/</id>
+		<content type="html">&lt;p&gt;&lt;strong&gt;TL;DR&lt;&#x2F;strong&gt;: Published two programming ebooks, wrote several blog posts, recorded plenty of Youtube videos, newsletter prospered, improved Twitter audience, read 100+ novels, and so on. Had an excellent year in terms of ebook sales 😇&lt;&#x2F;p&gt;
+&lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;&lt;br&gt;
+&lt;h2 id=&quot;books-published&quot;&gt;Books published&lt;a class=&quot;zola-anchor&quot; href=&quot;#books-published&quot; aria-label=&quot;Anchor link for: books-published&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;vim_reference&quot;&gt;Vim Reference Guide&lt;&#x2F;a&gt; — concise learning resource for beginner to intermediate level Vim users, published in March&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;cli-computing&quot;&gt;Computing from the Command Line&lt;&#x2F;a&gt; — Linux command line tools and Shell Scripting for beginner to intermediate level users, published in November&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;books&#x2F;2022_books.png&quot; alt=&quot;Programming books published in 2022&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;workshops&quot;&gt;Workshops&lt;a class=&quot;zola-anchor&quot; href=&quot;#workshops&quot; aria-label=&quot;Anchor link for: workshops&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Offline workshops were back on menu this year. I got only one offer though. Surprisingly, it was for Python basics, despite students already having had a course in their first year. It was a nice experience for me, thanks to the enthusiasm shown by the students.&lt;&#x2F;p&gt;
+&lt;p&gt;And it was good to see &lt;a href=&quot;https:&#x2F;&#x2F;barcampbangalore.com&#x2F;bcb&#x2F;&quot;&gt;BarCamp Bangalore&lt;&#x2F;a&gt; being organized again. Gave a talk about my ebook publishing experience (I had also written a &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;my-book-writing-experience&#x2F;&quot;&gt;blog post&lt;&#x2F;a&gt; on this topic last year).&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;blog-posts&quot;&gt;Blog posts&lt;a class=&quot;zola-anchor&quot; href=&quot;#blog-posts&quot; aria-label=&quot;Anchor link for: blog-posts&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Here are my favorite posts I wrote this year:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;interactive-linux-cli-exercises&#x2F;&quot;&gt;Interactive Linux CLI Text Processing Exercises&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;textual-first-impressions&#x2F;&quot;&gt;Building TUIs with textual: first impressions&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;python-regex-possessive-quantifier&#x2F;&quot;&gt;Python 3.11: possessive quantifiers added to re module&lt;&#x2F;a&gt;
+&lt;ul&gt;
+&lt;li&gt;came to know that this post &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;s_gruppetta_ct&#x2F;status&#x2F;1596097402381176832&quot;&gt;ranks high during online searches&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;duplicates-irrespective-field-order&#x2F;&quot;&gt;Removing duplicates irrespective of field order&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;I continued posting &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips&#x2F;&quot;&gt;weekly programming tips&lt;&#x2F;a&gt; (Python, Linux, Vim) that are short and easy to digest and wrote some &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;mini&#x2F;&quot;&gt;mini blog posts&lt;&#x2F;a&gt; as well.&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;tools&quot;&gt;Tools&lt;a class=&quot;zola-anchor&quot; href=&quot;#tools&quot; aria-label=&quot;Anchor link for: tools&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;During the last two months of the year, I learned a bit of &lt;a href=&quot;https:&#x2F;&#x2F;textual.textualize.io&#x2F;&quot;&gt;Textual&lt;&#x2F;a&gt; and wrote a couple of TUI apps:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;TUI-apps&#x2F;tree&#x2F;main&#x2F;SquareTicTacToe&quot;&gt;Square Tic Tac Toe&lt;&#x2F;a&gt; — form a square with 4 corners&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;TUI-apps&#x2F;tree&#x2F;main&#x2F;CLI-Exercises&quot;&gt;Linux CLI Text Processing Exercises&lt;&#x2F;a&gt; — test your CLI text processing skills&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;I found the framework much easier to use compared to my experience with Tkinter.&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;youtube&quot;&gt;Youtube&lt;a class=&quot;zola-anchor&quot; href=&quot;#youtube&quot; aria-label=&quot;Anchor link for: youtube&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;While working on the Vim Reference Guide, I felt that some of the commands really needed video demos for easier understanding. So, I gave myself another chance at recording videos. I kept them simple and short, and with consistent practice I did better than my attempts a few years back. I then extended my new found enthusiasm to programming tips, ebook promo videos, etc. Visit my &lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;c&#x2F;learnbyexample42&quot;&gt;youtube channel&lt;&#x2F;a&gt; for interesting tech nuggets.&lt;&#x2F;p&gt;
+&lt;p&gt;Here are some of the tools I use:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;MaartenBaert&#x2F;ssr&quot;&gt;SimpleScreenRecorder&lt;&#x2F;a&gt; — recording video, really simple to use&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;WyattBlue&#x2F;auto-editor&quot;&gt;auto-editor&lt;&#x2F;a&gt; — removing silent portions from video recordings&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;FFmpeg&#x2F;FFmpeg&quot;&gt;FFmpeg&lt;&#x2F;a&gt; — video processing, padding for example (&lt;code&gt;FFmpeg&lt;&#x2F;code&gt; is also a major part of the &lt;code&gt;auto-editor&lt;&#x2F;code&gt; solution)&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.canva.com&#x2F;&quot;&gt;Canva&lt;&#x2F;a&gt; — video thumbnails (I also use this app for ebook covers)&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;book-sales&quot;&gt;Book sales&lt;a class=&quot;zola-anchor&quot; href=&quot;#book-sales&quot; aria-label=&quot;Anchor link for: book-sales&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Revenue from ebook sales were almost 50% higher than last year!! As I wrote in the &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;wild-ride-2021&#x2F;&quot;&gt;2021 was a wild ride&lt;&#x2F;a&gt; post, I&#x27;ve been paying more attention to marketing and seems like my efforts are paying off. Here&#x27;s my Gumroad revenue chart for 2022:&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;books&#x2F;gumroad_sales_2022.png&quot; alt=&quot;Gumroad sales in 2022&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;The peaks were during the two ebook releases. Additionally, I had less than half the above revenue from Leanpub. Last year, sales from Leanpub and Gumroad were nearly the same.&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;newsletter&quot;&gt;Newsletter&lt;a class=&quot;zola-anchor&quot; href=&quot;#newsletter&quot; aria-label=&quot;Anchor link for: newsletter&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Last November, I started &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;learnbyexample-weekly&quot;&gt;learnbyexample weekly&lt;&#x2F;a&gt; newsletter. I&#x27;ve managed to send an email every Friday without fail so far and I&#x27;m proud of that. Sometimes I had to schedule issues a week ahead. Currently about 600 subscribers and some readers are even paying me monthly despite being a free newsletter.&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;building-twitter-audience&quot;&gt;Building Twitter audience&lt;a class=&quot;zola-anchor&quot; href=&quot;#building-twitter-audience&quot; aria-label=&quot;Anchor link for: building-twitter-audience&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;As part of marketing efforts last year, I started building my Twitter audience as well. Follower count was less than 400 in July and about 1100 in December last year. Now it has crossed 2900. I&#x27;m not focused on increasing follower count with plethora of engagement inducing tweets. Just trying to be consistent and promoting all sorts of interesting links I come across. That said, I&#x27;d like to try creating cool infographics (probably using Canva) next year.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;learn_byexample&quot;&gt;Follow me on Twitter&lt;&#x2F;a&gt; for interesting tech nuggets 😉&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;fictional-reading&quot;&gt;Fictional reading&lt;a class=&quot;zola-anchor&quot; href=&quot;#fictional-reading&quot; aria-label=&quot;Anchor link for: fictional-reading&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;I enjoy reading fantasy and science-fiction novels. I read 100+ SFF books this year and recently wrote a post listing &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;escapist-reviews&#x2F;lists&#x2F;2022-favorite-sff-novels&#x2F;&quot;&gt;my favorites&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;I also got a chance to beta read &lt;a href=&quot;https:&#x2F;&#x2F;www.goodreads.com&#x2F;book&#x2F;show&#x2F;60872852-tongue-eater&quot;&gt;Tongue Eater&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;www.goodreads.com&#x2F;book&#x2F;show&#x2F;61324650-soul-relic&quot;&gt;Soul Relic&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;www.goodreads.com&#x2F;book&#x2F;show&#x2F;60969058-the-umbral-storm&quot;&gt;The Umbral Storm&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;www.goodreads.com&#x2F;book&#x2F;show&#x2F;62586822-the-book-of-zog&quot;&gt;The Book of Zog&lt;&#x2F;a&gt;. I find these a good way to give back to the writing community, having myself received plenty of support from strangers.&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;goals-for-2023&quot;&gt;Goals for 2023&lt;a class=&quot;zola-anchor&quot; href=&quot;#goals-for-2023&quot; aria-label=&quot;Anchor link for: goals-for-2023&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;I met most of my goals this year, so that&#x27;s a nice feeling. Contributing to open source projects needs a lot more focus in the coming year. I&#x27;m not likely to publish a &lt;em&gt;new&lt;&#x2F;em&gt; ebook in 2023. Instead, I&#x27;m planning to update my existing books and that will probably take more than a year. Apart from catching up to new features and improving existing examples&#x2F;exercises, I&#x27;ll also focus on changing book titles and cover images. And, I&#x27;ll likely create interactive apps for exercises.&lt;&#x2F;p&gt;
+&lt;p&gt;I need to also find something other than books to keep me creatively busy. It has been more than 4 years since I first published an ebook and 6 years since I started writing programming tutorials.&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;p&gt;Here&#x27;s wishing you a very happy, healthy and prosperous 2023 👍 😇&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>Python tip 21: sorting iterables based on a key</title>
 		<published>2022-12-28T00:00:00+00:00</published>

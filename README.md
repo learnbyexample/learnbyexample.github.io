@@ -6,6 +6,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Posts
 
+* [2022: year in perspective](https://learnbyexample.github.io/2022-year-in-perspective/)
 * [Interactive Linux CLI Text Processing Exercises](https://learnbyexample.github.io/interactive-linux-cli-exercises/)
 * [Festive deals for books on Python, Linux, JavaScript, Regular Expressions and more](https://learnbyexample.github.io/programming-deals-2022/)
 * [Building TUIs with textual: first impressions](https://learnbyexample.github.io/textual-first-impressions/)
