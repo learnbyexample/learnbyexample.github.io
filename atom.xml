@@ -5,7 +5,7 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2022-12-30T00:00:00+00:00</updated>
+	<updated>2023-01-02T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
 	<entry xml:lang="en">
 		<title>2022: year in perspective</title>
@@ -6319,17 +6319,18 @@ no VAL is specified, the key will be given the value true.&lt;&#x2F;p&gt;
 	<entry xml:lang="en">
 		<title>Python regular expression cheatsheet and examples</title>
 		<published>2020-07-03T00:00:00+00:00</published>
-		<updated>2021-12-14T00:00:00+00:00</updated>
+		<updated>2023-01-02T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/python-regex-cheatsheet/" type="text/html"/>
 		<id>https://learnbyexample.github.io/python-regex-cheatsheet/</id>
 		<content type="html">&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;books&#x2F;pyregex_example.png&quot; alt=&quot;pyregex example&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
-&lt;p&gt;&lt;em&gt;Above visualization is a screenshot created using&lt;&#x2F;em&gt; &lt;a href=&quot;https:&#x2F;&#x2F;www.debuggex.com&quot;&gt;debuggex&lt;&#x2F;a&gt; &lt;em&gt;for the pattern&lt;&#x2F;em&gt; &lt;code&gt;r&#x27;\bpar(en|ro)?t\b&#x27;&lt;&#x2F;code&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;em&gt;Above visualization created using&lt;&#x2F;em&gt; &lt;a href=&quot;https:&#x2F;&#x2F;www.debuggex.com&quot;&gt;debuggex&lt;&#x2F;a&gt; &lt;em&gt;for the pattern&lt;&#x2F;em&gt; &lt;code&gt;r&#x27;\bpar(en|ro)?t\b&#x27;&lt;&#x2F;code&gt;&lt;&#x2F;p&gt;
 &lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;&lt;br&gt;
 &lt;p&gt;From &lt;a href=&quot;https:&#x2F;&#x2F;docs.python.org&#x2F;3&#x2F;library&#x2F;re.html&quot;&gt;docs.python: re&lt;&#x2F;a&gt;:&lt;&#x2F;p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;A regular expression (or RE) specifies a set of strings that matches it; the functions in this module let you check if a particular string matches a given regular expression&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;
-&lt;p&gt;This blog post gives an overview and examples of regular expression syntax as implemented by the &lt;code&gt;re&lt;&#x2F;code&gt; built-in module (Python 3.8+). Assume ASCII character set unless otherwise specified. This post is an excerpt from my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;py_regular_expressions&quot;&gt;Python re(gex)?&lt;&#x2F;a&gt; book.&lt;&#x2F;p&gt;
+&lt;p&gt;This blog post gives an overview and examples of regular expression syntax as implemented by the &lt;code&gt;re&lt;&#x2F;code&gt; built-in module (Python 3.11+). Assume ASCII character set unless otherwise specified. This post is an excerpt from my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;py_regular_expressions&quot;&gt;Python re(gex)?&lt;&#x2F;a&gt; book.&lt;&#x2F;p&gt;
+&lt;br&gt;
 &lt;h2 id=&quot;elements-that-define-a-regular-expression&quot;&gt;Elements that define a regular expression&lt;a class=&quot;zola-anchor&quot; href=&quot;#elements-that-define-a-regular-expression&quot; aria-label=&quot;Anchor link for: elements-that-define-a-regular-expression&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
 &lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Anchors&lt;&#x2F;th&gt;&lt;th&gt;Description&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
 &lt;tr&gt;&lt;td&gt;&lt;code&gt;\A&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;restricts the match to the start of string&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
@@ -6347,9 +6348,9 @@ no VAL is specified, the key will be given the value true.&lt;&#x2F;p&gt;
 &lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Feature&lt;&#x2F;th&gt;&lt;th&gt;Description&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
 &lt;tr&gt;&lt;td&gt;&lt;code&gt;|&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;multiple RE combined as conditional OR&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
 &lt;tr&gt;&lt;td&gt;&lt;&#x2F;td&gt;&lt;td&gt;each alternative can have independent anchors&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
-&lt;tr&gt;&lt;td&gt;&lt;code&gt;(RE)&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;group pattern(s), also a capturing group&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;code&gt;(pat)&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;group pattern(s), also a capturing group&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
 &lt;tr&gt;&lt;td&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;code&gt;a(b|c)d&lt;&#x2F;code&gt; is same as &lt;code&gt;abd|acd&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
-&lt;tr&gt;&lt;td&gt;&lt;code&gt;(?:RE)&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;non-capturing group&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;code&gt;(?:pat)&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;non-capturing group&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
 &lt;tr&gt;&lt;td&gt;&lt;code&gt;(?P&amp;lt;name&amp;gt;pat)&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;named capture group&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
 &lt;tr&gt;&lt;td&gt;&lt;code&gt;.&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;Match any character except the newline character &lt;code&gt;\n&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
 &lt;tr&gt;&lt;td&gt;&lt;code&gt;[]&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;Character class, matches one character among many&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
@@ -6366,7 +6367,7 @@ no VAL is specified, the key will be given the value true.&lt;&#x2F;p&gt;
 &lt;tr&gt;&lt;td&gt;&lt;code&gt;pat1.*pat2&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;any number of characters between &lt;code&gt;pat1&lt;&#x2F;code&gt; and &lt;code&gt;pat2&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
 &lt;tr&gt;&lt;td&gt;&lt;code&gt;pat1.*pat2|pat2.*pat1&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;match both &lt;code&gt;pat1&lt;&#x2F;code&gt; and &lt;code&gt;pat2&lt;&#x2F;code&gt; in any order&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
 &lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
-&lt;p&gt;Greedy here means that the above quantifiers will match as much as possible that&#x27;ll also honor the overall RE. Appending a &lt;code&gt;?&lt;&#x2F;code&gt; to greedy quantifiers makes them &lt;strong&gt;non-greedy&lt;&#x2F;strong&gt;, i.e. match as &lt;em&gt;minimally&lt;&#x2F;em&gt; as possible. Quantifiers can be applied to literal characters, groups, backreferences and character classes.&lt;&#x2F;p&gt;
+&lt;p&gt;Greedy here means that the above quantifiers will match as much as possible that&#x27;ll also honor the overall RE. Appending a &lt;code&gt;?&lt;&#x2F;code&gt; to greedy quantifiers makes them &lt;strong&gt;non-greedy&lt;&#x2F;strong&gt;, i.e. match as &lt;em&gt;minimally&lt;&#x2F;em&gt; as possible. Appending a &lt;code&gt;+&lt;&#x2F;code&gt; to greedy quantifiers makes them &lt;strong&gt;possessive&lt;&#x2F;strong&gt;, which prevents backtracking. You can also use &lt;code&gt;(?&amp;gt;pat)&lt;&#x2F;code&gt; &lt;strong&gt;atomic grouping&lt;&#x2F;strong&gt; to safeguard from backtracking. Quantifiers can be applied to literal characters, groups, backreferences and character classes.&lt;&#x2F;p&gt;
 &lt;br&gt;
 &lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Character class&lt;&#x2F;th&gt;&lt;th&gt;Description&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
 &lt;tr&gt;&lt;td&gt;&lt;code&gt;[aeiou]&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;Match any vowel&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
@@ -6519,7 +6520,8 @@ no VAL is specified, the key will be given the value true.&lt;&#x2F;p&gt;
 &lt;&#x2F;span&gt;&lt;span&gt;[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;par&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;spar&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;spare&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;pare&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt;]
 &lt;&#x2F;span&gt;&lt;span&gt;
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# numbers &amp;gt;= 100 with optional leading zeros
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;&#x2F;span&gt;&lt;span&gt;re.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;findall&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#668f14;&quot;&gt;r&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;\b&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7c8f4c;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span style=&quot;color:#aeb52b;&quot;&gt;[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;1-9&lt;&#x2F;span&gt;&lt;span style=&quot;color:#aeb52b;&quot;&gt;]\d&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;{2,}\b&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;0501 035 154 12 26 98234&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# note the use of possessive quantifiers
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;&#x2F;span&gt;&lt;span&gt;re.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;findall&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#668f14;&quot;&gt;r&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;\b&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7c8f4c;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;*+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#aeb52b;&quot;&gt;\d&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;{3,}\b&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;0501 035 154 12 26 98234&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt;)
 &lt;&#x2F;span&gt;&lt;span&gt;[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;0501&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;154&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;98234&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt;]
 &lt;&#x2F;span&gt;&lt;span&gt;
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# if multiple capturing groups are used, each element of output
