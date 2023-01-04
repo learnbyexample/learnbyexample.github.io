@@ -5,8 +5,52 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2023-01-02T00:00:00+00:00</updated>
+	<updated>2023-01-04T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>CLI tip 21: inplace file editing with GNU awk</title>
+		<published>2023-01-04T00:00:00+00:00</published>
+		<updated>2023-01-04T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://learnbyexample.github.io/tips/cli-tip-21/" type="text/html"/>
+		<id>https://learnbyexample.github.io/tips/cli-tip-21/</id>
+		<content type="html">&lt;p&gt;You can use the &lt;code&gt;-i&lt;&#x2F;code&gt; option with &lt;code&gt;GNU awk&lt;&#x2F;code&gt; to load libraries. The &lt;code&gt;inplace&lt;&#x2F;code&gt; library comes by default with the &lt;code&gt;GNU awk&lt;&#x2F;code&gt; installation. Thus, you can use &lt;code&gt;-i inplace&lt;&#x2F;code&gt; to modify the original input itself. Make sure to test that the code is working as intended before using this option.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;ruby&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span&gt;$ cat table.txt
+&lt;&#x2F;span&gt;&lt;span&gt;brown bread mat cake &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;42
+&lt;&#x2F;span&gt;&lt;span&gt;blue cake mug shirt &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;7
+&lt;&#x2F;span&gt;&lt;span&gt;yellow banana window shoes &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;3.14
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# retain only the first and third fields
+&lt;&#x2F;span&gt;&lt;span&gt;$ awk &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt;i inplace &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;{print $1, $3}&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt; table.txt
+&lt;&#x2F;span&gt;&lt;span&gt;$ cat table.txt
+&lt;&#x2F;span&gt;&lt;span&gt;brown mat
+&lt;&#x2F;span&gt;&lt;span&gt;blue mug
+&lt;&#x2F;span&gt;&lt;span&gt;yellow window
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;You can provide a backup extension by setting the &lt;code&gt;inplace::suffix&lt;&#x2F;code&gt; special variable. For example, if the input file is &lt;code&gt;ip.txt&lt;&#x2F;code&gt; and &lt;code&gt;inplace::suffix=&#x27;.orig&#x27;&lt;&#x2F;code&gt; is used, the backup file will be named as &lt;code&gt;ip.txt.orig&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;ruby&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span&gt;$ cat marks.txt
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Name    Physics  Maths
+&lt;&#x2F;span&gt;&lt;span&gt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Moe  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;76  82
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Raj  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;56  64
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;$ awk &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt;i inplace &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt;v inplace::suffix=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;.bkp&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt;v &lt;&#x2F;span&gt;&lt;span style=&quot;color:#c23f31;&quot;&gt;OFS&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;{$1=$1} 1&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt; marks.txt
+&lt;&#x2F;span&gt;&lt;span&gt;$ cat marks.txt
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Name&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Physics&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Maths
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Moe&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;76&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;82
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Raj&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;56&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;64
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# original file is preserved in &amp;#39;marks.txt.bkp&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;$ cat marks.txt.bkp
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Name    Physics  Maths
+&lt;&#x2F;span&gt;&lt;span&gt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Moe  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;76  82
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Raj  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;56  64
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; Earlier versions of &lt;code&gt;GNU awk&lt;&#x2F;code&gt; used &lt;code&gt;INPLACE_SUFFIX&lt;&#x2F;code&gt; variable instead of &lt;code&gt;inplace::suffix&lt;&#x2F;code&gt;. Also, you can use &lt;code&gt;inplace::enable&lt;&#x2F;code&gt; variable to dynamically control whether files should be inplaced or not. See &lt;a href=&quot;https:&#x2F;&#x2F;www.gnu.org&#x2F;software&#x2F;gawk&#x2F;manual&#x2F;gawk.html#Extension-Sample-Inplace&quot;&gt;gawk manual: Enabling In-Place File Editing&lt;&#x2F;a&gt; for more details.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Video demo&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; loading=&quot;lazy&quot; src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;yfO-HVTBoSI&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;&#x2F;iframe&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;learn_gnuawk&quot;&gt;GNU AWK&lt;&#x2F;a&gt; ebook if you are interested in learning about the &lt;code&gt;GNU awk&lt;&#x2F;code&gt; command in more detail.&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>2022: year in perspective</title>
 		<published>2022-12-30T00:00:00+00:00</published>
