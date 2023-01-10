@@ -5,8 +5,37 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2023-01-07T00:00:00+00:00</updated>
+	<updated>2023-01-10T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Vim tip 20: character based motions within the current line</title>
+		<published>2023-01-10T00:00:00+00:00</published>
+		<updated>2023-01-10T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://learnbyexample.github.io/tips/vim-tip-20/" type="text/html"/>
+		<id>https://learnbyexample.github.io/tips/vim-tip-20/</id>
+		<content type="html">&lt;p&gt;These commands allow you to move based on a single character search, &lt;strong&gt;within the current line only&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;kbd&gt;f(&lt;&#x2F;kbd&gt; move forward to the next occurrence of character &lt;code&gt;(&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;fb&lt;&#x2F;kbd&gt; move forward to the next occurrence of character &lt;code&gt;b&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;3f&amp;quot;&lt;&#x2F;kbd&gt; move forward to the third occurrence of character &lt;code&gt;&amp;quot;&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;t;&lt;&#x2F;kbd&gt; move forward to the character just before &lt;code&gt;;&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;3tx&lt;&#x2F;kbd&gt; move forward to the character just before the third occurrence of character &lt;code&gt;x&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;Fa&lt;&#x2F;kbd&gt; move backward to the character &lt;code&gt;a&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;Ta&lt;&#x2F;kbd&gt; move backward to the character just after &lt;code&gt;a&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;;&lt;&#x2F;kbd&gt; repeat previous &lt;code&gt;f&lt;&#x2F;code&gt; or &lt;code&gt;F&lt;&#x2F;code&gt; or &lt;code&gt;t&lt;&#x2F;code&gt; or &lt;code&gt;T&lt;&#x2F;code&gt; motion in the same direction&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;,&lt;&#x2F;kbd&gt; repeat previous &lt;code&gt;f&lt;&#x2F;code&gt; or &lt;code&gt;F&lt;&#x2F;code&gt; or &lt;code&gt;t&lt;&#x2F;code&gt; or &lt;code&gt;T&lt;&#x2F;code&gt; motion in the opposite direction
+&lt;ul&gt;
+&lt;li&gt;for example, &lt;kbd&gt;tc&lt;&#x2F;kbd&gt; becomes &lt;kbd&gt;Tc&lt;&#x2F;kbd&gt; and vice versa&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; Note that the previously used count prefix wouldn&#x27;t be repeated with &lt;kbd&gt;;&lt;&#x2F;kbd&gt; or &lt;kbd&gt;,&lt;&#x2F;kbd&gt; commands, but you can use a new count prefix. If you pressed a wrong motion command, use the &lt;kbd&gt;Esc&lt;&#x2F;kbd&gt; key to abandon the search instead of continuing with the wrongly chosen command.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Video demo&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; loading=&quot;lazy&quot; src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;WFRJmeaQr60&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;&#x2F;iframe&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See also my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;vim_reference&quot;&gt;Vim Reference Guide&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;curated_resources&#x2F;vim.html&quot;&gt;curated list of resources for Vim&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>CLI tip 21: inplace file editing with GNU awk</title>
 		<published>2023-01-04T00:00:00+00:00</published>
