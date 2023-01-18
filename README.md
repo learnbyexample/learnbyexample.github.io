@@ -63,6 +63,8 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Tips
 
+* [Python tip 22: possessive quantifiers](https://learnbyexample.github.io/tips/python-tip-22/)
+* [Vim tip 20: character based motions within the current line](https://learnbyexample.github.io/tips/vim-tip-20/)
 * [CLI tip 21: inplace file editing with GNU awk](https://learnbyexample.github.io/tips/cli-tip-21/)
 * [Python tip 21: sorting iterables based on a key](https://learnbyexample.github.io/tips/python-tip-21/)
 * [Vim tip 19: working with buffers](https://learnbyexample.github.io/tips/vim-tip-19/)
