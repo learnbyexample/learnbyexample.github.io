@@ -29,7 +29,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 * [GNU BRE/ERE cheatsheet and differences between grep, sed and awk](https://learnbyexample.github.io/gnu-bre-ere-cheatsheet/)
 * [Paying my bills with 'free' ebooks](https://learnbyexample.github.io/my-book-writing-experience/)
 * [100 Page Python Intro book announcement](https://learnbyexample.github.io/100-page-python-intro-book-announcement/)
-* [Multiline fixed string search and replace with cli tools](https://learnbyexample.github.io/multiline-search-and-replace/)
+* [Multiline fixed string search and replace with CLI tools](https://learnbyexample.github.io/multiline-search-and-replace/)
 * [Emulating regexp lookarounds in GNU sed](https://learnbyexample.github.io/sed-lookarounds/)
 * [Search and replace tricks with ripgrep](https://learnbyexample.github.io/substitution-with-ripgrep/)
 * [I know Python basics, what next?](https://learnbyexample.github.io/python-intermediate/)

@@ -5,7 +5,7 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2023-01-18T00:00:00+00:00</updated>
+	<updated>2023-01-19T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
 	<entry xml:lang="en">
 		<title>Python tip 22: possessive quantifiers</title>
@@ -2427,7 +2427,7 @@
 	<entry xml:lang="en">
 		<title>Python 3.11: possessive quantifiers and atomic grouping added to re module</title>
 		<published>2022-05-07T00:00:00+00:00</published>
-		<updated>2023-01-14T00:00:00+00:00</updated>
+		<updated>2023-01-19T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/python-regex-possessive-quantifier/" type="text/html"/>
 		<id>https://learnbyexample.github.io/python-regex-possessive-quantifier/</id>
 		<content type="html">&lt;p&gt;Quoting from &lt;a href=&quot;https:&#x2F;&#x2F;docs.python.org&#x2F;3.11&#x2F;whatsnew&#x2F;3.11.html&quot;&gt;What&#x27;s New In Python 3.11&lt;&#x2F;a&gt;:&lt;&#x2F;p&gt;
@@ -2511,6 +2511,7 @@
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;&#x2F;span&gt;&lt;span&gt;[e &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;for &lt;&#x2F;span&gt;&lt;span&gt;e &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;in &lt;&#x2F;span&gt;&lt;span&gt;lines &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;if &lt;&#x2F;span&gt;&lt;span&gt;re.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;match&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#668f14;&quot;&gt;r&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#aeb52b;&quot;&gt;\s&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span style=&quot;color:#aeb52b;&quot;&gt;[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;^&lt;&#x2F;span&gt;&lt;span style=&quot;color:#aeb52b;&quot;&gt;#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;\s&lt;&#x2F;span&gt;&lt;span style=&quot;color:#aeb52b;&quot;&gt;]&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt;, e)]
 &lt;&#x2F;span&gt;&lt;span&gt;[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;c = &amp;quot;#&amp;quot;&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;abc&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt;]
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; loading=&quot;lazy&quot; src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;Y7XuZOLdG0o&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;&#x2F;iframe&gt;&lt;&#x2F;p&gt;
 &lt;br&gt;
 &lt;h2 id=&quot;atomic-grouping&quot;&gt;Atomic grouping&lt;a class=&quot;zola-anchor&quot; href=&quot;#atomic-grouping&quot; aria-label=&quot;Anchor link for: atomic-grouping&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
 &lt;p&gt;&lt;code&gt;(?&amp;gt;pat)&lt;&#x2F;code&gt; is an atomic group, where &lt;code&gt;pat&lt;&#x2F;code&gt; is the pattern you want to safeguard from further backtracking by isolating it from other parts of the regex.&lt;&#x2F;p&gt;
@@ -4874,7 +4875,7 @@ The substitution works from start of the line for every iteration of the while l
 	<entry xml:lang="en">
 		<title>Paying my bills with &#x27;free&#x27; ebooks</title>
 		<published>2021-03-03T00:00:00+00:00</published>
-		<updated>2021-05-26T00:00:00+00:00</updated>
+		<updated>2023-01-19T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/my-book-writing-experience/" type="text/html"/>
 		<id>https://learnbyexample.github.io/my-book-writing-experience/</id>
 		<content type="html">&lt;p&gt;&lt;strong&gt;TL;DR&lt;&#x2F;strong&gt;: Small victories are more precious when you have nothing. Instead of burning through my savings, I&#x27;m now adding to it. The relief is priceless.&lt;&#x2F;p&gt;
@@ -5020,7 +5021,7 @@ The substitution works from start of the line for every iteration of the while l
 	<entry xml:lang="en">
 		<title>100 Page Python Intro book announcement</title>
 		<published>2021-02-10T00:00:00+00:00</published>
-		<updated>2021-07-30T00:00:00+00:00</updated>
+		<updated>2023-01-19T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/100-page-python-intro-book-announcement/" type="text/html"/>
 		<id>https://learnbyexample.github.io/100-page-python-intro-book-announcement/</id>
 		<content type="html">&lt;p&gt;Hello!&lt;&#x2F;p&gt;
@@ -5044,7 +5045,7 @@ The substitution works from start of the line for every iteration of the while l
 &lt;p&gt;You can also read the book online here: &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;100_page_python_intro&#x2F;introduction.html&quot;&gt;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;100_page_python_intro&#x2F;introduction.html&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;br&gt;
 &lt;h2 id=&quot;github-repo&quot;&gt;GitHub repo&lt;a class=&quot;zola-anchor&quot; href=&quot;#github-repo&quot; aria-label=&quot;Anchor link for: github-repo&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
-&lt;p&gt;The &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;100_page_python_intro&quot;&gt;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;100_page_python_intro&lt;&#x2F;a&gt; repo has program&#x2F;example files, markdown source and other details about the book.&lt;&#x2F;p&gt;
+&lt;p&gt;The &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;100_page_python_intro&quot;&gt;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;100_page_python_intro&lt;&#x2F;a&gt; repo has programs, example files, markdown source and other details about the book.&lt;&#x2F;p&gt;
 &lt;br&gt;
 &lt;h2 id=&quot;table-of-contents&quot;&gt;Table of Contents&lt;a class=&quot;zola-anchor&quot; href=&quot;#table-of-contents&quot; aria-label=&quot;Anchor link for: table-of-contents&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
 &lt;ol&gt;
@@ -5086,17 +5087,20 @@ The substitution works from start of the line for every iteration of the while l
 &lt;p&gt;The material I was using for my workshops was 56 pages. I had more chapters to add, but I thought it would be a struggle to reach 100 pages, instead of overshooting the goal in the end. The measurement also depends on a few factors. The main content will be less than 100 pages if I reduce the font size from 12 to 11, exclude cover, TOC, Preface, etc.&lt;&#x2F;p&gt;
 &lt;br&gt;
 &lt;h2 id=&quot;feedback&quot;&gt;Feedback&lt;a class=&quot;zola-anchor&quot; href=&quot;#feedback&quot; aria-label=&quot;Anchor link for: feedback&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
-&lt;p&gt;Hope you find it useful and fun to learn Python. As always, I&#x27;d highly appreciate your feedback. Please do let me know if you spot any error or typo.&lt;&#x2F;p&gt;
-&lt;p&gt;Issue Manager: &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;100_page_python_intro&#x2F;issues&quot;&gt;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;100_page_python_intro&#x2F;issues&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;p&gt;E-mail: &lt;code&gt;learn by example.net@gmail.com&lt;&#x2F;code&gt; (without the spaces)&lt;&#x2F;p&gt;
-&lt;p&gt;Twitter: &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;learn_byexample&quot;&gt;https:&#x2F;&#x2F;twitter.com&#x2F;learn_byexample&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Hope you find it useful and fun to learn Python. I would highly appreciate if you&#x27;d &lt;strong&gt;let me know how you felt about this book&lt;&#x2F;strong&gt;. It could be anything from a simple thank you, Gumroad rating, pointing out a typo, mistakes in code snippets, which aspects of the book worked for you (or didn&#x27;t!) and so on. Reader feedback is essential and especially so for self-published authors.&lt;&#x2F;p&gt;
+&lt;p&gt;You can reach me via:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Issue Manager: &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;100_page_python_intro&#x2F;issues&quot;&gt;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;100_page_python_intro&#x2F;issues&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;E-mail: &lt;code&gt;learn by example.net@gmail.com&lt;&#x2F;code&gt; (without the spaces)&lt;&#x2F;li&gt;
+&lt;li&gt;Twitter: &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;learn_byexample&quot;&gt;https:&#x2F;&#x2F;twitter.com&#x2F;learn_byexample&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
 &lt;p&gt;Happy learning :)&lt;&#x2F;p&gt;
 </content>
 	</entry>
 	<entry xml:lang="en">
-		<title>Multiline fixed string search and replace with cli tools</title>
+		<title>Multiline fixed string search and replace with CLI tools</title>
 		<published>2020-11-27T00:00:00+00:00</published>
-		<updated>2021-08-27T00:00:00+00:00</updated>
+		<updated>2023-01-19T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/multiline-search-and-replace/" type="text/html"/>
 		<id>https://learnbyexample.github.io/multiline-search-and-replace/</id>
 		<content type="html">&lt;p&gt;This post shows how you can use &lt;code&gt;ripgrep&lt;&#x2F;code&gt;, &lt;code&gt;perl&lt;&#x2F;code&gt; and &lt;code&gt;sd&lt;&#x2F;code&gt; commands to perform multiline fixed string search and replace operations from the command line. Solution with &lt;code&gt;GNU sed&lt;&#x2F;code&gt; is also discussed, along with its limitations.&lt;&#x2F;p&gt;
