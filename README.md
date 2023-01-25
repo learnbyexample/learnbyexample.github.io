@@ -64,6 +64,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Tips
 
+* [CLI tip 22: grep options to suppress stdout and stderr](https://learnbyexample.github.io/tips/cli-tip-22/)
 * [Python tip 22: possessive quantifiers](https://learnbyexample.github.io/tips/python-tip-22/)
 * [Vim tip 20: character based motions within the current line](https://learnbyexample.github.io/tips/vim-tip-20/)
 * [CLI tip 21: inplace file editing with GNU awk](https://learnbyexample.github.io/tips/cli-tip-21/)
