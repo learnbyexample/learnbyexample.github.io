@@ -6,6 +6,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Posts
 
+* [Understanding Python re(gex)? book announcement](https://learnbyexample.github.io/understanding-python-regex-announcement/)
 * [Python Regular Expressions Gotchas](https://learnbyexample.github.io/python-regex-surprises/)
 * [2022: year in perspective](https://learnbyexample.github.io/2022-year-in-perspective/)
 * [Interactive Linux CLI Text Processing Exercises](https://learnbyexample.github.io/interactive-linux-cli-exercises/)

@@ -5,8 +5,102 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2023-01-25T00:00:00+00:00</updated>
+	<updated>2023-01-30T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Understanding Python re(gex)? book announcement</title>
+		<published>2023-01-30T00:00:00+00:00</published>
+		<updated>2023-01-30T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://learnbyexample.github.io/understanding-python-regex-announcement/" type="text/html"/>
+		<id>https://learnbyexample.github.io/understanding-python-regex-announcement/</id>
+		<content type="html">&lt;p&gt;Hello!&lt;&#x2F;p&gt;
+&lt;p&gt;I just published a new version of &amp;quot;&lt;strong&gt;Understanding Python re(gex)?&lt;&#x2F;strong&gt;&amp;quot; ebook. I caught up to new features like possessive quantifiers, corrected many mistakes, improved examples, exercises and so on.&lt;&#x2F;p&gt;
+&lt;p&gt;This book will help you learn &lt;strong&gt;Python Regular Expressions&lt;&#x2F;strong&gt; step-by-step from beginner to advanced levels with &lt;strong&gt;hundreds of examples and exercises&lt;&#x2F;strong&gt;. The standard library &lt;code&gt;re&lt;&#x2F;code&gt; and the third-party &lt;code&gt;regex&lt;&#x2F;code&gt; module are covered in this book.&lt;&#x2F;p&gt;
+&lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;&lt;br&gt;
+&lt;h2 id=&quot;release-offers&quot;&gt;Release offers&lt;a class=&quot;zola-anchor&quot; href=&quot;#release-offers&quot; aria-label=&quot;Anchor link for: release-offers&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;To celebrate the new release, you can download PDF&#x2F;EPUB versions of &lt;strong&gt;Understanding Python re(gex)?&lt;&#x2F;strong&gt; for FREE till 05-Feb-2023. You can still pay if you wish ;)&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;py_regex&quot;&gt;Gumroad&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;leanpub.com&#x2F;py_regex&#x2F;c&#x2F;P7erPYAm1386&quot;&gt;Leanpub&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Some of my ebook bundles are on sale as well:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;all-books&#x2F;pyregex_newrelease&quot;&gt;All books bundle&lt;&#x2F;a&gt; is $10 (normal price $32) — all my 13 programming ebooks&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;python-bundle&#x2F;pyregex_newrelease&quot;&gt;Learn by example Python bundle&lt;&#x2F;a&gt; is $5 (normal price $16) — Intro, Regular expressions and Projects&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;what-s-new&quot;&gt;What&#x27;s new?&lt;a class=&quot;zola-anchor&quot; href=&quot;#what-s-new&quot; aria-label=&quot;Anchor link for: what-s-new&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Python version updated to 3.11
+&lt;ul&gt;
+&lt;li&gt;Possessive quantifiers and Atomic grouping are now supported by the &lt;code&gt;re&lt;&#x2F;code&gt; module&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;regex&lt;&#x2F;code&gt; module
+&lt;ul&gt;
+&lt;li&gt;corrected examples and descriptions for &lt;code&gt;\G&lt;&#x2F;code&gt; and &lt;code&gt;\K&lt;&#x2F;code&gt; features&lt;&#x2F;li&gt;
+&lt;li&gt;added railroad diagram for the recursive matching section&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;In general, many of the examples, exercises, solutions, descriptions and external links were updated&#x2F;corrected&lt;&#x2F;li&gt;
+&lt;li&gt;Updated Acknowledgements section&lt;&#x2F;li&gt;
+&lt;li&gt;Code snippets related to info&#x2F;warning sections will now appear as a single block&lt;&#x2F;li&gt;
+&lt;li&gt;New section added for &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;TUI-apps&#x2F;tree&#x2F;main&#x2F;PyRegexPlayground&quot;&gt;re(gex)? playground&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Book title changed to &lt;strong&gt;Understanding Python re(gex)?&lt;&#x2F;strong&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;New cover image&lt;&#x2F;li&gt;
+&lt;li&gt;Images centered for EPUB format&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;videos&quot;&gt;Videos&lt;a class=&quot;zola-anchor&quot; href=&quot;#videos&quot; aria-label=&quot;Anchor link for: videos&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; loading=&quot;lazy&quot; src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;2x2n7ynamm8&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;&#x2F;iframe&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;On this blog, I &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips&#x2F;&quot;&gt;post tips&lt;&#x2F;a&gt; covering Python, command line tools and Vim. Here are video demos for these tips:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=THSMmCZQn1A&amp;amp;list=PLTv2U3HnAL4PlFDiH3FXTHXRbhWs2sB3F&quot;&gt;Python tips&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=p0KCLusMd5Q&amp;amp;list=PLTv2U3HnAL4PNTmRqZBSUgKaiHbRL2zeY&quot;&gt;Linux command line tips&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;table-of-contents&quot;&gt;Table of Contents&lt;a class=&quot;zola-anchor&quot; href=&quot;#table-of-contents&quot; aria-label=&quot;Anchor link for: table-of-contents&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Preface&lt;&#x2F;li&gt;
+&lt;li&gt;Why is it needed?&lt;&#x2F;li&gt;
+&lt;li&gt;re introduction&lt;&#x2F;li&gt;
+&lt;li&gt;Anchors&lt;&#x2F;li&gt;
+&lt;li&gt;Alternation and Grouping&lt;&#x2F;li&gt;
+&lt;li&gt;Escaping metacharacters&lt;&#x2F;li&gt;
+&lt;li&gt;Dot metacharacter and Quantifiers&lt;&#x2F;li&gt;
+&lt;li&gt;Interlude: Tools for debugging and visualization&lt;&#x2F;li&gt;
+&lt;li&gt;Working with matched portions&lt;&#x2F;li&gt;
+&lt;li&gt;Character class&lt;&#x2F;li&gt;
+&lt;li&gt;Groupings and backreferences&lt;&#x2F;li&gt;
+&lt;li&gt;Interlude: Common tasks&lt;&#x2F;li&gt;
+&lt;li&gt;Lookarounds&lt;&#x2F;li&gt;
+&lt;li&gt;Flags&lt;&#x2F;li&gt;
+&lt;li&gt;Unicode&lt;&#x2F;li&gt;
+&lt;li&gt;regex module&lt;&#x2F;li&gt;
+&lt;li&gt;Gotchas&lt;&#x2F;li&gt;
+&lt;li&gt;Further Reading&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;web-version&quot;&gt;Web version&lt;a class=&quot;zola-anchor&quot; href=&quot;#web-version&quot; aria-label=&quot;Anchor link for: web-version&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;You can also read the book online here: &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;py_regular_expressions&#x2F;&quot;&gt;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;py_regular_expressions&#x2F;&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;github-repo&quot;&gt;GitHub repo&lt;a class=&quot;zola-anchor&quot; href=&quot;#github-repo&quot; aria-label=&quot;Anchor link for: github-repo&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Visit &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;py_regular_expressions&quot;&gt;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;py_regular_expressions&lt;&#x2F;a&gt; for markdown source, example files, exercise solutions, sample chapters and other details related to the book.&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;newsletter&quot;&gt;Newsletter&lt;a class=&quot;zola-anchor&quot; href=&quot;#newsletter&quot; aria-label=&quot;Anchor link for: newsletter&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Subscribe to &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;learnbyexample-weekly&quot;&gt;learnbyexample weekly&lt;&#x2F;a&gt; — free newsletter covering programming resources, updates on what I am creating, tips, tools, free ebooks and more, delivered every Friday.&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;feedback-and-errata&quot;&gt;Feedback and Errata&lt;a class=&quot;zola-anchor&quot; href=&quot;#feedback-and-errata&quot; aria-label=&quot;Anchor link for: feedback-and-errata&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;I would highly appreciate if you&#x27;d &lt;strong&gt;let me know how you felt about this book&lt;&#x2F;strong&gt;. It could be anything from a simple thank you, Gumroad rating, pointing out a typo, mistakes in code snippets, which aspects of the book worked for you (or didn&#x27;t!) and so on. Reader feedback is essential and especially so for self-published authors.&lt;&#x2F;p&gt;
+&lt;p&gt;You can reach me via:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Issue Manager: &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;py_regular_expressions&#x2F;issues&quot;&gt;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;py_regular_expressions&#x2F;issues&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;E-mail: &lt;code&gt;learn by example.net@gmail.com&lt;&#x2F;code&gt; (without the spaces)&lt;&#x2F;li&gt;
+&lt;li&gt;Twitter: &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;learn_byexample&quot;&gt;https:&#x2F;&#x2F;twitter.com&#x2F;learn_byexample&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Happy learning :)&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>CLI tip 22: grep options to suppress stdout and stderr</title>
 		<published>2023-01-25T00:00:00+00:00</published>
@@ -1614,7 +1708,7 @@
 	<entry xml:lang="en">
 		<title>Programming ebooks by Sundeep Agarwal</title>
 		<published>2022-08-09T00:00:00+00:00</published>
-		<updated>2022-11-01T00:00:00+00:00</updated>
+		<updated>2023-01-30T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/books/" type="text/html"/>
 		<id>https://learnbyexample.github.io/books/</id>
 		<content type="html">&lt;p&gt;This post lists my programming ebooks with details like PDF&#x2F;EPUB purchase links, GitHub repos, web versions, testimonials, etc. All my ebooks are self-published. You can get these ebooks individually or as part of bundles. You can also read them online for free.&lt;&#x2F;p&gt;
@@ -1654,11 +1748,11 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;leanpub.com&#x2F;b&#x2F;theindiepythonextravaganza&quot;&gt;The Indie Python Extravaganza&lt;&#x2F;a&gt;
 &lt;ul&gt;
-&lt;li&gt;Python re(gex)?, Practice Python Projects (my books)&lt;&#x2F;li&gt;
+&lt;li&gt;Understanding Python re(gex)?, Practice Python Projects (my books)&lt;&#x2F;li&gt;
 &lt;li&gt;Python 101, Pydon&#x27;ts, Clean Architectures in Python (authored by others)&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;leanpub.com&#x2F;b&#x2F;python101pythonregex&quot;&gt;Python 101 + Python re(gex)?&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;leanpub.com&#x2F;b&#x2F;python201_and_regex&quot;&gt;Python 201: Intermediate Python + Python re(gex)?&lt;&#x2F;a&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;leanpub.com&#x2F;b&#x2F;python101pythonregex&quot;&gt;Python 101 + Understanding Python re(gex)?&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;leanpub.com&#x2F;b&#x2F;python201_and_regex&quot;&gt;Python 201: Intermediate Python + Understanding Python re(gex)?&lt;&#x2F;a&gt;
 &lt;ul&gt;
 &lt;li&gt;Python 101&#x2F;201 is authored by &lt;a href=&quot;https:&#x2F;&#x2F;www.blog.pythonlibrary.org&#x2F;&quot;&gt;Michael Driscoll&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
@@ -1720,11 +1814,11 @@
 &lt;li&gt;Feedback: &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;learn_byexample&quot;&gt;Twitter&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;br&gt;
-&lt;h1 id=&quot;python-re-gex&quot;&gt;&lt;p style=&quot;color: #ff9933&quot;&gt;Python re(gex)?&lt;&#x2F;h1&gt;
-&lt;p&gt;Learn Python Regular Expressions step by step from beginner to advanced levels with 200+ examples. Both &lt;code&gt;re&lt;&#x2F;code&gt; and &lt;code&gt;regex&lt;&#x2F;code&gt; modules are covered. Exercises are also included to test your understanding.&lt;&#x2F;p&gt;
-&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;books&#x2F;pyregex.png&quot; alt=&quot;Python re(gex)? cover image&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;understanding-python-re-gex&quot;&gt;&lt;p style=&quot;color: #ff9933&quot;&gt;Understanding Python re(gex)?&lt;&#x2F;h1&gt;
+&lt;p&gt;Learn Python Regular Expressions step-by-step from beginner to advanced levels with 300+ examples. Both &lt;code&gt;re&lt;&#x2F;code&gt; and &lt;code&gt;regex&lt;&#x2F;code&gt; modules are covered. Exercises are also included to test your understanding.&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;py_regular_expressions&#x2F;images&#x2F;py_regex.png&quot; width=&quot;397px&quot; height=&quot;562px&quot; alt=&quot;Understanding Python re(gex)? cover image&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;py_regular_expressions&#x2F;blob&#x2F;master&#x2F;sample_chapters&#x2F;Python_Regex_sample.pdf&quot;&gt;Sample chapters&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;py_regular_expressions&#x2F;blob&#x2F;master&#x2F;sample_chapters&#x2F;py_regex_sample.pdf&quot;&gt;Sample chapters&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;Buy pdf&#x2F;epub from:
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;py_regex&quot;&gt;gumroad&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
