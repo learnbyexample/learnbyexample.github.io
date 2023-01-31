@@ -5,12 +5,12 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2023-01-30T00:00:00+00:00</updated>
+	<updated>2023-01-31T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
 	<entry xml:lang="en">
 		<title>Understanding Python re(gex)? book announcement</title>
 		<published>2023-01-30T00:00:00+00:00</published>
-		<updated>2023-01-30T00:00:00+00:00</updated>
+		<updated>2023-01-31T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/understanding-python-regex-announcement/" type="text/html"/>
 		<id>https://learnbyexample.github.io/understanding-python-regex-announcement/</id>
 		<content type="html">&lt;p&gt;Hello!&lt;&#x2F;p&gt;
@@ -28,6 +28,9 @@
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;all-books&#x2F;pyregex_newrelease&quot;&gt;All books bundle&lt;&#x2F;a&gt; is $10 (normal price $32) — all my 13 programming ebooks&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;python-bundle&#x2F;pyregex_newrelease&quot;&gt;Learn by example Python bundle&lt;&#x2F;a&gt; is $5 (normal price $16) — Intro, Regular expressions and Projects&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See also &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;customizing-pandoc&#x2F;&quot;&gt;my blog post&lt;&#x2F;a&gt; on how to customize &lt;code&gt;pandoc&lt;&#x2F;code&gt; for generating beautiful PDF&#x2F;EPUB versions from GitHub style markdown.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
 &lt;br&gt;
 &lt;h2 id=&quot;what-s-new&quot;&gt;What&#x27;s new?&lt;a class=&quot;zola-anchor&quot; href=&quot;#what-s-new&quot; aria-label=&quot;Anchor link for: what-s-new&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
 &lt;ul&gt;
@@ -58,6 +61,10 @@
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=THSMmCZQn1A&amp;amp;list=PLTv2U3HnAL4PlFDiH3FXTHXRbhWs2sB3F&quot;&gt;Python tips&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=p0KCLusMd5Q&amp;amp;list=PLTv2U3HnAL4PNTmRqZBSUgKaiHbRL2zeY&quot;&gt;Linux command line tips&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;re-gex-playground&quot;&gt;re(gex)? playground&lt;a class=&quot;zola-anchor&quot; href=&quot;#re-gex-playground&quot; aria-label=&quot;Anchor link for: re-gex-playground&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;To make it easier to experiment, I&#x27;m working on an interactive app. See &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;TUI-apps&#x2F;tree&#x2F;main&#x2F;PyRegexPlayground&quot;&gt;PyRegexPlayground&lt;&#x2F;a&gt; repo for installation instructions and usage guide. A sample screenshot is shown below:&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;py_regular_expressions&#x2F;images&#x2F;pyregex_playground.png&quot; alt=&quot;Python re(gex)? playground&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 &lt;br&gt;
 &lt;h2 id=&quot;table-of-contents&quot;&gt;Table of Contents&lt;a class=&quot;zola-anchor&quot; href=&quot;#table-of-contents&quot; aria-label=&quot;Anchor link for: table-of-contents&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
 &lt;ol&gt;
@@ -372,7 +379,7 @@
 &lt;p&gt;&lt;strong&gt;Video demo&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
 &lt;p align=&quot;center&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; loading=&quot;lazy&quot; src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;Y7XuZOLdG0o&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;&#x2F;iframe&gt;&lt;&#x2F;p&gt;
 &lt;br&gt;
-&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See also my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;100_page_python_intro&quot;&gt;100 Page Python Intro&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;py_regular_expressions&quot;&gt;Python re(gex)?&lt;&#x2F;a&gt; ebooks.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See also my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;100_page_python_intro&quot;&gt;100 Page Python Intro&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;py_regular_expressions&quot;&gt;Understanding Python re(gex)?&lt;&#x2F;a&gt; ebooks.&lt;&#x2F;p&gt;
 </content>
 	</entry>
 	<entry xml:lang="en">
@@ -1816,7 +1823,7 @@
 &lt;br&gt;
 &lt;h1 id=&quot;understanding-python-re-gex&quot;&gt;&lt;p style=&quot;color: #ff9933&quot;&gt;Understanding Python re(gex)?&lt;&#x2F;h1&gt;
 &lt;p&gt;Learn Python Regular Expressions step-by-step from beginner to advanced levels with 300+ examples. Both &lt;code&gt;re&lt;&#x2F;code&gt; and &lt;code&gt;regex&lt;&#x2F;code&gt; modules are covered. Exercises are also included to test your understanding.&lt;&#x2F;p&gt;
-&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;py_regular_expressions&#x2F;images&#x2F;py_regex.png&quot; width=&quot;397px&quot; height=&quot;562px&quot; alt=&quot;Understanding Python re(gex)? cover image&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;learnbyexample&#x2F;py_regular_expressions&#x2F;master&#x2F;images&#x2F;py_regex_ls.png&quot; width=&quot;640px&quot; height=&quot;360px&quot; alt=&quot;Understanding Python re(gex)? cover image&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;py_regular_expressions&#x2F;blob&#x2F;master&#x2F;sample_chapters&#x2F;py_regex_sample.pdf&quot;&gt;Sample chapters&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;Buy pdf&#x2F;epub from:
@@ -1976,7 +1983,7 @@
 &lt;br&gt;
 &lt;h1 id=&quot;vim-reference-guide&quot;&gt;&lt;p style=&quot;color: #ff9933&quot;&gt;Vim Reference Guide&lt;&#x2F;h1&gt;
 &lt;p&gt;This is intended as a &lt;em&gt;concise&lt;&#x2F;em&gt; learning resource for beginner to intermediate level Vim users. It has more in common with cheatsheets than a typical text book. Topics like Regular Expressions and Macros have more detailed explanations and examples due to their complexity. I hope this guide would make it much easier for you to discover Vim features and learning resources than my own blundering experience.&lt;&#x2F;p&gt;
-&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;books&#x2F;vim_reference_guide.png&quot; alt=&quot;Vim Reference Guide cover image&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;vim_reference&#x2F;images&#x2F;vim_reference_guide_ls.png&quot; width=&quot;640px&quot; height=&quot;360px&quot; alt=&quot;Vim Reference Guide cover image&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;vim_reference&#x2F;blob&#x2F;master&#x2F;sample_chapters&#x2F;vim_reference_guide_sample.pdf&quot;&gt;Sample chapters&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;Buy pdf&#x2F;epub from:
@@ -1992,7 +1999,7 @@
 &lt;br&gt;
 &lt;h1 id=&quot;computing-from-the-command-line&quot;&gt;&lt;p style=&quot;color: #ff9933&quot;&gt;Computing from the Command Line&lt;&#x2F;h1&gt;
 &lt;p&gt;This ebook aims to teach &lt;strong&gt;Linux command line tools and Shell Scripting&lt;&#x2F;strong&gt; for &lt;strong&gt;beginner to intermediate&lt;&#x2F;strong&gt; level users. The main focus is towards &lt;strong&gt;managing your files&lt;&#x2F;strong&gt; and performing &lt;strong&gt;text processing tasks&lt;&#x2F;strong&gt;. Plenty of &lt;strong&gt;examples&lt;&#x2F;strong&gt; are provided to make it easier to understand a particular tool and its various features. &lt;strong&gt;Exercises&lt;&#x2F;strong&gt; at the end of chapters will help you practice what you&#x27;ve learned and &lt;strong&gt;solutions&lt;&#x2F;strong&gt; are provided for reference. I hope this ebook would make it much easier for you to discover CLI tools, features and learning resources than my own blundering experience.&lt;&#x2F;p&gt;
-&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;cli-computing&#x2F;images&#x2F;cli_computing_ls.png&quot; alt=&quot;Computing from the Command Line cover image&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;cli-computing&#x2F;images&#x2F;cli_computing_ls.png&quot; width=&quot;640px&quot; height=&quot;360px&quot; alt=&quot;Computing from the Command Line cover image&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;cli-computing&#x2F;blob&#x2F;master&#x2F;sample_chapters&#x2F;cli_computing_sample.pdf&quot;&gt;Sample chapters&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;Buy pdf&#x2F;epub from:
@@ -2417,7 +2424,7 @@
 &lt;p&gt;&lt;strong&gt;Video demo&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
 &lt;p align=&quot;center&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; loading=&quot;lazy&quot; src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;bkPS1dWZ2xU&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;&#x2F;iframe&gt;&lt;&#x2F;p&gt;
 &lt;br&gt;
-&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See also my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;py_regular_expressions&quot;&gt;Python re(gex)?&lt;&#x2F;a&gt; ebook.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See also my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;py_regular_expressions&quot;&gt;Understanding Python re(gex)?&lt;&#x2F;a&gt; ebook.&lt;&#x2F;p&gt;
 </content>
 	</entry>
 	<entry xml:lang="en">
@@ -2757,7 +2764,7 @@
 &lt;&#x2F;blockquote&gt;
 &lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;python_possessive_quantifiers.png&quot; alt=&quot;Python possessive quantifiers and atomic grouping&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 &lt;p align=&quot;center&quot;&gt;&lt;i&gt;Poster created using &lt;a href=&quot;https:&#x2F;&#x2F;www.canva.com&#x2F;&quot;&gt;Canva&lt;&#x2F;a&gt;&lt;&#x2F;i&gt;&lt;&#x2F;p&gt;
-&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; If you are not familiar with regular expressions, see my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;py_regular_expressions&quot;&gt;Python re(gex)?&lt;&#x2F;a&gt; ebook to get started.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; If you are not familiar with regular expressions, see my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;py_regular_expressions&quot;&gt;Understanding Python re(gex)?&lt;&#x2F;a&gt; ebook to get started.&lt;&#x2F;p&gt;
 &lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;&lt;br&gt;
 &lt;h2 id=&quot;backtracking&quot;&gt;Backtracking&lt;a class=&quot;zola-anchor&quot; href=&quot;#backtracking&quot; aria-label=&quot;Anchor link for: backtracking&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
 &lt;p&gt;Greedy quantifiers match as much as possible, provided the overall regex is satisfied. For example, &lt;code&gt;:.*&lt;&#x2F;code&gt; will match &lt;code&gt;:&lt;&#x2F;code&gt; followed by rest of the input line. However, if you change the pattern to &lt;code&gt;:.*apple&lt;&#x2F;code&gt;, the &lt;code&gt;.*&lt;&#x2F;code&gt; portion cannot simply consume the rest of the input line. The regex engine will have to find the largest portion such that &lt;code&gt;apple&lt;&#x2F;code&gt; is also part of the match (provided the input has such a string, of course).&lt;&#x2F;p&gt;
@@ -4141,7 +4148,7 @@
 &lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;return &lt;&#x2F;span&gt;&lt;span&gt;count
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; I verified these solutions using &lt;code&gt;assert&lt;&#x2F;code&gt; statements. See &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;100_page_python_intro&#x2F;testing.html&quot;&gt;Testing&lt;&#x2F;a&gt; chapter from my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;100_page_python_intro&quot;&gt;100 Page Python Intro&lt;&#x2F;a&gt; ebook for more details.&lt;&#x2F;p&gt;
-&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;py_regular_expressions&#x2F;working-with-matched-portions.html#resubn&quot;&gt;Working with matched portions&lt;&#x2F;a&gt; chapter from my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;py_regular_expressions&quot;&gt;Python re(gex)?&lt;&#x2F;a&gt; ebook for more details about the &lt;code&gt;re.subn()&lt;&#x2F;code&gt; function.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;py_regular_expressions&#x2F;working-with-matched-portions.html#resubn&quot;&gt;Working with matched portions&lt;&#x2F;a&gt; chapter from my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;py_regular_expressions&quot;&gt;Understanding Python re(gex)?&lt;&#x2F;a&gt; ebook for more details about the &lt;code&gt;re.subn()&lt;&#x2F;code&gt; function.&lt;&#x2F;p&gt;
 &lt;br&gt;
 &lt;h2 id=&quot;perl-one-liner&quot;&gt;Perl one-liner&lt;a class=&quot;zola-anchor&quot; href=&quot;#perl-one-liner&quot; aria-label=&quot;Anchor link for: perl-one-liner&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
 &lt;p&gt;Here&#x27;s a solution for CLI enthusiasts:&lt;&#x2F;p&gt;
@@ -4227,11 +4234,11 @@
 		<updated>2022-12-09T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/python-25-days-of-regex/" type="text/html"/>
 		<id>https://learnbyexample.github.io/python-25-days-of-regex/</id>
-		<content type="html">&lt;p&gt;Still confused about Python regular expressions? Grow your confidence with &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;py_regular_expressions&quot;&gt;Python re(gex)?&lt;&#x2F;a&gt; ebook (FREE this month!) and an &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;py_regular_expressions&#x2F;tree&#x2F;master&#x2F;interactive_exercises&quot;&gt;interactive GUI app&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+		<content type="html">&lt;p&gt;Still confused about Python regular expressions? Grow your confidence with &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;py_regular_expressions&quot;&gt;Understanding Python re(gex)?&lt;&#x2F;a&gt; ebook (FREE this month!) and an &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;py_regular_expressions&#x2F;tree&#x2F;master&#x2F;interactive_exercises&quot;&gt;interactive GUI app&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;p&gt;Inspired by &lt;a href=&quot;https:&#x2F;&#x2F;adventofcode.com&#x2F;&quot;&gt;Advent of Code&lt;&#x2F;a&gt;, I&#x27;ll also be posting &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;learn_byexample&#x2F;status&#x2F;1465998844898918403&quot;&gt;3 challenges per day on twitter&lt;&#x2F;a&gt; for 25 days.&lt;&#x2F;p&gt;
 &lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;&lt;br&gt;
 &lt;h2 id=&quot;free-ebook&quot;&gt;Free ebook&lt;a class=&quot;zola-anchor&quot; href=&quot;#free-ebook&quot; aria-label=&quot;Anchor link for: free-ebook&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
-&lt;p&gt;My post about the interactive GUI app made it to the &lt;a href=&quot;https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=29391107&quot;&gt;Hacker News front page&lt;&#x2F;a&gt;. To celebrate, you can get PDF&#x2F;EPUB versions of my &lt;strong&gt;Python re(gex)?&lt;&#x2F;strong&gt; ebook for free using either of the below links. The offer is valid till 31-Dec-2021.&lt;&#x2F;p&gt;
+&lt;p&gt;My post about the interactive GUI app made it to the &lt;a href=&quot;https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=29391107&quot;&gt;Hacker News front page&lt;&#x2F;a&gt;. To celebrate, you can get PDF&#x2F;EPUB versions of my &lt;strong&gt;Understanding Python re(gex)?&lt;&#x2F;strong&gt; ebook for free using either of the below links. The offer is valid till 31-Dec-2021.&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;py_regex&quot;&gt;Gumroad&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;leanpub.com&#x2F;py_regex&quot;&gt;Leanpub&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
@@ -4239,7 +4246,7 @@
 &lt;p&gt;Or, you can use the &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;py_regular_expressions&#x2F;&quot;&gt;web version&lt;&#x2F;a&gt; if you prefer reading the book online.&lt;&#x2F;p&gt;
 &lt;br&gt;
 &lt;h2 id=&quot;interactive-gui-app&quot;&gt;Interactive GUI app&lt;a class=&quot;zola-anchor&quot; href=&quot;#interactive-gui-app&quot; aria-label=&quot;Anchor link for: interactive-gui-app&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
-&lt;p&gt;Based on the &lt;strong&gt;Python re(gex)?&lt;&#x2F;strong&gt; book contents as well as the exercises, I made an &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;py_regular_expressions&#x2F;tree&#x2F;master&#x2F;interactive_exercises&quot;&gt;interactive GUI app&lt;&#x2F;a&gt; with 75 questions on &lt;code&gt;re.search&lt;&#x2F;code&gt;, &lt;code&gt;re.sub&lt;&#x2F;code&gt;, &lt;code&gt;re.split&lt;&#x2F;code&gt; and &lt;code&gt;re.findall&lt;&#x2F;code&gt; that&#x27;ll test your understanding of anchors, alternation, grouping, escaping metacharacters, dot metacharacter, quantifiers, character class, grouping, lookarounds, flags, etc.&lt;&#x2F;p&gt;
+&lt;p&gt;Based on the &lt;strong&gt;Understanding Python re(gex)?&lt;&#x2F;strong&gt; book contents as well as the exercises, I made an &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;py_regular_expressions&#x2F;tree&#x2F;master&#x2F;interactive_exercises&quot;&gt;interactive GUI app&lt;&#x2F;a&gt; with 75 questions on &lt;code&gt;re.search&lt;&#x2F;code&gt;, &lt;code&gt;re.sub&lt;&#x2F;code&gt;, &lt;code&gt;re.split&lt;&#x2F;code&gt; and &lt;code&gt;re.findall&lt;&#x2F;code&gt; that&#x27;ll test your understanding of anchors, alternation, grouping, escaping metacharacters, dot metacharacter, quantifiers, character class, grouping, lookarounds, flags, etc.&lt;&#x2F;p&gt;
 &lt;p&gt;Here&#x27;s some screenshots:&lt;&#x2F;p&gt;
 &lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;python_exercises&#x2F;search.png&quot; alt=&quot;Python exercise example for re.search&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 &lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;python_exercises&#x2F;sub.png&quot; alt=&quot;Python exercise example for re.sub&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
@@ -6278,7 +6285,7 @@ no VAL is specified, the key will be given the value true.&lt;&#x2F;p&gt;
 &lt;p&gt;With &lt;code&gt;.&#x2F;md2pdf_syn.sh sample_2.md sample_2_syn.pdf&lt;&#x2F;code&gt; the output is:&lt;&#x2F;p&gt;
 &lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;pandoc_pdf&#x2F;customized_syn.png&quot; alt=&quot;Customized syntax highlighting&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 &lt;br&gt;
-&lt;p&gt;For my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;py_regular_expressions&quot;&gt;Python re(gex)?&lt;&#x2F;a&gt; book, by chance I found that using &lt;code&gt;ruby&lt;&#x2F;code&gt; instead of &lt;code&gt;python&lt;&#x2F;code&gt; for REPL code snippets syntax highlighting was better. Snapshot from &lt;code&gt;.&#x2F;md2pdf_syn.sh sample_3.md sample_3.pdf&lt;&#x2F;code&gt; result is shown below. For &lt;code&gt;python&lt;&#x2F;code&gt; directive, string output gets treated as a comment and color for boolean values isn&#x27;t easy to distinguish from string values. The &lt;code&gt;ruby&lt;&#x2F;code&gt; directive treats string value as expected and boolean values are easier to spot.&lt;&#x2F;p&gt;
+&lt;p&gt;For my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;py_regular_expressions&quot;&gt;Understanding Python re(gex)?&lt;&#x2F;a&gt; book, by chance I found that using &lt;code&gt;ruby&lt;&#x2F;code&gt; instead of &lt;code&gt;python&lt;&#x2F;code&gt; for REPL code snippets syntax highlighting was better. Snapshot from &lt;code&gt;.&#x2F;md2pdf_syn.sh sample_3.md sample_3.pdf&lt;&#x2F;code&gt; result is shown below. For &lt;code&gt;python&lt;&#x2F;code&gt; directive, string output gets treated as a comment and color for boolean values isn&#x27;t easy to distinguish from string values. The &lt;code&gt;ruby&lt;&#x2F;code&gt; directive treats string value as expected and boolean values are easier to spot.&lt;&#x2F;p&gt;
 &lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;pandoc_pdf&#x2F;python_vs_ruby_syn.png&quot; alt=&quot;REPL syntax highlighting&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 &lt;br&gt;
 &lt;h2 id=&quot;bullet-styling&quot;&gt;Bullet styling&lt;a class=&quot;zola-anchor&quot; href=&quot;#bullet-styling&quot; aria-label=&quot;Anchor link for: bullet-styling&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
@@ -6775,7 +6782,7 @@ no VAL is specified, the key will be given the value true.&lt;&#x2F;p&gt;
 	<entry xml:lang="en">
 		<title>Python regular expression cheatsheet and examples</title>
 		<published>2020-07-03T00:00:00+00:00</published>
-		<updated>2023-01-02T00:00:00+00:00</updated>
+		<updated>2023-01-31T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/python-regex-cheatsheet/" type="text/html"/>
 		<id>https://learnbyexample.github.io/python-regex-cheatsheet/</id>
 		<content type="html">&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;books&#x2F;pyregex_example.png&quot; alt=&quot;pyregex example&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
@@ -6785,7 +6792,7 @@ no VAL is specified, the key will be given the value true.&lt;&#x2F;p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;A regular expression (or RE) specifies a set of strings that matches it; the functions in this module let you check if a particular string matches a given regular expression&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;
-&lt;p&gt;This blog post gives an overview and examples of regular expression syntax as implemented by the &lt;code&gt;re&lt;&#x2F;code&gt; built-in module (Python 3.11+). Assume ASCII character set unless otherwise specified. This post is an excerpt from my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;py_regular_expressions&quot;&gt;Python re(gex)?&lt;&#x2F;a&gt; book.&lt;&#x2F;p&gt;
+&lt;p&gt;This blog post gives an overview and examples of regular expression syntax as implemented by the &lt;code&gt;re&lt;&#x2F;code&gt; built-in module (Python 3.11+). Assume ASCII character set unless otherwise specified. This post is an excerpt from my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;py_regular_expressions&quot;&gt;Understanding Python re(gex)?&lt;&#x2F;a&gt; book.&lt;&#x2F;p&gt;
 &lt;br&gt;
 &lt;h2 id=&quot;elements-that-define-a-regular-expression&quot;&gt;Elements that define a regular expression&lt;a class=&quot;zola-anchor&quot; href=&quot;#elements-that-define-a-regular-expression&quot; aria-label=&quot;Anchor link for: elements-that-define-a-regular-expression&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
 &lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Anchors&lt;&#x2F;th&gt;&lt;th&gt;Description&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
@@ -7159,10 +7166,9 @@ no VAL is specified, the key will be given the value true.&lt;&#x2F;p&gt;
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;Hi there. Nice day&amp;#39;
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;br&gt;
-&lt;h2 id=&quot;python-re-gex-book&quot;&gt;Python re(gex)? book&lt;a class=&quot;zola-anchor&quot; href=&quot;#python-re-gex-book&quot; aria-label=&quot;Anchor link for: python-re-gex-book&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
-&lt;p&gt;Visit my GitHub repo &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;py_regular_expressions&quot;&gt;Python re(gex)?&lt;&#x2F;a&gt; for details about the book I wrote on Python regular expressions. The ebook uses plenty of examples to explain the concepts from the very beginning and step by step introduces more advanced concepts. The book also covers the &lt;a href=&quot;https:&#x2F;&#x2F;pypi.org&#x2F;project&#x2F;regex&#x2F;&quot;&gt;third party module regex&lt;&#x2F;a&gt;. The cheatsheet and examples presented in this post are based on contents of this book.&lt;&#x2F;p&gt;
-&lt;p&gt;Use &lt;a href=&quot;https:&#x2F;&#x2F;leanpub.com&#x2F;py_regex&#x2F;c&#x2F;P7erPYAm1386&quot;&gt;this leanpub link&lt;&#x2F;a&gt; for a discounted price.&lt;&#x2F;p&gt;
-&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;books&#x2F;pyregex.png&quot; alt=&quot;Python regex book cover image&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;understanding-python-re-gex-book&quot;&gt;Understanding Python re(gex)? book&lt;a class=&quot;zola-anchor&quot; href=&quot;#understanding-python-re-gex-book&quot; aria-label=&quot;Anchor link for: understanding-python-re-gex-book&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Visit my GitHub repo &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;py_regular_expressions&quot;&gt;Understanding Python re(gex)?&lt;&#x2F;a&gt; for details about the book I wrote on Python regular expressions. The ebook uses plenty of examples to explain the concepts from the very beginning and step by step introduces more advanced concepts. The book also covers the &lt;a href=&quot;https:&#x2F;&#x2F;pypi.org&#x2F;project&#x2F;regex&#x2F;&quot;&gt;third party module regex&lt;&#x2F;a&gt;. The cheatsheet and examples presented in this post are based on contents of this book.&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;learnbyexample&#x2F;py_regular_expressions&#x2F;master&#x2F;images&#x2F;py_regex_ls.png&quot; width=&quot;640px&quot; height=&quot;360px&quot; alt=&quot;Understanding Python re(gex)? cover image&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 </content>
 	</entry>
 	<entry xml:lang="en">
@@ -7173,7 +7179,6 @@ no VAL is specified, the key will be given the value true.&lt;&#x2F;p&gt;
 		<id>https://learnbyexample.github.io/python-regex-book-version2/</id>
 		<content type="html">&lt;p&gt;Hello!&lt;&#x2F;p&gt;
 &lt;p&gt;I recently updated my &lt;strong&gt;Python re(gex)?&lt;&#x2F;strong&gt; ebook.&lt;&#x2F;p&gt;
-&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;books&#x2F;pyregex.png&quot; alt=&quot;Python re(gex)? cover image&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 &lt;p&gt;Get the ebook using either of these sites:&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;py_regex&quot;&gt;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;py_regex&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
