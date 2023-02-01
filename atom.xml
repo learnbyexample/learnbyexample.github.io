@@ -5,8 +5,73 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2023-01-31T00:00:00+00:00</updated>
+	<updated>2023-02-01T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Vim tip 21: working with tabs</title>
+		<published>2023-02-01T00:00:00+00:00</published>
+		<updated>2023-02-01T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://learnbyexample.github.io/tips/vim-tip-21/" type="text/html"/>
+		<id>https://learnbyexample.github.io/tips/vim-tip-21/</id>
+		<content type="html">&lt;p&gt;Multiple files can be opened in Vim within the same tab page and&#x2F;or in different tabs. From &lt;a href=&quot;https:&#x2F;&#x2F;vimhelp.org&#x2F;windows.txt.html#windows-intro&quot;&gt;:h windows-intro&lt;&#x2F;a&gt;:&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;A buffer is the in-memory text of a file.&lt;&#x2F;li&gt;
+&lt;li&gt;A window is a viewport on a buffer.&lt;&#x2F;li&gt;
+&lt;li&gt;A tab page is a collection of windows.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;kbd&gt;:tabe filename&lt;&#x2F;kbd&gt; open the given file in a new tab (&lt;code&gt;:tabe&lt;&#x2F;code&gt; is short for &lt;code&gt;:tabedit&lt;&#x2F;code&gt;)
+&lt;ul&gt;
+&lt;li&gt;if &lt;code&gt;filename&lt;&#x2F;code&gt; isn&#x27;t specified, you&#x27;ll get an unnamed empty window&lt;&#x2F;li&gt;
+&lt;li&gt;by default, the new tab is opened to the right of the current tab&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;:0tabe&lt;&#x2F;kbd&gt; open as the first tab&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;:$tabe&lt;&#x2F;kbd&gt; open as the last tab&lt;&#x2F;li&gt;
+&lt;li&gt;see &lt;a href=&quot;https:&#x2F;&#x2F;vimhelp.org&#x2F;tabpage.txt.html#%3Atabnew&quot;&gt;:h :tabe&lt;&#x2F;a&gt; for more details and features&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Switching between tabs:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;kbd&gt;:tabn&lt;&#x2F;kbd&gt; switch to the next tab (&lt;code&gt;:tabn&lt;&#x2F;code&gt; is short for &lt;code&gt;:tabnext&lt;&#x2F;code&gt;)
+&lt;ul&gt;
+&lt;li&gt;if tabs to the right are exhausted, switch to the first tab&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;gt&lt;&#x2F;kbd&gt; and &lt;kbd&gt;Ctrl&lt;&#x2F;kbd&gt;+&lt;kbd&gt;Page Down&lt;&#x2F;kbd&gt; can also be used&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;2gt&lt;&#x2F;kbd&gt; switch to the second tab (the number specified is absolute, not relative)&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;:tabp&lt;&#x2F;kbd&gt; switch to the previous tab (&lt;code&gt;:tabp&lt;&#x2F;code&gt; is short for &lt;code&gt;:tabprevious&lt;&#x2F;code&gt;)
+&lt;ul&gt;
+&lt;li&gt;if tabs to the left are exhausted, switch to the last tab&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;gT&lt;&#x2F;kbd&gt; and &lt;kbd&gt;Ctrl&lt;&#x2F;kbd&gt;+&lt;kbd&gt;Page Up&lt;&#x2F;kbd&gt;  can also be used&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;:tabr&lt;&#x2F;kbd&gt; switch to the first tab (&lt;code&gt;:tabr&lt;&#x2F;code&gt; is short for &lt;code&gt;:tabrewind&lt;&#x2F;code&gt;)
+&lt;ul&gt;
+&lt;li&gt;&lt;kbd&gt;:tabfirst&lt;&#x2F;kbd&gt; can also be used&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;:tabl&lt;&#x2F;kbd&gt; switch to the last tab (&lt;code&gt;:tabl&lt;&#x2F;code&gt; is short for &lt;code&gt;:tablast&lt;&#x2F;code&gt;)&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Moving tabs:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;kbd&gt;:tabm N&lt;&#x2F;kbd&gt; move the current tab to after &lt;code&gt;N&lt;&#x2F;code&gt; tabs from the start (&lt;code&gt;:tabm&lt;&#x2F;code&gt; is short for &lt;code&gt;:tabmove&lt;&#x2F;code&gt;)
+&lt;ul&gt;
+&lt;li&gt;&lt;kbd&gt;:tabm 0&lt;&#x2F;kbd&gt; move the current tab to the beginning&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;:tabm&lt;&#x2F;kbd&gt; move the current tab to the end&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;:tabm +N&lt;&#x2F;kbd&gt; move the current tab &lt;code&gt;N&lt;&#x2F;code&gt; positions to the right&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;:tabm -N&lt;&#x2F;kbd&gt; move the current tab &lt;code&gt;N&lt;&#x2F;code&gt; positions to the left&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; Buffer list includes all the files opened in all the tabs. You can also use the mouse to switch&#x2F;move tabs in GVim.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Video demo&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; loading=&quot;lazy&quot; src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;pQpWrrrYVTI&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;&#x2F;iframe&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See also my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;vim_reference&quot;&gt;Vim Reference Guide&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;curated_resources&#x2F;vim.html&quot;&gt;curated list of resources for Vim&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>Understanding Python re(gex)? book announcement</title>
 		<published>2023-01-30T00:00:00+00:00</published>

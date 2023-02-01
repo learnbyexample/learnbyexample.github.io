@@ -410,7 +410,7 @@
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tips/</loc>
-        <lastmod>2023-01-25</lastmod>
+        <lastmod>2023-02-01</lastmod>
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tips/cli-tip-1/</loc>
@@ -639,6 +639,10 @@
     <url>
         <loc>https://learnbyexample.github.io/tips/vim-tip-20/</loc>
         <lastmod>2023-01-10</lastmod>
+    </url>
+    <url>
+        <loc>https://learnbyexample.github.io/tips/vim-tip-21/</loc>
+        <lastmod>2023-02-01</lastmod>
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tips/vim-tip-3/</loc>
