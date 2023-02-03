@@ -51,9 +51,7 @@
 </span><span style=color:#72ab00;>>>> </span><span>re.</span><span style=color:#5597d6;>sub</span><span>(</span><span style=color:#668f14;>r</span><span style=color:#d07711;>'</span><span style=color:#7c8f4c;>2</span><span style=color:#aeb52b;>\x</span><span style=color:#7c8f4c;>7c3</span><span style=color:#d07711;>'</span><span>, </span><span style=color:#d07711;>'5'</span><span>, </span><span style=color:#d07711;>'12|30'</span><span>)
 </span></code></pre><details><summary><i style=color:gray>Click to view answer</i></summary> <p>The output will be <code>'150'</code> since escapes will be treated literally.</p></details><br><h2 id=empty-matches>Empty matches<a aria-label="Anchor link for: empty-matches" class=zola-anchor href=#empty-matches>🔗</a></h2><p>You are likely to have come across this before:<pre class=language-python data-lang=python style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-python data-lang=python><span style=color:#7f8989;># what will be the output?
 </span><span style=color:#72ab00;>>>> </span><span>re.</span><span style=color:#5597d6;>sub</span><span>(</span><span style=color:#668f14;>r</span><span style=color:#d07711;>'</span><span style=color:#aeb52b;>[</span><span style=color:#72ab00;>^</span><span style=color:#aeb52b;>,]</span><span style=color:#72ab00;>*</span><span style=color:#d07711;>'</span><span>, </span><span style=color:#668f14;>r</span><span style=color:#d07711;>'</span><span style=color:#7c8f4c;>{</span><span style=color:#aeb52b;>\g</span><span style=color:#7c8f4c;>&LT0>}</span><span style=color:#d07711;>'</span><span>, </span><span style=color:#d07711;>',cat,tiger'</span><span>)
-</span></code></pre><details><summary><i style=color:gray>Click to view answer</i></summary> <span><code><pre>
-<p>See also <a href=https://www.regular-expressions.info/zerolength.html>Zero-Length Matches</a>.</p>
-<pre class=language-python data-lang=python style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-python data-lang=python><span style=color:#7f8989;># there is an extra empty string match at the end of matches
+</span></code></pre><details><summary><i style=color:gray>Click to view answer</i></summary> <p>See also <a href=https://www.regular-expressions.info/zerolength.html>Zero-Length Matches</a>.</p> <pre class=language-python data-lang=python style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-python data-lang=python><span style=color:#7f8989;># there is an extra empty string match at the end of matches
 </span><span style=color:#72ab00;>>>> </span><span>re.</span><span style=color:#5597d6;>sub</span><span>(</span><span style=color:#668f14;>r</span><span style=color:#d07711;>'</span><span style=color:#aeb52b;>[</span><span style=color:#72ab00;>^</span><span style=color:#aeb52b;>,]</span><span style=color:#72ab00;>*</span><span style=color:#d07711;>'</span><span>, </span><span style=color:#668f14;>r</span><span style=color:#d07711;>'</span><span style=color:#7c8f4c;>{</span><span style=color:#aeb52b;>\g</span><span style=color:#7c8f4c;>&LT0>}</span><span style=color:#d07711;>'</span><span>, </span><span style=color:#d07711;>',cat,tiger'</span><span>)
 </span><span style=color:#d07711;>'</span><span style=color:#aeb52b;>{}</span><span style=color:#d07711;>,</span><span style=color:#aeb52b;>{cat}{}</span><span style=color:#d07711;>,</span><span style=color:#aeb52b;>{tiger}{}</span><span style=color:#d07711;>'
 </span><span style=color:#72ab00;>>>> </span><span>re.</span><span style=color:#5597d6;>sub</span><span>(</span><span style=color:#668f14;>r</span><span style=color:#d07711;>'</span><span style=color:#aeb52b;>[</span><span style=color:#72ab00;>^</span><span style=color:#aeb52b;>,]</span><span style=color:#72ab00;>*+</span><span style=color:#d07711;>'</span><span>, </span><span style=color:#668f14;>r</span><span style=color:#d07711;>'</span><span style=color:#7c8f4c;>{</span><span style=color:#aeb52b;>\g</span><span style=color:#7c8f4c;>&LT0>}</span><span style=color:#d07711;>'</span><span>, </span><span style=color:#d07711;>',cat,tiger'</span><span>)
@@ -62,55 +60,24 @@
 </span><span style=color:#7f8989;># use lookarounds as a workaround
 </span><span style=color:#72ab00;>>>> </span><span>re.</span><span style=color:#5597d6;>sub</span><span>(</span><span style=color:#668f14;>r</span><span style=color:#d07711;>'</span><span style=color:#7c8f4c;>(</span><span style=color:#aeb52b;>?&LT![</span><span style=color:#72ab00;>^</span><span style=color:#aeb52b;>,]</span><span style=color:#7c8f4c;>)</span><span style=color:#aeb52b;>[</span><span style=color:#72ab00;>^</span><span style=color:#aeb52b;>,]</span><span style=color:#72ab00;>*</span><span style=color:#d07711;>'</span><span>, </span><span style=color:#668f14;>r</span><span style=color:#d07711;>'</span><span style=color:#7c8f4c;>{</span><span style=color:#aeb52b;>\g</span><span style=color:#7c8f4c;>&LT0>}</span><span style=color:#d07711;>'</span><span>, </span><span style=color:#d07711;>',cat,tiger'</span><span>)
 </span><span style=color:#d07711;>'</span><span style=color:#aeb52b;>{}</span><span style=color:#d07711;>,</span><span style=color:#aeb52b;>{cat}</span><span style=color:#d07711;>,</span><span style=color:#aeb52b;>{tiger}</span><span style=color:#d07711;>'
-</span></code></pre>
-<details>
-<br>
-<h2 id=can-quantifiers-be-grouped-out>Can quantifiers be grouped out?<a aria-label="Anchor link for: can-quantifiers-be-grouped-out" class=zola-anchor href=#can-quantifiers-be-grouped-out>🔗</a></h2>
-<p>Similar to <code>a(b+c)d = abd+acd</code> in maths, you get <code>a(b|c)d = abd|acd</code> in regular expressions. <code>(a*|b*)</code> is same as <code>(a|b)*</code> — True or False?</p>
-<details><summary><i style=color:gray>Click to view answer</i></summary>
-<p align=center><img alt="Regexp grouping with quantifiers gotcha" src=/images/mini/regexp_gotcha_1.png></p>
-<p align=center>Railroad diagram created using <a href=https://www.debuggex.com/>debuggex.com</a></p>
-<p>False. Because <code>(a*|b*)</code> will match only sequences like <code>a</code>, <code>aaa</code>, <code>bb</code>, <code>bbbbbbbb</code>. But <code>(a|b)*</code> can match mixed sequences like <code>ababbba</code> too.</p>
-</details>
-<br>
-<h2 id=portion-captured-by-a-quantified-group>Portion captured by a quantified group<a aria-label="Anchor link for: portion-captured-by-a-quantified-group" class=zola-anchor href=#portion-captured-by-a-quantified-group>🔗</a></h2>
-<p>This should be another familiar regex gotcha:</p>
-<pre class=language-python data-lang=python style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-python data-lang=python><span style=color:#7f8989;># what will be the output?
+</span></code></pre></details><br><h2 id=can-quantifiers-be-grouped-out>Can quantifiers be grouped out?<a aria-label="Anchor link for: can-quantifiers-be-grouped-out" class=zola-anchor href=#can-quantifiers-be-grouped-out>🔗</a></h2><p>Similar to <code>a(b+c)d = abd+acd</code> in maths, you get <code>a(b|c)d = abd|acd</code> in regular expressions. <code>(a*|b*)</code> is same as <code>(a|b)*</code> — True or False?<details><summary><i style=color:gray>Click to view answer</i></summary> <p align=center><img alt="Regexp grouping with quantifiers gotcha" src=/images/mini/regexp_gotcha_1.png></p> <p align=center>Railroad diagram created using <a href=https://www.debuggex.com/>debuggex.com</a></p> <p>False. Because <code>(a*|b*)</code> will match only sequences like <code>a</code>, <code>aaa</code>, <code>bb</code>, <code>bbbbbbbb</code>. But <code>(a|b)*</code> can match mixed sequences like <code>ababbba</code> too.</p></details><br><h2 id=portion-captured-by-a-quantified-group>Portion captured by a quantified group<a aria-label="Anchor link for: portion-captured-by-a-quantified-group" class=zola-anchor href=#portion-captured-by-a-quantified-group>🔗</a></h2><p>This should be another familiar regex gotcha:<pre class=language-python data-lang=python style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-python data-lang=python><span style=color:#7f8989;># what will be the output?
 </span><span style=color:#72ab00;>>>> </span><span>re.</span><span style=color:#5597d6;>sub</span><span>(</span><span style=color:#668f14;>r</span><span style=color:#d07711;>'</span><span style=color:#72ab00;>\A</span><span style=color:#7c8f4c;>(</span><span style=color:#aeb52b;>[</span><span style=color:#72ab00;>^</span><span style=color:#aeb52b;>,]</span><span style=color:#72ab00;>+</span><span style=color:#7c8f4c;>,)</span><span style=color:#72ab00;>{3}</span><span style=color:#7c8f4c;>(</span><span style=color:#aeb52b;>[</span><span style=color:#72ab00;>^</span><span style=color:#aeb52b;>,]</span><span style=color:#72ab00;>+</span><span style=color:#7c8f4c;>)</span><span style=color:#d07711;>'</span><span>, </span><span style=color:#668f14;>r</span><span style=color:#d07711;>'</span><span style=color:#72ab00;>\1</span><span style=color:#7c8f4c;>(</span><span style=color:#72ab00;>\2</span><span style=color:#7c8f4c;>)</span><span style=color:#d07711;>'</span><span>, </span><span style=color:#d07711;>'1,2,3,4,5,6,7'</span><span>)
-</span></code></pre>
-<details><summary><i style=color:gray>Click to view answer</i></summary>
-<p>Referring to the text matched by a capture group with a quantifier will give only the last match, not the entire match. You'll need an outer capture group to get the entire matched portion.</p>
-<pre class=language-python data-lang=python style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-python data-lang=python><span style=color:#72ab00;>>>> </span><span>re.</span><span style=color:#5597d6;>sub</span><span>(</span><span style=color:#668f14;>r</span><span style=color:#d07711;>'</span><span style=color:#72ab00;>\A</span><span style=color:#7c8f4c;>(</span><span style=color:#aeb52b;>[</span><span style=color:#72ab00;>^</span><span style=color:#aeb52b;>,]</span><span style=color:#72ab00;>+</span><span style=color:#7c8f4c;>,)</span><span style=color:#72ab00;>{3}</span><span style=color:#7c8f4c;>(</span><span style=color:#aeb52b;>[</span><span style=color:#72ab00;>^</span><span style=color:#aeb52b;>,]</span><span style=color:#72ab00;>+</span><span style=color:#7c8f4c;>)</span><span style=color:#d07711;>'</span><span>, </span><span style=color:#668f14;>r</span><span style=color:#d07711;>'</span><span style=color:#72ab00;>\1</span><span style=color:#7c8f4c;>(</span><span style=color:#72ab00;>\2</span><span style=color:#7c8f4c;>)</span><span style=color:#d07711;>'</span><span>, </span><span style=color:#d07711;>'1,2,3,4,5,6,7'</span><span>)
+</span></code></pre><details><summary><i style=color:gray>Click to view answer</i></summary> <p>Referring to the text matched by a capture group with a quantifier will give only the last match, not the entire match. You'll need an outer capture group to get the entire matched portion.</p> <pre class=language-python data-lang=python style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-python data-lang=python><span style=color:#72ab00;>>>> </span><span>re.</span><span style=color:#5597d6;>sub</span><span>(</span><span style=color:#668f14;>r</span><span style=color:#d07711;>'</span><span style=color:#72ab00;>\A</span><span style=color:#7c8f4c;>(</span><span style=color:#aeb52b;>[</span><span style=color:#72ab00;>^</span><span style=color:#aeb52b;>,]</span><span style=color:#72ab00;>+</span><span style=color:#7c8f4c;>,)</span><span style=color:#72ab00;>{3}</span><span style=color:#7c8f4c;>(</span><span style=color:#aeb52b;>[</span><span style=color:#72ab00;>^</span><span style=color:#aeb52b;>,]</span><span style=color:#72ab00;>+</span><span style=color:#7c8f4c;>)</span><span style=color:#d07711;>'</span><span>, </span><span style=color:#668f14;>r</span><span style=color:#d07711;>'</span><span style=color:#72ab00;>\1</span><span style=color:#7c8f4c;>(</span><span style=color:#72ab00;>\2</span><span style=color:#7c8f4c;>)</span><span style=color:#d07711;>'</span><span>, </span><span style=color:#d07711;>'1,2,3,4,5,6,7'</span><span>)
 </span><span style=color:#d07711;>'3,(4),5,6,7'
 </span><span>
 </span><span style=color:#72ab00;>>>> </span><span>re.</span><span style=color:#5597d6;>sub</span><span>(</span><span style=color:#668f14;>r</span><span style=color:#d07711;>'</span><span style=color:#72ab00;>\A</span><span style=color:#7c8f4c;>((?:</span><span style=color:#aeb52b;>[</span><span style=color:#72ab00;>^</span><span style=color:#aeb52b;>,]</span><span style=color:#72ab00;>+</span><span style=color:#7c8f4c;>,)</span><span style=color:#72ab00;>{3}</span><span style=color:#7c8f4c;>)(</span><span style=color:#aeb52b;>[</span><span style=color:#72ab00;>^</span><span style=color:#aeb52b;>,]</span><span style=color:#72ab00;>+</span><span style=color:#7c8f4c;>)</span><span style=color:#d07711;>'</span><span>, </span><span style=color:#668f14;>r</span><span style=color:#d07711;>'</span><span style=color:#72ab00;>\1</span><span style=color:#7c8f4c;>(</span><span style=color:#72ab00;>\2</span><span style=color:#7c8f4c;>)</span><span style=color:#d07711;>'</span><span>, </span><span style=color:#d07711;>'1,2,3,4,5,6,7'</span><span>)
 </span><span style=color:#d07711;>'1,2,3,(4),5,6,7'
-</span></code></pre>
-</details>
-<br>
-<h2 id=character-combinations>Character combinations<a aria-label="Anchor link for: character-combinations" class=zola-anchor href=#character-combinations>🔗</a></h2>
-<p><code>\b[a-z](on|no)[a-z]\b</code> is same as <code>\b[a-z][on]{2}[a-z]\b</code> — True or False?</p>
-<details><summary><i style=color:gray>Click to view answer</i></summary>
-<p>False. <code>[on]{2}</code> will also match <code>oo</code> and <code>nn</code>.</p>
-<pre class=language-python data-lang=python style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-python data-lang=python><span style=color:#72ab00;>>>> </span><span>words </span><span style=color:#72ab00;>= </span><span style=color:#d07711;>'known mood know pony inns'
+</span></code></pre></details><br><h2 id=character-combinations>Character combinations<a aria-label="Anchor link for: character-combinations" class=zola-anchor href=#character-combinations>🔗</a></h2><p><code>\b[a-z](on|no)[a-z]\b</code> is same as <code>\b[a-z][on]{2}[a-z]\b</code> — True or False?<details><summary><i style=color:gray>Click to view answer</i></summary> <p>False. <code>[on]{2}</code> will also match <code>oo</code> and <code>nn</code>.</p> <pre class=language-python data-lang=python style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-python data-lang=python><span style=color:#72ab00;>>>> </span><span>words </span><span style=color:#72ab00;>= </span><span style=color:#d07711;>'known mood know pony inns'
 </span><span>
 </span><span style=color:#72ab00;>>>> </span><span>re.</span><span style=color:#5597d6;>findall</span><span>(</span><span style=color:#668f14;>r</span><span style=color:#d07711;>'</span><span style=color:#72ab00;>\b</span><span style=color:#aeb52b;>[</span><span style=color:#b3933a;>a-z</span><span style=color:#aeb52b;>]</span><span style=color:#7c8f4c;>(?:on</span><span style=color:#72ab00;>|</span><span style=color:#7c8f4c;>no)</span><span style=color:#aeb52b;>[</span><span style=color:#b3933a;>a-z</span><span style=color:#aeb52b;>]</span><span style=color:#72ab00;>\b</span><span style=color:#d07711;>'</span><span>, words)
 </span><span>[</span><span style=color:#d07711;>'know'</span><span>, </span><span style=color:#d07711;>'pony'</span><span>]
 </span><span style=color:#72ab00;>>>> </span><span>re.</span><span style=color:#5597d6;>findall</span><span>(</span><span style=color:#668f14;>r</span><span style=color:#d07711;>'</span><span style=color:#72ab00;>\b</span><span style=color:#aeb52b;>[</span><span style=color:#b3933a;>a-z</span><span style=color:#aeb52b;>][on]</span><span style=color:#72ab00;>{2}</span><span style=color:#aeb52b;>[</span><span style=color:#b3933a;>a-z</span><span style=color:#aeb52b;>]</span><span style=color:#72ab00;>\b</span><span style=color:#d07711;>'</span><span>, words)
 </span><span>[</span><span style=color:#d07711;>'mood'</span><span>, </span><span style=color:#d07711;>'know'</span><span>, </span><span style=color:#d07711;>'pony'</span><span>, </span><span style=color:#d07711;>'inns'</span><span>]
-</span></code></pre>
-</details>
-<br>
-<h2 id=greedy-vs-possessive>Greedy vs Possessive<a aria-label="Anchor link for: greedy-vs-possessive" class=zola-anchor href=#greedy-vs-possessive>🔗</a></h2>
-<p>Suppose you want to match integer numbers greater than or equal to <code>100</code> where these numbers can optionally have leading zeros. Will the below code work? If not, what would you use instead?</p>
-<pre class=language-python data-lang=python style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-python data-lang=python><span style=color:#72ab00;>>>> </span><span>numbers </span><span style=color:#72ab00;>= </span><span style=color:#d07711;>'42 314 001 12 00984'
+</span></code></pre></details><br><h2 id=greedy-vs-possessive>Greedy vs Possessive<a aria-label="Anchor link for: greedy-vs-possessive" class=zola-anchor href=#greedy-vs-possessive>🔗</a></h2><p>Suppose you want to match integer numbers greater than or equal to <code>100</code> where these numbers can optionally have leading zeros. Will the below code work? If not, what would you use instead?<pre class=language-python data-lang=python style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-python data-lang=python><span style=color:#72ab00;>>>> </span><span>numbers </span><span style=color:#72ab00;>= </span><span style=color:#d07711;>'42 314 001 12 00984'
 </span><span>
 </span><span style=color:#7f8989;># will this work?
 </span><span style=color:#72ab00;>>>> </span><span>re.</span><span style=color:#5597d6;>findall</span><span>(</span><span style=color:#668f14;>r</span><span style=color:#d07711;>'</span><span style=color:#7c8f4c;>0</span><span style=color:#72ab00;>*</span><span style=color:#aeb52b;>\d</span><span style=color:#72ab00;>{3,}</span><span style=color:#d07711;>'</span><span>, numbers)
-</span></code></pre>
-<details><summary><i style=color:gray>Click to view answer</i></summary>
-<p>No. You can either modify the pattern such that <code>0*</code> won't interfere or use possessive quantifiers to prevent backtracking.</p>
-<pre class=language-python data-lang=python style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-python data-lang=python><span style=color:#72ab00;>>>> </span><span>numbers </span><span style=color:#72ab00;>= </span><span style=color:#d07711;>'42 314 001 12 00984'
+</span></code></pre><details><summary><i style=color:gray>Click to view answer</i></summary> <p>No. You can either modify the pattern such that <code>0*</code> won't interfere or use possessive quantifiers to prevent backtracking.</p> <pre class=language-python data-lang=python style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-python data-lang=python><span style=color:#72ab00;>>>> </span><span>numbers </span><span style=color:#72ab00;>= </span><span style=color:#d07711;>'42 314 001 12 00984'
 </span><span>
 </span><span style=color:#7f8989;># this solution fails because 0* and \d{3,} can both match leading zeros
 </span><span style=color:#7f8989;># and greedy quantifiers will give up characters to help overall RE succeed
@@ -124,25 +91,12 @@
 </span><span style=color:#7f8989;># workaround if possessive isn't supported
 </span><span style=color:#72ab00;>>>> </span><span>re.</span><span style=color:#5597d6;>findall</span><span>(</span><span style=color:#668f14;>r</span><span style=color:#d07711;>'</span><span style=color:#7c8f4c;>0</span><span style=color:#72ab00;>*</span><span style=color:#aeb52b;>[</span><span style=color:#b3933a;>1-9</span><span style=color:#aeb52b;>]\d</span><span style=color:#72ab00;>{2,}</span><span style=color:#d07711;>'</span><span>, numbers)
 </span><span>[</span><span style=color:#d07711;>'314'</span><span>, </span><span style=color:#d07711;>'00984'</span><span>]
-</span></code></pre>
-<p><img alt=info src=/images/info.svg> See my blog post on <a href=https://learnbyexample.github.io/python-regex-possessive-quantifier/>possessive quantifiers and atomic grouping</a> for more examples, details about catastrophic backtracking and so on.</p>
-</details>
-<br>
-<h2 id=optional-flags-argument>Optional flags argument<a aria-label="Anchor link for: optional-flags-argument" class=zola-anchor href=#optional-flags-argument>🔗</a></h2>
-<p>Will the <code>sub()</code> function in the code sample below match case insensitively or not?</p>
-<pre class=language-python data-lang=python style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-python data-lang=python><span style=color:#72ab00;>>>> </span><span>re.</span><span style=color:#5597d6;>findall</span><span>(</span><span style=color:#668f14;>r</span><span style=color:#d07711;>'</span><span style=color:#7c8f4c;>key</span><span style=color:#d07711;>'</span><span>, </span><span style=color:#d07711;>'KEY portkey oKey Keyed'</span><span>, re.I)
+</span></code></pre> <p><img alt=info src=/images/info.svg> See my blog post on <a href=https://learnbyexample.github.io/python-regex-possessive-quantifier/>possessive quantifiers and atomic grouping</a> for more examples, details about catastrophic backtracking and so on.</p></details><br><h2 id=optional-flags-argument>Optional flags argument<a aria-label="Anchor link for: optional-flags-argument" class=zola-anchor href=#optional-flags-argument>🔗</a></h2><p>Will the <code>sub()</code> function in the code sample below match case insensitively or not?<pre class=language-python data-lang=python style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-python data-lang=python><span style=color:#72ab00;>>>> </span><span>re.</span><span style=color:#5597d6;>findall</span><span>(</span><span style=color:#668f14;>r</span><span style=color:#d07711;>'</span><span style=color:#7c8f4c;>key</span><span style=color:#d07711;>'</span><span>, </span><span style=color:#d07711;>'KEY portkey oKey Keyed'</span><span>, re.I)
 </span><span>[</span><span style=color:#d07711;>'KEY'</span><span>, </span><span style=color:#d07711;>'key'</span><span>, </span><span style=color:#d07711;>'Key'</span><span>, </span><span style=color:#d07711;>'Key'</span><span>]
 </span><span>
 </span><span style=color:#7f8989;># what will be the output?
 </span><span style=color:#72ab00;>>>> </span><span>re.</span><span style=color:#5597d6;>sub</span><span>(</span><span style=color:#668f14;>r</span><span style=color:#d07711;>'</span><span style=color:#7c8f4c;>key</span><span style=color:#d07711;>'</span><span>, </span><span style=color:#668f14;>r</span><span style=color:#d07711;>'</span><span style=color:#7c8f4c;>(</span><span style=color:#aeb52b;>\g</span><span style=color:#7c8f4c;>&LT0>)</span><span style=color:#d07711;>'</span><span>, </span><span style=color:#d07711;>'KEY portkey oKey Keyed'</span><span>, re.I)
-</span></code></pre>
-<details><summary><i style=color:gray>Click to view answer</i></summary>
-<p>You should always pass flags as a keyword argument. Using it as positional argument leads to a common mistake between <code>re.findall()</code> and <code>re.sub()</code> functions due to difference in their placement.</p>
-<blockquote>
-<p><code>re.findall(pattern, string, flags=0)</code></p>
-<p><code>re.sub(pattern, repl, string, count=0, flags=0)</code></p>
-</blockquote>
-<pre class=language-python data-lang=python style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-python data-lang=python><span style=color:#72ab00;>>>> +</span><span>re.I
+</span></code></pre><details><summary><i style=color:gray>Click to view answer</i></summary> <p>You should always pass flags as a keyword argument. Using it as positional argument leads to a common mistake between <code>re.findall()</code> and <code>re.sub()</code> functions due to difference in their placement.</p> <blockquote><p><code>re.findall(pattern, string, flags=0)</code><p><code>re.sub(pattern, repl, string, count=0, flags=0)</code></blockquote> <pre class=language-python data-lang=python style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-python data-lang=python><span style=color:#72ab00;>>>> +</span><span>re.I
 </span><span style=color:#b3933a;>2
 </span><span>
 </span><span style=color:#7f8989;># works because flags is the only optional argument for findall
@@ -160,83 +114,9 @@
 </span><span style=color:#7f8989;># alternatively, you can use inline flags to avoid this problem altogether
 </span><span style=color:#72ab00;>>>> </span><span>re.</span><span style=color:#5597d6;>sub</span><span>(</span><span style=color:#668f14;>r</span><span style=color:#d07711;>'</span><span style=color:#72ab00;>(?i)</span><span style=color:#7c8f4c;>key</span><span style=color:#d07711;>'</span><span>, </span><span style=color:#668f14;>r</span><span style=color:#d07711;>'</span><span style=color:#7c8f4c;>(</span><span style=color:#aeb52b;>\g</span><span style=color:#7c8f4c;>&LT0>)</span><span style=color:#d07711;>'</span><span>, </span><span style=color:#d07711;>'KEY portkey oKey Keyed'</span><span>)
 </span><span style=color:#d07711;>'(KEY) port(key) o(Key) (Key)ed'
-</span></code></pre>
-</details>
-<br>
-<h2 id=re-vs-regex-module-flags>re vs regex module flags<a aria-label="Anchor link for: re-vs-regex-module-flags" class=zola-anchor href=#re-vs-regex-module-flags>🔗</a></h2>
-<p>The third-party <code>regex</code> module is handy for advanced features like subexpression calls, skipping matches and so on. Can you use <code>re</code> module flag constants with the <code>regex</code> module?</p>
-<details><summary><i style=color:gray>Click to view answer</i></summary>
-<p>When using the flags argument with the <code>regex</code> module, the constants should also be used from the <code>regex</code> module.</p>
-<pre class=language-python data-lang=python style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-python data-lang=python><span style=color:#72ab00;>>>> +</span><span>re.A
+</span></code></pre></details><br><h2 id=re-vs-regex-module-flags>re vs regex module flags<a aria-label="Anchor link for: re-vs-regex-module-flags" class=zola-anchor href=#re-vs-regex-module-flags>🔗</a></h2><p>The third-party <code>regex</code> module is handy for advanced features like subexpression calls, skipping matches and so on. Can you use <code>re</code> module flag constants with the <code>regex</code> module?<details><summary><i style=color:gray>Click to view answer</i></summary> <p>When using the flags argument with the <code>regex</code> module, the constants should also be used from the <code>regex</code> module.</p> <pre class=language-python data-lang=python style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-python data-lang=python><span style=color:#72ab00;>>>> +</span><span>re.A
 </span><span style=color:#b3933a;>256
 </span><span>
 </span><span style=color:#72ab00;>>>> +</span><span>regex.A
 </span><span style=color:#b3933a;>128
-</span></code></pre>
-<p>Again, you can use inline flags to avoid such issues.</p>
-</details>
-<br>
-<h2 id=understanding-python-re-gex-book>Understanding Python re(gex)? book<a aria-label="Anchor link for: understanding-python-re-gex-book" class=zola-anchor href=#understanding-python-re-gex-book>🔗</a></h2>
-<p>Visit my GitHub repo <a href=https://github.com/learnbyexample/py_regular_expressions>Understanding Python re(gex)?</a> for details about the book I wrote on Python regular expressions. The ebook uses plenty of examples to explain the concepts from the very beginning and step by step introduces more advanced concepts. The book also covers the <a href=https://pypi.org/project/regex/>third-party module regex</a>.</p>
-
-    <div>
-
-    
-    
-
-    <div class=post-footer>
-        
-            
-                <div class=post-tags>
-                    
-                        <a href=https://learnbyexample.github.io/tags/python/>#python</a>
-                    
-                        <a href=https://learnbyexample.github.io/tags/regular-expressions/>#regular-expressions</a>
-                    
-                        <a href=https://learnbyexample.github.io/tags/gotcha/>#gotcha</a>
-                    
-                        <a href=https://learnbyexample.github.io/tags/quiz/>#quiz</a>
-                    
-                </div>
-            
-            
-                <hr color=#e6e6e6>
-                <div class=post-nav>
-                    
-                        <p><a class=previous href=https://learnbyexample.github.io/understanding-python-regex-announcement/>← Understanding Python re(gex)? book announcement</a><br></p>
-                    
-                    
-                        <p><a class=next href=https://learnbyexample.github.io/2022-year-in-perspective/>2022: year in perspective →</a><br></p>
-                    
-
-                    
-                    
-                </div>
-            
-
-            <hr color=#e6e6e6>
-            <p>📰 Use <a href=https://learnbyexample.github.io/atom.xml>this link</a> for the Atom feed. <br> ✅ Follow me on <a href=https://twitter.com/learn_byexample>Twitter</a>, <a href=https://github.com/learnbyexample>GitHub</a> and <a href=https://www.youtube.com/c/learnbyexample42>Youtube</a> for interesting tech nuggets. <br> 📧 Subscribe to <a href=https://learnbyexample.gumroad.com/l/learnbyexample-weekly>learnbyexample weekly</a> for programming resources, tips, tools, free ebooks and more (free newsletter, delivered every Friday).</p>
-            <hr color=#e6e6e6>
-
-        
-
-    </div>
-
-    
-    
-<article>
-
-
-                <div>
-            <main>
-
-            
-            
-        <div>
-
-      
-          <script src=https://learnbyexample.github.io/even.js></script>
-      
-    
-
-
+</span></code></pre> <p>Again, you can use inline flags to avoid such issues.</p></details><br><h2 id=understanding-python-re-gex-book>Understanding Python re(gex)? book<a aria-label="Anchor link for: understanding-python-re-gex-book" class=zola-anchor href=#understanding-python-re-gex-book>🔗</a></h2><p>Visit my GitHub repo <a href=https://github.com/learnbyexample/py_regular_expressions>Understanding Python re(gex)?</a> for details about the book I wrote on Python regular expressions. The ebook uses plenty of examples to explain the concepts from the very beginning and step by step introduces more advanced concepts. The book also covers the <a href=https://pypi.org/project/regex/>third-party module regex</a>.</div><div class=post-footer><div class=post-tags><a href=https://learnbyexample.github.io/tags/python/>#python</a><a href=https://learnbyexample.github.io/tags/regular-expressions/>#regular-expressions</a><a href=https://learnbyexample.github.io/tags/gotcha/>#gotcha</a><a href=https://learnbyexample.github.io/tags/quiz/>#quiz</a></div><hr color=#e6e6e6><div class=post-nav><p><a class=previous href=https://learnbyexample.github.io/understanding-python-regex-announcement/>← Understanding Python re(gex)? book announcement</a><br><p><a class=next href=https://learnbyexample.github.io/2022-year-in-perspective/>2022: year in perspective →</a><br></div><hr color=#e6e6e6><p>📰 Use <a href=https://learnbyexample.github.io/atom.xml>this link</a> for the Atom feed. <br> ✅ Follow me on <a href=https://twitter.com/learn_byexample>Twitter</a>, <a href=https://github.com/learnbyexample>GitHub</a> and <a href=https://www.youtube.com/c/learnbyexample42>Youtube</a> for interesting tech nuggets. <br> 📧 Subscribe to <a href=https://learnbyexample.gumroad.com/l/learnbyexample-weekly>learnbyexample weekly</a> for programming resources, tips, tools, free ebooks and more (free newsletter, delivered every Friday).<hr color=#e6e6e6></div></article></div></main></div><script src=https://learnbyexample.github.io/even.js></script>
