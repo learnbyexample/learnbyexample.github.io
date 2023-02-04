@@ -5,7 +5,7 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2023-02-02T00:00:00+00:00</updated>
+	<updated>2023-02-04T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
 	<entry xml:lang="en">
 		<title>Vim tip 21: working with tabs</title>
@@ -234,7 +234,7 @@
 	<entry xml:lang="en">
 		<title>Python Regex Surprises</title>
 		<published>2023-01-21T00:00:00+00:00</published>
-		<updated>2023-02-02T00:00:00+00:00</updated>
+		<updated>2023-02-04T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/python-regex-surprises/" type="text/html"/>
 		<id>https://learnbyexample.github.io/python-regex-surprises/</id>
 		<content type="html">&lt;p&gt;In this post, you&#x27;ll find a few regular expression examples that might surprise you. Some are Python specific and some are applicable to other regex flavors as well. To make it more interesting, these are framed as questions for you to ponder upon. Answers are hidden by default.&lt;&#x2F;p&gt;
