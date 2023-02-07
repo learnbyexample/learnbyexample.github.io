@@ -65,6 +65,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Tips
 
+* [Python tip 23: map, filter and reduce](https://learnbyexample.github.io/tips/python-tip-23/)
 * [Vim tip 21: working with tabs](https://learnbyexample.github.io/tips/vim-tip-21/)
 * [CLI tip 22: grep options to suppress stdout and stderr](https://learnbyexample.github.io/tips/cli-tip-22/)
 * [Python tip 22: possessive quantifiers](https://learnbyexample.github.io/tips/python-tip-22/)
