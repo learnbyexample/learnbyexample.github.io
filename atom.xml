@@ -6160,7 +6160,7 @@ The substitution works from start of the line for every iteration of the while l
 	<entry xml:lang="en">
 		<title>Search and replace tricks with ripgrep</title>
 		<published>2020-09-16T00:00:00+00:00</published>
-		<updated>2020-11-30T00:00:00+00:00</updated>
+		<updated>2023-02-09T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/substitution-with-ripgrep/" type="text/html"/>
 		<id>https://learnbyexample.github.io/substitution-with-ripgrep/</id>
 		<content type="html">&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;BurntSushi&#x2F;ripgrep&quot;&gt;ripgrep&lt;&#x2F;a&gt; (command name &lt;code&gt;rg&lt;&#x2F;code&gt;) is a &lt;code&gt;grep&lt;&#x2F;code&gt; tool, but supports search and replace as well. &lt;code&gt;rg&lt;&#x2F;code&gt; is far from a like-for-like alternate for &lt;code&gt;sed&lt;&#x2F;code&gt;, but it has nifty features like multiline replacement, fixed string matching, &lt;code&gt;PCRE2&lt;&#x2F;code&gt; support, etc. This post gives an overview of syntax for substitution and highlights some of the cases where &lt;code&gt;rg&lt;&#x2F;code&gt; is a handy replacement for &lt;code&gt;sed&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
@@ -6718,10 +6718,10 @@ no VAL is specified, the key will be given the value true.&lt;&#x2F;p&gt;
 	<entry xml:lang="en">
 		<title>JavaScript regular expressions cheatsheet and examples</title>
 		<published>2020-07-20T00:00:00+00:00</published>
-		<updated>2020-11-12T00:00:00+00:00</updated>
+		<updated>2023-02-09T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/javascript-regexp-cheatsheet/" type="text/html"/>
 		<id>https://learnbyexample.github.io/javascript-regexp-cheatsheet/</id>
-		<content type="html">&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;books&#x2F;js_regexp_example.png&quot; alt=&quot;regexp example&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+		<content type="html">&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;books&#x2F;js_regexp_example.png&quot; alt=&quot;sample railroad diagram of a regexp&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 &lt;p&gt;&lt;em&gt;Above diagram created using &lt;a href=&quot;https:&#x2F;&#x2F;jex.im&#x2F;regulex&quot;&gt;Regulex&lt;&#x2F;a&gt;&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
 &lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;&lt;br&gt;
 &lt;p&gt;This blog post gives an overview of regular expression syntax and features supported by JavaScript. Examples have been tested on Chrome&#x2F;Chromium console (version 81+) and includes features not available in other browsers and platforms. Assume ASCII character set unless otherwise specified. This post is an excerpt from my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;learn_js_regexp&quot;&gt;JavaScript RegExp&lt;&#x2F;a&gt; book.&lt;&#x2F;p&gt;
@@ -7080,9 +7080,9 @@ no VAL is specified, the key will be given the value true.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;debugging-and-visualization-tools&quot;&gt;Debugging and Visualization tools&lt;a class=&quot;zola-anchor&quot; href=&quot;#debugging-and-visualization-tools&quot; aria-label=&quot;Anchor link for: debugging-and-visualization-tools&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
 &lt;p&gt;As your regexp gets complicated, it can get difficult to debug if you run into issues. Building your regexp step by step from scratch and testing against input strings will go a long way in correcting the problem. To aid in such a process, you could use &lt;a href=&quot;https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=20614847&quot;&gt;various online regexp tools&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;regex101.com&#x2F;r&#x2F;HSeO0z&#x2F;1&quot;&gt;regex101&lt;&#x2F;a&gt; is a popular site to test your regexp. You&#x27;ll have first choose the flavor as JavaScript. Then you can add your regexp, input strings, choose flags and an optional replacement string. Matching portions will be highlighted and explanation is offered in separate panes. There&#x27;s also a quick reference and other features like sharing, code generator, quiz, etc.&lt;&#x2F;p&gt;
-&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;books&#x2F;regex101.png&quot; alt=&quot;regex101 example&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;books&#x2F;regex101.png&quot; alt=&quot;regex101 example&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 &lt;p&gt;Another useful tool is &lt;a href=&quot;https:&#x2F;&#x2F;jex.im&#x2F;regulex&#x2F;#!flags=&amp;amp;re=%5Cbpar(en%7Cro)%3Ft%5Cb&quot;&gt;jex: regulex&lt;&#x2F;a&gt; which converts your regexp to a rail road diagram, thus providing a visual aid to understanding the pattern.&lt;&#x2F;p&gt;
-&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;books&#x2F;regulex.png&quot; alt=&quot;regulex example&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;books&#x2F;regulex.png&quot; alt=&quot;regulex example&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 &lt;br&gt;
 &lt;h2 id=&quot;javascript-regexp-book&quot;&gt;JavaScript RegExp book&lt;a class=&quot;zola-anchor&quot; href=&quot;#javascript-regexp-book&quot; aria-label=&quot;Anchor link for: javascript-regexp-book&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
 &lt;p&gt;Visit my repo &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;learn_js_regexp&quot;&gt;learn_js_regexp&lt;&#x2F;a&gt; for details about the book I wrote on JavaScript regular expressions. The ebook uses plenty of examples to explain the concepts from the basics and includes &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;learn_js_regexp&#x2F;blob&#x2F;master&#x2F;Exercises.md&quot;&gt;exercises&lt;&#x2F;a&gt; to test your understanding. The cheatsheet and examples presented in this post are based on contents of this book.&lt;&#x2F;p&gt;
@@ -7484,7 +7484,7 @@ no VAL is specified, the key will be given the value true.&lt;&#x2F;p&gt;
 	<entry xml:lang="en">
 		<title>Example driven book on Python regular expressions</title>
 		<published>2019-08-09T00:00:00+00:00</published>
-		<updated>2021-08-02T00:00:00+00:00</updated>
+		<updated>2023-02-09T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/python-regex-book-version2/" type="text/html"/>
 		<id>https://learnbyexample.github.io/python-regex-book-version2/</id>
 		<content type="html">&lt;p&gt;Hello!&lt;&#x2F;p&gt;
@@ -7524,13 +7524,13 @@ no VAL is specified, the key will be given the value true.&lt;&#x2F;p&gt;
 	<entry xml:lang="en">
 		<title>GNU GREP and RIPGREP</title>
 		<published>2019-05-16T00:00:00+00:00</published>
-		<updated>2021-08-02T00:00:00+00:00</updated>
+		<updated>2023-02-09T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/grep-book-announcement/" type="text/html"/>
 		<id>https://learnbyexample.github.io/grep-book-announcement/</id>
 		<content type="html">&lt;p&gt;Hello!&lt;&#x2F;p&gt;
 &lt;p&gt;I recently self-published my third book, this one is about &lt;strong&gt;GNU GREP and RIPGREP&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
 &lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;books&#x2F;grep.png&quot; alt=&quot;GNU GREP and RIPGREP cover image&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
-&lt;p&gt;Get the e-book using either of these sites:&lt;&#x2F;p&gt;
+&lt;p&gt;Get the ebook using either of these sites:&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;gnugrep_ripgrep&quot;&gt;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;gnugrep_ripgrep&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;leanpub.com&#x2F;gnugrep_ripgrep&quot;&gt;https:&#x2F;&#x2F;leanpub.com&#x2F;gnugrep_ripgrep&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
@@ -7560,7 +7560,7 @@ no VAL is specified, the key will be given the value true.&lt;&#x2F;p&gt;
 	<entry xml:lang="en">
 		<title>Creating GUI Applications with wxPython - book review</title>
 		<published>2019-05-13T00:00:00+00:00</published>
-		<updated>2019-05-13T00:00:00+00:00</updated>
+		<updated>2023-02-09T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/python-gui-book-review/" type="text/html"/>
 		<id>https://learnbyexample.github.io/python-gui-book-review/</id>
 		<content type="html">&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;python_gui&#x2F;GUI_example.jpg&quot; alt=&quot;GUI example&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
@@ -7596,10 +7596,10 @@ no VAL is specified, the key will be given the value true.&lt;&#x2F;p&gt;
 	<entry xml:lang="en">
 		<title>Python for maths</title>
 		<published>2019-03-22T00:00:00+00:00</published>
-		<updated>2019-03-22T00:00:00+00:00</updated>
+		<updated>2023-02-09T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/python-for-maths/" type="text/html"/>
 		<id>https://learnbyexample.github.io/python-for-maths/</id>
-		<content type="html">&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;python_for_maths&#x2F;gravitational_plot.png&quot; alt=&quot;sample plot&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+		<content type="html">&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;python_for_maths&#x2F;gravitational_plot.png&quot; alt=&quot;sample plot&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 &lt;p&gt;The above image was generated using &lt;code&gt;matplotlib&lt;&#x2F;code&gt; courtesy code provided by &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;doingmathwithpython&#x2F;code&#x2F;blob&#x2F;master&#x2F;chapter2&#x2F;Chapter2.ipynb&quot;&gt;Doing Math with Python&lt;&#x2F;a&gt; book.&lt;&#x2F;p&gt;
 &lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;
 &lt;p&gt;Last month, I had an opportunity to conduct beginner Python workshop for maths department students in an arts and science college. It was a great experience and I had my first taste of how Python could be applied for mathematical problems. Presented here are bunch of useful links that I gathered as resources for the students. &lt;&#x2F;p&gt;
@@ -7607,17 +7607,13 @@ no VAL is specified, the key will be given the value true.&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;docs.python.org&#x2F;3&#x2F;&quot;&gt;docs.python&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;docs.scipy.org&#x2F;doc&#x2F;&quot;&gt;numpy and scipy&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;matplotlib.org&#x2F;api&#x2F;index.html&quot;&gt;matplotlib&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;matplotlib.org&#x2F;stable&#x2F;api&#x2F;index.html&quot;&gt;matplotlib&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;br&gt;
 &lt;h1 id=&quot;books-and-courses&quot;&gt;Books and courses&lt;a class=&quot;zola-anchor&quot; href=&quot;#books-and-courses&quot; aria-label=&quot;Anchor link for: books-and-courses&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;doingmathwithpython.github.io&#x2F;&quot;&gt;Doing Math with Python&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;maths-with-python.readthedocs.io&#x2F;en&#x2F;latest&#x2F;&quot;&gt;Maths with Python&lt;&#x2F;a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;media.readthedocs.org&#x2F;pdf&#x2F;maths-with-python&#x2F;latest&#x2F;maths-with-python.pdf&quot;&gt;pdf version&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
-&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;maths-with-python.readthedocs.io&#x2F;en&#x2F;latest&#x2F;&quot;&gt;Maths with Python&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;drvinceknight&#x2F;Python-Mathematics-Handbook&quot;&gt;Doing mathematics with Python&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;jrjohansson&#x2F;scientific-python-lectures&quot;&gt;Lectures on scientific computing with Python&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;greenteapress.com&#x2F;thinkdsp&#x2F;html&#x2F;index.html&quot;&gt;Digital Signal Processing in Python&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
@@ -7627,29 +7623,26 @@ no VAL is specified, the key will be given the value true.&lt;&#x2F;p&gt;
 &lt;br&gt;
 &lt;h1 id=&quot;python-for-beginners&quot;&gt;Python for beginners&lt;a class=&quot;zola-anchor&quot; href=&quot;#python-for-beginners&quot; aria-label=&quot;Anchor link for: python-for-beginners&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h1&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;automatetheboringstuff.com&#x2F;&quot;&gt;automatetheboringstuff&lt;&#x2F;a&gt; &lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;greenteapress.com&#x2F;wp&#x2F;think-python-2e&#x2F;&quot;&gt;Think Python&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;interactivepython.org&#x2F;courselib&#x2F;static&#x2F;thinkcspy&#x2F;index.html&quot;&gt;How to Think Like a Computer Scientist: Interactive Edition&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;gto76.github.io&#x2F;python-cheatsheet&#x2F;&quot;&gt;Comprehensive Python Cheatsheet&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;stackoverflow.com&#x2F;questions&#x2F;101268&#x2F;hidden-features-of-python&quot;&gt;Python tips and features on Stackoverflow&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;stackoverflow.com&#x2F;questions&#x2F;509211&#x2F;explain-pythons-slice-notation&quot;&gt;slice notations and assignments&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;treyhunner.com&#x2F;2015&#x2F;12&#x2F;python-list-comprehensions-now-in-color&#x2F;&quot;&gt;list comprehensions&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;http:&#x2F;&#x2F;www.pythontutor.com&#x2F;visualize.html#mode=edit&quot;&gt;Visualize code execution&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;automatetheboringstuff.com&#x2F;&quot;&gt;Automate the Boring Stuff with Python&lt;&#x2F;a&gt; — teaches you programming concepts and then shows how to automate everyday problems&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;runestone.academy&#x2F;ns&#x2F;books&#x2F;published&#x2F;thinkcspy&#x2F;index.html&quot;&gt;How to Think Like a Computer Scientist: Interactive Edition&lt;&#x2F;a&gt; — inspired by Think Python&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;thepythoncodingbook.com&#x2F;&quot;&gt;The Python Coding Book&lt;&#x2F;a&gt; — friendly, relaxed programming book for beginners&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;gto76.github.io&#x2F;python-cheatsheet&#x2F;&quot;&gt;Comprehensive Python cheatsheet&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.pythontutor.com&#x2F;visualize.html#mode=edit&quot;&gt;Pythontutor: Visualize code execution&lt;&#x2F;a&gt; — also has example codes and ability to share sessions&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;jvns.ca&#x2F;blog&#x2F;2019&#x2F;06&#x2F;23&#x2F;a-few-debugging-resources&#x2F;&quot;&gt;What does debugging a program look like?&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;ryanstutorials.net&#x2F;problem-solving-skills&#x2F;&quot;&gt;Problem solving skills&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See my &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;py_resources&#x2F;&quot;&gt;comprehensive Python learning resources&lt;&#x2F;a&gt; for more.&lt;&#x2F;p&gt;
 &lt;br&gt;
 &lt;h1 id=&quot;numpy-scipy-matplotlib&quot;&gt;numpy, scipy, matplotlib&lt;a class=&quot;zola-anchor&quot; href=&quot;#numpy-scipy-matplotlib&quot; aria-label=&quot;Anchor link for: numpy-scipy-matplotlib&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h1&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.labri.fr&#x2F;perso&#x2F;nrougier&#x2F;from-python-to-numpy&#x2F;&quot;&gt;From Python to Numpy&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;nbviewer.jupyter.org&#x2F;github&#x2F;vlad17&#x2F;np-learn&#x2F;blob&#x2F;master&#x2F;presentation.ipynb&quot;&gt;Advanced Numpy Techniques&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;nbviewer.org&#x2F;github&#x2F;vlad17&#x2F;np-learn&#x2F;blob&#x2F;master&#x2F;presentation.ipynb&quot;&gt;Advanced Numpy Techniques&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;donnemartin&#x2F;data-science-ipython-notebooks&quot;&gt;List of data science Python notebooks&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;scipy-lectures.org&#x2F;&quot;&gt;Scipy Lecture Notes&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;realpython.com&#x2F;python-matplotlib-guide&#x2F;&quot;&gt;matplotlib guide&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;pbpython.com&#x2F;effective-matplotlib.html&quot;&gt;effective matplotlib&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.machinelearningplus.com&#x2F;plots&#x2F;top-50-matplotlib-visualizations-the-master-plots-python&#x2F;&quot;&gt;top 50 matplotlib visualizations&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;juliangaal&#x2F;python-cheat-sheet&#x2F;tree&#x2F;master&#x2F;Matplotlib&quot;&gt;matplotlib cheat sheet&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;rougier&#x2F;scientific-visualization-book&quot;&gt;Scientific Visualization: Python + Matplotlib&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.python-graph-gallery.com&#x2F;&quot;&gt;Collection of charts with Matplotlib, Seaborn, Plotly, etc&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;ipgp.github.io&#x2F;scientific_python_cheat_sheet&#x2F;&quot;&gt;Scientific Python Cheatsheet&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;animatplot.readthedocs.io&#x2F;en&#x2F;stable&#x2F;tutorial&#x2F;getting_started..html&quot;&gt;animatplot&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;animatplot.readthedocs.io&#x2F;en&#x2F;stable&#x2F;tutorial&#x2F;getting_started.html&quot;&gt;animatplot&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;alimanfoo.github.io&#x2F;2017&#x2F;01&#x2F;23&#x2F;go-faster-python.html&quot;&gt;benchmarking, profiling and optimising Python code&lt;&#x2F;a&gt; - includes discussion on numpy&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;br&gt;
@@ -7657,50 +7650,27 @@ no VAL is specified, the key will be given the value true.&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;mathoverflow.net&#x2F;questions&#x2F;308797&#x2F;what-programming-language-should-a-professional-mathematician-know&quot;&gt;What programming language should a professional mathematician know?&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;wiki.python.org&#x2F;moin&#x2F;BeginnersGuide&#x2F;Mathematics&quot;&gt;Python Beginners Guide for Mathematics&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;jupyter&#x2F;jupyter&#x2F;wiki&#x2F;A-gallery-of-interesting-Jupyter-Notebooks#mathematics&quot;&gt;Interesting Jupyter Notebooks on mathematics&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;jupyter&#x2F;jupyter&#x2F;wiki#a-gallery-of-interesting-jupyter-notebooks&quot;&gt;Interesting Jupyter Notebooks on mathematics&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;curated_resources&#x2F;blob&#x2F;master&#x2F;Education.md#maths&quot;&gt;Maths curated resource links&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.sagemath.org&#x2F;&quot;&gt;Sagemath&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.gnu.org&#x2F;software&#x2F;octave&#x2F;&quot;&gt;GNU Octave&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;octave.org&#x2F;&quot;&gt;GNU Octave&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 </content>
 	</entry>
 	<entry xml:lang="en">
 		<title>A short and satisfying bug hunt</title>
 		<published>2019-03-06T00:00:00+00:00</published>
-		<updated>2019-03-06T00:00:00+00:00</updated>
+		<updated>2023-02-09T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/a-short-and-satisfying-bug-hunt/" type="text/html"/>
 		<id>https://learnbyexample.github.io/a-short-and-satisfying-bug-hunt/</id>
 		<content type="html">&lt;h2 id=&quot;the-surprise&quot;&gt;The surprise&lt;a class=&quot;zola-anchor&quot; href=&quot;#the-surprise&quot; aria-label=&quot;Anchor link for: the-surprise&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
-&lt;p&gt;So, a pleasant surprise awaited me last Sunday. As is my usual habit, I opened my
-&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&quot;&gt;github&lt;&#x2F;a&gt; account after breakfast to see if I&#x27;ve
-got any sudden spurt in traffic. And as usual, things were normal. Except for the blue
-notification, which was rare. I hoped it wasn&#x27;t a silly pull request and thankfully
-it was a &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;Command-line-text-processing&#x2F;issues&#x2F;24&quot;&gt;new issue&lt;&#x2F;a&gt;
-that was opened.&lt;&#x2F;p&gt;
+&lt;p&gt;So, a pleasant surprise awaited me last Sunday. As is my usual habit, I opened my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&quot;&gt;github&lt;&#x2F;a&gt; account after breakfast to see if I&#x27;ve got any sudden spurt in traffic. And as usual, things were normal. Except for the blue notification, which was rare. I hoped it wasn&#x27;t a silly pull request and thankfully it was a &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;Command-line-text-processing&#x2F;issues&#x2F;24&quot;&gt;new issue&lt;&#x2F;a&gt; that was opened.&lt;&#x2F;p&gt;
 &lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;
-&lt;p&gt;I gave the issue a cursory glance and wrongly guessed it was probably some line ending issue
-(user was on Windows OS). As someone who has seen plenty of
-bugs in previous job, I wasn&#x27;t ruling out anything though. I first cloned the repo so as to try
-to recreate the working environment without possible interference from my local working copy.
-As the user had provided detailed information while opening the issue, I was able to quickly
-replicate it. Sure enough, I was seeing the same problem. I only wondered why it wasn&#x27;t
-brought to my attention before. Either past users chose not to or things weren&#x27;t interesting
-enough to reach that far in the exercises.&lt;&#x2F;p&gt;
+&lt;p&gt;I gave the issue a cursory glance and wrongly guessed it was probably some line ending issue (user was on Windows OS). As someone who has seen plenty of bugs in previous job, I wasn&#x27;t ruling out anything though. I first cloned the repo so as to try to recreate the working environment without possible interference from my local working copy. As the user had provided detailed information while opening the issue, I was able to quickly replicate it. Sure enough, I was seeing the same problem. I only wondered why it wasn&#x27;t brought to my attention before. Either past users chose not to or things weren&#x27;t interesting enough to reach that far in the exercises.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;creating-minimal-failing-case&quot;&gt;Creating minimal failing case&lt;a class=&quot;zola-anchor&quot; href=&quot;#creating-minimal-failing-case&quot; aria-label=&quot;Anchor link for: creating-minimal-failing-case&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
-&lt;p&gt;As I had written the &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;Command-line-text-processing&#x2F;blob&#x2F;master&#x2F;exercises&#x2F;GNU_grep&#x2F;solve&quot;&gt;solution checker script&lt;&#x2F;a&gt;
-about 2 years back, the script looked alien.
-Right from cloning the repo, I had to fight the urge to improve things. By the time I spotted
-the issue, all such fantasies were thrown out. Replaced by a todo note to &lt;em&gt;someday&lt;&#x2F;em&gt; write automated
-testing script to check that my script is indeed working properly for all the exercises.&lt;&#x2F;p&gt;
-&lt;p&gt;To put it simply, the role of &lt;code&gt;solve&lt;&#x2F;code&gt; script is to check if the previous command
-executed by the user solves the current exercise question. To do so, the script
-gets the previous command from history and compares the output of that command
-and a reference solution present in the exercise directory. Sounds simple right?
-Yeah, I thought so too. I do remember testing few cases before I first published it
-and no one had submitted an issue so far. So, why was it failing now?&lt;&#x2F;p&gt;
-&lt;p&gt;As mentioned before, I thought it could be some weird line ending issue. But that was
-effectively ruled out as it was failing for me as well on Linux. Still, I did check
-for funny characters with &lt;code&gt;cat -A&lt;&#x2F;code&gt;. Nope, no issues there.&lt;&#x2F;p&gt;
+&lt;p&gt;As I had written the &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;Command-line-text-processing&#x2F;blob&#x2F;master&#x2F;exercises&#x2F;GNU_grep&#x2F;solve&quot;&gt;solution checker script&lt;&#x2F;a&gt; about 2 years back, the script looked alien. Right from cloning the repo, I had to fight the urge to improve things. By the time I spotted the issue, all such fantasies were thrown out. Replaced by a todo note to &lt;em&gt;someday&lt;&#x2F;em&gt; write automated testing script to check that my script is indeed working properly for all the exercises.&lt;&#x2F;p&gt;
+&lt;p&gt;To put it simply, the role of &lt;code&gt;solve&lt;&#x2F;code&gt; script is to check if the previous command executed by the user solves the current exercise question. To do so, the script gets the previous command from history and compares the output of that command and a reference solution present in the exercise directory. Sounds simple right? Yeah, I thought so too. I do remember testing few cases before I first published it and no one had submitted an issue so far. So, why was it failing now?&lt;&#x2F;p&gt;
+&lt;p&gt;As mentioned before, I thought it could be some weird line ending issue. But that was effectively ruled out as it was failing for me as well on Linux. Still, I did check for funny characters with &lt;code&gt;cat -A&lt;&#x2F;code&gt;. Nope, no issues there.&lt;&#x2F;p&gt;
 &lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; grep&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt; -o &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;^[^=]*&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt; sample.txt
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;a[2]
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;foo_bar
@@ -7720,10 +7690,7 @@ for funny characters with &lt;code&gt;cat -A&lt;&#x2F;code&gt;. Nope, no issues 
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;b[0][1]
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;---------------------------------------------
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;p&gt;Expected output was same as output for submitted solution. So, why is the script failing?
-I remember passing the script through &lt;a href=&quot;https:&#x2F;&#x2F;www.shellcheck.net&#x2F;&quot;&gt;shellcheck&lt;&#x2F;a&gt; but still
-checked it again. No progress. So, then I started by trying to debug the most likely
-culprit from terminal before trying to debug the whole script. Luckily, that turned out well.&lt;&#x2F;p&gt;
+&lt;p&gt;Expected output was same as output for submitted solution. So, why is the script failing? I remember passing the script through &lt;a href=&quot;https:&#x2F;&#x2F;www.shellcheck.net&#x2F;&quot;&gt;shellcheck&lt;&#x2F;a&gt; but still checked it again. No progress. So, then I started by trying to debug the most likely culprit from terminal before trying to debug the whole script. Luckily, that turned out well.&lt;&#x2F;p&gt;
 &lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; cat sample.txt 
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;a[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;2&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;]&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;sample string&amp;#39;
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;foo_bar&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;4232
@@ -7749,21 +7716,11 @@ culprit from terminal before trying to debug the whole script. Luckily, that tur
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;[&lt;&#x2F;span&gt;&lt;span&gt;[ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;a[5]&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt; == &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;a[5]&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;]&lt;&#x2F;span&gt;&lt;span&gt;] &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;amp;&amp;amp; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;fine&amp;#39;
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;fine
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;p&gt;Having a minimal failing case from terminal was a relief. I tried &lt;code&gt;set -x&lt;&#x2F;code&gt; but
-that didn&#x27;t light a bulb either. Finally, somehow I thought perhaps characters
-in the output was causing the issue and when &lt;code&gt;[]&lt;&#x2F;code&gt; characters were not present,
-the comparison worked as expected.&lt;&#x2F;p&gt;
-&lt;p&gt;I did think quoting could be the issue, but dismissed it at first as both sides
-of comparison had the same command. Then my recent experience from reviewing
-&lt;a href=&quot;https:&#x2F;&#x2F;www.packtpub.com&#x2F;application-development&#x2F;command-line-fundamentals&quot;&gt;Command Line Fundamentals&lt;&#x2F;a&gt;
-book came in handy. I remembered that if quotes aren&#x27;t used on RHS of comparison
-operator, it is treated as &lt;code&gt;glob&lt;&#x2F;code&gt; matching instead of string matching. Phew.&lt;&#x2F;p&gt;
+&lt;p&gt;Having a minimal failing case from terminal was a relief. I tried &lt;code&gt;set -x&lt;&#x2F;code&gt; but that didn&#x27;t light a bulb either. Finally, somehow I thought perhaps characters in the output was causing the issue and when &lt;code&gt;[]&lt;&#x2F;code&gt; characters were not present, the comparison worked as expected.&lt;&#x2F;p&gt;
+&lt;p&gt;I did think quoting could be the issue, but dismissed it at first as both sides of comparison had the same command. Then my recent experience from reviewing &lt;a href=&quot;https:&#x2F;&#x2F;www.packtpub.com&#x2F;application-development&#x2F;command-line-fundamentals&quot;&gt;Command Line Fundamentals&lt;&#x2F;a&gt; book came in handy. I remembered that if quotes aren&#x27;t used on RHS of comparison operator, it is treated as &lt;code&gt;glob&lt;&#x2F;code&gt; matching instead of string matching. Phew.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;tl-dr&quot;&gt;TL;DR&lt;a class=&quot;zola-anchor&quot; href=&quot;#tl-dr&quot; aria-label=&quot;Anchor link for: tl-dr&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
-&lt;p&gt;Always &lt;a href=&quot;https:&#x2F;&#x2F;unix.stackexchange.com&#x2F;questions&#x2F;131766&#x2F;why-does-my-shell-script-choke-on-whitespace-or-other-special-characters&quot;&gt;quote strings in bash&lt;&#x2F;a&gt;
-unless you have a very good reason for not using them.&lt;&#x2F;p&gt;
-&lt;p&gt;After adding double quotes around the command substitution commands, the script
-worked as expected. I thanked the user for opening the issue. And then informed
-the author for cli fundamentals book as well.&lt;&#x2F;p&gt;
+&lt;p&gt;Always &lt;a href=&quot;https:&#x2F;&#x2F;unix.stackexchange.com&#x2F;questions&#x2F;131766&#x2F;why-does-my-shell-script-choke-on-whitespace-or-other-special-characters&quot;&gt;quote strings in bash&lt;&#x2F;a&gt; unless you have a very good reason for not using them.&lt;&#x2F;p&gt;
+&lt;p&gt;After adding double quotes around the command substitution commands, the script worked as expected. I thanked the user for opening the issue. And then informed the author for cli fundamentals book as well.&lt;&#x2F;p&gt;
 </content>
 	</entry>
 </feed>
