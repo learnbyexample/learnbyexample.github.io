@@ -5,8 +5,108 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2023-02-07T00:00:00+00:00</updated>
+	<updated>2023-02-10T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>CLI tip 23: recursive filename matching with globstar</title>
+		<published>2023-02-10T00:00:00+00:00</published>
+		<updated>2023-02-10T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://learnbyexample.github.io/tips/cli-tip-23/" type="text/html"/>
+		<id>https://learnbyexample.github.io/tips/cli-tip-23/</id>
+		<content type="html">&lt;p&gt;Enable the &lt;code&gt;globstar&lt;&#x2F;code&gt; option to recursively match filenames within a specified path. You can use &lt;code&gt;shopt -s globstar&lt;&#x2F;code&gt; and &lt;code&gt;shopt -u globstar&lt;&#x2F;code&gt; to set and unset this option respectively.&lt;&#x2F;p&gt;
+&lt;p&gt;First, create some sample files:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;ruby&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span&gt;$ mkdir test_globstar &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;amp;&amp;amp;&lt;&#x2F;span&gt;&lt;span&gt; cd &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$_
+&lt;&#x2F;span&gt;&lt;span&gt;$ mkdir &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;p&lt;&#x2F;span&gt;&lt;span&gt; todos projects&#x2F;{tictactoe,calculator}
+&lt;&#x2F;span&gt;&lt;span&gt;$ touch ip.txt .hidden.txt report.log hello.py
+&lt;&#x2F;span&gt;&lt;span&gt;$ touch todos&#x2F;{books,outing}.txt
+&lt;&#x2F;span&gt;&lt;span&gt;$ touch projects&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&#x2F;&lt;&#x2F;span&gt;&lt;span&gt;tictactoe&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&#x2F;&lt;&#x2F;span&gt;&lt;span&gt;game.py projects&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&#x2F;&lt;&#x2F;span&gt;&lt;span&gt;calculator&#x2F;{calc.sh,notes.txt}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Here are some examples:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;ruby&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span&gt;$ shopt &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt;s globstar
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;$ ls &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;1 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;**&lt;&#x2F;span&gt;&lt;span&gt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span&gt;.txt
+&lt;&#x2F;span&gt;&lt;span&gt;ip.txt
+&lt;&#x2F;span&gt;&lt;span&gt;projects&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&#x2F;&lt;&#x2F;span&gt;&lt;span&gt;calculator&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&#x2F;&lt;&#x2F;span&gt;&lt;span&gt;notes.txt
+&lt;&#x2F;span&gt;&lt;span&gt;todos&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&#x2F;&lt;&#x2F;span&gt;&lt;span&gt;books.txt
+&lt;&#x2F;span&gt;&lt;span&gt;todos&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&#x2F;&lt;&#x2F;span&gt;&lt;span&gt;outing.txt
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;$ ls &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;1 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;**&lt;&#x2F;span&gt;&lt;span style=&quot;color:#c49a39;&quot;&gt;&#x2F;*&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span&gt;.txt
+&lt;&#x2F;span&gt;&lt;span&gt;projects&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&#x2F;&lt;&#x2F;span&gt;&lt;span&gt;calculator&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&#x2F;&lt;&#x2F;span&gt;&lt;span&gt;notes.txt
+&lt;&#x2F;span&gt;&lt;span&gt;todos&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&#x2F;&lt;&#x2F;span&gt;&lt;span&gt;books.txt
+&lt;&#x2F;span&gt;&lt;span&gt;todos&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&#x2F;&lt;&#x2F;span&gt;&lt;span&gt;outing.txt
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# assumes extglob is enabled
+&lt;&#x2F;span&gt;&lt;span&gt;$ ls &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;1 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;**&lt;&#x2F;span&gt;&lt;span&gt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span&gt;.@(py&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span&gt;sh)
+&lt;&#x2F;span&gt;&lt;span&gt;hello.py
+&lt;&#x2F;span&gt;&lt;span&gt;projects&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&#x2F;&lt;&#x2F;span&gt;&lt;span&gt;calculator&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&#x2F;&lt;&#x2F;span&gt;&lt;span&gt;calc.sh
+&lt;&#x2F;span&gt;&lt;span&gt;projects&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&#x2F;&lt;&#x2F;span&gt;&lt;span&gt;tictactoe&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&#x2F;&lt;&#x2F;span&gt;&lt;span&gt;game.py
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;$ ls &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt;1d &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;**&#x2F;
+&lt;&#x2F;span&gt;&lt;span&gt;projects&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&#x2F;
+&lt;&#x2F;span&gt;&lt;span&gt;projects&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&#x2F;&lt;&#x2F;span&gt;&lt;span&gt;calculator&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&#x2F;
+&lt;&#x2F;span&gt;&lt;span&gt;projects&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&#x2F;&lt;&#x2F;span&gt;&lt;span&gt;tictactoe&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&#x2F;
+&lt;&#x2F;span&gt;&lt;span&gt;todos&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&#x2F;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; If you need to match hidden files as well, enable the &lt;code&gt;dotglob&lt;&#x2F;code&gt; option:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;ruby&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span&gt;$ shopt &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt;s dotglob
+&lt;&#x2F;span&gt;&lt;span&gt;$ ls &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;1 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;**&lt;&#x2F;span&gt;&lt;span&gt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span&gt;.txt
+&lt;&#x2F;span&gt;&lt;span&gt;.hidden.txt
+&lt;&#x2F;span&gt;&lt;span&gt;ip.txt
+&lt;&#x2F;span&gt;&lt;span&gt;projects&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&#x2F;&lt;&#x2F;span&gt;&lt;span&gt;calculator&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&#x2F;&lt;&#x2F;span&gt;&lt;span&gt;notes.txt
+&lt;&#x2F;span&gt;&lt;span&gt;todos&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&#x2F;&lt;&#x2F;span&gt;&lt;span&gt;books.txt
+&lt;&#x2F;span&gt;&lt;span&gt;todos&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&#x2F;&lt;&#x2F;span&gt;&lt;span&gt;outing.txt
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Video demo&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; loading=&quot;lazy&quot; src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;wo5Szdi5VLA&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;&#x2F;iframe&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See also my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;cli-computing&quot;&gt;Computing from the Command Line&lt;&#x2F;a&gt; ebook.&lt;&#x2F;p&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>Vim tip 22: word and WORD motions</title>
+		<published>2023-02-10T00:00:00+00:00</published>
+		<updated>2023-02-10T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://learnbyexample.github.io/tips/vim-tip-22/" type="text/html"/>
+		<id>https://learnbyexample.github.io/tips/vim-tip-22/</id>
+		<content type="html">&lt;p&gt;Definitions from &lt;a href=&quot;https:&#x2F;&#x2F;vimhelp.org&#x2F;motion.txt.html#word&quot;&gt;:h word&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;vimhelp.org&#x2F;motion.txt.html#WORD&quot;&gt;:h WORD&lt;&#x2F;a&gt; are quoted below to explain the difference between &lt;strong&gt;word&lt;&#x2F;strong&gt; and &lt;strong&gt;WORD&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;word&lt;&#x2F;strong&gt; A word consists of a sequence of letters, digits and underscores, or a sequence of other non-blank characters, separated with white space (spaces, tabs, &lt;code&gt;&amp;lt;EOL&amp;gt;&lt;&#x2F;code&gt;). This can be changed with the &lt;code&gt;iskeyword&lt;&#x2F;code&gt; option. An empty line is also considered to be a word.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;WORD&lt;&#x2F;strong&gt; A WORD consists of a sequence of non-blank characters, separated with white space. An empty line is also considered to be a WORD.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;word based motions:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;kbd&gt;w&lt;&#x2F;kbd&gt; move to the start of the next word&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;b&lt;&#x2F;kbd&gt; move to the beginning of the current word if the cursor is &lt;em&gt;not&lt;&#x2F;em&gt; at the start of word. Otherwise, move to the beginning of the previous word&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;e&lt;&#x2F;kbd&gt; move to the end of the current word if cursor is &lt;em&gt;not&lt;&#x2F;em&gt; at the end of word. Otherwise, move to the end of next word&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;ge&lt;&#x2F;kbd&gt; move to the end of the previous word&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;3w&lt;&#x2F;kbd&gt; move 3 words forward
+&lt;ul&gt;
+&lt;li&gt;Similarly, a number can be prefixed for all the other commands discussed here&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;WORD based motions:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;kbd&gt;W&lt;&#x2F;kbd&gt; move to the start of the next WORD
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;192.1.168.43;hello&lt;&#x2F;code&gt; is considered as a single WORD, but has multiple words&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;B&lt;&#x2F;kbd&gt; move to the beginning of the current WORD if the cursor is &lt;em&gt;not&lt;&#x2F;em&gt; at the start of WORD. Otherwise, move to the beginning of the previous WORD&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;E&lt;&#x2F;kbd&gt; move to the end of the current WORD if cursor is &lt;em&gt;not&lt;&#x2F;em&gt; at the end of WORD. Otherwise, move to the end of next WORD&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;gE&lt;&#x2F;kbd&gt; move to the end of the previous WORD&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; All of these motions will work across lines. For example, if the cursor is on the last word of a line, pressing &lt;kbd&gt;w&lt;&#x2F;kbd&gt; will move to the start of the first word in the next line.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Video demo&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; loading=&quot;lazy&quot; src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;-1MKL82cbw8&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;&#x2F;iframe&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See also my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;vim_reference&quot;&gt;Vim Reference Guide&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;curated_resources&#x2F;vim.html&quot;&gt;curated list of resources for Vim&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>Python tip 23: map, filter and reduce</title>
 		<published>2023-02-07T00:00:00+00:00</published>
