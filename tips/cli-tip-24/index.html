@@ -1,0 +1,45 @@
+<!doctype html><html lang=en><head><meta content="IE=edge" http-equiv=X-UA-Compatible><meta content="text/html; charset=utf-8" http-equiv=content-type><meta content="width=device-width,initial-scale=1.0,maximum-scale=1" name=viewport><title>CLI tip 24: inserting file contents one line at a time</title><link href=https://learnbyexample.github.io/atom.xml rel=alternate title=RSS type=application/atom+xml><script src=https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js></script><link href=https://learnbyexample.github.io/site.css rel=stylesheet><meta content=learnbyexample property=og:title><meta content=website property=og:type><meta content="Learn Python, Regex, Linux, Scripting, Vim, Ebooks, Self-Publishing and Interesting Tech Nuggets." property=og:description><meta content=https://learnbyexample.github.io property=og:url><meta content=https://learnbyexample.github.io/images/learnbyexample.png property=og:image><meta content=1280 property=og:image:width><meta content=640 property=og:image:height><meta content=summary_large_image property=twitter:card><meta content=@learn_byexample property=twitter:site><link href=https://learnbyexample.github.io/favicon.svg rel=icon><link rel="shortcut icon" href=https://learnbyexample.github.io/favicon.png><body><div class=container><div class=mobile-navbar id=mobile-navbar><div class=mobile-header-logo><a class=logo href=/>learnbyexample</a></div><div class="mobile-navbar-icon icon-out"><span></span><span></span><span></span></div></div><nav class="mobile-menu slideout-menu slideout-menu-left" id=mobile-menu><ul class=mobile-menu-list><li class=mobile-menu-item><a href=https://learnbyexample.github.io/books> Books </a><li class=mobile-menu-item><a href=https://learnbyexample.github.io/mini> Mini </a><li class=mobile-menu-item><a href=https://learnbyexample.github.io/tips> Tips </a><li class=mobile-menu-item><a href=https://learnbyexample.github.io/tags> Tags </a><li class=mobile-menu-item><a href=https://learnbyexample.github.io/about> About </a></ul></nav><header id=header><div class=logo><a href=https://learnbyexample.github.io>learnbyexample</a></div><nav class=menu><ul><li><a href=https://learnbyexample.github.io/books> Books </a><li><a href=https://learnbyexample.github.io/mini> Mini </a><li><a href=https://learnbyexample.github.io/tips> Tips </a><li><a href=https://learnbyexample.github.io/tags> Tags </a><li><a href=https://learnbyexample.github.io/about> About </a></ul></nav></header><main><div class=content id=mobile-panel><article class=post><header class=post__header><h1 class=post__title><a href=https://learnbyexample.github.io/tips/cli-tip-24/>CLI tip 24: inserting file contents one line at a time</a></h1><div class=post__meta><span class=post__time>2023-03-07</span></div></header><div class=post-content><p>The <code>R</code> command provided by <code>GNU sed</code> is very similar to <code>r</code> with respect to most of the rules seen in an earlier <a href=https://learnbyexample.github.io/tips/cli-tip-18/>tip</a>. But instead of reading entire file contents, <code>R</code> will read one line at a time from the source file when the given address matches. If entire file has already been read and another address matches, <code>sed</code> will proceed as if the line was empty.<p>Here's an example:<pre class=language-ruby data-lang=ruby style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-ruby data-lang=ruby><span>$ cat ip.txt
+</span><span>    </span><span style=color:#72ab00;>*</span><span> sky
+</span><span>    </span><span style=color:#72ab00;>*</span><span> apple
+</span><span>$ cat fav_colors.txt
+</span><span>deep red
+</span><span>yellow
+</span><span>reddish
+</span><span>brown
+</span><span>
+</span><span style=color:#7f8989;># add a line from 'ip.txt'
+</span><span style=color:#7f8989;># whenever a line from 'fav_colors.txt' contains 'red'
+</span><span>$ sed </span><span style=color:#d07711;>'/red/R ip.txt'</span><span> fav_colors.txt
+</span><span>deep red
+</span><span>    </span><span style=color:#72ab00;>*</span><span> sky
+</span><span>yellow
+</span><span>reddish
+</span><span>    </span><span style=color:#72ab00;>*</span><span> apple
+</span><span>brown
+</span></code></pre><p>You can combine with other <code>sed</code> commands to solve various kind of problems. For example, to replace the matching lines:<pre class=language-ruby data-lang=ruby style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-ruby data-lang=ruby><span style=color:#7f8989;># empty // will refer to the previously used regex, /red/ in this case
+</span><span>$ sed </span><span style=color:#72ab00;>-</span><span>e </span><span style=color:#d07711;>'/red/R ip.txt' </span><span style=color:#72ab00;>-</span><span>e </span><span style=color:#d07711;>'//d'</span><span> fav_colors.txt
+</span><span>    </span><span style=color:#72ab00;>*</span><span> sky
+</span><span>yellow
+</span><span>    </span><span style=color:#72ab00;>*</span><span> apple
+</span><span>brown
+</span></code></pre><p>And, here's how you can interleave contents of two files:<pre class=language-ruby data-lang=ruby style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-ruby data-lang=ruby><span style=color:#7f8989;># /dev/stdin will get data from stdin (output of 'seq 4' here)
+</span><span style=color:#7f8989;># same as: seq 4 | paste -d'\n' fav_colors.txt -
+</span><span>$ seq </span><span style=color:#b3933a;>4 </span><span style=color:#72ab00;>|</span><span> sed </span><span style=color:#d07711;>'R /dev/stdin'</span><span> fav_colors.txt
+</span><span>deep red
+</span><span style=color:#b3933a;>1
+</span><span>yellow
+</span><span style=color:#b3933a;>2
+</span><span>reddish
+</span><span style=color:#b3933a;>3
+</span><span>brown
+</span><span style=color:#b3933a;>4
+</span><span>
+</span><span style=color:#7f8989;># using 'paste' here will add a newline when stdin runs out of data
+</span><span>$ seq </span><span style=color:#b3933a;>2 </span><span style=color:#72ab00;>|</span><span> sed </span><span style=color:#d07711;>'R /dev/stdin'</span><span> fav_colors.txt
+</span><span>deep red
+</span><span style=color:#b3933a;>1
+</span><span>yellow
+</span><span style=color:#b3933a;>2
+</span><span>reddish
+</span><span>brown
+</span></code></pre><p><strong>Video demo</strong>:<p align=center><iframe allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" title="YouTube video player" allowfullscreen frameborder=0 height=315 loading=lazy src=https://www.youtube.com/embed/W7LvN7X6Rfg width=560></iframe></p><br><p><img alt=info src=/images/info.svg> See also my <a href=https://github.com/learnbyexample/learn_gnused>GNU sed</a> ebook.</div><div class=post-footer><div class=post-tags><a href=https://learnbyexample.github.io/tags/linux/>#linux</a><a href=https://learnbyexample.github.io/tags/command-line/>#command-line</a><a href=https://learnbyexample.github.io/tags/tip/>#tip</a></div><hr color=#e6e6e6><div class=post-nav><p><a class=next href=https://learnbyexample.github.io/tips/cli-tip-23/>CLI tip 23: recursive filename matching with globstar →</a><br></div><hr color=#e6e6e6><p>📰 Use <a href=https://learnbyexample.github.io/atom.xml>this link</a> for the Atom feed. <br> ✅ Follow me on <a href=https://twitter.com/learn_byexample>Twitter</a>, <a href=https://github.com/learnbyexample>GitHub</a> and <a href=https://www.youtube.com/c/learnbyexample42>Youtube</a> for interesting tech nuggets. <br> 📧 Subscribe to <a href=https://learnbyexample.gumroad.com/l/learnbyexample-weekly>learnbyexample weekly</a> for programming resources, tips, tools, free ebooks and more (free newsletter, delivered every Friday).<hr color=#e6e6e6></div></article></div></main></div><script src=https://learnbyexample.github.io/even.js></script>

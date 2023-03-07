@@ -5,8 +5,71 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2023-02-28T00:00:00+00:00</updated>
+	<updated>2023-03-07T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>CLI tip 24: inserting file contents one line at a time</title>
+		<published>2023-03-07T00:00:00+00:00</published>
+		<updated>2023-03-07T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://learnbyexample.github.io/tips/cli-tip-24/" type="text/html"/>
+		<id>https://learnbyexample.github.io/tips/cli-tip-24/</id>
+		<content type="html">&lt;p&gt;The &lt;code&gt;R&lt;&#x2F;code&gt; command provided by &lt;code&gt;GNU sed&lt;&#x2F;code&gt; is very similar to &lt;code&gt;r&lt;&#x2F;code&gt; with respect to most of the rules seen in an earlier &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips&#x2F;cli-tip-18&#x2F;&quot;&gt;tip&lt;&#x2F;a&gt;. But instead of reading entire file contents, &lt;code&gt;R&lt;&#x2F;code&gt; will read one line at a time from the source file when the given address matches. If entire file has already been read and another address matches, &lt;code&gt;sed&lt;&#x2F;code&gt; will proceed as if the line was empty.&lt;&#x2F;p&gt;
+&lt;p&gt;Here&#x27;s an example:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;ruby&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span&gt;$ cat ip.txt
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span&gt; sky
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span&gt; apple
+&lt;&#x2F;span&gt;&lt;span&gt;$ cat fav_colors.txt
+&lt;&#x2F;span&gt;&lt;span&gt;deep red
+&lt;&#x2F;span&gt;&lt;span&gt;yellow
+&lt;&#x2F;span&gt;&lt;span&gt;reddish
+&lt;&#x2F;span&gt;&lt;span&gt;brown
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# add a line from &amp;#39;ip.txt&amp;#39;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# whenever a line from &amp;#39;fav_colors.txt&amp;#39; contains &amp;#39;red&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;$ sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&#x2F;red&#x2F;R ip.txt&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt; fav_colors.txt
+&lt;&#x2F;span&gt;&lt;span&gt;deep red
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span&gt; sky
+&lt;&#x2F;span&gt;&lt;span&gt;yellow
+&lt;&#x2F;span&gt;&lt;span&gt;reddish
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span&gt; apple
+&lt;&#x2F;span&gt;&lt;span&gt;brown
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;You can combine with other &lt;code&gt;sed&lt;&#x2F;code&gt; commands to solve various kind of problems. For example, to replace the matching lines:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;ruby&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# empty &#x2F;&#x2F; will refer to the previously used regex, &#x2F;red&#x2F; in this case
+&lt;&#x2F;span&gt;&lt;span&gt;$ sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt;e &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&#x2F;red&#x2F;R ip.txt&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt;e &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&#x2F;&#x2F;d&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt; fav_colors.txt
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span&gt; sky
+&lt;&#x2F;span&gt;&lt;span&gt;yellow
+&lt;&#x2F;span&gt;&lt;span&gt;    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span&gt; apple
+&lt;&#x2F;span&gt;&lt;span&gt;brown
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;And, here&#x27;s how you can interleave contents of two files:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;ruby&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# &#x2F;dev&#x2F;stdin will get data from stdin (output of &amp;#39;seq 4&amp;#39; here)
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# same as: seq 4 | paste -d&amp;#39;\n&amp;#39; fav_colors.txt -
+&lt;&#x2F;span&gt;&lt;span&gt;$ seq &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;4 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span&gt; sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;R &#x2F;dev&#x2F;stdin&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt; fav_colors.txt
+&lt;&#x2F;span&gt;&lt;span&gt;deep red
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;1
+&lt;&#x2F;span&gt;&lt;span&gt;yellow
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;2
+&lt;&#x2F;span&gt;&lt;span&gt;reddish
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;3
+&lt;&#x2F;span&gt;&lt;span&gt;brown
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;4
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# using &amp;#39;paste&amp;#39; here will add a newline when stdin runs out of data
+&lt;&#x2F;span&gt;&lt;span&gt;$ seq &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;2 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span&gt; sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;R &#x2F;dev&#x2F;stdin&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt; fav_colors.txt
+&lt;&#x2F;span&gt;&lt;span&gt;deep red
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;1
+&lt;&#x2F;span&gt;&lt;span&gt;yellow
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;2
+&lt;&#x2F;span&gt;&lt;span&gt;reddish
+&lt;&#x2F;span&gt;&lt;span&gt;brown
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;&lt;strong&gt;Video demo&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; loading=&quot;lazy&quot; src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;W7LvN7X6Rfg&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;&#x2F;iframe&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See also my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;learn_gnused&quot;&gt;GNU sed&lt;&#x2F;a&gt; ebook.&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>Python tip 24: modifying list using insert and slice</title>
 		<published>2023-02-28T00:00:00+00:00</published>

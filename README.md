@@ -65,6 +65,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Tips
 
+* [CLI tip 24: inserting file contents one line at a time](https://learnbyexample.github.io/tips/cli-tip-24/)
 * [Python tip 24: modifying list using insert and slice](https://learnbyexample.github.io/tips/python-tip-24/)
 * [Vim tip 22: word and WORD motions](https://learnbyexample.github.io/tips/vim-tip-22/)
 * [CLI tip 23: recursive filename matching with globstar](https://learnbyexample.github.io/tips/cli-tip-23/)
