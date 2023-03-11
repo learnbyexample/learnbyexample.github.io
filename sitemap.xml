@@ -187,6 +187,10 @@
         <lastmod>2023-02-10</lastmod>
     </url>
     <url>
+        <loc>https://learnbyexample.github.io/python-regex-playground/</loc>
+        <lastmod>2023-03-11</lastmod>
+    </url>
+    <url>
         <loc>https://learnbyexample.github.io/python-regex-possessive-quantifier/</loc>
         <lastmod>2023-01-19</lastmod>
     </url>
@@ -337,6 +341,9 @@
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tags/perl/</loc>
+    </url>
+    <url>
+        <loc>https://learnbyexample.github.io/tags/playground/</loc>
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tags/possessive-quantifiers/</loc>
