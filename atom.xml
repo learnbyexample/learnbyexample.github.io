@@ -5,8 +5,52 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2023-03-11T00:00:00+00:00</updated>
+	<updated>2023-03-14T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Vim tip 23: editing lines filtered by a pattern</title>
+		<published>2023-03-14T00:00:00+00:00</published>
+		<updated>2023-03-14T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://learnbyexample.github.io/tips/vim-tip-23/" type="text/html"/>
+		<id>https://learnbyexample.github.io/tips/vim-tip-23/</id>
+		<content type="html">&lt;p&gt;The syntax for &lt;code&gt;g&lt;&#x2F;code&gt; command (short for &lt;code&gt;global&lt;&#x2F;code&gt;) is shown below:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot;&gt;&lt;code&gt;&lt;span&gt;:[range]g[lobal]&#x2F;{pattern}&#x2F;[cmd]
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;This command is used to edit lines that are first filtered based on a &lt;code&gt;searchpattern&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;kbd&gt;:g&#x2F;call&#x2F;d&lt;&#x2F;kbd&gt; delete all lines containing &lt;code&gt;call&lt;&#x2F;code&gt;
+&lt;ul&gt;
+&lt;li&gt;similar to the &lt;code&gt;d&lt;&#x2F;code&gt; Normal mode command, the deleted contents will be saved to the default &lt;code&gt;&amp;quot;&lt;&#x2F;code&gt; register&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;:g&#x2F;call&#x2F;d a&lt;&#x2F;kbd&gt; in addition to the default register, the deleted content will also be stored in the &lt;code&gt;&amp;quot;a&lt;&#x2F;code&gt; register&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;:g&#x2F;call&#x2F;d _&lt;&#x2F;kbd&gt; deleted content won&#x27;t be saved anywhere, since it uses the black hole register&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;:g&#x2F;^#&#x2F;t0&lt;&#x2F;kbd&gt; copy all lines starting with &lt;code&gt;#&lt;&#x2F;code&gt; to the start of the file&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;:1,5 g&#x2F;call&#x2F;d&lt;&#x2F;kbd&gt; delete all lines containing &lt;code&gt;call&lt;&#x2F;code&gt; only for the first five lines&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;:g&#x2F;cat&#x2F; s&#x2F;animal&#x2F;mammal&#x2F;g&lt;&#x2F;kbd&gt; replace &lt;code&gt;animal&lt;&#x2F;code&gt; with &lt;code&gt;mammal&lt;&#x2F;code&gt; only for the lines containing &lt;code&gt;cat&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;:.,.+20 g&#x2F;^#&#x2F; normal &amp;gt;&amp;gt;&lt;&#x2F;kbd&gt; indent the current line and the next &lt;code&gt;20&lt;&#x2F;code&gt; lines only if the line starts with &lt;code&gt;#&lt;&#x2F;code&gt;
+&lt;ul&gt;
+&lt;li&gt;Note the use of &lt;code&gt;normal&lt;&#x2F;code&gt; when you need to use Normal mode commands on the filtered lines&lt;&#x2F;li&gt;
+&lt;li&gt;Use &lt;code&gt;normal!&lt;&#x2F;code&gt; if you don&#x27;t want user defined mappings to be considered&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;You can use &lt;code&gt;g!&lt;&#x2F;code&gt; or &lt;code&gt;v&lt;&#x2F;code&gt; to act on lines &lt;em&gt;not&lt;&#x2F;em&gt; satisfying the filtering condition.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;kbd&gt;:v&#x2F;jump&#x2F;d&lt;&#x2F;kbd&gt; delete all lines &lt;em&gt;not&lt;&#x2F;em&gt; containing &lt;code&gt;jump&lt;&#x2F;code&gt;
+&lt;ul&gt;
+&lt;li&gt;same as &lt;kbd&gt;:g!&#x2F;jump&#x2F;d&lt;&#x2F;kbd&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; In addition to the &lt;code&gt;&#x2F;&lt;&#x2F;code&gt; delimiter, you can also use any single byte character other than alphabets, &lt;code&gt;\&lt;&#x2F;code&gt;, &lt;code&gt;&amp;quot;&lt;&#x2F;code&gt; or &lt;code&gt;|&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See &lt;a href=&quot;https:&#x2F;&#x2F;vimhelp.org&#x2F;repeat.txt.html#%3Aglobal&quot;&gt;:h :g&lt;&#x2F;a&gt; for more details.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Video demo&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; loading=&quot;lazy&quot; src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;uQKaAOKgr2o&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;&#x2F;iframe&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See also my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;vim_reference&quot;&gt;Vim Reference Guide&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;curated_resources&#x2F;vim.html&quot;&gt;curated list of resources for Vim&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>Python Regular Expressions Playground</title>
 		<published>2023-03-11T00:00:00+00:00</published>

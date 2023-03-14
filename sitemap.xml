@@ -420,7 +420,7 @@
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tips/</loc>
-        <lastmod>2023-03-07</lastmod>
+        <lastmod>2023-03-14</lastmod>
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tips/cli-tip-1/</loc>
@@ -673,6 +673,10 @@
     <url>
         <loc>https://learnbyexample.github.io/tips/vim-tip-22/</loc>
         <lastmod>2023-02-10</lastmod>
+    </url>
+    <url>
+        <loc>https://learnbyexample.github.io/tips/vim-tip-23/</loc>
+        <lastmod>2023-03-14</lastmod>
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tips/vim-tip-3/</loc>
