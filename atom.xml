@@ -5,7 +5,7 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2023-03-14T00:00:00+00:00</updated>
+	<updated>2023-03-15T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
 	<entry xml:lang="en">
 		<title>Vim tip 23: editing lines filtered by a pattern</title>
@@ -1171,7 +1171,7 @@ Specifying a greater than &lt;code&gt;0&lt;&#x2F;code&gt; start index when using
 	<entry xml:lang="en">
 		<title>Interactive Linux CLI Text Processing Exercises</title>
 		<published>2022-12-09T00:00:00+00:00</published>
-		<updated>2022-12-09T00:00:00+00:00</updated>
+		<updated>2023-03-15T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/interactive-linux-cli-exercises/" type="text/html"/>
 		<id>https://learnbyexample.github.io/interactive-linux-cli-exercises/</id>
 		<content type="html">&lt;p&gt;Having an interactive program that automatically loads questions and checks the solution is wonderful to have while learning a topic. This &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;TUI-apps&#x2F;tree&#x2F;main&#x2F;CLI-Exercises&quot;&gt;TUI app&lt;&#x2F;a&gt; has 40 beginner to intermediate level exercises for Linux CLI text processing tools.&lt;&#x2F;p&gt;
@@ -1179,16 +1179,22 @@ Specifying a greater than &lt;code&gt;0&lt;&#x2F;code&gt; start index when using
 &lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;&lt;br&gt;
 &lt;h2 id=&quot;installation&quot;&gt;Installation&lt;a class=&quot;zola-anchor&quot; href=&quot;#installation&quot; aria-label=&quot;Anchor link for: installation&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
 &lt;p&gt;Last month, I started learning a Python TUI framework called &lt;a href=&quot;https:&#x2F;&#x2F;textual.textualize.io&#x2F;&quot;&gt;Textual&lt;&#x2F;a&gt;. After working on a &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;TUI-apps&#x2F;tree&#x2F;main&#x2F;SquareTicTacToe&quot;&gt;4x4 board game&lt;&#x2F;a&gt;, I made an interactive app to help you test your CLI text processing skills with 40 beginner to intermediate level exercises. The app is fairly basic in terms of features — only single input file, so no stdin data, multiple files, etc.&lt;&#x2F;p&gt;
-&lt;p&gt;You&#x27;ll need Python for this (I used 3.8, it should work for more recent versions too).&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; python3&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt; -m&lt;&#x2F;span&gt;&lt;span&gt; venv textual_apps
+&lt;p&gt;You&#x27;ll need Python for this (I used 3.8, it should work for more recent versions too). This app is available on PyPI as &lt;a href=&quot;https:&#x2F;&#x2F;pypi.org&#x2F;project&#x2F;cliexercises&#x2F;&quot;&gt;cliexercises&lt;&#x2F;a&gt;. Example installation instructions are shown below, adjust them based on your preferences and OS.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# virtual environment
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; python3&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt; -m&lt;&#x2F;span&gt;&lt;span&gt; venv textual_apps
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; cd textual_apps
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; source bin&#x2F;activate
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; pip install textual==0.5.0
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; pip install cliexercises
 &lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; git clone&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt; --depth&lt;&#x2F;span&gt;&lt;span&gt; 1 https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;TUI-apps.git
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; cd TUI-apps&#x2F;CLI-Exercises
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; python cli_exercises.py
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# launch the app
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; cliexercises
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;To run the app without having to enter the virtual environment again, add this alias to &lt;code&gt;.bashrc&lt;&#x2F;code&gt; (or equivalent):&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# you&amp;#39;ll have to change the path
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;alias &lt;&#x2F;span&gt;&lt;span style=&quot;color:#c23f31;&quot;&gt;cliexercises&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&#x2F;path&#x2F;to&#x2F;textual_apps&#x2F;bin&#x2F;cliexercises&amp;#39;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;As an alternative, you can install &lt;code&gt;textual&lt;&#x2F;code&gt; (see &lt;a href=&quot;https:&#x2F;&#x2F;textual.textualize.io&#x2F;getting_started&#x2F;&quot;&gt;Textual documentation&lt;&#x2F;a&gt; for more details), clone my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;TUI-apps&quot;&gt;TUI-apps repository&lt;&#x2F;a&gt; and run the &lt;code&gt;cli_exercises.py&lt;&#x2F;code&gt; file.&lt;&#x2F;p&gt;
+&lt;p&gt;Adjust the terminal dimensions for the widgets to appear properly, for example 84x25 (characters x lines).&lt;&#x2F;p&gt;
 &lt;br&gt;
 &lt;h2 id=&quot;video-demo&quot;&gt;Video demo&lt;a class=&quot;zola-anchor&quot; href=&quot;#video-demo&quot; aria-label=&quot;Anchor link for: video-demo&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
 &lt;p align=&quot;center&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; loading=&quot;lazy&quot; src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;0ggfQzXeYJg&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;&#x2F;iframe&gt;&lt;&#x2F;p&gt;
