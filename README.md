@@ -6,6 +6,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Posts
 
+* [100+ Interactive Python Regex Exercises](https://learnbyexample.github.io/interactive-python-regex-exercises/)
 * [Python Regular Expressions Playground](https://learnbyexample.github.io/python-regex-playground/)
 * [Understanding Python re(gex)? book announcement](https://learnbyexample.github.io/understanding-python-regex-announcement/)
 * [Python Regex Surprises](https://learnbyexample.github.io/python-regex-surprises/)
