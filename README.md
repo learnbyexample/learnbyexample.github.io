@@ -67,6 +67,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Tips
 
+* [Python tip 25: split and partition string methods](https://learnbyexample.github.io/tips/python-tip-25/)
 * [Vim tip 23: editing lines filtered by a pattern](https://learnbyexample.github.io/tips/vim-tip-23/)
 * [CLI tip 24: inserting file contents one line at a time](https://learnbyexample.github.io/tips/cli-tip-24/)
 * [Python tip 24: modifying list using insert and slice](https://learnbyexample.github.io/tips/python-tip-24/)

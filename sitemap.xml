@@ -68,7 +68,7 @@
     </url>
     <url>
         <loc>https://learnbyexample.github.io/interactive-python-regex-exercises/</loc>
-        <lastmod>2023-03-20</lastmod>
+        <lastmod>2023-03-21</lastmod>
     </url>
     <url>
         <loc>https://learnbyexample.github.io/javascript-regexp-cheatsheet/</loc>
@@ -424,7 +424,7 @@
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tips/</loc>
-        <lastmod>2023-03-14</lastmod>
+        <lastmod>2023-03-21</lastmod>
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tips/cli-tip-1/</loc>
@@ -589,6 +589,10 @@
     <url>
         <loc>https://learnbyexample.github.io/tips/python-tip-24/</loc>
         <lastmod>2023-02-28</lastmod>
+    </url>
+    <url>
+        <loc>https://learnbyexample.github.io/tips/python-tip-25/</loc>
+        <lastmod>2023-03-21</lastmod>
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tips/python-tip-3/</loc>
