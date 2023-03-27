@@ -5,7 +5,7 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2023-03-21T00:00:00+00:00</updated>
+	<updated>2023-03-27T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
 	<entry xml:lang="en">
 		<title>Python tip 25: split and partition string methods</title>
@@ -63,7 +63,7 @@
 	<entry xml:lang="en">
 		<title>100+ Interactive Python Regex Exercises</title>
 		<published>2023-03-20T00:00:00+00:00</published>
-		<updated>2023-03-21T00:00:00+00:00</updated>
+		<updated>2023-03-27T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/interactive-python-regex-exercises/" type="text/html"/>
 		<id>https://learnbyexample.github.io/interactive-python-regex-exercises/</id>
 		<content type="html">&lt;p&gt;Having an interactive program that automatically loads questions and checks the solution is wonderful to have while learning a topic. This &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;TUI-apps&#x2F;blob&#x2F;main&#x2F;PyRegexExercises&quot;&gt;TUI app&lt;&#x2F;a&gt; has beginner to advanced level exercises for Python regular expressions. There are more than 100 exercises covering both the builtin &lt;code&gt;re&lt;&#x2F;code&gt; and third-party &lt;code&gt;regex&lt;&#x2F;code&gt; module.&lt;&#x2F;p&gt;
@@ -80,6 +80,9 @@
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# launch the app
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; regexexercises
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; If you are on Windows, using the &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Windows_Terminal&quot;&gt;Windows Terminal&lt;&#x2F;a&gt; is recommended. See &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;TUI-apps&#x2F;issues&#x2F;3#issuecomment-1481488042&quot;&gt;this issue&lt;&#x2F;a&gt; for Virtual Environment commands and other details.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
 &lt;p&gt;To run the app without having to enter the virtual environment again, add this alias to &lt;code&gt;.bashrc&lt;&#x2F;code&gt; (or equivalent):&lt;&#x2F;p&gt;
 &lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# you&amp;#39;ll have to change the path
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;alias &lt;&#x2F;span&gt;&lt;span style=&quot;color:#c23f31;&quot;&gt;regexexercises&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&#x2F;path&#x2F;to&#x2F;textual_apps&#x2F;bin&#x2F;regexexercises&amp;#39;
