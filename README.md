@@ -67,6 +67,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Tips
 
+* [Vim tip 24: movement commands within the current file](https://learnbyexample.github.io/tips/vim-tip-24/)
 * [CLI tip 25: get file properties using the stat command](https://learnbyexample.github.io/tips/cli-tip-25/)
 * [Python tip 25: split and partition string methods](https://learnbyexample.github.io/tips/python-tip-25/)
 * [Vim tip 23: editing lines filtered by a pattern](https://learnbyexample.github.io/tips/vim-tip-23/)
