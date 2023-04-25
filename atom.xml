@@ -5,8 +5,41 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2023-04-20T00:00:00+00:00</updated>
+	<updated>2023-04-25T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Vim tip 25: substitute flags</title>
+		<published>2023-04-25T00:00:00+00:00</published>
+		<updated>2023-04-25T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://learnbyexample.github.io/tips/vim-tip-25/" type="text/html"/>
+		<id>https://learnbyexample.github.io/tips/vim-tip-25/</id>
+		<content type="html">&lt;p&gt;Here are some of the flags you can use with the substitute command:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;g&lt;&#x2F;code&gt; replace all occurrences within a matching line
+&lt;ul&gt;
+&lt;li&gt;by default, only the first matching portion will be replaced&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;c&lt;&#x2F;code&gt; ask for confirmation before each replacement&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;i&lt;&#x2F;code&gt; ignore case for &lt;em&gt;searchpattern&lt;&#x2F;em&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;I&lt;&#x2F;code&gt; don&#x27;t ignore case for &lt;em&gt;searchpattern&lt;&#x2F;em&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;These flags are applicable for the substitute command but not &lt;code&gt;&#x2F;&lt;&#x2F;code&gt; or &lt;code&gt;?&lt;&#x2F;code&gt; searches. Flags can also be combined, for example:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;s&#x2F;cat&#x2F;Dog&#x2F;gi&lt;&#x2F;code&gt; replace every occurrence of &lt;code&gt;cat&lt;&#x2F;code&gt; with &lt;code&gt;Dog&lt;&#x2F;code&gt;
+&lt;ul&gt;
+&lt;li&gt;Case is ignored, so &lt;code&gt;Cat&lt;&#x2F;code&gt;, &lt;code&gt;cAt&lt;&#x2F;code&gt;, &lt;code&gt;CAT&lt;&#x2F;code&gt;, etc are all valid matches&lt;&#x2F;li&gt;
+&lt;li&gt;Note that &lt;code&gt;i&lt;&#x2F;code&gt; doesn&#x27;t affect the case of the replacement string&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See &lt;a href=&quot;https:&#x2F;&#x2F;vimhelp.org&#x2F;change.txt.html#%3As_flags&quot;&gt;:h s_flags&lt;&#x2F;a&gt; for a complete list of flags and more details about them.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Video demo&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; loading=&quot;lazy&quot; src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;gdcfU8wTMrM&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;&#x2F;iframe&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See also my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;vim_reference&quot;&gt;Vim Reference Guide&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;curated_resources&#x2F;vim.html&quot;&gt;curated list of resources for Vim&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>CLI tip 26: removing duplicate lines with GNU awk</title>
 		<published>2023-04-18T00:00:00+00:00</published>
@@ -6876,14 +6909,14 @@ The substitution works from start of the line for every iteration of the while l
 	<entry xml:lang="en">
 		<title>I know Python basics, what next?</title>
 		<published>2020-07-25T00:00:00+00:00</published>
-		<updated>2023-01-07T00:00:00+00:00</updated>
+		<updated>2023-04-25T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/python-intermediate/" type="text/html"/>
 		<id>https://learnbyexample.github.io/python-intermediate/</id>
 		<content type="html">&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;python_what_next.png&quot; alt=&quot;Python what next&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 &lt;p align=&quot;center&quot;&gt;&lt;i&gt;Poster created using &lt;a href=&quot;https:&#x2F;&#x2F;www.canva.com&#x2F;&quot;&gt;Canva&lt;&#x2F;a&gt;&lt;&#x2F;i&gt;&lt;&#x2F;p&gt;
 &lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;&lt;br&gt;
 &lt;h2 id=&quot;next-step&quot;&gt;Next step&lt;a class=&quot;zola-anchor&quot; href=&quot;#next-step&quot; aria-label=&quot;Anchor link for: next-step&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
-&lt;p&gt;Programmers often wonder what to do after learning the basics. &lt;a href=&quot;https:&#x2F;&#x2F;www.reddit.com&#x2F;r&#x2F;learnpython&#x2F;search?q=what+next&amp;amp;restrict_sr=on&quot;&gt;Searching for &lt;code&gt;what next&lt;&#x2F;code&gt; on &#x2F;r&#x2F;learnpython&lt;&#x2F;a&gt; will give you too many results. And here are some wonderful articles related to this topic:&lt;&#x2F;p&gt;
+&lt;p&gt;Programmers often wonder what to do after learning the basics. &lt;a href=&quot;https:&#x2F;&#x2F;old.reddit.com&#x2F;r&#x2F;learnpython&#x2F;search?q=what+next&amp;amp;restrict_sr=on&quot;&gt;Searching for &lt;code&gt;what next&lt;&#x2F;code&gt; on &#x2F;r&#x2F;learnpython&lt;&#x2F;a&gt; will give you too many results. And here are some wonderful articles related to this topic:&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.devdungeon.com&#x2F;content&#x2F;i-know-how-program-i-dont-know-what-program&quot;&gt;I know how to program, but I don&#x27;t know what to program&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.flyingmachinestudios.com&#x2F;programming&#x2F;learn-programming-languages-efficiently&#x2F;&quot;&gt;Techniques for Efficiently Learning Programming Languages&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
@@ -6896,10 +6929,10 @@ The substitution works from start of the line for every iteration of the while l
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;exercism.org&#x2F;tracks&#x2F;python&#x2F;exercises&quot;&gt;Exercism&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;www.hackinscience.org&#x2F;exercises&#x2F;&quot;&gt;Hackinscience&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;www.practicepython.org&#x2F;&quot;&gt;Practicepython&lt;&#x2F;a&gt; — these are all beginner friendly and difficulty levels are marked&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;100_page_python_intro&#x2F;blob&#x2F;main&#x2F;exercises&#x2F;Exercises.md&quot;&gt;100 Page Python Intro exercises&lt;&#x2F;a&gt; — practice problems from my introductory guide&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;inventwithpython.com&#x2F;pythongently&quot;&gt;Python Programming Exercises, Gently Explained&lt;&#x2F;a&gt; — includes gentle explanations of the problem, the prerequisite coding concepts you&#x27;ll need to understand the solution, etc&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;inventwithpython.com&#x2F;pythongently&#x2F;&quot;&gt;Python Programming Exercises, Gently Explained&lt;&#x2F;a&gt; — includes gentle explanations of the problem, the prerequisite coding concepts you&#x27;ll need to understand the solution, etc&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;adventofcode.com&#x2F;&quot;&gt;Adventofcode&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;www.codewars.com&#x2F;&quot;&gt;Codewars&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;www.pythonmorsels.com&#x2F;&quot;&gt;Python Morsels&lt;&#x2F;a&gt; — includes more challenging exercises for intermediate to advanced level users&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;py.checkio.org&#x2F;&quot;&gt;Checkio&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;www.codingame.com&#x2F;start&quot;&gt;Codingame&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;codecombat.com&#x2F;&quot;&gt;Codecombat&lt;&#x2F;a&gt; — gaming based challenges&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.reddit.com&#x2F;r&#x2F;dailyprogrammer&quot;&gt;&#x2F;r&#x2F;dailyprogrammer&lt;&#x2F;a&gt; — not active currently, but there&#x27;s plenty of past challenges with discussions&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;old.reddit.com&#x2F;r&#x2F;dailyprogrammer&quot;&gt;&#x2F;r&#x2F;dailyprogrammer&lt;&#x2F;a&gt; — not active currently, but there&#x27;s plenty of past challenges with discussions&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;p&gt;Once you are comfortable with basics and syntax, the next step is projects. I wrote a 10-line program that solved a common problem for me — adding &lt;code&gt;body { text-align: justify }&lt;&#x2F;code&gt; to &lt;code&gt;epub&lt;&#x2F;code&gt; files that are not justify aligned. I didn&#x27;t know that this line would help beforehand. Found a solution online and then automated the process of unzipping &lt;code&gt;epub&lt;&#x2F;code&gt;, adding the line and then packing it again. That will likely need you to lookup documentation and go through some stackoverflow Q&amp;amp;A as well. And once you have written the solution and use it regularly, you&#x27;ll likely encounter corner cases and features to be added. I feel this is a great way to learn and understand programming.&lt;&#x2F;p&gt;
 &lt;p&gt;These days, I use a better EPUB reader that allows me to customize alignments. Here&#x27;s another real world example. I&#x27;m on Linux and use the terminal for many things. I wanted a CLI tool to do simple calculations. There&#x27;s &lt;code&gt;bc&lt;&#x2F;code&gt; command, but it doesn&#x27;t accept direct string argument and you need to set &lt;code&gt;scale&lt;&#x2F;code&gt; and so on. So, I looked up how to write a CLI tool in Python and &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;practice_python_projects&#x2F;calculator&#x2F;calculator.html&quot;&gt;wrote one using the built-in &lt;code&gt;argparse&lt;&#x2F;code&gt; module&lt;&#x2F;a&gt; that works for my particular use cases.&lt;&#x2F;p&gt;
@@ -6917,7 +6950,7 @@ The substitution works from start of the line for every iteration of the while l
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;nostarch.com&#x2F;impracticalpythonprojects&quot;&gt;Impractical Python Projects&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;nostarch.com&#x2F;real-world-python&quot;&gt;Real world Python&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.reddit.com&#x2F;r&#x2F;learnpython&#x2F;comments&#x2F;k5k1h0&#x2F;what_do_you_automate_with_python_at_home&#x2F;&quot;&gt;&#x2F;r&#x2F;learnpython: What do you automate with Python at home?&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;old.reddit.com&#x2F;r&#x2F;learnpython&#x2F;comments&#x2F;k5k1h0&#x2F;what_do_you_automate_with_python_at_home&#x2F;&quot;&gt;&#x2F;r&#x2F;learnpython: What do you automate with Python at home?&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See also &lt;a href=&quot;https:&#x2F;&#x2F;goodresearch.dev&#x2F;&quot;&gt;The Good Research Code Handbook&lt;&#x2F;a&gt; to learn how to organize your code so that it is easy to understand and works reliably.&lt;&#x2F;p&gt;
 &lt;br&gt;

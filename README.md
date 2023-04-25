@@ -67,6 +67,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Tips
 
+* [Vim tip 25: substitute flags](https://learnbyexample.github.io/tips/vim-tip-25/)
 * [CLI tip 26: removing duplicate lines with GNU awk](https://learnbyexample.github.io/tips/cli-tip-26/)
 * [Python tip 26: atomic grouping](https://learnbyexample.github.io/tips/python-tip-26/)
 * [Vim tip 24: movement commands within the current file](https://learnbyexample.github.io/tips/vim-tip-24/)
