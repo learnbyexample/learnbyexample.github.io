@@ -5,8 +5,53 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2023-05-03T00:00:00+00:00</updated>
+	<updated>2023-05-09T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>CLI tip 27: reverse text line wise with tac</title>
+		<published>2023-05-09T00:00:00+00:00</published>
+		<updated>2023-05-09T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://learnbyexample.github.io/tips/cli-tip-27/" type="text/html"/>
+		<id>https://learnbyexample.github.io/tips/cli-tip-27/</id>
+		<content type="html">&lt;p&gt;You can use &lt;code&gt;tac&lt;&#x2F;code&gt; to reverse the input line wise. If you pass multiple input files, each file content will be reversed separately.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;ruby&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span&gt;$ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;printf &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;apple\nbanana\ncherry\nfig and honey\n&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span&gt; tac
+&lt;&#x2F;span&gt;&lt;span&gt;fig &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;and&lt;&#x2F;span&gt;&lt;span&gt; honey
+&lt;&#x2F;span&gt;&lt;span&gt;cherry
+&lt;&#x2F;span&gt;&lt;span&gt;banana
+&lt;&#x2F;span&gt;&lt;span&gt;apple
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;You can use the &lt;code&gt;-s&lt;&#x2F;code&gt; option to specify a different string to be used as the &lt;em&gt;line&lt;&#x2F;em&gt; separator (newline is the default separator). When the custom separator occurs before the content of interest, use the &lt;code&gt;-b&lt;&#x2F;code&gt; option to print those separators before the content in the output as well.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;ruby&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span&gt;$ cat blocks.txt
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;%=%=
+&lt;&#x2F;span&gt;&lt;span&gt;apple
+&lt;&#x2F;span&gt;&lt;span&gt;banana
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;%=%=
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;1
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;2
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;3
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;%=%=
+&lt;&#x2F;span&gt;&lt;span&gt;red
+&lt;&#x2F;span&gt;&lt;span&gt;green
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;$ tac &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt;b &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt;s &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;%=%=&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt; blocks.txt
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;%=%=
+&lt;&#x2F;span&gt;&lt;span&gt;red
+&lt;&#x2F;span&gt;&lt;span&gt;green
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;%=%=
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;1
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;2
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;3
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;%=%=
+&lt;&#x2F;span&gt;&lt;span&gt;apple
+&lt;&#x2F;span&gt;&lt;span&gt;banana
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips&#x2F;cli-tip-8&#x2F;&quot;&gt;CLI tip 8: extract from start of file until matching line&lt;&#x2F;a&gt; for a practical example where reversing input content helps in constructing a solution.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Video demo&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; loading=&quot;lazy&quot; src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;6p_9zP66wqA&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;&#x2F;iframe&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See also &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;cli_text_processing_coreutils&#x2F;cat-tac.html#tac&quot;&gt;tac&lt;&#x2F;a&gt; section from my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;cli_text_processing_coreutils&quot;&gt;Command line text processing with GNU Coreutils&lt;&#x2F;a&gt; ebook for more details and examples.&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>Python tip 27: enumerate() function</title>
 		<published>2023-05-03T00:00:00+00:00</published>
