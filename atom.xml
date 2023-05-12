@@ -5,7 +5,7 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2023-05-11T00:00:00+00:00</updated>
+	<updated>2023-05-12T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
 	<entry xml:lang="en">
 		<title>CLI text processing with GNU grep and ripgrep book announcement</title>
@@ -2753,7 +2753,7 @@ Specifying a greater than &lt;code&gt;0&lt;&#x2F;code&gt; start index when using
 	<entry xml:lang="en">
 		<title>Programming ebooks by Sundeep Agarwal</title>
 		<published>2022-08-09T00:00:00+00:00</published>
-		<updated>2023-01-30T00:00:00+00:00</updated>
+		<updated>2023-05-12T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/books/" type="text/html"/>
 		<id>https://learnbyexample.github.io/books/</id>
 		<content type="html">&lt;p&gt;This post lists my programming ebooks with details like PDF&#x2F;EPUB purchase links, GitHub repos, web versions, testimonials, etc. All my ebooks are self-published. You can get these ebooks individually or as part of bundles. You can also read them online for free.&lt;&#x2F;p&gt;
@@ -2911,9 +2911,9 @@ Specifying a greater than &lt;code&gt;0&lt;&#x2F;code&gt; start index when using
 &lt;li&gt;Feedback: &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;learn_byexample&quot;&gt;Twitter&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;br&gt;
-&lt;h1 id=&quot;gnu-grep-and-ripgrep&quot;&gt;&lt;p style=&quot;color: #ff9933&quot;&gt;GNU grep and ripgrep&lt;&#x2F;h1&gt;
+&lt;h1 id=&quot;cli-text-processing-with-gnu-grep-and-ripgrep&quot;&gt;&lt;p style=&quot;color: #ff9933&quot;&gt;CLI text processing with GNU grep and ripgrep&lt;&#x2F;h1&gt;
 &lt;p&gt;Example based guide to mastering GNU grep and ripgrep. Exercises are also included to test your understanding.&lt;&#x2F;p&gt;
-&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;books&#x2F;grep.png&quot; alt=&quot;grep cover image&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;learnbyexample&#x2F;learn_gnugrep_ripgrep&#x2F;master&#x2F;images&#x2F;grep_ls.png&quot; width=&quot;640px&quot; height=&quot;360px&quot; alt=&quot;CLI text processing with GNU grep and ripgrep cover image&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;learn_gnugrep_ripgrep&#x2F;blob&#x2F;master&#x2F;sample_chapters&#x2F;grep_sample_chapters.pdf&quot;&gt;Sample chapters&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;Buy pdf&#x2F;epub from:
