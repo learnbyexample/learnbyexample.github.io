@@ -68,6 +68,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Tips
 
+* [Vim tip 26: executing shell commands](https://learnbyexample.github.io/tips/vim-tip-26/)
 * [CLI tip 27: reverse text line wise with tac](https://learnbyexample.github.io/tips/cli-tip-27/)
 * [Python tip 27: enumerate() function](https://learnbyexample.github.io/tips/python-tip-27/)
 * [Vim tip 25: substitute flags](https://learnbyexample.github.io/tips/vim-tip-25/)
