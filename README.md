@@ -68,6 +68,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Tips
 
+* [Python tip 28: string concatenation and repetition](https://learnbyexample.github.io/tips/python-tip-28/)
 * [Vim tip 26: executing shell commands](https://learnbyexample.github.io/tips/vim-tip-26/)
 * [CLI tip 27: reverse text line wise with tac](https://learnbyexample.github.io/tips/cli-tip-27/)
 * [Python tip 27: enumerate() function](https://learnbyexample.github.io/tips/python-tip-27/)
