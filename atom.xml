@@ -5,8 +5,50 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2023-05-24T00:00:00+00:00</updated>
+	<updated>2023-05-30T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>CLI tip 28: substitute specific occurrence with GNU sed</title>
+		<published>2023-05-30T00:00:00+00:00</published>
+		<updated>2023-05-30T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://learnbyexample.github.io/tips/cli-tip-28/" type="text/html"/>
+		<id>https://learnbyexample.github.io/tips/cli-tip-28/</id>
+		<content type="html">&lt;p&gt;By using the &lt;code&gt;g&lt;&#x2F;code&gt; flag with the &lt;code&gt;s&lt;&#x2F;code&gt; command (substitute), you can search and replace all occurrences of a pattern. Without the &lt;code&gt;g&lt;&#x2F;code&gt; flag, only the first matching portion will be replaced.&lt;&#x2F;p&gt;
+&lt;p&gt;Did you know that you can use a number as a flag to replace only that particular occurrence of matching parts?&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;ruby&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# replace only the third occurrence of &amp;#39;:&amp;#39; with &amp;#39;---&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;$ echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;apple:banana:cherry:fig:mango&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span&gt; sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;s&#x2F;:&#x2F;---&#x2F;3&amp;#39;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;apple:banana:&lt;&#x2F;span&gt;&lt;span&gt;cherry&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;---&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;fig:&lt;&#x2F;span&gt;&lt;span&gt;mango
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# replace only the second occurrence of a word starting with &amp;#39;t&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;$ echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;book table bus car banana tap camp&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span&gt; sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;s&#x2F;\bt\w*&#x2F;&amp;quot;&amp;amp;&amp;quot;&#x2F;2&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;book table bus car banana &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot;tap&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt; camp
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;To replace a specific occurrence from the end of the line, you&#x27;ll have use regular expression tricks:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;ruby&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span&gt;$ s=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;apple:banana:cherry:fig:mango&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# replace the last occurrence
+&lt;&#x2F;span&gt;&lt;span&gt;$ echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot;$s&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span&gt; sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;E &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;s&#x2F;(.*):&#x2F;\1---&#x2F;&amp;#39;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;apple:banana:cherry:&lt;&#x2F;span&gt;&lt;span&gt;fig&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;---&lt;&#x2F;span&gt;&lt;span&gt;mango
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# replace the last but one occurrence
+&lt;&#x2F;span&gt;&lt;span&gt;$ echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot;$s&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span&gt; sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;E &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;s&#x2F;(.*):(.*:)&#x2F;\1---\2&#x2F;&amp;#39;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;apple:banana:&lt;&#x2F;span&gt;&lt;span&gt;cherry&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;---&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;fig:&lt;&#x2F;span&gt;&lt;span&gt;mango
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# generic formula, where {N} refers to the last but Nth occurrence
+&lt;&#x2F;span&gt;&lt;span&gt;$ echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot;$s&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span&gt; sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;E &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;s&#x2F;(.*):((.*:){2})&#x2F;\1---\2&#x2F;&amp;#39;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;apple:&lt;&#x2F;span&gt;&lt;span&gt;banana&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;---&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;cherry:fig:&lt;&#x2F;span&gt;&lt;span&gt;mango
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;If you combine a number flag with the &lt;code&gt;g&lt;&#x2F;code&gt; flag, all matches from that particular occurrence will be replaced.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;ruby&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# replace except the first occurrence of a word starting with &amp;#39;b&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;$ echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;book table bus car banana tap camp&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span&gt; sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;s&#x2F;\bb\w*&#x2F;&amp;quot;&amp;amp;&amp;quot;&#x2F;2g&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;book table &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot;bus&amp;quot;&lt;&#x2F;span&gt;&lt;span&gt; car &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot;banana&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;tap&lt;&#x2F;span&gt;&lt;span&gt; camp
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;&lt;strong&gt;Video demo&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; loading=&quot;lazy&quot; src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;7CxaiYQ2gIU&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;&#x2F;iframe&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See also my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;learn_gnused&quot;&gt;GNU sed&lt;&#x2F;a&gt; ebook.&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>Python tip 28: string concatenation and repetition</title>
 		<published>2023-05-24T00:00:00+00:00</published>
