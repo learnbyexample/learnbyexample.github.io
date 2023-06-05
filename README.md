@@ -68,6 +68,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Tips
 
+* [Vim tip 27: regexp anchors](https://learnbyexample.github.io/tips/vim-tip-27/)
 * [CLI tip 28: substitute specific occurrence with GNU sed](https://learnbyexample.github.io/tips/cli-tip-28/)
 * [Python tip 28: string concatenation and repetition](https://learnbyexample.github.io/tips/python-tip-28/)
 * [Vim tip 26: executing shell commands](https://learnbyexample.github.io/tips/vim-tip-26/)

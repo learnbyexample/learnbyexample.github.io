@@ -5,8 +5,52 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2023-05-30T00:00:00+00:00</updated>
+	<updated>2023-06-05T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Vim tip 27: regexp anchors</title>
+		<published>2023-06-05T00:00:00+00:00</published>
+		<updated>2023-06-05T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://learnbyexample.github.io/tips/vim-tip-27/" type="text/html"/>
+		<id>https://learnbyexample.github.io/tips/vim-tip-27/</id>
+		<content type="html">&lt;p&gt;By default, regexp matches anywhere in the text. You can use line and word anchors to specify additional restrictions regarding the position of matches. These restrictions are made possible by assigning special meaning to certain characters (&lt;strong&gt;metacharacters&lt;&#x2F;strong&gt;) and escape sequences.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;^&lt;&#x2F;code&gt; restricts the match to the start-of-line
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;^This&lt;&#x2F;code&gt; matches &lt;code&gt;This is a sample&lt;&#x2F;code&gt; but not &lt;code&gt;Do This&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;$&lt;&#x2F;code&gt; restricts the match to the end-of-line
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;)$&lt;&#x2F;code&gt; matches &lt;code&gt;apple (5)&lt;&#x2F;code&gt; but not &lt;code&gt;def greeting():&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;^$&lt;&#x2F;code&gt; match empty line&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;\&amp;lt;pattern&lt;&#x2F;code&gt; restricts the match to the start of a word
+&lt;ul&gt;
+&lt;li&gt;word characters include alphabets, digits and underscore&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;\&amp;lt;his&lt;&#x2F;code&gt; matches &lt;code&gt;his&lt;&#x2F;code&gt; or &lt;code&gt;to-his&lt;&#x2F;code&gt; or &lt;code&gt;history&lt;&#x2F;code&gt; but not &lt;code&gt;this&lt;&#x2F;code&gt; or &lt;code&gt;_hist&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;pattern\&amp;gt;&lt;&#x2F;code&gt; restricts the match to the end of a word
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;his\&amp;gt;&lt;&#x2F;code&gt; matches &lt;code&gt;his&lt;&#x2F;code&gt; or &lt;code&gt;to-his&lt;&#x2F;code&gt; or &lt;code&gt;this&lt;&#x2F;code&gt; but not &lt;code&gt;history&lt;&#x2F;code&gt; or &lt;code&gt;_hist&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;\&amp;lt;pattern\&amp;gt;&lt;&#x2F;code&gt; restricts the match between start of a word and end of a word
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;\&amp;lt;his\&amp;gt;&lt;&#x2F;code&gt; matches &lt;code&gt;his&lt;&#x2F;code&gt; or &lt;code&gt;to-his&lt;&#x2F;code&gt; but not &lt;code&gt;this&lt;&#x2F;code&gt; or &lt;code&gt;history&lt;&#x2F;code&gt; or &lt;code&gt;_hist&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; End-of-line can be &lt;code&gt;\r&lt;&#x2F;code&gt; (carriage return), &lt;code&gt;\n&lt;&#x2F;code&gt; (newline) or &lt;code&gt;\r\n&lt;&#x2F;code&gt; depending on your system and &lt;code&gt;fileformat&lt;&#x2F;code&gt; setting.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See &lt;a href=&quot;https:&#x2F;&#x2F;vimhelp.org&#x2F;pattern.txt.html#pattern-atoms&quot;&gt;:h pattern-atoms&lt;&#x2F;a&gt; for more details.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Video demo&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; loading=&quot;lazy&quot; src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;AJNWtpKA2zM&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;&#x2F;iframe&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See also my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;vim_reference&quot;&gt;Vim Reference Guide&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;curated_resources&#x2F;vim.html&quot;&gt;curated list of resources for Vim&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>CLI tip 28: substitute specific occurrence with GNU sed</title>
 		<published>2023-05-30T00:00:00+00:00</published>
