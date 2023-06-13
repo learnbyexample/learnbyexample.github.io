@@ -68,6 +68,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Tips
 
+* [Python tip 29: negative lookarounds](https://learnbyexample.github.io/tips/python-tip-29/)
 * [Vim tip 27: regexp anchors](https://learnbyexample.github.io/tips/vim-tip-27/)
 * [CLI tip 28: substitute specific occurrence with GNU sed](https://learnbyexample.github.io/tips/cli-tip-28/)
 * [Python tip 28: string concatenation and repetition](https://learnbyexample.github.io/tips/python-tip-28/)
