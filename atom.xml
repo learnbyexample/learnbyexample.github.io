@@ -5,8 +5,49 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2023-06-13T00:00:00+00:00</updated>
+	<updated>2023-06-20T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>CLI tip 29: define fields using FPAT in GNU awk</title>
+		<published>2023-06-20T00:00:00+00:00</published>
+		<updated>2023-06-20T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://learnbyexample.github.io/tips/cli-tip-29/" type="text/html"/>
+		<id>https://learnbyexample.github.io/tips/cli-tip-29/</id>
+		<content type="html">&lt;p&gt;In &lt;code&gt;awk&lt;&#x2F;code&gt;, the &lt;code&gt;FS&lt;&#x2F;code&gt; variable allows you to define the input field &lt;em&gt;separator&lt;&#x2F;em&gt;. In contrast, &lt;code&gt;FPAT&lt;&#x2F;code&gt; (field pattern) allows you to define what should the fields be made up of.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;ruby&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span&gt;$ s=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;Sample123string42with777numbers&amp;#39;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# one or more consecutive digits
+&lt;&#x2F;span&gt;&lt;span&gt;$ echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot;$s&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span&gt; awk &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt;v &lt;&#x2F;span&gt;&lt;span style=&quot;color:#c23f31;&quot;&gt;FPAT&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;[0-9]+&amp;#39; &amp;#39;{print $2}&amp;#39;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;42
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;$ s=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;coat Bin food tar12 best Apple fig_42&amp;#39;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# whole words made up of lowercase alphabets and digits only
+&lt;&#x2F;span&gt;&lt;span&gt;$ echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot;$s&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span&gt; awk &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt;v &lt;&#x2F;span&gt;&lt;span style=&quot;color:#c23f31;&quot;&gt;FPAT&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#aeb52b;&quot;&gt;\\&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;lt;[a-z0-9]+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#aeb52b;&quot;&gt;\\&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;gt;&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt;v &lt;&#x2F;span&gt;&lt;span style=&quot;color:#c23f31;&quot;&gt;OFS&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;{$1=$1} 1&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;coat,food,tar12,best
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;$ s=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;items: &amp;quot;apple&amp;quot; and &amp;quot;mango&amp;quot;&amp;#39;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# get the first double quoted item
+&lt;&#x2F;span&gt;&lt;span&gt;$ echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot;$s&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span&gt; awk &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt;v &lt;&#x2F;span&gt;&lt;span style=&quot;color:#c23f31;&quot;&gt;FPAT&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&amp;quot;[^&amp;quot;]+&amp;quot;&amp;#39; &amp;#39;{print $1}&amp;#39;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot;apple&amp;quot;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;&lt;code&gt;FPAT&lt;&#x2F;code&gt; is often used for CSV input where fields can contain embedded delimiter characters. For example, a field content &lt;code&gt;&amp;quot;fox,42&amp;quot;&lt;&#x2F;code&gt; when &lt;code&gt;,&lt;&#x2F;code&gt; is the delimiter.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;ruby&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span&gt;$ s=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;eagle,&amp;quot;fox,42&amp;quot;,bee,frog&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# simply using , as separator isn&amp;#39;t sufficient
+&lt;&#x2F;span&gt;&lt;span&gt;$ echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot;$s&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span&gt; awk &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;F&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;{print $2}&amp;#39;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot;fox
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;For such simpler CSV input, &lt;code&gt;FPAT&lt;&#x2F;code&gt; helps to define fields as starting and ending with double quotes or containing non-comma characters.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;ruby&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# * is used instead of + to allow empty fields
+&lt;&#x2F;span&gt;&lt;span&gt;$ echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot;$s&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span&gt; awk &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt;v &lt;&#x2F;span&gt;&lt;span style=&quot;color:#c23f31;&quot;&gt;FPAT&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&amp;quot;[^&amp;quot;]*&amp;quot;|[^,]*&amp;#39; &amp;#39;{print $2}&amp;#39;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot;fox,42&amp;quot;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;warning.svg&quot; alt=&quot;warning&quot; &#x2F;&gt; The above will not work for all kinds of CSV files, for example if fields contain escaped double quotes, newline characters, etc. See &lt;a href=&quot;https:&#x2F;&#x2F;stackoverflow.com&#x2F;q&#x2F;45420535&#x2F;4082052&quot;&gt;stackoverflow: What&#x27;s the most robust way to efficiently parse CSV using awk?&lt;&#x2F;a&gt; for such cases. You could also use other programming languages such as Perl, Python, Ruby, etc which come with standard CSV parsing libraries or have easy access to third party solutions. There are also specialized command line tools such as &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;BurntSushi&#x2F;xsv&quot;&gt;xsv&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Video demo&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; loading=&quot;lazy&quot; src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;1ZQni88a99w&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;&#x2F;iframe&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See also my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;learn_gnuawk&quot;&gt;GNU awk&lt;&#x2F;a&gt; ebook.&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>Python tip 29: negative lookarounds</title>
 		<published>2023-06-13T00:00:00+00:00</published>
