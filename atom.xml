@@ -5,8 +5,39 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2023-06-20T00:00:00+00:00</updated>
+	<updated>2023-06-26T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Vim tip 28: miscellaneous motion and reposition commands</title>
+		<published>2023-06-26T00:00:00+00:00</published>
+		<updated>2023-06-26T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://learnbyexample.github.io/tips/vim-tip-28/" type="text/html"/>
+		<id>https://learnbyexample.github.io/tips/vim-tip-28/</id>
+		<content type="html">&lt;p&gt;Moving within the visible window:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;kbd&gt;H&lt;&#x2F;kbd&gt; move to the first non-blank character of the top (home) line of the visible window&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;M&lt;&#x2F;kbd&gt; move to the first non-blank character of the middle line of the visible window&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;L&lt;&#x2F;kbd&gt; move to the first non-blank character of the bottom (low) line of the visible window&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Reposition the current line:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;kbd&gt;Ctrl&lt;&#x2F;kbd&gt;+&lt;kbd&gt;e&lt;&#x2F;kbd&gt; scroll up by a line&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;Ctrl&lt;&#x2F;kbd&gt;+&lt;kbd&gt;y&lt;&#x2F;kbd&gt; scroll down by a line&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;zz&lt;&#x2F;kbd&gt; reposition the current line to the middle of the visible window
+&lt;ul&gt;
+&lt;li&gt;useful to see context around lines that are nearer to the top&#x2F;bottom of the visible window&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;zt&lt;&#x2F;kbd&gt; reposition the current line to the top of the visible window&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;zb&lt;&#x2F;kbd&gt; reposition the current line to the bottom of the visible window&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See &lt;a href=&quot;https:&#x2F;&#x2F;vimhelp.org&#x2F;options.txt.html#%27scrolloff%27&quot;&gt;:h &#x27;scrolloff&#x27;&lt;&#x2F;a&gt; option if you want to always show context around the current line.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Video demo&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; loading=&quot;lazy&quot; src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;XRXO4Ns8rPE&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;&#x2F;iframe&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See also my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;vim_reference&quot;&gt;Vim Reference Guide&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;curated_resources&#x2F;vim.html&quot;&gt;curated list of resources for Vim&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>CLI tip 29: define fields using FPAT in GNU awk</title>
 		<published>2023-06-20T00:00:00+00:00</published>
