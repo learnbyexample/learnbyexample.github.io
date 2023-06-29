@@ -6,6 +6,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Posts
 
+* [CLI text processing with GNU sed book announcement](https://learnbyexample.github.io/cli-text-processing-sed-announcement/)
 * [CLI text processing with GNU grep and ripgrep book announcement](https://learnbyexample.github.io/cli-text-processing-grep-announcement/)
 * [100+ Interactive Python Regex Exercises](https://learnbyexample.github.io/interactive-python-regex-exercises/)
 * [Python Regular Expressions Playground](https://learnbyexample.github.io/python-regex-playground/)

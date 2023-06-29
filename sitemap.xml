@@ -24,7 +24,7 @@
     </url>
     <url>
         <loc>https://learnbyexample.github.io/books/</loc>
-        <lastmod>2023-05-12</lastmod>
+        <lastmod>2023-06-29</lastmod>
     </url>
     <url>
         <loc>https://learnbyexample.github.io/cli-text-processing-coreutils-announcement/</loc>
@@ -33,6 +33,10 @@
     <url>
         <loc>https://learnbyexample.github.io/cli-text-processing-grep-announcement/</loc>
         <lastmod>2023-05-11</lastmod>
+    </url>
+    <url>
+        <loc>https://learnbyexample.github.io/cli-text-processing-sed-announcement/</loc>
+        <lastmod>2023-06-29</lastmod>
     </url>
     <url>
         <loc>https://learnbyexample.github.io/computing-from-the-command-line-announcement/</loc>
@@ -157,6 +161,9 @@
     </url>
     <url>
         <loc>https://learnbyexample.github.io/page/4/</loc>
+    </url>
+    <url>
+        <loc>https://learnbyexample.github.io/page/5/</loc>
     </url>
     <url>
         <loc>https://learnbyexample.github.io/practice-python-projects-book-announcement/</loc>
