@@ -69,6 +69,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Tips
 
+* [CLI tip 30: extract only the matching portions](https://learnbyexample.github.io/tips/cli-tip-30/)
 * [Python tip 30: zip() function](https://learnbyexample.github.io/tips/python-tip-30/)
 * [Vim tip 28: miscellaneous motion and reposition commands](https://learnbyexample.github.io/tips/vim-tip-28/)
 * [CLI tip 29: define fields using FPAT in GNU awk](https://learnbyexample.github.io/tips/cli-tip-29/)
