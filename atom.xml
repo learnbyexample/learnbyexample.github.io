@@ -5,8 +5,65 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2023-07-11T00:00:00+00:00</updated>
+	<updated>2023-07-19T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Vim tip 29: greedy quantifiers</title>
+		<published>2023-07-19T00:00:00+00:00</published>
+		<updated>2023-07-19T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://learnbyexample.github.io/tips/vim-tip-29/" type="text/html"/>
+		<id>https://learnbyexample.github.io/tips/vim-tip-29/</id>
+		<content type="html">&lt;p&gt;Quantifiers can be applied to literal characters, dot metacharacter, groups, backreferences and character classes.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;*&lt;&#x2F;code&gt; match zero or more times
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;abc*&lt;&#x2F;code&gt; matches &lt;code&gt;ab&lt;&#x2F;code&gt; or &lt;code&gt;abc&lt;&#x2F;code&gt; or &lt;code&gt;abccc&lt;&#x2F;code&gt; or &lt;code&gt;abcccccc&lt;&#x2F;code&gt; but not &lt;code&gt;bc&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;Error.*valid&lt;&#x2F;code&gt; matches &lt;code&gt;Error: invalid input&lt;&#x2F;code&gt; but not &lt;code&gt;valid Error&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;s&#x2F;a.*b&#x2F;X&#x2F;&lt;&#x2F;code&gt; replaces &lt;code&gt;table bottle bus&lt;&#x2F;code&gt; with &lt;code&gt;tXus&lt;&#x2F;code&gt; since &lt;code&gt;a.*b&lt;&#x2F;code&gt; matches from the first &lt;code&gt;a&lt;&#x2F;code&gt; to the last &lt;code&gt;b&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;\+&lt;&#x2F;code&gt; match one or more times
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;abc\+&lt;&#x2F;code&gt; matches &lt;code&gt;abc&lt;&#x2F;code&gt; or &lt;code&gt;abccc&lt;&#x2F;code&gt; but not &lt;code&gt;ab&lt;&#x2F;code&gt; or &lt;code&gt;bc&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;\?&lt;&#x2F;code&gt; match zero or one times
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;\=&lt;&#x2F;code&gt; can also be used, helpful if you are searching backwards with the &lt;code&gt;?&lt;&#x2F;code&gt; command&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;abc\?&lt;&#x2F;code&gt; matches &lt;code&gt;ab&lt;&#x2F;code&gt; or &lt;code&gt;abc&lt;&#x2F;code&gt;. This will match &lt;code&gt;abccc&lt;&#x2F;code&gt; or &lt;code&gt;abcccccc&lt;&#x2F;code&gt; as well, but only the &lt;code&gt;abc&lt;&#x2F;code&gt; portion&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;s&#x2F;abc\?&#x2F;X&#x2F;&lt;&#x2F;code&gt; replaces &lt;code&gt;abcc&lt;&#x2F;code&gt; with &lt;code&gt;Xc&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;\{m,n}&lt;&#x2F;code&gt; match &lt;code&gt;m&lt;&#x2F;code&gt; to &lt;code&gt;n&lt;&#x2F;code&gt; times (inclusive)
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;ab\{1,4}c&lt;&#x2F;code&gt; matches &lt;code&gt;abc&lt;&#x2F;code&gt; or &lt;code&gt;abbc&lt;&#x2F;code&gt; or &lt;code&gt;xabbbcz&lt;&#x2F;code&gt; but not &lt;code&gt;ac&lt;&#x2F;code&gt; or &lt;code&gt;abbbbbc&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;\{m,}&lt;&#x2F;code&gt; match at least &lt;code&gt;m&lt;&#x2F;code&gt; times
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;ab\{3,}c&lt;&#x2F;code&gt; matches &lt;code&gt;xabbbcz&lt;&#x2F;code&gt; or &lt;code&gt;abbbbbc&lt;&#x2F;code&gt; but not &lt;code&gt;ac&lt;&#x2F;code&gt; or &lt;code&gt;abc&lt;&#x2F;code&gt; or &lt;code&gt;abbc&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;\{,n}&lt;&#x2F;code&gt; match up to &lt;code&gt;n&lt;&#x2F;code&gt; times (including &lt;code&gt;0&lt;&#x2F;code&gt; times)
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;ab\{,2}c&lt;&#x2F;code&gt; matches &lt;code&gt;abc&lt;&#x2F;code&gt; or &lt;code&gt;ac&lt;&#x2F;code&gt; or &lt;code&gt;abbc&lt;&#x2F;code&gt; but not &lt;code&gt;xabbbcz&lt;&#x2F;code&gt; or &lt;code&gt;abbbbbc&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;\{n}&lt;&#x2F;code&gt; match exactly &lt;code&gt;n&lt;&#x2F;code&gt; times
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;ab\{3}c&lt;&#x2F;code&gt; matches &lt;code&gt;xabbbcz&lt;&#x2F;code&gt; but not &lt;code&gt;abbc&lt;&#x2F;code&gt; or &lt;code&gt;abbbbbc&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Greedy quantifiers will consume as &lt;em&gt;much&lt;&#x2F;em&gt; as possible, provided the overall pattern is also matched. That&#x27;s how the &lt;code&gt;Error.*valid&lt;&#x2F;code&gt; example worked. If &lt;code&gt;.*&lt;&#x2F;code&gt; had consumed everything after &lt;code&gt;Error&lt;&#x2F;code&gt;, there wouldn&#x27;t be any more characters to try to match &lt;code&gt;valid&lt;&#x2F;code&gt;. How the regexp engine handles matching varying amount of characters depends on the implementation details (backtracking, NFA, etc).&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See &lt;a href=&quot;https:&#x2F;&#x2F;vimhelp.org&#x2F;pattern.txt.html#pattern-overview&quot;&gt;:h pattern-overview&lt;&#x2F;a&gt; for more details.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; If you are familiar with other regular expression flavors like Perl, Python, etc, you&#x27;d be surprised by the use of &lt;code&gt;\&lt;&#x2F;code&gt; in the above examples. If you use &lt;code&gt;\v&lt;&#x2F;code&gt; very magic modifier, the &lt;code&gt;\&lt;&#x2F;code&gt; won&#x27;t be needed.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Video demo&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; loading=&quot;lazy&quot; src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;pg1OX4pHN8M&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;&#x2F;iframe&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See also my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;vim_reference&quot;&gt;Vim Reference Guide&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;curated_resources&#x2F;vim.html&quot;&gt;curated list of resources for Vim&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>CLI tip 30: extract only the matching portions</title>
 		<published>2023-07-11T00:00:00+00:00</published>
