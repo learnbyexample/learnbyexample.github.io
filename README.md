@@ -69,6 +69,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Tips
 
+* [Python tip 31: next() function](https://learnbyexample.github.io/tips/python-tip-31/)
 * [Vim tip 29: greedy quantifiers](https://learnbyexample.github.io/tips/vim-tip-29/)
 * [CLI tip 30: extract only the matching portions](https://learnbyexample.github.io/tips/cli-tip-30/)
 * [Python tip 30: zip() function](https://learnbyexample.github.io/tips/python-tip-30/)
