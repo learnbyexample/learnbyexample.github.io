@@ -5,8 +5,68 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2023-07-25T00:00:00+00:00</updated>
+	<updated>2023-08-01T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>CLI tip 31: concatenate files column wise</title>
+		<published>2023-08-01T00:00:00+00:00</published>
+		<updated>2023-08-01T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://learnbyexample.github.io/tips/cli-tip-31/" type="text/html"/>
+		<id>https://learnbyexample.github.io/tips/cli-tip-31/</id>
+		<content type="html">&lt;p&gt;The &lt;code&gt;paste&lt;&#x2F;code&gt; command is typically used to merge two or more files column wise. By default, &lt;code&gt;paste&lt;&#x2F;code&gt; adds a tab character between corresponding lines of input files.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;ruby&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span&gt;$ cat colors_1.txt
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Blue
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Brown
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Orange
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Purple
+&lt;&#x2F;span&gt;&lt;span&gt;$ cat colors_2.txt
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Black
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Blue
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Green
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Orange
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;$ paste colors_1.txt colors_2.txt
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Blue    Black
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Brown   Blue
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Orange  Green
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Purple  Orange
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;You can use the &lt;code&gt;-d&lt;&#x2F;code&gt; option to change the delimiter between the columns. The separator is added even if the data has been exhausted for some of the input files.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;ruby&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span&gt;$ paste &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt;d&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;|&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span&gt;(seq &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;3&lt;&#x2F;span&gt;&lt;span&gt;) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span&gt;(seq &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;4 5&lt;&#x2F;span&gt;&lt;span&gt;) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span&gt;(seq &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;6 8&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;4&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;6
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;2&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;5&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;7
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;3&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;||&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;8
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# note that the space between -d and empty string is necessary here
+&lt;&#x2F;span&gt;&lt;span&gt;$ paste &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt;d &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span&gt;(seq &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;3&lt;&#x2F;span&gt;&lt;span&gt;) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span&gt;(seq &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;6 8&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;16
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;27
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;38
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# use newline separator to interleave file contents
+&lt;&#x2F;span&gt;&lt;span&gt;$ paste &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt;d&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;\n&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span&gt;(seq &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;11 12&lt;&#x2F;span&gt;&lt;span&gt;) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span&gt;(seq &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;101 102&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;11
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;101
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;12
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;102
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;You can use empty files to get multicharacter separation between the columns. The &lt;code&gt;pr&lt;&#x2F;code&gt; command is better suited for this task.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;ruby&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span&gt;$ paste &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt;d&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39; : &amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span&gt;(seq &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;3&lt;&#x2F;span&gt;&lt;span&gt;) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&#x2F;&lt;&#x2F;span&gt;&lt;span&gt;dev&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&#x2F;&lt;&#x2F;span&gt;&lt;span&gt;null &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&#x2F;&lt;&#x2F;span&gt;&lt;span&gt;dev&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&#x2F;&lt;&#x2F;span&gt;&lt;span&gt;null &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span&gt;(seq &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;4 6&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;1 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;4
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;2 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;5
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;3 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;6
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;$ pr &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt;mts&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39; : &amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span&gt;(seq &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;3&lt;&#x2F;span&gt;&lt;span&gt;) &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span&gt;(seq &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;4 6&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;1 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;4
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;2 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;5
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;3 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;6
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;&lt;strong&gt;Video demo&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; loading=&quot;lazy&quot; src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;vnGeEO3d42U&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;&#x2F;iframe&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;cli_text_processing_coreutils&#x2F;paste.html&quot;&gt;paste command&lt;&#x2F;a&gt; chapter from my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;cli_text_processing_coreutils&quot;&gt;Command line text processing with GNU Coreutils&lt;&#x2F;a&gt; ebook for more details.&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>Python tip 31: next() function</title>
 		<published>2023-07-25T00:00:00+00:00</published>
