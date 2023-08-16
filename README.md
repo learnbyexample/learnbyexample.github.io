@@ -69,6 +69,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Tips
 
+* [Python tip 32: positive lookarounds](https://learnbyexample.github.io/tips/python-tip-32/)
 * [Vim tip 30: some general Vim settings](https://learnbyexample.github.io/tips/vim-tip-30/)
 * [CLI tip 31: concatenate files column wise](https://learnbyexample.github.io/tips/cli-tip-31/)
 * [Python tip 31: next() function](https://learnbyexample.github.io/tips/python-tip-31/)
