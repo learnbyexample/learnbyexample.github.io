@@ -5,8 +5,72 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2023-08-16T00:00:00+00:00</updated>
+	<updated>2023-08-17T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Interactive exercises for GNU grep, sed and awk (TUI apps)</title>
+		<published>2023-08-17T00:00:00+00:00</published>
+		<updated>2023-08-17T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://learnbyexample.github.io/interactive-grep-sed-awk-exercises/" type="text/html"/>
+		<id>https://learnbyexample.github.io/interactive-grep-sed-awk-exercises/</id>
+		<content type="html">&lt;p&gt;Having an interactive program that automatically loads questions and checks the solution is immensely helpful to have while learning a topic. I&#x27;ve written &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;TUI-apps&quot;&gt;TUI apps&lt;&#x2F;a&gt; with plenty of beginner to intermediate level exercises for &lt;code&gt;GNU grep&lt;&#x2F;code&gt;, &lt;code&gt;GNU sed&lt;&#x2F;code&gt; and &lt;code&gt;GNU awk&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;learnbyexample&#x2F;TUI-apps&#x2F;main&#x2F;GrepExercises&#x2F;grep_exercises.png&quot; alt=&quot;Sample screenshot for GNU grep exercises&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;&lt;br&gt;
+&lt;h2 id=&quot;installation&quot;&gt;Installation&lt;a class=&quot;zola-anchor&quot; href=&quot;#installation&quot; aria-label=&quot;Anchor link for: installation&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;For the past few months, I&#x27;ve been using a Python framework called &lt;a href=&quot;https:&#x2F;&#x2F;textual.textualize.io&#x2F;&quot;&gt;Textual&lt;&#x2F;a&gt; to create interactive TUI apps.&lt;&#x2F;p&gt;
+&lt;p&gt;You&#x27;ll need Python for this (I used 3.8, it should work for more recent versions too). This app is available on PyPI as &lt;a href=&quot;https:&#x2F;&#x2F;pypi.org&#x2F;project&#x2F;grepexercises&#x2F;&quot;&gt;grepexercises&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;pypi.org&#x2F;project&#x2F;sedexercises&#x2F;&quot;&gt;sedexercises&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;pypi.org&#x2F;project&#x2F;awkexercises&#x2F;&quot;&gt;awkexercises&lt;&#x2F;a&gt;. Example installation instructions are shown below, adjust them based on your preferences and OS.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# virtual environment
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; python3&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt; -m&lt;&#x2F;span&gt;&lt;span&gt; venv textual_apps
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; cd textual_apps
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; source bin&#x2F;activate
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; pip install grepexercises sedexercises awkexercises
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# launch the app, example shown for the grep command
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; grepexercises
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;To run the app without having to enter the virtual environment again, add aliases to &lt;code&gt;.bashrc&lt;&#x2F;code&gt; (or equivalent):&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# you&amp;#39;ll have to change the path
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;alias &lt;&#x2F;span&gt;&lt;span style=&quot;color:#c23f31;&quot;&gt;grepexercises&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&#x2F;path&#x2F;to&#x2F;textual_apps&#x2F;bin&#x2F;grepexercises&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# similarly, you can add aliases for the other apps as well
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;As an alternative, you can install &lt;code&gt;textual&lt;&#x2F;code&gt; (see &lt;a href=&quot;https:&#x2F;&#x2F;textual.textualize.io&#x2F;getting_started&#x2F;&quot;&gt;Textual documentation&lt;&#x2F;a&gt; for more details), clone my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;TUI-apps&quot;&gt;TUI-apps repository&lt;&#x2F;a&gt; and run the Python file from respective folders. For example, &lt;code&gt;grep_exercises.py&lt;&#x2F;code&gt; for the &lt;code&gt;grep&lt;&#x2F;code&gt; command.&lt;&#x2F;p&gt;
+&lt;p&gt;Adjust the terminal dimensions for the widgets to appear properly, for example 84x25 (characters x lines).&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; You can use alternative CLI tools to solve these exercises as well. For example, &lt;code&gt;perl&lt;&#x2F;code&gt; instead of &lt;code&gt;GNU awk&lt;&#x2F;code&gt; or &lt;code&gt;ripgrep&lt;&#x2F;code&gt; instead of &lt;code&gt;GNU grep&lt;&#x2F;code&gt; and so on.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;brief-guide&quot;&gt;Brief Guide&lt;a class=&quot;zola-anchor&quot; href=&quot;#brief-guide&quot; aria-label=&quot;Anchor link for: brief-guide&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;You can either click the buttons using mouse or press the key combinations listed below:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Press &lt;strong&gt;F1&lt;&#x2F;strong&gt; to view the complete guide from within the app itself.&lt;&#x2F;li&gt;
+&lt;li&gt;Press &lt;strong&gt;Ctrl+p&lt;&#x2F;strong&gt; and &lt;strong&gt;Ctrl+n&lt;&#x2F;strong&gt; to navigate the questions list.&lt;&#x2F;li&gt;
+&lt;li&gt;Type the command in the box below the question.&lt;&#x2F;li&gt;
+&lt;li&gt;Press &lt;strong&gt;Enter&lt;&#x2F;strong&gt; to execute the command.
+&lt;ul&gt;
+&lt;li&gt;Output would be displayed below the command box.&lt;&#x2F;li&gt;
+&lt;li&gt;If the output matches the expected results, the command box will turn &lt;em&gt;green&lt;&#x2F;em&gt; and reference solutions will also be shown.&lt;&#x2F;li&gt;
+&lt;li&gt;Issues due to errors and timeout (about &lt;code&gt;2&lt;&#x2F;code&gt; seconds) will be displayed in &lt;em&gt;red&lt;&#x2F;em&gt;.&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Press &lt;strong&gt;Ctrl+s&lt;&#x2F;strong&gt; to view reference solutions anytime you want.&lt;&#x2F;li&gt;
+&lt;li&gt;Press &lt;strong&gt;Ctrl+t&lt;&#x2F;strong&gt; to toggle between light and dark themes.&lt;&#x2F;li&gt;
+&lt;li&gt;Press &lt;strong&gt;Ctrl+q&lt;&#x2F;strong&gt; to quit the app.&lt;&#x2F;li&gt;
+&lt;li&gt;Some basic readline-like shortcuts are supported, for example &lt;strong&gt;Ctrl+u&lt;&#x2F;strong&gt;, &lt;strong&gt;Ctrl+k&lt;&#x2F;strong&gt;, &lt;strong&gt;Ctrl+w&lt;&#x2F;strong&gt;, etc&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Your progress is automatically saved when you close the app and restored when you launch it again later. Already answered questions will be skipped.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;warning.svg&quot; alt=&quot;warning&quot; &#x2F;&gt; There is no safeguard against the command you are executing. They are treated as if you typed them from a shell session.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;ebooks&quot;&gt;Ebooks&lt;a class=&quot;zola-anchor&quot; href=&quot;#ebooks&quot; aria-label=&quot;Anchor link for: ebooks&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;The exercise questions in these apps have been adapted from my programming ebooks: &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;books&#x2F;&quot;&gt;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;books&#x2F;&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;feedback&quot;&gt;Feedback&lt;a class=&quot;zola-anchor&quot; href=&quot;#feedback&quot; aria-label=&quot;Anchor link for: feedback&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;I&#x27;d highly appreciate your feedback. Please file &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;TUI-apps&#x2F;issues&quot;&gt;an issue&lt;&#x2F;a&gt; if there are bugs, crashes, etc.&lt;&#x2F;p&gt;
+&lt;p&gt;Hope you find these TUI apps useful. Happy learning :)&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>Python tip 32: positive lookarounds</title>
 		<published>2023-08-16T00:00:00+00:00</published>
