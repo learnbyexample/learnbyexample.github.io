@@ -5,8 +5,80 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2023-08-17T00:00:00+00:00</updated>
+	<updated>2023-08-21T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>CLI tip 32: text processing between two files with GNU awk</title>
+		<published>2023-08-21T00:00:00+00:00</published>
+		<updated>2023-08-21T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://learnbyexample.github.io/tips/cli-tip-32/" type="text/html"/>
+		<id>https://learnbyexample.github.io/tips/cli-tip-32/</id>
+		<content type="html">&lt;p&gt;&lt;code&gt;awk&lt;&#x2F;code&gt; is handy to compare records and fields between two or more files. The &lt;em&gt;key&lt;&#x2F;em&gt; features used in the solution below:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;For two files as input, &lt;code&gt;NR==FNR&lt;&#x2F;code&gt; will be &lt;code&gt;true&lt;&#x2F;code&gt; only when the first file is being processed&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;next&lt;&#x2F;code&gt; will skip rest of the script and fetch the next record&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;a[$0]&lt;&#x2F;code&gt; by itself is a valid statement. It will create an uninitialized element in array &lt;code&gt;a&lt;&#x2F;code&gt; with &lt;code&gt;$0&lt;&#x2F;code&gt; as the key (assuming the key doesn&#x27;t exist yet)&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;$0 in a&lt;&#x2F;code&gt; checks if the given string (&lt;code&gt;$0&lt;&#x2F;code&gt; here) exists as a key in the array &lt;code&gt;a&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;pre data-lang=&quot;ruby&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span&gt;$ cat colors_1.txt
+&lt;&#x2F;span&gt;&lt;span&gt;teal
+&lt;&#x2F;span&gt;&lt;span&gt;light blue
+&lt;&#x2F;span&gt;&lt;span&gt;green
+&lt;&#x2F;span&gt;&lt;span&gt;yellow
+&lt;&#x2F;span&gt;&lt;span&gt;$ cat colors_2.txt
+&lt;&#x2F;span&gt;&lt;span&gt;light blue
+&lt;&#x2F;span&gt;&lt;span&gt;black
+&lt;&#x2F;span&gt;&lt;span&gt;dark green
+&lt;&#x2F;span&gt;&lt;span&gt;yellow
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# common lines
+&lt;&#x2F;span&gt;&lt;span&gt;$ awk &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;NR==FNR{a[$0]; next} $0 in a&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt; colors_1.txt colors_2.txt
+&lt;&#x2F;span&gt;&lt;span&gt;light blue
+&lt;&#x2F;span&gt;&lt;span&gt;yellow
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# lines from colors_2.txt not present in colors_1.txt
+&lt;&#x2F;span&gt;&lt;span&gt;$ awk &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;NR==FNR{a[$0]; next} !($0 in a)&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt; colors_1.txt colors_2.txt
+&lt;&#x2F;span&gt;&lt;span&gt;black
+&lt;&#x2F;span&gt;&lt;span&gt;dark green
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;warning.svg&quot; alt=&quot;warning&quot; &#x2F;&gt; Note that the &lt;code&gt;NR==FNR&lt;&#x2F;code&gt; logic will fail if the first file is empty, since &lt;code&gt;NR&lt;&#x2F;code&gt; wouldn&#x27;t get a chance to increment. You can set a flag after the first file has been processed to avoid this issue. See &lt;a href=&quot;https:&#x2F;&#x2F;unix.stackexchange.com&#x2F;a&#x2F;237110&#x2F;109046&quot;&gt;this unix.stackexchange thread&lt;&#x2F;a&gt; for more workarounds.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;ruby&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# no output
+&lt;&#x2F;span&gt;&lt;span&gt;$ awk &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;NR==FNR{a[$0]; next} !($0 in a)&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&#x2F;&lt;&#x2F;span&gt;&lt;span&gt;dev&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&#x2F;&lt;&#x2F;span&gt;&lt;span&gt;null &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span&gt;(seq &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;2&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# gives the expected output
+&lt;&#x2F;span&gt;&lt;span&gt;$ awk &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;!f{a[$0]; next} !($0 in a)&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&#x2F;&lt;&#x2F;span&gt;&lt;span&gt;dev&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&#x2F;&lt;&#x2F;span&gt;&lt;span&gt;null f=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;1 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span&gt;(seq &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;2&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;1
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;2
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;Here&#x27;s an example of comparing specific fields instead of whole lines. When you use a &lt;code&gt;,&lt;&#x2F;code&gt; separator between strings to construct the array key, the value of &lt;code&gt;SUBSEP&lt;&#x2F;code&gt; is inserted. This special variable has a default value of the non-printing character &lt;code&gt;\034&lt;&#x2F;code&gt; which is usually not used as part of text files.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;ruby&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span&gt;$ cat marks.txt
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Dept    Name    Marks
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;ECE     Raj     &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;53
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;ECE     Joel    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;72
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;EEE     Moi     &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;68
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;CSE     Surya   &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;81
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;EEE     Tia     &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;59
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;ECE     Om      &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;92
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;CSE     Amy     &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;67
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;$ cat dept_name.txt
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;EEE Moi
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;CSE Amy
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;ECE Raj
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;$ awk &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;NR==FNR{a[$1,$2]; next} ($1,$2) in a&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt; dept_name.txt marks.txt
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;ECE     Raj     &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;53
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;EEE     Moi     &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;68
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;CSE     Amy     &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;67
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;&lt;strong&gt;Video demo&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; loading=&quot;lazy&quot; src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;gz-0UQGUfNA&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;&#x2F;iframe&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See also my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;learn_gnuawk&quot;&gt;CLI text processing with GNU awk&lt;&#x2F;a&gt; ebook.&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>Interactive exercises for GNU grep, sed and awk (TUI apps)</title>
 		<published>2023-08-17T00:00:00+00:00</published>

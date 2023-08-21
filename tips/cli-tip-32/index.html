@@ -1,0 +1,47 @@
+<!doctype html><html lang=en><head><meta content="IE=edge" http-equiv=X-UA-Compatible><meta content="text/html; charset=utf-8" http-equiv=content-type><meta content="width=device-width,initial-scale=1.0,maximum-scale=1" name=viewport><title>CLI tip 32: text processing between two files with GNU awk</title><link href=https://learnbyexample.github.io/atom.xml rel=alternate title=RSS type=application/atom+xml><script src=https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js></script><link href=https://learnbyexample.github.io/site.css rel=stylesheet><meta content="CLI tip 32: text processing between two files with GNU awk" property=og:title><meta content=website property=og:type><meta content="Using GNU awk to solve problems which depend upon the contents of two or more files." property=og:description><meta content=https://learnbyexample.github.io/cli-tip-32/ property=og:url><meta content=@learn_byexample property=twitter:site><link href=https://learnbyexample.github.io/favicon.svg rel=icon><link rel="shortcut icon" href=https://learnbyexample.github.io/favicon.png><body><div class=container><div class=mobile-navbar id=mobile-navbar><div class=mobile-header-logo><a class=logo href=/>learnbyexample</a></div><div class="mobile-navbar-icon icon-out"><span></span><span></span><span></span></div></div><nav class="mobile-menu slideout-menu slideout-menu-left" id=mobile-menu><ul class=mobile-menu-list><li class=mobile-menu-item><a href=https://learnbyexample.github.io/books> Books </a><li class=mobile-menu-item><a href=https://learnbyexample.github.io/mini> Mini </a><li class=mobile-menu-item><a href=https://learnbyexample.github.io/tips> Tips </a><li class=mobile-menu-item><a href=https://learnbyexample.github.io/tags> Tags </a><li class=mobile-menu-item><a href=https://learnbyexample.github.io/about> About </a></ul></nav><header id=header><div class=logo><a href=https://learnbyexample.github.io>learnbyexample</a></div><nav class=menu><ul><li><a href=https://learnbyexample.github.io/books> Books </a><li><a href=https://learnbyexample.github.io/mini> Mini </a><li><a href=https://learnbyexample.github.io/tips> Tips </a><li><a href=https://learnbyexample.github.io/tags> Tags </a><li><a href=https://learnbyexample.github.io/about> About </a></ul></nav></header><main><div class=content id=mobile-panel><article class=post><header class=post__header><h1 class=post__title><a href=https://learnbyexample.github.io/tips/cli-tip-32/>CLI tip 32: text processing between two files with GNU awk</a></h1><div class=post__meta><span class=post__time>2023-08-21</span></div></header><div class=post-content><p><code>awk</code> is handy to compare records and fields between two or more files. The <em>key</em> features used in the solution below:<ul><li>For two files as input, <code>NR==FNR</code> will be <code>true</code> only when the first file is being processed<li><code>next</code> will skip rest of the script and fetch the next record<li><code>a[$0]</code> by itself is a valid statement. It will create an uninitialized element in array <code>a</code> with <code>$0</code> as the key (assuming the key doesn't exist yet)<li><code>$0 in a</code> checks if the given string (<code>$0</code> here) exists as a key in the array <code>a</code></ul><pre class=language-ruby data-lang=ruby style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-ruby data-lang=ruby><span>$ cat colors_1.txt
+</span><span>teal
+</span><span>light blue
+</span><span>green
+</span><span>yellow
+</span><span>$ cat colors_2.txt
+</span><span>light blue
+</span><span>black
+</span><span>dark green
+</span><span>yellow
+</span><span>
+</span><span style=color:#7f8989;># common lines
+</span><span>$ awk </span><span style=color:#d07711;>'NR==FNR{a[$0]; next} $0 in a'</span><span> colors_1.txt colors_2.txt
+</span><span>light blue
+</span><span>yellow
+</span><span>
+</span><span style=color:#7f8989;># lines from colors_2.txt not present in colors_1.txt
+</span><span>$ awk </span><span style=color:#d07711;>'NR==FNR{a[$0]; next} !($0 in a)'</span><span> colors_1.txt colors_2.txt
+</span><span>black
+</span><span>dark green
+</span></code></pre><blockquote><p><img alt=warning src=/images/warning.svg> Note that the <code>NR==FNR</code> logic will fail if the first file is empty, since <code>NR</code> wouldn't get a chance to increment. You can set a flag after the first file has been processed to avoid this issue. See <a href=https://unix.stackexchange.com/a/237110/109046>this unix.stackexchange thread</a> for more workarounds.<pre class=language-ruby data-lang=ruby style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-ruby data-lang=ruby><span style=color:#7f8989;># no output
+</span><span>$ awk </span><span style=color:#d07711;>'NR==FNR{a[$0]; next} !($0 in a)' </span><span style=color:#72ab00;>/</span><span>dev</span><span style=color:#72ab00;>/</span><span>null </span><span style=color:#72ab00;><</span><span>(seq </span><span style=color:#b3933a;>2</span><span>)
+</span><span>
+</span><span style=color:#7f8989;># gives the expected output
+</span><span>$ awk </span><span style=color:#d07711;>'!f{a[$0]; next} !($0 in a)' </span><span style=color:#72ab00;>/</span><span>dev</span><span style=color:#72ab00;>/</span><span>null f=</span><span style=color:#b3933a;>1 </span><span style=color:#72ab00;><</span><span>(seq </span><span style=color:#b3933a;>2</span><span>)
+</span><span style=color:#b3933a;>1
+</span><span style=color:#b3933a;>2
+</span></code></pre></blockquote><p>Here's an example of comparing specific fields instead of whole lines. When you use a <code>,</code> separator between strings to construct the array key, the value of <code>SUBSEP</code> is inserted. This special variable has a default value of the non-printing character <code>\034</code> which is usually not used as part of text files.<pre class=language-ruby data-lang=ruby style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-ruby data-lang=ruby><span>$ cat marks.txt
+</span><span style=color:#5597d6;>Dept    Name    Marks
+</span><span style=color:#5597d6;>ECE     Raj     </span><span style=color:#b3933a;>53
+</span><span style=color:#5597d6;>ECE     Joel    </span><span style=color:#b3933a;>72
+</span><span style=color:#5597d6;>EEE     Moi     </span><span style=color:#b3933a;>68
+</span><span style=color:#5597d6;>CSE     Surya   </span><span style=color:#b3933a;>81
+</span><span style=color:#5597d6;>EEE     Tia     </span><span style=color:#b3933a;>59
+</span><span style=color:#5597d6;>ECE     Om      </span><span style=color:#b3933a;>92
+</span><span style=color:#5597d6;>CSE     Amy     </span><span style=color:#b3933a;>67
+</span><span>
+</span><span>$ cat dept_name.txt
+</span><span style=color:#5597d6;>EEE Moi
+</span><span style=color:#5597d6;>CSE Amy
+</span><span style=color:#5597d6;>ECE Raj
+</span><span>
+</span><span>$ awk </span><span style=color:#d07711;>'NR==FNR{a[$1,$2]; next} ($1,$2) in a'</span><span> dept_name.txt marks.txt
+</span><span style=color:#5597d6;>ECE     Raj     </span><span style=color:#b3933a;>53
+</span><span style=color:#5597d6;>EEE     Moi     </span><span style=color:#b3933a;>68
+</span><span style=color:#5597d6;>CSE     Amy     </span><span style=color:#b3933a;>67
+</span></code></pre><p><strong>Video demo</strong>:<p align=center><iframe allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" title="YouTube video player" allowfullscreen frameborder=0 height=315 loading=lazy src=https://www.youtube.com/embed/gz-0UQGUfNA width=560></iframe></p><br><p><img alt=info src=/images/info.svg> See also my <a href=https://github.com/learnbyexample/learn_gnuawk>CLI text processing with GNU awk</a> ebook.</div><div class=post-footer><div class=post-tags><a href=https://learnbyexample.github.io/tags/linux/>#linux</a><a href=https://learnbyexample.github.io/tags/command-line/>#command-line</a><a href=https://learnbyexample.github.io/tags/tip/>#tip</a></div><hr color=#e6e6e6><div class=post-nav><p><a class=next href=https://learnbyexample.github.io/tips/cli-tip-31/>CLI tip 31: concatenate files column wise →</a><br></div><hr color=#e6e6e6><p>📰 Use <a href=https://learnbyexample.github.io/atom.xml>this link</a> for the Atom feed. <br> ✅ Follow me on <a href=https://twitter.com/learn_byexample>Twitter</a>, <a href=https://github.com/learnbyexample>GitHub</a> and <a href=https://www.youtube.com/c/learnbyexample42>Youtube</a> for interesting tech nuggets. <br> 📧 Subscribe to <a href=https://learnbyexample.gumroad.com/l/learnbyexample-weekly>learnbyexample weekly</a> for programming resources, tips, tools, free ebooks and more (free newsletter, delivered every Friday).<hr color=#e6e6e6></div></article></div></main></div><script src=https://learnbyexample.github.io/even.js></script>
