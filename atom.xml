@@ -5,8 +5,99 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2023-08-21T00:00:00+00:00</updated>
+	<updated>2023-08-22T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>CLI text processing with GNU awk book announcement</title>
+		<published>2023-08-22T00:00:00+00:00</published>
+		<updated>2023-08-22T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://learnbyexample.github.io/cli-text-processing-awk-announcement/" type="text/html"/>
+		<id>https://learnbyexample.github.io/cli-text-processing-awk-announcement/</id>
+		<content type="html">&lt;p&gt;Hello!&lt;&#x2F;p&gt;
+&lt;p&gt;I am pleased to announce a new version of my &lt;strong&gt;CLI text processing with GNU awk&lt;&#x2F;strong&gt; ebook. Examples, exercises, solutions, descriptions and external links were added&#x2F;updated&#x2F;corrected.&lt;&#x2F;p&gt;
+&lt;p&gt;Learn the &lt;code&gt;GNU awk&lt;&#x2F;code&gt; command step-by-step from beginner to advanced levels with &lt;strong&gt;hundreds of examples and exercises&lt;&#x2F;strong&gt;. This book will dive deep into field processing, show examples for filtering features, multiple file processing, how to construct solutions that depend on multiple records, how to compare records and fields between two or more files, how to identify duplicates while maintaining input order and so on. &lt;strong&gt;Regular expressions&lt;&#x2F;strong&gt; will also be discussed in detail.&lt;&#x2F;p&gt;
+&lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;&lt;br&gt;
+&lt;h2 id=&quot;release-offers&quot;&gt;Release offers&lt;a class=&quot;zola-anchor&quot; href=&quot;#release-offers&quot; aria-label=&quot;Anchor link for: release-offers&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;To celebrate the new release, you can download PDF&#x2F;EPUB versions of &lt;strong&gt;CLI text processing with GNU awk&lt;&#x2F;strong&gt; for FREE till 31-August-2023. You can still pay if you wish ;)&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;gnu_awk&quot;&gt;Gumroad&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;leanpub.com&#x2F;gnu_awk&#x2F;c&#x2F;new_awk_release&quot;&gt;Leanpub&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Other offers:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;oneliners&#x2F;new_awk_release&quot;&gt;Magical one-liners&lt;&#x2F;a&gt; is $5 (normal price $15) — grep, sed, awk, perl and ruby one-liners bundle&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;all-books&#x2F;new_awk_release&quot;&gt;All Books Bundle&lt;&#x2F;a&gt; is $12 (normal price $32) — all my 13 programming ebooks&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;what-s-new&quot;&gt;What&#x27;s new?&lt;a class=&quot;zola-anchor&quot; href=&quot;#what-s-new&quot; aria-label=&quot;Anchor link for: what-s-new&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Command version updated to &lt;strong&gt;GNU awk 5.2.2&lt;&#x2F;strong&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Many more exercises added, and you can practice some of them using this &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;TUI-apps&#x2F;blob&#x2F;main&#x2F;AwkExercises&quot;&gt;interactive TUI app&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Long sections split into smaller ones&lt;&#x2F;li&gt;
+&lt;li&gt;In general, many of the examples, exercises, solutions, descriptions and external links were updated&#x2F;corrected&lt;&#x2F;li&gt;
+&lt;li&gt;Updated Acknowledgements section&lt;&#x2F;li&gt;
+&lt;li&gt;Code snippets related to info&#x2F;warning sections will now appear as a single block&lt;&#x2F;li&gt;
+&lt;li&gt;Book title changed to &lt;strong&gt;CLI text processing with GNU awk&lt;&#x2F;strong&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;New cover image&lt;&#x2F;li&gt;
+&lt;li&gt;Images centered for EPUB format&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;videos&quot;&gt;Videos&lt;a class=&quot;zola-anchor&quot; href=&quot;#videos&quot; aria-label=&quot;Anchor link for: videos&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; loading=&quot;lazy&quot; src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;KIa_EaYwGDI&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;&#x2F;iframe&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;On this blog, I &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips&#x2F;&quot;&gt;post tips&lt;&#x2F;a&gt; covering Python, command line tools and Vim. Here are video demos for these tips:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=THSMmCZQn1A&amp;amp;list=PLTv2U3HnAL4PlFDiH3FXTHXRbhWs2sB3F&quot;&gt;Python tips&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=p0KCLusMd5Q&amp;amp;list=PLTv2U3HnAL4PNTmRqZBSUgKaiHbRL2zeY&quot;&gt;Linux command line tips&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;interactive-tui-app&quot;&gt;Interactive TUI app&lt;a class=&quot;zola-anchor&quot; href=&quot;#interactive-tui-app&quot; aria-label=&quot;Anchor link for: interactive-tui-app&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;I also wrote an &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;TUI-apps&#x2F;blob&#x2F;main&#x2F;AwkExercises&quot;&gt;interactive TUI app&lt;&#x2F;a&gt; based on some of the exercises from the ebook. Reference solutions are also provided.&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;learnbyexample&#x2F;TUI-apps&#x2F;main&#x2F;AwkExercises&#x2F;awk_exercises.png&quot; alt=&quot;Sample screenshot from the interactive TUI app for awk exercises&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;table-of-contents&quot;&gt;Table of Contents&lt;a class=&quot;zola-anchor&quot; href=&quot;#table-of-contents&quot; aria-label=&quot;Anchor link for: table-of-contents&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Preface&lt;&#x2F;li&gt;
+&lt;li&gt;Installation and Documentation&lt;&#x2F;li&gt;
+&lt;li&gt;awk introduction&lt;&#x2F;li&gt;
+&lt;li&gt;Regular Expressions&lt;&#x2F;li&gt;
+&lt;li&gt;Field separators&lt;&#x2F;li&gt;
+&lt;li&gt;Record separators&lt;&#x2F;li&gt;
+&lt;li&gt;In-place file editing&lt;&#x2F;li&gt;
+&lt;li&gt;Using shell variables&lt;&#x2F;li&gt;
+&lt;li&gt;Control Structures&lt;&#x2F;li&gt;
+&lt;li&gt;Built-in functions&lt;&#x2F;li&gt;
+&lt;li&gt;Multiple file input&lt;&#x2F;li&gt;
+&lt;li&gt;Processing multiple records&lt;&#x2F;li&gt;
+&lt;li&gt;Two file processing&lt;&#x2F;li&gt;
+&lt;li&gt;Dealing with duplicates&lt;&#x2F;li&gt;
+&lt;li&gt;awk scripts&lt;&#x2F;li&gt;
+&lt;li&gt;Gotchas and Tips&lt;&#x2F;li&gt;
+&lt;li&gt;Further Reading&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;web-version&quot;&gt;Web version&lt;a class=&quot;zola-anchor&quot; href=&quot;#web-version&quot; aria-label=&quot;Anchor link for: web-version&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;You can also read the book online here: &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;learn_gnuawk&#x2F;&quot;&gt;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;learn_gnuawk&#x2F;&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;github-repo&quot;&gt;GitHub repo&lt;a class=&quot;zola-anchor&quot; href=&quot;#github-repo&quot; aria-label=&quot;Anchor link for: github-repo&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Visit &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;learn_gnuawk&quot;&gt;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;learn_gnuawk&lt;&#x2F;a&gt; for markdown source, example files, exercise solutions, sample chapters and other details related to the book.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See also &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;customizing-pandoc&#x2F;&quot;&gt;my blog post&lt;&#x2F;a&gt; on how to customize &lt;code&gt;pandoc&lt;&#x2F;code&gt; for generating beautiful PDF&#x2F;EPUB versions from GitHub style markdown.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;newsletter&quot;&gt;Newsletter&lt;a class=&quot;zola-anchor&quot; href=&quot;#newsletter&quot; aria-label=&quot;Anchor link for: newsletter&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Subscribe to &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;learnbyexample-weekly&quot;&gt;learnbyexample weekly&lt;&#x2F;a&gt; — free newsletter covering programming resources, updates on what I am creating, tips, tools, free ebooks and more, delivered every Friday.&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;feedback-and-errata&quot;&gt;Feedback and Errata&lt;a class=&quot;zola-anchor&quot; href=&quot;#feedback-and-errata&quot; aria-label=&quot;Anchor link for: feedback-and-errata&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;I would highly appreciate it if you&#x27;d &lt;strong&gt;let me know how you felt about this book&lt;&#x2F;strong&gt;. It could be anything from a simple thank you, Gumroad rating, pointing out a typo, mistakes in code snippets, which aspects of the book worked for you (or didn&#x27;t!) and so on. Reader feedback is essential and especially so for self-published authors.&lt;&#x2F;p&gt;
+&lt;p&gt;You can reach me via:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Issue Manager: &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;learn_gnuawk&#x2F;issues&quot;&gt;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;learn_gnuawk&#x2F;issues&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;E-mail: &lt;code&gt;echo &#x27;bGVhcm5ieWV4YW1wbGUubmV0QGdtYWlsLmNvbQo=&#x27; | base64 --decode&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Twitter: &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;learn_byexample&quot;&gt;https:&#x2F;&#x2F;twitter.com&#x2F;learn_byexample&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Happy learning :)&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>CLI tip 32: text processing between two files with GNU awk</title>
 		<published>2023-08-21T00:00:00+00:00</published>
@@ -3658,7 +3749,7 @@ Specifying a greater than &lt;code&gt;0&lt;&#x2F;code&gt; start index when using
 	<entry xml:lang="en">
 		<title>Programming ebooks by Sundeep Agarwal</title>
 		<published>2022-08-09T00:00:00+00:00</published>
-		<updated>2023-06-29T00:00:00+00:00</updated>
+		<updated>2023-08-22T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/books/" type="text/html"/>
 		<id>https://learnbyexample.github.io/books/</id>
 		<content type="html">&lt;p&gt;This post lists my programming ebooks with details like PDF&#x2F;EPUB purchase links, GitHub repos, web versions, testimonials, etc. All my ebooks are self-published. You can get these ebooks individually or as part of bundles. You can also read them online for free.&lt;&#x2F;p&gt;
@@ -3820,7 +3911,7 @@ Specifying a greater than &lt;code&gt;0&lt;&#x2F;code&gt; start index when using
 &lt;p&gt;Example based guide to mastering GNU grep and ripgrep. Exercises are also included to test your understanding.&lt;&#x2F;p&gt;
 &lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;learnbyexample&#x2F;learn_gnugrep_ripgrep&#x2F;master&#x2F;images&#x2F;grep_ls.png&quot; width=&quot;640px&quot; height=&quot;360px&quot; alt=&quot;CLI text processing with GNU grep and ripgrep cover image&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;learn_gnugrep_ripgrep&#x2F;blob&#x2F;master&#x2F;sample_chapters&#x2F;grep_sample_chapters.pdf&quot;&gt;Sample chapters&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;learn_gnugrep_ripgrep&#x2F;blob&#x2F;master&#x2F;sample_chapters&#x2F;gnu_grep_sample.pdf&quot;&gt;Sample chapters&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;Buy pdf&#x2F;epub from:
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;gnugrep_ripgrep&quot;&gt;gumroad&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
@@ -3836,7 +3927,7 @@ Specifying a greater than &lt;code&gt;0&lt;&#x2F;code&gt; start index when using
 &lt;p&gt;Example based guide to mastering GNU sed. Exercises are also included to test your understanding.&lt;&#x2F;p&gt;
 &lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;learnbyexample&#x2F;learn_gnused&#x2F;master&#x2F;images&#x2F;sed_ls.png&quot; width=&quot;640px&quot; height=&quot;360px&quot; alt=&quot;CLI text processing with GNU sed cover image&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;learn_gnused&#x2F;blob&#x2F;master&#x2F;sample_chapters&#x2F;sed_sample_chapters.pdf&quot;&gt;Sample chapters&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;learn_gnused&#x2F;blob&#x2F;master&#x2F;sample_chapters&#x2F;gnu_sed_sample.pdf&quot;&gt;Sample chapters&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;Buy pdf&#x2F;epub from:
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;gnu_sed&quot;&gt;gumroad&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
@@ -3848,11 +3939,11 @@ Specifying a greater than &lt;code&gt;0&lt;&#x2F;code&gt; start index when using
 &lt;li&gt;Feedback: &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;learn_byexample&quot;&gt;Twitter&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;br&gt;
-&lt;h1 id=&quot;gnu-awk&quot;&gt;&lt;p style=&quot;color: #ff9933&quot;&gt;GNU awk&lt;&#x2F;h1&gt;
-&lt;p&gt;Example based guide to mastering GNU awk one-liners.&lt;&#x2F;p&gt;
-&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;books&#x2F;gawk.png&quot; alt=&quot;awk cover image&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;cli-text-processing-with-gnu-awk&quot;&gt;&lt;p style=&quot;color: #ff9933&quot;&gt;CLI text processing with GNU awk&lt;&#x2F;h1&gt;
+&lt;p&gt;Example based guide to mastering GNU awk one-liners. Exercises are also included to test your understanding.&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;learnbyexample&#x2F;learn_gnuawk&#x2F;master&#x2F;images&#x2F;gawk_ls.png&quot; width=&quot;640px&quot; height=&quot;360px&quot; alt=&quot;CLI text processing with GNU awk cover image&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;learn_gnuawk&#x2F;blob&#x2F;master&#x2F;sample_chapters&#x2F;awk_sample_chapters.pdf&quot;&gt;Sample chapters&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;learn_gnuawk&#x2F;blob&#x2F;master&#x2F;sample_chapters&#x2F;gnu_awk_sample.pdf&quot;&gt;Sample chapters&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;Buy pdf&#x2F;epub from:
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;gnu_awk&quot;&gt;gumroad&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
