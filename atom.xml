@@ -9284,7 +9284,7 @@ no VAL is specified, the key will be given the value true.&lt;&#x2F;p&gt;
 		<id>https://learnbyexample.github.io/grep-book-announcement/</id>
 		<content type="html">&lt;p&gt;Hello!&lt;&#x2F;p&gt;
 &lt;p&gt;I recently self-published my third book, this one is about &lt;strong&gt;GNU GREP and RIPGREP&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
-&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;books&#x2F;grep.png&quot; alt=&quot;GNU GREP and RIPGREP cover image&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;learnbyexample&#x2F;learn_gnugrep_ripgrep&#x2F;master&#x2F;images&#x2F;grep_ls.png&quot; alt=&quot;GNU GREP and RIPGREP cover image&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 &lt;p&gt;Get the ebook using either of these sites:&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;gnugrep_ripgrep&quot;&gt;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;gnugrep_ripgrep&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
