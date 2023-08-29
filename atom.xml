@@ -5,8 +5,41 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2023-08-22T00:00:00+00:00</updated>
+	<updated>2023-08-29T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Vim tip 31: mark frequently used locations</title>
+		<published>2023-08-29T00:00:00+00:00</published>
+		<updated>2023-08-29T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://learnbyexample.github.io/tips/vim-tip-31/" type="text/html"/>
+		<id>https://learnbyexample.github.io/tips/vim-tip-31/</id>
+		<content type="html">&lt;p&gt;You can save frequently visited locations using marks for quicker navigation to those positions in the file. You can also pair marks with motion commands for tasks like copying, deleting, etc.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;kbd&gt;ma&lt;&#x2F;kbd&gt; mark location in the file using the alphabet &lt;code&gt;a&lt;&#x2F;code&gt;
+&lt;ul&gt;
+&lt;li&gt;you can use any of the 26 alphabets&lt;&#x2F;li&gt;
+&lt;li&gt;use lowercase alphabets to work within the current file&lt;&#x2F;li&gt;
+&lt;li&gt;use uppercase alphabets to work from any file&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;:marks&lt;&#x2F;kbd&gt; will show a list of the existing marks&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;`a&lt;&#x2F;kbd&gt; move to the exact location marked by &lt;code&gt;a&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;&#x27;a&lt;&#x2F;kbd&gt; move to the first non-blank character of the line marked by &lt;code&gt;a&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;&#x27;A&lt;&#x2F;kbd&gt; move to the first non-blank character of the line marked by &lt;code&gt;A&lt;&#x2F;code&gt; (this will work for any file where the mark was set)&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;d`a&lt;&#x2F;kbd&gt; delete from the current character to the character marked by &lt;code&gt;a&lt;&#x2F;code&gt;
+&lt;ul&gt;
+&lt;li&gt;marks can be paired with any command that accept motions like &lt;code&gt;d&lt;&#x2F;code&gt;, &lt;code&gt;y&lt;&#x2F;code&gt;, &lt;code&gt;&amp;gt;&lt;&#x2F;code&gt;, etc&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; Motion commands that take you across lines (for example, &lt;kbd&gt;10G&lt;&#x2F;kbd&gt;) will automatically save the location you jumped from in the default &lt;code&gt;`&lt;&#x2F;code&gt; mark. You can move back to that exact location using &lt;code&gt;``&lt;&#x2F;code&gt; or the first non-blank character using &lt;code&gt;&#x27;`&lt;&#x2F;code&gt;. Note that the arrow and word motions aren&#x27;t considered for the default mark even if they move across lines.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See &lt;a href=&quot;https:&#x2F;&#x2F;vimhelp.org&#x2F;motion.txt.html#mark-motions&quot;&gt;:h mark-motions&lt;&#x2F;a&gt; for more ways to use marks.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Video demo&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; loading=&quot;lazy&quot; src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;mTed-8UxNBA&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;&#x2F;iframe&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See also my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;vim_reference&quot;&gt;Vim Reference Guide&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;curated_resources&#x2F;vim.html&quot;&gt;curated list of resources for Vim&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>CLI text processing with GNU awk book announcement</title>
 		<published>2023-08-22T00:00:00+00:00</published>
