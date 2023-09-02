@@ -5,7 +5,7 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2023-08-29T00:00:00+00:00</updated>
+	<updated>2023-09-02T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
 	<entry xml:lang="en">
 		<title>Vim tip 31: mark frequently used locations</title>
@@ -2475,7 +2475,7 @@ Specifying a greater than &lt;code&gt;0&lt;&#x2F;code&gt; start index when using
 	<entry xml:lang="en">
 		<title>CLI tip 21: inplace file editing with GNU awk</title>
 		<published>2023-01-04T00:00:00+00:00</published>
-		<updated>2023-01-04T00:00:00+00:00</updated>
+		<updated>2023-09-02T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/tips/cli-tip-21/" type="text/html"/>
 		<id>https://learnbyexample.github.io/tips/cli-tip-21/</id>
 		<content type="html">&lt;p&gt;You can use the &lt;code&gt;-i&lt;&#x2F;code&gt; option with &lt;code&gt;GNU awk&lt;&#x2F;code&gt; to load libraries. The &lt;code&gt;inplace&lt;&#x2F;code&gt; library comes by default with the &lt;code&gt;GNU awk&lt;&#x2F;code&gt; installation. Thus, you can use &lt;code&gt;-i inplace&lt;&#x2F;code&gt; to modify the original input itself. Make sure to test that the code is working as intended before using this option.&lt;&#x2F;p&gt;
@@ -2510,6 +2510,7 @@ Specifying a greater than &lt;code&gt;0&lt;&#x2F;code&gt; start index when using
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Raj  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;56  64
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; Earlier versions of &lt;code&gt;GNU awk&lt;&#x2F;code&gt; used &lt;code&gt;INPLACE_SUFFIX&lt;&#x2F;code&gt; variable instead of &lt;code&gt;inplace::suffix&lt;&#x2F;code&gt;. Also, you can use &lt;code&gt;inplace::enable&lt;&#x2F;code&gt; variable to dynamically control whether files should be inplaced or not. See &lt;a href=&quot;https:&#x2F;&#x2F;www.gnu.org&#x2F;software&#x2F;gawk&#x2F;manual&#x2F;gawk.html#Extension-Sample-Inplace&quot;&gt;gawk manual: Enabling In-Place File Editing&lt;&#x2F;a&gt; for more details.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;warning.svg&quot; alt=&quot;warning&quot; &#x2F;&gt; See &lt;a href=&quot;https:&#x2F;&#x2F;unix.stackexchange.com&#x2F;q&#x2F;749645&#x2F;109046&quot;&gt;this unix.stackexchange thread&lt;&#x2F;a&gt; for details about security implications of using the &lt;code&gt;-i&lt;&#x2F;code&gt; option and workarounds.&lt;&#x2F;p&gt;
 &lt;p&gt;&lt;strong&gt;Video demo&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
 &lt;p align=&quot;center&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; loading=&quot;lazy&quot; src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;yfO-HVTBoSI&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;&#x2F;iframe&gt;&lt;&#x2F;p&gt;
 &lt;br&gt;
