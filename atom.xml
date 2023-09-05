@@ -5,8 +5,43 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2023-09-02T00:00:00+00:00</updated>
+	<updated>2023-09-05T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Python tip 33: sorting iterables based on multiple conditions</title>
+		<published>2023-09-05T00:00:00+00:00</published>
+		<updated>2023-09-05T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://learnbyexample.github.io/tips/python-tip-33/" type="text/html"/>
+		<id>https://learnbyexample.github.io/tips/python-tip-33/</id>
+		<content type="html">&lt;p&gt;In an &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips&#x2F;python-tip-21&#x2F;&quot;&gt;earlier tip&lt;&#x2F;a&gt;, you learned how to sort iterables based on a key. You can use a sequence like &lt;code&gt;list&lt;&#x2F;code&gt; or &lt;code&gt;tuple&lt;&#x2F;code&gt; to specify a tie-breaker condition when two or more items are deemed equal under the primary sorting rule.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;python&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-python &quot;&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;&#x2F;span&gt;&lt;span&gt;books &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;Mage Errant&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;Piranesi&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;Cradle&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;The Weirkey Chronicles&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;Mistborn&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# sorts based on the number of words
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# retains original order for items with the same number of words
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;sorted&lt;&#x2F;span&gt;&lt;span&gt;(books, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;key&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;=lambda &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;b&lt;&#x2F;span&gt;&lt;span&gt;: b.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;count&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39; &amp;#39;&lt;&#x2F;span&gt;&lt;span&gt;))
+&lt;&#x2F;span&gt;&lt;span&gt;[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;Piranesi&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;Cradle&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;Mistborn&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;Mage Errant&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;The Weirkey Chronicles&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt;]
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# items with the same number of words are further sorted in alphabetic order
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;sorted&lt;&#x2F;span&gt;&lt;span&gt;(books, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;key&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;=lambda &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;b&lt;&#x2F;span&gt;&lt;span&gt;: (b.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;count&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39; &amp;#39;&lt;&#x2F;span&gt;&lt;span&gt;), b))
+&lt;&#x2F;span&gt;&lt;span&gt;[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;Cradle&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;Mistborn&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;Piranesi&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;Mage Errant&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;The Weirkey Chronicles&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt;]
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;To sort in descending order, usually the &lt;code&gt;reverse=True&lt;&#x2F;code&gt; keyword argument is used. But what if the primary and secondary rules are opposites? If one of the rule is numerical in nature, you can simply negate the number to reverse the order.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# descending order based on the number of words
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# ascending alphabetic order for items with the same number of words
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;&#x2F;span&gt;&lt;span&gt; sorted(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;books,&lt;&#x2F;span&gt;&lt;span&gt; key=lambda b: (-b.count(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39; &amp;#39;&lt;&#x2F;span&gt;&lt;span&gt;), b))
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;The Weirkey Chronicles&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;Mage Errant&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;Cradle&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;Mistborn&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;Piranesi&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt;]
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# reverse the above result
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;&#x2F;span&gt;&lt;span&gt; sorted(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;books,&lt;&#x2F;span&gt;&lt;span&gt; key=lambda b: (-b.count(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39; &amp;#39;&lt;&#x2F;span&gt;&lt;span&gt;), b)&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;,&lt;&#x2F;span&gt;&lt;span&gt; reverse=True)
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;[&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;Piranesi&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;Mistborn&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;Cradle&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;Mage Errant&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;The Weirkey Chronicles&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt;]
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See also &lt;a href=&quot;https:&#x2F;&#x2F;docs.python.org&#x2F;3&#x2F;howto&#x2F;sorting.html&quot;&gt;docs.python HOWTOs: Sorting&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;Video demo&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; loading=&quot;lazy&quot; src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;YRLs92qWa9c&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;&#x2F;iframe&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See also my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;100_page_python_intro&quot;&gt;100 Page Python Intro&lt;&#x2F;a&gt; ebook.&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>Vim tip 31: mark frequently used locations</title>
 		<published>2023-08-29T00:00:00+00:00</published>
@@ -5618,7 +5653,7 @@ Specifying a greater than &lt;code&gt;0&lt;&#x2F;code&gt; start index when using
 	<entry xml:lang="en">
 		<title>Brag post: Hacker News Front Page entries</title>
 		<published>2022-01-21T00:00:00+00:00</published>
-		<updated>2022-12-14T00:00:00+00:00</updated>
+		<updated>2023-09-05T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/mini/hacker-news-front-page-brag/" type="text/html"/>
 		<id>https://learnbyexample.github.io/mini/hacker-news-front-page-brag/</id>
 		<content type="html">&lt;p&gt;In case you haven&#x27;t yet read this nice post &lt;a href=&quot;https:&#x2F;&#x2F;jvns.ca&#x2F;blog&#x2F;brag-documents&#x2F;&quot;&gt;&amp;quot;Get your work recognized: write a brag document&amp;quot;&lt;&#x2F;a&gt; by Julia Evans, please do that first.&lt;&#x2F;p&gt;
@@ -5638,6 +5673,7 @@ Specifying a greater than &lt;code&gt;0&lt;&#x2F;code&gt; start index when using
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=29837543&quot;&gt;Vim prank: alias vim=&#x27;vim -y&#x27;&lt;&#x2F;a&gt; — &lt;em&gt;341 points, Jan 2022, 259 comments&lt;&#x2F;em&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=30684232&quot;&gt;Vim Reference Guide&lt;&#x2F;a&gt; — &lt;em&gt;244 points, Mar 2022, 110 comments&lt;&#x2F;em&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=33931677&quot;&gt;Show HN: Interactive exercises for Linux CLI text processing commands&lt;&#x2F;a&gt; — &lt;em&gt;69 points, Dec 2022, 7 comments&lt;&#x2F;em&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=37290356&quot;&gt;CLI text processing with GNU awk&lt;&#x2F;a&gt; — &lt;em&gt;419 points, Aug 2023, 129 comments&lt;&#x2F;em&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ol&gt;
 &lt;p&gt;As is the case with other social media platforms, being an active participant on Hacker News definitely helps. Apart from commenting on other topics, I also post links to projects and resources that I felt were useful. The number of such links reaching front page outnumbers my own content links.&lt;&#x2F;p&gt;
 </content>
