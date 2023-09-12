@@ -71,6 +71,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Tips
 
+* [CLI tip 33: manipulating string case with GNU sed](https://learnbyexample.github.io/tips/cli-tip-33/)
 * [Python tip 33: sorting iterables based on multiple conditions](https://learnbyexample.github.io/tips/python-tip-33/)
 * [Vim tip 31: mark frequently used locations](https://learnbyexample.github.io/tips/vim-tip-31/)
 * [CLI tip 32: text processing between two files with GNU awk](https://learnbyexample.github.io/tips/cli-tip-32/)

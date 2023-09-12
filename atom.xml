@@ -5,8 +5,71 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2023-09-05T00:00:00+00:00</updated>
+	<updated>2023-09-11T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>CLI tip 33: manipulating string case with GNU sed</title>
+		<published>2023-09-11T00:00:00+00:00</published>
+		<updated>2023-09-11T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://learnbyexample.github.io/tips/cli-tip-33/" type="text/html"/>
+		<id>https://learnbyexample.github.io/tips/cli-tip-33/</id>
+		<content type="html">&lt;p&gt;&lt;code&gt;sed&lt;&#x2F;code&gt; provides escape sequences to change the case of replacement strings, which might include backreferences, shell variables, etc.&lt;&#x2F;p&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Sequence&lt;&#x2F;th&gt;&lt;th&gt;Description&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
+&lt;tr&gt;&lt;td&gt;&lt;code&gt;\E&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;indicates the end of case conversion&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;code&gt;\l&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;convert the next character to lowercase&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;code&gt;\u&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;convert the next character to uppercase&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;code&gt;\L&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;convert the following characters to lowercase (overridden by &lt;code&gt;\U&lt;&#x2F;code&gt; or &lt;code&gt;\E&lt;&#x2F;code&gt;)&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;code&gt;\U&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;convert the following characters to uppercase (overridden by &lt;code&gt;\L&lt;&#x2F;code&gt; or &lt;code&gt;\E&lt;&#x2F;code&gt;)&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
+&lt;p&gt;First up, changing case of only the immediate next character after the escape sequence.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;ruby&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# match only the first character of a word
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# use &amp;amp; to backreference the matched character
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# \u would then change it to uppercase
+&lt;&#x2F;span&gt;&lt;span&gt;$ echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;hello there. how are you?&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span&gt; sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;s&#x2F;\b\w&#x2F;\u&amp;amp;&#x2F;g&amp;#39;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Hello There&lt;&#x2F;span&gt;&lt;span&gt;. &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;How Are You&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;?
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# change the first character of a word to lowercase
+&lt;&#x2F;span&gt;&lt;span&gt;$ echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;HELLO THERE. HOW ARE YOU?&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span&gt; sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;s&#x2F;\b\w&#x2F;\l&amp;amp;&#x2F;g&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;hELLO tHERE. hOW aRE yOU?
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# match lowercase followed by underscore followed by lowercase
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# delete the underscore and convert the 2nd lowercase to uppercase
+&lt;&#x2F;span&gt;&lt;span&gt;$ echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;_fig aug_price next_line&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span&gt; sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;E &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;s&#x2F;([a-z])_([a-z])&#x2F;\1\u\2&#x2F;g&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;_fig augPrice nextLine
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Next, changing case of multiple characters at a time.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;ruby&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# change all alphabets to lowercase
+&lt;&#x2F;span&gt;&lt;span&gt;$ echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;HaVE a nICe dAy&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span&gt; sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;s&#x2F;.*&#x2F;\L&amp;amp;&#x2F;&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;have a nice day
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# change all alphabets to uppercase
+&lt;&#x2F;span&gt;&lt;span&gt;$ echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;HaVE a nICe dAy&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span&gt; sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;s&#x2F;.*&#x2F;\U&amp;amp;&#x2F;&amp;#39;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;HAVE A NICE DAY
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# \E will stop further conversion
+&lt;&#x2F;span&gt;&lt;span&gt;$ echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;fig_ aug_price next_line&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span&gt; sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;E &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;s&#x2F;([a-z]+)(_[a-z]+)&#x2F;\U\1\E\2&#x2F;g&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;fig_ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;AUG_price NEXT_line
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# \L or \U will override any existing conversion
+&lt;&#x2F;span&gt;&lt;span&gt;$ echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;HeLLo:bYe gOoD:beTTEr&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span&gt; sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;E &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;s&#x2F;([a-z]+)(:[a-z]+)&#x2F;\L\1\U\2&#x2F;Ig&amp;#39;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;hello:&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;BYE &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;good:&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;BETTER
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Finally, examples where escapes are used next to each other.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;ruby&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# uppercase first character of a word
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# and lowercase rest of the word characters
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# note the order of escapes used, \u\L won&amp;#39;t work
+&lt;&#x2F;span&gt;&lt;span&gt;$ echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;HeLLo:bYe gOoD:beTTEr&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span&gt; sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;E &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;s&#x2F;[a-z]+&#x2F;\L\u&amp;amp;&#x2F;Ig&amp;#39;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;Hello:&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Bye &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;Good:&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Better
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# lowercase first character of a word
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# and uppercase rest of the word characters
+&lt;&#x2F;span&gt;&lt;span&gt;$ echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;HeLLo:bYe gOoD:beTTEr&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span&gt; sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;E &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;s&#x2F;[a-z]+&#x2F;\U\l&amp;amp;&#x2F;Ig&amp;#39;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;hELLO:&lt;&#x2F;span&gt;&lt;span&gt;bYE &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;gOOD:&lt;&#x2F;span&gt;&lt;span&gt;bETTER
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;&lt;strong&gt;Video demo&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; loading=&quot;lazy&quot; src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;h5-JoNvvihY&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;&#x2F;iframe&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See also my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;learn_gnused&quot;&gt;CLI text processing with GNU sed&lt;&#x2F;a&gt; ebook.&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>Python tip 33: sorting iterables based on multiple conditions</title>
 		<published>2023-09-05T00:00:00+00:00</published>
