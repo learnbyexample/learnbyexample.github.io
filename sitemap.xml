@@ -443,7 +443,7 @@
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tips/</loc>
-        <lastmod>2023-09-11</lastmod>
+        <lastmod>2023-09-19</lastmod>
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tips/cli-tip-1/</loc>
@@ -808,6 +808,10 @@
     <url>
         <loc>https://learnbyexample.github.io/tips/vim-tip-31/</loc>
         <lastmod>2023-08-29</lastmod>
+    </url>
+    <url>
+        <loc>https://learnbyexample.github.io/tips/vim-tip-32/</loc>
+        <lastmod>2023-09-19</lastmod>
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tips/vim-tip-4/</loc>

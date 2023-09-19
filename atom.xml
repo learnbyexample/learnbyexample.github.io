@@ -5,8 +5,52 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2023-09-11T00:00:00+00:00</updated>
+	<updated>2023-09-19T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Vim tip 32: text and indent settings</title>
+		<published>2023-09-19T00:00:00+00:00</published>
+		<updated>2023-09-19T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://learnbyexample.github.io/tips/vim-tip-32/" type="text/html"/>
+		<id>https://learnbyexample.github.io/tips/vim-tip-32/</id>
+		<content type="html">&lt;p&gt;Here are some text and indent Vim settings that you can put in the &lt;code&gt;vimrc&lt;&#x2F;code&gt; file to customize your editor. See &lt;a href=&quot;https:&#x2F;&#x2F;vimhelp.org&#x2F;options.txt.html&quot;&gt;:h options.txt&lt;&#x2F;a&gt; for complete reference.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;kbd&gt;filetype plugin indent on&lt;&#x2F;kbd&gt; enables loading of &lt;code&gt;plugin&lt;&#x2F;code&gt; and &lt;code&gt;indent&lt;&#x2F;code&gt; files
+&lt;ul&gt;
+&lt;li&gt;these files become active based on the type of the file to influence syntax highlighting, indentation, etc&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;:echo $VIMRUNTIME&lt;&#x2F;kbd&gt; gives your installation directory (&lt;code&gt;indent&lt;&#x2F;code&gt; and &lt;code&gt;plugin&lt;&#x2F;code&gt; directories would be present in this path)&lt;&#x2F;li&gt;
+&lt;li&gt;see &lt;a href=&quot;https:&#x2F;&#x2F;vimhelp.org&#x2F;usr_05.txt.html#vimrc-filetype&quot;&gt;:h vimrc-filetype&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;vimhelp.org&#x2F;filetype.txt.html#%3Afiletype-overview&quot;&gt;:h :filetype-overview&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;vimhelp.org&#x2F;filetype.txt.html&quot;&gt;:h filetype.txt&lt;&#x2F;a&gt; for more details&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;set autoindent&lt;&#x2F;kbd&gt; copy indent from the current line when starting a new line
+&lt;ul&gt;
+&lt;li&gt;useful for files not affected by &lt;code&gt;indent&lt;&#x2F;code&gt; setting&lt;&#x2F;li&gt;
+&lt;li&gt;see also &lt;a href=&quot;https:&#x2F;&#x2F;vimhelp.org&#x2F;options.txt.html#%27smartindent%27&quot;&gt;:h smartindent&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;set textwidth=80&lt;&#x2F;kbd&gt; guideline for Vim to automatically move to a new line with &lt;code&gt;80&lt;&#x2F;code&gt; characters as the limit
+&lt;ul&gt;
+&lt;li&gt;white space is used to break lines, so a line can still be greater than the limit if there&#x27;s no white space&lt;&#x2F;li&gt;
+&lt;li&gt;default is &lt;code&gt;0&lt;&#x2F;code&gt; which disables this setting&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;set colorcolumn=80&lt;&#x2F;kbd&gt; create a highlighted vertical bar at column number &lt;code&gt;80&lt;&#x2F;code&gt;
+&lt;ul&gt;
+&lt;li&gt;use &lt;code&gt;highlight ColorColumn&lt;&#x2F;code&gt; setting to customize the color for this vertical bar&lt;&#x2F;li&gt;
+&lt;li&gt;see &lt;a href=&quot;https:&#x2F;&#x2F;vi.stackexchange.com&#x2F;q&#x2F;574&#x2F;1616&quot;&gt;vi.stackexchange: Keeping lines to less than 80 characters&lt;&#x2F;a&gt; for more details&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;set shiftwidth=4&lt;&#x2F;kbd&gt; number of spaces to use for indentation (default is &lt;code&gt;8&lt;&#x2F;code&gt;)&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;set tabstop=4&lt;&#x2F;kbd&gt; width for the tab character (default is &lt;code&gt;8&lt;&#x2F;code&gt;)&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;set expandtab&lt;&#x2F;kbd&gt; use spaces for tab expansion&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;set cursorline&lt;&#x2F;kbd&gt; highlight the line containing the cursor&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;&lt;strong&gt;Video demo&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; loading=&quot;lazy&quot; src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;3F5R8BDuMGc&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;&#x2F;iframe&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See also my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;vim_reference&quot;&gt;Vim Reference Guide&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;curated_resources&#x2F;vim.html&quot;&gt;curated list of resources for Vim&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>CLI tip 33: manipulating string case with GNU sed</title>
 		<published>2023-09-11T00:00:00+00:00</published>
