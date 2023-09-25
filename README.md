@@ -71,6 +71,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Tips
 
+* [Vim tip 33: editing with text objects](https://learnbyexample.github.io/tips/vim-tip-33/)
 * [Vim tip 32: text and indent settings](https://learnbyexample.github.io/tips/vim-tip-32/)
 * [CLI tip 33: manipulating string case with GNU sed](https://learnbyexample.github.io/tips/cli-tip-33/)
 * [Python tip 33: sorting iterables based on multiple conditions](https://learnbyexample.github.io/tips/python-tip-33/)

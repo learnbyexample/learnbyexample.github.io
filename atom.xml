@@ -5,8 +5,57 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2023-09-19T00:00:00+00:00</updated>
+	<updated>2023-09-25T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Vim tip 33: editing with text objects</title>
+		<published>2023-09-25T00:00:00+00:00</published>
+		<updated>2023-09-25T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://learnbyexample.github.io/tips/vim-tip-33/" type="text/html"/>
+		<id>https://learnbyexample.github.io/tips/vim-tip-33/</id>
+		<content type="html">&lt;p&gt;Combining motions such as &lt;code&gt;w&lt;&#x2F;code&gt;, &lt;code&gt;%&lt;&#x2F;code&gt; and &lt;code&gt;f&lt;&#x2F;code&gt; with editing commands like &lt;code&gt;d&lt;&#x2F;code&gt;, &lt;code&gt;c&lt;&#x2F;code&gt; and &lt;code&gt;y&lt;&#x2F;code&gt; require precise positioning to be effective.&lt;&#x2F;p&gt;
+&lt;p&gt;Vim also provides a list of handy context based options to make certain editing use cases easier using the &lt;code&gt;i&lt;&#x2F;code&gt; and &lt;code&gt;a&lt;&#x2F;code&gt; text object selections. You can easily remember the difference between these two options by thinking &lt;code&gt;i&lt;&#x2F;code&gt; as &lt;strong&gt;inner&lt;&#x2F;strong&gt; and &lt;code&gt;a&lt;&#x2F;code&gt; as &lt;strong&gt;around&lt;&#x2F;strong&gt;.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;kbd&gt;diw&lt;&#x2F;kbd&gt; delete a word regardless of where the cursor is on that word
+&lt;ul&gt;
+&lt;li&gt;equivalent to using &lt;kbd&gt;de&lt;&#x2F;kbd&gt; when the cursor is on the first character of the word&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;diW&lt;&#x2F;kbd&gt; delete a WORD regardless of where the cursor is on that WORD&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;daw&lt;&#x2F;kbd&gt; delete a word regardless of where the cursor is on that word as well as a space character to the left&#x2F;right of the word depending on its position in the current sentence&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;dis&lt;&#x2F;kbd&gt; delete a sentence regardless of where the cursor is on that sentence&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;yas&lt;&#x2F;kbd&gt; copy a sentence regardless of where the cursor is on that sentence as well as a space character to the left&#x2F;right&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;cip&lt;&#x2F;kbd&gt; delete a paragraph regardless of where the cursor is on that paragraph and change to Insert mode&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;dit&lt;&#x2F;kbd&gt; delete all characters within HTML&#x2F;XML tags, nesting is taken care as well
+&lt;ul&gt;
+&lt;li&gt;see &lt;a href=&quot;https:&#x2F;&#x2F;vimhelp.org&#x2F;motion.txt.html#tag-blocks&quot;&gt;:h tag-blocks&lt;&#x2F;a&gt; for details about corner cases&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;di&amp;quot;&lt;&#x2F;kbd&gt; delete all characters within a pair of double quotes, regardless of where the cursor is within the quotes&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;da&#x27;&lt;&#x2F;kbd&gt; delete all characters within a pair of single quotes along with the quote characters&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;ci(&lt;&#x2F;kbd&gt; delete all characters within &lt;code&gt;()&lt;&#x2F;code&gt; and change to Insert mode
+&lt;ul&gt;
+&lt;li&gt;works even if the parenthesis are spread over multiple lines, nesting is taken care as well&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;kbd&gt;ya}&lt;&#x2F;kbd&gt; copy all characters within &lt;code&gt;{}&lt;&#x2F;code&gt; including the &lt;code&gt;{}&lt;&#x2F;code&gt; characters
+&lt;ul&gt;
+&lt;li&gt;works even if the braces are spread over multiple lines, nesting is taken care as well&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; You can use a count prefix for nested cases. For example, &lt;kbd&gt;c2i{&lt;&#x2F;kbd&gt; will clear the inner braces (including the braces, and this could be nested too) and then only the text between braces for the next level.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See &lt;a href=&quot;https:&#x2F;&#x2F;vimhelp.org&#x2F;motion.txt.html#text-objects&quot;&gt;:h text-objects&lt;&#x2F;a&gt; for more details.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Video demo&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; loading=&quot;lazy&quot; src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;jbZMDQcwnV4&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;&#x2F;iframe&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See also my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;vim_reference&quot;&gt;Vim Reference Guide&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;curated_resources&#x2F;vim.html&quot;&gt;curated list of resources for Vim&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>Vim tip 32: text and indent settings</title>
 		<published>2023-09-19T00:00:00+00:00</published>
