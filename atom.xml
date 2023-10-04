@@ -5,12 +5,12 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2023-09-28T00:00:00+00:00</updated>
+	<updated>2023-10-04T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
 	<entry xml:lang="en">
 		<title>Perl One-Liners Guide book announcement</title>
 		<published>2023-09-28T00:00:00+00:00</published>
-		<updated>2023-09-28T00:00:00+00:00</updated>
+		<updated>2023-10-04T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/perl-oneliners-guide-announcement/" type="text/html"/>
 		<id>https://learnbyexample.github.io/perl-oneliners-guide-announcement/</id>
 		<content type="html">&lt;p&gt;Hello!&lt;&#x2F;p&gt;
@@ -53,6 +53,12 @@
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=THSMmCZQn1A&amp;amp;list=PLTv2U3HnAL4PlFDiH3FXTHXRbhWs2sB3F&quot;&gt;Python tips&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=p0KCLusMd5Q&amp;amp;list=PLTv2U3HnAL4PNTmRqZBSUgKaiHbRL2zeY&quot;&gt;Linux command line tips&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;testimonials&quot;&gt;Testimonials&lt;a class=&quot;zola-anchor&quot; href=&quot;#testimonials&quot; aria-label=&quot;Anchor link for: testimonials&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This is fantastic! 👏 I use Perl one-liners for record and text processing a lot and this will be definitely something I will keep coming back to - I’ve already learned a trick from “Context Matching” (9) 🙂&lt;&#x2F;p&gt;
+&lt;p&gt;— &lt;a href=&quot;https:&#x2F;&#x2F;programming.dev&#x2F;comment&#x2F;3277968&quot;&gt;feedback on Linux@lemmy.ml&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
 &lt;br&gt;
 &lt;h2 id=&quot;table-of-contents&quot;&gt;Table of Contents&lt;a class=&quot;zola-anchor&quot; href=&quot;#table-of-contents&quot; aria-label=&quot;Anchor link for: table-of-contents&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
 &lt;ol&gt;
@@ -4060,7 +4066,7 @@ Specifying a greater than &lt;code&gt;0&lt;&#x2F;code&gt; start index when using
 	<entry xml:lang="en">
 		<title>Programming ebooks by Sundeep Agarwal</title>
 		<published>2022-08-09T00:00:00+00:00</published>
-		<updated>2023-09-28T00:00:00+00:00</updated>
+		<updated>2023-10-04T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/books/" type="text/html"/>
 		<id>https://learnbyexample.github.io/books/</id>
 		<content type="html">&lt;p&gt;This post lists my programming ebooks with details like PDF&#x2F;EPUB purchase links, GitHub repos, web versions, testimonials, etc. All my ebooks are self-published. You can get these ebooks individually or as part of bundles. You can also read them online for free.&lt;&#x2F;p&gt;
@@ -4151,6 +4157,10 @@ Specifying a greater than &lt;code&gt;0&lt;&#x2F;code&gt; start index when using
 &lt;blockquote&gt;
 &lt;p&gt;Thank you for choosing to write and share your knowledge. I read your books on CLI and sed - I think they are very comprehensive and very well explained. Keep up the great work&lt;&#x2F;p&gt;
 &lt;p&gt;— &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;le_anh_phuong&#x2F;status&#x2F;1628149732760604672&quot;&gt;feedback on twitter&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;This is fantastic! 👏 I use Perl one-liners for record and text processing a lot and this will be definitely something I will keep coming back to - I’ve already learned a trick from “Context Matching” (9) 🙂&lt;&#x2F;p&gt;
+&lt;p&gt;— &lt;a href=&quot;https:&#x2F;&#x2F;programming.dev&#x2F;comment&#x2F;3277968&quot;&gt;feedback on Linux@lemmy.ml&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;
 &lt;br&gt;
 &lt;h1 id=&quot;100-page-python-intro&quot;&gt;&lt;p style=&quot;color: #ff9933&quot;&gt;100 Page Python Intro&lt;&#x2F;h1&gt;
