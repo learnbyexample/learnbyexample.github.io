@@ -5,7 +5,7 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2023-10-04T00:00:00+00:00</updated>
+	<updated>2023-10-12T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
 	<entry xml:lang="en">
 		<title>Perl One-Liners Guide book announcement</title>
@@ -2319,7 +2319,7 @@
 	<entry xml:lang="en">
 		<title>Understanding Python re(gex)? book announcement</title>
 		<published>2023-01-30T00:00:00+00:00</published>
-		<updated>2023-01-31T00:00:00+00:00</updated>
+		<updated>2023-10-12T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/understanding-python-regex-announcement/" type="text/html"/>
 		<id>https://learnbyexample.github.io/understanding-python-regex-announcement/</id>
 		<content type="html">&lt;p&gt;Hello!&lt;&#x2F;p&gt;
@@ -2372,8 +2372,12 @@
 &lt;&#x2F;ul&gt;
 &lt;br&gt;
 &lt;h2 id=&quot;re-gex-playground&quot;&gt;re(gex)? playground&lt;a class=&quot;zola-anchor&quot; href=&quot;#re-gex-playground&quot; aria-label=&quot;Anchor link for: re-gex-playground&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
-&lt;p&gt;To make it easier to experiment, I&#x27;m working on an interactive app. See &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;TUI-apps&#x2F;tree&#x2F;main&#x2F;PyRegexPlayground&quot;&gt;PyRegexPlayground&lt;&#x2F;a&gt; repo for installation instructions and usage guide. A sample screenshot is shown below:&lt;&#x2F;p&gt;
+&lt;p&gt;To make it easier to experiment, I wrote on an interactive app. See &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;TUI-apps&#x2F;tree&#x2F;main&#x2F;PyRegexPlayground&quot;&gt;PyRegexPlayground&lt;&#x2F;a&gt; repo for installation instructions and usage guide. A sample screenshot is shown below:&lt;&#x2F;p&gt;
 &lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;learnbyexample&#x2F;TUI-apps&#x2F;main&#x2F;PyRegexPlayground&#x2F;pyregex_finditer.png&quot; alt=&quot;Sample screenshot from the Playground screen&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;re-gex-exercises&quot;&gt;re(gex)? exercises&lt;a class=&quot;zola-anchor&quot; href=&quot;#re-gex-exercises&quot; aria-label=&quot;Anchor link for: re-gex-exercises&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;I wrote another TUI app to help you solve exercises from this book interactively. See &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;TUI-apps&#x2F;tree&#x2F;main&#x2F;PyRegexExercises&quot;&gt;PyRegexExercises&lt;&#x2F;a&gt; repo for installation steps and &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;TUI-apps&#x2F;blob&#x2F;main&#x2F;PyRegexExercises&#x2F;app_guide.md&quot;&gt;app_guide.md&lt;&#x2F;a&gt; for instructions on using this app. Here&#x27;s a sample screenshot:&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;learnbyexample&#x2F;TUI-apps&#x2F;main&#x2F;PyRegexExercises&#x2F;pyregex_exercises.png&quot; alt=&quot;Sample screenshot for Python regex exercises&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 &lt;br&gt;
 &lt;h2 id=&quot;table-of-contents&quot;&gt;Table of Contents&lt;a class=&quot;zola-anchor&quot; href=&quot;#table-of-contents&quot; aria-label=&quot;Anchor link for: table-of-contents&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
 &lt;ol&gt;
@@ -9145,7 +9149,7 @@ no VAL is specified, the key will be given the value true.&lt;&#x2F;p&gt;
 	<entry xml:lang="en">
 		<title>Python regular expression cheatsheet and examples</title>
 		<published>2020-07-03T00:00:00+00:00</published>
-		<updated>2023-06-13T00:00:00+00:00</updated>
+		<updated>2023-10-12T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/python-regex-cheatsheet/" type="text/html"/>
 		<id>https://learnbyexample.github.io/python-regex-cheatsheet/</id>
 		<content type="html">&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;books&#x2F;pyregex_example.png&quot; alt=&quot;pyregex example&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
@@ -9299,7 +9303,7 @@ no VAL is specified, the key will be given the value true.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;regular-expression-examples&quot;&gt;Regular expression examples&lt;a class=&quot;zola-anchor&quot; href=&quot;#regular-expression-examples&quot; aria-label=&quot;Anchor link for: regular-expression-examples&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
 &lt;p&gt;As a good practice, always use &lt;strong&gt;raw strings&lt;&#x2F;strong&gt; to construct RE, unless other formats are required. This will avoid conflict between special meaning of the backslash character in RE and string literals.&lt;&#x2F;p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; I&#x27;m working on an interactive app to help you experiment with the examples presented below. See &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;TUI-apps&#x2F;tree&#x2F;main&#x2F;PyRegexPlayground&quot;&gt;PyRegexPlayground&lt;&#x2F;a&gt; repo for installation instructions and usage guide.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; I wrote an interactive TUI app to help you experiment with the examples presented below. See &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;TUI-apps&#x2F;tree&#x2F;main&#x2F;PyRegexPlayground&quot;&gt;PyRegexPlayground&lt;&#x2F;a&gt; repo for installation instructions and usage guide. See &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;TUI-apps&#x2F;tree&#x2F;main&#x2F;PyRegexExercises&quot;&gt;PyRegexExercises&lt;&#x2F;a&gt; repo for a TUI app with 100+ Python regex exercises.&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;
 &lt;ul&gt;
 &lt;li&gt;examples for &lt;code&gt;re.search()&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
@@ -9554,7 +9558,7 @@ no VAL is specified, the key will be given the value true.&lt;&#x2F;p&gt;
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;br&gt;
 &lt;h2 id=&quot;understanding-python-re-gex-book&quot;&gt;Understanding Python re(gex)? book&lt;a class=&quot;zola-anchor&quot; href=&quot;#understanding-python-re-gex-book&quot; aria-label=&quot;Anchor link for: understanding-python-re-gex-book&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
-&lt;p&gt;Visit my GitHub repo &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;py_regular_expressions&quot;&gt;Understanding Python re(gex)?&lt;&#x2F;a&gt; for details about the book I wrote on Python regular expressions. The book uses plenty of examples to explain the concepts from the basics and introduces more advanced concepts step-by-step. The book also covers the &lt;a href=&quot;https:&#x2F;&#x2F;pypi.org&#x2F;project&#x2F;regex&#x2F;&quot;&gt;third-party regex module&lt;&#x2F;a&gt;. The cheatsheet and examples presented in this post are based on contents of this book.&lt;&#x2F;p&gt;
+&lt;p&gt;Visit my GitHub repo &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;py_regular_expressions&quot;&gt;Understanding Python re(gex)?&lt;&#x2F;a&gt; for details about the book I wrote on Python regular expressions. The book uses plenty of examples to explain the concepts from the basics and introduces more advanced concepts step-by-step. The book also covers the &lt;a href=&quot;https:&#x2F;&#x2F;pypi.org&#x2F;project&#x2F;regex&#x2F;&quot;&gt;third-party regex module&lt;&#x2F;a&gt;. The cheatsheet and examples presented in this post are based on the contents of this book.&lt;&#x2F;p&gt;
 &lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;learnbyexample&#x2F;py_regular_expressions&#x2F;master&#x2F;images&#x2F;py_regex_ls.png&quot; width=&quot;640px&quot; height=&quot;360px&quot; alt=&quot;Understanding Python re(gex)? cover image&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 </content>
 	</entry>
