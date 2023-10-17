@@ -96,7 +96,7 @@
     </url>
     <url>
         <loc>https://learnbyexample.github.io/mini/</loc>
-        <lastmod>2022-11-14</lastmod>
+        <lastmod>2023-10-17</lastmod>
     </url>
     <url>
         <loc>https://learnbyexample.github.io/mini/bash-compound-commands-redirection/</loc>
@@ -105,6 +105,10 @@
     <url>
         <loc>https://learnbyexample.github.io/mini/cli-computing-sales/</loc>
         <lastmod>2022-11-14</lastmod>
+    </url>
+    <url>
+        <loc>https://learnbyexample.github.io/mini/cli-text-editing-with-ed/</loc>
+        <lastmod>2023-10-17</lastmod>
     </url>
     <url>
         <loc>https://learnbyexample.github.io/mini/debug-woes-1/</loc>
@@ -290,6 +294,9 @@
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tags/ebook/</loc>
+    </url>
+    <url>
+        <loc>https://learnbyexample.github.io/tags/ed/</loc>
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tags/epub/</loc>

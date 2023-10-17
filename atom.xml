@@ -5,8 +5,87 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2023-10-12T00:00:00+00:00</updated>
+	<updated>2023-10-17T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>CLI text editing with ed</title>
+		<published>2023-10-17T00:00:00+00:00</published>
+		<updated>2023-10-17T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://learnbyexample.github.io/mini/cli-text-editing-with-ed/" type="text/html"/>
+		<id>https://learnbyexample.github.io/mini/cli-text-editing-with-ed/</id>
+		<content type="html">&lt;p&gt;I&#x27;m finally writing a post on the &lt;code&gt;ed&lt;&#x2F;code&gt; command. And I&#x27;m keeping it short so that I&#x27;ll actually publish the post. The examples presented below will be easier to understand for those already familiar with Vim and &lt;code&gt;sed&lt;&#x2F;code&gt;. See the links at the end for learning resources.&lt;&#x2F;p&gt;
+&lt;p&gt;Although I&#x27;m interested in getting to know &lt;code&gt;ed&lt;&#x2F;code&gt; better, I don&#x27;t really find myself in situations where it&#x27;d help me. But, I have used it a few times to answer questions on stackoverflow.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;moving-lines&quot;&gt;Moving lines&lt;&#x2F;h2&gt;
+&lt;p&gt;Consider this sample input file:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;ruby&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span&gt;$ cat ip.txt
+&lt;&#x2F;span&gt;&lt;span&gt;apple
+&lt;&#x2F;span&gt;&lt;span&gt;banana
+&lt;&#x2F;span&gt;&lt;span&gt;cherry
+&lt;&#x2F;span&gt;&lt;span&gt;fig
+&lt;&#x2F;span&gt;&lt;span&gt;mango
+&lt;&#x2F;span&gt;&lt;span&gt;pineapple
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Suppose, you want to move the third line to the top. If you are using Vim, you can execute &lt;code&gt;:3m0&lt;&#x2F;code&gt; where &lt;code&gt;3&lt;&#x2F;code&gt; is the input address, &lt;code&gt;m&lt;&#x2F;code&gt; is the &lt;em&gt;move&lt;&#x2F;em&gt; command and &lt;code&gt;0&lt;&#x2F;code&gt; is the target address. To do the same with &lt;code&gt;ed&lt;&#x2F;code&gt;:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;ruby&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span&gt;$ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;printf &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;3m0\nwq\n&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span&gt; ed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt;s ip.txt &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;$ cat ip.txt
+&lt;&#x2F;span&gt;&lt;span&gt;cherry
+&lt;&#x2F;span&gt;&lt;span&gt;apple
+&lt;&#x2F;span&gt;&lt;span&gt;banana
+&lt;&#x2F;span&gt;&lt;span&gt;fig
+&lt;&#x2F;span&gt;&lt;span&gt;mango
+&lt;&#x2F;span&gt;&lt;span&gt;pineapple
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;The &lt;code&gt;3m0&lt;&#x2F;code&gt; part in the above &lt;code&gt;ed&lt;&#x2F;code&gt; command is identical to the Vim solution. After that, another command &lt;code&gt;wq&lt;&#x2F;code&gt; (write and quit) is issued to save the changes (again, Vim users would be familiar with this combination). The &lt;code&gt;-s&lt;&#x2F;code&gt; option suppresses diagnostics and other details. &lt;code&gt;-&lt;&#x2F;code&gt; is used to indicate that the &lt;code&gt;ed&lt;&#x2F;code&gt; script is passed via stdin.&lt;&#x2F;p&gt;
+&lt;p&gt;You can also move lines based on a regexp match. Here&#x27;s an example:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;ruby&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# move the first matching line containing &amp;#39;an&amp;#39; to the top of the file
+&lt;&#x2F;span&gt;&lt;span&gt;$ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;printf &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&#x2F;an&#x2F;m0\nwq\n&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span&gt; ed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt;s ip.txt &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;$ cat ip.txt
+&lt;&#x2F;span&gt;&lt;span&gt;banana
+&lt;&#x2F;span&gt;&lt;span&gt;cherry
+&lt;&#x2F;span&gt;&lt;span&gt;apple
+&lt;&#x2F;span&gt;&lt;span&gt;fig
+&lt;&#x2F;span&gt;&lt;span&gt;mango
+&lt;&#x2F;span&gt;&lt;span&gt;pineapple
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;If you want to move all the matching lines, you can use the &lt;code&gt;g&lt;&#x2F;code&gt; command (same as Vim). Note that the first matching line will be moved first, then the next matching line and so on. So the order will be reversed after the move.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;ruby&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span&gt;$ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;printf &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;g&#x2F;app&#x2F;m0\nwq\n&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span&gt; ed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt;s ip.txt &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;$ cat ip.txt
+&lt;&#x2F;span&gt;&lt;span&gt;pineapple
+&lt;&#x2F;span&gt;&lt;span&gt;apple
+&lt;&#x2F;span&gt;&lt;span&gt;banana
+&lt;&#x2F;span&gt;&lt;span&gt;cherry
+&lt;&#x2F;span&gt;&lt;span&gt;fig
+&lt;&#x2F;span&gt;&lt;span&gt;mango
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Here&#x27;s the &lt;a href=&quot;https:&#x2F;&#x2F;stackoverflow.com&#x2F;q&#x2F;67031062&#x2F;4082052&quot;&gt;stackoverflow link&lt;&#x2F;a&gt; that inspired the above examples. See &lt;a href=&quot;https:&#x2F;&#x2F;stackoverflow.com&#x2F;a&#x2F;75222984&#x2F;4082052&quot;&gt;this stackoverflow answer&lt;&#x2F;a&gt; for more examples of moving lines. See &lt;a href=&quot;https:&#x2F;&#x2F;stackoverflow.com&#x2F;a&#x2F;48840851&#x2F;4082052&quot;&gt;this one&lt;&#x2F;a&gt; to learn how to copy a particular line to the end of the file.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;negative-addressing&quot;&gt;Negative addressing&lt;&#x2F;h2&gt;
+&lt;p&gt;There are plenty of &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;learn_gnused&#x2F;selective-editing.html&quot;&gt;addressing features&lt;&#x2F;a&gt; provided by the &lt;code&gt;GNU sed&lt;&#x2F;code&gt; command, but negative addressing isn&#x27;t one. Here&#x27;s an example of deleting the last but second line using &lt;code&gt;ed&lt;&#x2F;code&gt;:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;ruby&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span&gt;$ cat colors.txt
+&lt;&#x2F;span&gt;&lt;span&gt;red
+&lt;&#x2F;span&gt;&lt;span&gt;green
+&lt;&#x2F;span&gt;&lt;span&gt;blue
+&lt;&#x2F;span&gt;&lt;span&gt;yellow
+&lt;&#x2F;span&gt;&lt;span&gt;black
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;$ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;printf &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;$-2d\nwq\n&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span&gt; ed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt;s colors.txt &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-
+&lt;&#x2F;span&gt;&lt;span&gt;$ cat colors.txt
+&lt;&#x2F;span&gt;&lt;span&gt;red
+&lt;&#x2F;span&gt;&lt;span&gt;green
+&lt;&#x2F;span&gt;&lt;span&gt;yellow
+&lt;&#x2F;span&gt;&lt;span&gt;black
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;h2 id=&quot;resource-links&quot;&gt;Resource links&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;blog.sanctum.geek.nz&#x2F;actually-using-ed&#x2F;&quot;&gt;Actually using ed&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;raymii.org&#x2F;s&#x2F;tutorials&#x2F;ed_cheatsheet.html&quot;&gt;ed cheatsheet&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;jvns.ca&#x2F;blog&#x2F;2018&#x2F;05&#x2F;11&#x2F;batch-editing-files-with-ed&#x2F;&quot;&gt;Batch editing files with ed&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Ed_(text_editor)&quot;&gt;wikipedia entry for the ed command&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>Perl One-Liners Guide book announcement</title>
 		<published>2023-09-28T00:00:00+00:00</published>
