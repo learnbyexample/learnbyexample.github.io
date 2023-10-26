@@ -6,6 +6,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Posts
 
+* [Understanding JavaScript RegExp book announcement](https://learnbyexample.github.io/understanding-javascript-regexp-announcement/)
 * [Perl One-Liners Guide book announcement](https://learnbyexample.github.io/perl-oneliners-guide-announcement/)
 * [CLI text processing with GNU awk book announcement](https://learnbyexample.github.io/cli-text-processing-awk-announcement/)
 * [Interactive exercises for GNU grep, sed and awk (TUI apps)](https://learnbyexample.github.io/interactive-grep-sed-awk-exercises/)
