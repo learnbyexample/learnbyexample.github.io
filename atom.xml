@@ -5,7 +5,7 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2023-10-27T00:00:00+00:00</updated>
+	<updated>2023-11-16T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
 	<entry xml:lang="en">
 		<title>Understanding JavaScript RegExp book announcement</title>
@@ -8565,7 +8565,7 @@ The substitution works from start of the line for every iteration of the while l
 	<entry xml:lang="en">
 		<title>I know Python basics, what next?</title>
 		<published>2020-07-25T00:00:00+00:00</published>
-		<updated>2023-04-25T00:00:00+00:00</updated>
+		<updated>2023-11-16T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/python-intermediate/" type="text/html"/>
 		<id>https://learnbyexample.github.io/python-intermediate/</id>
 		<content type="html">&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;python_what_next.png&quot; alt=&quot;Python what next&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
@@ -8590,6 +8590,7 @@ The substitution works from start of the line for every iteration of the while l
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;py.checkio.org&#x2F;&quot;&gt;Checkio&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;www.codingame.com&#x2F;start&quot;&gt;Codingame&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;codecombat.com&#x2F;&quot;&gt;Codecombat&lt;&#x2F;a&gt; — gaming based challenges&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;old.reddit.com&#x2F;r&#x2F;dailyprogrammer&quot;&gt;&#x2F;r&#x2F;dailyprogrammer&lt;&#x2F;a&gt; — not active currently, but there&#x27;s plenty of past challenges with discussions&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See also this article on &lt;a href=&quot;https:&#x2F;&#x2F;www.pythonmorsels.com&#x2F;programming-exercise-tips&#x2F;&quot;&gt;solving programming exercises&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;p&gt;Once you are comfortable with basics and syntax, the next step is projects. I wrote a 10-line program that solved a common problem for me — adding &lt;code&gt;body { text-align: justify }&lt;&#x2F;code&gt; to &lt;code&gt;epub&lt;&#x2F;code&gt; files that are not justify aligned. I didn&#x27;t know that this line would help beforehand. Found a solution online and then automated the process of unzipping &lt;code&gt;epub&lt;&#x2F;code&gt;, adding the line and then packing it again. That will likely need you to lookup documentation and go through some stackoverflow Q&amp;amp;A as well. And once you have written the solution and use it regularly, you&#x27;ll likely encounter corner cases and features to be added. I feel this is a great way to learn and understand programming.&lt;&#x2F;p&gt;
 &lt;p&gt;These days, I use a better EPUB reader that allows me to customize alignments. Here&#x27;s another real world example. I&#x27;m on Linux and use the terminal for many things. I wanted a CLI tool to do simple calculations. There&#x27;s &lt;code&gt;bc&lt;&#x2F;code&gt; command, but it doesn&#x27;t accept direct string argument and you need to set &lt;code&gt;scale&lt;&#x2F;code&gt; and so on. So, I looked up how to write a CLI tool in Python and &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;practice_python_projects&#x2F;calculator&#x2F;calculator.html&quot;&gt;wrote one using the built-in &lt;code&gt;argparse&lt;&#x2F;code&gt; module&lt;&#x2F;a&gt; that works for my particular use cases.&lt;&#x2F;p&gt;
 &lt;p&gt;Here are some resources to help you get started on projects:&lt;&#x2F;p&gt;
@@ -8649,6 +8650,7 @@ The substitution works from start of the line for every iteration of the while l
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;dabeaz-course.github.io&#x2F;practical-python&#x2F;Notes&#x2F;Contents.html&quot;&gt;Practical Python Programming&lt;&#x2F;a&gt; — covers foundational aspects of Python programming with an emphasis on script writing, data manipulation, and program organization&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;inventwithpython.com&#x2F;beyond&#x2F;chapter0.html&quot;&gt;Beyond the Basic Stuff with Python&lt;&#x2F;a&gt; — Best Practices, Tools, and Techniques, OOP, Practice Projects&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.oreilly.com&#x2F;library&#x2F;view&#x2F;python-distilled&#x2F;9780134173399&#x2F;&quot;&gt;Python Distilled&lt;&#x2F;a&gt; — this pragmatic guide provides a concise narrative related to fundamental programming topics such as data abstraction, control flow, program structure, functions, objects, and modules&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.oreilly.com&#x2F;library&#x2F;view&#x2F;python-in-a&#x2F;9781098113544&#x2F;&quot;&gt;Python in a Nutshell&lt;&#x2F;a&gt; — use modern Python idiomatically, structure Python projects, how to debug&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;p&gt;&lt;strong&gt;Algorithms and Design patterns&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
 &lt;ul&gt;
@@ -8658,9 +8660,10 @@ The substitution works from start of the line for every iteration of the while l
 &lt;&#x2F;ul&gt;
 &lt;p&gt;&lt;strong&gt;Advanced&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.oreilly.com&#x2F;library&#x2F;view&#x2F;fluent-python-2nd&#x2F;9781492056348&#x2F;&quot;&gt;Fluent Python&lt;&#x2F;a&gt; — takes you through Python’s core language features and libraries, and shows you how to make your code shorter, faster, and more readable at the same time&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.oreilly.com&#x2F;library&#x2F;view&#x2F;fluent-python-2nd&#x2F;9781492056348&#x2F;&quot;&gt;Fluent Python&lt;&#x2F;a&gt; — takes you through Python&#x27;s core language features and libraries, and shows you how to make your code shorter, faster, and more readable at the same time&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;nostarch.com&#x2F;seriouspython&quot;&gt;Serious Python&lt;&#x2F;a&gt; — deployment, scalability, testing, and more&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.manning.com&#x2F;books&#x2F;practices-of-the-python-pro&quot;&gt;Practices of the Python Pro&lt;&#x2F;a&gt; — learn to design professional-level, clean, easily maintainable software at scale, includes examples for software development best practices&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;dabeaz-course&#x2F;python-mastery&quot;&gt;Advanced Python Mastery&lt;&#x2F;a&gt; — exercise-driven course on Advanced Python Programming that was battle-tested several hundred times on the corporate-training circuit for more than a decade&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;br&gt;
 &lt;h2 id=&quot;handy-cheatsheets&quot;&gt;Handy cheatsheets&lt;a class=&quot;zola-anchor&quot; href=&quot;#handy-cheatsheets&quot; aria-label=&quot;Anchor link for: handy-cheatsheets&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
