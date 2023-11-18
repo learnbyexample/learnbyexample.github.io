@@ -5,8 +5,49 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2023-11-16T00:00:00+00:00</updated>
+	<updated>2023-11-18T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Festive offers for books on Python, Linux, Regular Expressions and more</title>
+		<published>2023-11-18T00:00:00+00:00</published>
+		<updated>2023-11-18T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://learnbyexample.github.io/programming-deals-2023/" type="text/html"/>
+		<id>https://learnbyexample.github.io/programming-deals-2023/</id>
+		<content type="html">&lt;p&gt;Hello!&lt;&#x2F;p&gt;
+&lt;p&gt;Here are some exciting deals for my programming ebooks as well as from other creators.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; I&#x27;ll update this post with more deals as they become available.&lt;&#x2F;p&gt;
+&lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;&lt;br&gt;
+&lt;h2 id=&quot;my-ebooks&quot;&gt;My ebooks&lt;a class=&quot;zola-anchor&quot; href=&quot;#my-ebooks&quot; aria-label=&quot;Anchor link for: my-ebooks&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Offers valid till 30-Nov-2023:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;all-books&#x2F;FestiveOffer&quot;&gt;All 13 Books Bundle&lt;&#x2F;a&gt; — $10 (normal price $32)&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;python-bundle&#x2F;FestiveOffer&quot;&gt;Learn by example Python bundle&lt;&#x2F;a&gt; — $4 (normal price $15)&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;py_regex&#x2F;FestiveOffer&quot;&gt;Understanding Python re(gex)?&lt;&#x2F;a&gt; — FREE (normal price $10)&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;all-books&#x2F;FestiveOffer&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;books&#x2F;all_books_bundle.png&quot; alt=&quot;All books bundle&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;indie-creators&quot;&gt;Indie creators&lt;a class=&quot;zola-anchor&quot; href=&quot;#indie-creators&quot; aria-label=&quot;Anchor link for: indie-creators&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;mathspp.gumroad.com&#x2F;l&#x2F;pythonbootcamp&#x2F;bootcampbf23&quot;&gt;Python Problem-Solving Bootcamp&lt;&#x2F;a&gt; — 40% off or purchasing power parity discount whichever is greater&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;adamchainz.gumroad.com&#x2F;&quot;&gt;Ebooks on Django and Git&lt;&#x2F;a&gt; — 50% off, plus purchasing power parity if applicable&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;thepythoncodingplace.thinkific.com&#x2F;bundles&#x2F;the-python-coding-place-membership&quot;&gt;The Python Coding Place Membership&lt;&#x2F;a&gt; — 70% off&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.pythonmorsels.com&#x2F;lifetime-access-sale&#x2F;&quot;&gt;Python Morsels Membership&lt;&#x2F;a&gt; — lifetime access by paying for 2 years&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;wizardzines.com&#x2F;&quot;&gt;wizard zines&lt;&#x2F;a&gt; — 50% off on PDFs, 30% off on print versions (offer valid only on November 24)&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;shrutibalasa.gumroad.com&#x2F;l&#x2F;level-up-with-tailwind-css&#x2F;blackfriday23&quot;&gt;Level up with Tailwind CSS&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;shrutibalasa.gumroad.com&#x2F;l&#x2F;css-flex-and-grid&#x2F;blackfriday23&quot;&gt;Complete Guide to CSS Flex and Grid&lt;&#x2F;a&gt; — 50% off&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;miscellaneous&quot;&gt;Miscellaneous&lt;a class=&quot;zola-anchor&quot; href=&quot;#miscellaneous&quot; aria-label=&quot;Anchor link for: miscellaneous&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;nostarch.com&#x2F;blog&#x2F;2023-holiday-gift-guide&quot;&gt;NoStarch Press Holiday Gift Guide&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;media.pragprog.com&#x2F;newsletters&#x2F;2023-11-17.html&quot;&gt;The Pragmatic Bookshelf&lt;&#x2F;a&gt; — 40% off on all ebooks and audio books&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;0x90n&#x2F;InfoSec-Black-Friday&quot;&gt;InfoSec Hack Friday&lt;&#x2F;a&gt; — InfoSec related software&#x2F;tools&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;opsdisk.gumroad.com&#x2F;l&#x2F;cphlab&#x2F;blackfriday2023&quot;&gt;The Cyber Plumber&#x27;s Lab Guide and Interactive Access&lt;&#x2F;a&gt; — 33% OFF&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;trungdq88&#x2F;Awesome-Black-Friday-Cyber-Monday&quot;&gt;Huge list of awesome deals&lt;&#x2F;a&gt; — tools, productivity, books, courses, etc&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;br&gt;
+&lt;p&gt;Happy learning :)&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>Understanding JavaScript RegExp book announcement</title>
 		<published>2023-10-26T00:00:00+00:00</published>
