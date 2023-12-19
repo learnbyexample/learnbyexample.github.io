@@ -5,7 +5,7 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2023-11-25T00:00:00+00:00</updated>
+	<updated>2023-12-19T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
 	<entry xml:lang="en">
 		<title>Festive offers for books on Python, Linux, Regular Expressions and more</title>
@@ -3230,14 +3230,14 @@ Specifying a greater than &lt;code&gt;0&lt;&#x2F;code&gt; start index when using
 	<entry xml:lang="en">
 		<title>Interactive Linux CLI Text Processing Exercises</title>
 		<published>2022-12-09T00:00:00+00:00</published>
-		<updated>2023-03-15T00:00:00+00:00</updated>
+		<updated>2023-12-19T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/interactive-linux-cli-exercises/" type="text/html"/>
 		<id>https://learnbyexample.github.io/interactive-linux-cli-exercises/</id>
-		<content type="html">&lt;p&gt;Having an interactive program that automatically loads questions and checks the solution is wonderful to have while learning a topic. This &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;TUI-apps&#x2F;tree&#x2F;main&#x2F;CLI-Exercises&quot;&gt;TUI app&lt;&#x2F;a&gt; has 40 beginner to intermediate level exercises for Linux CLI text processing tools.&lt;&#x2F;p&gt;
+		<content type="html">&lt;p&gt;Having an interactive program that automatically loads questions and checks the solution is wonderful to have while learning a topic. This &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;TUI-apps&#x2F;tree&#x2F;main&#x2F;CLI-Exercises&quot;&gt;TUI app&lt;&#x2F;a&gt; has 60+ beginner to intermediate level exercises for Linux CLI text processing tools.&lt;&#x2F;p&gt;
 &lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;learnbyexample&#x2F;TUI-apps&#x2F;main&#x2F;CLI-Exercises&#x2F;cli_exercises.png&quot; alt=&quot;Sample screenshot for CLI exercises&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 &lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;&lt;br&gt;
 &lt;h2 id=&quot;installation&quot;&gt;Installation&lt;a class=&quot;zola-anchor&quot; href=&quot;#installation&quot; aria-label=&quot;Anchor link for: installation&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
-&lt;p&gt;Last month, I started learning a Python TUI framework called &lt;a href=&quot;https:&#x2F;&#x2F;textual.textualize.io&#x2F;&quot;&gt;Textual&lt;&#x2F;a&gt;. After working on a &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;TUI-apps&#x2F;tree&#x2F;main&#x2F;SquareTicTacToe&quot;&gt;4x4 board game&lt;&#x2F;a&gt;, I made an interactive app to help you test your CLI text processing skills with 40 beginner to intermediate level exercises. The app is fairly basic in terms of features — only single input file, so no stdin data, multiple files, etc.&lt;&#x2F;p&gt;
+&lt;p&gt;Last month, I started learning a Python TUI framework called &lt;a href=&quot;https:&#x2F;&#x2F;textual.textualize.io&#x2F;&quot;&gt;Textual&lt;&#x2F;a&gt;. After working on a &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;TUI-apps&#x2F;tree&#x2F;main&#x2F;SquareTicTacToe&quot;&gt;4x4 board game&lt;&#x2F;a&gt;, I made an interactive app to help you test your CLI text processing skills with 60+ beginner to intermediate level exercises.&lt;&#x2F;p&gt;
 &lt;p&gt;You&#x27;ll need Python for this (I used 3.8, it should work for more recent versions too). This app is available on PyPI as &lt;a href=&quot;https:&#x2F;&#x2F;pypi.org&#x2F;project&#x2F;cliexercises&#x2F;&quot;&gt;cliexercises&lt;&#x2F;a&gt;. Example installation instructions are shown below, adjust them based on your preferences and OS.&lt;&#x2F;p&gt;
 &lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# virtual environment
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; python3&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt; -m&lt;&#x2F;span&gt;&lt;span&gt; venv textual_apps
@@ -3256,7 +3256,7 @@ Specifying a greater than &lt;code&gt;0&lt;&#x2F;code&gt; start index when using
 &lt;p&gt;Adjust the terminal dimensions for the widgets to appear properly, for example 84x25 (characters x lines).&lt;&#x2F;p&gt;
 &lt;br&gt;
 &lt;h2 id=&quot;video-demo&quot;&gt;Video demo&lt;a class=&quot;zola-anchor&quot; href=&quot;#video-demo&quot; aria-label=&quot;Anchor link for: video-demo&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
-&lt;p align=&quot;center&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; loading=&quot;lazy&quot; src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;0ggfQzXeYJg&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;&#x2F;iframe&gt;&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; loading=&quot;lazy&quot; src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;lcm_F7zPzRY&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;&#x2F;iframe&gt;&lt;&#x2F;p&gt;
 &lt;br&gt;
 &lt;h2 id=&quot;brief-guide&quot;&gt;Brief Guide&lt;a class=&quot;zola-anchor&quot; href=&quot;#brief-guide&quot; aria-label=&quot;Anchor link for: brief-guide&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
 &lt;ul&gt;
@@ -3281,7 +3281,7 @@ Specifying a greater than &lt;code&gt;0&lt;&#x2F;code&gt; start index when using
 &lt;p&gt;For more detailed instructions, visit &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;TUI-apps&#x2F;tree&#x2F;main&#x2F;CLI-Exercises&quot;&gt;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;TUI-apps&#x2F;tree&#x2F;main&#x2F;CLI-Exercises&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;br&gt;
 &lt;h2 id=&quot;ebook&quot;&gt;Ebook&lt;a class=&quot;zola-anchor&quot; href=&quot;#ebook&quot; aria-label=&quot;Anchor link for: ebook&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
-&lt;p&gt;Most of the exercises in this app is based on my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;cli-computing&quot;&gt;Computing from the Command Line&lt;&#x2F;a&gt; ebook. I hope to add all the 200+ exercises from this ebook someday.&lt;&#x2F;p&gt;
+&lt;p&gt;The exercises in this app have been adapted from my &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;books&#x2F;&quot;&gt;Command Line&lt;&#x2F;a&gt; ebooks.&lt;&#x2F;p&gt;
 &lt;br&gt;
 &lt;h2 id=&quot;feedback&quot;&gt;Feedback&lt;a class=&quot;zola-anchor&quot; href=&quot;#feedback&quot; aria-label=&quot;Anchor link for: feedback&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
 &lt;p&gt;I&#x27;d highly appreciate your feedback. Please file &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;TUI-apps&#x2F;issues&quot;&gt;an issue&lt;&#x2F;a&gt; if there are bugs, crashes, etc.&lt;&#x2F;p&gt;
