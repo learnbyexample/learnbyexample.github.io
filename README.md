@@ -6,6 +6,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Posts
 
+* [2023: year in perspective](https://learnbyexample.github.io/2023-year-in-perspective/)
 * [Festive offers for books on Python, Linux, Regular Expressions and more](https://learnbyexample.github.io/programming-deals-2023/)
 * [Understanding JavaScript RegExp book announcement](https://learnbyexample.github.io/understanding-javascript-regexp-announcement/)
 * [Perl One-Liners Guide book announcement](https://learnbyexample.github.io/perl-oneliners-guide-announcement/)

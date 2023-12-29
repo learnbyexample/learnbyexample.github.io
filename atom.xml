@@ -5,8 +5,67 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2023-12-19T00:00:00+00:00</updated>
+	<updated>2023-12-29T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>2023: year in perspective</title>
+		<published>2023-12-29T00:00:00+00:00</published>
+		<updated>2023-12-29T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://learnbyexample.github.io/2023-year-in-perspective/" type="text/html"/>
+		<id>https://learnbyexample.github.io/2023-year-in-perspective/</id>
+		<content type="html">&lt;p&gt;&lt;strong&gt;TL;DR&lt;&#x2F;strong&gt;: Updated six programming ebooks, created four interactive TUI apps for exercises, wrote blog posts, recorded YouTube videos, newsletter prospered, read 100+ novels, and so on. Had a great year in terms of ebook sales despite worries over AI tools 😇&lt;&#x2F;p&gt;
+&lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;&lt;br&gt;
+&lt;h2 id=&quot;books-updated&quot;&gt;Books updated&lt;a class=&quot;zola-anchor&quot; href=&quot;#books-updated&quot; aria-label=&quot;Anchor link for: books-updated&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;This year I focused on updating my existing ebooks instead of working on a new one. I managed to revise 6 out of my 13 published works so far. Examples and exercises were added and improved. Typos were corrected, sections added for new features (if any), new book covers, &lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;playlist?list=PLTv2U3HnAL4NdoeZIhEAPgPhojD8kvRdQ&quot;&gt;promo videos&lt;&#x2F;a&gt; and so on.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;py_regular_expressions&quot;&gt;Understanding Python re(gex)?&lt;&#x2F;a&gt; — Learn Python Regular Expressions step-by-step from beginner to advanced levels with 300+ examples&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;learn_gnugrep_ripgrep&quot;&gt;CLI text processing with GNU grep and ripgrep&lt;&#x2F;a&gt; — Example based guide to mastering GNU grep and ripgrep&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;learn_gnused&quot;&gt;CLI text processing with GNU sed&lt;&#x2F;a&gt; — Example based guide to mastering GNU sed&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;learn_gnuawk&quot;&gt;CLI text processing with GNU awk&lt;&#x2F;a&gt; — Example based guide to mastering GNU awk one-liners&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;learn_perl_oneliners&quot;&gt;Perl One-Liners Guide&lt;&#x2F;a&gt; — Example based guide for text processing with Perl from the command line&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;learn_js_regexp&quot;&gt;Understanding JavaScript RegExp&lt;&#x2F;a&gt; — Learn JavaScript Regular Expressions step-by-step from beginner to advanced levels with hundreds of examples and exercises&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;tui-apps&quot;&gt;TUI apps&lt;a class=&quot;zola-anchor&quot; href=&quot;#tui-apps&quot; aria-label=&quot;Anchor link for: tui-apps&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Last year, I had learned a bit of &lt;a href=&quot;https:&#x2F;&#x2F;textual.textualize.io&#x2F;&quot;&gt;Textual&lt;&#x2F;a&gt;. My aim was to create interactive apps for practicing exercises from my ebooks. I wrote the following apps:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;TUI-apps&#x2F;tree&#x2F;main&#x2F;PyRegexExercises&quot;&gt;Python re(gex)? exercises&lt;&#x2F;a&gt; — 100+ exercises for Python Regular Expressions
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;TUI-apps&#x2F;tree&#x2F;main&#x2F;PyRegexPlayground&quot;&gt;Python re(gex)? playground&lt;&#x2F;a&gt; — interactive playground, also includes a cheatsheet&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;TUI-apps&#x2F;tree&#x2F;main&#x2F;GrepExercises&quot;&gt;Grep Exercises&lt;&#x2F;a&gt; — 50+ exercises for &lt;code&gt;GNU grep&lt;&#x2F;code&gt; (or alternate implementations like &lt;code&gt;ripgrep&lt;&#x2F;code&gt;)&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;TUI-apps&#x2F;tree&#x2F;main&#x2F;SedExercises&quot;&gt;Sed Exercises&lt;&#x2F;a&gt; — 50+ exercises for &lt;code&gt;GNU sed&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;TUI-apps&#x2F;tree&#x2F;main&#x2F;AwkExercises&quot;&gt;Awk Exercises&lt;&#x2F;a&gt; — 80+ exercises for &lt;code&gt;GNU awk&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;And I also added more exercises for the &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;TUI-apps&#x2F;tree&#x2F;main&#x2F;CLI-Exercises&quot;&gt;Linux CLI Text Processing Exercises&lt;&#x2F;a&gt; app.&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;blog-posts&quot;&gt;Blog posts&lt;a class=&quot;zola-anchor&quot; href=&quot;#blog-posts&quot; aria-label=&quot;Anchor link for: blog-posts&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Most of my blog posts this year were related to book and interactive app announcements. So, not really a choice to pick favorites from:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;python-regex-surprises&#x2F;&quot;&gt;Python Regex Surprises&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;mini&#x2F;cli-text-editing-with-ed&#x2F;&quot;&gt;CLI text editing with ed&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;I also posted some &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips&#x2F;&quot;&gt;weekly programming tips&lt;&#x2F;a&gt; (Python, Linux, Vim).&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;book-sales&quot;&gt;Book sales&lt;a class=&quot;zola-anchor&quot; href=&quot;#book-sales&quot; aria-label=&quot;Anchor link for: book-sales&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Revenue from ebook sales were about 10% lower than last year. At the start of the year, I&#x27;d have been satisfied even if it had been 50% lower. I wasn&#x27;t writing new ebooks and AI tools were all the rage on social media. Somehow, I got lucky with self-promotion posts for my &lt;code&gt;GNU awk&lt;&#x2F;code&gt; ebook and the rest of the months weren&#x27;t too shabby. Here&#x27;s my Gumroad revenue chart for 2023:&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;books&#x2F;gumroad_sales_2023.png&quot; alt=&quot;Gumroad sales in 2023&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;You can clearly see when the &lt;code&gt;GNU awk&lt;&#x2F;code&gt; ebook was updated. Sales on Gumroad was actually just a bit higher than last year. It was on Leanpub that sales were much lower, almost half compared to last year. Profits reduced more than 10% since Gumroad increased their fees. Overall, I&#x27;m still earning more than I need and I&#x27;m hoping that next year wouldn&#x27;t see too much drop in sales.&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;newsletter&quot;&gt;Newsletter&lt;a class=&quot;zola-anchor&quot; href=&quot;#newsletter&quot; aria-label=&quot;Anchor link for: newsletter&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;I started a newsletter, &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;learnbyexample-weekly&quot;&gt;learnbyexample weekly&lt;&#x2F;a&gt;, two years back. I&#x27;ve managed to send an email every Friday without fail so far and I&#x27;m proud of that. Sometimes I had to schedule issues weeks ahead. Total subscriber count crossed 1000 earlier this month and some readers are even paying me monthly despite this being a free newsletter.&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;fictional-reading&quot;&gt;Fictional reading&lt;a class=&quot;zola-anchor&quot; href=&quot;#fictional-reading&quot; aria-label=&quot;Anchor link for: fictional-reading&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;I enjoy reading fantasy and science-fiction novels. I read 100+ SFF books this year despite aiming for less than 100! Anyway, I wrote a post listing &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;escapist-reviews&#x2F;lists&#x2F;2023-favorite-sff-novels&#x2F;&quot;&gt;my favorites here&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;I even participated in NaNoWriMo. I only wrote 20K words, but I did have some fun. The novel went nowhere though and it is languishing now. Not sure if I&#x27;d get back to it someday.&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;goals-for-2024&quot;&gt;Goals for 2024&lt;a class=&quot;zola-anchor&quot; href=&quot;#goals-for-2024&quot; aria-label=&quot;Anchor link for: goals-for-2024&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;There are seven more books I need to update. Hopefully I get them done in a year, though I won&#x27;t be pushing hard. If I crave to write some new books instead, I&#x27;d switch over to them. Or even do something else entirely. After more than six years writing tutorials and books, I sure can do with a break.&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;p&gt;Here&#x27;s wishing you a very happy, healthy and prosperous 2024 👍 😇&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>Festive offers for books on Python, Linux, Regular Expressions and more</title>
 		<published>2023-11-18T00:00:00+00:00</published>
