@@ -28,7 +28,7 @@
     </url>
     <url>
         <loc>https://learnbyexample.github.io/books/</loc>
-        <lastmod>2023-10-26</lastmod>
+        <lastmod>2024-02-02</lastmod>
     </url>
     <url>
         <loc>https://learnbyexample.github.io/cli-text-processing-awk-announcement/</loc>
@@ -867,6 +867,10 @@
     <url>
         <loc>https://learnbyexample.github.io/understanding-python-regex-announcement/</loc>
         <lastmod>2023-10-12</lastmod>
+    </url>
+    <url>
+        <loc>https://learnbyexample.github.io/understanding-ruby-regexp-announcement/</loc>
+        <lastmod>2024-02-02</lastmod>
     </url>
     <url>
         <loc>https://learnbyexample.github.io/vim-reference-guide-announcement/</loc>
