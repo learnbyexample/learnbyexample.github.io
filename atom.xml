@@ -5,12 +5,12 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2024-02-20T00:00:00+00:00</updated>
+	<updated>2024-02-26T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
 	<entry xml:lang="en">
 		<title>Ruby One-Liners Guide book announcement</title>
 		<published>2024-02-20T00:00:00+00:00</published>
-		<updated>2024-02-20T00:00:00+00:00</updated>
+		<updated>2024-02-26T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/ruby-oneliners-guide-announcement/" type="text/html"/>
 		<id>https://learnbyexample.github.io/ruby-oneliners-guide-announcement/</id>
 		<content type="html">&lt;p&gt;Hello!&lt;&#x2F;p&gt;
@@ -28,6 +28,11 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;ruby-textprocessing&quot;&gt;Gumroad&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;leanpub.com&#x2F;b&#x2F;ruby-textprocessing&#x2F;c&#x2F;new_release&quot;&gt;Leanpub&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;So is the &lt;strong&gt;Magical one-liners&lt;&#x2F;strong&gt; bundle:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;oneliners&quot;&gt;Gumroad&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;leanpub.com&#x2F;b&#x2F;oneliners&#x2F;c&#x2F;new_release&quot;&gt;Leanpub&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;br&gt;
 &lt;h2 id=&quot;what-s-new&quot;&gt;What&#x27;s new?&lt;a class=&quot;zola-anchor&quot; href=&quot;#what-s-new&quot; aria-label=&quot;Anchor link for: what-s-new&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
