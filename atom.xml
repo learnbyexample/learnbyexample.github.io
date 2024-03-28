@@ -5,7 +5,7 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2024-02-26T00:00:00+00:00</updated>
+	<updated>2024-03-28T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
 	<entry xml:lang="en">
 		<title>Ruby One-Liners Guide book announcement</title>
@@ -379,7 +379,7 @@
 	<entry xml:lang="en">
 		<title>CLI text editing with ed</title>
 		<published>2023-10-17T00:00:00+00:00</published>
-		<updated>2023-10-17T00:00:00+00:00</updated>
+		<updated>2024-03-28T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/mini/cli-text-editing-with-ed/" type="text/html"/>
 		<id>https://learnbyexample.github.io/mini/cli-text-editing-with-ed/</id>
 		<content type="html">&lt;p&gt;I&#x27;m finally writing a post on the &lt;code&gt;ed&lt;&#x2F;code&gt; command. And I&#x27;m keeping it short so that I&#x27;ll actually publish the post. The examples presented below will be easier to understand for those already familiar with Vim and &lt;code&gt;sed&lt;&#x2F;code&gt;. See the links at the end for learning resources.&lt;&#x2F;p&gt;
@@ -429,7 +429,7 @@
 &lt;&#x2F;span&gt;&lt;span&gt;fig
 &lt;&#x2F;span&gt;&lt;span&gt;mango
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;p&gt;Here&#x27;s the &lt;a href=&quot;https:&#x2F;&#x2F;stackoverflow.com&#x2F;q&#x2F;67031062&#x2F;4082052&quot;&gt;stackoverflow link&lt;&#x2F;a&gt; that inspired the above examples. See &lt;a href=&quot;https:&#x2F;&#x2F;stackoverflow.com&#x2F;a&#x2F;75222984&#x2F;4082052&quot;&gt;this stackoverflow answer&lt;&#x2F;a&gt; for more examples of moving lines. See &lt;a href=&quot;https:&#x2F;&#x2F;stackoverflow.com&#x2F;a&#x2F;48840851&#x2F;4082052&quot;&gt;this one&lt;&#x2F;a&gt; to learn how to copy a particular line to the end of the file.&lt;&#x2F;p&gt;
+&lt;p&gt;Here&#x27;s the &lt;a href=&quot;https:&#x2F;&#x2F;stackoverflow.com&#x2F;q&#x2F;67031062&#x2F;4082052&quot;&gt;stackoverflow link&lt;&#x2F;a&gt; that inspired the above examples. See &lt;a href=&quot;https:&#x2F;&#x2F;stackoverflow.com&#x2F;a&#x2F;75222984&#x2F;4082052&quot;&gt;this stackoverflow answer&lt;&#x2F;a&gt; for more examples of moving lines. See &lt;a href=&quot;https:&#x2F;&#x2F;stackoverflow.com&#x2F;a&#x2F;48840851&#x2F;4082052&quot;&gt;this one&lt;&#x2F;a&gt; to learn how to copy a particular line to the end of the file. See &lt;a href=&quot;https:&#x2F;&#x2F;unix.stackexchange.com&#x2F;a&#x2F;759710&#x2F;109046&quot;&gt;this unix.stackexchange answer&lt;&#x2F;a&gt; for an example of moving a range of lines, where the same regex matches both the starting and ending lines.&lt;&#x2F;p&gt;
 &lt;h2 id=&quot;negative-addressing&quot;&gt;Negative addressing&lt;&#x2F;h2&gt;
 &lt;p&gt;There are plenty of &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;learn_gnused&#x2F;selective-editing.html&quot;&gt;addressing features&lt;&#x2F;a&gt; provided by the &lt;code&gt;GNU sed&lt;&#x2F;code&gt; command, but negative addressing isn&#x27;t one. Here&#x27;s an example of deleting the last but second line using &lt;code&gt;ed&lt;&#x2F;code&gt;:&lt;&#x2F;p&gt;
 &lt;pre data-lang=&quot;ruby&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span&gt;$ cat colors.txt
