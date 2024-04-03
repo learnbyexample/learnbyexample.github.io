@@ -6,6 +6,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Posts
 
+* [CLI text processing with GNU Coreutils book announcement](https://learnbyexample.github.io/cli-text-processing-coreutils-announcement/)
 * [Ruby One-Liners Guide book announcement](https://learnbyexample.github.io/ruby-oneliners-guide-announcement/)
 * [Understanding Ruby Regexp book announcement](https://learnbyexample.github.io/understanding-ruby-regexp-announcement/)
 * [2023: year in perspective](https://learnbyexample.github.io/2023-year-in-perspective/)
@@ -36,7 +37,6 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 * [Programming deals](https://learnbyexample.github.io/programming-deals/)
 * [Numeric Palindrome](https://learnbyexample.github.io/numeric-palindrome/)
 * [Announcing learnbyexample weekly newsletter](https://learnbyexample.github.io/learnbyexample-weekly-newsletter/)
-* [Command line text processing with GNU Coreutils book announcement](https://learnbyexample.github.io/cli-text-processing-coreutils-announcement/)
 * [The Indie Python Extravaganza](https://learnbyexample.github.io/indie-python-extravaganza/)
 * [Practice Python Projects book announcement](https://learnbyexample.github.io/practice-python-projects-book-announcement/)
 * [Escaping madness to get literal field separators in awk](https://learnbyexample.github.io/escaping-madness-awk-literal-field-separator/)
