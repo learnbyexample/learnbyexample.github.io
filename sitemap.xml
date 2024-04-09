@@ -31,6 +31,10 @@
         <lastmod>2024-04-03</lastmod>
     </url>
     <url>
+        <loc>https://learnbyexample.github.io/cli-computation-gnu-datamash/</loc>
+        <lastmod>2024-04-09</lastmod>
+    </url>
+    <url>
         <loc>https://learnbyexample.github.io/cli-text-processing-awk-announcement/</loc>
         <lastmod>2023-08-22</lastmod>
     </url>
@@ -294,6 +298,9 @@
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tags/curated-resources/</loc>
+    </url>
+    <url>
+        <loc>https://learnbyexample.github.io/tags/datamash/</loc>
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tags/deals/</loc>

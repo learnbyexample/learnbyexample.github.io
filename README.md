@@ -6,6 +6,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Posts
 
+* [CLI computation with GNU datamash](https://learnbyexample.github.io/cli-computation-gnu-datamash/)
 * [CLI text processing with GNU Coreutils book announcement](https://learnbyexample.github.io/cli-text-processing-coreutils-announcement/)
 * [Ruby One-Liners Guide book announcement](https://learnbyexample.github.io/ruby-oneliners-guide-announcement/)
 * [Understanding Ruby Regexp book announcement](https://learnbyexample.github.io/understanding-ruby-regexp-announcement/)

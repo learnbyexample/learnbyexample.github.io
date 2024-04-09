@@ -1,0 +1,99 @@
+<!doctype html><html lang=en><head><meta content="IE=edge" http-equiv=X-UA-Compatible><meta content="text/html; charset=utf-8" http-equiv=content-type><meta content="width=device-width,initial-scale=1.0,maximum-scale=1" name=viewport><title>CLI computation with GNU datamash</title><link href=https://learnbyexample.github.io/atom.xml rel=alternate title=RSS type=application/atom+xml><script src=https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js></script><link href=https://learnbyexample.github.io/site.css rel=stylesheet><meta content="CLI computation with GNU datamash" property=og:title><meta content=website property=og:type><meta content="Examples and resource links for the GNU datamash command." property=og:description><meta content=https://learnbyexample.github.io/cli-computation-gnu-datamash/ property=og:url><meta content=@learn_byexample property=twitter:site><link href=https://learnbyexample.github.io/favicon.svg rel=icon><link rel="shortcut icon" href=https://learnbyexample.github.io/favicon.png><body><div class=container><div class=mobile-navbar id=mobile-navbar><div class=mobile-header-logo><a class=logo href=/>learnbyexample</a></div><div class="mobile-navbar-icon icon-out"><span></span><span></span><span></span></div></div><nav class="mobile-menu slideout-menu slideout-menu-left" id=mobile-menu><ul class=mobile-menu-list><li class=mobile-menu-item><a href=https://learnbyexample.github.io/books> Books </a><li class=mobile-menu-item><a href=https://learnbyexample.github.io/mini> Mini </a><li class=mobile-menu-item><a href=https://learnbyexample.github.io/tips> Tips </a><li class=mobile-menu-item><a href=https://learnbyexample.github.io/tags> Tags </a><li class=mobile-menu-item><a href=https://learnbyexample.github.io/about> About </a></ul></nav><header id=header><div class=logo><a href=https://learnbyexample.github.io>learnbyexample</a></div><nav class=menu><ul><li><a href=https://learnbyexample.github.io/books> Books </a><li><a href=https://learnbyexample.github.io/mini> Mini </a><li><a href=https://learnbyexample.github.io/tips> Tips </a><li><a href=https://learnbyexample.github.io/tags> Tags </a><li><a href=https://learnbyexample.github.io/about> About </a></ul></nav></header><main><div class=content id=mobile-panel><div class=post-toc id=post-toc><h2 class=post-toc-title>Contents</h2><div class="post-toc-content always-active"><nav id=TableOfContents><ul><li><a class=toc-link href=https://learnbyexample.github.io/cli-computation-gnu-datamash/#installation-and-documentation>Installation and Documentation</a><li><a class=toc-link href=https://learnbyexample.github.io/cli-computation-gnu-datamash/#sum>Sum</a><li><a class=toc-link href=https://learnbyexample.github.io/cli-computation-gnu-datamash/#transpose>Transpose</a><li><a class=toc-link href=https://learnbyexample.github.io/cli-computation-gnu-datamash/#group-by>Group by</a><li><a class=toc-link href=https://learnbyexample.github.io/cli-computation-gnu-datamash/#further-reading>Further Reading</a></ul></nav></div></div><article class=post><header class=post__header><h1 class=post__title><a href=https://learnbyexample.github.io/cli-computation-gnu-datamash/>CLI computation with GNU datamash</a></h1><div class=post__meta><span class=post__time>2024-04-09</span></div></header><div class=post-content><p><img alt=info src=/images/info.svg> <img alt=warning src=/images/warning.svg> This is a work-in-progress post on the <code>GNU datamash</code> command.<p>I'm hoping this post will serve as a quick reference for some of the use cases and tickle your curiosity if you haven't come across this nifty CLI tool yet. I'll also post some links for further reading.</p><span id=continue-reading></span><br><h2 id=installation-and-documentation>Installation and Documentation<a aria-label="Anchor link for: installation-and-documentation" class=zola-anchor href=#installation-and-documentation>🔗</a></h2><p>See <a href=https://www.gnu.org/software/datamash/download/>download</a> page for source code and instructions to install the software on various platforms. This blog post is based on the <strong>1.8</strong> version.<p>See <a href=https://www.gnu.org/software/datamash/manual/>datamash manual</a> for links to documentation in HTML, plain text, PDF, etc.</p><br><h2 id=sum>Sum<a aria-label="Anchor link for: sum" class=zola-anchor href=#sum>🔗</a></h2><pre class=language-ruby data-lang=ruby style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-ruby data-lang=ruby><span style=color:#7f8989;># file with a single number per line
+</span><span>$ cat nums.txt
+</span><span style=color:#b3933a;>42
+</span><span style=color:#72ab00;>-</span><span style=color:#b3933a;>2
+</span><span style=color:#b3933a;>10101
+</span><span style=color:#72ab00;>-</span><span style=color:#b3933a;>3.14
+</span><span style=color:#72ab00;>-</span><span style=color:#b3933a;>75
+</span><span>$ datamash sum </span><span style=color:#b3933a;>1 </span><span style=color:#72ab00;><</span><span>nums.txt
+</span><span style=color:#b3933a;>10062.86
+</span><span>
+</span><span>$ echo </span><span style=color:#d07711;>'3.14 42 1000 -51' </span><span style=color:#72ab00;>|</span><span> tr </span><span style=color:#d07711;>' ' '\n' </span><span style=color:#72ab00;>|</span><span> datamash sum </span><span style=color:#b3933a;>1
+</span><span style=color:#b3933a;>994.14
+</span><span>
+</span><span style=color:#7f8989;># summing a particular column
+</span><span style=color:#7f8989;># tab is the default field separator
+</span><span>$ cat table.txt
+</span><span>brown bread mat hair </span><span style=color:#b3933a;>42
+</span><span>blue cake mug shirt </span><span style=color:#72ab00;>-</span><span style=color:#b3933a;>7
+</span><span>yellow banana window shoes </span><span style=color:#b3933a;>3.14
+</span><span>$ datamash </span><span style=color:#72ab00;>-</span><span>t</span><span style=color:#d07711;>' '</span><span> sum </span><span style=color:#b3933a;>5 </span><span style=color:#72ab00;><</span><span>table.txt
+</span><span style=color:#b3933a;>38.14
+</span></code></pre><p>Other such operations include <code>count</code>, <code>min</code>, <code>max</code>, <code>mean</code>, <code>median</code>, <code>sstdev</code> (standard deviation), etc.</p><br><h2 id=transpose>Transpose<a aria-label="Anchor link for: transpose" class=zola-anchor href=#transpose>🔗</a></h2><pre class=language-ruby data-lang=ruby style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-ruby data-lang=ruby><span>$ cat scores.csv
+</span><span style=color:#5597d6;>Name</span><span>,</span><span style=color:#5597d6;>Maths</span><span>,</span><span style=color:#5597d6;>Physics</span><span>,</span><span style=color:#5597d6;>Chemistry
+</span><span style=color:#5597d6;>Ith</span><span>,</span><span style=color:#b3933a;>100</span><span>,</span><span style=color:#b3933a;>100</span><span>,</span><span style=color:#b3933a;>100
+</span><span style=color:#5597d6;>Cy</span><span>,</span><span style=color:#b3933a;>97</span><span>,</span><span style=color:#b3933a;>98</span><span>,</span><span style=color:#b3933a;>95
+</span><span style=color:#5597d6;>Lin</span><span>,</span><span style=color:#b3933a;>78</span><span>,</span><span style=color:#b3933a;>83</span><span>,</span><span style=color:#b3933a;>80
+</span><span style=color:#5597d6;>Er</span><span>,</span><span style=color:#b3933a;>60</span><span>,</span><span style=color:#b3933a;>70</span><span>,</span><span style=color:#b3933a;>90
+</span><span>
+</span><span>$ datamash </span><span style=color:#72ab00;>-</span><span>t, transpose </span><span style=color:#72ab00;><</span><span>scores.csv
+</span><span style=color:#5597d6;>Name</span><span>,</span><span style=color:#5597d6;>Ith</span><span>,</span><span style=color:#5597d6;>Cy</span><span>,</span><span style=color:#5597d6;>Lin</span><span>,</span><span style=color:#5597d6;>Er
+</span><span style=color:#5597d6;>Maths</span><span>,</span><span style=color:#b3933a;>100</span><span>,</span><span style=color:#b3933a;>97</span><span>,</span><span style=color:#b3933a;>78</span><span>,</span><span style=color:#b3933a;>60
+</span><span style=color:#5597d6;>Physics</span><span>,</span><span style=color:#b3933a;>100</span><span>,</span><span style=color:#b3933a;>98</span><span>,</span><span style=color:#b3933a;>83</span><span>,</span><span style=color:#b3933a;>70
+</span><span style=color:#5597d6;>Chemistry</span><span>,</span><span style=color:#b3933a;>100</span><span>,</span><span style=color:#b3933a;>95</span><span>,</span><span style=color:#b3933a;>80</span><span>,</span><span style=color:#b3933a;>90
+</span></code></pre><br><h2 id=group-by>Group by<a aria-label="Anchor link for: group-by" class=zola-anchor href=#group-by>🔗</a></h2><p>You can use the <code>-g</code> option to group items based on one or more columns. You can specify an operation such as <code>collapse</code>, <code>sum</code>, <code>mean</code>, <code>count</code> and so on.<pre class=language-ruby data-lang=ruby style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-ruby data-lang=ruby><span style=color:#7f8989;># here, the first column items are already next to each other
+</span><span style=color:#7f8989;># so, sorting is not needed
+</span><span>$ cat toys.txt
+</span><span>car blue
+</span><span>car red
+</span><span>car yellow
+</span><span>truck brown
+</span><span>bus green
+</span><span>bus maroon
+</span><span>rocket white
+</span><span>
+</span><span>$ datamash </span><span style=color:#72ab00;>-</span><span>t</span><span style=color:#d07711;>' ' </span><span style=color:#72ab00;>-</span><span>g1 collapse </span><span style=color:#b3933a;>2 </span><span style=color:#72ab00;><</span><span>toys.txt
+</span><span>car blue,red,yellow
+</span><span>truck brown
+</span><span>bus green,maroon
+</span><span>rocket white
+</span></code></pre><p>Here's an example with header lines as well as having to sort the input (<code>-s</code>). The <code>-c</code> option helps to customize the separator for the grouped items.<pre class=language-python data-lang=python style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-python data-lang=python><span>$ cat books.txt
+</span><span>Author,Title
+</span><span>Will Wight,Cradle
+</span><span>John Bierce,Mage Errant
+</span><span>Brandon Sanderson,Mistborn
+</span><span>Domagoj Kurmaic,Mother of Learning
+</span><span>Brandon Sanderson,The Stormlight Archive
+</span><span>Will Wight,The Last Horizon
+</span><span>Brandon Sanderson,Warbreaker
+</span><span>
+</span><span style=color:#7f8989;># not sure how to retain the original header line as is
+</span><span>$ datamash </span><span style=color:#72ab00;>-</span><span>H </span><span style=color:#72ab00;>-</span><span>st, </span><span style=color:#72ab00;>-</span><span>c: </span><span style=color:#72ab00;>-</span><span>g1 collapse </span><span style=color:#b3933a;>2 </span><span style=color:#72ab00;><</span><span>books.txt
+</span><span style=color:#5597d6;>GroupBy</span><span>(Author),</span><span style=color:#5597d6;>collapse</span><span>(Title)
+</span><span>Brandon Sanderson,Mistborn:The Stormlight Archive:Warbreaker
+</span><span>Domagoj Kurmaic,Mother of Learning
+</span><span>John Bierce,Mage Errant
+</span><span>Will Wight,Cradle:The Last Horizon
+</span></code></pre><p>Here's an example of summing values based on column 3 items:<pre class=language-ruby data-lang=ruby style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-ruby data-lang=ruby><span>$ cat duplicates.txt
+</span><span>brown,toy,bread,</span><span style=color:#b3933a;>42
+</span><span>dark red,ruby,rose,</span><span style=color:#b3933a;>111
+</span><span>blue,ruby,water,</span><span style=color:#b3933a;>333
+</span><span>dark red,sky,rose,</span><span style=color:#b3933a;>555
+</span><span>yellow,toy,flower,</span><span style=color:#b3933a;>333
+</span><span>white,sky,bread,</span><span style=color:#b3933a;>111
+</span><span>light red,purse,rose,</span><span style=color:#b3933a;>333
+</span><span>
+</span><span>$ datamash </span><span style=color:#72ab00;>-</span><span>st, </span><span style=color:#72ab00;>-</span><span>g3 sum </span><span style=color:#b3933a;>4 </span><span style=color:#72ab00;><</span><span>duplicates.txt
+</span><span>bread,</span><span style=color:#b3933a;>153
+</span><span>flower,</span><span style=color:#b3933a;>333
+</span><span>rose,</span><span style=color:#b3933a;>999
+</span><span>water,</span><span style=color:#b3933a;>333
+</span></code></pre><p>Average marks:<pre class=language-ruby data-lang=ruby style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-ruby data-lang=ruby><span>$ cat result.csv
+</span><span style=color:#5597d6;>Amy</span><span>,maths,</span><span style=color:#b3933a;>90
+</span><span style=color:#5597d6;>Amy</span><span>,physics,</span><span style=color:#b3933a;>75
+</span><span style=color:#5597d6;>Joe</span><span>,maths,</span><span style=color:#b3933a;>79
+</span><span style=color:#5597d6;>John</span><span>,chemistry,</span><span style=color:#b3933a;>77
+</span><span style=color:#5597d6;>John</span><span>,physics,</span><span style=color:#b3933a;>91
+</span><span style=color:#5597d6;>Moe</span><span>,maths,</span><span style=color:#b3933a;>81
+</span><span style=color:#5597d6;>Ravi</span><span>,physics,</span><span style=color:#b3933a;>84
+</span><span style=color:#5597d6;>Ravi</span><span>,chemistry,</span><span style=color:#b3933a;>70
+</span><span style=color:#5597d6;>Yui</span><span>,maths,</span><span style=color:#b3933a;>92
+</span><span>
+</span><span>$ datamash </span><span style=color:#72ab00;>-</span><span>t, </span><span style=color:#72ab00;>-</span><span>g1 mean </span><span style=color:#b3933a;>3 </span><span style=color:#72ab00;><</span><span>result.csv
+</span><span style=color:#5597d6;>Amy</span><span>,</span><span style=color:#b3933a;>82.5
+</span><span style=color:#5597d6;>Joe</span><span>,</span><span style=color:#b3933a;>79
+</span><span style=color:#5597d6;>John</span><span>,</span><span style=color:#b3933a;>84
+</span><span style=color:#5597d6;>Moe</span><span>,</span><span style=color:#b3933a;>81
+</span><span style=color:#5597d6;>Ravi</span><span>,</span><span style=color:#b3933a;>77
+</span><span style=color:#5597d6;>Yui</span><span>,</span><span style=color:#b3933a;>92
+</span></code></pre><br><h2 id=further-reading>Further Reading<a aria-label="Anchor link for: further-reading" class=zola-anchor href=#further-reading>🔗</a></h2><ul><li><a href=https://www.gnu.org/software/datamash/alternatives/>Alternative one-liners</a> — examples with datamash compared to <code>awk</code>, <code>perl</code>, etc<li><a href=https://www.gnu.org/software/datamash/examples/>Documentation examples</a><li><a href=https://github.com/BurntSushi/xsv>xsv</a> — fast CSV command line toolkit</ul></div><div class=post-footer><div class=post-tags><a href=https://learnbyexample.github.io/tags/linux/>#linux</a><a href=https://learnbyexample.github.io/tags/command-line/>#command-line</a><a href=https://learnbyexample.github.io/tags/datamash/>#datamash</a></div><hr color=#e6e6e6><div class=post-nav><p><a class=next href=https://learnbyexample.github.io/cli-text-processing-coreutils-announcement/>CLI text processing with GNU Coreutils book announcement →</a><br></div><hr color=#e6e6e6><p>📰 Use <a href=https://learnbyexample.github.io/atom.xml>this link</a> for the Atom feed. <br> ✅ Follow me on <a href=https://twitter.com/learn_byexample>Twitter</a>, <a href=https://github.com/learnbyexample>GitHub</a> and <a href=https://www.youtube.com/c/learnbyexample42>Youtube</a> for interesting tech nuggets. <br> 📧 Subscribe to <a href=https://learnbyexample.gumroad.com/l/learnbyexample-weekly>learnbyexample weekly</a> for programming resources, tips, tools, free ebooks and more (free newsletter, delivered every Friday).<hr color=#e6e6e6></div></article></div></main></div><script src=https://learnbyexample.github.io/even.js></script>
