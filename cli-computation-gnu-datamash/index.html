@@ -42,12 +42,13 @@
 </span><span>bus maroon
 </span><span>rocket white
 </span><span>
+</span><span style=color:#7f8989;># by default a comma is used as the separator between collapsed items
 </span><span>$ datamash </span><span style=color:#72ab00;>-</span><span>t</span><span style=color:#d07711;>' ' </span><span style=color:#72ab00;>-</span><span>g1 collapse </span><span style=color:#b3933a;>2 </span><span style=color:#72ab00;><</span><span>toys.txt
 </span><span>car blue,red,yellow
 </span><span>truck brown
 </span><span>bus green,maroon
 </span><span>rocket white
-</span></code></pre><p>Here's an example with header lines as well as having to sort the input (<code>-s</code>). The <code>-c</code> option helps to customize the separator for the grouped items.<pre class=language-python data-lang=python style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-python data-lang=python><span>$ cat books.txt
+</span></code></pre><p>Here's an example with header lines as well as having to sort the input (<code>-s</code>). The <code>-c</code> option helps to customize the separator for the grouped items. The <code>-H</code> option is equivalent to using both <code>--header-in</code> and <code>--header-out</code>.<pre class=language-python data-lang=python style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-python data-lang=python><span>$ cat books.txt
 </span><span>Author,Title
 </span><span>Will Wight,Cradle
 </span><span>John Bierce,Mage Errant
@@ -57,14 +58,16 @@
 </span><span>Will Wight,The Last Horizon
 </span><span>Brandon Sanderson,Warbreaker
 </span><span>
-</span><span style=color:#7f8989;># not sure how to retain the original header line as is
+</span><span style=color:#7f8989;># not sure if there's an option to retain the original header line as is
+</span><span style=color:#7f8989;># you can instead use: (sed -u 1q; datamash -st, -c: -g1 collapse 2) &LTbooks.txt
+</span><span style=color:#7f8989;># use --header-in if you don't want the header line in the output
 </span><span>$ datamash </span><span style=color:#72ab00;>-</span><span>H </span><span style=color:#72ab00;>-</span><span>st, </span><span style=color:#72ab00;>-</span><span>c: </span><span style=color:#72ab00;>-</span><span>g1 collapse </span><span style=color:#b3933a;>2 </span><span style=color:#72ab00;><</span><span>books.txt
 </span><span style=color:#5597d6;>GroupBy</span><span>(Author),</span><span style=color:#5597d6;>collapse</span><span>(Title)
 </span><span>Brandon Sanderson,Mistborn:The Stormlight Archive:Warbreaker
 </span><span>Domagoj Kurmaic,Mother of Learning
 </span><span>John Bierce,Mage Errant
 </span><span>Will Wight,Cradle:The Last Horizon
-</span></code></pre><p>Here's an example of summing values based on column 3 items:<pre class=language-ruby data-lang=ruby style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-ruby data-lang=ruby><span>$ cat duplicates.txt
+</span></code></pre><p>Here's an example of summing values based on column 3 items:<pre class=language-ruby data-lang=ruby style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-ruby data-lang=ruby><span>$ cat duplicates.csv
 </span><span>brown,toy,bread,</span><span style=color:#b3933a;>42
 </span><span>dark red,ruby,rose,</span><span style=color:#b3933a;>111
 </span><span>blue,ruby,water,</span><span style=color:#b3933a;>333
@@ -73,7 +76,7 @@
 </span><span>white,sky,bread,</span><span style=color:#b3933a;>111
 </span><span>light red,purse,rose,</span><span style=color:#b3933a;>333
 </span><span>
-</span><span>$ datamash </span><span style=color:#72ab00;>-</span><span>st, </span><span style=color:#72ab00;>-</span><span>g3 sum </span><span style=color:#b3933a;>4 </span><span style=color:#72ab00;><</span><span>duplicates.txt
+</span><span>$ datamash </span><span style=color:#72ab00;>-</span><span>st, </span><span style=color:#72ab00;>-</span><span>g3 sum </span><span style=color:#b3933a;>4 </span><span style=color:#72ab00;><</span><span>duplicates.csv
 </span><span>bread,</span><span style=color:#b3933a;>153
 </span><span>flower,</span><span style=color:#b3933a;>333
 </span><span>rose,</span><span style=color:#b3933a;>999

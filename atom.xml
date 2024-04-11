@@ -5,12 +5,12 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2024-04-09T00:00:00+00:00</updated>
+	<updated>2024-04-11T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
 	<entry xml:lang="en">
 		<title>CLI computation with GNU datamash</title>
 		<published>2024-04-09T00:00:00+00:00</published>
-		<updated>2024-04-09T00:00:00+00:00</updated>
+		<updated>2024-04-11T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/cli-computation-gnu-datamash/" type="text/html"/>
 		<id>https://learnbyexample.github.io/cli-computation-gnu-datamash/</id>
 		<content type="html">&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; &lt;img src=&quot;&#x2F;images&#x2F;warning.svg&quot; alt=&quot;warning&quot; &#x2F;&gt; This is a work-in-progress post on the &lt;code&gt;GNU datamash&lt;&#x2F;code&gt; command.&lt;&#x2F;p&gt;
@@ -73,13 +73,14 @@
 &lt;&#x2F;span&gt;&lt;span&gt;bus maroon
 &lt;&#x2F;span&gt;&lt;span&gt;rocket white
 &lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# by default a comma is used as the separator between collapsed items
 &lt;&#x2F;span&gt;&lt;span&gt;$ datamash &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt;t&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39; &amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt;g1 collapse &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;2 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span&gt;toys.txt
 &lt;&#x2F;span&gt;&lt;span&gt;car blue,red,yellow
 &lt;&#x2F;span&gt;&lt;span&gt;truck brown
 &lt;&#x2F;span&gt;&lt;span&gt;bus green,maroon
 &lt;&#x2F;span&gt;&lt;span&gt;rocket white
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;p&gt;Here&#x27;s an example with header lines as well as having to sort the input (&lt;code&gt;-s&lt;&#x2F;code&gt;). The &lt;code&gt;-c&lt;&#x2F;code&gt; option helps to customize the separator for the grouped items.&lt;&#x2F;p&gt;
+&lt;p&gt;Here&#x27;s an example with header lines as well as having to sort the input (&lt;code&gt;-s&lt;&#x2F;code&gt;). The &lt;code&gt;-c&lt;&#x2F;code&gt; option helps to customize the separator for the grouped items. The &lt;code&gt;-H&lt;&#x2F;code&gt; option is equivalent to using both &lt;code&gt;--header-in&lt;&#x2F;code&gt; and &lt;code&gt;--header-out&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
 &lt;pre data-lang=&quot;python&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-python &quot;&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span&gt;$ cat books.txt
 &lt;&#x2F;span&gt;&lt;span&gt;Author,Title
 &lt;&#x2F;span&gt;&lt;span&gt;Will Wight,Cradle
@@ -90,7 +91,9 @@
 &lt;&#x2F;span&gt;&lt;span&gt;Will Wight,The Last Horizon
 &lt;&#x2F;span&gt;&lt;span&gt;Brandon Sanderson,Warbreaker
 &lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# not sure how to retain the original header line as is
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# not sure if there&amp;#39;s an option to retain the original header line as is
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# you can instead use: (sed -u 1q; datamash -st, -c: -g1 collapse 2) &amp;lt;books.txt
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# use --header-in if you don&amp;#39;t want the header line in the output
 &lt;&#x2F;span&gt;&lt;span&gt;$ datamash &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt;H &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt;st, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt;c: &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt;g1 collapse &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;2 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span&gt;books.txt
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;GroupBy&lt;&#x2F;span&gt;&lt;span&gt;(Author),&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;collapse&lt;&#x2F;span&gt;&lt;span&gt;(Title)
 &lt;&#x2F;span&gt;&lt;span&gt;Brandon Sanderson,Mistborn:The Stormlight Archive:Warbreaker
@@ -99,7 +102,7 @@
 &lt;&#x2F;span&gt;&lt;span&gt;Will Wight,Cradle:The Last Horizon
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;Here&#x27;s an example of summing values based on column 3 items:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;ruby&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span&gt;$ cat duplicates.txt
+&lt;pre data-lang=&quot;ruby&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span&gt;$ cat duplicates.csv
 &lt;&#x2F;span&gt;&lt;span&gt;brown,toy,bread,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;42
 &lt;&#x2F;span&gt;&lt;span&gt;dark red,ruby,rose,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;111
 &lt;&#x2F;span&gt;&lt;span&gt;blue,ruby,water,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;333
@@ -108,7 +111,7 @@
 &lt;&#x2F;span&gt;&lt;span&gt;white,sky,bread,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;111
 &lt;&#x2F;span&gt;&lt;span&gt;light red,purse,rose,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;333
 &lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;$ datamash &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt;st, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt;g3 sum &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;4 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span&gt;duplicates.txt
+&lt;&#x2F;span&gt;&lt;span&gt;$ datamash &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt;st, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt;g3 sum &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;4 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span&gt;duplicates.csv
 &lt;&#x2F;span&gt;&lt;span&gt;bread,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;153
 &lt;&#x2F;span&gt;&lt;span&gt;flower,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;333
 &lt;&#x2F;span&gt;&lt;span&gt;rose,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;999
