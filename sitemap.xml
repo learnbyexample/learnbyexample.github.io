@@ -254,20 +254,10 @@
         <lastmod>2023-02-09</lastmod>
     </url>
     <url>
-        <loc>https://learnbyexample.github.io/sufficiently-advanced-ai/</loc>
-        <lastmod>2022-09-10</lastmod>
-    </url>
-    <url>
         <loc>https://learnbyexample.github.io/tags/</loc>
     </url>
     <url>
-        <loc>https://learnbyexample.github.io/tags/ai/</loc>
-    </url>
-    <url>
         <loc>https://learnbyexample.github.io/tags/algorithm/</loc>
-    </url>
-    <url>
-        <loc>https://learnbyexample.github.io/tags/art/</loc>
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tags/atomic-grouping/</loc>
@@ -436,9 +426,6 @@
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tags/shell-scripting/</loc>
-    </url>
-    <url>
-        <loc>https://learnbyexample.github.io/tags/stable-diffusion/</loc>
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tags/substitution/</loc>
