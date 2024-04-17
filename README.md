@@ -27,7 +27,6 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 * [Festive deals for books on Python, Linux, JavaScript, Regular Expressions and more](https://learnbyexample.github.io/programming-deals-2022/)
 * [Building TUIs with textual: first impressions](https://learnbyexample.github.io/textual-first-impressions/)
 * [Computing from the Command Line book announcement](https://learnbyexample.github.io/computing-from-the-command-line-announcement/)
-* [Sufficiently Advanced AI feels magical](https://learnbyexample.github.io/sufficiently-advanced-ai/)
 * [Python 3.11: possessive quantifiers added to re module](https://learnbyexample.github.io/python-regex-possessive-quantifier/)
 * [Vim Reference Guide book announcement](https://learnbyexample.github.io/vim-reference-guide-announcement/)
 * [Removing duplicates irrespective of field order](https://learnbyexample.github.io/duplicates-irrespective-field-order/)
