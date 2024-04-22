@@ -43,11 +43,21 @@
 </span><span>rocket white
 </span><span>
 </span><span style=color:#7f8989;># by default a comma is used as the separator between collapsed items
+</span><span style=color:#7f8989;># use 'unique' instead of 'collapse' to avoid duplicates
 </span><span>$ datamash </span><span style=color:#72ab00;>-</span><span>t</span><span style=color:#d07711;>' ' </span><span style=color:#72ab00;>-</span><span>g1 collapse </span><span style=color:#b3933a;>2 </span><span style=color:#72ab00;><</span><span>toys.txt
 </span><span>car blue,red,yellow
 </span><span>truck brown
 </span><span>bus green,maroon
 </span><span>rocket white
+</span><span>
+</span><span style=color:#7f8989;># 'count' gives the number of items for the collapsed row
+</span><span style=color:#7f8989;># 'rand' selects a random item for such collapsed rows
+</span><span style=color:#7f8989;># 'first' and 'last' are other choices available
+</span><span>$ datamash </span><span style=color:#72ab00;>-</span><span>t</span><span style=color:#d07711;>' ' </span><span style=color:#72ab00;>-</span><span>g1 count </span><span style=color:#b3933a;>2 </span><span style=color:#b39f04;>rand </span><span style=color:#b3933a;>2 </span><span style=color:#72ab00;><</span><span>toys.txt
+</span><span>car </span><span style=color:#b3933a;>3</span><span> red
+</span><span>truck </span><span style=color:#b3933a;>1</span><span> brown
+</span><span>bus </span><span style=color:#b3933a;>2</span><span> green
+</span><span>rocket </span><span style=color:#b3933a;>1</span><span> white
 </span></code></pre><p>Here's an example with header lines as well as having to sort the input (<code>-s</code>). The <code>-c</code> option helps to customize the separator for the grouped items. The <code>-H</code> option is equivalent to using both <code>--header-in</code> and <code>--header-out</code>.<pre class=language-python data-lang=python style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-python data-lang=python><span>$ cat books.txt
 </span><span>Author,Title
 </span><span>Will Wight,Cradle
