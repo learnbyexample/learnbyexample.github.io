@@ -5,7 +5,7 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2024-05-08T00:00:00+00:00</updated>
+	<updated>2024-05-17T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
 	<entry xml:lang="en">
 		<title>Interactive GNU awk tutorial</title>
@@ -1225,7 +1225,7 @@
 	<entry xml:lang="en">
 		<title>Interactive exercises for GNU grep, sed and awk (TUI apps)</title>
 		<published>2023-08-17T00:00:00+00:00</published>
-		<updated>2023-08-17T00:00:00+00:00</updated>
+		<updated>2024-05-17T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/interactive-grep-sed-awk-exercises/" type="text/html"/>
 		<id>https://learnbyexample.github.io/interactive-grep-sed-awk-exercises/</id>
 		<content type="html">&lt;p&gt;Having an interactive program that automatically loads questions and checks the solution is immensely helpful to have while learning a topic. I&#x27;ve written &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;TUI-apps&quot;&gt;TUI apps&lt;&#x2F;a&gt; with plenty of beginner to intermediate level exercises for &lt;code&gt;GNU grep&lt;&#x2F;code&gt;, &lt;code&gt;GNU sed&lt;&#x2F;code&gt; and &lt;code&gt;GNU awk&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
@@ -1249,7 +1249,11 @@
 &lt;&#x2F;span&gt;&lt;span&gt;
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# similarly, you can add aliases for the other apps as well
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;p&gt;As an alternative, you can install &lt;code&gt;textual&lt;&#x2F;code&gt; (see &lt;a href=&quot;https:&#x2F;&#x2F;textual.textualize.io&#x2F;getting_started&#x2F;&quot;&gt;Textual documentation&lt;&#x2F;a&gt; for more details), clone my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;TUI-apps&quot;&gt;TUI-apps repository&lt;&#x2F;a&gt; and run the Python file from respective folders. For example, &lt;code&gt;grep_exercises.py&lt;&#x2F;code&gt; for the &lt;code&gt;grep&lt;&#x2F;code&gt; command.&lt;&#x2F;p&gt;
+&lt;p&gt;As an alternative to manually managing such virtual environments, you can use &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;pypa&#x2F;pipx&quot;&gt;https:&#x2F;&#x2F;github.com&#x2F;pypa&#x2F;pipx&lt;&#x2F;a&gt; instead:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; pipx install grepexercises sedexercises awkexercises
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; awkexercises
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;As yet another alternative, you can install &lt;code&gt;textual&lt;&#x2F;code&gt; (see &lt;a href=&quot;https:&#x2F;&#x2F;textual.textualize.io&#x2F;getting_started&#x2F;&quot;&gt;Textual documentation&lt;&#x2F;a&gt; for more details), clone my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;TUI-apps&quot;&gt;TUI-apps repository&lt;&#x2F;a&gt; and run the Python file from respective folders. For example, &lt;code&gt;grep_exercises.py&lt;&#x2F;code&gt; for the &lt;code&gt;grep&lt;&#x2F;code&gt; command.&lt;&#x2F;p&gt;
 &lt;p&gt;Adjust the terminal dimensions for the widgets to appear properly, for example 84x25 (characters x lines).&lt;&#x2F;p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; You can use alternative CLI tools to solve these exercises as well. For example, &lt;code&gt;perl&lt;&#x2F;code&gt; instead of &lt;code&gt;GNU awk&lt;&#x2F;code&gt; or &lt;code&gt;ripgrep&lt;&#x2F;code&gt; instead of &lt;code&gt;GNU grep&lt;&#x2F;code&gt; and so on.&lt;&#x2F;p&gt;
@@ -3744,7 +3748,7 @@ Specifying a greater than &lt;code&gt;0&lt;&#x2F;code&gt; start index when using
 	<entry xml:lang="en">
 		<title>Interactive Linux CLI Text Processing Exercises</title>
 		<published>2022-12-09T00:00:00+00:00</published>
-		<updated>2023-12-19T00:00:00+00:00</updated>
+		<updated>2024-05-17T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/interactive-linux-cli-exercises/" type="text/html"/>
 		<id>https://learnbyexample.github.io/interactive-linux-cli-exercises/</id>
 		<content type="html">&lt;p&gt;Having an interactive program that automatically loads questions and checks the solution is wonderful to have while learning a topic. This &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;TUI-apps&#x2F;tree&#x2F;main&#x2F;CLI-Exercises&quot;&gt;TUI app&lt;&#x2F;a&gt; has 60+ beginner to intermediate level exercises for Linux CLI text processing tools.&lt;&#x2F;p&gt;
@@ -3766,7 +3770,11 @@ Specifying a greater than &lt;code&gt;0&lt;&#x2F;code&gt; start index when using
 &lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# you&amp;#39;ll have to change the path
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;alias &lt;&#x2F;span&gt;&lt;span style=&quot;color:#c23f31;&quot;&gt;cliexercises&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&#x2F;path&#x2F;to&#x2F;textual_apps&#x2F;bin&#x2F;cliexercises&amp;#39;
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;p&gt;As an alternative, you can install &lt;code&gt;textual&lt;&#x2F;code&gt; (see &lt;a href=&quot;https:&#x2F;&#x2F;textual.textualize.io&#x2F;getting_started&#x2F;&quot;&gt;Textual documentation&lt;&#x2F;a&gt; for more details), clone my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;TUI-apps&quot;&gt;TUI-apps repository&lt;&#x2F;a&gt; and run the &lt;code&gt;cli_exercises.py&lt;&#x2F;code&gt; file.&lt;&#x2F;p&gt;
+&lt;p&gt;As an alternative to manually managing such virtual environments, you can use &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;pypa&#x2F;pipx&quot;&gt;https:&#x2F;&#x2F;github.com&#x2F;pypa&#x2F;pipx&lt;&#x2F;a&gt; instead:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; pipx install cliexercises
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; cliexercises
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;As yet another alternative, you can install &lt;code&gt;textual&lt;&#x2F;code&gt; (see &lt;a href=&quot;https:&#x2F;&#x2F;textual.textualize.io&#x2F;getting_started&#x2F;&quot;&gt;Textual documentation&lt;&#x2F;a&gt; for more details), clone my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;TUI-apps&quot;&gt;TUI-apps repository&lt;&#x2F;a&gt; and run the &lt;code&gt;cli_exercises.py&lt;&#x2F;code&gt; file.&lt;&#x2F;p&gt;
 &lt;p&gt;Adjust the terminal dimensions for the widgets to appear properly, for example 84x25 (characters x lines).&lt;&#x2F;p&gt;
 &lt;br&gt;
 &lt;h2 id=&quot;video-demo&quot;&gt;Video demo&lt;a class=&quot;zola-anchor&quot; href=&quot;#video-demo&quot; aria-label=&quot;Anchor link for: video-demo&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
