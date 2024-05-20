@@ -5,7 +5,7 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2024-05-17T00:00:00+00:00</updated>
+	<updated>2024-05-20T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
 	<entry xml:lang="en">
 		<title>Interactive GNU awk tutorial</title>
@@ -2558,7 +2558,7 @@
 	<entry xml:lang="en">
 		<title>100+ Interactive Python Regex Exercises</title>
 		<published>2023-03-20T00:00:00+00:00</published>
-		<updated>2023-03-27T00:00:00+00:00</updated>
+		<updated>2024-05-20T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/interactive-python-regex-exercises/" type="text/html"/>
 		<id>https://learnbyexample.github.io/interactive-python-regex-exercises/</id>
 		<content type="html">&lt;p&gt;Having an interactive program that automatically loads questions and checks the solution is wonderful to have while learning a topic. This &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;TUI-apps&#x2F;blob&#x2F;main&#x2F;PyRegexExercises&quot;&gt;TUI app&lt;&#x2F;a&gt; has beginner to advanced level exercises for Python regular expressions. There are more than 100 exercises covering both the builtin &lt;code&gt;re&lt;&#x2F;code&gt; and third-party &lt;code&gt;regex&lt;&#x2F;code&gt; module.&lt;&#x2F;p&gt;
@@ -2582,7 +2582,11 @@
 &lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# you&amp;#39;ll have to change the path
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;alias &lt;&#x2F;span&gt;&lt;span style=&quot;color:#c23f31;&quot;&gt;regexexercises&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&#x2F;path&#x2F;to&#x2F;textual_apps&#x2F;bin&#x2F;regexexercises&amp;#39;
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;p&gt;As an alternative, you can install &lt;code&gt;textual&lt;&#x2F;code&gt; (see &lt;a href=&quot;https:&#x2F;&#x2F;textual.textualize.io&#x2F;getting_started&#x2F;&quot;&gt;Textual documentation&lt;&#x2F;a&gt; for more details), clone my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;TUI-apps&quot;&gt;TUI-apps&lt;&#x2F;a&gt; repository and run the &lt;code&gt;pyregex_exercises.py&lt;&#x2F;code&gt; file.&lt;&#x2F;p&gt;
+&lt;p&gt;As an alternative to manually managing such virtual environments, you can use &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;pypa&#x2F;pipx&quot;&gt;https:&#x2F;&#x2F;github.com&#x2F;pypa&#x2F;pipx&lt;&#x2F;a&gt; instead:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; pipx install regexexercises
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; regexexercises
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;As yet another alternative, you can install &lt;code&gt;textual&lt;&#x2F;code&gt; (see &lt;a href=&quot;https:&#x2F;&#x2F;textual.textualize.io&#x2F;getting_started&#x2F;&quot;&gt;Textual documentation&lt;&#x2F;a&gt; for more details), clone my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;TUI-apps&quot;&gt;TUI-apps&lt;&#x2F;a&gt; repository and run the &lt;code&gt;pyregex_exercises.py&lt;&#x2F;code&gt; file.&lt;&#x2F;p&gt;
 &lt;p&gt;Adjust the terminal dimensions for the widgets to appear properly, for example 84x25 (characters x lines).&lt;&#x2F;p&gt;
 &lt;br&gt;
 &lt;h2 id=&quot;video-demo&quot;&gt;Video demo&lt;a class=&quot;zola-anchor&quot; href=&quot;#video-demo&quot; aria-label=&quot;Anchor link for: video-demo&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
