@@ -28,7 +28,7 @@
     </url>
     <url>
         <loc>https://learnbyexample.github.io/books/</loc>
-        <lastmod>2024-05-08</lastmod>
+        <lastmod>2024-05-29</lastmod>
     </url>
     <url>
         <loc>https://learnbyexample.github.io/cli-computation-gnu-datamash/</loc>
@@ -49,10 +49,6 @@
     <url>
         <loc>https://learnbyexample.github.io/cli-text-processing-sed-announcement/</loc>
         <lastmod>2023-06-29</lastmod>
-    </url>
-    <url>
-        <loc>https://learnbyexample.github.io/computing-from-the-command-line-announcement/</loc>
-        <lastmod>2022-11-01</lastmod>
     </url>
     <url>
         <loc>https://learnbyexample.github.io/counting-nested-braces/</loc>
@@ -105,6 +101,10 @@
     <url>
         <loc>https://learnbyexample.github.io/learnbyexample-weekly-newsletter/</loc>
         <lastmod>2022-12-22</lastmod>
+    </url>
+    <url>
+        <loc>https://learnbyexample.github.io/linux-command-line-computing-announcement/</loc>
+        <lastmod>2024-05-29</lastmod>
     </url>
     <url>
         <loc>https://learnbyexample.github.io/mini/</loc>

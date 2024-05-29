@@ -6,6 +6,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Posts
 
+* [Linux Command Line Computing book announcement](https://learnbyexample.github.io/linux-command-line-computing-announcement/)
 * [Interactive GNU awk tutorial](https://learnbyexample.github.io/interactive-awk-tutorial/)
 * [CLI computation with GNU datamash](https://learnbyexample.github.io/cli-computation-gnu-datamash/)
 * [CLI text processing with GNU Coreutils book announcement](https://learnbyexample.github.io/cli-text-processing-coreutils-announcement/)
@@ -27,7 +28,6 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 * [Interactive Linux CLI Text Processing Exercises](https://learnbyexample.github.io/interactive-linux-cli-exercises/)
 * [Festive deals for books on Python, Linux, JavaScript, Regular Expressions and more](https://learnbyexample.github.io/programming-deals-2022/)
 * [Building TUIs with textual: first impressions](https://learnbyexample.github.io/textual-first-impressions/)
-* [Computing from the Command Line book announcement](https://learnbyexample.github.io/computing-from-the-command-line-announcement/)
 * [Python 3.11: possessive quantifiers added to re module](https://learnbyexample.github.io/python-regex-possessive-quantifier/)
 * [Vim Reference Guide book announcement](https://learnbyexample.github.io/vim-reference-guide-announcement/)
 * [Removing duplicates irrespective of field order](https://learnbyexample.github.io/duplicates-irrespective-field-order/)
