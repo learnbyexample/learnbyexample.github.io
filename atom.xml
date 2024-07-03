@@ -5,7 +5,7 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2024-06-07T00:00:00+00:00</updated>
+	<updated>2024-07-03T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
 	<entry xml:lang="en">
 		<title>Linux Command Line Computing book announcement</title>
@@ -139,7 +139,7 @@
 	<entry xml:lang="en">
 		<title>CLI computation with GNU datamash</title>
 		<published>2024-04-09T00:00:00+00:00</published>
-		<updated>2024-04-22T00:00:00+00:00</updated>
+		<updated>2024-07-03T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/cli-computation-gnu-datamash/" type="text/html"/>
 		<id>https://learnbyexample.github.io/cli-computation-gnu-datamash/</id>
 		<content type="html">&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; &lt;img src=&quot;&#x2F;images&#x2F;warning.svg&quot; alt=&quot;warning&quot; &#x2F;&gt; This is a work-in-progress post on the &lt;code&gt;GNU datamash&lt;&#x2F;code&gt; command.&lt;&#x2F;p&gt;
@@ -190,7 +190,7 @@
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;br&gt;
 &lt;h2 id=&quot;group-by&quot;&gt;Group by&lt;a class=&quot;zola-anchor&quot; href=&quot;#group-by&quot; aria-label=&quot;Anchor link for: group-by&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
-&lt;p&gt;You can use the &lt;code&gt;-g&lt;&#x2F;code&gt; option to group items based on one or more columns. You can specify an operation such as &lt;code&gt;collapse&lt;&#x2F;code&gt;, &lt;code&gt;sum&lt;&#x2F;code&gt;, &lt;code&gt;mean&lt;&#x2F;code&gt;, &lt;code&gt;count&lt;&#x2F;code&gt; and so on.&lt;&#x2F;p&gt;
+&lt;p&gt;You can use the &lt;code&gt;-g&lt;&#x2F;code&gt; option to group items based on one or more columns. You can specify an operation such as &lt;code&gt;collapse&lt;&#x2F;code&gt;, &lt;code&gt;sum&lt;&#x2F;code&gt;, &lt;code&gt;mean&lt;&#x2F;code&gt;, &lt;code&gt;count&lt;&#x2F;code&gt; and so on. See &lt;a href=&quot;https:&#x2F;&#x2F;unix.stackexchange.com&#x2F;q&#x2F;779049&#x2F;109046&quot;&gt;Grouping rows by categories avoiding repetition&lt;&#x2F;a&gt; for an example with &lt;code&gt;unique&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
 &lt;pre data-lang=&quot;ruby&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# here, the first column items are already next to each other
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# so, sorting is not needed
 &lt;&#x2F;span&gt;&lt;span&gt;$ cat toys.txt
