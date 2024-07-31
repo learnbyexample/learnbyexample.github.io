@@ -5,8 +5,69 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2024-07-03T00:00:00+00:00</updated>
+	<updated>2024-07-31T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Basic examples for the Linux date command</title>
+		<published>2024-07-31T00:00:00+00:00</published>
+		<updated>2024-07-31T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://learnbyexample.github.io/mini/linux-date-command-examples/" type="text/html"/>
+		<id>https://learnbyexample.github.io/mini/linux-date-command-examples/</id>
+		<content type="html">&lt;p&gt;I rarely ever use the &lt;code&gt;date&lt;&#x2F;code&gt; command, but when I need it I almost always struggle to get the right incantation. So, I&#x27;m just going to record such examples in this blog post (and some good to know features).&lt;&#x2F;p&gt;
+&lt;p&gt;There&#x27;ll also be learning resources linked at the end of the post.&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;really-basic-examples&quot;&gt;Really basic examples&lt;&#x2F;h2&gt;
+&lt;p&gt;The &lt;code&gt;date&lt;&#x2F;code&gt; command by itself shows the current time. But that&#x27;s rarely what I need, since I could just use the calendar widget at the bottom of my desktop screen. Perhaps useful to copy the string format and modify system time with the &lt;code&gt;-s&lt;&#x2F;code&gt; option?&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;ruby&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# use the -u option for UTC (Coordinated Universal Time)
+&lt;&#x2F;span&gt;&lt;span&gt;$ date
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Wednesday &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;31 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;July &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;2024 03&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;53&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;01 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;PM IST
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Instead, I need particular parts in a particular format. For example, to represent the time component in a dynamically constructed filename as part of a shell script.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;ruby&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# same as: date +%F or date -I
+&lt;&#x2F;span&gt;&lt;span&gt;$ date &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;+%&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Y&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-%&lt;&#x2F;span&gt;&lt;span&gt;m&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-%&lt;&#x2F;span&gt;&lt;span&gt;d
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;2024&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;07&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;31
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;$ date &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;+%&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Y&lt;&#x2F;span&gt;&lt;span style=&quot;color:#c49a39;&quot;&gt;&#x2F;%m&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;%&lt;&#x2F;span&gt;&lt;span&gt;d
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;2024&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;07&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&#x2F;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;31
+&lt;&#x2F;span&gt;&lt;span&gt;$ date &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;+%&lt;&#x2F;span&gt;&lt;span&gt;y&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-%&lt;&#x2F;span&gt;&lt;span&gt;m&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-%&lt;&#x2F;span&gt;&lt;span&gt;d
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;24&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;07&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;31
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# use &amp;#39;b&amp;#39; and &amp;#39;B&amp;#39; for month names
+&lt;&#x2F;span&gt;&lt;span&gt;$ date &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;+%&lt;&#x2F;span&gt;&lt;span&gt;a
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Wed
+&lt;&#x2F;span&gt;&lt;span&gt;$ date &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;+%&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;A
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Wednesday
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;You can use &lt;code&gt;%x&lt;&#x2F;code&gt; to get the locale representation:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;ruby&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span&gt;$ date &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;%x
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;31&#x2F;07&#x2F;24
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;For hours, minutes and seconds:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;ruby&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# same as: date +%T
+&lt;&#x2F;span&gt;&lt;span&gt;$ date &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;+%&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;H:&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;%&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;M:&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;%&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;S
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;16&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;00&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;32
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# same as: date +%Y-%m-%dT%H:%M:%S%:z
+&lt;&#x2F;span&gt;&lt;span&gt;$ date &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Iseconds
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;2024&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;07&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt;31T16&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;09&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;27&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;05&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;30
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;displaying-and-converting-epoch-seconds&quot;&gt;Displaying and converting epoch seconds&lt;&#x2F;h2&gt;
+&lt;pre data-lang=&quot;ruby&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# total seconds since the epoch (1970-01-01 00:00:00 UTC)
+&lt;&#x2F;span&gt;&lt;span&gt;$ date &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;%s
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;1722422393
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;$ date &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt;d @&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;1722422393 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#aeb52b;&quot;&gt;%F %T&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;2024&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;07&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;31 16&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;09&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;53
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;resource-links&quot;&gt;Resource links&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.gnu.org&#x2F;software&#x2F;coreutils&#x2F;manual&#x2F;coreutils.html#date-invocation&quot;&gt;GNU date command manual&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;unix.stackexchange.com&#x2F;questions&#x2F;tagged&#x2F;date?tab=Votes&quot;&gt;Top voted Q&amp;amp;A on unix.stackexchange for the date command tag&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>Linux Command Line Computing book announcement</title>
 		<published>2024-05-29T00:00:00+00:00</published>

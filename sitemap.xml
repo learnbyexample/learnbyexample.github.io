@@ -108,7 +108,7 @@
     </url>
     <url>
         <loc>https://learnbyexample.github.io/mini/</loc>
-        <lastmod>2023-10-17</lastmod>
+        <lastmod>2024-07-31</lastmod>
     </url>
     <url>
         <loc>https://learnbyexample.github.io/mini/bash-compound-commands-redirection/</loc>
@@ -141,6 +141,10 @@
     <url>
         <loc>https://learnbyexample.github.io/mini/hacker-news-front-page-brag/</loc>
         <lastmod>2023-09-05</lastmod>
+    </url>
+    <url>
+        <loc>https://learnbyexample.github.io/mini/linux-date-command-examples/</loc>
+        <lastmod>2024-07-31</lastmod>
     </url>
     <url>
         <loc>https://learnbyexample.github.io/mini/perl-oneliner-articles/</loc>
@@ -295,6 +299,9 @@
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tags/datamash/</loc>
+    </url>
+    <url>
+        <loc>https://learnbyexample.github.io/tags/date/</loc>
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tags/deals/</loc>
