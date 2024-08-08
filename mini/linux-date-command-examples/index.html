@@ -30,6 +30,16 @@
 </span><span>
 </span><span>$ date </span><span style=color:#72ab00;>-</span><span>d @</span><span style=color:#b3933a;>1722422393 </span><span style=color:#72ab00;>+</span><span style=color:#d07711;>'</span><span style=color:#aeb52b;>%F %T</span><span style=color:#d07711;>'
 </span><span style=color:#b3933a;>2024</span><span style=color:#72ab00;>-</span><span style=color:#b3933a;>07</span><span style=color:#72ab00;>-</span><span style=color:#b3933a;>31 16</span><span style=color:#72ab00;>:</span><span style=color:#b3933a;>09</span><span style=color:#72ab00;>:</span><span style=color:#b3933a;>53
+</span></code></pre><p>You can also provide an input file for conversion using the <code>-f</code> option:<pre class=language-ruby data-lang=ruby style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-ruby data-lang=ruby><span>$ cat epochs.txt
+</span><span>@</span><span style=color:#b3933a;>0000000000
+</span><span>@</span><span style=color:#b3933a;>1234567890
+</span><span>@</span><span style=color:#b3933a;>2222222222
+</span><span>
+</span><span style=color:#7f8989;># recall that the -u option gives you UTC
+</span><span>$ date </span><span style=color:#72ab00;>-</span><span>u </span><span style=color:#72ab00;>-</span><span>f epochs.txt </span><span style=color:#72ab00;>+</span><span style=color:#d07711;>'</span><span style=color:#aeb52b;>%F %T</span><span style=color:#d07711;>'
+</span><span style=color:#b3933a;>1970</span><span style=color:#72ab00;>-</span><span style=color:#b3933a;>01</span><span style=color:#72ab00;>-</span><span style=color:#b3933a;>01 00</span><span style=color:#72ab00;>:</span><span style=color:#b3933a;>00</span><span style=color:#72ab00;>:</span><span style=color:#b3933a;>00
+</span><span style=color:#b3933a;>2009</span><span style=color:#72ab00;>-</span><span style=color:#b3933a;>02</span><span style=color:#72ab00;>-</span><span style=color:#b3933a;>13 23</span><span style=color:#72ab00;>:</span><span style=color:#b3933a;>31</span><span style=color:#72ab00;>:</span><span style=color:#b3933a;>30
+</span><span style=color:#b3933a;>2040</span><span style=color:#72ab00;>-</span><span style=color:#b3933a;>06</span><span style=color:#72ab00;>-</span><span style=color:#b3933a;>02 03</span><span style=color:#72ab00;>:</span><span style=color:#b3933a;>57</span><span style=color:#72ab00;>:</span><span style=color:#b3933a;>02
 </span></code></pre><br><h2 id=date-arithmetic>Date arithmetic</h2><pre class=language-ruby data-lang=ruby style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-ruby data-lang=ruby><span>$ date </span><span style=color:#72ab00;>-</span><span style=color:#5597d6;>I
 </span><span style=color:#b3933a;>2024</span><span style=color:#72ab00;>-</span><span style=color:#b3933a;>08</span><span style=color:#72ab00;>-</span><span style=color:#b3933a;>02
 </span><span>$ date </span><span style=color:#72ab00;>-</span><span>d </span><span style=color:#d07711;>'+1 month 4 days'
