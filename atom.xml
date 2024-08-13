@@ -5,12 +5,12 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2024-08-08T00:00:00+00:00</updated>
+	<updated>2024-08-13T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
 	<entry xml:lang="en">
 		<title>Basic examples for the Linux date command</title>
 		<published>2024-07-31T00:00:00+00:00</published>
-		<updated>2024-08-08T00:00:00+00:00</updated>
+		<updated>2024-08-13T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/mini/linux-date-command-examples/" type="text/html"/>
 		<id>https://learnbyexample.github.io/mini/linux-date-command-examples/</id>
 		<content type="html">&lt;p&gt;I rarely ever use the &lt;code&gt;date&lt;&#x2F;code&gt; command, but when I need it I almost always struggle to get the right incantation. So, I&#x27;m just going to record such examples in this blog post (and some good to know features).&lt;&#x2F;p&gt;
@@ -83,6 +83,12 @@
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# you can also use &amp;#39;20 days ago&amp;#39;
 &lt;&#x2F;span&gt;&lt;span&gt;$ date &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;I &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt;d &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;-20 days&amp;#39;
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;2024&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;07&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;13
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;For my &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;learnbyexample-weekly&quot;&gt;learnbyexample weekly&lt;&#x2F;a&gt; newsletter, I use a script to generate a template issue. I use the arithmetic feature as shown below:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;ruby&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# prev_date variable gets the value from the previous newsletter issue
+&lt;&#x2F;span&gt;&lt;span&gt;$ prev_date=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;2024-02-23&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;$ date &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt;d &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot;$prev_date&amp;quot;&amp;#39; +7 days&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;+%&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;F
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;2024&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;03&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;01
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;br&gt;
 &lt;h2 id=&quot;resource-links&quot;&gt;Resource links&lt;&#x2F;h2&gt;
