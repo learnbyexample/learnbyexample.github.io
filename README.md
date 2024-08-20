@@ -6,6 +6,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Posts
 
+* [Vim Reference Guide book announcement](https://learnbyexample.github.io/vim-reference-guide-announcement/)
 * [Linux Command Line Computing book announcement](https://learnbyexample.github.io/linux-command-line-computing-announcement/)
 * [Interactive GNU awk tutorial](https://learnbyexample.github.io/interactive-awk-tutorial/)
 * [CLI computation with GNU datamash](https://learnbyexample.github.io/cli-computation-gnu-datamash/)
@@ -29,7 +30,6 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 * [Festive deals for books on Python, Linux, JavaScript, Regular Expressions and more](https://learnbyexample.github.io/programming-deals-2022/)
 * [Building TUIs with textual: first impressions](https://learnbyexample.github.io/textual-first-impressions/)
 * [Python 3.11: possessive quantifiers added to re module](https://learnbyexample.github.io/python-regex-possessive-quantifier/)
-* [Vim Reference Guide book announcement](https://learnbyexample.github.io/vim-reference-guide-announcement/)
 * [Removing duplicates irrespective of field order](https://learnbyexample.github.io/duplicates-irrespective-field-order/)
 * [Automating Excel with Python - book review](https://learnbyexample.github.io/automating-excel-with-python-review/)
 * [2021 was a wild ride](https://learnbyexample.github.io/wild-ride-2021/)
