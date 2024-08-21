@@ -5,7 +5,7 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2024-08-20T00:00:00+00:00</updated>
+	<updated>2024-08-21T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
 	<entry xml:lang="en">
 		<title>Vim Reference Guide book announcement</title>
@@ -316,11 +316,10 @@
 	<entry xml:lang="en">
 		<title>CLI computation with GNU datamash</title>
 		<published>2024-04-09T00:00:00+00:00</published>
-		<updated>2024-07-03T00:00:00+00:00</updated>
+		<updated>2024-08-21T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/cli-computation-gnu-datamash/" type="text/html"/>
 		<id>https://learnbyexample.github.io/cli-computation-gnu-datamash/</id>
-		<content type="html">&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; &lt;img src=&quot;&#x2F;images&#x2F;warning.svg&quot; alt=&quot;warning&quot; &#x2F;&gt; This is a work-in-progress post on the &lt;code&gt;GNU datamash&lt;&#x2F;code&gt; command.&lt;&#x2F;p&gt;
-&lt;p&gt;I&#x27;m hoping this post will serve as a quick reference for some of the use cases and tickle your curiosity if you haven&#x27;t come across this nifty CLI tool yet. I&#x27;ll also post some links for further reading.&lt;&#x2F;p&gt;
+		<content type="html">&lt;p&gt;I&#x27;m hoping this post will serve as a quick reference for some of the use cases and tickle your curiosity if you haven&#x27;t come across this nifty CLI text processing tool yet. There are also links for further reading at the end.&lt;&#x2F;p&gt;
 &lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;&lt;br&gt;
 &lt;h2 id=&quot;installation-and-documentation&quot;&gt;Installation and Documentation&lt;a class=&quot;zola-anchor&quot; href=&quot;#installation-and-documentation&quot; aria-label=&quot;Anchor link for: installation-and-documentation&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
 &lt;p&gt;See &lt;a href=&quot;https:&#x2F;&#x2F;www.gnu.org&#x2F;software&#x2F;datamash&#x2F;download&#x2F;&quot;&gt;download&lt;&#x2F;a&gt; page for source code and instructions to install the software on various platforms. This blog post is based on the &lt;strong&gt;1.8&lt;&#x2F;strong&gt; version.&lt;&#x2F;p&gt;
@@ -7034,7 +7033,7 @@ Specifying a greater than &lt;code&gt;0&lt;&#x2F;code&gt; start index when using
 		<id>https://learnbyexample.github.io/mini/vim-prank/</id>
 		<content type="html">&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;vim_prank.png&quot; alt=&quot;Vim Prank&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 &lt;p align=&quot;center&quot;&gt;&lt;i&gt;Poster created using &lt;a href=&quot;https:&#x2F;&#x2F;www.canva.com&#x2F;&quot;&gt;Canva&lt;&#x2F;a&gt;&lt;&#x2F;i&gt;&lt;&#x2F;p&gt;&lt;br&gt;
-&lt;p&gt;While going through &lt;a href=&quot;https:&#x2F;&#x2F;vimhelp.org&#x2F;starting.txt.html#vim-arguments&quot;&gt;:h vim-arguments&lt;&#x2F;a&gt; for my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;vim_reference&quot;&gt;Vim reference guide&lt;&#x2F;a&gt; ebook, I came across the &lt;code&gt;-y&lt;&#x2F;code&gt; option:&lt;&#x2F;p&gt;
+&lt;p&gt;While going through &lt;a href=&quot;https:&#x2F;&#x2F;vimhelp.org&#x2F;starting.txt.html#vim-arguments&quot;&gt;:h vim-arguments&lt;&#x2F;a&gt; for my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;vim_reference&quot;&gt;Vim Reference Guide&lt;&#x2F;a&gt; ebook, I came across the &lt;code&gt;-y&lt;&#x2F;code&gt; option:&lt;&#x2F;p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Easy mode. Implied for &lt;code&gt;evim&lt;&#x2F;code&gt; and &lt;code&gt;eview&lt;&#x2F;code&gt;. Starts with &lt;code&gt;&#x27;insertmode&#x27;&lt;&#x2F;code&gt; set and behaves like a click-and-type editor. This sources the script $VIMRUNTIME&#x2F;evim.vim. Mappings are set up to work like most click-and-type editors, see &lt;code&gt;evim-keys&lt;&#x2F;code&gt;. The GUI is started when available.&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;
