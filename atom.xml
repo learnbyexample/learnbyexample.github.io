@@ -5,7 +5,7 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2024-08-21T00:00:00+00:00</updated>
+	<updated>2024-10-09T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
 	<entry xml:lang="en">
 		<title>Vim Reference Guide book announcement</title>
@@ -9190,7 +9190,7 @@ The substitution works from start of the line for every iteration of the while l
 	<entry xml:lang="en">
 		<title>I know Python basics, what next?</title>
 		<published>2020-07-25T00:00:00+00:00</published>
-		<updated>2023-11-16T00:00:00+00:00</updated>
+		<updated>2024-10-09T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/python-intermediate/" type="text/html"/>
 		<id>https://learnbyexample.github.io/python-intermediate/</id>
 		<content type="html">&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;python_what_next.png&quot; alt=&quot;Python what next&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
@@ -9209,11 +9209,11 @@ The substitution works from start of the line for every iteration of the while l
 &lt;p&gt;If you feel comfortable with programming basics and Python syntax, then exercises are a good way to test your knowledge. The resource you used to learn Python will typically have some sort of exercises, so those would be ideal as a first choice. I&#x27;d also suggest using the below resources to improve your skills. If you get stuck, reread the material related to those topics, search online, ask for clarifications, etc  — in short, make an effort to solve it. It is okay to skip some troublesome problems (and come back to it later if you have the time), but you should be able to solve most of the beginner problems. Maintaining notes and cheatsheets will help too, especially for common mistakes.&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;exercism.org&#x2F;tracks&#x2F;python&#x2F;exercises&quot;&gt;Exercism&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;www.hackinscience.org&#x2F;exercises&#x2F;&quot;&gt;Hackinscience&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;www.practicepython.org&#x2F;&quot;&gt;Practicepython&lt;&#x2F;a&gt; — these are all beginner friendly and difficulty levels are marked&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;100_page_python_intro&#x2F;blob&#x2F;main&#x2F;exercises&#x2F;Exercises.md&quot;&gt;100 Page Python Intro exercises&lt;&#x2F;a&gt; — practice problems from my introductory guide&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;TUI-apps&#x2F;tree&#x2F;main&#x2F;PythonExercises&quot;&gt;Python Exercises&lt;&#x2F;a&gt; — my interactive TUI app, suited for beginner to intermediate level Python learners&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;inventwithpython.com&#x2F;pythongently&#x2F;&quot;&gt;Python Programming Exercises, Gently Explained&lt;&#x2F;a&gt; — includes gentle explanations of the problem, the prerequisite coding concepts you&#x27;ll need to understand the solution, etc&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;adventofcode.com&#x2F;&quot;&gt;Adventofcode&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;www.codewars.com&#x2F;&quot;&gt;Codewars&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;www.pythonmorsels.com&#x2F;&quot;&gt;Python Morsels&lt;&#x2F;a&gt; — includes more challenging exercises for intermediate to advanced level users&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;py.checkio.org&#x2F;&quot;&gt;Checkio&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;www.codingame.com&#x2F;start&quot;&gt;Codingame&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;codecombat.com&#x2F;&quot;&gt;Codecombat&lt;&#x2F;a&gt; — gaming based challenges&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;old.reddit.com&#x2F;r&#x2F;dailyprogrammer&quot;&gt;&#x2F;r&#x2F;dailyprogrammer&lt;&#x2F;a&gt; — not active currently, but there&#x27;s plenty of past challenges with discussions&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;old.reddit.com&#x2F;r&#x2F;dailyprogrammer&#x2F;&quot;&gt;&#x2F;r&#x2F;dailyprogrammer&lt;&#x2F;a&gt; — not active currently, but there are plenty of past challenges with discussions&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See also this article on &lt;a href=&quot;https:&#x2F;&#x2F;www.pythonmorsels.com&#x2F;programming-exercise-tips&#x2F;&quot;&gt;solving programming exercises&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;p&gt;Once you are comfortable with basics and syntax, the next step is projects. I wrote a 10-line program that solved a common problem for me — adding &lt;code&gt;body { text-align: justify }&lt;&#x2F;code&gt; to &lt;code&gt;epub&lt;&#x2F;code&gt; files that are not justify aligned. I didn&#x27;t know that this line would help beforehand. Found a solution online and then automated the process of unzipping &lt;code&gt;epub&lt;&#x2F;code&gt;, adding the line and then packing it again. That will likely need you to lookup documentation and go through some stackoverflow Q&amp;amp;A as well. And once you have written the solution and use it regularly, you&#x27;ll likely encounter corner cases and features to be added. I feel this is a great way to learn and understand programming.&lt;&#x2F;p&gt;
@@ -9233,6 +9233,7 @@ The substitution works from start of the line for every iteration of the while l
 &lt;&#x2F;ul&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;old.reddit.com&#x2F;r&#x2F;learnpython&#x2F;comments&#x2F;k5k1h0&#x2F;what_do_you_automate_with_python_at_home&#x2F;&quot;&gt;&#x2F;r&#x2F;learnpython: What do you automate with Python at home?&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;projectbook.code.brettchalupa.com&#x2F;&quot;&gt;Projectbook&lt;&#x2F;a&gt; — collection of over 100 software project ideas for people looking to learn a given language or technology&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See also &lt;a href=&quot;https:&#x2F;&#x2F;goodresearch.dev&#x2F;&quot;&gt;The Good Research Code Handbook&lt;&#x2F;a&gt; to learn how to organize your code so that it is easy to understand and works reliably.&lt;&#x2F;p&gt;
 &lt;br&gt;
@@ -9293,7 +9294,7 @@ The substitution works from start of the line for every iteration of the while l
 &lt;br&gt;
 &lt;h2 id=&quot;handy-cheatsheets&quot;&gt;Handy cheatsheets&lt;a class=&quot;zola-anchor&quot; href=&quot;#handy-cheatsheets&quot; aria-label=&quot;Anchor link for: handy-cheatsheets&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;ehmatthes.github.io&#x2F;pcc_2e&#x2F;cheat_sheets&#x2F;cheat_sheets&#x2F;&quot;&gt;Python Crash Course cheatsheet&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;ehmatthes.github.io&#x2F;pcc_3e&#x2F;cheat_sheets&#x2F;&quot;&gt;Python Crash Course cheatsheet&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;gto76.github.io&#x2F;python-cheatsheet&#x2F;&quot;&gt;Comprehensive Python cheatsheet&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;ipgp.github.io&#x2F;scientific_python_cheat_sheet&#x2F;&quot;&gt;Scientific Python cheatsheet&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;pythonforbiologists.com&#x2F;29-common-beginner-errors-on-one-page.html&quot;&gt;Common beginner errors&lt;&#x2F;a&gt; — use the pdf link&lt;&#x2F;li&gt;
