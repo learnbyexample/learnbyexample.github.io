@@ -5,8 +5,36 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2024-10-09T00:00:00+00:00</updated>
+	<updated>2024-10-29T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Interactive Python Exercises and Quiz</title>
+		<published>2024-10-29T00:00:00+00:00</published>
+		<updated>2024-10-29T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://learnbyexample.github.io/interactive-python-exercises/" type="text/html"/>
+		<id>https://learnbyexample.github.io/interactive-python-exercises/</id>
+		<content type="html">&lt;p&gt;Having an interactive program that automatically loads questions and checks the solution is wonderful to have while learning a topic. This &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;TUI-apps&#x2F;tree&#x2F;main&#x2F;PythonExercises&quot;&gt;TUI app&lt;&#x2F;a&gt; has beginner to intermediate level exercises and multiple-choice questions for Python learners.&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;learnbyexample&#x2F;TUI-apps&#x2F;main&#x2F;PythonExercises&#x2F;python_exercises.png&quot; alt=&quot;Sample screenshot for Python exercises&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;warning.svg&quot; alt=&quot;warning&quot; &#x2F;&gt; &lt;img src=&quot;&#x2F;images&#x2F;warning.svg&quot; alt=&quot;warning&quot; &#x2F;&gt; This is a work-in-progress project.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;&lt;br&gt;
+&lt;h2 id=&quot;installation&quot;&gt;Installation&lt;a class=&quot;zola-anchor&quot; href=&quot;#installation&quot; aria-label=&quot;Anchor link for: installation&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Install &lt;code&gt;textual&lt;&#x2F;code&gt; (see &lt;a href=&quot;https:&#x2F;&#x2F;textual.textualize.io&#x2F;getting_started&#x2F;&quot;&gt;Textual documentation&lt;&#x2F;a&gt; for more details), clone this repository and run the &lt;code&gt;python_exercises.py&lt;&#x2F;code&gt; file. You&#x27;ll need to install &lt;code&gt;textual[syntax]&lt;&#x2F;code&gt; to enable syntax highlighting (see &lt;a href=&quot;https:&#x2F;&#x2F;textual.textualize.io&#x2F;widgets&#x2F;text_area&#x2F;#syntax-highlighting-dependencies&quot;&gt;documentation&lt;&#x2F;a&gt; for more details).&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;strong&gt;TODO&lt;&#x2F;strong&gt;: PyPI app&lt;&#x2F;p&gt;
+&lt;p&gt;Adjust the terminal dimensions for the widgets to appear properly, for example 84x25 (characters x lines). Here&#x27;s another screenshot:&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;learnbyexample&#x2F;TUI-apps&#x2F;main&#x2F;PythonExercises&#x2F;python_quiz.png&quot; alt=&quot;Sample screenshot for Python exercises&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;guide&quot;&gt;Guide&lt;a class=&quot;zola-anchor&quot; href=&quot;#guide&quot; aria-label=&quot;Anchor link for: guide&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;See &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;TUI-apps&#x2F;blob&#x2F;main&#x2F;PythonExercises&#x2F;app_guide.md&quot;&gt;app_guide.md&lt;&#x2F;a&gt; for instructions.&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;ebook&quot;&gt;Ebook&lt;a class=&quot;zola-anchor&quot; href=&quot;#ebook&quot; aria-label=&quot;Anchor link for: ebook&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;The exercise and quiz questions in this app have been adapted from my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;100_page_python_intro&quot;&gt;100 Page Python Intro&lt;&#x2F;a&gt; ebook.&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;feedback&quot;&gt;Feedback&lt;a class=&quot;zola-anchor&quot; href=&quot;#feedback&quot; aria-label=&quot;Anchor link for: feedback&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;I&#x27;d highly appreciate your feedback. Please file &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;TUI-apps&#x2F;issues&quot;&gt;an issue&lt;&#x2F;a&gt; if there are bugs, crashes, etc.&lt;&#x2F;p&gt;
+&lt;p&gt;Hope you find this TUI app useful. Happy learning :)&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>Vim Reference Guide book announcement</title>
 		<published>2024-08-20T00:00:00+00:00</published>

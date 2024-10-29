@@ -6,6 +6,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Posts
 
+* [Interactive Python Exercises and Quiz](https://learnbyexample.github.io/interactive-python-exercises/)
 * [Vim Reference Guide book announcement](https://learnbyexample.github.io/vim-reference-guide-announcement/)
 * [Linux Command Line Computing book announcement](https://learnbyexample.github.io/linux-command-line-computing-announcement/)
 * [Interactive GNU awk tutorial](https://learnbyexample.github.io/interactive-awk-tutorial/)
