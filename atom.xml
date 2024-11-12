@@ -5,8 +5,39 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2024-10-29T00:00:00+00:00</updated>
+	<updated>2024-11-12T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Festive offers for books on Python, Linux, Regular Expressions, Vim and more!</title>
+		<published>2024-11-12T00:00:00+00:00</published>
+		<updated>2024-11-12T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://learnbyexample.github.io/programming-deals-2024/" type="text/html"/>
+		<id>https://learnbyexample.github.io/programming-deals-2024/</id>
+		<content type="html">&lt;p&gt;Hello!&lt;&#x2F;p&gt;
+&lt;p&gt;Here are some awesome deals for programming books and courses during the 2024 festive season.&lt;&#x2F;p&gt;
+&lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;&lt;br&gt;
+&lt;h2 id=&quot;my-ebooks&quot;&gt;My ebooks&lt;a class=&quot;zola-anchor&quot; href=&quot;#my-ebooks&quot; aria-label=&quot;Anchor link for: my-ebooks&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Offers valid till 30-Nov-2024. You can get them on Gumroad:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;all-books&#x2F;FestiveOffer&quot;&gt;All 13 Books Bundle&lt;&#x2F;a&gt; — $15 (normal price $32), learn Regular Expressions, Linux CLI tools, Python, Vim and more!&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;linux-cli-text-processing&#x2F;FestiveOffer&quot;&gt;Linux CLI Text Processing bundle&lt;&#x2F;a&gt; — $10 (normal price $20), grep, sed, awk, perl and ruby one-liners, GNU coreutils, CLI computing&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;python-bundle&#x2F;FestiveOffer&quot;&gt;Learn by example Python bundle&lt;&#x2F;a&gt; — $8 (normal price $15), Python introduction, Regular Expressions and Projects&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;py_regex&quot;&gt;Understanding Python re(gex)?&lt;&#x2F;a&gt; — FREE (normal price $10)&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;You can also avail these offers on Leanpub:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;leanpub.com&#x2F;b&#x2F;learnbyexample-all-books&#x2F;c&#x2F;FestiveOffer&quot;&gt;All 13 Books bundle&lt;&#x2F;a&gt; — $15 (normal price $32), learn Regular Expressions, Linux CLI tools, Python, Vim and more!&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;leanpub.com&#x2F;b&#x2F;linux-cli-text-processing&#x2F;c&#x2F;FestiveOffer&quot;&gt;Linux CLI Text Processing bundle&lt;&#x2F;a&gt; — $10 (normal price $20), grep, sed, awk, perl and ruby one-liners, GNU coreutils, CLI computing&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;leanpub.com&#x2F;b&#x2F;python-bundle&#x2F;c&#x2F;FestiveOffer&quot;&gt;Learn by example Python bundle&lt;&#x2F;a&gt; — $8 (normal price $15), Python introduction, Regular Expressions and Projects&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;leanpub.com&#x2F;py_regex&#x2F;c&#x2F;FestiveOffer&quot;&gt;Understanding Python re(gex)?&lt;&#x2F;a&gt; — FREE (normal price $10)&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;all-books&#x2F;FestiveOffer&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;books&#x2F;all_books_bundle.png&quot; alt=&quot;All books bundle&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;em&gt;Note: I&#x27;ll add other offers here later.&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;p&gt;Happy learning :)&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>Interactive Python Exercises and Quiz</title>
 		<published>2024-10-29T00:00:00+00:00</published>
