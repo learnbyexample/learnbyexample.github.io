@@ -5,12 +5,12 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2024-11-18T00:00:00+00:00</updated>
+	<updated>2024-11-21T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
 	<entry xml:lang="en">
 		<title>Festive offers for books on Python, Linux, Regular Expressions, Vim and more!</title>
 		<published>2024-11-12T00:00:00+00:00</published>
-		<updated>2024-11-18T00:00:00+00:00</updated>
+		<updated>2024-11-21T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/programming-deals-2024/" type="text/html"/>
 		<id>https://learnbyexample.github.io/programming-deals-2024/</id>
 		<content type="html">&lt;p&gt;Hello!&lt;&#x2F;p&gt;
@@ -33,13 +33,28 @@
 &lt;&#x2F;ul&gt;
 &lt;p align=&quot;center&quot;&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;all-books&#x2F;FestiveOffer&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;books&#x2F;all_books_bundle.png&quot; alt=&quot;All books bundle&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;br&gt;
+&lt;h2 id=&quot;indie-creators&quot;&gt;Indie creators&lt;a class=&quot;zola-anchor&quot; href=&quot;#indie-creators&quot; aria-label=&quot;Anchor link for: indie-creators&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;mathspp.gumroad.com&#x2F;l&#x2F;all-books-bundle&#x2F;BF24&quot;&gt;7 Python books bundle&lt;&#x2F;a&gt; — 50% off&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;adamchainz.gumroad.com&#x2F;&quot;&gt;Ebooks on Django and Git&lt;&#x2F;a&gt; — 50% off, plus purchasing power parity if applicable
+&lt;ul&gt;
+&lt;li&gt;see also author&#x27;s &lt;a href=&quot;https:&#x2F;&#x2F;adamj.eu&#x2F;tech&#x2F;2024&#x2F;11&#x2F;18&#x2F;django-black-friday-deals-2024&#x2F;&quot;&gt;blog post&lt;&#x2F;a&gt; for links to other Django-related deals&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;thepythoncodingplace.thinkific.com&#x2F;order?ct=20aec16f-ab0e-467f-bc1b-7e98e64d47f4&quot;&gt;The Python Coding Place Membership&lt;&#x2F;a&gt; — 40% off&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.pythonmorsels.com&#x2F;courses&#x2F;jumpstart&#x2F;overview&#x2F;&quot;&gt;Python Jumpstart&lt;&#x2F;a&gt; — 50% launch discount
+&lt;ul&gt;
+&lt;li&gt;see also author&#x27;s &lt;a href=&quot;https:&#x2F;&#x2F;treyhunner.com&#x2F;2024&#x2F;11&#x2F;python-black-friday-and-cyber-monday-sales-2024&#x2F;&quot;&gt;blog post&lt;&#x2F;a&gt; for links to other Python deals&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;shrutibalasa.gumroad.com&#x2F;l&#x2F;ebooks-combo&#x2F;BLACKFRIDAY24&quot;&gt;CSS Flex and Grid + Level up with Tailwind CSS&lt;&#x2F;a&gt; — 60% off&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
 &lt;h2 id=&quot;other-deals&quot;&gt;Other deals&lt;a class=&quot;zola-anchor&quot; href=&quot;#other-deals&quot; aria-label=&quot;Anchor link for: other-deals&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;trungdq88&#x2F;Awesome-Black-Friday-Cyber-Monday&quot;&gt;Huge list of awesome deals&lt;&#x2F;a&gt; — tools, productivity, books, courses, etc&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;0x90n&#x2F;InfoSec-Black-Friday&quot;&gt;InfoSec Hack Friday&lt;&#x2F;a&gt; — InfoSec related software&#x2F;tools&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;blackfridaydeals.dev&#x2F;&quot;&gt;blackfridaydeals.dev&lt;&#x2F;a&gt; — Hottest Black Friday Deals for Developers&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
-&lt;p&gt;&lt;em&gt;Note: I&#x27;ll add more offers here later.&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
 &lt;br&gt;
 &lt;p&gt;Happy learning :)&lt;&#x2F;p&gt;
 </content>
