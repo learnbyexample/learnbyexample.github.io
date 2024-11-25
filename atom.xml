@@ -5,12 +5,12 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2024-11-21T00:00:00+00:00</updated>
+	<updated>2024-11-25T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
 	<entry xml:lang="en">
 		<title>Festive offers for books on Python, Linux, Regular Expressions, Vim and more!</title>
 		<published>2024-11-12T00:00:00+00:00</published>
-		<updated>2024-11-21T00:00:00+00:00</updated>
+		<updated>2024-11-25T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/programming-deals-2024/" type="text/html"/>
 		<id>https://learnbyexample.github.io/programming-deals-2024/</id>
 		<content type="html">&lt;p&gt;Hello!&lt;&#x2F;p&gt;
@@ -48,9 +48,11 @@
 &lt;&#x2F;ul&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;shrutibalasa.gumroad.com&#x2F;l&#x2F;ebooks-combo&#x2F;BLACKFRIDAY24&quot;&gt;CSS Flex and Grid + Level up with Tailwind CSS&lt;&#x2F;a&gt; — 60% off&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;leanpub.com&#x2F;everydayrailsrspec&#x2F;c&#x2F;rubyconf2024&quot;&gt;Everyday Rails Testing with RSpec&lt;&#x2F;a&gt; — 53% off&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;h2 id=&quot;other-deals&quot;&gt;Other deals&lt;a class=&quot;zola-anchor&quot; href=&quot;#other-deals&quot; aria-label=&quot;Anchor link for: other-deals&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
 &lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;media.pragprog.com&#x2F;newsletters&#x2F;2024-11-20.html&quot;&gt;The Pragmatic Bookshelf&lt;&#x2F;a&gt; — 40% off on all ebooks and audio books&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;trungdq88&#x2F;Awesome-Black-Friday-Cyber-Monday&quot;&gt;Huge list of awesome deals&lt;&#x2F;a&gt; — tools, productivity, books, courses, etc&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;0x90n&#x2F;InfoSec-Black-Friday&quot;&gt;InfoSec Hack Friday&lt;&#x2F;a&gt; — InfoSec related software&#x2F;tools&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;blackfridaydeals.dev&#x2F;&quot;&gt;blackfridaydeals.dev&lt;&#x2F;a&gt; — Hottest Black Friday Deals for Developers&lt;&#x2F;li&gt;
