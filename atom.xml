@@ -5,12 +5,12 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2024-11-25T00:00:00+00:00</updated>
+	<updated>2024-11-26T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
 	<entry xml:lang="en">
 		<title>Festive offers for books on Python, Linux, Regular Expressions, Vim and more!</title>
 		<published>2024-11-12T00:00:00+00:00</published>
-		<updated>2024-11-25T00:00:00+00:00</updated>
+		<updated>2024-11-26T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/programming-deals-2024/" type="text/html"/>
 		<id>https://learnbyexample.github.io/programming-deals-2024/</id>
 		<content type="html">&lt;p&gt;Hello!&lt;&#x2F;p&gt;
@@ -36,6 +36,7 @@
 &lt;h2 id=&quot;indie-creators&quot;&gt;Indie creators&lt;a class=&quot;zola-anchor&quot; href=&quot;#indie-creators&quot; aria-label=&quot;Anchor link for: indie-creators&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;mathspp.gumroad.com&#x2F;l&#x2F;all-books-bundle&#x2F;BF24&quot;&gt;7 Python books bundle&lt;&#x2F;a&gt; — 50% off&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;driscollis.gumroad.com&#x2F;&quot;&gt;Python books&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;www.teachmepython.com&#x2F;&quot;&gt;Teach Me Python Membership&lt;&#x2F;a&gt; — 35% off with &lt;code&gt;BF24&lt;&#x2F;code&gt; discount code&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;adamchainz.gumroad.com&#x2F;&quot;&gt;Ebooks on Django and Git&lt;&#x2F;a&gt; — 50% off, plus purchasing power parity if applicable
 &lt;ul&gt;
 &lt;li&gt;see also author&#x27;s &lt;a href=&quot;https:&#x2F;&#x2F;adamj.eu&#x2F;tech&#x2F;2024&#x2F;11&#x2F;18&#x2F;django-black-friday-deals-2024&#x2F;&quot;&gt;blog post&lt;&#x2F;a&gt; for links to other Django-related deals&lt;&#x2F;li&gt;
