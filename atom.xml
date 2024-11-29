@@ -5,19 +5,19 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2024-11-26T00:00:00+00:00</updated>
+	<updated>2024-11-29T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
 	<entry xml:lang="en">
 		<title>Festive offers for books on Python, Linux, Regular Expressions, Vim and more!</title>
 		<published>2024-11-12T00:00:00+00:00</published>
-		<updated>2024-11-26T00:00:00+00:00</updated>
+		<updated>2024-11-29T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/programming-deals-2024/" type="text/html"/>
 		<id>https://learnbyexample.github.io/programming-deals-2024/</id>
 		<content type="html">&lt;p&gt;Hello!&lt;&#x2F;p&gt;
 &lt;p&gt;Here are some awesome deals for programming books and courses during the 2024 festive season.&lt;&#x2F;p&gt;
 &lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;&lt;br&gt;
 &lt;h2 id=&quot;my-ebooks&quot;&gt;My ebooks&lt;a class=&quot;zola-anchor&quot; href=&quot;#my-ebooks&quot; aria-label=&quot;Anchor link for: my-ebooks&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
-&lt;p&gt;Offers valid till 30-Nov-2024. You can get them on Leanpub:&lt;&#x2F;p&gt;
+&lt;p&gt;Offers valid till 02-Dec-2024. You can get them on Leanpub:&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;leanpub.com&#x2F;b&#x2F;learnbyexample-all-books&#x2F;c&#x2F;FestiveOffer&quot;&gt;All 13 Books bundle&lt;&#x2F;a&gt; — $15 (normal price $32), learn Regular Expressions, Linux CLI tools, Python, Vim and more!&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;leanpub.com&#x2F;b&#x2F;linux-cli-text-processing&#x2F;c&#x2F;FestiveOffer&quot;&gt;Linux CLI Text Processing bundle&lt;&#x2F;a&gt; — $10 (normal price $20), grep, sed, awk, perl and ruby one-liners, GNU coreutils, CLI computing&lt;&#x2F;li&gt;
@@ -36,24 +36,26 @@
 &lt;h2 id=&quot;indie-creators&quot;&gt;Indie creators&lt;a class=&quot;zola-anchor&quot; href=&quot;#indie-creators&quot; aria-label=&quot;Anchor link for: indie-creators&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;mathspp.gumroad.com&#x2F;l&#x2F;all-books-bundle&#x2F;BF24&quot;&gt;7 Python books bundle&lt;&#x2F;a&gt; — 50% off&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;driscollis.gumroad.com&#x2F;&quot;&gt;Python books&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;www.teachmepython.com&#x2F;&quot;&gt;Teach Me Python Membership&lt;&#x2F;a&gt; — 35% off with &lt;code&gt;BF24&lt;&#x2F;code&gt; discount code&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;driscollis.gumroad.com&#x2F;&quot;&gt;Python books&lt;&#x2F;a&gt; — 35% off with &lt;code&gt;BF24&lt;&#x2F;code&gt; discount code&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;adamchainz.gumroad.com&#x2F;&quot;&gt;Ebooks on Django and Git&lt;&#x2F;a&gt; — 50% off, plus purchasing power parity if applicable
 &lt;ul&gt;
 &lt;li&gt;see also author&#x27;s &lt;a href=&quot;https:&#x2F;&#x2F;adamj.eu&#x2F;tech&#x2F;2024&#x2F;11&#x2F;18&#x2F;django-black-friday-deals-2024&#x2F;&quot;&gt;blog post&lt;&#x2F;a&gt; for links to other Django-related deals&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;thepythoncodingplace.thinkific.com&#x2F;order?ct=20aec16f-ab0e-467f-bc1b-7e98e64d47f4&quot;&gt;The Python Coding Place Membership&lt;&#x2F;a&gt; — 40% off&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;thepythoncodingplace.thinkific.com&#x2F;order?ct=20aec16f-ab0e-467f-bc1b-7e98e64d47f4&quot;&gt;The Python Coding Place Membership&lt;&#x2F;a&gt; — 40% off with &lt;code&gt;black2024&lt;&#x2F;code&gt; discount code&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.pythonmorsels.com&#x2F;courses&#x2F;jumpstart&#x2F;overview&#x2F;&quot;&gt;Python Jumpstart&lt;&#x2F;a&gt; — 50% launch discount
 &lt;ul&gt;
 &lt;li&gt;see also author&#x27;s &lt;a href=&quot;https:&#x2F;&#x2F;treyhunner.com&#x2F;2024&#x2F;11&#x2F;python-black-friday-and-cyber-monday-sales-2024&#x2F;&quot;&gt;blog post&lt;&#x2F;a&gt; for links to other Python deals&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;wizardzines.com&#x2F;&quot;&gt;Wizard Zines&lt;&#x2F;a&gt; — 50% off with &lt;code&gt;WIZARDPDF&lt;&#x2F;code&gt; discount code&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;shrutibalasa.gumroad.com&#x2F;l&#x2F;ebooks-combo&#x2F;BLACKFRIDAY24&quot;&gt;CSS Flex and Grid + Level up with Tailwind CSS&lt;&#x2F;a&gt; — 60% off&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;leanpub.com&#x2F;everydayrailsrspec&#x2F;c&#x2F;rubyconf2024&quot;&gt;Everyday Rails Testing with RSpec&lt;&#x2F;a&gt; — 53% off&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;h2 id=&quot;other-deals&quot;&gt;Other deals&lt;a class=&quot;zola-anchor&quot; href=&quot;#other-deals&quot; aria-label=&quot;Anchor link for: other-deals&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;media.pragprog.com&#x2F;newsletters&#x2F;2024-11-20.html&quot;&gt;The Pragmatic Bookshelf&lt;&#x2F;a&gt; — 40% off on all ebooks and audio books&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;mailchi.mp&#x2F;leanpub&#x2F;weekly-sale-2024-nov-bf-5388297&quot;&gt;Leanpub Black Friday Sale&lt;&#x2F;a&gt; — offers for programming books, bundles and courses&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;trungdq88&#x2F;Awesome-Black-Friday-Cyber-Monday&quot;&gt;Huge list of awesome deals&lt;&#x2F;a&gt; — tools, productivity, books, courses, etc&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;0x90n&#x2F;InfoSec-Black-Friday&quot;&gt;InfoSec Hack Friday&lt;&#x2F;a&gt; — InfoSec related software&#x2F;tools&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;blackfridaydeals.dev&#x2F;&quot;&gt;blackfridaydeals.dev&lt;&#x2F;a&gt; — Hottest Black Friday Deals for Developers&lt;&#x2F;li&gt;
