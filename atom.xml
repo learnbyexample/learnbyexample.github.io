@@ -5,8 +5,116 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2024-11-29T00:00:00+00:00</updated>
+	<updated>2024-12-19T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>100 Page Python Intro book announcement</title>
+		<published>2024-12-19T00:00:00+00:00</published>
+		<updated>2024-12-19T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://learnbyexample.github.io/100-page-python-intro-book-announcement/" type="text/html"/>
+		<id>https://learnbyexample.github.io/100-page-python-intro-book-announcement/</id>
+		<content type="html">&lt;p&gt;Hello!&lt;&#x2F;p&gt;
+&lt;p&gt;I am pleased to announce a new version of my &lt;strong&gt;100 Page Python Intro&lt;&#x2F;strong&gt; ebook. This book is a short, introductory guide for the Python programming language. This book is well suited:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;As a reference material for Python beginner workshops&lt;&#x2F;li&gt;
+&lt;li&gt;If you have prior experience with another programming language&lt;&#x2F;li&gt;
+&lt;li&gt;If you want a complement resource after reading a Python basics book, watching a video course, etc&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;&lt;br&gt;
+&lt;h2 id=&quot;release-offers&quot;&gt;Release offers&lt;a class=&quot;zola-anchor&quot; href=&quot;#release-offers&quot; aria-label=&quot;Anchor link for: release-offers&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;To celebrate the new release, you can download PDF&#x2F;EPUB versions of the ebook for FREE till 02-Jan-2025. You can still pay if you wish ;)&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;leanpub.com&#x2F;100pagepythonintro&#x2F;c&#x2F;YearEndSale&quot;&gt;https:&#x2F;&#x2F;leanpub.com&#x2F;100pagepythonintro&#x2F;c&#x2F;YearEndSale&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;100pagepythonintro&quot;&gt;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;100pagepythonintro&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Two of my bundles are on sale as well:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;All 13 Books Bundle&lt;&#x2F;strong&gt; — $15 (normal price $32), learn Regular Expressions, Linux CLI tools, Python, Vim and more!
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;leanpub.com&#x2F;b&#x2F;learnbyexample-all-books&#x2F;c&#x2F;YearEndSale&quot;&gt;Leanpub&lt;&#x2F;a&gt; or &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;all-books&#x2F;YearEndSale&quot;&gt;Gumroad&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;strong&gt;Awesome Regex Bundle&lt;&#x2F;strong&gt; — $10 (normal price $20), Python, Ruby, JavaScript, BRE&#x2F;ERE, PCRE and Vim regular expressions
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;leanpub.com&#x2F;b&#x2F;regex&#x2F;c&#x2F;YearEndSale&quot;&gt;Leanpub&lt;&#x2F;a&gt; or &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;regex&#x2F;YearEndSale&quot;&gt;Gumroad&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;what-s-new&quot;&gt;What&#x27;s new?&lt;a class=&quot;zola-anchor&quot; href=&quot;#what-s-new&quot; aria-label=&quot;Anchor link for: what-s-new&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Python version updated to &lt;strong&gt;3.13.0&lt;&#x2F;strong&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Added more exercises and you can now practice some of them using this &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;TUI-apps&#x2F;tree&#x2F;main&#x2F;PythonExercises&quot;&gt;interactive TUI app&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Descriptions and external links were updated&#x2F;corrected&lt;&#x2F;li&gt;
+&lt;li&gt;Updated Acknowledgements section&lt;&#x2F;li&gt;
+&lt;li&gt;Code snippets related to info&#x2F;warning sections will now appear as a single block&lt;&#x2F;li&gt;
+&lt;li&gt;New cover image&lt;&#x2F;li&gt;
+&lt;li&gt;Images centered for EPUB format&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;videos&quot;&gt;Videos&lt;a class=&quot;zola-anchor&quot; href=&quot;#videos&quot; aria-label=&quot;Anchor link for: videos&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;aoWJzaSs0cs&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;&#x2F;iframe&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;On this blog, I &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips&#x2F;&quot;&gt;post tips&lt;&#x2F;a&gt; covering Python, command line tools and Vim. Here are video demos for these tips:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=THSMmCZQn1A&amp;amp;list=PLTv2U3HnAL4PlFDiH3FXTHXRbhWs2sB3F&quot;&gt;Python tips&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=p0KCLusMd5Q&amp;amp;list=PLTv2U3HnAL4PNTmRqZBSUgKaiHbRL2zeY&quot;&gt;Linux command line tips&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;testimonials&quot;&gt;Testimonials&lt;a class=&quot;zola-anchor&quot; href=&quot;#testimonials&quot; aria-label=&quot;Anchor link for: testimonials&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;It&#x27;s very thorough, written with care, and presented in a way that makes sense. Even as an intermediate Python programmer, I found use in this book.&lt;&#x2F;p&gt;
+&lt;p&gt;— feedback by &lt;a href=&quot;https:&#x2F;&#x2F;healeycodes.com&#x2F;&quot;&gt;Andrew Healey&lt;&#x2F;a&gt; on an early draft of &amp;quot;100 Page Python Intro&amp;quot; mentioned in &lt;a href=&quot;https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=26082464&quot;&gt;this Hacker News thread&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;interactive-tui-app&quot;&gt;Interactive TUI app&lt;a class=&quot;zola-anchor&quot; href=&quot;#interactive-tui-app&quot; aria-label=&quot;Anchor link for: interactive-tui-app&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;I also wrote an &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;TUI-apps&#x2F;tree&#x2F;main&#x2F;PythonExercises&quot;&gt;interactive TUI app&lt;&#x2F;a&gt; based on some of the exercises from the ebook. Reference solutions are also provided.&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;learnbyexample&#x2F;TUI-apps&#x2F;main&#x2F;PythonExercises&#x2F;python_exercises.png&quot; alt=&quot;Sample screenshot from the interactive TUI app for Python exercises&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;table-of-contents&quot;&gt;Table of Contents&lt;a class=&quot;zola-anchor&quot; href=&quot;#table-of-contents&quot; aria-label=&quot;Anchor link for: table-of-contents&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Preface&lt;&#x2F;li&gt;
+&lt;li&gt;Introduction&lt;&#x2F;li&gt;
+&lt;li&gt;Numeric data types&lt;&#x2F;li&gt;
+&lt;li&gt;Strings and user input&lt;&#x2F;li&gt;
+&lt;li&gt;Defining functions&lt;&#x2F;li&gt;
+&lt;li&gt;Control structures&lt;&#x2F;li&gt;
+&lt;li&gt;Importing and creating modules&lt;&#x2F;li&gt;
+&lt;li&gt;Installing modules and Virtual environments&lt;&#x2F;li&gt;
+&lt;li&gt;Exception handling&lt;&#x2F;li&gt;
+&lt;li&gt;Debugging&lt;&#x2F;li&gt;
+&lt;li&gt;Testing&lt;&#x2F;li&gt;
+&lt;li&gt;Tuple and Sequence operations&lt;&#x2F;li&gt;
+&lt;li&gt;List&lt;&#x2F;li&gt;
+&lt;li&gt;Mutability&lt;&#x2F;li&gt;
+&lt;li&gt;Dict&lt;&#x2F;li&gt;
+&lt;li&gt;Set&lt;&#x2F;li&gt;
+&lt;li&gt;Text processing&lt;&#x2F;li&gt;
+&lt;li&gt;Comprehensions and Generator expressions&lt;&#x2F;li&gt;
+&lt;li&gt;Dealing with files&lt;&#x2F;li&gt;
+&lt;li&gt;Executing external commands&lt;&#x2F;li&gt;
+&lt;li&gt;Command line arguments&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;web-version&quot;&gt;Web version&lt;a class=&quot;zola-anchor&quot; href=&quot;#web-version&quot; aria-label=&quot;Anchor link for: web-version&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;You can also read the book online here: &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;100_page_python_intro&#x2F;introduction.html&quot;&gt;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;100_page_python_intro&#x2F;introduction.html&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;github-repo&quot;&gt;GitHub repo&lt;a class=&quot;zola-anchor&quot; href=&quot;#github-repo&quot; aria-label=&quot;Anchor link for: github-repo&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Visit &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;100_page_python_intro&quot;&gt;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;100_page_python_intro&lt;&#x2F;a&gt; for programs, example files, markdown source and other details about the book.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See also &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;customizing-pandoc&#x2F;&quot;&gt;my blog post&lt;&#x2F;a&gt; on how to customize &lt;code&gt;pandoc&lt;&#x2F;code&gt; for generating beautiful PDF&#x2F;EPUB versions from GitHub style markdown.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;feedback&quot;&gt;Feedback&lt;a class=&quot;zola-anchor&quot; href=&quot;#feedback&quot; aria-label=&quot;Anchor link for: feedback&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;I would highly appreciate it if you&#x27;d &lt;strong&gt;let me know how you felt about this book&lt;&#x2F;strong&gt;. It could be anything from a simple thank you, Gumroad rating, pointing out a typo, mistakes in code snippets, which aspects of the book worked for you (or didn&#x27;t!) and so on. Reader feedback is essential and especially so for self-published authors.&lt;&#x2F;p&gt;
+&lt;p&gt;You can reach me via:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Issue Manager: &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;100_page_python_intro&#x2F;issues&quot;&gt;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;100_page_python_intro&#x2F;issues&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;E-mail: &lt;code&gt;echo &#x27;bGVhcm5ieWV4YW1wbGUubmV0QGdtYWlsLmNvbQo=&#x27; | base64 --decode&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Twitter: &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;learn_byexample&quot;&gt;https:&#x2F;&#x2F;twitter.com&#x2F;learn_byexample&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Happy learning :)&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>Festive offers for books on Python, Linux, Regular Expressions, Vim and more!</title>
 		<published>2024-11-12T00:00:00+00:00</published>
@@ -5072,7 +5180,7 @@ Specifying a greater than &lt;code&gt;0&lt;&#x2F;code&gt; start index when using
 	<entry xml:lang="en">
 		<title>Programming ebooks by Sundeep Agarwal</title>
 		<published>2022-08-09T00:00:00+00:00</published>
-		<updated>2024-11-18T00:00:00+00:00</updated>
+		<updated>2024-12-19T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/books/" type="text/html"/>
 		<id>https://learnbyexample.github.io/books/</id>
 		<content type="html">&lt;p&gt;This post lists my programming ebooks with details like PDF&#x2F;EPUB purchase links, GitHub repos, web versions, testimonials, etc. All my ebooks are self-published. You can get these ebooks individually or as part of bundles. You can also read them online for free.&lt;&#x2F;p&gt;
@@ -5188,14 +5296,13 @@ Specifying a greater than &lt;code&gt;0&lt;&#x2F;code&gt; start index when using
 &lt;br&gt;
 &lt;h1 id=&quot;100-page-python-intro&quot;&gt;&lt;p style=&quot;color: #ff9933&quot;&gt;100 Page Python Intro&lt;&#x2F;h1&gt;
 &lt;p&gt;Short, introductory guide for the Python programming language, suited for those already familiar with programming basics.&lt;&#x2F;p&gt;
-&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;books&#x2F;python_intro.png&quot; alt=&quot;100 Page Python Intro book cover image&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
-&lt;p align=&quot;center&quot;&gt;Cover art: &lt;a href=&quot;https:&#x2F;&#x2F;ko-fi.com&#x2F;profetessaoscura&quot;&gt;Ilsa Olson&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;learnbyexample&#x2F;100_page_python_intro&#x2F;main&#x2F;images&#x2F;py_intro_ls.png&quot; alt=&quot;100 Page Python Intro cover image&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;100_page_python_intro&#x2F;blob&#x2F;main&#x2F;sample_chapters&#x2F;100_page_python_intro_sample.pdf&quot;&gt;Sample chapters&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;Buy pdf&#x2F;epub from:
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;100pagepythonintro&quot;&gt;gumroad&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;leanpub.com&#x2F;100pagepythonintro&quot;&gt;leanpub&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;100pagepythonintro&quot;&gt;gumroad&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;100_page_python_intro&quot;&gt;GitHub repo for code snippets and more&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
@@ -5205,7 +5312,7 @@ Specifying a greater than &lt;code&gt;0&lt;&#x2F;code&gt; start index when using
 &lt;br&gt;
 &lt;h1 id=&quot;understanding-python-re-gex&quot;&gt;&lt;p style=&quot;color: #ff9933&quot;&gt;Understanding Python re(gex)?&lt;&#x2F;h1&gt;
 &lt;p&gt;Learn Python Regular Expressions step-by-step from beginner to advanced levels with 300+ examples. Both &lt;code&gt;re&lt;&#x2F;code&gt; and &lt;code&gt;regex&lt;&#x2F;code&gt; modules are covered. Exercises are also included to test your understanding.&lt;&#x2F;p&gt;
-&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;learnbyexample&#x2F;py_regular_expressions&#x2F;master&#x2F;images&#x2F;py_regex_ls.png&quot; width=&quot;640px&quot; height=&quot;360px&quot; alt=&quot;Understanding Python re(gex)? cover image&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;learnbyexample&#x2F;py_regular_expressions&#x2F;master&#x2F;images&#x2F;py_regex_ls.png&quot; alt=&quot;Understanding Python re(gex)? cover image&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;py_regular_expressions&#x2F;blob&#x2F;master&#x2F;sample_chapters&#x2F;py_regex_sample.pdf&quot;&gt;Sample chapters&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;Buy pdf&#x2F;epub from:
@@ -5237,7 +5344,7 @@ Specifying a greater than &lt;code&gt;0&lt;&#x2F;code&gt; start index when using
 &lt;br&gt;
 &lt;h1 id=&quot;understanding-javascript-regexp&quot;&gt;&lt;p style=&quot;color: #ff9933&quot;&gt;Understanding JavaScript RegExp&lt;&#x2F;h1&gt;
 &lt;p&gt;Learn JavaScript Regular Expressions step-by-step from beginner to advanced levels with hundreds of examples and exercises.&lt;&#x2F;p&gt;
-&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;learnbyexample&#x2F;learn_js_regexp&#x2F;master&#x2F;images&#x2F;js_regexp_ls.png&quot; width=&quot;640px&quot; height=&quot;360px&quot; alt=&quot;Understanding JavaScript RegExp cover image&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;learnbyexample&#x2F;learn_js_regexp&#x2F;master&#x2F;images&#x2F;js_regexp_ls.png&quot; alt=&quot;Understanding JavaScript RegExp cover image&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;learn_js_regexp&#x2F;blob&#x2F;master&#x2F;sample_chapters&#x2F;js_regexp_sample.pdf&quot;&gt;Sample chapters&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;Buy pdf&#x2F;epub from:
@@ -5253,7 +5360,7 @@ Specifying a greater than &lt;code&gt;0&lt;&#x2F;code&gt; start index when using
 &lt;br&gt;
 &lt;h1 id=&quot;cli-text-processing-with-gnu-grep-and-ripgrep&quot;&gt;&lt;p style=&quot;color: #ff9933&quot;&gt;CLI text processing with GNU grep and ripgrep&lt;&#x2F;h1&gt;
 &lt;p&gt;Example based guide to mastering GNU grep and ripgrep. Exercises are also included to test your understanding.&lt;&#x2F;p&gt;
-&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;learnbyexample&#x2F;learn_gnugrep_ripgrep&#x2F;master&#x2F;images&#x2F;grep_ls.png&quot; width=&quot;640px&quot; height=&quot;360px&quot; alt=&quot;CLI text processing with GNU grep and ripgrep cover image&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;learnbyexample&#x2F;learn_gnugrep_ripgrep&#x2F;master&#x2F;images&#x2F;grep_ls.png&quot; alt=&quot;CLI text processing with GNU grep and ripgrep cover image&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;learn_gnugrep_ripgrep&#x2F;blob&#x2F;master&#x2F;sample_chapters&#x2F;gnu_grep_sample.pdf&quot;&gt;Sample chapters&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;Buy pdf&#x2F;epub from:
@@ -5269,7 +5376,7 @@ Specifying a greater than &lt;code&gt;0&lt;&#x2F;code&gt; start index when using
 &lt;br&gt;
 &lt;h1 id=&quot;cli-text-processing-with-gnu-sed&quot;&gt;&lt;p style=&quot;color: #ff9933&quot;&gt;CLI text processing with GNU sed&lt;&#x2F;h1&gt;
 &lt;p&gt;Example based guide to mastering GNU sed. Exercises are also included to test your understanding.&lt;&#x2F;p&gt;
-&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;learnbyexample&#x2F;learn_gnused&#x2F;master&#x2F;images&#x2F;sed_ls.png&quot; width=&quot;640px&quot; height=&quot;360px&quot; alt=&quot;CLI text processing with GNU sed cover image&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;learnbyexample&#x2F;learn_gnused&#x2F;master&#x2F;images&#x2F;sed_ls.png&quot; alt=&quot;CLI text processing with GNU sed cover image&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;learn_gnused&#x2F;blob&#x2F;master&#x2F;sample_chapters&#x2F;gnu_sed_sample.pdf&quot;&gt;Sample chapters&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;Buy pdf&#x2F;epub from:
@@ -5285,7 +5392,7 @@ Specifying a greater than &lt;code&gt;0&lt;&#x2F;code&gt; start index when using
 &lt;br&gt;
 &lt;h1 id=&quot;cli-text-processing-with-gnu-awk&quot;&gt;&lt;p style=&quot;color: #ff9933&quot;&gt;CLI text processing with GNU awk&lt;&#x2F;h1&gt;
 &lt;p&gt;Example based guide to mastering GNU awk one-liners. Exercises are also included to test your understanding.&lt;&#x2F;p&gt;
-&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;learnbyexample&#x2F;learn_gnuawk&#x2F;master&#x2F;images&#x2F;gawk_ls.png&quot; width=&quot;640px&quot; height=&quot;360px&quot; alt=&quot;CLI text processing with GNU awk cover image&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;learnbyexample&#x2F;learn_gnuawk&#x2F;master&#x2F;images&#x2F;gawk_ls.png&quot; alt=&quot;CLI text processing with GNU awk cover image&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;learn_gnuawk&#x2F;blob&#x2F;master&#x2F;sample_chapters&#x2F;gnu_awk_sample.pdf&quot;&gt;Sample chapters&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;Buy pdf&#x2F;epub from:
@@ -5301,7 +5408,7 @@ Specifying a greater than &lt;code&gt;0&lt;&#x2F;code&gt; start index when using
 &lt;br&gt;
 &lt;h1 id=&quot;understanding-ruby-regexp&quot;&gt;&lt;p style=&quot;color: #ff9933&quot;&gt;Understanding Ruby Regexp&lt;&#x2F;h1&gt;
 &lt;p&gt;Learn Ruby Regular Expressions step-by-step from beginner to advanced levels with hundreds of examples and exercises.&lt;&#x2F;p&gt;
-&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;learnbyexample&#x2F;Ruby_Regexp&#x2F;master&#x2F;images&#x2F;ruby_regexp_ls.png&quot; width=&quot;640px&quot; height=&quot;360px&quot; alt=&quot;Understanding Ruby Regexp cover image&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;learnbyexample&#x2F;Ruby_Regexp&#x2F;master&#x2F;images&#x2F;ruby_regexp_ls.png&quot; alt=&quot;Understanding Ruby Regexp cover image&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;Ruby_Regexp&#x2F;blob&#x2F;master&#x2F;sample_chapters&#x2F;ruby_regexp_sample.pdf&quot;&gt;Sample chapters&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;Pay what you want for pdf&#x2F;epub:
@@ -5365,7 +5472,7 @@ Specifying a greater than &lt;code&gt;0&lt;&#x2F;code&gt; start index when using
 &lt;br&gt;
 &lt;h1 id=&quot;vim-reference-guide&quot;&gt;&lt;p style=&quot;color: #ff9933&quot;&gt;Vim Reference Guide&lt;&#x2F;h1&gt;
 &lt;p&gt;This is intended as a concise learning resource for beginner to intermediate level Vim users. It has more in common with cheatsheets than a typical text book. Topics like Regular Expressions and Macros have more detailed explanations and examples due to their complexity.&lt;&#x2F;p&gt;
-&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;vim_reference&#x2F;images&#x2F;vim_reference_guide_ls.png&quot; width=&quot;640px&quot; height=&quot;360px&quot; alt=&quot;Vim Reference Guide cover image&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;vim_reference&#x2F;images&#x2F;vim_reference_guide_ls.png&quot; alt=&quot;Vim Reference Guide cover image&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;vim_reference&#x2F;blob&#x2F;master&#x2F;sample_chapters&#x2F;vim_reference_guide_sample.pdf&quot;&gt;Sample chapters&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;Buy pdf&#x2F;epub from:
@@ -5381,7 +5488,7 @@ Specifying a greater than &lt;code&gt;0&lt;&#x2F;code&gt; start index when using
 &lt;br&gt;
 &lt;h1 id=&quot;linux-command-line-computing&quot;&gt;&lt;p style=&quot;color: #ff9933&quot;&gt;Linux Command Line Computing&lt;&#x2F;h1&gt;
 &lt;p&gt;This ebook aims to teach &lt;strong&gt;Linux command line tools and Shell Scripting&lt;&#x2F;strong&gt; for &lt;strong&gt;beginner to intermediate&lt;&#x2F;strong&gt; level users. The main focus is towards &lt;strong&gt;managing your files&lt;&#x2F;strong&gt; and performing &lt;strong&gt;text processing tasks&lt;&#x2F;strong&gt;. Plenty of &lt;strong&gt;examples&lt;&#x2F;strong&gt; are provided to make it easier to understand a particular tool and its various features. &lt;strong&gt;Exercises&lt;&#x2F;strong&gt; at the end of chapters will help you practice what you&#x27;ve learned and &lt;strong&gt;solutions&lt;&#x2F;strong&gt; are provided for reference. I hope this ebook would make it much easier for you to discover CLI tools, features and learning resources than my own blundering experience.&lt;&#x2F;p&gt;
-&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;cli-computing&#x2F;images&#x2F;cli_computing_ls.png&quot; width=&quot;640px&quot; height=&quot;360px&quot; alt=&quot;Linux Command Line Computing cover image&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;cli-computing&#x2F;images&#x2F;cli_computing_ls.png&quot; alt=&quot;Linux Command Line Computing cover image&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;cli-computing&#x2F;blob&#x2F;master&#x2F;sample_chapters&#x2F;cli_computing_sample.pdf&quot;&gt;Sample chapters&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;Buy pdf&#x2F;epub from:
@@ -8611,85 +8718,6 @@ The substitution works from start of the line for every iteration of the while l
 &lt;h2 id=&quot;a-parting-advice&quot;&gt;A parting advice&lt;a class=&quot;zola-anchor&quot; href=&quot;#a-parting-advice&quot; aria-label=&quot;Anchor link for: a-parting-advice&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
 &lt;p&gt;Don&#x27;t quit easily!&lt;&#x2F;p&gt;
 &lt;br&gt;
-</content>
-	</entry>
-	<entry xml:lang="en">
-		<title>100 Page Python Intro book announcement</title>
-		<published>2021-02-10T00:00:00+00:00</published>
-		<updated>2023-01-19T00:00:00+00:00</updated>
-		<link rel="alternate" href="https://learnbyexample.github.io/100-page-python-intro-book-announcement/" type="text/html"/>
-		<id>https://learnbyexample.github.io/100-page-python-intro-book-announcement/</id>
-		<content type="html">&lt;p&gt;Hello!&lt;&#x2F;p&gt;
-&lt;p&gt;I just published my ebook titled &amp;quot;&lt;strong&gt;100 Page Python Intro&lt;&#x2F;strong&gt;&amp;quot;. This book is a short, introductory guide for the Python programming language. This book is well suited:&lt;&#x2F;p&gt;
-&lt;ul&gt;
-&lt;li&gt;As a reference material for Python beginner workshops&lt;&#x2F;li&gt;
-&lt;li&gt;If you have prior experience with another programming language&lt;&#x2F;li&gt;
-&lt;li&gt;If you want a complement resource after reading a Python basics book, watching a video course, etc&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
-&lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;&lt;br&gt;
-&lt;h2 id=&quot;ebook-links&quot;&gt;Ebook links&lt;a class=&quot;zola-anchor&quot; href=&quot;#ebook-links&quot; aria-label=&quot;Anchor link for: ebook-links&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
-&lt;p&gt;You can get &lt;strong&gt;PDF&#x2F;EPUB&lt;&#x2F;strong&gt; versions from Gumroad or Leanpub using the links given below:&lt;&#x2F;p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;100pagepythonintro&quot;&gt;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;100pagepythonintro&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;leanpub.com&#x2F;100pagepythonintro&quot;&gt;https:&#x2F;&#x2F;leanpub.com&#x2F;100pagepythonintro&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
-&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;books&#x2F;python_intro.png&quot; alt=&quot;100 Page Python Intro book cover image&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
-&lt;p align=&quot;center&quot;&gt;Cover art: &lt;a href=&quot;https:&#x2F;&#x2F;ko-fi.com&#x2F;profetessaoscura&quot;&gt;Ilsa Olson&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;br&gt;
-&lt;h2 id=&quot;web-version&quot;&gt;Web version&lt;a class=&quot;zola-anchor&quot; href=&quot;#web-version&quot; aria-label=&quot;Anchor link for: web-version&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
-&lt;p&gt;You can also read the book online here: &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;100_page_python_intro&#x2F;introduction.html&quot;&gt;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;100_page_python_intro&#x2F;introduction.html&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
-&lt;br&gt;
-&lt;h2 id=&quot;github-repo&quot;&gt;GitHub repo&lt;a class=&quot;zola-anchor&quot; href=&quot;#github-repo&quot; aria-label=&quot;Anchor link for: github-repo&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
-&lt;p&gt;The &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;100_page_python_intro&quot;&gt;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;100_page_python_intro&lt;&#x2F;a&gt; repo has programs, example files, markdown source and other details about the book.&lt;&#x2F;p&gt;
-&lt;br&gt;
-&lt;h2 id=&quot;table-of-contents&quot;&gt;Table of Contents&lt;a class=&quot;zola-anchor&quot; href=&quot;#table-of-contents&quot; aria-label=&quot;Anchor link for: table-of-contents&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
-&lt;ol&gt;
-&lt;li&gt;Preface&lt;&#x2F;li&gt;
-&lt;li&gt;Introduction&lt;&#x2F;li&gt;
-&lt;li&gt;Numeric data types&lt;&#x2F;li&gt;
-&lt;li&gt;Strings and user input&lt;&#x2F;li&gt;
-&lt;li&gt;Defining functions&lt;&#x2F;li&gt;
-&lt;li&gt;Control structures&lt;&#x2F;li&gt;
-&lt;li&gt;Importing and creating modules&lt;&#x2F;li&gt;
-&lt;li&gt;Installing modules and Virtual environments&lt;&#x2F;li&gt;
-&lt;li&gt;Exception handling&lt;&#x2F;li&gt;
-&lt;li&gt;Debugging&lt;&#x2F;li&gt;
-&lt;li&gt;Testing&lt;&#x2F;li&gt;
-&lt;li&gt;Tuple and Sequence operations&lt;&#x2F;li&gt;
-&lt;li&gt;List&lt;&#x2F;li&gt;
-&lt;li&gt;Mutability&lt;&#x2F;li&gt;
-&lt;li&gt;Dict&lt;&#x2F;li&gt;
-&lt;li&gt;Set&lt;&#x2F;li&gt;
-&lt;li&gt;Text processing&lt;&#x2F;li&gt;
-&lt;li&gt;Comprehensions and Generator expressions&lt;&#x2F;li&gt;
-&lt;li&gt;Dealing with files&lt;&#x2F;li&gt;
-&lt;li&gt;Executing external commands&lt;&#x2F;li&gt;
-&lt;li&gt;Command line arguments&lt;&#x2F;li&gt;
-&lt;&#x2F;ol&gt;
-&lt;br&gt;
-&lt;h2 id=&quot;motivation-and-faq&quot;&gt;Motivation and FAQ&lt;a class=&quot;zola-anchor&quot; href=&quot;#motivation-and-faq&quot; aria-label=&quot;Anchor link for: motivation-and-faq&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
-&lt;p&gt;I&#x27;ve been conducting a few Python introduction workshops for college students and faculty for the past four years (which came to a premature end thanks to the pandemic). These students were already familiar with another programming languages such as &lt;code&gt;C&lt;&#x2F;code&gt;, &lt;code&gt;Java&lt;&#x2F;code&gt;, etc. I used to provide my notes in PDF format as a workshop reference material, further reading resources, etc. After I started writing a book titled &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;practice_python_projects&#x2F;&quot;&gt;&lt;strong&gt;Practice Python Projects&lt;&#x2F;strong&gt;&lt;&#x2F;a&gt;, I realized I&#x27;d be better served by improving my Python knowledge first. What better way to do it than writing a book? And it did teach me a lot of things, some of the highlights being:&lt;&#x2F;p&gt;
-&lt;ul&gt;
-&lt;li&gt;Exploring &lt;a href=&quot;https:&#x2F;&#x2F;docs.python.org&#x2F;3&#x2F;glossary.html&quot;&gt;docs.python: Glossary&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;You cannot have mutable objects as a &lt;code&gt;set&lt;&#x2F;code&gt; element!&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;code&gt;startswith()&lt;&#x2F;code&gt; and &lt;code&gt;endswith()&lt;&#x2F;code&gt; string methods support &lt;code&gt;tuple&lt;&#x2F;code&gt; argument for testing multiple substrings&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;docs.python.org&#x2F;3&#x2F;using&#x2F;cmdline.html&quot;&gt;Command line options&lt;&#x2F;a&gt; like &lt;code&gt;-q&lt;&#x2F;code&gt;, &lt;code&gt;-B&lt;&#x2F;code&gt;, etc&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
-&lt;p&gt;&lt;em&gt;Why is it called &lt;strong&gt;100 Page Python Intro&lt;&#x2F;strong&gt; when it has more than 100 pages?&lt;&#x2F;em&gt;&lt;&#x2F;p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;There are 2 hard problems in computer science: cache invalidation, naming things, and off-by-1 errors — Leon Bambrick&lt;&#x2F;p&gt;
-&lt;&#x2F;blockquote&gt;
-&lt;p&gt;The material I was using for my workshops was 56 pages. I had more chapters to add, but I thought it would be a struggle to reach 100 pages, instead of overshooting the goal in the end. The measurement also depends on a few factors. The main content will be less than 100 pages if I reduce the font size from 12 to 11, exclude cover, TOC, Preface, etc.&lt;&#x2F;p&gt;
-&lt;br&gt;
-&lt;h2 id=&quot;feedback&quot;&gt;Feedback&lt;a class=&quot;zola-anchor&quot; href=&quot;#feedback&quot; aria-label=&quot;Anchor link for: feedback&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
-&lt;p&gt;Hope you find it useful and fun to learn Python. I would highly appreciate if you&#x27;d &lt;strong&gt;let me know how you felt about this book&lt;&#x2F;strong&gt;. It could be anything from a simple thank you, Gumroad rating, pointing out a typo, mistakes in code snippets, which aspects of the book worked for you (or didn&#x27;t!) and so on. Reader feedback is essential and especially so for self-published authors.&lt;&#x2F;p&gt;
-&lt;p&gt;You can reach me via:&lt;&#x2F;p&gt;
-&lt;ul&gt;
-&lt;li&gt;Issue Manager: &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;100_page_python_intro&#x2F;issues&quot;&gt;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;100_page_python_intro&#x2F;issues&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;E-mail: &lt;code&gt;learn by example.net@gmail.com&lt;&#x2F;code&gt; (without the spaces)&lt;&#x2F;li&gt;
-&lt;li&gt;Twitter: &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;learn_byexample&quot;&gt;https:&#x2F;&#x2F;twitter.com&#x2F;learn_byexample&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
-&lt;p&gt;Happy learning :)&lt;&#x2F;p&gt;
 </content>
 	</entry>
 	<entry xml:lang="en">

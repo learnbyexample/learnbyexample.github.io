@@ -6,6 +6,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Posts
 
+* [100 Page Python Intro book announcement](https://learnbyexample.github.io/100-page-python-intro-book-announcement/)
 * [Festive offers for books on Python, Linux, Regular Expressions, Vim and more!](https://learnbyexample.github.io/programming-deals-2024/)
 * [Interactive Python Exercises and Quiz](https://learnbyexample.github.io/interactive-python-exercises/)
 * [Vim Reference Guide book announcement](https://learnbyexample.github.io/vim-reference-guide-announcement/)
@@ -45,7 +46,6 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 * [Escaping madness to get literal field separators in awk](https://learnbyexample.github.io/escaping-madness-awk-literal-field-separator/)
 * [GNU BRE/ERE cheatsheet and differences between grep, sed and awk](https://learnbyexample.github.io/gnu-bre-ere-cheatsheet/)
 * [Paying my bills with 'free' ebooks](https://learnbyexample.github.io/my-book-writing-experience/)
-* [100 Page Python Intro book announcement](https://learnbyexample.github.io/100-page-python-intro-book-announcement/)
 * [Multiline fixed string search and replace with CLI tools](https://learnbyexample.github.io/multiline-search-and-replace/)
 * [Emulating regexp lookarounds in GNU sed](https://learnbyexample.github.io/sed-lookarounds/)
 * [Search and replace tricks with ripgrep](https://learnbyexample.github.io/substitution-with-ripgrep/)
