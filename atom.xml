@@ -5,12 +5,12 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2024-12-19T00:00:00+00:00</updated>
+	<updated>2024-12-24T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
 	<entry xml:lang="en">
 		<title>100 Page Python Intro book announcement</title>
 		<published>2024-12-19T00:00:00+00:00</published>
-		<updated>2024-12-19T00:00:00+00:00</updated>
+		<updated>2024-12-24T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/100-page-python-intro-book-announcement/" type="text/html"/>
 		<id>https://learnbyexample.github.io/100-page-python-intro-book-announcement/</id>
 		<content type="html">&lt;p&gt;Hello!&lt;&#x2F;p&gt;
@@ -54,10 +54,11 @@
 &lt;br&gt;
 &lt;h2 id=&quot;videos&quot;&gt;Videos&lt;a class=&quot;zola-anchor&quot; href=&quot;#videos&quot; aria-label=&quot;Anchor link for: videos&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
 &lt;p align=&quot;center&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;aoWJzaSs0cs&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;&#x2F;iframe&gt;&lt;&#x2F;p&gt;
-&lt;p&gt;On this blog, I &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips&#x2F;&quot;&gt;post tips&lt;&#x2F;a&gt; covering Python, command line tools and Vim. Here are video demos for these tips:&lt;&#x2F;p&gt;
+&lt;p&gt;Check out my &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips&#x2F;&quot;&gt;programming tips&lt;&#x2F;a&gt; covering Python, command line tools and Vim:&lt;&#x2F;p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=THSMmCZQn1A&amp;amp;list=PLTv2U3HnAL4PlFDiH3FXTHXRbhWs2sB3F&quot;&gt;Python tips&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=p0KCLusMd5Q&amp;amp;list=PLTv2U3HnAL4PNTmRqZBSUgKaiHbRL2zeY&quot;&gt;Linux command line tips&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;playlist?list=PLTv2U3HnAL4PlFDiH3FXTHXRbhWs2sB3F&quot;&gt;Python tips&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;playlist?list=PLTv2U3HnAL4PNTmRqZBSUgKaiHbRL2zeY&quot;&gt;Linux command line tips&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;playlist?list=PLTv2U3HnAL4NN2tK-59ZiNBm-o64-Yvos&quot;&gt;Vim tips&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;br&gt;
 &lt;h2 id=&quot;testimonials&quot;&gt;Testimonials&lt;a class=&quot;zola-anchor&quot; href=&quot;#testimonials&quot; aria-label=&quot;Anchor link for: testimonials&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
