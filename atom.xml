@@ -5,7 +5,7 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2024-12-24T00:00:00+00:00</updated>
+	<updated>2025-01-09T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
 	<entry xml:lang="en">
 		<title>100 Page Python Intro book announcement</title>
@@ -1703,7 +1703,7 @@
 	<entry xml:lang="en">
 		<title>Interactive exercises for GNU grep, sed and awk (TUI apps)</title>
 		<published>2023-08-17T00:00:00+00:00</published>
-		<updated>2024-05-17T00:00:00+00:00</updated>
+		<updated>2025-01-09T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/interactive-grep-sed-awk-exercises/" type="text/html"/>
 		<id>https://learnbyexample.github.io/interactive-grep-sed-awk-exercises/</id>
 		<content type="html">&lt;p&gt;Having an interactive program that automatically loads questions and checks the solution is immensely helpful to have while learning a topic. I&#x27;ve written &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;TUI-apps&quot;&gt;TUI apps&lt;&#x2F;a&gt; with plenty of beginner to intermediate level exercises for &lt;code&gt;GNU grep&lt;&#x2F;code&gt;, &lt;code&gt;GNU sed&lt;&#x2F;code&gt; and &lt;code&gt;GNU awk&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
@@ -1711,7 +1711,7 @@
 &lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;&lt;br&gt;
 &lt;h2 id=&quot;installation&quot;&gt;Installation&lt;a class=&quot;zola-anchor&quot; href=&quot;#installation&quot; aria-label=&quot;Anchor link for: installation&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
 &lt;p&gt;For the past few months, I&#x27;ve been using a Python framework called &lt;a href=&quot;https:&#x2F;&#x2F;textual.textualize.io&#x2F;&quot;&gt;Textual&lt;&#x2F;a&gt; to create interactive TUI apps.&lt;&#x2F;p&gt;
-&lt;p&gt;You&#x27;ll need Python for this (I used 3.8, it should work for more recent versions too). This app is available on PyPI as &lt;a href=&quot;https:&#x2F;&#x2F;pypi.org&#x2F;project&#x2F;grepexercises&#x2F;&quot;&gt;grepexercises&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;pypi.org&#x2F;project&#x2F;sedexercises&#x2F;&quot;&gt;sedexercises&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;pypi.org&#x2F;project&#x2F;awkexercises&#x2F;&quot;&gt;awkexercises&lt;&#x2F;a&gt;. Example installation instructions are shown below, adjust them based on your preferences and OS.&lt;&#x2F;p&gt;
+&lt;p&gt;You&#x27;ll need Python for this. This app is available on PyPI as &lt;a href=&quot;https:&#x2F;&#x2F;pypi.org&#x2F;project&#x2F;grepexercises&#x2F;&quot;&gt;grepexercises&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;pypi.org&#x2F;project&#x2F;sedexercises&#x2F;&quot;&gt;sedexercises&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;pypi.org&#x2F;project&#x2F;awkexercises&#x2F;&quot;&gt;awkexercises&lt;&#x2F;a&gt;. Example installation instructions are shown below, adjust them based on your preferences and OS.&lt;&#x2F;p&gt;
 &lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# virtual environment
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; python3&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt; -m&lt;&#x2F;span&gt;&lt;span&gt; venv textual_apps
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; cd textual_apps
@@ -1731,7 +1731,7 @@
 &lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; pipx install grepexercises sedexercises awkexercises
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; awkexercises
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;p&gt;As yet another alternative, you can install &lt;code&gt;textual&lt;&#x2F;code&gt; (see &lt;a href=&quot;https:&#x2F;&#x2F;textual.textualize.io&#x2F;getting_started&#x2F;&quot;&gt;Textual documentation&lt;&#x2F;a&gt; for more details), clone my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;TUI-apps&quot;&gt;TUI-apps repository&lt;&#x2F;a&gt; and run the Python file from respective folders. For example, &lt;code&gt;grep_exercises.py&lt;&#x2F;code&gt; for the &lt;code&gt;grep&lt;&#x2F;code&gt; command.&lt;&#x2F;p&gt;
+&lt;p&gt;As yet another alternative, you can install &lt;code&gt;textual==0.85.2&lt;&#x2F;code&gt; (see &lt;a href=&quot;https:&#x2F;&#x2F;textual.textualize.io&#x2F;getting_started&#x2F;&quot;&gt;Textual documentation&lt;&#x2F;a&gt; for more details), clone my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;TUI-apps&quot;&gt;TUI-apps repository&lt;&#x2F;a&gt; and run the Python file from respective folders. For example, &lt;code&gt;grep_exercises.py&lt;&#x2F;code&gt; for the &lt;code&gt;grep&lt;&#x2F;code&gt; command.&lt;&#x2F;p&gt;
 &lt;p&gt;Adjust the terminal dimensions for the widgets to appear properly, for example 84x25 (characters x lines).&lt;&#x2F;p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; You can use alternative CLI tools to solve these exercises as well. For example, &lt;code&gt;perl&lt;&#x2F;code&gt; instead of &lt;code&gt;GNU awk&lt;&#x2F;code&gt; or &lt;code&gt;ripgrep&lt;&#x2F;code&gt; instead of &lt;code&gt;GNU grep&lt;&#x2F;code&gt; and so on.&lt;&#x2F;p&gt;
@@ -1750,7 +1750,7 @@
 &lt;li&gt;Issues due to errors and timeout (about &lt;code&gt;2&lt;&#x2F;code&gt; seconds) will be displayed in &lt;em&gt;red&lt;&#x2F;em&gt;.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;&#x2F;li&gt;
-&lt;li&gt;Press &lt;strong&gt;Ctrl+s&lt;&#x2F;strong&gt; to view reference solutions anytime you want.&lt;&#x2F;li&gt;
+&lt;li&gt;Press &lt;strong&gt;Ctrl+s&lt;&#x2F;strong&gt; to toggle the reference solution box.&lt;&#x2F;li&gt;
 &lt;li&gt;Press &lt;strong&gt;Ctrl+t&lt;&#x2F;strong&gt; to toggle between light and dark themes.&lt;&#x2F;li&gt;
 &lt;li&gt;Press &lt;strong&gt;Ctrl+q&lt;&#x2F;strong&gt; to quit the app.&lt;&#x2F;li&gt;
 &lt;li&gt;Some basic readline-like shortcuts are supported, for example &lt;strong&gt;Ctrl+u&lt;&#x2F;strong&gt;, &lt;strong&gt;Ctrl+k&lt;&#x2F;strong&gt;, &lt;strong&gt;Ctrl+w&lt;&#x2F;strong&gt;, etc&lt;&#x2F;li&gt;
@@ -3036,7 +3036,7 @@
 	<entry xml:lang="en">
 		<title>100+ Interactive Python Regex Exercises</title>
 		<published>2023-03-20T00:00:00+00:00</published>
-		<updated>2024-05-20T00:00:00+00:00</updated>
+		<updated>2025-01-09T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/interactive-python-regex-exercises/" type="text/html"/>
 		<id>https://learnbyexample.github.io/interactive-python-regex-exercises/</id>
 		<content type="html">&lt;p&gt;Having an interactive program that automatically loads questions and checks the solution is wonderful to have while learning a topic. This &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;TUI-apps&#x2F;blob&#x2F;main&#x2F;PyRegexExercises&quot;&gt;TUI app&lt;&#x2F;a&gt; has beginner to advanced level exercises for Python regular expressions. There are more than 100 exercises covering both the builtin &lt;code&gt;re&lt;&#x2F;code&gt; and third-party &lt;code&gt;regex&lt;&#x2F;code&gt; module.&lt;&#x2F;p&gt;
@@ -3064,7 +3064,7 @@
 &lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; pipx install regexexercises
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; regexexercises
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;p&gt;As yet another alternative, you can install &lt;code&gt;textual&lt;&#x2F;code&gt; (see &lt;a href=&quot;https:&#x2F;&#x2F;textual.textualize.io&#x2F;getting_started&#x2F;&quot;&gt;Textual documentation&lt;&#x2F;a&gt; for more details), clone my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;TUI-apps&quot;&gt;TUI-apps&lt;&#x2F;a&gt; repository and run the &lt;code&gt;pyregex_exercises.py&lt;&#x2F;code&gt; file.&lt;&#x2F;p&gt;
+&lt;p&gt;As yet another alternative, you can install &lt;code&gt;textual==0.85.2&lt;&#x2F;code&gt; (see &lt;a href=&quot;https:&#x2F;&#x2F;textual.textualize.io&#x2F;getting_started&#x2F;&quot;&gt;Textual documentation&lt;&#x2F;a&gt; for more details), clone my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;TUI-apps&quot;&gt;TUI-apps&lt;&#x2F;a&gt; repository and run the &lt;code&gt;pyregex_exercises.py&lt;&#x2F;code&gt; file.&lt;&#x2F;p&gt;
 &lt;p&gt;Adjust the terminal dimensions for the widgets to appear properly, for example 84x25 (characters x lines).&lt;&#x2F;p&gt;
 &lt;br&gt;
 &lt;h2 id=&quot;video-demo&quot;&gt;Video demo&lt;a class=&quot;zola-anchor&quot; href=&quot;#video-demo&quot; aria-label=&quot;Anchor link for: video-demo&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
@@ -3089,7 +3089,7 @@
 &lt;li&gt;Press &lt;strong&gt;Ctrl+p&lt;&#x2F;strong&gt; and &lt;strong&gt;Ctrl+n&lt;&#x2F;strong&gt; to navigate the questions list.&lt;&#x2F;li&gt;
 &lt;li&gt;Press &lt;strong&gt;Ctrl+r&lt;&#x2F;strong&gt; to toggle between &lt;strong&gt;str&lt;&#x2F;strong&gt; and &lt;strong&gt;repr&lt;&#x2F;strong&gt; — helps to spot characters like tabs, newlines, backspaces, etc.&lt;&#x2F;li&gt;
 &lt;li&gt;Press &lt;strong&gt;Ctrl+b&lt;&#x2F;strong&gt; to toggle between &lt;strong&gt;expected&lt;&#x2F;strong&gt; and &lt;strong&gt;actual&lt;&#x2F;strong&gt; — helps to debug incorrect solutions.&lt;&#x2F;li&gt;
-&lt;li&gt;Press &lt;strong&gt;Ctrl+s&lt;&#x2F;strong&gt; to show the reference solution if you are unable to solve an exercise.&lt;&#x2F;li&gt;
+&lt;li&gt;Press &lt;strong&gt;Ctrl+s&lt;&#x2F;strong&gt; toggle reference solution&lt;&#x2F;li&gt;
 &lt;li&gt;Press &lt;strong&gt;Ctrl+t&lt;&#x2F;strong&gt; to toggle between light and dark themes.&lt;&#x2F;li&gt;
 &lt;li&gt;Press &lt;strong&gt;Ctrl+q&lt;&#x2F;strong&gt; to quit the app.&lt;&#x2F;li&gt;
 &lt;li&gt;Press &lt;strong&gt;F1&lt;&#x2F;strong&gt; to view a detailed guide within the app itself and press &lt;strong&gt;F2&lt;&#x2F;strong&gt; to get back to the exercises.&lt;&#x2F;li&gt;
@@ -3155,7 +3155,7 @@
 	<entry xml:lang="en">
 		<title>Python Regular Expressions Playground</title>
 		<published>2023-03-11T00:00:00+00:00</published>
-		<updated>2023-03-11T00:00:00+00:00</updated>
+		<updated>2025-01-09T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/python-regex-playground/" type="text/html"/>
 		<id>https://learnbyexample.github.io/python-regex-playground/</id>
 		<content type="html">&lt;p&gt;This TUI application is intended as an interactive playground for Python Regular Expressions. The app also includes a comprehensive cheatsheet and several interactive examples.&lt;&#x2F;p&gt;
@@ -3176,18 +3176,18 @@
 &lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# you&amp;#39;ll have to change the path
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;alias &lt;&#x2F;span&gt;&lt;span style=&quot;color:#c23f31;&quot;&gt;regexplayground&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&#x2F;path&#x2F;to&#x2F;textual_apps&#x2F;bin&#x2F;regexplayground&amp;#39;
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;p&gt;As an alternative, you can install &lt;code&gt;textual&lt;&#x2F;code&gt; (see &lt;a href=&quot;https:&#x2F;&#x2F;textual.textualize.io&#x2F;getting_started&#x2F;&quot;&gt;Textual documentation&lt;&#x2F;a&gt; for more details), clone my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;TUI-apps&quot;&gt;TUI-apps repository&lt;&#x2F;a&gt; and run the &lt;code&gt;pyregex_playground.py&lt;&#x2F;code&gt; file.&lt;&#x2F;p&gt;
+&lt;p&gt;As an alternative, you can install &lt;code&gt;textual==0.85.2&lt;&#x2F;code&gt; (see &lt;a href=&quot;https:&#x2F;&#x2F;textual.textualize.io&#x2F;getting_started&#x2F;&quot;&gt;Textual documentation&lt;&#x2F;a&gt; for more details), clone my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;TUI-apps&quot;&gt;TUI-apps repository&lt;&#x2F;a&gt; and run the &lt;code&gt;pyregex_playground.py&lt;&#x2F;code&gt; file.&lt;&#x2F;p&gt;
 &lt;p&gt;Adjust the terminal dimensions for the widgets to appear properly, for example 84x25 (characters x lines). Here&#x27;s another screenshot:&lt;&#x2F;p&gt;
 &lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;learnbyexample&#x2F;TUI-apps&#x2F;main&#x2F;PyRegexPlayground&#x2F;pyregex_examples.png&quot; alt=&quot;Sample screenshot from the Interactive Examples screen&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 &lt;br&gt;
 &lt;h2 id=&quot;brief-guide&quot;&gt;Brief Guide&lt;a class=&quot;zola-anchor&quot; href=&quot;#brief-guide&quot; aria-label=&quot;Anchor link for: brief-guide&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
-&lt;p&gt;You can type the search pattern in the &lt;strong&gt;Compile&lt;&#x2F;strong&gt; input box and press the &lt;strong&gt;Enter&lt;&#x2F;strong&gt; key to execute. For example, &lt;code&gt;re.compile(r&#x27;\d&#x27;)&lt;&#x2F;code&gt; to match digit characters. Matching portions will be highlighted in red.&lt;&#x2F;p&gt;
+&lt;p&gt;You can type the search pattern in the &lt;strong&gt;Compile&lt;&#x2F;strong&gt; input box and press the &lt;strong&gt;Enter&lt;&#x2F;strong&gt; key (or &lt;strong&gt;Ctrl+r&lt;&#x2F;strong&gt;) to execute. For example, &lt;code&gt;re.compile(r&#x27;\d&#x27;)&lt;&#x2F;code&gt; to match digit characters. Matching portions will be highlighted in red.&lt;&#x2F;p&gt;
 &lt;p&gt;The compiled pattern is available via the &lt;code&gt;pat&lt;&#x2F;code&gt; variable and you can use &lt;code&gt;ip&lt;&#x2F;code&gt; to refer to the input string. You can transform or extract data by typing appropriate expression in the &lt;strong&gt;Action&lt;&#x2F;strong&gt; box. For example, &lt;code&gt;pat.sub(r&#x27;(\g&amp;lt;0&amp;gt;)&#x27;, ip)&lt;&#x2F;code&gt; will add parenthesis around the matching portions.&lt;&#x2F;p&gt;
 &lt;p&gt;You can skip the Compile box and directly use the Action box too. For example, &lt;code&gt;[m.span() for m in re.finditer(r&#x27;\d+&#x27;, ip)]&lt;&#x2F;code&gt; to get the location of all the matching portions.&lt;&#x2F;p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;warning.svg&quot; alt=&quot;warning&quot; &#x2F;&gt; There is no safeguard against the command you are executing. They are treated as if you typed them from a shell session.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;warning.svg&quot; alt=&quot;warning&quot; &#x2F;&gt; There is no safeguard against the commands you have typed. They are treated as if you executed them from a Python program.&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;
-&lt;p&gt;Press &lt;strong&gt;F1&lt;&#x2F;strong&gt; to view the detailed guide from within the app, &lt;strong&gt;F2&lt;&#x2F;strong&gt; to view a cheatsheet and &lt;strong&gt;F3&lt;&#x2F;strong&gt; for interactive examples.&lt;&#x2F;p&gt;
+&lt;p&gt;Press &lt;strong&gt;F1&lt;&#x2F;strong&gt; to view the detailed guide from within the app, &lt;strong&gt;F2&lt;&#x2F;strong&gt; to get back to the Playground from other screens, &lt;strong&gt;F3&lt;&#x2F;strong&gt; to view a cheatsheet and &lt;strong&gt;F4&lt;&#x2F;strong&gt; for interactive examples.&lt;&#x2F;p&gt;
 &lt;p&gt;For more detailed instructions, see &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;TUI-apps&#x2F;blob&#x2F;main&#x2F;PyRegexPlayground&#x2F;app_guide.md&quot;&gt;app guide&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;br&gt;
 &lt;h2 id=&quot;ebook&quot;&gt;Ebook&lt;a class=&quot;zola-anchor&quot; href=&quot;#ebook&quot; aria-label=&quot;Anchor link for: ebook&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
@@ -4230,7 +4230,7 @@ Specifying a greater than &lt;code&gt;0&lt;&#x2F;code&gt; start index when using
 	<entry xml:lang="en">
 		<title>Interactive Linux CLI Text Processing Exercises</title>
 		<published>2022-12-09T00:00:00+00:00</published>
-		<updated>2024-05-17T00:00:00+00:00</updated>
+		<updated>2025-01-09T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/interactive-linux-cli-exercises/" type="text/html"/>
 		<id>https://learnbyexample.github.io/interactive-linux-cli-exercises/</id>
 		<content type="html">&lt;p&gt;Having an interactive program that automatically loads questions and checks the solution is wonderful to have while learning a topic. This &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;TUI-apps&#x2F;tree&#x2F;main&#x2F;CLI-Exercises&quot;&gt;TUI app&lt;&#x2F;a&gt; has 60+ beginner to intermediate level exercises for Linux CLI text processing tools.&lt;&#x2F;p&gt;
@@ -4238,7 +4238,7 @@ Specifying a greater than &lt;code&gt;0&lt;&#x2F;code&gt; start index when using
 &lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;&lt;br&gt;
 &lt;h2 id=&quot;installation&quot;&gt;Installation&lt;a class=&quot;zola-anchor&quot; href=&quot;#installation&quot; aria-label=&quot;Anchor link for: installation&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
 &lt;p&gt;Last month, I started learning a Python TUI framework called &lt;a href=&quot;https:&#x2F;&#x2F;textual.textualize.io&#x2F;&quot;&gt;Textual&lt;&#x2F;a&gt;. After working on a &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;TUI-apps&#x2F;tree&#x2F;main&#x2F;SquareTicTacToe&quot;&gt;4x4 board game&lt;&#x2F;a&gt;, I made an interactive app to help you test your CLI text processing skills with 60+ beginner to intermediate level exercises.&lt;&#x2F;p&gt;
-&lt;p&gt;You&#x27;ll need Python for this (I used 3.8, it should work for more recent versions too). This app is available on PyPI as &lt;a href=&quot;https:&#x2F;&#x2F;pypi.org&#x2F;project&#x2F;cliexercises&#x2F;&quot;&gt;cliexercises&lt;&#x2F;a&gt;. Example installation instructions are shown below, adjust them based on your preferences and OS.&lt;&#x2F;p&gt;
+&lt;p&gt;You&#x27;ll need Python for this. This app is available on PyPI as &lt;a href=&quot;https:&#x2F;&#x2F;pypi.org&#x2F;project&#x2F;cliexercises&#x2F;&quot;&gt;cliexercises&lt;&#x2F;a&gt;. Example installation instructions are shown below, adjust them based on your preferences and OS.&lt;&#x2F;p&gt;
 &lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# virtual environment
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; python3&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt; -m&lt;&#x2F;span&gt;&lt;span&gt; venv textual_apps
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; cd textual_apps
@@ -4256,7 +4256,7 @@ Specifying a greater than &lt;code&gt;0&lt;&#x2F;code&gt; start index when using
 &lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; pipx install cliexercises
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; cliexercises
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;p&gt;As yet another alternative, you can install &lt;code&gt;textual&lt;&#x2F;code&gt; (see &lt;a href=&quot;https:&#x2F;&#x2F;textual.textualize.io&#x2F;getting_started&#x2F;&quot;&gt;Textual documentation&lt;&#x2F;a&gt; for more details), clone my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;TUI-apps&quot;&gt;TUI-apps repository&lt;&#x2F;a&gt; and run the &lt;code&gt;cli_exercises.py&lt;&#x2F;code&gt; file.&lt;&#x2F;p&gt;
+&lt;p&gt;As yet another alternative, you can install &lt;code&gt;textual==0.85.2&lt;&#x2F;code&gt; (see &lt;a href=&quot;https:&#x2F;&#x2F;textual.textualize.io&#x2F;getting_started&#x2F;&quot;&gt;Textual documentation&lt;&#x2F;a&gt; for more details), clone my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;TUI-apps&quot;&gt;TUI-apps repository&lt;&#x2F;a&gt; and run the &lt;code&gt;cli_exercises.py&lt;&#x2F;code&gt; file.&lt;&#x2F;p&gt;
 &lt;p&gt;Adjust the terminal dimensions for the widgets to appear properly, for example 84x25 (characters x lines).&lt;&#x2F;p&gt;
 &lt;br&gt;
 &lt;h2 id=&quot;video-demo&quot;&gt;Video demo&lt;a class=&quot;zola-anchor&quot; href=&quot;#video-demo&quot; aria-label=&quot;Anchor link for: video-demo&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
@@ -4273,7 +4273,7 @@ Specifying a greater than &lt;code&gt;0&lt;&#x2F;code&gt; start index when using
 &lt;li&gt;Issues due to errors and timeout (about &lt;code&gt;2&lt;&#x2F;code&gt; seconds) will be displayed in &lt;em&gt;red&lt;&#x2F;em&gt;.&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;&#x2F;li&gt;
-&lt;li&gt;Press &lt;strong&gt;Ctrl+s&lt;&#x2F;strong&gt; to show the reference solution if you are unable to solve an exercise.&lt;&#x2F;li&gt;
+&lt;li&gt;Press &lt;strong&gt;Ctrl+s&lt;&#x2F;strong&gt; to toggle the reference solution box.&lt;&#x2F;li&gt;
 &lt;li&gt;Press &lt;strong&gt;Ctrl+t&lt;&#x2F;strong&gt; to toggle between light and dark themes.&lt;&#x2F;li&gt;
 &lt;li&gt;Press &lt;strong&gt;Ctrl+q&lt;&#x2F;strong&gt; to quit the app.&lt;&#x2F;li&gt;
 &lt;li&gt;Some basic readline-like shortcuts are supported, for example &lt;strong&gt;Ctrl+u&lt;&#x2F;strong&gt;, &lt;strong&gt;Ctrl+k&lt;&#x2F;strong&gt;, &lt;strong&gt;Ctrl+w&lt;&#x2F;strong&gt;, etc&lt;&#x2F;li&gt;
