@@ -6,6 +6,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Posts
 
+* [Coloring matched portions with GNU grep, sed and awk](https://learnbyexample.github.io/coloring-matched-portions-grep-sed-awk/)
 * [100 Page Python Intro book announcement](https://learnbyexample.github.io/100-page-python-intro-book-announcement/)
 * [Festive offers for books on Python, Linux, Regular Expressions, Vim and more!](https://learnbyexample.github.io/programming-deals-2024/)
 * [Interactive Python Exercises and Quiz](https://learnbyexample.github.io/interactive-python-exercises/)
