@@ -5,12 +5,12 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2025-01-13T00:00:00+00:00</updated>
+	<updated>2025-01-14T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
 	<entry xml:lang="en">
 		<title>Coloring matched portions with GNU grep, sed and awk</title>
 		<published>2025-01-13T00:00:00+00:00</published>
-		<updated>2025-01-13T00:00:00+00:00</updated>
+		<updated>2025-01-14T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/coloring-matched-portions-grep-sed-awk/" type="text/html"/>
 		<id>https://learnbyexample.github.io/coloring-matched-portions-grep-sed-awk/</id>
 		<content type="html">&lt;p&gt;You might already know how to use the &lt;code&gt;--color&lt;&#x2F;code&gt; option to highlight matched portions with &lt;code&gt;GNU grep&lt;&#x2F;code&gt;. In this post, you&#x27;ll see how to use ANSI escape sequences to format matched portions with &lt;code&gt;GNU sed&lt;&#x2F;code&gt; and &lt;code&gt;GNU awk&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
@@ -30,7 +30,11 @@
 &lt;h2 id=&quot;formatting-with-ansi-escape-sequences&quot;&gt;Formatting with ANSI escape sequences&lt;a class=&quot;zola-anchor&quot; href=&quot;#formatting-with-ansi-escape-sequences&quot; aria-label=&quot;Anchor link for: formatting-with-ansi-escape-sequences&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
 &lt;p&gt;Here are some examples to show how you can format text in the terminal using ANSI escape sequences:&lt;&#x2F;p&gt;
 &lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;ANSI_escape_sequences_formatting.png&quot; alt=&quot;Examples for formatting with ANSI escape sequences&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
-&lt;p&gt;Your choice of formatting goes between &lt;code&gt;\033[&lt;&#x2F;code&gt; and &lt;code&gt;m&lt;&#x2F;code&gt;. In the above example, &lt;code&gt;01&lt;&#x2F;code&gt; is for bold and &lt;code&gt;31&lt;&#x2F;code&gt; is for the color red. Multiple formats can be specified by separating the parameters with a semicolon. Using &lt;code&gt;0&lt;&#x2F;code&gt; turns off the format (otherwise, it will persist in the current terminal session until turned off).&lt;&#x2F;p&gt;
+&lt;p&gt;Your choice of formatting goes between &lt;code&gt;\033[&lt;&#x2F;code&gt; and &lt;code&gt;m&lt;&#x2F;code&gt;. You can use &lt;code&gt;01&lt;&#x2F;code&gt; for &lt;strong&gt;bold&lt;&#x2F;strong&gt;, &lt;code&gt;03&lt;&#x2F;code&gt; for &lt;em&gt;italics&lt;&#x2F;em&gt; and &lt;code&gt;04&lt;&#x2F;code&gt; for &lt;u&gt;underline&lt;&#x2F;u&gt;. &lt;code&gt;31&lt;&#x2F;code&gt; is for the color &lt;font color=&#x27;red&#x27;&gt;red&lt;&#x2F;font&gt;, &lt;code&gt;32&lt;&#x2F;code&gt; for &lt;font color=&#x27;green&#x27;&gt;green&lt;&#x2F;font&gt; and &lt;code&gt;34&lt;&#x2F;code&gt; for &lt;font color=&#x27;blue&#x27;&gt;blue&lt;&#x2F;font&gt;. Multiple formats can be specified by separating the parameters with a semicolon. Using &lt;code&gt;0&lt;&#x2F;code&gt; turns off the format (otherwise, it will persist in the current terminal session until turned off).&lt;&#x2F;p&gt;
+&lt;p&gt;If you find a file that has accidentally saved such escape sequences, you can use &lt;code&gt;cat -v&lt;&#x2F;code&gt; to identify them.&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot;&gt;&lt;code&gt;&lt;span&gt;$ echo &amp;#39;one (two) three&amp;#39; | grep --color=always &amp;#39;(two)&amp;#39; | cat -v
+&lt;&#x2F;span&gt;&lt;span&gt;one ^[[01;31m^[[K(two)^[[m^[[K three
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;See also:&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;stackoverflow.com&#x2F;q&#x2F;4842424&#x2F;4082052&quot;&gt;List of ANSI color escape sequences&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
@@ -39,11 +43,27 @@
 &lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; Note that you can also use &lt;code&gt;\e&lt;&#x2F;code&gt; instead of &lt;code&gt;\033&lt;&#x2F;code&gt; in the above examples. However, that will not work with the &lt;code&gt;GNU awk&lt;&#x2F;code&gt; examples shown below.&lt;&#x2F;p&gt;
 &lt;br&gt;
 &lt;h2 id=&quot;gnu-sed&quot;&gt;GNU sed&lt;a class=&quot;zola-anchor&quot; href=&quot;#gnu-sed&quot; aria-label=&quot;Anchor link for: gnu-sed&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
-&lt;p&gt;&lt;code&gt;GNU sed&lt;&#x2F;code&gt; doesn&#x27;t have a native support for the escape sequences discussed above. Instead, you can store the sequences in a shell variable using &lt;a href=&quot;https:&#x2F;&#x2F;www.gnu.org&#x2F;software&#x2F;bash&#x2F;manual&#x2F;bash.html#ANSI_002dC-Quoting&quot;&gt;ANSI-C Quoting&lt;&#x2F;a&gt; and use them where required. Here&#x27;s an example: &lt;&#x2F;p&gt;
+&lt;p&gt;With &lt;code&gt;GNU sed&lt;&#x2F;code&gt;, you&#x27;ll need to use &lt;code&gt;\o&lt;&#x2F;code&gt; to specify an octal escape sequence. Here&#x27;s an example: &lt;&#x2F;p&gt;
 &lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;sed_color.png&quot; alt=&quot;Example for displaying matched portions in color with GNU sed&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Here&#x27;s an example for processing lines bounded by distinct markers:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot;&gt;&lt;code&gt;&lt;span&gt;$ cat blocks.txt
+&lt;&#x2F;span&gt;&lt;span&gt;mango
+&lt;&#x2F;span&gt;&lt;span&gt;icecream
+&lt;&#x2F;span&gt;&lt;span&gt;--start 1--
+&lt;&#x2F;span&gt;&lt;span&gt;dragon 1234
+&lt;&#x2F;span&gt;&lt;span&gt;unicorn 6789
+&lt;&#x2F;span&gt;&lt;span&gt;**end 1**
+&lt;&#x2F;span&gt;&lt;span&gt;have a nice day
+&lt;&#x2F;span&gt;&lt;span&gt;--start 2--
+&lt;&#x2F;span&gt;&lt;span&gt;a b c
+&lt;&#x2F;span&gt;&lt;span&gt;apple banana cherry
+&lt;&#x2F;span&gt;&lt;span&gt;**end 2**
+&lt;&#x2F;span&gt;&lt;span&gt;par,far,mar,tar
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;sed_multiline_color.png&quot; alt=&quot;Highlighting portion of interest in multiline processing with GNU sed&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 &lt;br&gt;
 &lt;h2 id=&quot;gnu-awk&quot;&gt;GNU awk&lt;a class=&quot;zola-anchor&quot; href=&quot;#gnu-awk&quot; aria-label=&quot;Anchor link for: gnu-awk&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
-&lt;p&gt;With &lt;code&gt;GNU awk&lt;&#x2F;code&gt;, you can directly embed the ANSI escape sequences in a string. Here&#x27;s an example:&lt;&#x2F;p&gt;
+&lt;p&gt;With &lt;code&gt;GNU awk&lt;&#x2F;code&gt;, you can embed the ANSI escape sequences in a string similar to the &lt;code&gt;printf&lt;&#x2F;code&gt; example seen earlier.&lt;&#x2F;p&gt;
 &lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;awk_color.png&quot; alt=&quot;Example for displaying matched portions in color with GNU awk&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 &lt;p&gt;Here&#x27;s a field processing example:&lt;&#x2F;p&gt;
 &lt;pre style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot;&gt;&lt;code&gt;&lt;span&gt;$ cat marks.txt 
@@ -62,6 +82,9 @@
 &lt;&#x2F;span&gt;&lt;span&gt;CSE 80
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;awk_color_field_processing.png&quot; alt=&quot;Color field processing results with GNU awk&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;linux-cli-ebooks&quot;&gt;Linux CLI ebooks&lt;a class=&quot;zola-anchor&quot; href=&quot;#linux-cli-ebooks&quot; aria-label=&quot;Anchor link for: linux-cli-ebooks&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Check out &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;books&#x2F;&quot;&gt;my ebooks&lt;&#x2F;a&gt; if you are interested in learning more about Linux CLI basics, coreutils, text processing tools like &lt;code&gt;GNU grep&lt;&#x2F;code&gt;, &lt;code&gt;GNU sed&lt;&#x2F;code&gt;, &lt;code&gt;GNU awk&lt;&#x2F;code&gt; and &lt;code&gt;perl&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
 </content>
 	</entry>
 	<entry xml:lang="en">
