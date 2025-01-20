@@ -5,7 +5,7 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2025-01-14T00:00:00+00:00</updated>
+	<updated>2025-01-20T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
 	<entry xml:lang="en">
 		<title>Coloring matched portions with GNU grep, sed and awk</title>
@@ -10188,7 +10188,7 @@ no VAL is specified, the key will be given the value true.&lt;&#x2F;p&gt;
 	<entry xml:lang="en">
 		<title>Python regular expression cheatsheet and examples</title>
 		<published>2020-07-03T00:00:00+00:00</published>
-		<updated>2023-10-12T00:00:00+00:00</updated>
+		<updated>2025-01-20T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/python-regex-cheatsheet/" type="text/html"/>
 		<id>https://learnbyexample.github.io/python-regex-cheatsheet/</id>
 		<content type="html">&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;books&#x2F;pyregex_example.png&quot; alt=&quot;pyregex example&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
@@ -10198,7 +10198,7 @@ no VAL is specified, the key will be given the value true.&lt;&#x2F;p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;A regular expression (or RE) specifies a set of strings that matches it; the functions in this module let you check if a particular string matches a given regular expression&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;
-&lt;p&gt;This blog post gives an overview and examples of regular expression syntax as implemented by the &lt;code&gt;re&lt;&#x2F;code&gt; built-in module (Python 3.11+). Assume ASCII character set unless otherwise specified. This post is an excerpt from my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;py_regular_expressions&quot;&gt;Understanding Python re(gex)?&lt;&#x2F;a&gt; book.&lt;&#x2F;p&gt;
+&lt;p&gt;This blog post gives an overview and examples of regular expression syntax as implemented by the &lt;code&gt;re&lt;&#x2F;code&gt; built-in module (Python 3.13+). Assume ASCII character set unless otherwise specified. This post is an excerpt from my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;py_regular_expressions&quot;&gt;Understanding Python re(gex)?&lt;&#x2F;a&gt; book.&lt;&#x2F;p&gt;
 &lt;br&gt;
 &lt;h2 id=&quot;elements-that-define-a-regular-expression&quot;&gt;Elements that define a regular expression&lt;a class=&quot;zola-anchor&quot; href=&quot;#elements-that-define-a-regular-expression&quot; aria-label=&quot;Anchor link for: elements-that-define-a-regular-expression&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
 &lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Anchors&lt;&#x2F;th&gt;&lt;th&gt;Description&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
@@ -10206,7 +10206,7 @@ no VAL is specified, the key will be given the value true.&lt;&#x2F;p&gt;
 &lt;tr&gt;&lt;td&gt;&lt;code&gt;\Z&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;restricts the match to the end of string&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
 &lt;tr&gt;&lt;td&gt;&lt;code&gt;^&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;restricts the match to the start of line&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
 &lt;tr&gt;&lt;td&gt;&lt;code&gt;$&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;restricts the match to the end of line&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
-&lt;tr&gt;&lt;td&gt;&lt;code&gt;\n&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;newline character is used as line separator&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;code&gt;\n&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;newline character is used as the line separator&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
 &lt;tr&gt;&lt;td&gt;&lt;code&gt;re.MULTILINE&lt;&#x2F;code&gt; or &lt;code&gt;re.M&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;flag to treat input as multiline string&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
 &lt;tr&gt;&lt;td&gt;&lt;code&gt;\b&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;restricts the match to the start&#x2F;end of words&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
 &lt;tr&gt;&lt;td&gt;&lt;&#x2F;td&gt;&lt;td&gt;word characters: alphabets, digits, underscore&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
@@ -10243,11 +10243,11 @@ no VAL is specified, the key will be given the value true.&lt;&#x2F;p&gt;
 &lt;tr&gt;&lt;td&gt;&lt;code&gt;[^aeiou]&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;code&gt;^&lt;&#x2F;code&gt; inverts selection, so this matches any consonant&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
 &lt;tr&gt;&lt;td&gt;&lt;code&gt;[a-f]&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;code&gt;-&lt;&#x2F;code&gt; defines a range, so this matches any of abcdef characters&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
 &lt;tr&gt;&lt;td&gt;&lt;code&gt;\d&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;Match a digit, same as &lt;code&gt;[0-9]&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
-&lt;tr&gt;&lt;td&gt;&lt;code&gt;\D&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;Match non-digit, same as &lt;code&gt;[^0-9]&lt;&#x2F;code&gt; or &lt;code&gt;[^\d]&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
-&lt;tr&gt;&lt;td&gt;&lt;code&gt;\w&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;Match word character, same as &lt;code&gt;[a-zA-Z0-9_]&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
-&lt;tr&gt;&lt;td&gt;&lt;code&gt;\W&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;Match non-word character, same as &lt;code&gt;[^a-zA-Z0-9_]&lt;&#x2F;code&gt; or &lt;code&gt;[^\w]&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
-&lt;tr&gt;&lt;td&gt;&lt;code&gt;\s&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;Match whitespace character, same as &lt;code&gt;[\ \t\n\r\f\v]&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
-&lt;tr&gt;&lt;td&gt;&lt;code&gt;\S&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;Match non-whitespace character, same as &lt;code&gt;[^\ \t\n\r\f\v]&lt;&#x2F;code&gt; or &lt;code&gt;[^\s]&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;code&gt;\D&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;Match non-digits, same as &lt;code&gt;[^0-9]&lt;&#x2F;code&gt; or &lt;code&gt;[^\d]&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;code&gt;\w&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;Match word characters, same as &lt;code&gt;[a-zA-Z0-9_]&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;code&gt;\W&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;Match non-word characters, same as &lt;code&gt;[^a-zA-Z0-9_]&lt;&#x2F;code&gt; or &lt;code&gt;[^\w]&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;code&gt;\s&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;Match whitespace characters, same as &lt;code&gt;[\ \t\n\r\f\v]&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;code&gt;\S&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;Match non-whitespace characters, same as &lt;code&gt;[^\ \t\n\r\f\v]&lt;&#x2F;code&gt; or &lt;code&gt;[^\s]&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
 &lt;&#x2F;tbody&gt;&lt;&#x2F;table&gt;
 &lt;br&gt;
 &lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Lookarounds&lt;&#x2F;th&gt;&lt;th&gt;Description&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
@@ -10263,7 +10263,7 @@ no VAL is specified, the key will be given the value true.&lt;&#x2F;p&gt;
 &lt;br&gt;
 &lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Flags&lt;&#x2F;th&gt;&lt;th&gt;Description&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
 &lt;tr&gt;&lt;td&gt;&lt;code&gt;re.IGNORECASE&lt;&#x2F;code&gt; or &lt;code&gt;re.I&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;flag to ignore case&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
-&lt;tr&gt;&lt;td&gt;&lt;code&gt;re.DOTALL&lt;&#x2F;code&gt; or &lt;code&gt;re.S&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;allow &lt;code&gt;.&lt;&#x2F;code&gt; metacharacter to match newline character&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;code&gt;re.DOTALL&lt;&#x2F;code&gt; or &lt;code&gt;re.S&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;allow &lt;code&gt;.&lt;&#x2F;code&gt; metacharacter to match newline characters&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
 &lt;tr&gt;&lt;td&gt;&lt;code&gt;flags=re.S|re.I&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;multiple flags can be combined using &lt;code&gt;|&lt;&#x2F;code&gt; operator&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
 &lt;tr&gt;&lt;td&gt;&lt;code&gt;re.MULTILINE&lt;&#x2F;code&gt; or &lt;code&gt;re.M&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;allow &lt;code&gt;^&lt;&#x2F;code&gt; and &lt;code&gt;$&lt;&#x2F;code&gt; anchors to match line wise&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
 &lt;tr&gt;&lt;td&gt;&lt;code&gt;re.VERBOSE&lt;&#x2F;code&gt; or &lt;code&gt;re.X&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;allows to use literal whitespaces for aligning purposes&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
@@ -10272,7 +10272,7 @@ no VAL is specified, the key will be given the value true.&lt;&#x2F;p&gt;
 &lt;tr&gt;&lt;td&gt;&lt;code&gt;re.ASCII&lt;&#x2F;code&gt; or &lt;code&gt;re.A&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;match only ASCII characters for &lt;code&gt;\b&lt;&#x2F;code&gt;, &lt;code&gt;\w&lt;&#x2F;code&gt;, &lt;code&gt;\d&lt;&#x2F;code&gt;, &lt;code&gt;\s&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
 &lt;tr&gt;&lt;td&gt;&lt;&#x2F;td&gt;&lt;td&gt;and their opposites, applicable only for Unicode patterns&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
 &lt;tr&gt;&lt;td&gt;&lt;code&gt;re.LOCALE&lt;&#x2F;code&gt; or &lt;code&gt;re.L&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;use locale settings for byte patterns and 8-bit locales&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
-&lt;tr&gt;&lt;td&gt;&lt;code&gt;(?#comment)&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;another way to add comments, not a flag&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;code&gt;(?#comment)&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;another way to add comments (not a flag)&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
 &lt;tr&gt;&lt;td&gt;&lt;code&gt;(?flags:pat)&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;inline flags only for this &lt;code&gt;pat&lt;&#x2F;code&gt;, overrides &lt;code&gt;flags&lt;&#x2F;code&gt; argument&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
 &lt;tr&gt;&lt;td&gt;&lt;&#x2F;td&gt;&lt;td&gt;flags is &lt;code&gt;i&lt;&#x2F;code&gt; for &lt;code&gt;re.I&lt;&#x2F;code&gt;, &lt;code&gt;s&lt;&#x2F;code&gt; for &lt;code&gt;re.S&lt;&#x2F;code&gt;, etc, except &lt;code&gt;L&lt;&#x2F;code&gt; for &lt;code&gt;re.L&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
 &lt;tr&gt;&lt;td&gt;&lt;code&gt;(?-flags:pat)&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;negate flags only for this &lt;code&gt;pat&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
@@ -10284,17 +10284,17 @@ no VAL is specified, the key will be given the value true.&lt;&#x2F;p&gt;
 &lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;Matched portion&lt;&#x2F;th&gt;&lt;th&gt;Description&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;thead&gt;&lt;tbody&gt;
 &lt;tr&gt;&lt;td&gt;&lt;code&gt;re.Match&lt;&#x2F;code&gt; object&lt;&#x2F;td&gt;&lt;td&gt;details like matched portions, location, etc&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
 &lt;tr&gt;&lt;td&gt;&lt;code&gt;m[0]&lt;&#x2F;code&gt; or &lt;code&gt;m.group(0)&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;entire matched portion of &lt;code&gt;re.Match&lt;&#x2F;code&gt; object &lt;code&gt;m&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
-&lt;tr&gt;&lt;td&gt;&lt;code&gt;m[n]&lt;&#x2F;code&gt; or &lt;code&gt;m.group(n)&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;matched portion of &lt;em&gt;n&lt;&#x2F;em&gt;th capture group&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;code&gt;m[n]&lt;&#x2F;code&gt; or &lt;code&gt;m.group(n)&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;matched portion of the &lt;em&gt;n&lt;&#x2F;em&gt;th capture group&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
 &lt;tr&gt;&lt;td&gt;&lt;code&gt;m.groups()&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;tuple of all the capture groups&#x27; matched portions&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
-&lt;tr&gt;&lt;td&gt;&lt;code&gt;m.span()&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;start and end+1 index of entire matched portion&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;code&gt;m.span()&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;start and end+1 index of the entire matched portion&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
 &lt;tr&gt;&lt;td&gt;&lt;&#x2F;td&gt;&lt;td&gt;pass a number to get span of that particular capture group&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
 &lt;tr&gt;&lt;td&gt;&lt;&#x2F;td&gt;&lt;td&gt;can also use &lt;code&gt;m.start()&lt;&#x2F;code&gt; and &lt;code&gt;m.end()&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
-&lt;tr&gt;&lt;td&gt;&lt;code&gt;\N&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;backreference, gives matched portion of &lt;em&gt;N&lt;&#x2F;em&gt;th capture group&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;code&gt;\N&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;backreference, gives matched portion of the &lt;em&gt;N&lt;&#x2F;em&gt;th capture group&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
 &lt;tr&gt;&lt;td&gt;&lt;&#x2F;td&gt;&lt;td&gt;applies to both search and replacement sections&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
 &lt;tr&gt;&lt;td&gt;&lt;&#x2F;td&gt;&lt;td&gt;possible values: &lt;code&gt;\1&lt;&#x2F;code&gt;, &lt;code&gt;\2&lt;&#x2F;code&gt; up to &lt;code&gt;\99&lt;&#x2F;code&gt; provided no more digits&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
-&lt;tr&gt;&lt;td&gt;&lt;code&gt;\g&amp;lt;N&amp;gt;&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;backreference, gives matched portion of Nth capture group&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;code&gt;\g&amp;lt;N&amp;gt;&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;backreference, gives matched portion of the Nth capture group&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
 &lt;tr&gt;&lt;td&gt;&lt;&#x2F;td&gt;&lt;td&gt;possible values: &lt;code&gt;\g&amp;lt;0&amp;gt;&lt;&#x2F;code&gt;, &lt;code&gt;\g&amp;lt;1&amp;gt;&lt;&#x2F;code&gt;, etc (not limited to 99)&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
-&lt;tr&gt;&lt;td&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;code&gt;\g&amp;lt;0&amp;gt;&lt;&#x2F;code&gt; refers to entire matched portion&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;&#x2F;td&gt;&lt;td&gt;&lt;code&gt;\g&amp;lt;0&amp;gt;&lt;&#x2F;code&gt; refers to the entire matched portion&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
 &lt;tr&gt;&lt;td&gt;&lt;code&gt;(?P&amp;lt;name&amp;gt;pat)&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;named capture group&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
 &lt;tr&gt;&lt;td&gt;&lt;&#x2F;td&gt;&lt;td&gt;refer as &lt;code&gt;&#x27;name&#x27;&lt;&#x2F;code&gt; in &lt;code&gt;re.Match&lt;&#x2F;code&gt; object&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
 &lt;tr&gt;&lt;td&gt;&lt;&#x2F;td&gt;&lt;td&gt;refer as &lt;code&gt;(?P=name)&lt;&#x2F;code&gt; in search section&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
@@ -10315,7 +10315,7 @@ no VAL is specified, the key will be given the value true.&lt;&#x2F;p&gt;
 &lt;tr&gt;&lt;td&gt;&lt;code&gt;re.fullmatch&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;ensures pattern matches the entire input string&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
 &lt;tr&gt;&lt;td&gt;&lt;code&gt;re.compile&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;Compile a pattern for reuse, outputs &lt;code&gt;re.Pattern&lt;&#x2F;code&gt; object&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
 &lt;tr&gt;&lt;td&gt;&lt;code&gt;re.sub&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;search and replace&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
-&lt;tr&gt;&lt;td&gt;&lt;code&gt;re.sub(r&#x27;pat&#x27;, f, s)&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;function &lt;code&gt;f&lt;&#x2F;code&gt; with &lt;code&gt;re.Match&lt;&#x2F;code&gt; object as argument&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
+&lt;tr&gt;&lt;td&gt;&lt;code&gt;re.sub(r&#x27;pat&#x27;, f, s)&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;function &lt;code&gt;f&lt;&#x2F;code&gt; with &lt;code&gt;re.Match&lt;&#x2F;code&gt; object as the argument&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
 &lt;tr&gt;&lt;td&gt;&lt;code&gt;re.escape&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;automatically escape all metacharacters&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
 &lt;tr&gt;&lt;td&gt;&lt;code&gt;re.split&lt;&#x2F;code&gt;&lt;&#x2F;td&gt;&lt;td&gt;split a string based on RE&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
 &lt;tr&gt;&lt;td&gt;&lt;&#x2F;td&gt;&lt;td&gt;text matched by the groups will be part of the output&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;
@@ -10359,7 +10359,7 @@ no VAL is specified, the key will be given the value true.&lt;&#x2F;p&gt;
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a2a001;&quot;&gt;bool&lt;&#x2F;span&gt;&lt;span&gt;(re.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;search&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#668f14;&quot;&gt;r&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7c8f4c;&quot;&gt;this&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt;, sentence, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;flags&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span&gt;re.I))
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;True
 &lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# example when pattern isn&amp;#39;t found in the input string
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# example for a pattern not found in the input string
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#a2a001;&quot;&gt;bool&lt;&#x2F;span&gt;&lt;span&gt;(re.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;search&lt;&#x2F;span&gt;&lt;span&gt;(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#668f14;&quot;&gt;r&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7c8f4c;&quot;&gt;xyz&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt;, sentence))
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;False
 &lt;&#x2F;span&gt;&lt;span&gt;
