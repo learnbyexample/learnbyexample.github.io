@@ -6,6 +6,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Posts
 
+* [Understanding Python re(gex)? book announcement](https://learnbyexample.github.io/understanding-python-regex-announcement/)
 * [Coloring matched portions with GNU grep, sed and awk](https://learnbyexample.github.io/coloring-matched-portions-grep-sed-awk/)
 * [100 Page Python Intro book announcement](https://learnbyexample.github.io/100-page-python-intro-book-announcement/)
 * [Festive offers for books on Python, Linux, Regular Expressions, Vim and more!](https://learnbyexample.github.io/programming-deals-2024/)
@@ -27,7 +28,6 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 * [CLI text processing with GNU grep and ripgrep book announcement](https://learnbyexample.github.io/cli-text-processing-grep-announcement/)
 * [100+ Interactive Python Regex Exercises](https://learnbyexample.github.io/interactive-python-regex-exercises/)
 * [Python Regular Expressions Playground](https://learnbyexample.github.io/python-regex-playground/)
-* [Understanding Python re(gex)? book announcement](https://learnbyexample.github.io/understanding-python-regex-announcement/)
 * [Python Regex Surprises](https://learnbyexample.github.io/python-regex-surprises/)
 * [2022: year in perspective](https://learnbyexample.github.io/2022-year-in-perspective/)
 * [Interactive Linux CLI Text Processing Exercises](https://learnbyexample.github.io/interactive-linux-cli-exercises/)
@@ -54,8 +54,6 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 * [Customizing pandoc to generate beautiful pdf and epub from markdown](https://learnbyexample.github.io/customizing-pandoc/)
 * [JavaScript regular expressions cheatsheet and examples](https://learnbyexample.github.io/javascript-regexp-cheatsheet/)
 * [Python regular expression cheatsheet and examples](https://learnbyexample.github.io/python-regex-cheatsheet/)
-* [Example driven book on Python regular expressions](https://learnbyexample.github.io/python-regex-book-version2/)
-* [GNU GREP and RIPGREP](https://learnbyexample.github.io/grep-book-announcement/)
 * [Creating GUI Applications with wxPython - book review](https://learnbyexample.github.io/python-gui-book-review/)
 * [Python for maths](https://learnbyexample.github.io/python-for-maths/)
 * [A short and satisfying bug hunt](https://learnbyexample.github.io/a-short-and-satisfying-bug-hunt/)
