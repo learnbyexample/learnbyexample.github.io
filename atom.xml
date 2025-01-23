@@ -5,7 +5,7 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2025-01-22T00:00:00+00:00</updated>
+	<updated>2025-01-23T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
 	<entry xml:lang="en">
 		<title>Understanding Python re(gex)? book announcement</title>
@@ -5252,7 +5252,7 @@ Specifying a greater than &lt;code&gt;0&lt;&#x2F;code&gt; start index when using
 	<entry xml:lang="en">
 		<title>Programming ebooks by Sundeep Agarwal</title>
 		<published>2022-08-09T00:00:00+00:00</published>
-		<updated>2024-12-19T00:00:00+00:00</updated>
+		<updated>2025-01-23T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/books/" type="text/html"/>
 		<id>https://learnbyexample.github.io/books/</id>
 		<content type="html">&lt;p&gt;This post lists my programming ebooks with details like PDF&#x2F;EPUB purchase links, GitHub repos, web versions, testimonials, etc. All my ebooks are self-published. You can get these ebooks individually or as part of bundles. You can also read them online for free.&lt;&#x2F;p&gt;
@@ -5262,7 +5262,7 @@ Specifying a greater than &lt;code&gt;0&lt;&#x2F;code&gt; start index when using
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;All books bundle&lt;&#x2F;strong&gt;: &lt;a href=&quot;https:&#x2F;&#x2F;leanpub.com&#x2F;b&#x2F;learnbyexample-all-books&quot;&gt;leanpub&lt;&#x2F;a&gt; or &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;all-books&quot;&gt;gumroad&lt;&#x2F;a&gt;
 &lt;ul&gt;
-&lt;li&gt;13 programming ebooks&lt;&#x2F;li&gt;
+&lt;li&gt;13 programming ebooks on Regular Expressions, Linux CLI tools, Python, Vim and more&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;&lt;strong&gt;Linux CLI Text Processing bundle&lt;&#x2F;strong&gt;: &lt;a href=&quot;https:&#x2F;&#x2F;leanpub.com&#x2F;b&#x2F;linux-cli-text-processing&quot;&gt;leanpub&lt;&#x2F;a&gt; or &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;linux-cli-text-processing&quot;&gt;gumroad&lt;&#x2F;a&gt;
@@ -5290,20 +5290,6 @@ Specifying a greater than &lt;code&gt;0&lt;&#x2F;code&gt; start index when using
 &lt;li&gt;&lt;strong&gt;Ruby Text processing&lt;&#x2F;strong&gt;: &lt;a href=&quot;https:&#x2F;&#x2F;leanpub.com&#x2F;b&#x2F;ruby-textprocessing&quot;&gt;leanpub&lt;&#x2F;a&gt; or &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;ruby-textprocessing&quot;&gt;gumroad&lt;&#x2F;a&gt;
 &lt;ul&gt;
 &lt;li&gt;Ruby regular expressions, Ruby One-Liners Guide&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
-&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
-&lt;p&gt;Bundles with other indie authors:&lt;&#x2F;p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;leanpub.com&#x2F;b&#x2F;theindiepythonextravaganza&quot;&gt;The Indie Python Extravaganza&lt;&#x2F;a&gt;
-&lt;ul&gt;
-&lt;li&gt;Understanding Python re(gex)?, Practice Python Projects (my books)&lt;&#x2F;li&gt;
-&lt;li&gt;Python 101, Pydon&#x27;ts, Clean Architectures in Python (authored by others)&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;leanpub.com&#x2F;b&#x2F;python101pythonregex&quot;&gt;Python 101 + Understanding Python re(gex)?&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;leanpub.com&#x2F;b&#x2F;python201_and_regex&quot;&gt;Python 201: Intermediate Python + Understanding Python re(gex)?&lt;&#x2F;a&gt;
-&lt;ul&gt;
-&lt;li&gt;Python 101&#x2F;201 is authored by &lt;a href=&quot;https:&#x2F;&#x2F;www.blog.pythonlibrary.org&#x2F;&quot;&gt;Michael Driscoll&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
