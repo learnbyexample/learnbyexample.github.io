@@ -62,7 +62,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Mini blog posts
 
-* [Basic examples for the Linux date command](https://learnbyexample.github.io/mini/mini/linux-date-command-examples/)
+* [Basic examples for the Linux date command](https://learnbyexample.github.io/mini/linux-date-command-examples/)
 * [CLI text editing with ed](https://learnbyexample.github.io/mini/cli-text-editing-with-ed/)
 * [Computing from the Command Line: sales report](https://learnbyexample.github.io/mini/cli-computing-sales/)
 * [Bash compound commands and redirection](https://learnbyexample.github.io/mini/bash-compound-commands-redirection/)

@@ -5,7 +5,7 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2025-01-23T00:00:00+00:00</updated>
+	<updated>2025-01-28T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
 	<entry xml:lang="en">
 		<title>Understanding Python re(gex)? book announcement</title>
@@ -484,7 +484,7 @@
 	<entry xml:lang="en">
 		<title>Basic examples for the Linux date command</title>
 		<published>2024-07-31T00:00:00+00:00</published>
-		<updated>2024-08-13T00:00:00+00:00</updated>
+		<updated>2025-01-28T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/mini/linux-date-command-examples/" type="text/html"/>
 		<id>https://learnbyexample.github.io/mini/linux-date-command-examples/</id>
 		<content type="html">&lt;p&gt;I rarely ever use the &lt;code&gt;date&lt;&#x2F;code&gt; command, but when I need it I almost always struggle to get the right incantation. So, I&#x27;m just going to record such examples in this blog post (and some good to know features).&lt;&#x2F;p&gt;
@@ -497,7 +497,7 @@
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Wednesday &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;31 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;July &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;2024 03&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;53&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;01 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;PM IST
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;Instead, I need particular parts in a particular format. For example, to represent the time component in a dynamically constructed filename as part of a shell script.&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;ruby&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# same as: date +%F or date -I
+&lt;pre data-lang=&quot;ruby&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# same as: date +%F or date -I or date --iso-8601
 &lt;&#x2F;span&gt;&lt;span&gt;$ date &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;+%&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Y&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-%&lt;&#x2F;span&gt;&lt;span&gt;m&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-%&lt;&#x2F;span&gt;&lt;span&gt;d
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;2024&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;07&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;31
 &lt;&#x2F;span&gt;&lt;span&gt;
@@ -568,6 +568,7 @@
 &lt;h2 id=&quot;resource-links&quot;&gt;Resource links&lt;&#x2F;h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.gnu.org&#x2F;software&#x2F;coreutils&#x2F;manual&#x2F;coreutils.html#date-invocation&quot;&gt;GNU date command manual&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.gnu.org&#x2F;software&#x2F;coreutils&#x2F;manual&#x2F;coreutils.html#Examples-of-date&quot;&gt;&amp;quot;Examples of date&amp;quot; section from the manual&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;unix.stackexchange.com&#x2F;questions&#x2F;tagged&#x2F;date?tab=Votes&quot;&gt;Top voted Q&amp;amp;A on unix.stackexchange for the date command tag&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 </content>
