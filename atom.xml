@@ -5,7 +5,7 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2025-01-28T00:00:00+00:00</updated>
+	<updated>2025-02-10T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
 	<entry xml:lang="en">
 		<title>Understanding Python re(gex)? book announcement</title>
@@ -8782,10 +8782,10 @@ The substitution works from start of the line for every iteration of the while l
 	<entry xml:lang="en">
 		<title>Multiline fixed string search and replace with CLI tools</title>
 		<published>2020-11-27T00:00:00+00:00</published>
-		<updated>2023-01-19T00:00:00+00:00</updated>
+		<updated>2025-02-10T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/multiline-search-and-replace/" type="text/html"/>
 		<id>https://learnbyexample.github.io/multiline-search-and-replace/</id>
-		<content type="html">&lt;p&gt;This post shows how you can use &lt;code&gt;ripgrep&lt;&#x2F;code&gt;, &lt;code&gt;perl&lt;&#x2F;code&gt; and &lt;code&gt;sd&lt;&#x2F;code&gt; commands to perform multiline fixed string search and replace operations from the command line. Solution with &lt;code&gt;GNU sed&lt;&#x2F;code&gt; is also discussed, along with its limitations.&lt;&#x2F;p&gt;
+		<content type="html">&lt;p&gt;This post shows how you can use the &lt;code&gt;ripgrep&lt;&#x2F;code&gt;, &lt;code&gt;perl&lt;&#x2F;code&gt; and &lt;code&gt;sd&lt;&#x2F;code&gt; commands to perform multiline fixed string search and replace operations from the command line. Solutions with &lt;code&gt;GNU sed&lt;&#x2F;code&gt; is also discussed, along with its limitations.&lt;&#x2F;p&gt;
 &lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;&lt;br&gt;
 &lt;h2 id=&quot;fixed-string-matching&quot;&gt;Fixed string matching&lt;a class=&quot;zola-anchor&quot; href=&quot;#fixed-string-matching&quot; aria-label=&quot;Anchor link for: fixed-string-matching&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
 &lt;p&gt;The below sample input file will be used in the examples in this post.&lt;&#x2F;p&gt;
@@ -8794,42 +8794,42 @@ The substitution works from start of the line for every iteration of the while l
 &lt;&#x2F;span&gt;&lt;span&gt;sample input with lots
 &lt;&#x2F;span&gt;&lt;span&gt;of special characters
 &lt;&#x2F;span&gt;&lt;span&gt;like . () * [] $ {}
-&lt;&#x2F;span&gt;&lt;span&gt;^ + ? \ and &amp;#39; and so on.
+&lt;&#x2F;span&gt;&lt;span&gt;| ^ + ? \ and &amp;#39; and so on.
 &lt;&#x2F;span&gt;&lt;span&gt;This post shows how
 &lt;&#x2F;span&gt;&lt;span&gt;you can do fixed
 &lt;&#x2F;span&gt;&lt;span&gt;-string multiline
 &lt;&#x2F;span&gt;&lt;span&gt;search with cli tools.
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;h3 id=&quot;ripgrep&quot;&gt;ripgrep&lt;a class=&quot;zola-anchor&quot; href=&quot;#ripgrep&quot; aria-label=&quot;Anchor link for: ripgrep&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;BurntSushi&#x2F;ripgrep&quot;&gt;ripgrep&lt;&#x2F;a&gt; supports &lt;code&gt;-U&lt;&#x2F;code&gt; option to allow multiline matching. Use &lt;code&gt;-F&lt;&#x2F;code&gt; option to turn off regexp matching, i.e. treat the search string literally. In &lt;code&gt;bash&lt;&#x2F;code&gt; shell (and likely most other shells), you can press enter key to insert literal newline character for quoted values. When you do so, the next line starts with &lt;code&gt;&amp;gt;&lt;&#x2F;code&gt; and a space character. This isn&#x27;t shown in the examples below to make it easier to copy-paste the commands.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;BurntSushi&#x2F;ripgrep&quot;&gt;ripgrep&lt;&#x2F;a&gt; supports the &lt;code&gt;-U&lt;&#x2F;code&gt; option to allow multiline matching. The &lt;code&gt;-F&lt;&#x2F;code&gt; option turns off regexp matching, i.e. the search string is treated literally. In the &lt;code&gt;bash&lt;&#x2F;code&gt; shell (and likely most other shells), you can press enter key to insert literal newline character for quoted values. When you do so, the next line starts with the secondary prompt &lt;code&gt;PS2&lt;&#x2F;code&gt;, which is usually &lt;code&gt;&amp;gt;&lt;&#x2F;code&gt; and a space character. This isn&#x27;t shown in the examples below to make it easier to copy-paste the commands.&lt;&#x2F;p&gt;
 &lt;pre style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot;&gt;&lt;code&gt;&lt;span&gt;$ rg -UF &amp;#39;like . () * [] $ {}
-&lt;&#x2F;span&gt;&lt;span&gt;^ + ? \ and&amp;#39; ip.txt
+&lt;&#x2F;span&gt;&lt;span&gt;| ^ + ? \ and&amp;#39; ip.txt
 &lt;&#x2F;span&gt;&lt;span&gt;4:like . () * [] $ {}
-&lt;&#x2F;span&gt;&lt;span&gt;5:^ + ? \ and &amp;#39; and so on.
+&lt;&#x2F;span&gt;&lt;span&gt;5:| ^ + ? \ and &amp;#39; and so on.
 &lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;# -l option shows only filename instead of all the matching lines
+&lt;&#x2F;span&gt;&lt;span&gt;# use the -l option to get only the filename instead of matching lines
 &lt;&#x2F;span&gt;&lt;span&gt;$ rg -lUF &amp;#39;like . () * [] $ {}
-&lt;&#x2F;span&gt;&lt;span&gt;^ + ? \ and&amp;#39; ip.txt
+&lt;&#x2F;span&gt;&lt;span&gt;| ^ + ? \ and&amp;#39; ip.txt
 &lt;&#x2F;span&gt;&lt;span&gt;ip.txt
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;You&#x27;ll have an issue if your search string itself contains single quote characters. Avoid using double quotes as a workaround, as that has its own set of special characters. You can work around by concatenating multiple strings next to each other, along with escaped single quote characters as needed.&lt;&#x2F;p&gt;
-&lt;pre style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot;&gt;&lt;code&gt;&lt;span&gt;# -N option disables line number prefix
+&lt;pre style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot;&gt;&lt;code&gt;&lt;span&gt;# the -N option disables line number prefix
 &lt;&#x2F;span&gt;&lt;span&gt;$ rg -NUF &amp;#39;like . () * [] $ {}
-&lt;&#x2F;span&gt;&lt;span&gt;^ + ? \ and &amp;#39;\&amp;#39;&amp;#39; and&amp;#39; ip.txt
+&lt;&#x2F;span&gt;&lt;span&gt;| ^ + ? \ and &amp;#39;\&amp;#39;&amp;#39; and&amp;#39; ip.txt
 &lt;&#x2F;span&gt;&lt;span&gt;like . () * [] $ {}
-&lt;&#x2F;span&gt;&lt;span&gt;^ + ? \ and &amp;#39; and so on.
+&lt;&#x2F;span&gt;&lt;span&gt;| ^ + ? \ and &amp;#39; and so on.
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;p&gt;If your search string starts with &lt;code&gt;-&lt;&#x2F;code&gt; character, you&#x27;ll have to use &lt;code&gt;--&lt;&#x2F;code&gt; before the search argument.&lt;&#x2F;p&gt;
+&lt;p&gt;If your search string starts with the &lt;code&gt;-&lt;&#x2F;code&gt; character, you&#x27;ll have to use &lt;code&gt;--&lt;&#x2F;code&gt; before the search argument.&lt;&#x2F;p&gt;
 &lt;pre style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot;&gt;&lt;code&gt;&lt;span&gt;$ rg -NUF -- &amp;#39;-string multiline
 &lt;&#x2F;span&gt;&lt;span&gt;search&amp;#39; ip.txt
 &lt;&#x2F;span&gt;&lt;span&gt;-string multiline
 &lt;&#x2F;span&gt;&lt;span&gt;search with cli tools.
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;h3 id=&quot;perl&quot;&gt;perl&lt;a class=&quot;zola-anchor&quot; href=&quot;#perl&quot; aria-label=&quot;Anchor link for: perl&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
-&lt;p&gt;You can use &lt;code&gt;-0777&lt;&#x2F;code&gt; option with &lt;code&gt;perl&lt;&#x2F;code&gt; to slurp the entire input as a single string. Another advantage with &lt;code&gt;perl&lt;&#x2F;code&gt; is that you can use files to pass the search and replace strings. Thus, you don&#x27;t have to worry about any character that may clash with shell metacharacters. See my &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;learn_perl_oneliners&#x2F;&quot;&gt;Perl one-liners cookbook&lt;&#x2F;a&gt; if you are not familiar with using &lt;code&gt;perl&lt;&#x2F;code&gt; from the command line.&lt;&#x2F;p&gt;
+&lt;p&gt;You can use the &lt;code&gt;-0777&lt;&#x2F;code&gt; option with &lt;code&gt;perl&lt;&#x2F;code&gt; to slurp the entire input as a single string. Another advantage with &lt;code&gt;perl&lt;&#x2F;code&gt; is that you can use files to pass the search and replace strings. Thus, you don&#x27;t have to worry about any character that may clash with shell metacharacters. See my &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;learn_perl_oneliners&#x2F;&quot;&gt;Perl One-Liners Guide&lt;&#x2F;a&gt; if you are not familiar with using &lt;code&gt;perl&lt;&#x2F;code&gt; from the command line.&lt;&#x2F;p&gt;
 &lt;pre style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot;&gt;&lt;code&gt;&lt;span&gt;$ cat search_1.txt
 &lt;&#x2F;span&gt;&lt;span&gt;like . () * [] $ {}
-&lt;&#x2F;span&gt;&lt;span&gt;^ + ? \ and &amp;#39; and so on.
+&lt;&#x2F;span&gt;&lt;span&gt;| ^ + ? \ and &amp;#39; and so on.
 &lt;&#x2F;span&gt;&lt;span&gt;
 &lt;&#x2F;span&gt;&lt;span&gt;# display filename if the given search string matches
 &lt;&#x2F;span&gt;&lt;span&gt;$ perl -0777 -nE &amp;#39;!$#ARGV ? $s=$_ :
@@ -8845,7 +8845,7 @@ The substitution works from start of the line for every iteration of the while l
 &lt;&#x2F;span&gt;&lt;span&gt;$ perl -0777 -nE &amp;#39;!$#ARGV ? $s=$_ :
 &lt;&#x2F;span&gt;&lt;span&gt;                  &#x2F;\Q$s&#x2F; &amp;amp;&amp;amp; say $ARGV&amp;#39; search_2.txt ip.txt
 &lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;# this will remove newline at the end of file before assigning to $s
+&lt;&#x2F;span&gt;&lt;span&gt;# this will remove newline from the end of file before assigning to $s
 &lt;&#x2F;span&gt;&lt;span&gt;$ perl -0777 -nE &amp;#39;!$#ARGV ? $s=s&#x2F;\n\z&#x2F;&#x2F;r :
 &lt;&#x2F;span&gt;&lt;span&gt;                  &#x2F;\Q$s&#x2F; &amp;amp;&amp;amp; say $ARGV&amp;#39; search_2.txt ip.txt
 &lt;&#x2F;span&gt;&lt;span&gt;ip.txt
@@ -8866,9 +8866,9 @@ The substitution works from start of the line for every iteration of the while l
 &lt;br&gt;
 &lt;h2 id=&quot;fixed-string-substitution&quot;&gt;Fixed string substitution&lt;a class=&quot;zola-anchor&quot; href=&quot;#fixed-string-substitution&quot; aria-label=&quot;Anchor link for: fixed-string-substitution&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
 &lt;h3 id=&quot;ripgrep-1&quot;&gt;ripgrep&lt;a class=&quot;zola-anchor&quot; href=&quot;#ripgrep-1&quot; aria-label=&quot;Anchor link for: ripgrep-1&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
-&lt;p&gt;&lt;code&gt;ripgrep&lt;&#x2F;code&gt; also supports replacing matched string with something else using the &lt;code&gt;-r&lt;&#x2F;code&gt; option. By default, you&#x27;ll see only matched lines in the output. Use &lt;code&gt;--passthru&lt;&#x2F;code&gt; option to display all the input lines, even if they do not match the given search string. See &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;substitution-with-ripgrep&#x2F;&quot;&gt;my blog post&lt;&#x2F;a&gt; for more details about the &lt;code&gt;-r&lt;&#x2F;code&gt; option and various ways you can use it for substitution requirements.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;code&gt;ripgrep&lt;&#x2F;code&gt; also supports replacing the matched string with something else using the &lt;code&gt;-r&lt;&#x2F;code&gt; option. By default, you&#x27;ll see only matched lines in the output. Use the &lt;code&gt;--passthru&lt;&#x2F;code&gt; option to display all the input lines, even if they do not match the given search string. See &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;substitution-with-ripgrep&#x2F;&quot;&gt;my blog post&lt;&#x2F;a&gt; for more details about the &lt;code&gt;-r&lt;&#x2F;code&gt; option and various ways you can use it for substitution requirements.&lt;&#x2F;p&gt;
 &lt;pre style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot;&gt;&lt;code&gt;&lt;span&gt;$ rg --passthru -NUF &amp;#39;like . () * [] $ {}
-&lt;&#x2F;span&gt;&lt;span&gt;^ + ? \ and&amp;#39; -r &amp;#39;====
+&lt;&#x2F;span&gt;&lt;span&gt;| ^ + ? \ and&amp;#39; -r &amp;#39;====
 &lt;&#x2F;span&gt;&lt;span&gt;----
 &lt;&#x2F;span&gt;&lt;span&gt;====&amp;#39; ip.txt
 &lt;&#x2F;span&gt;&lt;span&gt;This is a multiline
@@ -8889,7 +8889,7 @@ The substitution works from start of the line for every iteration of the while l
 &lt;&#x2F;span&gt;&lt;span&gt;sample $aput
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;h3 id=&quot;perl-1&quot;&gt;perl&lt;a class=&quot;zola-anchor&quot; href=&quot;#perl-1&quot; aria-label=&quot;Anchor link for: perl-1&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
-&lt;p&gt;With &lt;code&gt;perl&lt;&#x2F;code&gt;, you can use files for both search and replace strings. And, you can easily choose to replace first or all occurrences, unlike &lt;code&gt;ripgrep&lt;&#x2F;code&gt; where it always replaces all the matches.&lt;&#x2F;p&gt;
+&lt;p&gt;With &lt;code&gt;perl&lt;&#x2F;code&gt;, you can use files for both the search and replace strings. And, you can easily choose to replace the first or all occurrences, unlike &lt;code&gt;ripgrep&lt;&#x2F;code&gt; where it always replaces all the matches.&lt;&#x2F;p&gt;
 &lt;pre style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot;&gt;&lt;code&gt;&lt;span&gt;$ cat replace.txt
 &lt;&#x2F;span&gt;&lt;span&gt;---------------------
 &lt;&#x2F;span&gt;&lt;span&gt;$&amp;amp; = $1 + $2 &#x2F; 3 \ 4
@@ -8908,7 +8908,7 @@ The substitution works from start of the line for every iteration of the while l
 &lt;&#x2F;span&gt;&lt;span&gt;-string multiline
 &lt;&#x2F;span&gt;&lt;span&gt;search with cli tools.
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;p&gt;As seen before, you&#x27;ll have to remove newline from search string for partial line matching.&lt;&#x2F;p&gt;
+&lt;p&gt;As seen before, you&#x27;ll have to remove newline from the search string for partial line matching.&lt;&#x2F;p&gt;
 &lt;pre style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot;&gt;&lt;code&gt;&lt;span&gt;# use $r=s&#x2F;\n\z&#x2F;&#x2F;r to avoid trailing newline from replace.txt
 &lt;&#x2F;span&gt;&lt;span&gt;$ perl -0777 -ne &amp;#39;$#ARGV==1 ? $s=s&#x2F;\n\z&#x2F;&#x2F;r : $#ARGV==0 ? $r=$_ :
 &lt;&#x2F;span&gt;&lt;span&gt;                  print s&#x2F;\Q$s&#x2F;$r&#x2F;gr&amp;#39; search_2.txt replace.txt ip.txt
@@ -8916,7 +8916,7 @@ The substitution works from start of the line for every iteration of the while l
 &lt;&#x2F;span&gt;&lt;span&gt;sample input with lots
 &lt;&#x2F;span&gt;&lt;span&gt;of special characters
 &lt;&#x2F;span&gt;&lt;span&gt;like . () * [] $ {}
-&lt;&#x2F;span&gt;&lt;span&gt;^ + ? \ and &amp;#39; and so on.
+&lt;&#x2F;span&gt;&lt;span&gt;| ^ + ? \ and &amp;#39; and so on.
 &lt;&#x2F;span&gt;&lt;span&gt;This post shows how
 &lt;&#x2F;span&gt;&lt;span&gt;you can do fixed
 &lt;&#x2F;span&gt;&lt;span&gt;---------------------
@@ -8925,12 +8925,12 @@ The substitution works from start of the line for every iteration of the while l
 &lt;&#x2F;span&gt;&lt;span&gt; with cli tools.
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;h3 id=&quot;sd&quot;&gt;sd&lt;a class=&quot;zola-anchor&quot; href=&quot;#sd&quot; aria-label=&quot;Anchor link for: sd&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
-&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;chmln&#x2F;sd&quot;&gt;sd&lt;&#x2F;a&gt; supports fixed string and Rust regexp based substitution. Unlike &lt;code&gt;ripgrep&lt;&#x2F;code&gt;, &lt;code&gt;-s&lt;&#x2F;code&gt; option for fixed string will apply to both search and replacement sections. &lt;code&gt;sd&lt;&#x2F;code&gt; does in-place editing for file inputs by default, you can use &lt;code&gt;-p&lt;&#x2F;code&gt; to preview results on the terminal. Multiline matching is automatically performed by default.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;chmln&#x2F;sd&quot;&gt;sd&lt;&#x2F;a&gt; supports a fixed string option and Rust regexp based substitution. Unlike &lt;code&gt;ripgrep&lt;&#x2F;code&gt;, the &lt;code&gt;-s&lt;&#x2F;code&gt; option for fixed string will apply to both the search and replacement sections. &lt;code&gt;sd&lt;&#x2F;code&gt; does in-place editing for file inputs by default, you can use &lt;code&gt;-p&lt;&#x2F;code&gt; to preview results on the terminal. Multiline matching is automatically performed by default.&lt;&#x2F;p&gt;
 &lt;pre style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot;&gt;&lt;code&gt;&lt;span&gt;$ echo &amp;#39;sample input&amp;#39; | sd -s &amp;#39;in&amp;#39; &amp;#39;$a&amp;#39;
 &lt;&#x2F;span&gt;&lt;span&gt;sample $aput
 &lt;&#x2F;span&gt;&lt;span&gt;
 &lt;&#x2F;span&gt;&lt;span&gt;$ sd -ps &amp;#39;like . () * [] $ {}
-&lt;&#x2F;span&gt;&lt;span&gt;^ + ? \ and&amp;#39; &amp;#39;====
+&lt;&#x2F;span&gt;&lt;span&gt;| ^ + ? \ and&amp;#39; &amp;#39;====
 &lt;&#x2F;span&gt;&lt;span&gt;----
 &lt;&#x2F;span&gt;&lt;span&gt;====&amp;#39; ip.txt
 &lt;&#x2F;span&gt;&lt;span&gt;This is a multiline
@@ -8946,9 +8946,10 @@ The substitution works from start of the line for every iteration of the while l
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;br&gt;
 &lt;h2 id=&quot;saving-file-contents-to-a-variable&quot;&gt;Saving file contents to a variable&lt;a class=&quot;zola-anchor&quot; href=&quot;#saving-file-contents-to-a-variable&quot; aria-label=&quot;Anchor link for: saving-file-contents-to-a-variable&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
-&lt;p&gt;Trailing newlines and ASCII NUL characters will be lost if you wish to save contents of a file as &lt;code&gt;bash&lt;&#x2F;code&gt; variables using &lt;code&gt;var=$(&amp;lt; filename)&lt;&#x2F;code&gt; command. See &lt;a href=&quot;https:&#x2F;&#x2F;stackoverflow.com&#x2F;a&#x2F;22607352&#x2F;4082052&quot;&gt;stackoverflow: pitfalls of reading file into shell variable&lt;&#x2F;a&gt; for details.&lt;&#x2F;p&gt;
+&lt;p&gt;Trailing newlines and ASCII NUL characters will be lost if you wish to save contents of a file as &lt;code&gt;bash&lt;&#x2F;code&gt; variables using the &lt;code&gt;var=$(&amp;lt; filename)&lt;&#x2F;code&gt; command. See &lt;a href=&quot;https:&#x2F;&#x2F;stackoverflow.com&#x2F;a&#x2F;22607352&#x2F;4082052&quot;&gt;stackoverflow: pitfalls of reading file into shell variable&lt;&#x2F;a&gt; for more details.&lt;&#x2F;p&gt;
 &lt;pre style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot;&gt;&lt;code&gt;&lt;span&gt;$ printf &amp;#39;\na\0b\n123\n\n\n\n\n\n\n\n&amp;#39; &amp;gt; t1
 &lt;&#x2F;span&gt;&lt;span&gt;$ a=$(&amp;lt; t1)
+&lt;&#x2F;span&gt;&lt;span&gt;bash: warning: command substitution: ignored null byte in input
 &lt;&#x2F;span&gt;&lt;span&gt;
 &lt;&#x2F;span&gt;&lt;span&gt;# NUL character is lost after the assignment
 &lt;&#x2F;span&gt;&lt;span&gt;# all the trailing newlines are lost as well
@@ -8963,9 +8964,9 @@ The substitution works from start of the line for every iteration of the while l
 &lt;&#x2F;span&gt;&lt;span&gt;# use &amp;quot;$s&amp;quot;$&amp;#39;\n&amp;#39; if you want to match trailing newline as well
 &lt;&#x2F;span&gt;&lt;span&gt;$ rg -NUF &amp;quot;$s&amp;quot; ip.txt
 &lt;&#x2F;span&gt;&lt;span&gt;like . () * [] $ {}
-&lt;&#x2F;span&gt;&lt;span&gt;^ + ? \ and &amp;#39; and so on.
+&lt;&#x2F;span&gt;&lt;span&gt;| ^ + ? \ and &amp;#39; and so on.
 &lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;# use -- if the search string starts with - character
+&lt;&#x2F;span&gt;&lt;span&gt;# use -- if the search string starts with a - character
 &lt;&#x2F;span&gt;&lt;span&gt;$ s=$(&amp;lt; search_2.txt)
 &lt;&#x2F;span&gt;&lt;span&gt;$ rg -NUF -- &amp;quot;$s&amp;quot; ip.txt
 &lt;&#x2F;span&gt;&lt;span&gt;-string multiline
@@ -8976,7 +8977,7 @@ The substitution works from start of the line for every iteration of the while l
 &lt;&#x2F;span&gt;&lt;span&gt;$ r=$(sed &amp;#39;s&#x2F;\$&#x2F;$$&#x2F;g&amp;#39; replace.txt)
 &lt;&#x2F;span&gt;&lt;span&gt;
 &lt;&#x2F;span&gt;&lt;span&gt;# here, removal of trailing newline doesn&amp;#39;t cause an issue,
-&lt;&#x2F;span&gt;&lt;span&gt;# as it evens out between search and replace strings
+&lt;&#x2F;span&gt;&lt;span&gt;# as it evens out between the search and replace strings
 &lt;&#x2F;span&gt;&lt;span&gt;$ rg --passthru -NUF &amp;quot;$s&amp;quot; -r &amp;quot;$r&amp;quot; ip.txt
 &lt;&#x2F;span&gt;&lt;span&gt;This is a multiline
 &lt;&#x2F;span&gt;&lt;span&gt;sample input with lots
@@ -8998,7 +8999,7 @@ The substitution works from start of the line for every iteration of the while l
 &lt;&#x2F;span&gt;&lt;span&gt;sample input with lots
 &lt;&#x2F;span&gt;&lt;span&gt;of special characters
 &lt;&#x2F;span&gt;&lt;span&gt;like . () * [] $ {}
-&lt;&#x2F;span&gt;&lt;span&gt;^ + ? \ and &amp;#39; and so on.
+&lt;&#x2F;span&gt;&lt;span&gt;| ^ + ? \ and &amp;#39; and so on.
 &lt;&#x2F;span&gt;&lt;span&gt;This post shows how
 &lt;&#x2F;span&gt;&lt;span&gt;you can do fixed
 &lt;&#x2F;span&gt;&lt;span&gt;---------------------
@@ -9006,8 +9007,8 @@ The substitution works from start of the line for every iteration of the while l
 &lt;&#x2F;span&gt;&lt;span&gt;===================== with cli tools.
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;h3 id=&quot;sd-1&quot;&gt;sd&lt;a class=&quot;zola-anchor&quot; href=&quot;#sd-1&quot; aria-label=&quot;Anchor link for: sd-1&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
-&lt;p&gt;As mentioned before, &lt;code&gt;-s&lt;&#x2F;code&gt; option for &lt;code&gt;sd&lt;&#x2F;code&gt; applies to both search and replacement sections. So, the usage is lot simpler compared to &lt;code&gt;ripgrep&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
-&lt;pre style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot;&gt;&lt;code&gt;&lt;span&gt;# -- is needed here because replace.txt starts with - character
+&lt;p&gt;As mentioned before, the &lt;code&gt;-s&lt;&#x2F;code&gt; option for &lt;code&gt;sd&lt;&#x2F;code&gt; applies to both the search and replacement sections. So, the usage is lot simpler compared to &lt;code&gt;ripgrep&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot;&gt;&lt;code&gt;&lt;span&gt;# -- is needed here because replace.txt starts with a - character
 &lt;&#x2F;span&gt;&lt;span&gt;$ sd -ps -- &amp;quot;$(&amp;lt; search_1.txt)&amp;quot; &amp;quot;$(&amp;lt; replace.txt)&amp;quot; ip.txt
 &lt;&#x2F;span&gt;&lt;span&gt;This is a multiline
 &lt;&#x2F;span&gt;&lt;span&gt;sample input with lots
@@ -9021,7 +9022,7 @@ The substitution works from start of the line for every iteration of the while l
 &lt;&#x2F;span&gt;&lt;span&gt;search with cli tools.
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;h3 id=&quot;gnu-sed&quot;&gt;GNU sed&lt;a class=&quot;zola-anchor&quot; href=&quot;#gnu-sed&quot; aria-label=&quot;Anchor link for: gnu-sed&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h3&gt;
-&lt;p&gt;To follow a similar approach with &lt;code&gt;GNU sed&lt;&#x2F;code&gt;, you&#x27;ll have to preprocess the strings to escape metacharacters. Assuming input doesn&#x27;t have ASCII NUL characters, you can use &lt;code&gt;-z&lt;&#x2F;code&gt; option to slurp entire input as a single string.&lt;&#x2F;p&gt;
+&lt;p&gt;To follow a similar approach with &lt;code&gt;GNU sed&lt;&#x2F;code&gt;, you&#x27;ll have to preprocess the strings to escape metacharacters. Assuming input doesn&#x27;t have ASCII NUL characters, you can use &lt;code&gt;-z&lt;&#x2F;code&gt; option to slurp the entire input as a single string.&lt;&#x2F;p&gt;
 &lt;p&gt;Here&#x27;s an example for multiline search.&lt;&#x2F;p&gt;
 &lt;pre style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot;&gt;&lt;code&gt;&lt;span&gt;# escape all BRE metacharacters
 &lt;&#x2F;span&gt;&lt;span&gt;# replace literal newlines with \n
@@ -9030,10 +9031,10 @@ The substitution works from start of the line for every iteration of the while l
 &lt;&#x2F;span&gt;&lt;span&gt;# since newlines are replaced with \n,
 &lt;&#x2F;span&gt;&lt;span&gt;# trailing newlines will be preserved here
 &lt;&#x2F;span&gt;&lt;span&gt;$ echo &amp;quot;$s&amp;quot;
-&lt;&#x2F;span&gt;&lt;span&gt;like \. () \* \[] \$ {}\n\^ + ? \\ and &amp;#39; and so on\.\n
+&lt;&#x2F;span&gt;&lt;span&gt;like \. () \* \[] \$ {}\n| \^ + ? \\ and &amp;#39; and so on\.\n
 &lt;&#x2F;span&gt;&lt;span&gt;
 &lt;&#x2F;span&gt;&lt;span&gt;# display filename if input matches the given multiline search string
-&lt;&#x2F;span&gt;&lt;span&gt;# tr is used to change NUL character after filename to newline
+&lt;&#x2F;span&gt;&lt;span&gt;# tr is used to change the NUL character after filename to newline
 &lt;&#x2F;span&gt;&lt;span&gt;$ sed -nz &amp;#39;&#x2F;&amp;#39;&amp;quot;$s&amp;quot;&amp;#39;&#x2F;F&amp;#39; ip.txt | tr &amp;#39;\0&amp;#39; &amp;#39;\n&amp;#39;
 &lt;&#x2F;span&gt;&lt;span&gt;ip.txt
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
@@ -9049,20 +9050,23 @@ The substitution works from start of the line for every iteration of the while l
 &lt;&#x2F;span&gt;&lt;span&gt;$\&amp;amp; = $1 + $2 \&#x2F; 3 \\ 4\
 &lt;&#x2F;span&gt;&lt;span&gt;=====================
 &lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;# if you need trailing newline from replace.txt,
+&lt;&#x2F;span&gt;&lt;span&gt;# if you need the trailing newline from replace.txt,
 &lt;&#x2F;span&gt;&lt;span&gt;# use sed -z &amp;#39;s&#x2F;&amp;#39;&amp;quot;$s&amp;quot;&amp;#39;&#x2F;&amp;#39;&amp;quot;$r&amp;quot;&amp;#39;\n&#x2F;g&amp;#39;
 &lt;&#x2F;span&gt;&lt;span&gt;$ sed -z &amp;#39;s&#x2F;&amp;#39;&amp;quot;$s&amp;quot;&amp;#39;&#x2F;&amp;#39;&amp;quot;$r&amp;quot;&amp;#39;&#x2F;g&amp;#39; ip.txt
 &lt;&#x2F;span&gt;&lt;span&gt;This is a multiline
 &lt;&#x2F;span&gt;&lt;span&gt;sample input with lots
 &lt;&#x2F;span&gt;&lt;span&gt;of special characters
 &lt;&#x2F;span&gt;&lt;span&gt;like . () * [] $ {}
-&lt;&#x2F;span&gt;&lt;span&gt;^ + ? \ and &amp;#39; and so on.
+&lt;&#x2F;span&gt;&lt;span&gt;| ^ + ? \ and &amp;#39; and so on.
 &lt;&#x2F;span&gt;&lt;span&gt;This post shows how
 &lt;&#x2F;span&gt;&lt;span&gt;you can do fixed
 &lt;&#x2F;span&gt;&lt;span&gt;---------------------
 &lt;&#x2F;span&gt;&lt;span&gt;$&amp;amp; = $1 + $2 &#x2F; 3 \ 4
 &lt;&#x2F;span&gt;&lt;span&gt;===================== with cli tools.
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;linux-cli-ebooks&quot;&gt;Linux CLI ebooks&lt;a class=&quot;zola-anchor&quot; href=&quot;#linux-cli-ebooks&quot; aria-label=&quot;Anchor link for: linux-cli-ebooks&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Check out &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;books&#x2F;&quot;&gt;my ebooks&lt;&#x2F;a&gt; if you are interested in learning more about Linux CLI basics, coreutils, text processing tools like &lt;code&gt;GNU grep&lt;&#x2F;code&gt;, &lt;code&gt;GNU sed&lt;&#x2F;code&gt;, &lt;code&gt;GNU awk&lt;&#x2F;code&gt; and &lt;code&gt;perl&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
 </content>
 	</entry>
 	<entry xml:lang="en">

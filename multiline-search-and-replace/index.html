@@ -1,34 +1,34 @@
-<!doctype html><html lang=en><head><meta content="IE=edge" http-equiv=X-UA-Compatible><meta content="text/html; charset=utf-8" http-equiv=content-type><meta content="width=device-width,initial-scale=1.0,maximum-scale=1" name=viewport><title>Multiline fixed string search and replace with CLI tools</title><link href=https://learnbyexample.github.io/atom.xml rel=alternate title=RSS type=application/atom+xml><script src=https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js></script><link href=https://learnbyexample.github.io/site.css rel=stylesheet><meta content="Multiline fixed string search and replace with CLI tools" property=og:title><meta content=website property=og:type><meta content="Using ripgrep, perl, sd and GNU sed commands to perform multiline fixed string search and replace operations from the command line" property=og:description><meta content=https://learnbyexample.github.io/multiline-search-and-replace/ property=og:url><meta content=@learn_byexample property=twitter:site><link href=https://learnbyexample.github.io/favicon.svg rel=icon><link rel="shortcut icon" href=https://learnbyexample.github.io/favicon.png><body><div class=container><div class=mobile-navbar id=mobile-navbar><div class=mobile-header-logo><a class=logo href=/>learnbyexample</a></div><div class="mobile-navbar-icon icon-out"><span></span><span></span><span></span></div></div><nav class="mobile-menu slideout-menu slideout-menu-left" id=mobile-menu><ul class=mobile-menu-list><li class=mobile-menu-item><a href=https://learnbyexample.github.io/books> Books </a><li class=mobile-menu-item><a href=https://learnbyexample.github.io/mini> Mini </a><li class=mobile-menu-item><a href=https://learnbyexample.github.io/tips> Tips </a><li class=mobile-menu-item><a href=https://learnbyexample.github.io/tags> Tags </a><li class=mobile-menu-item><a href=https://learnbyexample.github.io/about> About </a></ul></nav><header id=header><div class=logo><a href=https://learnbyexample.github.io>learnbyexample</a></div><nav class=menu><ul><li><a href=https://learnbyexample.github.io/books> Books </a><li><a href=https://learnbyexample.github.io/mini> Mini </a><li><a href=https://learnbyexample.github.io/tips> Tips </a><li><a href=https://learnbyexample.github.io/tags> Tags </a><li><a href=https://learnbyexample.github.io/about> About </a></ul></nav></header><main><div class=content id=mobile-panel><div class=post-toc id=post-toc><h2 class=post-toc-title>Contents</h2><div class="post-toc-content always-active"><nav id=TableOfContents><ul><li><a class=toc-link href=https://learnbyexample.github.io/multiline-search-and-replace/#fixed-string-matching>Fixed string matching</a> <ul><li><a class=toc-link href=https://learnbyexample.github.io/multiline-search-and-replace/#ripgrep>ripgrep</a><li><a class=toc-link href=https://learnbyexample.github.io/multiline-search-and-replace/#perl>perl</a></ul><li><a class=toc-link href=https://learnbyexample.github.io/multiline-search-and-replace/#fixed-string-substitution>Fixed string substitution</a> <ul><li><a class=toc-link href=https://learnbyexample.github.io/multiline-search-and-replace/#ripgrep-1>ripgrep</a><li><a class=toc-link href=https://learnbyexample.github.io/multiline-search-and-replace/#perl-1>perl</a><li><a class=toc-link href=https://learnbyexample.github.io/multiline-search-and-replace/#sd>sd</a></ul><li><a class=toc-link href=https://learnbyexample.github.io/multiline-search-and-replace/#saving-file-contents-to-a-variable>Saving file contents to a variable</a> <ul><li><a class=toc-link href=https://learnbyexample.github.io/multiline-search-and-replace/#ripgrep-2>ripgrep</a><li><a class=toc-link href=https://learnbyexample.github.io/multiline-search-and-replace/#sd-1>sd</a><li><a class=toc-link href=https://learnbyexample.github.io/multiline-search-and-replace/#gnu-sed>GNU sed</a></ul></ul></nav></div></div><article class=post><header class=post__header><h1 class=post__title><a href=https://learnbyexample.github.io/multiline-search-and-replace/>Multiline fixed string search and replace with CLI tools</a></h1><div class=post__meta><span class=post__time>2020-11-27</span></div></header><div class=post-content><p>This post shows how you can use <code>ripgrep</code>, <code>perl</code> and <code>sd</code> commands to perform multiline fixed string search and replace operations from the command line. Solution with <code>GNU sed</code> is also discussed, along with its limitations.</p><span id=continue-reading></span><br><h2 id=fixed-string-matching>Fixed string matching<a aria-label="Anchor link for: fixed-string-matching" class=zola-anchor href=#fixed-string-matching>🔗</a></h2><p>The below sample input file will be used in the examples in this post.<pre style=background-color:#f5f5f5;color:#1f1f1f;><code><span>$ cat ip.txt
+<!doctype html><html lang=en><head><meta content="IE=edge" http-equiv=X-UA-Compatible><meta content="text/html; charset=utf-8" http-equiv=content-type><meta content="width=device-width,initial-scale=1.0,maximum-scale=1" name=viewport><title>Multiline fixed string search and replace with CLI tools</title><link href=https://learnbyexample.github.io/atom.xml rel=alternate title=RSS type=application/atom+xml><script src=https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js></script><link href=https://learnbyexample.github.io/site.css rel=stylesheet><meta content="Multiline fixed string search and replace with CLI tools" property=og:title><meta content=website property=og:type><meta content="Using ripgrep, perl, sd and GNU sed commands to perform multiline fixed string search and replace operations from the command line" property=og:description><meta content=https://learnbyexample.github.io/multiline-search-and-replace/ property=og:url><meta content=@learn_byexample property=twitter:site><link href=https://learnbyexample.github.io/favicon.svg rel=icon><link rel="shortcut icon" href=https://learnbyexample.github.io/favicon.png><body><div class=container><div class=mobile-navbar id=mobile-navbar><div class=mobile-header-logo><a class=logo href=/>learnbyexample</a></div><div class="mobile-navbar-icon icon-out"><span></span><span></span><span></span></div></div><nav class="mobile-menu slideout-menu slideout-menu-left" id=mobile-menu><ul class=mobile-menu-list><li class=mobile-menu-item><a href=https://learnbyexample.github.io/books> Books </a><li class=mobile-menu-item><a href=https://learnbyexample.github.io/mini> Mini </a><li class=mobile-menu-item><a href=https://learnbyexample.github.io/tips> Tips </a><li class=mobile-menu-item><a href=https://learnbyexample.github.io/tags> Tags </a><li class=mobile-menu-item><a href=https://learnbyexample.github.io/about> About </a></ul></nav><header id=header><div class=logo><a href=https://learnbyexample.github.io>learnbyexample</a></div><nav class=menu><ul><li><a href=https://learnbyexample.github.io/books> Books </a><li><a href=https://learnbyexample.github.io/mini> Mini </a><li><a href=https://learnbyexample.github.io/tips> Tips </a><li><a href=https://learnbyexample.github.io/tags> Tags </a><li><a href=https://learnbyexample.github.io/about> About </a></ul></nav></header><main><div class=content id=mobile-panel><div class=post-toc id=post-toc><h2 class=post-toc-title>Contents</h2><div class="post-toc-content always-active"><nav id=TableOfContents><ul><li><a class=toc-link href=https://learnbyexample.github.io/multiline-search-and-replace/#fixed-string-matching>Fixed string matching</a> <ul><li><a class=toc-link href=https://learnbyexample.github.io/multiline-search-and-replace/#ripgrep>ripgrep</a><li><a class=toc-link href=https://learnbyexample.github.io/multiline-search-and-replace/#perl>perl</a></ul><li><a class=toc-link href=https://learnbyexample.github.io/multiline-search-and-replace/#fixed-string-substitution>Fixed string substitution</a> <ul><li><a class=toc-link href=https://learnbyexample.github.io/multiline-search-and-replace/#ripgrep-1>ripgrep</a><li><a class=toc-link href=https://learnbyexample.github.io/multiline-search-and-replace/#perl-1>perl</a><li><a class=toc-link href=https://learnbyexample.github.io/multiline-search-and-replace/#sd>sd</a></ul><li><a class=toc-link href=https://learnbyexample.github.io/multiline-search-and-replace/#saving-file-contents-to-a-variable>Saving file contents to a variable</a> <ul><li><a class=toc-link href=https://learnbyexample.github.io/multiline-search-and-replace/#ripgrep-2>ripgrep</a><li><a class=toc-link href=https://learnbyexample.github.io/multiline-search-and-replace/#sd-1>sd</a><li><a class=toc-link href=https://learnbyexample.github.io/multiline-search-and-replace/#gnu-sed>GNU sed</a></ul><li><a class=toc-link href=https://learnbyexample.github.io/multiline-search-and-replace/#linux-cli-ebooks>Linux CLI ebooks</a></ul></nav></div></div><article class=post><header class=post__header><h1 class=post__title><a href=https://learnbyexample.github.io/multiline-search-and-replace/>Multiline fixed string search and replace with CLI tools</a></h1><div class=post__meta><span class=post__time>2020-11-27</span></div></header><div class=post-content><p>This post shows how you can use the <code>ripgrep</code>, <code>perl</code> and <code>sd</code> commands to perform multiline fixed string search and replace operations from the command line. Solutions with <code>GNU sed</code> is also discussed, along with its limitations.</p><span id=continue-reading></span><br><h2 id=fixed-string-matching>Fixed string matching<a aria-label="Anchor link for: fixed-string-matching" class=zola-anchor href=#fixed-string-matching>🔗</a></h2><p>The below sample input file will be used in the examples in this post.<pre style=background-color:#f5f5f5;color:#1f1f1f;><code><span>$ cat ip.txt
 </span><span>This is a multiline
 </span><span>sample input with lots
 </span><span>of special characters
 </span><span>like . () * [] $ {}
-</span><span>^ + ? \ and ' and so on.
+</span><span>| ^ + ? \ and ' and so on.
 </span><span>This post shows how
 </span><span>you can do fixed
 </span><span>-string multiline
 </span><span>search with cli tools.
-</span></code></pre><h3 id=ripgrep>ripgrep<a aria-label="Anchor link for: ripgrep" class=zola-anchor href=#ripgrep>🔗</a></h3><p><a href=https://github.com/BurntSushi/ripgrep>ripgrep</a> supports <code>-U</code> option to allow multiline matching. Use <code>-F</code> option to turn off regexp matching, i.e. treat the search string literally. In <code>bash</code> shell (and likely most other shells), you can press enter key to insert literal newline character for quoted values. When you do so, the next line starts with <code>></code> and a space character. This isn't shown in the examples below to make it easier to copy-paste the commands.<pre style=background-color:#f5f5f5;color:#1f1f1f;><code><span>$ rg -UF 'like . () * [] $ {}
-</span><span>^ + ? \ and' ip.txt
+</span></code></pre><h3 id=ripgrep>ripgrep<a aria-label="Anchor link for: ripgrep" class=zola-anchor href=#ripgrep>🔗</a></h3><p><a href=https://github.com/BurntSushi/ripgrep>ripgrep</a> supports the <code>-U</code> option to allow multiline matching. The <code>-F</code> option turns off regexp matching, i.e. the search string is treated literally. In the <code>bash</code> shell (and likely most other shells), you can press enter key to insert literal newline character for quoted values. When you do so, the next line starts with the secondary prompt <code>PS2</code>, which is usually <code>></code> and a space character. This isn't shown in the examples below to make it easier to copy-paste the commands.<pre style=background-color:#f5f5f5;color:#1f1f1f;><code><span>$ rg -UF 'like . () * [] $ {}
+</span><span>| ^ + ? \ and' ip.txt
 </span><span>4:like . () * [] $ {}
-</span><span>5:^ + ? \ and ' and so on.
+</span><span>5:| ^ + ? \ and ' and so on.
 </span><span>
-</span><span># -l option shows only filename instead of all the matching lines
+</span><span># use the -l option to get only the filename instead of matching lines
 </span><span>$ rg -lUF 'like . () * [] $ {}
-</span><span>^ + ? \ and' ip.txt
+</span><span>| ^ + ? \ and' ip.txt
 </span><span>ip.txt
-</span></code></pre><p>You'll have an issue if your search string itself contains single quote characters. Avoid using double quotes as a workaround, as that has its own set of special characters. You can work around by concatenating multiple strings next to each other, along with escaped single quote characters as needed.<pre style=background-color:#f5f5f5;color:#1f1f1f;><code><span># -N option disables line number prefix
+</span></code></pre><p>You'll have an issue if your search string itself contains single quote characters. Avoid using double quotes as a workaround, as that has its own set of special characters. You can work around by concatenating multiple strings next to each other, along with escaped single quote characters as needed.<pre style=background-color:#f5f5f5;color:#1f1f1f;><code><span># the -N option disables line number prefix
 </span><span>$ rg -NUF 'like . () * [] $ {}
-</span><span>^ + ? \ and '\'' and' ip.txt
+</span><span>| ^ + ? \ and '\'' and' ip.txt
 </span><span>like . () * [] $ {}
-</span><span>^ + ? \ and ' and so on.
-</span></code></pre><p>If your search string starts with <code>-</code> character, you'll have to use <code>--</code> before the search argument.<pre style=background-color:#f5f5f5;color:#1f1f1f;><code><span>$ rg -NUF -- '-string multiline
+</span><span>| ^ + ? \ and ' and so on.
+</span></code></pre><p>If your search string starts with the <code>-</code> character, you'll have to use <code>--</code> before the search argument.<pre style=background-color:#f5f5f5;color:#1f1f1f;><code><span>$ rg -NUF -- '-string multiline
 </span><span>search' ip.txt
 </span><span>-string multiline
 </span><span>search with cli tools.
-</span></code></pre><h3 id=perl>perl<a aria-label="Anchor link for: perl" class=zola-anchor href=#perl>🔗</a></h3><p>You can use <code>-0777</code> option with <code>perl</code> to slurp the entire input as a single string. Another advantage with <code>perl</code> is that you can use files to pass the search and replace strings. Thus, you don't have to worry about any character that may clash with shell metacharacters. See my <a href=https://learnbyexample.github.io/learn_perl_oneliners/>Perl one-liners cookbook</a> if you are not familiar with using <code>perl</code> from the command line.<pre style=background-color:#f5f5f5;color:#1f1f1f;><code><span>$ cat search_1.txt
+</span></code></pre><h3 id=perl>perl<a aria-label="Anchor link for: perl" class=zola-anchor href=#perl>🔗</a></h3><p>You can use the <code>-0777</code> option with <code>perl</code> to slurp the entire input as a single string. Another advantage with <code>perl</code> is that you can use files to pass the search and replace strings. Thus, you don't have to worry about any character that may clash with shell metacharacters. See my <a href=https://learnbyexample.github.io/learn_perl_oneliners/>Perl One-Liners Guide</a> if you are not familiar with using <code>perl</code> from the command line.<pre style=background-color:#f5f5f5;color:#1f1f1f;><code><span>$ cat search_1.txt
 </span><span>like . () * [] $ {}
-</span><span>^ + ? \ and ' and so on.
+</span><span>| ^ + ? \ and ' and so on.
 </span><span>
 </span><span># display filename if the given search string matches
 </span><span>$ perl -0777 -nE '!$#ARGV ? $s=$_ :
@@ -42,7 +42,7 @@
 </span><span>$ perl -0777 -nE '!$#ARGV ? $s=$_ :
 </span><span>                  /\Q$s/ && say $ARGV' search_2.txt ip.txt
 </span><span>
-</span><span># this will remove newline at the end of file before assigning to $s
+</span><span># this will remove newline from the end of file before assigning to $s
 </span><span>$ perl -0777 -nE '!$#ARGV ? $s=s/\n\z//r :
 </span><span>                  /\Q$s/ && say $ARGV' search_2.txt ip.txt
 </span><span>ip.txt
@@ -57,8 +57,8 @@
 </span><span>                  /.*\Q$s\E.*/ && say $&' search_2.txt ip.txt
 </span><span>-string multiline
 </span><span>search with cli tools.
-</span></code></pre><br><h2 id=fixed-string-substitution>Fixed string substitution<a aria-label="Anchor link for: fixed-string-substitution" class=zola-anchor href=#fixed-string-substitution>🔗</a></h2><h3 id=ripgrep-1>ripgrep<a aria-label="Anchor link for: ripgrep-1" class=zola-anchor href=#ripgrep-1>🔗</a></h3><p><code>ripgrep</code> also supports replacing matched string with something else using the <code>-r</code> option. By default, you'll see only matched lines in the output. Use <code>--passthru</code> option to display all the input lines, even if they do not match the given search string. See <a href=https://learnbyexample.github.io/substitution-with-ripgrep/>my blog post</a> for more details about the <code>-r</code> option and various ways you can use it for substitution requirements.<pre style=background-color:#f5f5f5;color:#1f1f1f;><code><span>$ rg --passthru -NUF 'like . () * [] $ {}
-</span><span>^ + ? \ and' -r '====
+</span></code></pre><br><h2 id=fixed-string-substitution>Fixed string substitution<a aria-label="Anchor link for: fixed-string-substitution" class=zola-anchor href=#fixed-string-substitution>🔗</a></h2><h3 id=ripgrep-1>ripgrep<a aria-label="Anchor link for: ripgrep-1" class=zola-anchor href=#ripgrep-1>🔗</a></h3><p><code>ripgrep</code> also supports replacing the matched string with something else using the <code>-r</code> option. By default, you'll see only matched lines in the output. Use the <code>--passthru</code> option to display all the input lines, even if they do not match the given search string. See <a href=https://learnbyexample.github.io/substitution-with-ripgrep/>my blog post</a> for more details about the <code>-r</code> option and various ways you can use it for substitution requirements.<pre style=background-color:#f5f5f5;color:#1f1f1f;><code><span>$ rg --passthru -NUF 'like . () * [] $ {}
+</span><span>| ^ + ? \ and' -r '====
 </span><span>----
 </span><span>====' ip.txt
 </span><span>This is a multiline
@@ -75,7 +75,7 @@
 </span><span>sample put
 </span><span>$ echo 'sample input' | rg --passthru -F 'in' -r '$$a'
 </span><span>sample $aput
-</span></code></pre><h3 id=perl-1>perl<a aria-label="Anchor link for: perl-1" class=zola-anchor href=#perl-1>🔗</a></h3><p>With <code>perl</code>, you can use files for both search and replace strings. And, you can easily choose to replace first or all occurrences, unlike <code>ripgrep</code> where it always replaces all the matches.<pre style=background-color:#f5f5f5;color:#1f1f1f;><code><span>$ cat replace.txt
+</span></code></pre><h3 id=perl-1>perl<a aria-label="Anchor link for: perl-1" class=zola-anchor href=#perl-1>🔗</a></h3><p>With <code>perl</code>, you can use files for both the search and replace strings. And, you can easily choose to replace the first or all occurrences, unlike <code>ripgrep</code> where it always replaces all the matches.<pre style=background-color:#f5f5f5;color:#1f1f1f;><code><span>$ cat replace.txt
 </span><span>---------------------
 </span><span>$& = $1 + $2 / 3 \ 4
 </span><span>=====================
@@ -92,25 +92,25 @@
 </span><span>you can do fixed
 </span><span>-string multiline
 </span><span>search with cli tools.
-</span></code></pre><p>As seen before, you'll have to remove newline from search string for partial line matching.<pre style=background-color:#f5f5f5;color:#1f1f1f;><code><span># use $r=s/\n\z//r to avoid trailing newline from replace.txt
+</span></code></pre><p>As seen before, you'll have to remove newline from the search string for partial line matching.<pre style=background-color:#f5f5f5;color:#1f1f1f;><code><span># use $r=s/\n\z//r to avoid trailing newline from replace.txt
 </span><span>$ perl -0777 -ne '$#ARGV==1 ? $s=s/\n\z//r : $#ARGV==0 ? $r=$_ :
 </span><span>                  print s/\Q$s/$r/gr' search_2.txt replace.txt ip.txt
 </span><span>This is a multiline
 </span><span>sample input with lots
 </span><span>of special characters
 </span><span>like . () * [] $ {}
-</span><span>^ + ? \ and ' and so on.
+</span><span>| ^ + ? \ and ' and so on.
 </span><span>This post shows how
 </span><span>you can do fixed
 </span><span>---------------------
 </span><span>$& = $1 + $2 / 3 \ 4
 </span><span>=====================
 </span><span> with cli tools.
-</span></code></pre><h3 id=sd>sd<a aria-label="Anchor link for: sd" class=zola-anchor href=#sd>🔗</a></h3><p><a href=https://github.com/chmln/sd>sd</a> supports fixed string and Rust regexp based substitution. Unlike <code>ripgrep</code>, <code>-s</code> option for fixed string will apply to both search and replacement sections. <code>sd</code> does in-place editing for file inputs by default, you can use <code>-p</code> to preview results on the terminal. Multiline matching is automatically performed by default.<pre style=background-color:#f5f5f5;color:#1f1f1f;><code><span>$ echo 'sample input' | sd -s 'in' '$a'
+</span></code></pre><h3 id=sd>sd<a aria-label="Anchor link for: sd" class=zola-anchor href=#sd>🔗</a></h3><p><a href=https://github.com/chmln/sd>sd</a> supports a fixed string option and Rust regexp based substitution. Unlike <code>ripgrep</code>, the <code>-s</code> option for fixed string will apply to both the search and replacement sections. <code>sd</code> does in-place editing for file inputs by default, you can use <code>-p</code> to preview results on the terminal. Multiline matching is automatically performed by default.<pre style=background-color:#f5f5f5;color:#1f1f1f;><code><span>$ echo 'sample input' | sd -s 'in' '$a'
 </span><span>sample $aput
 </span><span>
 </span><span>$ sd -ps 'like . () * [] $ {}
-</span><span>^ + ? \ and' '====
+</span><span>| ^ + ? \ and' '====
 </span><span>----
 </span><span>====' ip.txt
 </span><span>This is a multiline
@@ -123,8 +123,9 @@
 </span><span>you can do fixed
 </span><span>-string multiline
 </span><span>search with cli tools.
-</span></code></pre><br><h2 id=saving-file-contents-to-a-variable>Saving file contents to a variable<a aria-label="Anchor link for: saving-file-contents-to-a-variable" class=zola-anchor href=#saving-file-contents-to-a-variable>🔗</a></h2><p>Trailing newlines and ASCII NUL characters will be lost if you wish to save contents of a file as <code>bash</code> variables using <code>var=$(< filename)</code> command. See <a href=https://stackoverflow.com/a/22607352/4082052>stackoverflow: pitfalls of reading file into shell variable</a> for details.<pre style=background-color:#f5f5f5;color:#1f1f1f;><code><span>$ printf '\na\0b\n123\n\n\n\n\n\n\n\n' > t1
+</span></code></pre><br><h2 id=saving-file-contents-to-a-variable>Saving file contents to a variable<a aria-label="Anchor link for: saving-file-contents-to-a-variable" class=zola-anchor href=#saving-file-contents-to-a-variable>🔗</a></h2><p>Trailing newlines and ASCII NUL characters will be lost if you wish to save contents of a file as <code>bash</code> variables using the <code>var=$(< filename)</code> command. See <a href=https://stackoverflow.com/a/22607352/4082052>stackoverflow: pitfalls of reading file into shell variable</a> for more details.<pre style=background-color:#f5f5f5;color:#1f1f1f;><code><span>$ printf '\na\0b\n123\n\n\n\n\n\n\n\n' > t1
 </span><span>$ a=$(< t1)
+</span><span>bash: warning: command substitution: ignored null byte in input
 </span><span>
 </span><span># NUL character is lost after the assignment
 </span><span># all the trailing newlines are lost as well
@@ -136,9 +137,9 @@
 </span><span># use "$s"$'\n' if you want to match trailing newline as well
 </span><span>$ rg -NUF "$s" ip.txt
 </span><span>like . () * [] $ {}
-</span><span>^ + ? \ and ' and so on.
+</span><span>| ^ + ? \ and ' and so on.
 </span><span>
-</span><span># use -- if the search string starts with - character
+</span><span># use -- if the search string starts with a - character
 </span><span>$ s=$(< search_2.txt)
 </span><span>$ rg -NUF -- "$s" ip.txt
 </span><span>-string multiline
@@ -147,7 +148,7 @@
 </span><span>$ r=$(sed 's/\$/$$/g' replace.txt)
 </span><span>
 </span><span># here, removal of trailing newline doesn't cause an issue,
-</span><span># as it evens out between search and replace strings
+</span><span># as it evens out between the search and replace strings
 </span><span>$ rg --passthru -NUF "$s" -r "$r" ip.txt
 </span><span>This is a multiline
 </span><span>sample input with lots
@@ -167,13 +168,13 @@
 </span><span>sample input with lots
 </span><span>of special characters
 </span><span>like . () * [] $ {}
-</span><span>^ + ? \ and ' and so on.
+</span><span>| ^ + ? \ and ' and so on.
 </span><span>This post shows how
 </span><span>you can do fixed
 </span><span>---------------------
 </span><span>$& = $1 + $2 / 3 \ 4
 </span><span>===================== with cli tools.
-</span></code></pre><h3 id=sd-1>sd<a aria-label="Anchor link for: sd-1" class=zola-anchor href=#sd-1>🔗</a></h3><p>As mentioned before, <code>-s</code> option for <code>sd</code> applies to both search and replacement sections. So, the usage is lot simpler compared to <code>ripgrep</code>.<pre style=background-color:#f5f5f5;color:#1f1f1f;><code><span># -- is needed here because replace.txt starts with - character
+</span></code></pre><h3 id=sd-1>sd<a aria-label="Anchor link for: sd-1" class=zola-anchor href=#sd-1>🔗</a></h3><p>As mentioned before, the <code>-s</code> option for <code>sd</code> applies to both the search and replacement sections. So, the usage is lot simpler compared to <code>ripgrep</code>.<pre style=background-color:#f5f5f5;color:#1f1f1f;><code><span># -- is needed here because replace.txt starts with a - character
 </span><span>$ sd -ps -- "$(< search_1.txt)" "$(< replace.txt)" ip.txt
 </span><span>This is a multiline
 </span><span>sample input with lots
@@ -185,17 +186,17 @@
 </span><span>you can do fixed
 </span><span>-string multiline
 </span><span>search with cli tools.
-</span></code></pre><h3 id=gnu-sed>GNU sed<a aria-label="Anchor link for: gnu-sed" class=zola-anchor href=#gnu-sed>🔗</a></h3><p>To follow a similar approach with <code>GNU sed</code>, you'll have to preprocess the strings to escape metacharacters. Assuming input doesn't have ASCII NUL characters, you can use <code>-z</code> option to slurp entire input as a single string.<p>Here's an example for multiline search.<pre style=background-color:#f5f5f5;color:#1f1f1f;><code><span># escape all BRE metacharacters
+</span></code></pre><h3 id=gnu-sed>GNU sed<a aria-label="Anchor link for: gnu-sed" class=zola-anchor href=#gnu-sed>🔗</a></h3><p>To follow a similar approach with <code>GNU sed</code>, you'll have to preprocess the strings to escape metacharacters. Assuming input doesn't have ASCII NUL characters, you can use <code>-z</code> option to slurp the entire input as a single string.<p>Here's an example for multiline search.<pre style=background-color:#f5f5f5;color:#1f1f1f;><code><span># escape all BRE metacharacters
 </span><span># replace literal newlines with \n
 </span><span>$ s=$(sed -z 's#[[^$*.\/]#\\&#g; s/\n/\\n/g' search_1.txt)
 </span><span>
 </span><span># since newlines are replaced with \n,
 </span><span># trailing newlines will be preserved here
 </span><span>$ echo "$s"
-</span><span>like \. () \* \[] \$ {}\n\^ + ? \\ and ' and so on\.\n
+</span><span>like \. () \* \[] \$ {}\n| \^ + ? \\ and ' and so on\.\n
 </span><span>
 </span><span># display filename if input matches the given multiline search string
-</span><span># tr is used to change NUL character after filename to newline
+</span><span># tr is used to change the NUL character after filename to newline
 </span><span>$ sed -nz '/'"$s"'/F' ip.txt | tr '\0' '\n'
 </span><span>ip.txt
 </span></code></pre><p>And here's an example for multiline substitution.<pre style=background-color:#f5f5f5;color:#1f1f1f;><code><span># last newline is removed here to allow partial line matching
@@ -209,17 +210,17 @@
 </span><span>$\& = $1 + $2 \/ 3 \\ 4\
 </span><span>=====================
 </span><span>
-</span><span># if you need trailing newline from replace.txt,
+</span><span># if you need the trailing newline from replace.txt,
 </span><span># use sed -z 's/'"$s"'/'"$r"'\n/g'
 </span><span>$ sed -z 's/'"$s"'/'"$r"'/g' ip.txt
 </span><span>This is a multiline
 </span><span>sample input with lots
 </span><span>of special characters
 </span><span>like . () * [] $ {}
-</span><span>^ + ? \ and ' and so on.
+</span><span>| ^ + ? \ and ' and so on.
 </span><span>This post shows how
 </span><span>you can do fixed
 </span><span>---------------------
 </span><span>$& = $1 + $2 / 3 \ 4
 </span><span>===================== with cli tools.
-</span></code></pre></div><div class=post-footer><div class=post-tags><a href=https://learnbyexample.github.io/tags/ripgrep/>#ripgrep</a><a href=https://learnbyexample.github.io/tags/perl/>#perl</a><a href=https://learnbyexample.github.io/tags/gnu-sed/>#gnu-sed</a><a href=https://learnbyexample.github.io/tags/sd/>#sd</a><a href=https://learnbyexample.github.io/tags/substitution/>#substitution</a><a href=https://learnbyexample.github.io/tags/fixed-string/>#fixed-string</a><a href=https://learnbyexample.github.io/tags/multiline/>#multiline</a><a href=https://learnbyexample.github.io/tags/regular-expressions/>#regular-expressions</a></div><hr color=#e6e6e6><div class=post-nav><p><a class=previous href=https://learnbyexample.github.io/my-book-writing-experience/>← Paying my bills with 'free' ebooks</a><br><p><a class=next href=https://learnbyexample.github.io/sed-lookarounds/>Emulating regexp lookarounds in GNU sed →</a><br></div><hr color=#e6e6e6><p>📰 Use <a href=https://learnbyexample.github.io/atom.xml>this link</a> for the Atom feed. <br> ✅ Follow me on <a href=https://twitter.com/learn_byexample>Twitter</a>, <a href=https://github.com/learnbyexample>GitHub</a> and <a href=https://www.youtube.com/c/learnbyexample42>Youtube</a> for interesting tech nuggets. <br> 📧 Subscribe to <a href=https://learnbyexample.gumroad.com/l/learnbyexample-weekly>learnbyexample weekly</a> for programming resources, tips, tools, free ebooks and more (free newsletter, delivered every Friday).<hr color=#e6e6e6></div></article></div></main></div><script src=https://learnbyexample.github.io/even.js></script>
+</span></code></pre><br><h2 id=linux-cli-ebooks>Linux CLI ebooks<a aria-label="Anchor link for: linux-cli-ebooks" class=zola-anchor href=#linux-cli-ebooks>🔗</a></h2><p>Check out <a href=https://learnbyexample.github.io/books/>my ebooks</a> if you are interested in learning more about Linux CLI basics, coreutils, text processing tools like <code>GNU grep</code>, <code>GNU sed</code>, <code>GNU awk</code> and <code>perl</code>.</div><div class=post-footer><div class=post-tags><a href=https://learnbyexample.github.io/tags/ripgrep/>#ripgrep</a><a href=https://learnbyexample.github.io/tags/perl/>#perl</a><a href=https://learnbyexample.github.io/tags/gnu-sed/>#gnu-sed</a><a href=https://learnbyexample.github.io/tags/sd/>#sd</a><a href=https://learnbyexample.github.io/tags/substitution/>#substitution</a><a href=https://learnbyexample.github.io/tags/fixed-string/>#fixed-string</a><a href=https://learnbyexample.github.io/tags/multiline/>#multiline</a><a href=https://learnbyexample.github.io/tags/regular-expressions/>#regular-expressions</a></div><hr color=#e6e6e6><div class=post-nav><p><a class=previous href=https://learnbyexample.github.io/my-book-writing-experience/>← Paying my bills with 'free' ebooks</a><br><p><a class=next href=https://learnbyexample.github.io/sed-lookarounds/>Emulating regexp lookarounds in GNU sed →</a><br></div><hr color=#e6e6e6><p>📰 Use <a href=https://learnbyexample.github.io/atom.xml>this link</a> for the Atom feed. <br> ✅ Follow me on <a href=https://twitter.com/learn_byexample>Twitter</a>, <a href=https://github.com/learnbyexample>GitHub</a> and <a href=https://www.youtube.com/c/learnbyexample42>Youtube</a> for interesting tech nuggets. <br> 📧 Subscribe to <a href=https://learnbyexample.gumroad.com/l/learnbyexample-weekly>learnbyexample weekly</a> for programming resources, tips, tools, free ebooks and more (free newsletter, delivered every Friday).<hr color=#e6e6e6></div></article></div></main></div><script src=https://learnbyexample.github.io/even.js></script>
