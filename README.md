@@ -62,6 +62,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Mini blog posts
 
+* [OS installation woes](https://learnbyexample.github.io/mini/os-installation-woes/)
 * [Basic examples for the Linux date command](https://learnbyexample.github.io/mini/linux-date-command-examples/)
 * [CLI text editing with ed](https://learnbyexample.github.io/mini/cli-text-editing-with-ed/)
 * [Computing from the Command Line: sales report](https://learnbyexample.github.io/mini/cli-computing-sales/)

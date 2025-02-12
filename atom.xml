@@ -5,8 +5,34 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2025-02-10T00:00:00+00:00</updated>
+	<updated>2025-02-12T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>OS installation woes</title>
+		<published>2025-02-12T00:00:00+00:00</published>
+		<updated>2025-02-12T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://learnbyexample.github.io/mini/os-installation-woes/" type="text/html"/>
+		<id>https://learnbyexample.github.io/mini/os-installation-woes/</id>
+		<content type="html">&lt;p&gt;I prefer stability and thus I let my Linux LTS distributions to last almost till the entire end of support time. Having learned from previous transition periods, I started maintaining notes on what softwares I install&#x2F;purge and some of the customization stuff. This has vastly reduced the pain of a fresh OS installation, but the fact remains that there&#x27;ll always be some persistent and annoying trouble.&lt;&#x2F;p&gt;
+&lt;p&gt;The one I encountered this time around is really perplexing and I&#x27;m afraid of trying to figure out the root cause. For now, I&#x27;m happy with the workaround I ended up with.&lt;&#x2F;p&gt;
+&lt;p&gt;I use &lt;code&gt;redshift&lt;&#x2F;code&gt; to set the color temperature of computer display. It is a simple temperature setting that doesn&#x27;t depend on time or place, so my config is simple. However, it wasn&#x27;t working when I moved from good old Ubuntu to Linux Mint (because Ubuntu is no longer user friendly). As per &lt;a href=&quot;https:&#x2F;&#x2F;forums.linuxmint.com&#x2F;viewtopic.php?t=422300&quot;&gt;this discussion on Linux Mint forum&lt;&#x2F;a&gt;, &lt;code&gt;geoclue2&lt;&#x2F;code&gt; no longer works. That shouldn&#x27;t matter for me since I don&#x27;t need location services. Whatever, that same thread mentioned &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;faf0&#x2F;sct&quot;&gt;xsct&lt;&#x2F;a&gt; as a simpler alternative that exactly fits my need (with a bonus of changing screen brightness!).&lt;&#x2F;p&gt;
+&lt;p&gt;I installed it and a really really simple command from the terminal was all it needed to work. So, what was the annoying issue? I couldn&#x27;t get it to &lt;a href=&quot;https:&#x2F;&#x2F;wiki.archlinux.org&#x2F;title&#x2F;Xfce#Autostart&quot;&gt;autostart&lt;&#x2F;a&gt; on login no matter what I did! At first, I thought perhaps I needed to use the full path of the command, but that obviously didn&#x27;t solve my troubles. After fruitless search on the internet, I almost thought to ask a question on the forum. Before that though, I had the bright idea (really basic debugging rule) to first check if my autostart setup was working at all. I chose to autostart a terminal on login via the &lt;code&gt;xfce4-terminal&lt;&#x2F;code&gt; command and it did work!&lt;&#x2F;p&gt;
+&lt;p&gt;So, why wasn&#x27;t &lt;code&gt;xsct&lt;&#x2F;code&gt; working? No idea. But reading the &lt;code&gt;man&lt;&#x2F;code&gt; page of the terminal emulator showed that I can choose to execute a command with the &lt;code&gt;-e&lt;&#x2F;code&gt; option. So, that was my inelegant workaround! The desktop entry is shown below if you are curious. If you know why &lt;code&gt;Exec=xsct 3500 0.9&lt;&#x2F;code&gt; doesn&#x27;t work compared to &lt;code&gt;Exec=xfce4-terminal -e &#x27;xsct 3500 0.9&#x27;&lt;&#x2F;code&gt;, do let me know!&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot;&gt;&lt;code&gt;&lt;span&gt;[Desktop Entry]
+&lt;&#x2F;span&gt;&lt;span&gt;Encoding=UTF-8
+&lt;&#x2F;span&gt;&lt;span&gt;Version=0.9.4
+&lt;&#x2F;span&gt;&lt;span&gt;Type=Application
+&lt;&#x2F;span&gt;&lt;span&gt;Name=displaytemperature
+&lt;&#x2F;span&gt;&lt;span&gt;Comment=
+&lt;&#x2F;span&gt;&lt;span&gt;Exec=xfce4-terminal -e &amp;#39;xsct 3500 0.9&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;OnlyShowIn=XFCE;
+&lt;&#x2F;span&gt;&lt;span&gt;RunHook=0
+&lt;&#x2F;span&gt;&lt;span&gt;StartupNotify=false
+&lt;&#x2F;span&gt;&lt;span&gt;Terminal=false
+&lt;&#x2F;span&gt;&lt;span&gt;Hidden=false
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>Understanding Python re(gex)? book announcement</title>
 		<published>2025-01-22T00:00:00+00:00</published>
