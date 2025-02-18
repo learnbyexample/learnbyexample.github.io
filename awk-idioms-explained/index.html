@@ -1,0 +1,112 @@
+<!doctype html><html lang=en><head><meta content="IE=edge" http-equiv=X-UA-Compatible><meta content="text/html; charset=utf-8" http-equiv=content-type><meta content="width=device-width,initial-scale=1.0,maximum-scale=1" name=viewport><title>GNU awk idioms explained</title><link href=https://learnbyexample.github.io/atom.xml rel=alternate title=RSS type=application/atom+xml><script src=https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js></script><link href=https://learnbyexample.github.io/site.css rel=stylesheet><meta content="GNU awk idioms explained" property=og:title><meta content=website property=og:type><meta content="Examples and brief explanations for cryptic awk one-liners." property=og:description><meta content=https://learnbyexample.github.io/awk-idioms-explained/ property=og:url><meta property=og:image><meta property=og:image:width><meta property=og:image:height><meta content=summary_large_image property=twitter:card><meta content=@learn_byexample property=twitter:site><link href=https://learnbyexample.github.io/favicon.svg rel=icon><link rel="shortcut icon" href=https://learnbyexample.github.io/favicon.png><body><div class=container><div class=mobile-navbar id=mobile-navbar><div class=mobile-header-logo><a class=logo href=/>learnbyexample</a></div><div class="mobile-navbar-icon icon-out"><span></span><span></span><span></span></div></div><nav class="mobile-menu slideout-menu slideout-menu-left" id=mobile-menu><ul class=mobile-menu-list><li class=mobile-menu-item><a href=https://learnbyexample.github.io/books> Books </a><li class=mobile-menu-item><a href=https://learnbyexample.github.io/mini> Mini </a><li class=mobile-menu-item><a href=https://learnbyexample.github.io/tips> Tips </a><li class=mobile-menu-item><a href=https://learnbyexample.github.io/tags> Tags </a><li class=mobile-menu-item><a href=https://learnbyexample.github.io/about> About </a></ul></nav><header id=header><div class=logo><a href=https://learnbyexample.github.io>learnbyexample</a></div><nav class=menu><ul><li><a href=https://learnbyexample.github.io/books> Books </a><li><a href=https://learnbyexample.github.io/mini> Mini </a><li><a href=https://learnbyexample.github.io/tips> Tips </a><li><a href=https://learnbyexample.github.io/tags> Tags </a><li><a href=https://learnbyexample.github.io/about> About </a></ul></nav></header><main><div class=content id=mobile-panel><div class=post-toc id=post-toc><h2 class=post-toc-title>Contents</h2><div class="post-toc-content always-active"><nav id=TableOfContents><ul><li><a class=toc-link href=https://learnbyexample.github.io/awk-idioms-explained/#awk-command-structure>awk command structure</a><li><a class=toc-link href=https://learnbyexample.github.io/awk-idioms-explained/#regexp-filtering>Regexp filtering</a><li><a class=toc-link href=https://learnbyexample.github.io/awk-idioms-explained/#idiomatic-use-of-1>Idiomatic use of 1</a><li><a class=toc-link href=https://learnbyexample.github.io/awk-idioms-explained/#special-variables>Special variables</a><li><a class=toc-link href=https://learnbyexample.github.io/awk-idioms-explained/#removing-duplicates>Removing duplicates</a><li><a class=toc-link href=https://learnbyexample.github.io/awk-idioms-explained/#rebuild-0>Rebuild $0</a><li><a class=toc-link href=https://learnbyexample.github.io/awk-idioms-explained/#paragraph-mode>Paragraph mode</a><li><a class=toc-link href=https://learnbyexample.github.io/awk-idioms-explained/#two-file-processing>Two file processing</a><li><a class=toc-link href=https://learnbyexample.github.io/awk-idioms-explained/#forcing-string-and-numeric-context>Forcing string and numeric context</a><li><a class=toc-link href=https://learnbyexample.github.io/awk-idioms-explained/#linux-cli-ebooks>Linux CLI ebooks</a></ul></nav></div></div><article class=post><header class=post__header><h1 class=post__title><a href=https://learnbyexample.github.io/awk-idioms-explained/>GNU awk idioms explained</a></h1><div class=post__meta><span class=post__time>2025-02-18</span></div></header><div class=post-content><p>Do you find <code>awk</code> one-liners cryptic? Stuff like <code>!a[$0]++</code>, <code>1</code>, <code>$1=$1</code>, <code>NR==FNR</code> and <code>-v RS=</code>? You'll find examples and brief explanations for such idioms in this post.</p><span id=continue-reading></span><br><h2 id=awk-command-structure>awk command structure<a aria-label="Anchor link for: awk-command-structure" class=zola-anchor href=#awk-command-structure>🔗</a></h2><pre style=background-color:#f5f5f5;color:#1f1f1f;><code><span>awk 'cond1{action1} cond2{action2} ... condN{actionN}'
+</span></code></pre><p>When a conditional expression isn't provided, the action is always executed. When an action isn't provided, the <code>$0</code> variable (which has the contents of the current record being processed) is printed if the conditional expression evaluates to true.</p><br><h2 id=regexp-filtering>Regexp filtering<a aria-label="Anchor link for: regexp-filtering" class=zola-anchor href=#regexp-filtering>🔗</a></h2><pre class=language-ruby data-lang=ruby style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-ruby data-lang=ruby><span style=color:#7f8989;># same as: grep 'at' and sed -n '/at/p'
+</span><span>$ </span><span style=color:#b39f04;>printf </span><span style=color:#d07711;>'gate\napple\nwhat\nkite\n' </span><span style=color:#72ab00;>|</span><span> awk </span><span style=color:#d07711;>'/at/'
+</span><span>gate
+</span><span>what
+</span><span>
+</span><span style=color:#7f8989;># same as: grep -v 'e' and sed -n '/e/!p'
+</span><span>$ </span><span style=color:#b39f04;>printf </span><span style=color:#d07711;>'gate\napple\nwhat\nkite\n' </span><span style=color:#72ab00;>|</span><span> awk </span><span style=color:#d07711;>'!/e/'
+</span><span>what
+</span></code></pre><p>The generic syntax is <code>string ~ /regexp/</code> to check if the given string matches the regexp and <code>string !~ /regexp/</code> to invert the condition.<ul><li><code>/regexp/</code> is a shortcut for <code>$0 ~ /regexp/{print $0}</code><li><code>!/regexp/</code> is a shortcut for <code>$0 !~ /regexp/{print $0}</code></ul><br><h2 id=idiomatic-use-of-1>Idiomatic use of 1<a aria-label="Anchor link for: idiomatic-use-of-1" class=zola-anchor href=#idiomatic-use-of-1>🔗</a></h2><p>Non-zero numeric values and non-empty strings are <em>truthy</em> (zero and empty strings are <em>falsy</em>). Idiomatically, <code>1</code> is used as a conditional expression to print the contents of <code>$0</code>.<pre class=language-ruby data-lang=ruby style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-ruby data-lang=ruby><span>$ echo </span><span style=color:#d07711;>'ring amazing jar' </span><span style=color:#72ab00;>|</span><span> awk </span><span style=color:#d07711;>'{sub(/ing/, "ed", $2)} 1'
+</span><span>ring amazed jar
+</span><span>
+</span><span>$ seq </span><span style=color:#b3933a;>2 </span><span style=color:#72ab00;>|</span><span> awk </span><span style=color:#d07711;>'BEGIN{print "---"} 1; END{print "==="}'
+</span><span style=color:#72ab00;>---
+</span><span style=color:#b3933a;>1
+</span><span style=color:#b3933a;>2
+</span><span style=color:#72ab00;>===
+</span></code></pre><br><h2 id=special-variables>Special variables<a aria-label="Anchor link for: special-variables" class=zola-anchor href=#special-variables>🔗</a></h2><ul><li><code>$0</code> contains the current record being processed<li><code>$1</code> first field<li><code>$2</code> second field and so on<li><code>FS</code> input field separator<li><code>OFS</code> output field separator<li><code>NF</code> number of fields<li><code>RS</code> input record separator<li><code>ORS</code> output record separator<li><code>NR</code> number of records (i.e. line number) for the entire input<li><code>FNR</code> number of records per file</ul><br><h2 id=removing-duplicates>Removing duplicates<a aria-label="Anchor link for: removing-duplicates" class=zola-anchor href=#removing-duplicates>🔗</a></h2><p><code>awk '!a[$0]++'</code> is one of the most famous <code>awk</code> one-liners. It eliminates line based duplicates while retaining the input order.<pre class=language-ruby data-lang=ruby style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-ruby data-lang=ruby><span>$ cat purchases.txt
+</span><span>coffee
+</span><span>tea
+</span><span>washing powder
+</span><span>coffee
+</span><span>tea
+</span><span>coffee milkshake
+</span><span>soap
+</span><span>tea
+</span><span>washing soda
+</span><span>
+</span><span>$ awk </span><span style=color:#d07711;>'{print +a[$0] "\t" $0; a[$0]++}'</span><span> purchases.txt
+</span><span style=color:#b3933a;>0</span><span>	coffee
+</span><span style=color:#b3933a;>0</span><span>	tea
+</span><span style=color:#b3933a;>0</span><span>	washing powder
+</span><span style=color:#b3933a;>1</span><span>	coffee
+</span><span style=color:#b3933a;>1</span><span>	tea
+</span><span style=color:#b3933a;>0</span><span>	coffee milkshake
+</span><span style=color:#b3933a;>0</span><span>	soap
+</span><span style=color:#b3933a;>2</span><span>	tea
+</span><span style=color:#b3933a;>0</span><span>	washing soda
+</span><span>
+</span><span style=color:#7f8989;># only the entries with zero in the first column will be retained
+</span><span>$ awk </span><span style=color:#d07711;>'!a[$0]++'</span><span> purchases.txt
+</span><span>coffee
+</span><span>tea
+</span><span>washing powder
+</span><span>coffee milkshake
+</span><span>soap
+</span><span>washing soda
+</span></code></pre><p><code>a[$0]</code> creates an uninitialized element in array <code>a</code> with <code>$0</code> as the key (if the key doesn't exist yet). Thus, <code>!a[$0]</code> will succeed only on the first occurrence of an item (since an uninitialized value is <em>falsy</em>) and the post-increment operator will ensure that further instances of an item will fail the conditional expression.</p><br><h2 id=rebuild-0>Rebuild $0<a aria-label="Anchor link for: rebuild-0" class=zola-anchor href=#rebuild-0>🔗</a></h2><p>Sometimes you just want to change the field separator, or perform some record-level text processing and then print it with a new field separator. In such cases, you'll have to explicitly fake a field operation — otherwise the field separation update won't happen for <code>$0</code>.<pre class=language-ruby data-lang=ruby style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-ruby data-lang=ruby><span>$ s=</span><span style=color:#d07711;>'sample123string42with777numbers'
+</span><span>
+</span><span>$ echo </span><span style=color:#d07711;>"$s" </span><span style=color:#72ab00;>|</span><span> awk </span><span style=color:#72ab00;>-</span><span style=color:#5597d6;>F</span><span style=color:#d07711;>'[0-9]+' </span><span style=color:#72ab00;>-</span><span>v </span><span style=color:#c23f31;>OFS</span><span style=color:#72ab00;>=</span><span>, </span><span style=color:#d07711;>'{$1=$1} 1'
+</span><span>sample,string,with,numbers
+</span><span>
+</span><span>$ echo </span><span style=color:#d07711;>"$s" </span><span style=color:#72ab00;>|</span><span> awk </span><span style=color:#72ab00;>-</span><span style=color:#5597d6;>F</span><span style=color:#d07711;>'[0-9]+' </span><span style=color:#72ab00;>-</span><span>v </span><span style=color:#c23f31;>OFS</span><span style=color:#72ab00;>=- </span><span style=color:#d07711;>'{gsub(/[aeiou]/, ""); $1=$1} 1'
+</span><span>smpl</span><span style=color:#72ab00;>-</span><span>strng</span><span style=color:#72ab00;>-</span><span>wth</span><span style=color:#72ab00;>-</span><span>nmbrs
+</span></code></pre><br><h2 id=paragraph-mode>Paragraph mode<a aria-label="Anchor link for: paragraph-mode" class=zola-anchor href=#paragraph-mode>🔗</a></h2><p>When <code>RS</code> is set to an empty string, one or more consecutive empty lines is used as the input record separator.<pre class=language-ruby data-lang=ruby style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-ruby data-lang=ruby><span>$ cat para.txt
+</span><span>hello world
+</span><span>
+</span><span>hi there
+</span><span>how are you
+</span><span>
+</span><span>just doing
+</span><span>believe it
+</span><span>
+</span><span>banana
+</span><span>papaya
+</span><span>mango
+</span><span>
+</span><span>much ado about nothing
+</span><span>he he he
+</span><span>adios amigo
+</span><span>
+</span><span style=color:#7f8989;># uninitialized variable 's' will be empty for the first match
+</span><span style=color:#7f8989;># afterwards, 's' will provide the empty line separation
+</span><span>$ awk </span><span style=color:#72ab00;>-</span><span>v </span><span style=color:#c23f31;>RS</span><span style=color:#72ab00;>= </span><span style=color:#d07711;>'/do/{print s $0; s="\n"}'</span><span> para.txt
+</span><span>just doing
+</span><span>believe it
+</span><span>
+</span><span>much ado about nothing
+</span><span>he he he
+</span><span>adios amigo
+</span></code></pre><br><h2 id=two-file-processing>Two file processing<a aria-label="Anchor link for: two-file-processing" class=zola-anchor href=#two-file-processing>🔗</a></h2><p>For two files as input, <code>NR==FNR</code> will be true only when the first file is being processed. The <code>next</code> statement will skip the rest of the code for the current record.<pre class=language-ruby data-lang=ruby style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-ruby data-lang=ruby><span>$ cat marks.txt
+</span><span>dept    </span><span style=color:#b39f04;>name</span><span>    marks
+</span><span>ece     raj     </span><span style=color:#b3933a;>53
+</span><span>ece     joel    </span><span style=color:#b3933a;>72
+</span><span>eee     moi     </span><span style=color:#b3933a;>68
+</span><span>cse     surya   </span><span style=color:#b3933a;>81
+</span><span>eee     tia     </span><span style=color:#b3933a;>59
+</span><span>ece     om      </span><span style=color:#b3933a;>92
+</span><span>cse     amy     </span><span style=color:#b3933a;>67
+</span><span>
+</span><span>$ cat dept_mark.txt
+</span><span>ece </span><span style=color:#b3933a;>70
+</span><span>eee </span><span style=color:#b3933a;>65
+</span><span>cse </span><span style=color:#b3933a;>80
+</span><span>
+</span><span style=color:#7f8989;># match dept and minimum marks specified in dept_mark.txt
+</span><span>$ awk </span><span style=color:#d07711;>'NR==FNR{d[$1]=$2; next}
+</span><span style=color:#d07711;>       $1 in d && $3 >= d[$1]'</span><span> dept_mark.txt marks.txt
+</span><span>ece     joel    </span><span style=color:#b3933a;>72
+</span><span>eee     moi     </span><span style=color:#b3933a;>68
+</span><span>cse     surya   </span><span style=color:#b3933a;>81
+</span><span>ece     om      </span><span style=color:#b3933a;>92
+</span></code></pre><p><img alt=warning src=/images/warning.svg> Note that the <code>NR==FNR</code> logic will fail if the first file is empty, since <code>NR</code> wouldn't get a chance to increment. You can set a flag after the first file has been processed to avoid this issue — for example, <code>awk '!f{a[$0]; next} !($0 in a)' file1 f=1 file2</code>. See <a href=https://unix.stackexchange.com/a/237110/109046>this unix.stackexchange thread</a> for more workarounds.</p><br><h2 id=forcing-string-and-numeric-context>Forcing string and numeric context<a aria-label="Anchor link for: forcing-string-and-numeric-context" class=zola-anchor href=#forcing-string-and-numeric-context>🔗</a></h2><p>Strings are automatically converted to a number when used in an arithmetic expression (for example, <code>"42" + 5</code>). You can use the unary <code>+</code> and <code>-</code> operators to force numeric context. If the string doesn't start with a valid number (ignoring any starting whitespaces), it will be treated as <code>0</code>.<pre class=language-ruby data-lang=ruby style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-ruby data-lang=ruby><span>$ seq </span><span style=color:#b3933a;>3 </span><span style=color:#72ab00;>|</span><span> awk </span><span style=color:#d07711;>'{sum += $0} END{print sum}'
+</span><span style=color:#b3933a;>6
+</span><span>$ awk </span><span style=color:#d07711;>'{sum += $0} END{print sum}' </span><span style=color:#72ab00;>/</span><span>dev</span><span style=color:#72ab00;>/</span><span>null
+</span><span>
+</span><span>$ awk </span><span style=color:#d07711;>'{sum += $0} END{print +sum}' </span><span style=color:#72ab00;>/</span><span>dev</span><span style=color:#72ab00;>/</span><span>null
+</span><span style=color:#b3933a;>0
+</span></code></pre><p>Similarly, you can concatenate a string to a number to force string context.<pre class=language-ruby data-lang=ruby style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-ruby data-lang=ruby><span>$ awk </span><span style=color:#d07711;>'BEGIN{n1="5.0"; n2=5; if(n1==n2) print "equal"}'
+</span><span>$ awk </span><span style=color:#d07711;>'BEGIN{n1="5.0"; n2=5; if(n1==n2".0") print "equal"}'
+</span><span>equal
+</span></code></pre><p>See <a href=https://www.gnu.org/software/gawk/manual/gawk.html#Strings-And-Numbers>gawk manual: How awk Converts Between Strings and Numbers</a> for more details.</p><br><h2 id=linux-cli-ebooks>Linux CLI ebooks<a aria-label="Anchor link for: linux-cli-ebooks" class=zola-anchor href=#linux-cli-ebooks>🔗</a></h2><p>Check out <a href=https://learnbyexample.github.io/books/>my ebooks</a> if you are interested in learning more about Linux CLI basics, coreutils, text processing tools like <code>GNU grep</code>, <code>GNU sed</code>, <code>GNU awk</code> and <code>perl</code>.</div><div class=post-footer><div class=post-tags><a href=https://learnbyexample.github.io/tags/gnu-awk/>#gnu-awk</a><a href=https://learnbyexample.github.io/tags/linux/>#linux</a></div><hr color=#e6e6e6><div class=post-nav><p><a class=next href=https://learnbyexample.github.io/understanding-python-regex-announcement/>Understanding Python re(gex)? book announcement →</a><br></div><hr color=#e6e6e6><p>📰 Use <a href=https://learnbyexample.github.io/atom.xml>this link</a> for the Atom feed. <br> ✅ Follow me on <a href=https://twitter.com/learn_byexample>Twitter</a>, <a href=https://github.com/learnbyexample>GitHub</a> and <a href=https://www.youtube.com/c/learnbyexample42>Youtube</a> for interesting tech nuggets. <br> 📧 Subscribe to <a href=https://learnbyexample.gumroad.com/l/learnbyexample-weekly>learnbyexample weekly</a> for programming resources, tips, tools, free ebooks and more (free newsletter, delivered every Friday).<hr color=#e6e6e6></div></article></div></main></div><script src=https://learnbyexample.github.io/even.js></script>

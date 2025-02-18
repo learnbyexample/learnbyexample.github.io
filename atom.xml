@@ -5,8 +5,186 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2025-02-12T00:00:00+00:00</updated>
+	<updated>2025-02-18T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>GNU awk idioms explained</title>
+		<published>2025-02-18T00:00:00+00:00</published>
+		<updated>2025-02-18T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://learnbyexample.github.io/awk-idioms-explained/" type="text/html"/>
+		<id>https://learnbyexample.github.io/awk-idioms-explained/</id>
+		<content type="html">&lt;p&gt;Do you find &lt;code&gt;awk&lt;&#x2F;code&gt; one-liners cryptic? Stuff like &lt;code&gt;!a[$0]++&lt;&#x2F;code&gt;, &lt;code&gt;1&lt;&#x2F;code&gt;, &lt;code&gt;$1=$1&lt;&#x2F;code&gt;, &lt;code&gt;NR==FNR&lt;&#x2F;code&gt; and &lt;code&gt;-v RS=&lt;&#x2F;code&gt;? You&#x27;ll find examples and brief explanations for such idioms in this post.&lt;&#x2F;p&gt;
+&lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;&lt;br&gt;
+&lt;h2 id=&quot;awk-command-structure&quot;&gt;awk command structure&lt;a class=&quot;zola-anchor&quot; href=&quot;#awk-command-structure&quot; aria-label=&quot;Anchor link for: awk-command-structure&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot;&gt;&lt;code&gt;&lt;span&gt;awk &amp;#39;cond1{action1} cond2{action2} ... condN{actionN}&amp;#39;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;When a conditional expression isn&#x27;t provided, the action is always executed. When an action isn&#x27;t provided, the &lt;code&gt;$0&lt;&#x2F;code&gt; variable (which has the contents of the current record being processed) is printed if the conditional expression evaluates to true.&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;regexp-filtering&quot;&gt;Regexp filtering&lt;a class=&quot;zola-anchor&quot; href=&quot;#regexp-filtering&quot; aria-label=&quot;Anchor link for: regexp-filtering&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;pre data-lang=&quot;ruby&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# same as: grep &amp;#39;at&amp;#39; and sed -n &amp;#39;&#x2F;at&#x2F;p&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;$ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;printf &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;gate\napple\nwhat\nkite\n&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span&gt; awk &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&#x2F;at&#x2F;&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;gate
+&lt;&#x2F;span&gt;&lt;span&gt;what
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# same as: grep -v &amp;#39;e&amp;#39; and sed -n &amp;#39;&#x2F;e&#x2F;!p&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;$ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;printf &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;gate\napple\nwhat\nkite\n&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span&gt; awk &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;!&#x2F;e&#x2F;&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;what
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;The generic syntax is &lt;code&gt;string ~ &#x2F;regexp&#x2F;&lt;&#x2F;code&gt; to check if the given string matches the regexp and &lt;code&gt;string !~ &#x2F;regexp&#x2F;&lt;&#x2F;code&gt; to invert the condition.&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;&#x2F;regexp&#x2F;&lt;&#x2F;code&gt; is a shortcut for &lt;code&gt;$0 ~ &#x2F;regexp&#x2F;{print $0}&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;!&#x2F;regexp&#x2F;&lt;&#x2F;code&gt; is a shortcut for &lt;code&gt;$0 !~ &#x2F;regexp&#x2F;{print $0}&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;idiomatic-use-of-1&quot;&gt;Idiomatic use of 1&lt;a class=&quot;zola-anchor&quot; href=&quot;#idiomatic-use-of-1&quot; aria-label=&quot;Anchor link for: idiomatic-use-of-1&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Non-zero numeric values and non-empty strings are &lt;em&gt;truthy&lt;&#x2F;em&gt; (zero and empty strings are &lt;em&gt;falsy&lt;&#x2F;em&gt;). Idiomatically, &lt;code&gt;1&lt;&#x2F;code&gt; is used as a conditional expression to print the contents of &lt;code&gt;$0&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;ruby&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span&gt;$ echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;ring amazing jar&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span&gt; awk &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;{sub(&#x2F;ing&#x2F;, &amp;quot;ed&amp;quot;, $2)} 1&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;ring amazed jar
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;$ seq &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;2 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span&gt; awk &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;BEGIN{print &amp;quot;---&amp;quot;} 1; END{print &amp;quot;===&amp;quot;}&amp;#39;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;---
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;1
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;2
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;===
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;special-variables&quot;&gt;Special variables&lt;a class=&quot;zola-anchor&quot; href=&quot;#special-variables&quot; aria-label=&quot;Anchor link for: special-variables&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;$0&lt;&#x2F;code&gt; contains the current record being processed&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;$1&lt;&#x2F;code&gt; first field&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;$2&lt;&#x2F;code&gt; second field and so on&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;FS&lt;&#x2F;code&gt; input field separator&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;OFS&lt;&#x2F;code&gt; output field separator&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;NF&lt;&#x2F;code&gt; number of fields&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;RS&lt;&#x2F;code&gt; input record separator&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;ORS&lt;&#x2F;code&gt; output record separator&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;NR&lt;&#x2F;code&gt; number of records (i.e. line number) for the entire input&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;FNR&lt;&#x2F;code&gt; number of records per file&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;removing-duplicates&quot;&gt;Removing duplicates&lt;a class=&quot;zola-anchor&quot; href=&quot;#removing-duplicates&quot; aria-label=&quot;Anchor link for: removing-duplicates&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;&lt;code&gt;awk &#x27;!a[$0]++&#x27;&lt;&#x2F;code&gt; is one of the most famous &lt;code&gt;awk&lt;&#x2F;code&gt; one-liners. It eliminates line based duplicates while retaining the input order.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;ruby&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span&gt;$ cat purchases.txt
+&lt;&#x2F;span&gt;&lt;span&gt;coffee
+&lt;&#x2F;span&gt;&lt;span&gt;tea
+&lt;&#x2F;span&gt;&lt;span&gt;washing powder
+&lt;&#x2F;span&gt;&lt;span&gt;coffee
+&lt;&#x2F;span&gt;&lt;span&gt;tea
+&lt;&#x2F;span&gt;&lt;span&gt;coffee milkshake
+&lt;&#x2F;span&gt;&lt;span&gt;soap
+&lt;&#x2F;span&gt;&lt;span&gt;tea
+&lt;&#x2F;span&gt;&lt;span&gt;washing soda
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;$ awk &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;{print +a[$0] &amp;quot;\t&amp;quot; $0; a[$0]++}&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt; purchases.txt
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span&gt;	coffee
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span&gt;	tea
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span&gt;	washing powder
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span&gt;	coffee
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span&gt;	tea
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span&gt;	coffee milkshake
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span&gt;	soap
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;2&lt;&#x2F;span&gt;&lt;span&gt;	tea
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;0&lt;&#x2F;span&gt;&lt;span&gt;	washing soda
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# only the entries with zero in the first column will be retained
+&lt;&#x2F;span&gt;&lt;span&gt;$ awk &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;!a[$0]++&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt; purchases.txt
+&lt;&#x2F;span&gt;&lt;span&gt;coffee
+&lt;&#x2F;span&gt;&lt;span&gt;tea
+&lt;&#x2F;span&gt;&lt;span&gt;washing powder
+&lt;&#x2F;span&gt;&lt;span&gt;coffee milkshake
+&lt;&#x2F;span&gt;&lt;span&gt;soap
+&lt;&#x2F;span&gt;&lt;span&gt;washing soda
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;&lt;code&gt;a[$0]&lt;&#x2F;code&gt; creates an uninitialized element in array &lt;code&gt;a&lt;&#x2F;code&gt; with &lt;code&gt;$0&lt;&#x2F;code&gt; as the key (if the key doesn&#x27;t exist yet). Thus, &lt;code&gt;!a[$0]&lt;&#x2F;code&gt; will succeed only on the first occurrence of an item (since an uninitialized value is &lt;em&gt;falsy&lt;&#x2F;em&gt;) and the post-increment operator will ensure that further instances of an item will fail the conditional expression.&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;rebuild-0&quot;&gt;Rebuild $0&lt;a class=&quot;zola-anchor&quot; href=&quot;#rebuild-0&quot; aria-label=&quot;Anchor link for: rebuild-0&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Sometimes you just want to change the field separator, or perform some record-level text processing and then print it with a new field separator. In such cases, you&#x27;ll have to explicitly fake a field operation — otherwise the field separation update won&#x27;t happen for &lt;code&gt;$0&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;ruby&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span&gt;$ s=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;sample123string42with777numbers&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;$ echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot;$s&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span&gt; awk &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;F&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;[0-9]+&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt;v &lt;&#x2F;span&gt;&lt;span style=&quot;color:#c23f31;&quot;&gt;OFS&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span&gt;, &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;{$1=$1} 1&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;sample,string,with,numbers
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;$ echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot;$s&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span&gt; awk &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;F&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;[0-9]+&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt;v &lt;&#x2F;span&gt;&lt;span style=&quot;color:#c23f31;&quot;&gt;OFS&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;=- &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;{gsub(&#x2F;[aeiou]&#x2F;, &amp;quot;&amp;quot;); $1=$1} 1&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;smpl&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt;strng&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt;wth&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt;nmbrs
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;paragraph-mode&quot;&gt;Paragraph mode&lt;a class=&quot;zola-anchor&quot; href=&quot;#paragraph-mode&quot; aria-label=&quot;Anchor link for: paragraph-mode&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;When &lt;code&gt;RS&lt;&#x2F;code&gt; is set to an empty string, one or more consecutive empty lines is used as the input record separator.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;ruby&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span&gt;$ cat para.txt
+&lt;&#x2F;span&gt;&lt;span&gt;hello world
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;hi there
+&lt;&#x2F;span&gt;&lt;span&gt;how are you
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;just doing
+&lt;&#x2F;span&gt;&lt;span&gt;believe it
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;banana
+&lt;&#x2F;span&gt;&lt;span&gt;papaya
+&lt;&#x2F;span&gt;&lt;span&gt;mango
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;much ado about nothing
+&lt;&#x2F;span&gt;&lt;span&gt;he he he
+&lt;&#x2F;span&gt;&lt;span&gt;adios amigo
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# uninitialized variable &amp;#39;s&amp;#39; will be empty for the first match
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# afterwards, &amp;#39;s&amp;#39; will provide the empty line separation
+&lt;&#x2F;span&gt;&lt;span&gt;$ awk &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt;v &lt;&#x2F;span&gt;&lt;span style=&quot;color:#c23f31;&quot;&gt;RS&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;= &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&#x2F;do&#x2F;{print s $0; s=&amp;quot;\n&amp;quot;}&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt; para.txt
+&lt;&#x2F;span&gt;&lt;span&gt;just doing
+&lt;&#x2F;span&gt;&lt;span&gt;believe it
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;much ado about nothing
+&lt;&#x2F;span&gt;&lt;span&gt;he he he
+&lt;&#x2F;span&gt;&lt;span&gt;adios amigo
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;two-file-processing&quot;&gt;Two file processing&lt;a class=&quot;zola-anchor&quot; href=&quot;#two-file-processing&quot; aria-label=&quot;Anchor link for: two-file-processing&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;For two files as input, &lt;code&gt;NR==FNR&lt;&#x2F;code&gt; will be true only when the first file is being processed. The &lt;code&gt;next&lt;&#x2F;code&gt; statement will skip the rest of the code for the current record. &lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;ruby&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span&gt;$ cat marks.txt
+&lt;&#x2F;span&gt;&lt;span&gt;dept    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;name&lt;&#x2F;span&gt;&lt;span&gt;    marks
+&lt;&#x2F;span&gt;&lt;span&gt;ece     raj     &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;53
+&lt;&#x2F;span&gt;&lt;span&gt;ece     joel    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;72
+&lt;&#x2F;span&gt;&lt;span&gt;eee     moi     &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;68
+&lt;&#x2F;span&gt;&lt;span&gt;cse     surya   &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;81
+&lt;&#x2F;span&gt;&lt;span&gt;eee     tia     &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;59
+&lt;&#x2F;span&gt;&lt;span&gt;ece     om      &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;92
+&lt;&#x2F;span&gt;&lt;span&gt;cse     amy     &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;67
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;$ cat dept_mark.txt
+&lt;&#x2F;span&gt;&lt;span&gt;ece &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;70
+&lt;&#x2F;span&gt;&lt;span&gt;eee &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;65
+&lt;&#x2F;span&gt;&lt;span&gt;cse &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;80
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# match dept and minimum marks specified in dept_mark.txt
+&lt;&#x2F;span&gt;&lt;span&gt;$ awk &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;NR==FNR{d[$1]=$2; next}
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;       $1 in d &amp;amp;&amp;amp; $3 &amp;gt;= d[$1]&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt; dept_mark.txt marks.txt
+&lt;&#x2F;span&gt;&lt;span&gt;ece     joel    &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;72
+&lt;&#x2F;span&gt;&lt;span&gt;eee     moi     &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;68
+&lt;&#x2F;span&gt;&lt;span&gt;cse     surya   &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;81
+&lt;&#x2F;span&gt;&lt;span&gt;ece     om      &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;92
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;warning.svg&quot; alt=&quot;warning&quot; &#x2F;&gt; Note that the &lt;code&gt;NR==FNR&lt;&#x2F;code&gt; logic will fail if the first file is empty, since &lt;code&gt;NR&lt;&#x2F;code&gt; wouldn&#x27;t get a chance to increment. You can set a flag after the first file has been processed to avoid this issue — for example, &lt;code&gt;awk &#x27;!f{a[$0]; next} !($0 in a)&#x27; file1 f=1 file2&lt;&#x2F;code&gt;. See &lt;a href=&quot;https:&#x2F;&#x2F;unix.stackexchange.com&#x2F;a&#x2F;237110&#x2F;109046&quot;&gt;this unix.stackexchange thread&lt;&#x2F;a&gt; for more workarounds.&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;forcing-string-and-numeric-context&quot;&gt;Forcing string and numeric context&lt;a class=&quot;zola-anchor&quot; href=&quot;#forcing-string-and-numeric-context&quot; aria-label=&quot;Anchor link for: forcing-string-and-numeric-context&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Strings are automatically converted to a number when used in an arithmetic expression (for example, &lt;code&gt;&amp;quot;42&amp;quot; + 5&lt;&#x2F;code&gt;). You can use the unary &lt;code&gt;+&lt;&#x2F;code&gt; and &lt;code&gt;-&lt;&#x2F;code&gt; operators to force numeric context. If the string doesn&#x27;t start with a valid number (ignoring any starting whitespaces), it will be treated as &lt;code&gt;0&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;ruby&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span&gt;$ seq &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;3 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span&gt; awk &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;{sum += $0} END{print sum}&amp;#39;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;6
+&lt;&#x2F;span&gt;&lt;span&gt;$ awk &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;{sum += $0} END{print sum}&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&#x2F;&lt;&#x2F;span&gt;&lt;span&gt;dev&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&#x2F;&lt;&#x2F;span&gt;&lt;span&gt;null
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;$ awk &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;{sum += $0} END{print +sum}&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&#x2F;&lt;&#x2F;span&gt;&lt;span&gt;dev&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&#x2F;&lt;&#x2F;span&gt;&lt;span&gt;null
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;0
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Similarly, you can concatenate a string to a number to force string context.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;ruby&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span&gt;$ awk &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;BEGIN{n1=&amp;quot;5.0&amp;quot;; n2=5; if(n1==n2) print &amp;quot;equal&amp;quot;}&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;$ awk &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;BEGIN{n1=&amp;quot;5.0&amp;quot;; n2=5; if(n1==n2&amp;quot;.0&amp;quot;) print &amp;quot;equal&amp;quot;}&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;equal
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;See &lt;a href=&quot;https:&#x2F;&#x2F;www.gnu.org&#x2F;software&#x2F;gawk&#x2F;manual&#x2F;gawk.html#Strings-And-Numbers&quot;&gt;gawk manual: How awk Converts Between Strings and Numbers&lt;&#x2F;a&gt; for more details.&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;linux-cli-ebooks&quot;&gt;Linux CLI ebooks&lt;a class=&quot;zola-anchor&quot; href=&quot;#linux-cli-ebooks&quot; aria-label=&quot;Anchor link for: linux-cli-ebooks&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Check out &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;books&#x2F;&quot;&gt;my ebooks&lt;&#x2F;a&gt; if you are interested in learning more about Linux CLI basics, coreutils, text processing tools like &lt;code&gt;GNU grep&lt;&#x2F;code&gt;, &lt;code&gt;GNU sed&lt;&#x2F;code&gt;, &lt;code&gt;GNU awk&lt;&#x2F;code&gt; and &lt;code&gt;perl&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>OS installation woes</title>
 		<published>2025-02-12T00:00:00+00:00</published>
