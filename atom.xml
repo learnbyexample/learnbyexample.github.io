@@ -5,7 +5,7 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2025-02-20T00:00:00+00:00</updated>
+	<updated>2025-03-04T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
 	<entry xml:lang="en">
 		<title>GNU awk idioms explained</title>
@@ -188,7 +188,7 @@
 	<entry xml:lang="en">
 		<title>OS installation woes</title>
 		<published>2025-02-12T00:00:00+00:00</published>
-		<updated>2025-02-12T00:00:00+00:00</updated>
+		<updated>2025-03-04T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/mini/os-installation-woes/" type="text/html"/>
 		<id>https://learnbyexample.github.io/mini/os-installation-woes/</id>
 		<content type="html">&lt;p&gt;I prefer stability and thus I let my Linux LTS distributions to last almost till the entire end of support time. Having learned from previous transition periods, I started maintaining notes on what softwares I install&#x2F;purge and some of the customization stuff. This has vastly reduced the pain of a fresh OS installation, but the fact remains that there&#x27;ll always be some persistent and annoying trouble.&lt;&#x2F;p&gt;
@@ -209,6 +209,9 @@
 &lt;&#x2F;span&gt;&lt;span&gt;Terminal=false
 &lt;&#x2F;span&gt;&lt;span&gt;Hidden=false
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;&lt;strong&gt;Update:&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;The above solution didn&#x27;t work as I hoped. The screen setting would activate some of the time but most often it didn&#x27;t. I resorted to creating a keyboard shortcut, which I&#x27;d use when the activation failed.&lt;&#x2F;p&gt;
+&lt;p&gt;The terminal would always show up briefly on login though, which meant the issue wasn&#x27;t due to the autostart failing altogether. One day I happened to notice that the screen setting would actually take effect before immediately relapsing to the normal temperature. And thus I arrived at the current solution that hasn&#x27;t failed yet. I wrote a shell script that first used the &lt;code&gt;sleep&lt;&#x2F;code&gt; command to create a delay of one second before calling &lt;code&gt;xsct&lt;&#x2F;code&gt;. The autostart desktop entry now calls this script — again, using &lt;code&gt;xfce4-terminal -e&lt;&#x2F;code&gt; because for some reason calling the script directly still fails 🤷.&lt;&#x2F;p&gt;
 </content>
 	</entry>
 	<entry xml:lang="en">
