@@ -6,6 +6,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Posts
 
+* [CLI text processing with GNU awk book announcement](https://learnbyexample.github.io/cli-text-processing-awk-announcement/)
 * [GNU awk idioms explained](https://learnbyexample.github.io/awk-idioms-explained/)
 * [Understanding Python re(gex)? book announcement](https://learnbyexample.github.io/understanding-python-regex-announcement/)
 * [Coloring matched portions with GNU grep, sed and awk](https://learnbyexample.github.io/coloring-matched-portions-grep-sed-awk/)
@@ -23,7 +24,6 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 * [Festive offers for books on Python, Linux, Regular Expressions and more](https://learnbyexample.github.io/programming-deals-2023/)
 * [Understanding JavaScript RegExp book announcement](https://learnbyexample.github.io/understanding-javascript-regexp-announcement/)
 * [Perl One-Liners Guide book announcement](https://learnbyexample.github.io/perl-oneliners-guide-announcement/)
-* [CLI text processing with GNU awk book announcement](https://learnbyexample.github.io/cli-text-processing-awk-announcement/)
 * [Interactive exercises for GNU grep, sed and awk (TUI apps)](https://learnbyexample.github.io/interactive-grep-sed-awk-exercises/)
 * [CLI text processing with GNU sed book announcement](https://learnbyexample.github.io/cli-text-processing-sed-announcement/)
 * [CLI text processing with GNU grep and ripgrep book announcement](https://learnbyexample.github.io/cli-text-processing-grep-announcement/)
