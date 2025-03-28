@@ -7,7 +7,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 ## Posts
 
 * [CLI text processing with GNU awk book announcement](https://learnbyexample.github.io/cli-text-processing-awk-announcement/)
-* [GNU awk idioms explained](https://learnbyexample.github.io/awk-idioms-explained/)
+* [awk idioms explained](https://learnbyexample.github.io/awk-idioms-explained/)
 * [Understanding Python re(gex)? book announcement](https://learnbyexample.github.io/understanding-python-regex-announcement/)
 * [Coloring matched portions with GNU grep, sed and awk](https://learnbyexample.github.io/coloring-matched-portions-grep-sed-awk/)
 * [100 Page Python Intro book announcement](https://learnbyexample.github.io/100-page-python-intro-book-announcement/)

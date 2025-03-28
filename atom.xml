@@ -5,7 +5,7 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2025-03-26T00:00:00+00:00</updated>
+	<updated>2025-03-28T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
 	<entry xml:lang="en">
 		<title>CLI text processing with GNU awk book announcement</title>
@@ -95,12 +95,15 @@
 </content>
 	</entry>
 	<entry xml:lang="en">
-		<title>GNU awk idioms explained</title>
+		<title>awk idioms explained</title>
 		<published>2025-02-18T00:00:00+00:00</published>
-		<updated>2025-02-20T00:00:00+00:00</updated>
+		<updated>2025-03-28T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/awk-idioms-explained/" type="text/html"/>
 		<id>https://learnbyexample.github.io/awk-idioms-explained/</id>
 		<content type="html">&lt;p&gt;Do you find &lt;code&gt;awk&lt;&#x2F;code&gt; one-liners cryptic? Stuff like &lt;code&gt;!a[$0]++&lt;&#x2F;code&gt;, &lt;code&gt;1&lt;&#x2F;code&gt;, &lt;code&gt;$1=$1&lt;&#x2F;code&gt;, &lt;code&gt;NR==FNR&lt;&#x2F;code&gt; and &lt;code&gt;-v RS=&lt;&#x2F;code&gt;? You&#x27;ll find examples and brief explanations for such idioms in this post.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;warning.svg&quot; alt=&quot;warning&quot; &#x2F;&gt; The examples presented here have been tested with &lt;code&gt;GNU awk&lt;&#x2F;code&gt;. These are likely to work with most other implementations of &lt;code&gt;awk&lt;&#x2F;code&gt; as well.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
 &lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;&lt;br&gt;
 &lt;h2 id=&quot;awk-command-structure&quot;&gt;awk command structure&lt;a class=&quot;zola-anchor&quot; href=&quot;#awk-command-structure&quot; aria-label=&quot;Anchor link for: awk-command-structure&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
 &lt;pre style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot;&gt;&lt;code&gt;&lt;span&gt;awk &amp;#39;cond1{action1} cond2{action2} ... condN{actionN}&amp;#39;
