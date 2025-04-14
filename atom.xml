@@ -5,7 +5,7 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2025-03-28T00:00:00+00:00</updated>
+	<updated>2025-04-14T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
 	<entry xml:lang="en">
 		<title>CLI text processing with GNU awk book announcement</title>
@@ -403,7 +403,7 @@
 	<entry xml:lang="en">
 		<title>Coloring matched portions with GNU grep, sed and awk</title>
 		<published>2025-01-13T00:00:00+00:00</published>
-		<updated>2025-01-14T00:00:00+00:00</updated>
+		<updated>2025-04-14T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/coloring-matched-portions-grep-sed-awk/" type="text/html"/>
 		<id>https://learnbyexample.github.io/coloring-matched-portions-grep-sed-awk/</id>
 		<content type="html">&lt;p&gt;You might already know how to use the &lt;code&gt;--color&lt;&#x2F;code&gt; option to highlight matched portions with &lt;code&gt;GNU grep&lt;&#x2F;code&gt;. In this post, you&#x27;ll see how to use ANSI escape sequences to format matched portions with &lt;code&gt;GNU sed&lt;&#x2F;code&gt; and &lt;code&gt;GNU awk&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
@@ -477,7 +477,7 @@
 &lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;awk_color_field_processing.png&quot; alt=&quot;Color field processing results with GNU awk&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 &lt;br&gt;
 &lt;h2 id=&quot;linux-cli-ebooks&quot;&gt;Linux CLI ebooks&lt;a class=&quot;zola-anchor&quot; href=&quot;#linux-cli-ebooks&quot; aria-label=&quot;Anchor link for: linux-cli-ebooks&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
-&lt;p&gt;Check out &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;books&#x2F;&quot;&gt;my ebooks&lt;&#x2F;a&gt; if you are interested in learning more about Linux CLI basics, coreutils, text processing tools like &lt;code&gt;GNU grep&lt;&#x2F;code&gt;, &lt;code&gt;GNU sed&lt;&#x2F;code&gt;, &lt;code&gt;GNU awk&lt;&#x2F;code&gt; and &lt;code&gt;perl&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;Check out &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;books&#x2F;&quot;&gt;my ebooks&lt;&#x2F;a&gt; if you are interested in learning more about Linux CLI basics, coreutils, text processing tools like &lt;code&gt;GNU grep&lt;&#x2F;code&gt;, &lt;code&gt;GNU sed&lt;&#x2F;code&gt;, &lt;code&gt;GNU awk&lt;&#x2F;code&gt;, &lt;code&gt;perl&lt;&#x2F;code&gt; and more! You can get them all as a single bundle via &lt;a href=&quot;https:&#x2F;&#x2F;leanpub.com&#x2F;b&#x2F;learnbyexample-all-books&quot;&gt;leanpub&lt;&#x2F;a&gt; or &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;all-books&quot;&gt;gumroad&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 </content>
 	</entry>
 	<entry xml:lang="en">
