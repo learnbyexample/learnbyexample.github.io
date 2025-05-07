@@ -1,0 +1,142 @@
+<!doctype html><html lang=en><head><meta content="IE=edge" http-equiv=X-UA-Compatible><meta content="text/html; charset=utf-8" http-equiv=content-type><meta content="width=device-width,initial-scale=1.0,maximum-scale=1" name=viewport><title>Everything you need to know about sed substitution</title><link href=https://learnbyexample.github.io/atom.xml rel=alternate title=RSS type=application/atom+xml><script src=https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js></script><link href=https://learnbyexample.github.io/site.css rel=stylesheet><meta content="Everything you need to know about sed substitution" property=og:title><meta content=website property=og:type><meta content="Examples for search and replace with GNU sed." property=og:description><meta content=https://learnbyexample.github.io/everything-about-sed-substitution/ property=og:url><meta content=summary_large_image property=twitter:card><meta content=@learn_byexample property=twitter:site><link href=https://learnbyexample.github.io/favicon.svg rel=icon><link rel="shortcut icon" href=https://learnbyexample.github.io/favicon.png><body><div class=container><div class=mobile-navbar id=mobile-navbar><div class=mobile-header-logo><a class=logo href=/>learnbyexample</a></div><div class="mobile-navbar-icon icon-out"><span></span><span></span><span></span></div></div><nav class="mobile-menu slideout-menu slideout-menu-left" id=mobile-menu><ul class=mobile-menu-list><li class=mobile-menu-item><a href=https://learnbyexample.github.io/books> Books </a><li class=mobile-menu-item><a href=https://learnbyexample.github.io/mini> Mini </a><li class=mobile-menu-item><a href=https://learnbyexample.github.io/tips> Tips </a><li class=mobile-menu-item><a href=https://learnbyexample.github.io/tags> Tags </a><li class=mobile-menu-item><a href=https://learnbyexample.github.io/about> About </a></ul></nav><header id=header><div class=logo><a href=https://learnbyexample.github.io>learnbyexample</a></div><nav class=menu><ul><li><a href=https://learnbyexample.github.io/books> Books </a><li><a href=https://learnbyexample.github.io/mini> Mini </a><li><a href=https://learnbyexample.github.io/tips> Tips </a><li><a href=https://learnbyexample.github.io/tags> Tags </a><li><a href=https://learnbyexample.github.io/about> About </a></ul></nav></header><main><div class=content id=mobile-panel><div class=post-toc id=post-toc><h2 class=post-toc-title>Contents</h2><div class="post-toc-content always-active"><nav id=TableOfContents><ul><li><a class=toc-link href=https://learnbyexample.github.io/everything-about-sed-substitution/#basic-substitution>Basic Substitution</a><li><a class=toc-link href=https://learnbyexample.github.io/everything-about-sed-substitution/#filter-and-substitute>Filter and Substitute</a><li><a class=toc-link href=https://learnbyexample.github.io/everything-about-sed-substitution/#regular-expressions>Regular Expressions</a><li><a class=toc-link href=https://learnbyexample.github.io/everything-about-sed-substitution/#replace-specific-occurrences>Replace Specific Occurrences</a><li><a class=toc-link href=https://learnbyexample.github.io/everything-about-sed-substitution/#executing-external-commands>Executing External Commands</a><li><a class=toc-link href=https://learnbyexample.github.io/everything-about-sed-substitution/#different-delimiters>Different Delimiters</a><li><a class=toc-link href=https://learnbyexample.github.io/everything-about-sed-substitution/#in-place-editing>In-place Editing</a><li><a class=toc-link href=https://learnbyexample.github.io/everything-about-sed-substitution/#manipulating-newlines>Manipulating Newlines</a><li><a class=toc-link href=https://learnbyexample.github.io/everything-about-sed-substitution/#slurping-input>Slurping Input</a><li><a class=toc-link href=https://learnbyexample.github.io/everything-about-sed-substitution/#fixed-string-substitution>Fixed String Substitution</a><li><a class=toc-link href=https://learnbyexample.github.io/everything-about-sed-substitution/#programming-ebooks>Programming ebooks</a></ul></nav></div></div><article class=post><header class=post__header><h1 class=post__title><a href=https://learnbyexample.github.io/everything-about-sed-substitution/>Everything you need to know about sed substitution</a></h1><div class=post__meta><span class=post__time>2025-05-07</span></div></header><div class=post-content><p>The command name <code>sed</code> is derived from <strong>s</strong>tream <strong>ed</strong>itor. The most commonly used editing command is <strong>substitution</strong>, for which various examples are shown in this blog post.<blockquote><p><img alt=warning src=/images/warning.svg> The examples presented here have been tested with <code>GNU sed</code>. Syntax and features might differ for other implementations.</blockquote><span id=continue-reading></span><br><h2 id=basic-substitution>Basic Substitution<a aria-label="Anchor link for: basic-substitution" class=zola-anchor href=#basic-substitution>🔗</a></h2><p>The substitute command syntax is <code>s/REGEXP/REPLACEMENT/FLAGS</code> where:<ul><li><code>s</code> stands for the <strong>substitute</strong> command<li><code>/</code> is an idiomatic delimiter character to separate various portions of the command<li><code>REGEXP</code> is the <strong>regular expression</strong> that defines the search portion<li><code>REPLACEMENT</code> refers to the replacement string<li><code>FLAGS</code> are options to change the default behavior of the command</ul><pre class=language-ruby data-lang=ruby style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-ruby data-lang=ruby><span style=color:#7f8989;># for each input line, change only the first ',' to '-'
+</span><span>$ </span><span style=color:#b39f04;>printf </span><span style=color:#d07711;>'1,2,3,4\na,b,c,d\n' </span><span style=color:#72ab00;>|</span><span> sed </span><span style=color:#d07711;>'s/,/-/'
+</span><span style=color:#b3933a;>1</span><span style=color:#72ab00;>-</span><span style=color:#b3933a;>2</span><span>,</span><span style=color:#b3933a;>3</span><span>,</span><span style=color:#b3933a;>4
+</span><span>a</span><span style=color:#72ab00;>-</span><span>b,c,d
+</span><span>
+</span><span style=color:#7f8989;># you can change all the matches by adding the 'g' flag
+</span><span>$ </span><span style=color:#b39f04;>printf </span><span style=color:#d07711;>'1,2,3,4\na,b,c,d\n' </span><span style=color:#72ab00;>|</span><span> sed </span><span style=color:#d07711;>'s/,/=-=/g'
+</span><span style=color:#b3933a;>1</span><span style=color:#72ab00;>=-=</span><span style=color:#b3933a;>2</span><span style=color:#72ab00;>=-=</span><span style=color:#b3933a;>3</span><span style=color:#72ab00;>=-=</span><span style=color:#b3933a;>4
+</span><span>a=</span><span style=color:#72ab00;>-=</span><span>b=</span><span style=color:#72ab00;>-=</span><span>c=</span><span style=color:#72ab00;>-=</span><span>d
+</span></code></pre><br><h2 id=filter-and-substitute>Filter and Substitute<a aria-label="Anchor link for: filter-and-substitute" class=zola-anchor href=#filter-and-substitute>🔗</a></h2><p>You can use line numbers, regular expressions or a combination of them to select lines and then apply a command to these filtered lines. See the <a href=https://learnbyexample.github.io/learn_gnused/selective-editing.html>Selective editing</a> chapter from my ebook to learn more about the various kinds of addressing.<pre class=language-ruby data-lang=ruby style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-ruby data-lang=ruby><span style=color:#7f8989;># make changes only to the first line
+</span><span>$ </span><span style=color:#b39f04;>printf </span><span style=color:#d07711;>'1,2,3,4\na,b,c,d\n' </span><span style=color:#72ab00;>|</span><span> sed </span><span style=color:#d07711;>'1 s/,/::/g'
+</span><span style=color:#b3933a;>1</span><span>::</span><span style=color:#b3933a;>2</span><span>::</span><span style=color:#b3933a;>3</span><span>::</span><span style=color:#b3933a;>4
+</span><span>a,b,c,d
+</span><span>
+</span><span style=color:#7f8989;># apply substitution only if the input line does NOT contain '2'
+</span><span>$ </span><span style=color:#b39f04;>printf </span><span style=color:#d07711;>'1,2,3,4\na,b,c,d\n' </span><span style=color:#72ab00;>|</span><span> sed </span><span style=color:#d07711;>'/2/! s/,/-/g'
+</span><span style=color:#b3933a;>1</span><span>,</span><span style=color:#b3933a;>2</span><span>,</span><span style=color:#b3933a;>3</span><span>,</span><span style=color:#b3933a;>4
+</span><span>a</span><span style=color:#72ab00;>-</span><span>b</span><span style=color:#72ab00;>-</span><span>c</span><span style=color:#72ab00;>-</span><span>d
+</span></code></pre><br><h2 id=regular-expressions>Regular Expressions<a aria-label="Anchor link for: regular-expressions" class=zola-anchor href=#regular-expressions>🔗</a></h2><p>Only a handful of examples are shown here. See <a href=https://learnbyexample.github.io/learn_gnused/breere-regular-expressions.html>this chapter</a> from my ebook for a more detailed discussion. See <a href=https://learnbyexample.github.io/gnu-bre-ere-cheatsheet/>my blog post</a> for a cheatsheet.<p>Anchors:<pre class=language-ruby data-lang=ruby style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-ruby data-lang=ruby><span style=color:#7f8989;># lines starting with 'par'
+</span><span>$ </span><span style=color:#b39f04;>printf </span><span style=color:#d07711;>'car par\nparty\nspare\n' </span><span style=color:#72ab00;>|</span><span> sed </span><span style=color:#d07711;>'s/^par/tas/'
+</span><span>car par
+</span><span>tasty
+</span><span>spare
+</span><span>
+</span><span style=color:#7f8989;># words starting with 'par'
+</span><span>$ </span><span style=color:#b39f04;>printf </span><span style=color:#d07711;>'car par\nparty\nspare\n' </span><span style=color:#72ab00;>|</span><span> sed </span><span style=color:#d07711;>'s/\bpar/1234/'
+</span><span>car </span><span style=color:#b3933a;>1234
+</span><span>1234ty
+</span><span>spare
+</span></code></pre><p>Alternation and Grouping:<pre class=language-ruby data-lang=ruby style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-ruby data-lang=ruby><span style=color:#7f8989;># same as: sed -E 's/part|parrot|parent/X/g'
+</span><span style=color:#7f8989;># -E option enables ERE (default is BRE)
+</span><span>$ echo </span><span style=color:#d07711;>'par part parrot parent' </span><span style=color:#72ab00;>|</span><span> sed </span><span style=color:#72ab00;>-</span><span style=color:#5597d6;>E </span><span style=color:#d07711;>'s/par(en|ro)?t/X/g'
+</span><span>par </span><span style=color:#5597d6;>X X X
+</span></code></pre><p>Character Class and Quantifiers:<pre class=language-ruby data-lang=ruby style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-ruby data-lang=ruby><span style=color:#7f8989;># numbers >= 100 with optional leading zeros
+</span><span>$ echo </span><span style=color:#d07711;>'0501 035 154 12 26 98234' </span><span style=color:#72ab00;>|</span><span> sed </span><span style=color:#72ab00;>-</span><span style=color:#5597d6;>E </span><span style=color:#d07711;>'s/\b0*[1-9][0-9]{2,}\b/X/g'
+</span><span style=color:#5597d6;>X </span><span style=color:#b3933a;>035 </span><span style=color:#5597d6;>X </span><span style=color:#b3933a;>12 26 </span><span style=color:#5597d6;>X
+</span><span>
+</span><span style=color:#7f8989;># retain only punctuation characters
+</span><span>$ echo </span><span style=color:#d07711;>',pie tie#ink-eat_42' </span><span style=color:#72ab00;>|</span><span> sed </span><span style=color:#72ab00;>-</span><span style=color:#5597d6;>E </span><span style=color:#d07711;>'s/[^[:punct:]]+//g'
+</span><span>,</span><span style=color:#7f8989;>#-_
+</span></code></pre><p>Backreferences:<pre class=language-ruby data-lang=ruby style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-ruby data-lang=ruby><span style=color:#7f8989;># remove two or more duplicate words separated by spaces
+</span><span style=color:#7f8989;># \b prevents false matches like 'the theatre', 'sand and stone' etc
+</span><span>$ echo </span><span style=color:#d07711;>'aa a a a 42 f_1 f_1 f_13.14' </span><span style=color:#72ab00;>|</span><span> sed </span><span style=color:#72ab00;>-</span><span style=color:#5597d6;>E </span><span style=color:#d07711;>'s/\b(\w+)( \1)+\b/\1/g'
+</span><span>aa a </span><span style=color:#b3933a;>42</span><span> f_1 f_13.</span><span style=color:#b3933a;>14
+</span><span>
+</span><span style=color:#7f8989;># whole words that have at least one consecutive repeated character
+</span><span>$ echo </span><span style=color:#d07711;>'effort flee facade oddball rat tool' </span><span style=color:#72ab00;>|</span><span> sed </span><span style=color:#72ab00;>-</span><span style=color:#5597d6;>E </span><span style=color:#d07711;>'s/\w*(\w)\1\w*/X/g'
+</span><span style=color:#5597d6;>X X</span><span> facade </span><span style=color:#5597d6;>X</span><span> rat </span><span style=color:#5597d6;>X
+</span><span>
+</span><span style=color:#7f8989;># match lowercase followed by underscore followed by lowercase
+</span><span style=color:#7f8989;># delete the underscore and convert the 2nd lowercase to uppercase
+</span><span>$ echo </span><span style=color:#d07711;>'_fig aug_price next_line' </span><span style=color:#72ab00;>|</span><span> sed </span><span style=color:#72ab00;>-</span><span style=color:#5597d6;>E </span><span style=color:#d07711;>'s/([a-z])_([a-z])/\1\u\2/g'
+</span><span>_fig augPrice nextLine
+</span></code></pre><br><h2 id=replace-specific-occurrences>Replace Specific Occurrences<a aria-label="Anchor link for: replace-specific-occurrences" class=zola-anchor href=#replace-specific-occurrences>🔗</a></h2><p>You can use a <em>number</em> as a flag to replace only that particular occurrence of the search term. If you combine this with the <code>g</code> flag, all occurrences after that particular match will also be replaced.<pre class=language-ruby data-lang=ruby style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-ruby data-lang=ruby><span>$ s=</span><span style=color:#d07711;>'apple:banana:cherry:fig:mango'
+</span><span>
+</span><span style=color:#7f8989;># replace only the second occurrence
+</span><span>$ echo </span><span style=color:#d07711;>"$s" </span><span style=color:#72ab00;>|</span><span> sed </span><span style=color:#72ab00;>-</span><span style=color:#5597d6;>E </span><span style=color:#d07711;>'s/[^:]+/"&"/2'
+</span><span style=color:#b3933a;>apple:</span><span style=color:#d07711;>"banana"</span><span style=color:#b3933a;>:cherry:fig:mango
+</span><span>
+</span><span style=color:#7f8989;># replace all matches except the first occurrence
+</span><span>$ echo </span><span style=color:#d07711;>"$s" </span><span style=color:#72ab00;>|</span><span> sed </span><span style=color:#72ab00;>-</span><span style=color:#5597d6;>E </span><span style=color:#d07711;>'s/:/---/2g'
+</span><span style=color:#b3933a;>apple:</span><span>banana</span><span style=color:#72ab00;>---</span><span>cherry</span><span style=color:#72ab00;>---</span><span>fig</span><span style=color:#72ab00;>---</span><span>mango
+</span></code></pre><p>With the help of capture groups and backreferences, you can replace a specific occurrence from the end of the input line.<pre class=language-ruby data-lang=ruby style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-ruby data-lang=ruby><span>$ s=</span><span style=color:#d07711;>'car,art,pot,map,urn,ray,ear'
+</span><span>
+</span><span style=color:#7f8989;># replace the last occurrence
+</span><span>$ echo </span><span style=color:#d07711;>"$s" </span><span style=color:#72ab00;>|</span><span> sed </span><span style=color:#72ab00;>-</span><span style=color:#5597d6;>E </span><span style=color:#d07711;>'s/(.*),/\1[]/'
+</span><span>car,art,pot,map,urn,ray[]ear
+</span><span>
+</span><span style=color:#7f8989;># generic version, where {N} refers to last but Nth occurrence
+</span><span>$ echo </span><span style=color:#d07711;>"$s" </span><span style=color:#72ab00;>|</span><span> sed </span><span style=color:#72ab00;>-</span><span style=color:#5597d6;>E </span><span style=color:#d07711;>'s/(.*),((.*,){3})/\1[]\2/'
+</span><span>car,art,pot[]map,urn,ray,ear
+</span></code></pre><br><h2 id=executing-external-commands>Executing External Commands<a aria-label="Anchor link for: executing-external-commands" class=zola-anchor href=#executing-external-commands>🔗</a></h2><p>The <code>e</code> flag helps to insert the output of a shell command within <code>sed</code>.<pre class=language-ruby data-lang=ruby style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-ruby data-lang=ruby><span style=color:#7f8989;># replace the entire line with the output of a shell command
+</span><span>$ </span><span style=color:#b39f04;>printf </span><span style=color:#d07711;>'apple\nreplace this line\n' </span><span style=color:#72ab00;>|</span><span> sed </span><span style=color:#d07711;>'s/^replace.*/date/e'
+</span><span>apple
+</span><span style=color:#5597d6;>Wednesday </span><span style=color:#b3933a;>07 </span><span style=color:#5597d6;>May </span><span style=color:#b3933a;>2025 10</span><span style=color:#72ab00;>:</span><span style=color:#b3933a;>25</span><span style=color:#72ab00;>:</span><span style=color:#b3933a;>34 </span><span style=color:#5597d6;>AM IST
+</span><span>
+</span><span style=color:#7f8989;># after substitution, the command that gets executed is 'seq 3'
+</span><span>$ echo </span><span style=color:#d07711;>'xyz 3' </span><span style=color:#72ab00;>|</span><span> sed </span><span style=color:#d07711;>'s/xyz/seq/e'
+</span><span style=color:#b3933a;>1
+</span><span style=color:#b3933a;>2
+</span><span style=color:#b3933a;>3
+</span></code></pre><br><h2 id=different-delimiters>Different Delimiters<a aria-label="Anchor link for: different-delimiters" class=zola-anchor href=#different-delimiters>🔗</a></h2><p>The <code>/</code> character is idiomatically used as the REGEXP delimiter. But any character other than <code>\</code> and the newline character can be used instead.<pre class=language-ruby data-lang=ruby style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-ruby data-lang=ruby><span style=color:#7f8989;># instead of this
+</span><span>$ echo </span><span style=color:#d07711;>'/home/learnbyexample/reports' </span><span style=color:#72ab00;>|</span><span> sed </span><span style=color:#d07711;>'s/\/home\/learnbyexample\//~\//'
+</span><span style=color:#72ab00;>~/</span><span>reports
+</span><span>
+</span><span style=color:#7f8989;># use a different delimiter
+</span><span>$ echo </span><span style=color:#d07711;>'/home/learnbyexample/reports' </span><span style=color:#72ab00;>|</span><span> sed </span><span style=color:#d07711;>'s#/home/learnbyexample/#~/#'
+</span><span style=color:#72ab00;>~/</span><span>reports
+</span></code></pre><br><h2 id=in-place-editing>In-place Editing<a aria-label="Anchor link for: in-place-editing" class=zola-anchor href=#in-place-editing>🔗</a></h2><p>The <code>-i</code> option is helpful to write back the changes to the original files itself. If you don't provide an argument to this option, backup of the original file won't be created.<pre class=language-ruby data-lang=ruby style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-ruby data-lang=ruby><span>$ cat colors.txt
+</span><span>deep blue
+</span><span>light orange
+</span><span>blue delight
+</span><span>
+</span><span style=color:#7f8989;># no output on terminal as the -i option is used
+</span><span>$ sed </span><span style=color:#72ab00;>-</span><span>i.bkp </span><span style=color:#d07711;>'s/blue/green/'</span><span> colors.txt
+</span><span style=color:#7f8989;># output from sed is written back to 'colors.txt'
+</span><span>$ cat colors.txt
+</span><span>deep green
+</span><span>light orange
+</span><span>green delight
+</span><span>
+</span><span style=color:#7f8989;># original file is preserved in 'colors.txt.bkp'
+</span><span>$ cat colors.txt.bkp
+</span><span>deep blue
+</span><span>light orange
+</span><span>blue delight
+</span></code></pre><p><code>*</code> in the argument to the <code>-i</code> option will be replaced with the input filename. So, <code>-i'bkp.*'</code> for <code>f1.txt</code> will create <code>bkp.f1.txt</code> as the backup. And if you use <code>old/*</code>, the backups will be under the same name but under the directory <code>old</code> (provided that directory already exists).</p><br><h2 id=manipulating-newlines>Manipulating Newlines<a aria-label="Anchor link for: manipulating-newlines" class=zola-anchor href=#manipulating-newlines>🔗</a></h2><p>By default, <code>sed</code> reads the input line by line (with <code>\n</code> considered as the line ending). The newline character, if present, is removed and then added back when the pattern space is printed. Which implies that you cannot directly manipulate the newline character, unless you use features that results in more than one line in the pattern space.<pre class=language-ruby data-lang=ruby style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-ruby data-lang=ruby><span style=color:#7f8989;># append the next line to the pattern space
+</span><span style=color:#7f8989;># and then replace newline character with a colon character
+</span><span>$ seq </span><span style=color:#b3933a;>7 </span><span style=color:#72ab00;>|</span><span> sed </span><span style=color:#d07711;>'N; s/\n/:/'
+</span><span style=color:#b3933a;>1</span><span style=color:#72ab00;>:</span><span style=color:#b3933a;>2
+</span><span style=color:#b3933a;>3</span><span style=color:#72ab00;>:</span><span style=color:#b3933a;>4
+</span><span style=color:#b3933a;>5</span><span style=color:#72ab00;>:</span><span style=color:#b3933a;>6
+</span><span style=color:#b3933a;>7
+</span><span>
+</span><span style=color:#7f8989;># if line contains 'at', the next line gets appended to the pattern space
+</span><span style=color:#7f8989;># then the substitution is performed on the two lines in the buffer
+</span><span>$ </span><span style=color:#b39f04;>printf </span><span style=color:#d07711;>'gates\nnot\nused\n' </span><span style=color:#72ab00;>|</span><span> sed </span><span style=color:#d07711;>'/at/{N; s/s\nnot/d/}'
+</span><span>gated
+</span><span>used
+</span></code></pre><br><h2 id=slurping-input>Slurping Input<a aria-label="Anchor link for: slurping-input" class=zola-anchor href=#slurping-input>🔗</a></h2><p>If the input doesn't have NUL characters, then the <code>-z</code> option is handy to process the entire input as a single string. This is effective only for files small enough to fit the available machine memory. It would also depend on the regular expression, as some patterns have exponential relationship with respect to the data size.<pre class=language-ruby data-lang=ruby style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-ruby data-lang=ruby><span style=color:#7f8989;># add ; to the previous line if the current line starts with c
+</span><span>$ </span><span style=color:#b39f04;>printf </span><span style=color:#d07711;>'cater\ndog\ncoat\ncutter\nmat\n' </span><span style=color:#72ab00;>|</span><span> sed </span><span style=color:#72ab00;>-</span><span>z </span><span style=color:#d07711;>'s/\nc/;&/g'
+</span><span>cater
+</span><span>dog;
+</span><span>coat;
+</span><span>cutter
+</span><span>mat
+</span></code></pre><br><h2 id=fixed-string-substitution>Fixed String Substitution<a aria-label="Anchor link for: fixed-string-substitution" class=zola-anchor href=#fixed-string-substitution>🔗</a></h2><p>Typically, you'd need to escape <code>\</code>, <code>&</code> and the delimiter for the string used in the replacement section. For the search section, the characters to be escaped will depend upon whether you are using BRE or ERE.<pre class=language-ruby data-lang=ruby style=background-color:#f5f5f5;color:#1f1f1f;><code class=language-ruby data-lang=ruby><span style=color:#7f8989;># replacement string
+</span><span>$ r=</span><span style=color:#d07711;>'a/b&c\d'
+</span><span>$ r=$(</span><span style=color:#b39f04;>printf </span><span style=color:#d07711;>'</span><span style=color:#aeb52b;>%s</span><span style=color:#d07711;>' "$r" </span><span style=color:#72ab00;>|</span><span> sed </span><span style=color:#d07711;>'s#[\&/]#</span><span style=color:#aeb52b;>\\</span><span style=color:#d07711;>&#g'</span><span>)
+</span><span>
+</span><span style=color:#7f8989;># ERE version for the search string
+</span><span>$ s=</span><span style=color:#d07711;>'{[(\ta^b/d).*+?^$|]}'
+</span><span>$ s=$(</span><span style=color:#b39f04;>printf </span><span style=color:#d07711;>'</span><span style=color:#aeb52b;>%s</span><span style=color:#d07711;>' "$s" </span><span style=color:#72ab00;>|</span><span> sed </span><span style=color:#d07711;>'s#[{[()^$*?+.\|/]#</span><span style=color:#aeb52b;>\\</span><span style=color:#d07711;>&#g'</span><span>)
+</span><span>$ </span><span style=color:#b39f04;>printf </span><span style=color:#d07711;>'</span><span style=color:#aeb52b;>%s</span><span style=color:#d07711;>\n' 'f*{[(\ta^b/d).*+?^$|]} - 3' </span><span style=color:#72ab00;>|</span><span> sed </span><span style=color:#72ab00;>-</span><span style=color:#5597d6;>E </span><span style=color:#d07711;>'s/'"$s"'/'"$r"'/g'
+</span><span>f</span><span style=color:#72ab00;>*</span><span>a</span><span style=color:#72ab00;>/</span><span>b</span><span style=color:#72ab00;>&</span><span>c\d </span><span style=color:#72ab00;>- </span><span style=color:#b3933a;>3
+</span><span>
+</span><span style=color:#7f8989;># BRE version for the search string
+</span><span>$ s=</span><span style=color:#d07711;>'{[(\ta^b/d).*+?^$|]}'
+</span><span>$ s=$(</span><span style=color:#b39f04;>printf </span><span style=color:#d07711;>'</span><span style=color:#aeb52b;>%s</span><span style=color:#d07711;>' "$s" </span><span style=color:#72ab00;>|</span><span> sed </span><span style=color:#d07711;>'s#[[^$*.\/]#</span><span style=color:#aeb52b;>\\</span><span style=color:#d07711;>&#g'</span><span>)
+</span><span>$ </span><span style=color:#b39f04;>printf </span><span style=color:#d07711;>'</span><span style=color:#aeb52b;>%s</span><span style=color:#d07711;>\n' 'f*{[(\ta^b/d).*+?^$|]} - 3' </span><span style=color:#72ab00;>|</span><span> sed </span><span style=color:#d07711;>'s/'"$s"'/'"$r"'/g'
+</span><span>f</span><span style=color:#72ab00;>*</span><span>a</span><span style=color:#72ab00;>/</span><span>b</span><span style=color:#72ab00;>&</span><span>c\d </span><span style=color:#72ab00;>- </span><span style=color:#b3933a;>3
+</span></code></pre><p>See <a href=https://learnbyexample.github.io/multiline-search-and-replace/>my blog post</a> for multiline fixed string substitution examples.</p><br><h2 id=programming-ebooks>Programming ebooks<a aria-label="Anchor link for: programming-ebooks" class=zola-anchor href=#programming-ebooks>🔗</a></h2><p>Check out <a href=https://learnbyexample.github.io/books/>my ebooks</a> on Regular Expressions, Linux CLI tools, Python and Vim. You can get them all as a single bundle via <a href=https://leanpub.com/b/learnbyexample-all-books>leanpub</a> or <a href=https://learnbyexample.gumroad.com/l/all-books>gumroad</a>.</div><div class=post-footer><div class=post-tags><a href=https://learnbyexample.github.io/tags/gnu-sed/>#gnu-sed</a><a href=https://learnbyexample.github.io/tags/linux/>#linux</a></div><hr color=#e6e6e6><div class=post-nav><p><a class=next href=https://learnbyexample.github.io/cli-text-processing-awk-announcement/>CLI text processing with GNU awk book announcement →</a><br></div><hr color=#e6e6e6><p>📰 Use <a href=https://learnbyexample.github.io/atom.xml>this link</a> for the Atom feed. <br> ✅ Follow me on <a href=https://twitter.com/learn_byexample>Twitter</a>, <a href=https://github.com/learnbyexample>GitHub</a> and <a href=https://www.youtube.com/c/learnbyexample42>Youtube</a> for interesting tech nuggets. <br> 📧 Subscribe to <a href=https://learnbyexample.gumroad.com/l/learnbyexample-weekly>learnbyexample weekly</a> for programming resources, tips, tools, free ebooks and more (free newsletter, delivered every Friday).<hr color=#e6e6e6></div></article></div></main></div><script src=https://learnbyexample.github.io/even.js></script>

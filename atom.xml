@@ -5,8 +5,222 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2025-04-14T00:00:00+00:00</updated>
+	<updated>2025-05-07T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Everything you need to know about sed substitution</title>
+		<published>2025-05-07T00:00:00+00:00</published>
+		<updated>2025-05-07T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://learnbyexample.github.io/everything-about-sed-substitution/" type="text/html"/>
+		<id>https://learnbyexample.github.io/everything-about-sed-substitution/</id>
+		<content type="html">&lt;p&gt;The command name &lt;code&gt;sed&lt;&#x2F;code&gt; is derived from &lt;strong&gt;s&lt;&#x2F;strong&gt;tream &lt;strong&gt;ed&lt;&#x2F;strong&gt;itor. The most commonly used editing command is &lt;strong&gt;substitution&lt;&#x2F;strong&gt;, for which various examples are shown in this blog post.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;warning.svg&quot; alt=&quot;warning&quot; &#x2F;&gt; The examples presented here have been tested with &lt;code&gt;GNU sed&lt;&#x2F;code&gt;. Syntax and features might differ for other implementations.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;&lt;br&gt;
+&lt;h2 id=&quot;basic-substitution&quot;&gt;Basic Substitution&lt;a class=&quot;zola-anchor&quot; href=&quot;#basic-substitution&quot; aria-label=&quot;Anchor link for: basic-substitution&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;The substitute command syntax is &lt;code&gt;s&#x2F;REGEXP&#x2F;REPLACEMENT&#x2F;FLAGS&lt;&#x2F;code&gt; where:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;s&lt;&#x2F;code&gt; stands for the &lt;strong&gt;substitute&lt;&#x2F;strong&gt; command&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;&#x2F;&lt;&#x2F;code&gt; is an idiomatic delimiter character to separate various portions of the command&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;REGEXP&lt;&#x2F;code&gt; is the &lt;strong&gt;regular expression&lt;&#x2F;strong&gt; that defines the search portion&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;REPLACEMENT&lt;&#x2F;code&gt; refers to the replacement string&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;FLAGS&lt;&#x2F;code&gt; are options to change the default behavior of the command&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;pre data-lang=&quot;ruby&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# for each input line, change only the first &amp;#39;,&amp;#39; to &amp;#39;-&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;$ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;printf &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;1,2,3,4\na,b,c,d\n&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span&gt; sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;s&#x2F;,&#x2F;-&#x2F;&amp;#39;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;2&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;3&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;4
+&lt;&#x2F;span&gt;&lt;span&gt;a&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt;b,c,d
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# you can change all the matches by adding the &amp;#39;g&amp;#39; flag
+&lt;&#x2F;span&gt;&lt;span&gt;$ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;printf &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;1,2,3,4\na,b,c,d\n&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span&gt; sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;s&#x2F;,&#x2F;=-=&#x2F;g&amp;#39;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;=-=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;2&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;=-=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;3&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;=-=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;4
+&lt;&#x2F;span&gt;&lt;span&gt;a=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-=&lt;&#x2F;span&gt;&lt;span&gt;b=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-=&lt;&#x2F;span&gt;&lt;span&gt;c=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-=&lt;&#x2F;span&gt;&lt;span&gt;d
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;filter-and-substitute&quot;&gt;Filter and Substitute&lt;a class=&quot;zola-anchor&quot; href=&quot;#filter-and-substitute&quot; aria-label=&quot;Anchor link for: filter-and-substitute&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;You can use line numbers, regular expressions or a combination of them to select lines and then apply a command to these filtered lines. See the &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;learn_gnused&#x2F;selective-editing.html&quot;&gt;Selective editing&lt;&#x2F;a&gt; chapter from my ebook to learn more about the various kinds of addressing.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;ruby&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# make changes only to the first line
+&lt;&#x2F;span&gt;&lt;span&gt;$ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;printf &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;1,2,3,4\na,b,c,d\n&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span&gt; sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;1 s&#x2F;,&#x2F;::&#x2F;g&amp;#39;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span&gt;::&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;2&lt;&#x2F;span&gt;&lt;span&gt;::&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;3&lt;&#x2F;span&gt;&lt;span&gt;::&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;4
+&lt;&#x2F;span&gt;&lt;span&gt;a,b,c,d
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# apply substitution only if the input line does NOT contain &amp;#39;2&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;$ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;printf &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;1,2,3,4\na,b,c,d\n&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span&gt; sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&#x2F;2&#x2F;! s&#x2F;,&#x2F;-&#x2F;g&amp;#39;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;2&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;3&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;4
+&lt;&#x2F;span&gt;&lt;span&gt;a&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt;b&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt;c&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt;d
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;regular-expressions&quot;&gt;Regular Expressions&lt;a class=&quot;zola-anchor&quot; href=&quot;#regular-expressions&quot; aria-label=&quot;Anchor link for: regular-expressions&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Only a handful of examples are shown here. See &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;learn_gnused&#x2F;breere-regular-expressions.html&quot;&gt;this chapter&lt;&#x2F;a&gt; from my ebook for a more detailed discussion. See &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;gnu-bre-ere-cheatsheet&#x2F;&quot;&gt;my blog post&lt;&#x2F;a&gt; for a cheatsheet.&lt;&#x2F;p&gt;
+&lt;p&gt;Anchors:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;ruby&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# lines starting with &amp;#39;par&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;$ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;printf &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;car par\nparty\nspare\n&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span&gt; sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;s&#x2F;^par&#x2F;tas&#x2F;&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;car par
+&lt;&#x2F;span&gt;&lt;span&gt;tasty
+&lt;&#x2F;span&gt;&lt;span&gt;spare
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# words starting with &amp;#39;par&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;$ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;printf &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;car par\nparty\nspare\n&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span&gt; sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;s&#x2F;\bpar&#x2F;1234&#x2F;&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;car &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;1234
+&lt;&#x2F;span&gt;&lt;span&gt;1234ty
+&lt;&#x2F;span&gt;&lt;span&gt;spare
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Alternation and Grouping:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;ruby&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# same as: sed -E &amp;#39;s&#x2F;part|parrot|parent&#x2F;X&#x2F;g&amp;#39;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# -E option enables ERE (default is BRE)
+&lt;&#x2F;span&gt;&lt;span&gt;$ echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;par part parrot parent&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span&gt; sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;E &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;s&#x2F;par(en|ro)?t&#x2F;X&#x2F;g&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;par &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;X X X
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Character Class and Quantifiers:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;ruby&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# numbers &amp;gt;= 100 with optional leading zeros
+&lt;&#x2F;span&gt;&lt;span&gt;$ echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;0501 035 154 12 26 98234&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span&gt; sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;E &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;s&#x2F;\b0*[1-9][0-9]{2,}\b&#x2F;X&#x2F;g&amp;#39;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;X &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;035 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;X &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;12 26 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;X
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# retain only punctuation characters
+&lt;&#x2F;span&gt;&lt;span&gt;$ echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;,pie tie#ink-eat_42&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span&gt; sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;E &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;s&#x2F;[^[:punct:]]+&#x2F;&#x2F;g&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;#-_
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Backreferences:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;ruby&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# remove two or more duplicate words separated by spaces
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# \b prevents false matches like &amp;#39;the theatre&amp;#39;, &amp;#39;sand and stone&amp;#39; etc
+&lt;&#x2F;span&gt;&lt;span&gt;$ echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;aa a a a 42 f_1 f_1 f_13.14&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span&gt; sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;E &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;s&#x2F;\b(\w+)( \1)+\b&#x2F;\1&#x2F;g&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;aa a &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;42&lt;&#x2F;span&gt;&lt;span&gt; f_1 f_13.&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;14
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# whole words that have at least one consecutive repeated character
+&lt;&#x2F;span&gt;&lt;span&gt;$ echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;effort flee facade oddball rat tool&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span&gt; sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;E &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;s&#x2F;\w*(\w)\1\w*&#x2F;X&#x2F;g&amp;#39;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;X X&lt;&#x2F;span&gt;&lt;span&gt; facade &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;X&lt;&#x2F;span&gt;&lt;span&gt; rat &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;X
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# match lowercase followed by underscore followed by lowercase
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# delete the underscore and convert the 2nd lowercase to uppercase
+&lt;&#x2F;span&gt;&lt;span&gt;$ echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;_fig aug_price next_line&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span&gt; sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;E &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;s&#x2F;([a-z])_([a-z])&#x2F;\1\u\2&#x2F;g&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;_fig augPrice nextLine
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;replace-specific-occurrences&quot;&gt;Replace Specific Occurrences&lt;a class=&quot;zola-anchor&quot; href=&quot;#replace-specific-occurrences&quot; aria-label=&quot;Anchor link for: replace-specific-occurrences&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;You can use a &lt;em&gt;number&lt;&#x2F;em&gt; as a flag to replace only that particular occurrence of the search term. If you combine this with the &lt;code&gt;g&lt;&#x2F;code&gt; flag, all occurrences after that particular match will also be replaced.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;ruby&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span&gt;$ s=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;apple:banana:cherry:fig:mango&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# replace only the second occurrence
+&lt;&#x2F;span&gt;&lt;span&gt;$ echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot;$s&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span&gt; sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;E &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;s&#x2F;[^:]+&#x2F;&amp;quot;&amp;amp;&amp;quot;&#x2F;2&amp;#39;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;apple:&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot;banana&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;:cherry:fig:mango
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# replace all matches except the first occurrence
+&lt;&#x2F;span&gt;&lt;span&gt;$ echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot;$s&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span&gt; sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;E &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;s&#x2F;:&#x2F;---&#x2F;2g&amp;#39;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;apple:&lt;&#x2F;span&gt;&lt;span&gt;banana&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;---&lt;&#x2F;span&gt;&lt;span&gt;cherry&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;---&lt;&#x2F;span&gt;&lt;span&gt;fig&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;---&lt;&#x2F;span&gt;&lt;span&gt;mango
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;With the help of capture groups and backreferences, you can replace a specific occurrence from the end of the input line.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;ruby&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span&gt;$ s=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;car,art,pot,map,urn,ray,ear&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# replace the last occurrence
+&lt;&#x2F;span&gt;&lt;span&gt;$ echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot;$s&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span&gt; sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;E &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;s&#x2F;(.*),&#x2F;\1[]&#x2F;&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;car,art,pot,map,urn,ray[]ear
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# generic version, where {N} refers to last but Nth occurrence
+&lt;&#x2F;span&gt;&lt;span&gt;$ echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot;$s&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span&gt; sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;E &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;s&#x2F;(.*),((.*,){3})&#x2F;\1[]\2&#x2F;&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;car,art,pot[]map,urn,ray,ear
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;executing-external-commands&quot;&gt;Executing External Commands&lt;a class=&quot;zola-anchor&quot; href=&quot;#executing-external-commands&quot; aria-label=&quot;Anchor link for: executing-external-commands&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;The &lt;code&gt;e&lt;&#x2F;code&gt; flag helps to insert the output of a shell command within &lt;code&gt;sed&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;ruby&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# replace the entire line with the output of a shell command
+&lt;&#x2F;span&gt;&lt;span&gt;$ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;printf &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;apple\nreplace this line\n&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span&gt; sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;s&#x2F;^replace.*&#x2F;date&#x2F;e&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;apple
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Wednesday &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;07 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;May &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;2025 10&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;25&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;34 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;AM IST
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# after substitution, the command that gets executed is &amp;#39;seq 3&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;$ echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;xyz 3&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span&gt; sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;s&#x2F;xyz&#x2F;seq&#x2F;e&amp;#39;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;1
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;2
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;3
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;different-delimiters&quot;&gt;Different Delimiters&lt;a class=&quot;zola-anchor&quot; href=&quot;#different-delimiters&quot; aria-label=&quot;Anchor link for: different-delimiters&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;The &lt;code&gt;&#x2F;&lt;&#x2F;code&gt; character is idiomatically used as the REGEXP delimiter. But any character other than &lt;code&gt;\&lt;&#x2F;code&gt; and the newline character can be used instead.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;ruby&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# instead of this
+&lt;&#x2F;span&gt;&lt;span&gt;$ echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&#x2F;home&#x2F;learnbyexample&#x2F;reports&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span&gt; sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;s&#x2F;\&#x2F;home\&#x2F;learnbyexample\&#x2F;&#x2F;~\&#x2F;&#x2F;&amp;#39;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;~&#x2F;&lt;&#x2F;span&gt;&lt;span&gt;reports
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# use a different delimiter
+&lt;&#x2F;span&gt;&lt;span&gt;$ echo &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&#x2F;home&#x2F;learnbyexample&#x2F;reports&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span&gt; sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;s#&#x2F;home&#x2F;learnbyexample&#x2F;#~&#x2F;#&amp;#39;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;~&#x2F;&lt;&#x2F;span&gt;&lt;span&gt;reports
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;in-place-editing&quot;&gt;In-place Editing&lt;a class=&quot;zola-anchor&quot; href=&quot;#in-place-editing&quot; aria-label=&quot;Anchor link for: in-place-editing&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;The &lt;code&gt;-i&lt;&#x2F;code&gt; option is helpful to write back the changes to the original files itself. If you don&#x27;t provide an argument to this option, backup of the original file won&#x27;t be created.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;ruby&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span&gt;$ cat colors.txt
+&lt;&#x2F;span&gt;&lt;span&gt;deep blue
+&lt;&#x2F;span&gt;&lt;span&gt;light orange
+&lt;&#x2F;span&gt;&lt;span&gt;blue delight
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# no output on terminal as the -i option is used
+&lt;&#x2F;span&gt;&lt;span&gt;$ sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt;i.bkp &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;s&#x2F;blue&#x2F;green&#x2F;&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt; colors.txt
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# output from sed is written back to &amp;#39;colors.txt&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;$ cat colors.txt
+&lt;&#x2F;span&gt;&lt;span&gt;deep green
+&lt;&#x2F;span&gt;&lt;span&gt;light orange
+&lt;&#x2F;span&gt;&lt;span&gt;green delight
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# original file is preserved in &amp;#39;colors.txt.bkp&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;$ cat colors.txt.bkp
+&lt;&#x2F;span&gt;&lt;span&gt;deep blue
+&lt;&#x2F;span&gt;&lt;span&gt;light orange
+&lt;&#x2F;span&gt;&lt;span&gt;blue delight
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;&lt;code&gt;*&lt;&#x2F;code&gt; in the argument to the &lt;code&gt;-i&lt;&#x2F;code&gt; option will be replaced with the input filename. So, &lt;code&gt;-i&#x27;bkp.*&#x27;&lt;&#x2F;code&gt; for &lt;code&gt;f1.txt&lt;&#x2F;code&gt; will create &lt;code&gt;bkp.f1.txt&lt;&#x2F;code&gt; as the backup. And if you use &lt;code&gt;old&#x2F;*&lt;&#x2F;code&gt;, the backups will be under the same name but under the directory &lt;code&gt;old&lt;&#x2F;code&gt; (provided that directory already exists).&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;manipulating-newlines&quot;&gt;Manipulating Newlines&lt;a class=&quot;zola-anchor&quot; href=&quot;#manipulating-newlines&quot; aria-label=&quot;Anchor link for: manipulating-newlines&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;By default, &lt;code&gt;sed&lt;&#x2F;code&gt; reads the input line by line (with &lt;code&gt;\n&lt;&#x2F;code&gt; considered as the line ending). The newline character, if present, is removed and then added back when the pattern space is printed. Which implies that you cannot directly manipulate the newline character, unless you use features that results in more than one line in the pattern space.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;ruby&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# append the next line to the pattern space
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# and then replace newline character with a colon character
+&lt;&#x2F;span&gt;&lt;span&gt;$ seq &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;7 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span&gt; sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;N; s&#x2F;\n&#x2F;:&#x2F;&amp;#39;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;2
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;3&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;4
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;5&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;6
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;7
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# if line contains &amp;#39;at&amp;#39;, the next line gets appended to the pattern space
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# then the substitution is performed on the two lines in the buffer
+&lt;&#x2F;span&gt;&lt;span&gt;$ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;printf &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;gates\nnot\nused\n&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span&gt; sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&#x2F;at&#x2F;{N; s&#x2F;s\nnot&#x2F;d&#x2F;}&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;gated
+&lt;&#x2F;span&gt;&lt;span&gt;used
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;slurping-input&quot;&gt;Slurping Input&lt;a class=&quot;zola-anchor&quot; href=&quot;#slurping-input&quot; aria-label=&quot;Anchor link for: slurping-input&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;If the input doesn&#x27;t have NUL characters, then the &lt;code&gt;-z&lt;&#x2F;code&gt; option is handy to process the entire input as a single string. This is effective only for files small enough to fit the available machine memory. It would also depend on the regular expression, as some patterns have exponential relationship with respect to the data size.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;ruby&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# add ; to the previous line if the current line starts with c
+&lt;&#x2F;span&gt;&lt;span&gt;$ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;printf &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;cater\ndog\ncoat\ncutter\nmat\n&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span&gt; sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt;z &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;s&#x2F;\nc&#x2F;;&amp;amp;&#x2F;g&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;cater
+&lt;&#x2F;span&gt;&lt;span&gt;dog;
+&lt;&#x2F;span&gt;&lt;span&gt;coat;
+&lt;&#x2F;span&gt;&lt;span&gt;cutter
+&lt;&#x2F;span&gt;&lt;span&gt;mat
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;fixed-string-substitution&quot;&gt;Fixed String Substitution&lt;a class=&quot;zola-anchor&quot; href=&quot;#fixed-string-substitution&quot; aria-label=&quot;Anchor link for: fixed-string-substitution&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Typically, you&#x27;d need to escape &lt;code&gt;\&lt;&#x2F;code&gt;, &lt;code&gt;&amp;amp;&lt;&#x2F;code&gt; and the delimiter for the string used in the replacement section. For the search section, the characters to be escaped will depend upon whether you are using BRE or ERE.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;ruby&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# replacement string
+&lt;&#x2F;span&gt;&lt;span&gt;$ r=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;a&#x2F;b&amp;amp;c\d&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;$ r=$(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;printf &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#aeb52b;&quot;&gt;%s&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39; &amp;quot;$r&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span&gt; sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;s#[\&amp;amp;&#x2F;]#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#aeb52b;&quot;&gt;\\&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;amp;#g&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# ERE version for the search string
+&lt;&#x2F;span&gt;&lt;span&gt;$ s=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;{[(\ta^b&#x2F;d).*+?^$|]}&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;$ s=$(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;printf &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#aeb52b;&quot;&gt;%s&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39; &amp;quot;$s&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span&gt; sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;s#[{[()^$*?+.\|&#x2F;]#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#aeb52b;&quot;&gt;\\&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;amp;#g&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;$ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;printf &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#aeb52b;&quot;&gt;%s&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;\n&amp;#39; &amp;#39;f*{[(\ta^b&#x2F;d).*+?^$|]} - 3&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span&gt; sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;E &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;s&#x2F;&amp;#39;&amp;quot;$s&amp;quot;&amp;#39;&#x2F;&amp;#39;&amp;quot;$r&amp;quot;&amp;#39;&#x2F;g&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;f&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span&gt;a&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&#x2F;&lt;&#x2F;span&gt;&lt;span&gt;b&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;amp;&lt;&#x2F;span&gt;&lt;span&gt;c\d &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;- &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;3
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# BRE version for the search string
+&lt;&#x2F;span&gt;&lt;span&gt;$ s=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;{[(\ta^b&#x2F;d).*+?^$|]}&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;$ s=$(&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;printf &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#aeb52b;&quot;&gt;%s&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39; &amp;quot;$s&amp;quot; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span&gt; sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;s#[[^$*.\&#x2F;]#&lt;&#x2F;span&gt;&lt;span style=&quot;color:#aeb52b;&quot;&gt;\\&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;amp;#g&amp;#39;&lt;&#x2F;span&gt;&lt;span&gt;)
+&lt;&#x2F;span&gt;&lt;span&gt;$ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;printf &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#aeb52b;&quot;&gt;%s&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;\n&amp;#39; &amp;#39;f*{[(\ta^b&#x2F;d).*+?^$|]} - 3&amp;#39; &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;|&lt;&#x2F;span&gt;&lt;span&gt; sed &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;s&#x2F;&amp;#39;&amp;quot;$s&amp;quot;&amp;#39;&#x2F;&amp;#39;&amp;quot;$r&amp;quot;&amp;#39;&#x2F;g&amp;#39;
+&lt;&#x2F;span&gt;&lt;span&gt;f&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;*&lt;&#x2F;span&gt;&lt;span&gt;a&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&#x2F;&lt;&#x2F;span&gt;&lt;span&gt;b&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;amp;&lt;&#x2F;span&gt;&lt;span&gt;c\d &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;- &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;3
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;See &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;multiline-search-and-replace&#x2F;&quot;&gt;my blog post&lt;&#x2F;a&gt; for multiline fixed string substitution examples.&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;programming-ebooks&quot;&gt;Programming ebooks&lt;a class=&quot;zola-anchor&quot; href=&quot;#programming-ebooks&quot; aria-label=&quot;Anchor link for: programming-ebooks&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Check out &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;books&#x2F;&quot;&gt;my ebooks&lt;&#x2F;a&gt; on Regular Expressions, Linux CLI tools, Python and Vim. You can get them all as a single bundle via &lt;a href=&quot;https:&#x2F;&#x2F;leanpub.com&#x2F;b&#x2F;learnbyexample-all-books&quot;&gt;leanpub&lt;&#x2F;a&gt; or &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;all-books&quot;&gt;gumroad&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>CLI text processing with GNU awk book announcement</title>
 		<published>2025-03-26T00:00:00+00:00</published>
