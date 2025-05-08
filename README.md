@@ -6,6 +6,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Posts
 
+* [Everything you need to know about sed substitution](https://learnbyexample.github.io/everything-about-sed-substitution/)
 * [CLI text processing with GNU awk book announcement](https://learnbyexample.github.io/cli-text-processing-awk-announcement/)
 * [awk idioms explained](https://learnbyexample.github.io/awk-idioms-explained/)
 * [Understanding Python re(gex)? book announcement](https://learnbyexample.github.io/understanding-python-regex-announcement/)
