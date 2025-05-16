@@ -5,7 +5,7 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2025-05-15T00:00:00+00:00</updated>
+	<updated>2025-05-16T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
 	<entry xml:lang="en">
 		<title>Everything you need to know about sed substitution</title>
@@ -1216,7 +1216,7 @@
 	<entry xml:lang="en">
 		<title>CLI computation with GNU datamash</title>
 		<published>2024-04-09T00:00:00+00:00</published>
-		<updated>2024-08-21T00:00:00+00:00</updated>
+		<updated>2025-05-16T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/cli-computation-gnu-datamash/" type="text/html"/>
 		<id>https://learnbyexample.github.io/cli-computation-gnu-datamash/</id>
 		<content type="html">&lt;p&gt;I&#x27;m hoping this post will serve as a quick reference for some of the use cases and tickle your curiosity if you haven&#x27;t come across this nifty CLI text processing tool yet. There are also links for further reading at the end.&lt;&#x2F;p&gt;
@@ -1250,7 +1250,7 @@
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;p&gt;Other such operations include &lt;code&gt;count&lt;&#x2F;code&gt;, &lt;code&gt;min&lt;&#x2F;code&gt;, &lt;code&gt;max&lt;&#x2F;code&gt;, &lt;code&gt;mean&lt;&#x2F;code&gt;, &lt;code&gt;median&lt;&#x2F;code&gt;, &lt;code&gt;sstdev&lt;&#x2F;code&gt; (standard deviation), etc.&lt;&#x2F;p&gt;
 &lt;br&gt;
-&lt;h2 id=&quot;transpose&quot;&gt;Transpose&lt;a class=&quot;zola-anchor&quot; href=&quot;#transpose&quot; aria-label=&quot;Anchor link for: transpose&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;h2 id=&quot;transpose-and-reverse&quot;&gt;Transpose and Reverse&lt;a class=&quot;zola-anchor&quot; href=&quot;#transpose-and-reverse&quot; aria-label=&quot;Anchor link for: transpose-and-reverse&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
 &lt;pre data-lang=&quot;ruby&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-ruby &quot;&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span&gt;$ cat scores.csv
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Name&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Maths&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Physics&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Chemistry
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Ith&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;100&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;100&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;100
@@ -1258,11 +1258,20 @@
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Lin&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;78&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;83&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;80
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Er&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;60&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;70&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;90
 &lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# interchange rows and columns
 &lt;&#x2F;span&gt;&lt;span&gt;$ datamash &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt;t, transpose &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span&gt;scores.csv
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Name&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Ith&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Cy&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Lin&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Er
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Maths&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;100&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;97&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;78&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;60
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Physics&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;100&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;98&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;83&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;70
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Chemistry&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;100&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;95&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;80&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;90
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# reverse columns
+&lt;&#x2F;span&gt;&lt;span&gt;$ datamash &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt;t, reverse &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;lt;&lt;&#x2F;span&gt;&lt;span&gt;scores.csv
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Chemistry&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Physics&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Maths&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Name
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;100&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;100&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;100&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Ith
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;95&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;98&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;97&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Cy
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;80&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;83&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;78&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Lin
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;90&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;70&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;60&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Er
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
 &lt;br&gt;
 &lt;h2 id=&quot;group-by&quot;&gt;Group by&lt;a class=&quot;zola-anchor&quot; href=&quot;#group-by&quot; aria-label=&quot;Anchor link for: group-by&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
@@ -5435,7 +5444,7 @@ Specifying a greater than &lt;code&gt;0&lt;&#x2F;code&gt; start index when using
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Physics&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;100&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;98&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;83&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;70
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;Chemistry&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;100&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;95&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;80&lt;&#x2F;span&gt;&lt;span&gt;,&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b3933a;&quot;&gt;90
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See also &lt;a href=&quot;https:&#x2F;&#x2F;unix.stackexchange.com&#x2F;q&#x2F;308631&#x2F;109046&quot;&gt;unix.stackexchange: How to process an x-column text file to get a y-column one?&lt;&#x2F;a&gt; for many more ways to deal with such problems.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See also &lt;a href=&quot;https:&#x2F;&#x2F;unix.stackexchange.com&#x2F;q&#x2F;308631&#x2F;109046&quot;&gt;unix.stackexchange: How to process an x-column text file to get a y-column one?&lt;&#x2F;a&gt; for many more ways to deal with such problems. See &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;cli-computation-gnu-datamash&#x2F;&quot;&gt;my blog post&lt;&#x2F;a&gt; for examples and resource links on the GNU datamash command.&lt;&#x2F;p&gt;
 &lt;p&gt;&lt;strong&gt;Video demo&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
 &lt;p align=&quot;center&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; loading=&quot;lazy&quot; src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;vFMMjTICMJg&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;&#x2F;iframe&gt;&lt;&#x2F;p&gt;
 &lt;br&gt;
