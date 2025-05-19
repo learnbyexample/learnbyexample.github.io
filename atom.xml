@@ -5,8 +5,275 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2025-05-16T00:00:00+00:00</updated>
+	<updated>2025-05-19T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Customizing pandoc to generate beautiful pdf and epub from markdown</title>
+		<published>2025-05-19T00:00:00+00:00</published>
+		<updated>2025-05-19T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://learnbyexample.github.io/customizing-pandoc/" type="text/html"/>
+		<id>https://learnbyexample.github.io/customizing-pandoc/</id>
+		<content type="html">&lt;p&gt;Either you&#x27;ve already heard of &lt;code&gt;pandoc&lt;&#x2F;code&gt; or if you have searched online for &lt;code&gt;markdown&lt;&#x2F;code&gt; to &lt;code&gt;pdf&lt;&#x2F;code&gt; or similar, you are sure to come across &lt;code&gt;pandoc&lt;&#x2F;code&gt;. This tutorial will help you use &lt;code&gt;pandoc&lt;&#x2F;code&gt; to generate &lt;code&gt;pdf&lt;&#x2F;code&gt; and &lt;code&gt;epub&lt;&#x2F;code&gt; versions from a &lt;a href=&quot;https:&#x2F;&#x2F;github.github.com&#x2F;gfm&#x2F;&quot;&gt;GitHub style markdown&lt;&#x2F;a&gt; file.&lt;&#x2F;p&gt;
+&lt;p&gt;The main motivation for this blog post is to highlight the customizations I used for &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;books&#x2F;&quot;&gt;self-publishing my ebooks&lt;&#x2F;a&gt;. It wasn&#x27;t easy to arrive at the setup I ended up with, so I hope this will be useful for those looking to use &lt;code&gt;pandoc&lt;&#x2F;code&gt; for such a purpose. This guide is specifically aimed at technical books that has code snippets.&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;pandoc_pdf&#x2F;customizing_pandoc.png&quot; alt=&quot;Customizing pandoc&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;i&gt;Poster created using &lt;a href=&quot;https:&#x2F;&#x2F;www.canva.com&#x2F;&quot;&gt;Canva&lt;&#x2F;a&gt;&lt;&#x2F;i&gt;&lt;&#x2F;p&gt;
+&lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;&lt;br&gt;
+&lt;h2 id=&quot;installation&quot;&gt;Installation&lt;a class=&quot;zola-anchor&quot; href=&quot;#installation&quot; aria-label=&quot;Anchor link for: installation&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;If you use a debian based distro like Ubuntu, the below steps are enough for the demos in this tutorial. If you get an error or warning, search that issue online and you&#x27;ll likely find what else has to be installed.&lt;&#x2F;p&gt;
+&lt;p&gt;I first downloaded &lt;code&gt;deb&lt;&#x2F;code&gt; file from &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;jgm&#x2F;pandoc&#x2F;releases&quot;&gt;pandoc: releases&lt;&#x2F;a&gt; and installed it. Followed by packages needed for &lt;code&gt;pdf&lt;&#x2F;code&gt; generation.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# latest pandoc version as of 19 May 2025
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; sudo gdebi &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;~&lt;&#x2F;span&gt;&lt;span&gt;&#x2F;Downloads&#x2F;pandoc-3.7.0.1-1-amd64.deb
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# note that download size is hundreds of MB
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; sudo apt install texlive-xetex
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; sudo apt install librsvg2-bin
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; sudo apt install texlive-science
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;For more details and instructions for other operating systems, refer to &lt;a href=&quot;https:&#x2F;&#x2F;pandoc.org&#x2F;installing.html&quot;&gt;pandoc: installation&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;minimal-example&quot;&gt;Minimal example&lt;a class=&quot;zola-anchor&quot; href=&quot;#minimal-example&quot; aria-label=&quot;Anchor link for: minimal-example&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Once &lt;code&gt;pandoc&lt;&#x2F;code&gt; is working on your system, try generating a sample &lt;code&gt;pdf&lt;&#x2F;code&gt; without any customization.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;learnbyexample.github.io&#x2F;tree&#x2F;master&#x2F;files&#x2F;pandoc_pdf&quot;&gt;learnbyexample.github.io repo&lt;&#x2F;a&gt; for all the input and output files referred in this tutorial.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; pandoc sample_1.md&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt; -f&lt;&#x2F;span&gt;&lt;span&gt; gfm&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt; -o&lt;&#x2F;span&gt;&lt;span&gt; sample_1.pdf
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Here &lt;code&gt;sample_1.md&lt;&#x2F;code&gt; is input markdown file and &lt;code&gt;-f&lt;&#x2F;code&gt; is used to specify that the input format is GitHub style markdown. The &lt;code&gt;-o&lt;&#x2F;code&gt; option specifies the output file type based on extension. The default output is probably good enough. But I wished to customize hyperlinks, inline code style, add page breaks between chapters, etc. This blog post will discuss these customizations one by one.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; &lt;code&gt;pandoc&lt;&#x2F;code&gt; has its own flavor of &lt;code&gt;markdown&lt;&#x2F;code&gt; with many useful extensions — see &lt;a href=&quot;https:&#x2F;&#x2F;pandoc.org&#x2F;MANUAL.html#pandocs-markdown&quot;&gt;pandoc: pandocs-markdown&lt;&#x2F;a&gt; for details. GitHub style markdown is recommended if you wish to use the same source (or with minor changes) in multiple places.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; It is advised to use &lt;code&gt;markdown&lt;&#x2F;code&gt; headers in order without skipping — for example, &lt;code&gt;H1&lt;&#x2F;code&gt; for chapter heading and &lt;code&gt;H2&lt;&#x2F;code&gt; for chapter sub-section, etc is fine. &lt;code&gt;H1&lt;&#x2F;code&gt; for chapter heading and &lt;code&gt;H3&lt;&#x2F;code&gt; for sub-section is not. Using the former can give automatic index navigation on ebook readers.&lt;&#x2F;p&gt;
+&lt;p&gt;On &lt;a href=&quot;https:&#x2F;&#x2F;wiki.gnome.org&#x2F;Apps&#x2F;Evince&quot;&gt;Evince&lt;&#x2F;a&gt; reader, the index navigation for above sample looks like this:&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;pandoc_pdf&#x2F;chapter_index.png&quot; alt=&quot;index navigation&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;chapter-breaks&quot;&gt;Chapter breaks&lt;a class=&quot;zola-anchor&quot; href=&quot;#chapter-breaks&quot; aria-label=&quot;Anchor link for: chapter-breaks&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;As observed from the previous demo, there are no chapter breaks by default. Searching for a &lt;a href=&quot;https:&#x2F;&#x2F;superuser.com&#x2F;questions&#x2F;601469&#x2F;getting-chapters-to-start-on-a-new-page-in-a-pandoc-generated-pdf&quot;&gt;solution online&lt;&#x2F;a&gt;, I got this piece of &lt;code&gt;tex&lt;&#x2F;code&gt; code:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;latex&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-latex &quot;&gt;&lt;code class=&quot;language-latex&quot; data-lang=&quot;latex&quot;&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;\usepackage&lt;&#x2F;span&gt;&lt;span&gt;{&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a2a001;&quot;&gt;sectsty&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;\sectionfont&lt;&#x2F;span&gt;&lt;span&gt;{&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;\clearpage&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;This can be added using the &lt;code&gt;-H&lt;&#x2F;code&gt; option. From &lt;code&gt;pandoc&lt;&#x2F;code&gt; manual:&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;-H FILE, --include-in-header=FILE&lt;&#x2F;p&gt;
+&lt;p&gt;Include  contents  of FILE, verbatim, at the end of the header.  This
+can be used, for example, to include special  CSS  or  JavaScript  in
+HTML documents.  This option can be used repeatedly to include multiple
+files in the header.  They will be included in the  order  specified.
+Implies --standalone.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;The &lt;code&gt;pandoc&lt;&#x2F;code&gt; invocation now looks like:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; pandoc sample_1.md&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt; -f&lt;&#x2F;span&gt;&lt;span&gt; gfm&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt; -H&lt;&#x2F;span&gt;&lt;span&gt; chapter_break.tex&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt; -o&lt;&#x2F;span&gt;&lt;span&gt; sample_1_chapter_break.pdf
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;You can add further customization to headings, for example:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;\sectionfont{\underline\clearpage}&lt;&#x2F;code&gt; to underline chapter names&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;\sectionfont{\LARGE\clearpage}&lt;&#x2F;code&gt; to allow chapter names to get even bigger&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Here are some more links to read about various customizations:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;tex.stackexchange.com&#x2F;questions&#x2F;1455&#x2F;how-to-set-the-font-for-a-section-title-and-chapter-etc&quot;&gt;tex.stackexchange: section fonts&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;tex.stackexchange.com&#x2F;questions&#x2F;230730&#x2F;section-coming-up-as-undefined-when-using-sectsty&quot;&gt;tex.stackexchange: section colors&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;tex.stackexchange.com&#x2F;questions&#x2F;10138&#x2F;change-section-fonts&quot;&gt;tex.stackexchange: change section fonts&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;changing-settings-via-v-option&quot;&gt;Changing settings via -V option&lt;a class=&quot;zola-anchor&quot; href=&quot;#changing-settings-via-v-option&quot; aria-label=&quot;Anchor link for: changing-settings-via-v-option&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;-V KEY[=VAL], --variable=KEY[:VAL]&lt;&#x2F;p&gt;
+&lt;p&gt;Set the template variable KEY to the value  VAL  when  rendering  the
+document  in standalone mode.  This is generally only useful when the
+--template option is used to specify a custom template, since  pandoc
+automatically  sets  the variables used in the default templates.  If
+no VAL is specified, the key will be given the value true.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;The &lt;code&gt;-V&lt;&#x2F;code&gt; option allows to change variable values to customize settings like page size, font, link color, etc. As more settings are changed, better to use a simple script to call &lt;code&gt;pandoc&lt;&#x2F;code&gt; instead of typing the whole command on the terminal.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;#!&#x2F;bin&#x2F;bash
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;pandoc &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#acb3c2;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot; &lt;&#x2F;span&gt;&lt;span&gt;\
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;    -f&lt;&#x2F;span&gt;&lt;span&gt; gfm \
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;    --include-in-header&lt;&#x2F;span&gt;&lt;span&gt; chapter_break.tex \
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;    -V&lt;&#x2F;span&gt;&lt;span&gt; linkcolor:blue \
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;    -V&lt;&#x2F;span&gt;&lt;span&gt; geometry:a4paper \
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;    -V&lt;&#x2F;span&gt;&lt;span&gt; geometry:margin=2cm \
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;    -V&lt;&#x2F;span&gt;&lt;span&gt; mainfont=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot;DejaVu Serif&amp;quot; &lt;&#x2F;span&gt;&lt;span&gt;\
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;    -V&lt;&#x2F;span&gt;&lt;span&gt; monofont=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot;DejaVu Sans Mono&amp;quot; &lt;&#x2F;span&gt;&lt;span&gt;\
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;    --pdf-engine&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span&gt;xelatex \
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;    -o &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#acb3c2;&quot;&gt;2&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;mainfont&lt;&#x2F;code&gt; is for normal text&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;monofont&lt;&#x2F;code&gt; is for code snippets&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;geometry&lt;&#x2F;code&gt; is for page size and margins&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;code&gt;linkcolor&lt;&#x2F;code&gt; will set the color for internal links
+&lt;ul&gt;
+&lt;li&gt;this will also colorize other types of links&lt;&#x2F;li&gt;
+&lt;li&gt;set &lt;code&gt;urlcolor&lt;&#x2F;code&gt; if you want to distinguish URLs and so on for other types&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;to increase the default &lt;strong&gt;font size&lt;&#x2F;strong&gt;, use &lt;code&gt;-V fontsize=12pt&lt;&#x2F;code&gt;
+&lt;ul&gt;
+&lt;li&gt;See &lt;a href=&quot;https:&#x2F;&#x2F;stackoverflow.com&#x2F;q&#x2F;23811002&#x2F;4082052&quot;&gt;stackoverflow: change font size&lt;&#x2F;a&gt; if you need even bigger size options&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;Using &lt;code&gt;xelatex&lt;&#x2F;code&gt; as the &lt;code&gt;pdf-engine&lt;&#x2F;code&gt; helps to use any font installed in your system. One reason I chose &lt;code&gt;DejaVu&lt;&#x2F;code&gt; was because it supported &lt;strong&gt;Greek&lt;&#x2F;strong&gt; and other Unicode characters that were causing error with other fonts. See &lt;a href=&quot;https:&#x2F;&#x2F;tex.stackexchange.com&#x2F;questions&#x2F;21736&#x2F;using-xelatex-instead-of-pdflatex&quot;&gt;tex.stackexchange: Using XeLaTeX instead of pdfLaTeX&lt;&#x2F;a&gt; for some more details.&lt;&#x2F;p&gt;
+&lt;p&gt;The &lt;code&gt;pandoc&lt;&#x2F;code&gt; invocation is now through a script:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; chmod +x md2pdf.sh
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; .&#x2F;md2pdf.sh sample_1.md sample_1_settings.pdf
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Do compare the pdf generated side by side with previous output before proceeding.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;warning.svg&quot; alt=&quot;warning&quot; &#x2F;&gt; On my system, &lt;code&gt;DejaVu Serif&lt;&#x2F;code&gt; did not have &lt;em&gt;italic&lt;&#x2F;em&gt; variation installed, so I had to use &lt;code&gt;sudo apt install ttf-dejavu-extra&lt;&#x2F;code&gt; to get it.&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;syntax-highlighting&quot;&gt;Syntax highlighting&lt;a class=&quot;zola-anchor&quot; href=&quot;#syntax-highlighting&quot; aria-label=&quot;Anchor link for: syntax-highlighting&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;One option to customize syntax highlighting for code snippets is to save one of the &lt;code&gt;pandoc&lt;&#x2F;code&gt; themes and editing it. See &lt;a href=&quot;https:&#x2F;&#x2F;stackoverflow.com&#x2F;a&#x2F;47876166&#x2F;4082052&quot;&gt;stackoverflow: What are the available syntax highlighters?&lt;&#x2F;a&gt; for available themes and more details (as a good practice on stackoverflow, go through all answers and comments — the linked&#x2F;related sections on sidebar are useful as well).&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; pandoc&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt; --print-highlight-style&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span&gt;pygments &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;span&gt; pygments.theme
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Edit the above file to customize the theme. Use sites like &lt;a href=&quot;https:&#x2F;&#x2F;www.colorhexa.com&#x2F;&quot;&gt;colorhexa&lt;&#x2F;a&gt; to help with color choices, hex values, etc. For this demo, the below settings are changed:&lt;&#x2F;p&gt;
+&lt;pre style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot;&gt;&lt;code&gt;&lt;span&gt;# by default, background is same as normal text
+&lt;&#x2F;span&gt;&lt;span&gt;# change it to a shade of gray to easily distinguish code and text
+&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;background-color&amp;quot;: &amp;quot;#f8f8f8&amp;quot;,
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span&gt;# change italic to false, messes up comments with slashes
+&lt;&#x2F;span&gt;&lt;span&gt;# change comment text-color to yet another shade of gray
+&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;Comment&amp;quot;: {
+&lt;&#x2F;span&gt;&lt;span&gt;    &amp;quot;text-color&amp;quot;: &amp;quot;#9c9c9c&amp;quot;,
+&lt;&#x2F;span&gt;&lt;span&gt;    &amp;quot;background-color&amp;quot;: null,
+&lt;&#x2F;span&gt;&lt;span&gt;    &amp;quot;bold&amp;quot;: false,
+&lt;&#x2F;span&gt;&lt;span&gt;    &amp;quot;italic&amp;quot;: false,
+&lt;&#x2F;span&gt;&lt;span&gt;    &amp;quot;underline&amp;quot;: false
+&lt;&#x2F;span&gt;&lt;span&gt;},
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;&lt;strong&gt;Inline code&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Similar to changing background color for code snippets, I found a &lt;a href=&quot;https:&#x2F;&#x2F;stackoverflow.com&#x2F;q&#x2F;40975004&#x2F;4082052&quot;&gt;solution online&lt;&#x2F;a&gt; for &lt;em&gt;inline&lt;&#x2F;em&gt; code snippets as well.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;latex&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-latex &quot;&gt;&lt;code class=&quot;language-latex&quot; data-lang=&quot;latex&quot;&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;\usepackage&lt;&#x2F;span&gt;&lt;span&gt;{&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a2a001;&quot;&gt;fancyvrb&lt;&#x2F;span&gt;&lt;span&gt;,newverbs,xcolor}
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;\definecolor&lt;&#x2F;span&gt;&lt;span&gt;{Light}{HTML}{F4F4F4}
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;\let\oldtexttt\texttt
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#668f14;&quot;&gt;\renewcommand&lt;&#x2F;span&gt;&lt;span&gt;{&lt;&#x2F;span&gt;&lt;span style=&quot;color:#c23f31;&quot;&gt;\texttt&lt;&#x2F;span&gt;&lt;span&gt;}[1]{
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;\colorbox&lt;&#x2F;span&gt;&lt;span&gt;{Light}{&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;\oldtexttt&lt;&#x2F;span&gt;&lt;span&gt;{#1}}
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Add &lt;code&gt;--highlight-style pygments.theme&lt;&#x2F;code&gt; and &lt;code&gt;--include-in-header inline_code.tex&lt;&#x2F;code&gt; to the script and generate the &lt;code&gt;pdf&lt;&#x2F;code&gt; again.&lt;&#x2F;p&gt;
+&lt;p&gt;With &lt;code&gt;pandoc sample_2.md -f gfm -o sample_2.pdf&lt;&#x2F;code&gt; the output would be:&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;pandoc_pdf&#x2F;default_syn.png&quot; alt=&quot;Default syntax highlighting&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;With &lt;code&gt;.&#x2F;md2pdf_syn.sh sample_2.md sample_2_syn.pdf&lt;&#x2F;code&gt; the output is:&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;pandoc_pdf&#x2F;customized_syn.png&quot; alt=&quot;Customized syntax highlighting&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;p&gt;For my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;py_regular_expressions&quot;&gt;Understanding Python re(gex)?&lt;&#x2F;a&gt; book, by chance I found that using &lt;code&gt;ruby&lt;&#x2F;code&gt; instead of &lt;code&gt;python&lt;&#x2F;code&gt; for REPL code snippets syntax highlighting was better. Snapshot from &lt;code&gt;.&#x2F;md2pdf_syn.sh sample_3.md sample_3.pdf&lt;&#x2F;code&gt; result is shown below. For &lt;code&gt;python&lt;&#x2F;code&gt; directive, string output gets treated as a comment and color for boolean values isn&#x27;t easy to distinguish from string values. The &lt;code&gt;ruby&lt;&#x2F;code&gt; directive treats string value as expected and boolean values are easier to spot.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;pandoc_pdf&#x2F;python_vs_ruby_syn.png&quot; alt=&quot;REPL syntax highlighting&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;bullet-styling&quot;&gt;Bullet styling&lt;a class=&quot;zola-anchor&quot; href=&quot;#bullet-styling&quot; aria-label=&quot;Anchor link for: bullet-styling&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;This &lt;a href=&quot;https:&#x2F;&#x2F;stackoverflow.com&#x2F;q&#x2F;22156999&#x2F;4082052&quot;&gt;stackoverflow Q&amp;amp;A&lt;&#x2F;a&gt; helped for bullet styling.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;latex&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-latex &quot;&gt;&lt;code class=&quot;language-latex&quot; data-lang=&quot;latex&quot;&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;\usepackage&lt;&#x2F;span&gt;&lt;span&gt;{&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a2a001;&quot;&gt;enumitem&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;\usepackage&lt;&#x2F;span&gt;&lt;span&gt;{&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a2a001;&quot;&gt;amsfonts&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;% level one
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;\setlist&lt;&#x2F;span&gt;&lt;span&gt;[itemize,1]{label=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;\bullet&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;% level two
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;\setlist&lt;&#x2F;span&gt;&lt;span&gt;[itemize,2]{label=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;\circ&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;% level three
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;\setlist&lt;&#x2F;span&gt;&lt;span&gt;[itemize,3]{label=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;\star&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Comparing &lt;code&gt;pandoc sample_4.md -f gfm -o sample_4.pdf&lt;&#x2F;code&gt; vs &lt;code&gt;.&#x2F;md2pdf_syn_bullet.sh sample_4.md sample_4_bullet.pdf&lt;&#x2F;code&gt; gives:&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;pandoc_pdf&#x2F;bullet_styling.png&quot; alt=&quot;Bullet styling&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;pdf-properties&quot;&gt;PDF properties&lt;a class=&quot;zola-anchor&quot; href=&quot;#pdf-properties&quot; aria-label=&quot;Anchor link for: pdf-properties&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;This &lt;a href=&quot;https:&#x2F;&#x2F;tex.stackexchange.com&#x2F;questions&#x2F;23235&#x2F;eliminate-edit-pdf-properties-added-by-pdflatex&quot;&gt;tex.stackexchange Q&amp;amp;A&lt;&#x2F;a&gt; helped to change metadata. See also &lt;a href=&quot;https:&#x2F;&#x2F;pspdfkit.com&#x2F;blog&#x2F;2018&#x2F;whats-hiding-in-your-pdf&#x2F;&quot;&gt;pspdfkit: What’s Hiding in Your PDF?&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=18381515&quot;&gt;discussion on HN&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;latex&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-latex &quot;&gt;&lt;code class=&quot;language-latex&quot; data-lang=&quot;latex&quot;&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;\usepackage&lt;&#x2F;span&gt;&lt;span&gt;{&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a2a001;&quot;&gt;hyperref&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;\hypersetup&lt;&#x2F;span&gt;&lt;span&gt;{
+&lt;&#x2F;span&gt;&lt;span&gt;  pdftitle={My awesome book},
+&lt;&#x2F;span&gt;&lt;span&gt;  pdfauthor={learnbyexample},
+&lt;&#x2F;span&gt;&lt;span&gt;  pdfsubject={pandoc},
+&lt;&#x2F;span&gt;&lt;span&gt;  pdfkeywords={pandoc,pdf,xelatex}
+&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;&lt;code&gt;.&#x2F;md2pdf_syn_bullet_prop.sh sample_4.md sample_4_bullet_prop.pdf&lt;&#x2F;code&gt; gives:&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;pandoc_pdf&#x2F;pdf_properties.png&quot; alt=&quot;pdf properties&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;adding-table-of-contents&quot;&gt;Adding table of contents&lt;a class=&quot;zola-anchor&quot; href=&quot;#adding-table-of-contents&quot; aria-label=&quot;Anchor link for: adding-table-of-contents&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;There&#x27;s a handy option &lt;code&gt;--toc&lt;&#x2F;code&gt; to automatically include table of contents at top of the generated &lt;code&gt;pdf&lt;&#x2F;code&gt;. You can control number of levels using &lt;code&gt;--toc-depth&lt;&#x2F;code&gt; option, the default is 3 levels. You can also change the default string &lt;code&gt;Contents&lt;&#x2F;code&gt; to something else using the &lt;code&gt;-V toc-title&lt;&#x2F;code&gt; option.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;code&gt;.&#x2F;md2pdf_syn_bullet_prop_toc.sh sample_1.md sample_1_toc.pdf&lt;&#x2F;code&gt; gives:&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;pandoc_pdf&#x2F;table_of_contents.png&quot; alt=&quot;table of contents&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;adding-cover-image&quot;&gt;Adding cover image&lt;a class=&quot;zola-anchor&quot; href=&quot;#adding-cover-image&quot; aria-label=&quot;Anchor link for: adding-cover-image&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;To add something prior to table of contents, cover image for example, you can use a &lt;code&gt;tex&lt;&#x2F;code&gt; file and include it verbatim. Create a &lt;code&gt;tex&lt;&#x2F;code&gt; file (named as &lt;code&gt;cover.tex&lt;&#x2F;code&gt; here) with content as shown below:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;tex&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-tex &quot;&gt;&lt;code class=&quot;language-tex&quot; data-lang=&quot;tex&quot;&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;\includegraphics&lt;&#x2F;span&gt;&lt;span&gt;{cover.png}
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;\thispagestyle&lt;&#x2F;span&gt;&lt;span&gt;{empty}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Then, modify the previous script &lt;code&gt;md2pdf_syn_bullet_prop_toc.sh&lt;&#x2F;code&gt; by adding &lt;code&gt;--include-before-body cover.tex&lt;&#x2F;code&gt; and tada — you get the cover image before table of contents. &lt;code&gt;\thispagestyle{empty}&lt;&#x2F;code&gt; helps to avoid page number on the cover page, see also &lt;a href=&quot;https:&#x2F;&#x2F;tex.stackexchange.com&#x2F;questions&#x2F;360739&#x2F;what-is-the-use-of-clearpage-thispagestyleempty-cleardoublepage&quot;&gt;tex.stackexchange: clear page&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;The &lt;code&gt;bash&lt;&#x2F;code&gt; script invocation is now &lt;code&gt;.&#x2F;md2pdf_syn_bullet_prop_toc_cover.sh sample_5.md sample_5.pdf&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;warning.svg&quot; alt=&quot;warning&quot; &#x2F;&gt; You&#x27;ll need at least one image in input markdown file, otherwise settings won&#x27;t apply to the cover image and you may end up with a weird output. &lt;code&gt;sample_5.md&lt;&#x2F;code&gt; used in the command above includes an image. And be careful to use escapes if the image path can contain &lt;code&gt;tex&lt;&#x2F;code&gt; metacharacters.&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;stylish-blockquote&quot;&gt;Stylish blockquote&lt;a class=&quot;zola-anchor&quot; href=&quot;#stylish-blockquote&quot; aria-label=&quot;Anchor link for: stylish-blockquote&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;By default, blockquotes (lines starting with &lt;code&gt;&amp;gt;&lt;&#x2F;code&gt; in markdown) are just indented in the &lt;code&gt;pdf&lt;&#x2F;code&gt; output. To make them standout, &lt;a href=&quot;https:&#x2F;&#x2F;tex.stackexchange.com&#x2F;questions&#x2F;154528&#x2F;how-to-change-the-background-color-and-border-of-a-pandoc-generated-blockquote&quot;&gt;tex.stackexchange: change the background color and border of blockquote&lt;&#x2F;a&gt; helped.&lt;&#x2F;p&gt;
+&lt;p&gt;Create &lt;code&gt;quote.tex&lt;&#x2F;code&gt; with the contents as shown below. You can change the colors to suit your own preferred style.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;tex&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-tex &quot;&gt;&lt;code class=&quot;language-tex&quot; data-lang=&quot;tex&quot;&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;\usepackage&lt;&#x2F;span&gt;&lt;span&gt;{&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a2a001;&quot;&gt;tcolorbox&lt;&#x2F;span&gt;&lt;span&gt;}
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;\newtcolorbox&lt;&#x2F;span&gt;&lt;span&gt;{myquote}{colback=red!5!white, colframe=red!75!black}
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;\renewenvironment&lt;&#x2F;span&gt;&lt;span&gt;{quote}{&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;\begin&lt;&#x2F;span&gt;&lt;span&gt;{&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;myquote&lt;&#x2F;span&gt;&lt;span&gt;}}{&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;\end&lt;&#x2F;span&gt;&lt;span&gt;{&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;myquote&lt;&#x2F;span&gt;&lt;span&gt;}}
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;The &lt;code&gt;bash&lt;&#x2F;code&gt; script invocation is now &lt;code&gt;.&#x2F;md2pdf_syn_bullet_prop_toc_cover_quote.sh sample_5.md sample_5_quote.pdf&lt;&#x2F;code&gt;. The difference between default and styled blockquote is shown below.&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;pandoc_pdf&#x2F;styled_blockquote.png&quot; alt=&quot;styling blockquotes&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;customizing-epub&quot;&gt;Customizing epub&lt;a class=&quot;zola-anchor&quot; href=&quot;#customizing-epub&quot; aria-label=&quot;Anchor link for: customizing-epub&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;For a long time, I thought &lt;code&gt;epub&lt;&#x2F;code&gt; didn&#x27;t make sense for programming books. Turned out, I wasn&#x27;t using the right ebook readers. &lt;strong&gt;FBReader&lt;&#x2F;strong&gt; was good for novels but not ebooks with code snippets. When I used &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;mate-desktop&#x2F;atril&quot;&gt;atril&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;johnfactotum&#x2F;foliate&quot;&gt;foliate&lt;&#x2F;a&gt; or &lt;a href=&quot;https:&#x2F;&#x2F;calibre-ebook.com&#x2F;&quot;&gt;calibre ebook-viewer&lt;&#x2F;a&gt;, the results were good.&lt;&#x2F;p&gt;
+&lt;p&gt;I didn&#x27;t know how to use &lt;code&gt;css&lt;&#x2F;code&gt; before trying to generate the &lt;code&gt;epub&lt;&#x2F;code&gt; version. Somehow, I managed to take the default &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;jgm&#x2F;pandoc&#x2F;blob&#x2F;master&#x2F;data&#x2F;epub.css&quot;&gt;epub.css&lt;&#x2F;a&gt; provided by &lt;code&gt;pandoc&lt;&#x2F;code&gt; and customize it as close as possible to the &lt;code&gt;pdf&lt;&#x2F;code&gt; version. The modified &lt;code&gt;epub.css&lt;&#x2F;code&gt; is available from the &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;learnbyexample.github.io&#x2F;tree&#x2F;master&#x2F;files&#x2F;pandoc_pdf&quot;&gt;learnbyexample.github.io repo&lt;&#x2F;a&gt;. The &lt;code&gt;bash&lt;&#x2F;code&gt; script to generate the &lt;code&gt;epub&lt;&#x2F;code&gt; is shown below and invoked as &lt;code&gt;.&#x2F;md2epub.sh sample_5.md sample_5.epub&lt;&#x2F;code&gt;. Note that &lt;code&gt;pygments.theme&lt;&#x2F;code&gt; is same as the &lt;code&gt;pdf&lt;&#x2F;code&gt; customization discussed before.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;#!&#x2F;bin&#x2F;bash
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;pandoc  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#acb3c2;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot; &lt;&#x2F;span&gt;&lt;span&gt;\
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;        -f&lt;&#x2F;span&gt;&lt;span&gt; gfm \
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;        --toc &lt;&#x2F;span&gt;&lt;span&gt;\
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;        --standalone &lt;&#x2F;span&gt;&lt;span&gt;\
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;        --top-level-division&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span&gt;chapter \
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;        --highlight-style&lt;&#x2F;span&gt;&lt;span&gt; pygments.theme \
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;        --css&lt;&#x2F;span&gt;&lt;span&gt; epub.css \
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;        --metadata&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span&gt;title:&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot;My awesome book&amp;quot; &lt;&#x2F;span&gt;&lt;span&gt;\
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;        --metadata&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span&gt;author:&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot;learnbyexample&amp;quot; &lt;&#x2F;span&gt;&lt;span&gt;\
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;        --metadata&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span&gt;lang:&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot;en-US&amp;quot; &lt;&#x2F;span&gt;&lt;span&gt;\
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;        --metadata&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span&gt;cover-image:&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot;cover.png&amp;quot; &lt;&#x2F;span&gt;&lt;span&gt;\
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;        -o &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#acb3c2;&quot;&gt;2&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;resource-links&quot;&gt;Resource links&lt;a class=&quot;zola-anchor&quot; href=&quot;#resource-links&quot; aria-label=&quot;Anchor link for: resource-links&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;pandoc.org&#x2F;MANUAL.html&quot;&gt;pandoc: manual&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;pandoc.org&#x2F;demos.html&quot;&gt;pandoc: demos&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;jgm&#x2F;pandoc&#x2F;wiki&#x2F;Pandoc-Tricks&quot;&gt;pandoc: tips and tricks&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;&lt;strong&gt;More options and workflows for generating ebooks&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;Wandmalfarbe&#x2F;pandoc-latex-template&quot;&gt;pandoc-latex-template&lt;&#x2F;a&gt; — a clean pandoc LaTeX template to convert your markdown files to PDF or LaTeX&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;keleshev.com&#x2F;my-book-writing-setup&#x2F;&quot;&gt;Writing a book with pandoc, make, and vim&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;quarto.org&#x2F;&quot;&gt;Quarto&lt;&#x2F;a&gt; — open source scientific and technical publishing system built on Pandoc&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;jupyterbook.org&#x2F;intro.html&quot;&gt;Jupyter Book&lt;&#x2F;a&gt; — open source project for building beautiful, publication-quality books and documents from computational material
+&lt;ul&gt;
+&lt;li&gt;See also &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;fastai&#x2F;fastdoc&quot;&gt;fastdoc&lt;&#x2F;a&gt; — the output of fastdoc is an asciidoc file for each input notebook. You can then use asciidoctor to convert that to HTML, DocBook, epub, mobi, and so forth&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.thedigitalcatbooks.com&#x2F;maubook-introduction&#x2F;&quot;&gt;Mau&lt;&#x2F;a&gt; — template-based markup language, heavily inspired by AsciiDoc&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;asciidoctor.org&#x2F;docs&#x2F;what-is-asciidoc&#x2F;&quot;&gt;Asciidoctor&lt;&#x2F;a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;daneah&#x2F;asciidoc-book-template&quot;&gt;Asciidoc book template&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;shape-of-code.coding-guidelines.com&#x2F;2019&#x2F;08&#x2F;11&#x2F;my-books-pdf-generation-workflow&#x2F;&quot;&gt;pdf generation workflow with Asciidoc&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.sphinx-doc.org&#x2F;en&#x2F;stable&#x2F;index.html&quot;&gt;Sphinx&lt;&#x2F;a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;digitalsuperpowers.com&#x2F;blog&#x2F;2019-02-16-publishing-ebook.html&quot;&gt;Self-publishing a book with reStructuredText, Sphinx, Calibre, and vim&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;bookdown.org&#x2F;home&#x2F;&quot;&gt;Bookdown&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;orgmode.org&#x2F;&quot;&gt;Emacs orgmode&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;casual-effects.com&#x2F;markdeep&#x2F;&quot;&gt;Markdeep&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;&lt;strong&gt;Miscellaneous&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;nickjanetakis.com&#x2F;blog&#x2F;vim-is-saving-me-hours-of-work-when-writing-books-and-courses&quot;&gt;Vim is saving me hours of work when writing books &amp;amp; courses&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;joecmarshall.com&#x2F;posts&#x2F;book-writing-environment&#x2F;&quot;&gt;Writing a Book with Unix&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;askubuntu.com&#x2F;questions&#x2F;3697&#x2F;how-do-i-install-fonts&quot;&gt;askubuntu: How do I install fonts?&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;tex.stackexchange.com&#x2F;questions&#x2F;9533&#x2F;what-best-combination-of-fonts-for-serif-sans-and-mono-do-you-recommend&quot;&gt;tex.stackexchange: What best combination of fonts for Serif, Sans, and Mono do you recommend?&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;tug.org&#x2F;FontCatalogue&#x2F;&quot;&gt;LaTeX font catalogue&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;karthik&#x2F;markdown_science&#x2F;wiki&#x2F;Tools-to-support-your-markdown-authoring&quot;&gt;Tools to support markdown authoring&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;picular.co&#x2F;&quot;&gt;picular: search engine for colors&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;www.colorhexa.com&#x2F;&quot;&gt;colorhexa&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;ebooks.stackexchange.com&#x2F;questions?sort=votes&quot;&gt;ebooks.stackexchange&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>Everything you need to know about sed substitution</title>
 		<published>2025-05-07T00:00:00+00:00</published>
@@ -9935,267 +10202,6 @@ The substitution works from start of the line for every iteration of the while l
 &lt;p&gt;Inspired by this post, I made a &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;py_resources&#x2F;&quot;&gt;Python learning resources repository&lt;&#x2F;a&gt; which is categorized (beginner, intermediate, advanced, domains like web&#x2F;ML&#x2F;data science, etc) and includes a handy search feature.&lt;&#x2F;p&gt;
 &lt;br&gt;
 &lt;p&gt;I hope these resources will help you take that crucial next step and continue your Python journey. Happy learning :)&lt;&#x2F;p&gt;
-</content>
-	</entry>
-	<entry xml:lang="en">
-		<title>Customizing pandoc to generate beautiful pdf and epub from markdown</title>
-		<published>2020-07-21T00:00:00+00:00</published>
-		<updated>2022-11-29T00:00:00+00:00</updated>
-		<link rel="alternate" href="https://learnbyexample.github.io/customizing-pandoc/" type="text/html"/>
-		<id>https://learnbyexample.github.io/customizing-pandoc/</id>
-		<content type="html">&lt;p&gt;Either you&#x27;ve already heard of &lt;code&gt;pandoc&lt;&#x2F;code&gt; or if you have searched online for &lt;code&gt;markdown&lt;&#x2F;code&gt; to &lt;code&gt;pdf&lt;&#x2F;code&gt; or similar, you are sure to come across &lt;code&gt;pandoc&lt;&#x2F;code&gt;. This tutorial will help you use &lt;code&gt;pandoc&lt;&#x2F;code&gt; to generate &lt;code&gt;pdf&lt;&#x2F;code&gt; and &lt;code&gt;epub&lt;&#x2F;code&gt; from a &lt;a href=&quot;https:&#x2F;&#x2F;github.github.com&#x2F;gfm&#x2F;&quot;&gt;GitHub style markdown&lt;&#x2F;a&gt; file. The main motivation for this blog post is to highlight what customizations I did to generate &lt;code&gt;pdf&lt;&#x2F;code&gt; and &lt;code&gt;epub&lt;&#x2F;code&gt; versions for &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;books&#x2F;&quot;&gt;self-publishing my ebooks&lt;&#x2F;a&gt;. It wasn&#x27;t easy to arrive at the setup I ended up with, so I hope this will be useful for those looking to use &lt;code&gt;pandoc&lt;&#x2F;code&gt; to generate &lt;code&gt;pdf&lt;&#x2F;code&gt; and &lt;code&gt;epub&lt;&#x2F;code&gt; formats. This guide is specifically aimed at technical books that has code snippets.&lt;&#x2F;p&gt;
-&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;pandoc_pdf&#x2F;customizing_pandoc.png&quot; alt=&quot;Customizing pandoc&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
-&lt;p align=&quot;center&quot;&gt;&lt;i&gt;Poster created using &lt;a href=&quot;https:&#x2F;&#x2F;www.canva.com&#x2F;&quot;&gt;Canva&lt;&#x2F;a&gt;&lt;&#x2F;i&gt;&lt;&#x2F;p&gt;
-&lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;&lt;br&gt;
-&lt;h2 id=&quot;installation&quot;&gt;Installation&lt;a class=&quot;zola-anchor&quot; href=&quot;#installation&quot; aria-label=&quot;Anchor link for: installation&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
-&lt;p&gt;If you use a debian based distro like Ubuntu, the below steps are enough for the demos in this tutorial. If you get an error or warning, search that issue online and you&#x27;ll likely find what else has to be installed.&lt;&#x2F;p&gt;
-&lt;p&gt;I first downloaded &lt;code&gt;deb&lt;&#x2F;code&gt; file from &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;jgm&#x2F;pandoc&#x2F;releases&quot;&gt;pandoc: releases&lt;&#x2F;a&gt; and installed it. Followed by packages needed for &lt;code&gt;pdf&lt;&#x2F;code&gt; generation.&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# latest pandoc version as of 27 Aug 2021 is 2.14.2
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; sudo gdebi &lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;~&lt;&#x2F;span&gt;&lt;span&gt;&#x2F;Downloads&#x2F;pandoc-2.14.2-1-amd64.deb
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$ &lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# note that download size is hundreds of MB
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; sudo apt install texlive-xetex
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; sudo apt install librsvg2-bin
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; sudo apt install texlive-science
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;p&gt;For more details and guide for other OS, refer to &lt;a href=&quot;https:&#x2F;&#x2F;pandoc.org&#x2F;installing.html&quot;&gt;pandoc: installation&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
-&lt;br&gt;
-&lt;h2 id=&quot;minimal-example&quot;&gt;Minimal example&lt;a class=&quot;zola-anchor&quot; href=&quot;#minimal-example&quot; aria-label=&quot;Anchor link for: minimal-example&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
-&lt;p&gt;Once &lt;code&gt;pandoc&lt;&#x2F;code&gt; is working on your system, try generating a sample &lt;code&gt;pdf&lt;&#x2F;code&gt; without any customization.&lt;&#x2F;p&gt;
-&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;learnbyexample.github.io&#x2F;tree&#x2F;master&#x2F;files&#x2F;pandoc_pdf&quot;&gt;learnbyexample.github.io repo&lt;&#x2F;a&gt; for all the input and output files referred in this tutorial.&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; pandoc sample_1.md&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt; -f&lt;&#x2F;span&gt;&lt;span&gt; gfm&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt; -o&lt;&#x2F;span&gt;&lt;span&gt; sample_1.pdf
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;p&gt;Here &lt;code&gt;sample_1.md&lt;&#x2F;code&gt; is input markdown file and &lt;code&gt;-f&lt;&#x2F;code&gt; is used to specify that the input format is GitHub style markdown. The &lt;code&gt;-o&lt;&#x2F;code&gt; option specifies the output file type based on extension. The default output is probably good enough. But I wished to customize hyperlinks, inline code style, add page breaks between chapters, etc. This blog post will discuss these customizations one by one.&lt;&#x2F;p&gt;
-&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; &lt;code&gt;pandoc&lt;&#x2F;code&gt; has its own flavor of &lt;code&gt;markdown&lt;&#x2F;code&gt; with many useful extensions — see &lt;a href=&quot;https:&#x2F;&#x2F;pandoc.org&#x2F;MANUAL.html#pandocs-markdown&quot;&gt;pandoc: pandocs-markdown&lt;&#x2F;a&gt; for details. GitHub style markdown is recommended if you wish to use the same source (or with minor changes) in multiple places.&lt;&#x2F;p&gt;
-&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; It is advised to use &lt;code&gt;markdown&lt;&#x2F;code&gt; headers in order without skipping — for example, &lt;code&gt;H1&lt;&#x2F;code&gt; for chapter heading and &lt;code&gt;H2&lt;&#x2F;code&gt; for chapter sub-section, etc is fine. &lt;code&gt;H1&lt;&#x2F;code&gt; for chapter heading and &lt;code&gt;H3&lt;&#x2F;code&gt; for sub-section is not. Using the former can give automatic index navigation on ebook readers.&lt;&#x2F;p&gt;
-&lt;p&gt;On &lt;a href=&quot;https:&#x2F;&#x2F;wiki.gnome.org&#x2F;Apps&#x2F;Evince&quot;&gt;Evince&lt;&#x2F;a&gt; reader, the index navigation for above sample looks like this:&lt;&#x2F;p&gt;
-&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;pandoc_pdf&#x2F;chapter_index.png&quot; alt=&quot;index navigation&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
-&lt;br&gt;
-&lt;h2 id=&quot;chapter-breaks&quot;&gt;Chapter breaks&lt;a class=&quot;zola-anchor&quot; href=&quot;#chapter-breaks&quot; aria-label=&quot;Anchor link for: chapter-breaks&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
-&lt;p&gt;As observed from previous demo, by default there are no chapter breaks. Searching for a &lt;a href=&quot;https:&#x2F;&#x2F;superuser.com&#x2F;questions&#x2F;601469&#x2F;getting-chapters-to-start-on-a-new-page-in-a-pandoc-generated-pdf&quot;&gt;solution online&lt;&#x2F;a&gt;, I got this piece of &lt;code&gt;tex&lt;&#x2F;code&gt; code:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;latex&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-latex &quot;&gt;&lt;code class=&quot;language-latex&quot; data-lang=&quot;latex&quot;&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;\usepackage&lt;&#x2F;span&gt;&lt;span&gt;{&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a2a001;&quot;&gt;sectsty&lt;&#x2F;span&gt;&lt;span&gt;}
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;\sectionfont&lt;&#x2F;span&gt;&lt;span&gt;{&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;\clearpage&lt;&#x2F;span&gt;&lt;span&gt;}
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;p&gt;This can be added using &lt;code&gt;-H&lt;&#x2F;code&gt; option. From &lt;code&gt;pandoc&lt;&#x2F;code&gt; manual,&lt;&#x2F;p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;-H FILE, --include-in-header=FILE&lt;&#x2F;p&gt;
-&lt;p&gt;Include  contents  of FILE, verbatim, at the end of the header.  This
-can be used, for example, to include special  CSS  or  JavaScript  in
-HTML documents.  This option can be used repeatedly to include multiple
-files in the header.  They will be included in the  order  specified.
-Implies --standalone.&lt;&#x2F;p&gt;
-&lt;&#x2F;blockquote&gt;
-&lt;p&gt;The &lt;code&gt;pandoc&lt;&#x2F;code&gt; invocation now looks like:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; pandoc sample_1.md&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt; -f&lt;&#x2F;span&gt;&lt;span&gt; gfm&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt; -H&lt;&#x2F;span&gt;&lt;span&gt; chapter_break.tex&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt; -o&lt;&#x2F;span&gt;&lt;span&gt; sample_1_chapter_break.pdf
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;p&gt;You can add further customization to headings, for example:&lt;&#x2F;p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;\sectionfont{\underline\clearpage}&lt;&#x2F;code&gt; to underline chapter names&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;code&gt;\sectionfont{\LARGE\clearpage}&lt;&#x2F;code&gt; to allow chapter names to get even bigger&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
-&lt;p&gt;Here are some more links to read about various customizations:&lt;&#x2F;p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;tex.stackexchange.com&#x2F;questions&#x2F;1455&#x2F;how-to-set-the-font-for-a-section-title-and-chapter-etc&quot;&gt;tex.stackexchange: section fonts&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;tex.stackexchange.com&#x2F;questions&#x2F;230730&#x2F;section-coming-up-as-undefined-when-using-sectsty&quot;&gt;tex.stackexchange: section colors&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;tex.stackexchange.com&#x2F;questions&#x2F;10138&#x2F;change-section-fonts&quot;&gt;tex.stackexchange: change section fonts&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
-&lt;br&gt;
-&lt;h2 id=&quot;changing-settings-via-v-option&quot;&gt;Changing settings via -V option&lt;a class=&quot;zola-anchor&quot; href=&quot;#changing-settings-via-v-option&quot; aria-label=&quot;Anchor link for: changing-settings-via-v-option&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;-V KEY[=VAL], --variable=KEY[:VAL]&lt;&#x2F;p&gt;
-&lt;p&gt;Set the template variable KEY to the value  VAL  when  rendering  the
-document  in standalone mode.  This is generally only useful when the
---template option is used to specify a custom template, since  pandoc
-automatically  sets  the variables used in the default templates.  If
-no VAL is specified, the key will be given the value true.&lt;&#x2F;p&gt;
-&lt;&#x2F;blockquote&gt;
-&lt;p&gt;The &lt;code&gt;-V&lt;&#x2F;code&gt; option allows to change variable values to customize settings like page size, font, link color, etc. As more settings are changed, better to use a simple script to call &lt;code&gt;pandoc&lt;&#x2F;code&gt; instead of typing the whole command on terminal.&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;#!&#x2F;bin&#x2F;bash
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;pandoc &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#acb3c2;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot; &lt;&#x2F;span&gt;&lt;span&gt;\
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;    -f&lt;&#x2F;span&gt;&lt;span&gt; gfm \
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;    --include-in-header&lt;&#x2F;span&gt;&lt;span&gt; chapter_break.tex \
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;    -V&lt;&#x2F;span&gt;&lt;span&gt; linkcolor:blue \
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;    -V&lt;&#x2F;span&gt;&lt;span&gt; geometry:a4paper \
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;    -V&lt;&#x2F;span&gt;&lt;span&gt; geometry:margin=2cm \
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;    -V&lt;&#x2F;span&gt;&lt;span&gt; mainfont=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot;DejaVu Serif&amp;quot; &lt;&#x2F;span&gt;&lt;span&gt;\
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;    -V&lt;&#x2F;span&gt;&lt;span&gt; monofont=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot;DejaVu Sans Mono&amp;quot; &lt;&#x2F;span&gt;&lt;span&gt;\
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;    --pdf-engine&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span&gt;xelatex \
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;    -o &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#acb3c2;&quot;&gt;2&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot;
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;mainfont&lt;&#x2F;code&gt; is for normal text&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;code&gt;monofont&lt;&#x2F;code&gt; is for code snippets&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;code&gt;geometry&lt;&#x2F;code&gt; for page size and margins&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;code&gt;linkcolor&lt;&#x2F;code&gt; to set hyperlink color&lt;&#x2F;li&gt;
-&lt;li&gt;to increase default &lt;strong&gt;font size&lt;&#x2F;strong&gt;, use &lt;code&gt;-V fontsize=12pt&lt;&#x2F;code&gt;
-&lt;ul&gt;
-&lt;li&gt;See &lt;a href=&quot;https:&#x2F;&#x2F;stackoverflow.com&#x2F;q&#x2F;23811002&#x2F;4082052&quot;&gt;stackoverflow: change font size&lt;&#x2F;a&gt; if you need even bigger size options&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
-&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
-&lt;p&gt;Using &lt;code&gt;xelatex&lt;&#x2F;code&gt; as the &lt;code&gt;pdf-engine&lt;&#x2F;code&gt; allows to use any font installed in the system. One reason I chose &lt;code&gt;DejaVu&lt;&#x2F;code&gt; was because it supported &lt;strong&gt;Greek&lt;&#x2F;strong&gt; and other Unicode characters that were causing error with other fonts. See &lt;a href=&quot;https:&#x2F;&#x2F;tex.stackexchange.com&#x2F;questions&#x2F;21736&#x2F;using-xelatex-instead-of-pdflatex&quot;&gt;tex.stackexchange: Using XeLaTeX instead of pdfLaTeX&lt;&#x2F;a&gt; for some more details.&lt;&#x2F;p&gt;
-&lt;p&gt;The &lt;code&gt;pandoc&lt;&#x2F;code&gt; invocation is now through a script:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; chmod +x md2pdf.sh
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; .&#x2F;md2pdf.sh sample_1.md sample_1_settings.pdf
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;p&gt;Do compare the pdf generated side by side with previous output before proceeding.&lt;&#x2F;p&gt;
-&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;warning.svg&quot; alt=&quot;warning&quot; &#x2F;&gt; On my system, &lt;code&gt;DejaVu Serif&lt;&#x2F;code&gt; did not have &lt;em&gt;italic&lt;&#x2F;em&gt; variation installed, so I had to use &lt;code&gt;sudo apt install ttf-dejavu-extra&lt;&#x2F;code&gt; to get it.&lt;&#x2F;p&gt;
-&lt;br&gt;
-&lt;h2 id=&quot;syntax-highlighting&quot;&gt;Syntax highlighting&lt;a class=&quot;zola-anchor&quot; href=&quot;#syntax-highlighting&quot; aria-label=&quot;Anchor link for: syntax-highlighting&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
-&lt;p&gt;One option to customize syntax highlighting for code snippets is to save one of the &lt;code&gt;pandoc&lt;&#x2F;code&gt; themes and editing it. See &lt;a href=&quot;https:&#x2F;&#x2F;stackoverflow.com&#x2F;a&#x2F;47876166&#x2F;4082052&quot;&gt;stackoverflow: What are the available syntax highlighters?&lt;&#x2F;a&gt; for available themes and more details (as a good practice on stackoverflow, go through all answers and comments — the linked&#x2F;related sections on sidebar are useful as well).&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; pandoc&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt; --print-highlight-style&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span&gt;pygments &lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;&amp;gt;&lt;&#x2F;span&gt;&lt;span&gt; pygments.theme
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;p&gt;Edit the above file to customize the theme. Use sites like &lt;a href=&quot;https:&#x2F;&#x2F;www.colorhexa.com&#x2F;&quot;&gt;colorhexa&lt;&#x2F;a&gt; to help with color choices, hex values, etc. For this demo, the below settings are changed:&lt;&#x2F;p&gt;
-&lt;pre style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot;&gt;&lt;code&gt;&lt;span&gt;# by default, background is same as normal text
-&lt;&#x2F;span&gt;&lt;span&gt;# change it to a shade of gray to easily distinguish code and text
-&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;background-color&amp;quot;: &amp;quot;#f8f8f8&amp;quot;,
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span&gt;# change italic to false, messes up comments with slashes
-&lt;&#x2F;span&gt;&lt;span&gt;# change comment text-color to yet another shade of gray
-&lt;&#x2F;span&gt;&lt;span&gt;&amp;quot;Comment&amp;quot;: {
-&lt;&#x2F;span&gt;&lt;span&gt;    &amp;quot;text-color&amp;quot;: &amp;quot;#9c9c9c&amp;quot;,
-&lt;&#x2F;span&gt;&lt;span&gt;    &amp;quot;background-color&amp;quot;: null,
-&lt;&#x2F;span&gt;&lt;span&gt;    &amp;quot;bold&amp;quot;: false,
-&lt;&#x2F;span&gt;&lt;span&gt;    &amp;quot;italic&amp;quot;: false,
-&lt;&#x2F;span&gt;&lt;span&gt;    &amp;quot;underline&amp;quot;: false
-&lt;&#x2F;span&gt;&lt;span&gt;},
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;p&gt;&lt;strong&gt;Inline code&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
-&lt;p&gt;Similar to changing background color for code snippets, I found a &lt;a href=&quot;https:&#x2F;&#x2F;stackoverflow.com&#x2F;q&#x2F;40975004&#x2F;4082052&quot;&gt;solution online&lt;&#x2F;a&gt; to change background color for inline code snippets.&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;latex&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-latex &quot;&gt;&lt;code class=&quot;language-latex&quot; data-lang=&quot;latex&quot;&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;\usepackage&lt;&#x2F;span&gt;&lt;span&gt;{&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a2a001;&quot;&gt;fancyvrb&lt;&#x2F;span&gt;&lt;span&gt;,newverbs,xcolor}
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;\definecolor&lt;&#x2F;span&gt;&lt;span&gt;{Light}{HTML}{F4F4F4}
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;\let\oldtexttt\texttt
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#668f14;&quot;&gt;\renewcommand&lt;&#x2F;span&gt;&lt;span&gt;{&lt;&#x2F;span&gt;&lt;span style=&quot;color:#c23f31;&quot;&gt;\texttt&lt;&#x2F;span&gt;&lt;span&gt;}[1]{
-&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;\colorbox&lt;&#x2F;span&gt;&lt;span&gt;{Light}{&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;\oldtexttt&lt;&#x2F;span&gt;&lt;span&gt;{#1}}
-&lt;&#x2F;span&gt;&lt;span&gt;}
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;p&gt;Add &lt;code&gt;--highlight-style pygments.theme&lt;&#x2F;code&gt; and &lt;code&gt;--include-in-header inline_code.tex&lt;&#x2F;code&gt; to the script and generate the &lt;code&gt;pdf&lt;&#x2F;code&gt; again.&lt;&#x2F;p&gt;
-&lt;p&gt;With &lt;code&gt;pandoc sample_2.md -f gfm -o sample_2.pdf&lt;&#x2F;code&gt; the output would be:&lt;&#x2F;p&gt;
-&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;pandoc_pdf&#x2F;default_syn.png&quot; alt=&quot;Default syntax highlighting&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
-&lt;p&gt;With &lt;code&gt;.&#x2F;md2pdf_syn.sh sample_2.md sample_2_syn.pdf&lt;&#x2F;code&gt; the output is:&lt;&#x2F;p&gt;
-&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;pandoc_pdf&#x2F;customized_syn.png&quot; alt=&quot;Customized syntax highlighting&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
-&lt;br&gt;
-&lt;p&gt;For my &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;py_regular_expressions&quot;&gt;Understanding Python re(gex)?&lt;&#x2F;a&gt; book, by chance I found that using &lt;code&gt;ruby&lt;&#x2F;code&gt; instead of &lt;code&gt;python&lt;&#x2F;code&gt; for REPL code snippets syntax highlighting was better. Snapshot from &lt;code&gt;.&#x2F;md2pdf_syn.sh sample_3.md sample_3.pdf&lt;&#x2F;code&gt; result is shown below. For &lt;code&gt;python&lt;&#x2F;code&gt; directive, string output gets treated as a comment and color for boolean values isn&#x27;t easy to distinguish from string values. The &lt;code&gt;ruby&lt;&#x2F;code&gt; directive treats string value as expected and boolean values are easier to spot.&lt;&#x2F;p&gt;
-&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;pandoc_pdf&#x2F;python_vs_ruby_syn.png&quot; alt=&quot;REPL syntax highlighting&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
-&lt;br&gt;
-&lt;h2 id=&quot;bullet-styling&quot;&gt;Bullet styling&lt;a class=&quot;zola-anchor&quot; href=&quot;#bullet-styling&quot; aria-label=&quot;Anchor link for: bullet-styling&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
-&lt;p&gt;This &lt;a href=&quot;https:&#x2F;&#x2F;stackoverflow.com&#x2F;q&#x2F;22156999&#x2F;4082052&quot;&gt;stackoverflow Q&amp;amp;A&lt;&#x2F;a&gt; helped for bullet styling.&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;latex&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-latex &quot;&gt;&lt;code class=&quot;language-latex&quot; data-lang=&quot;latex&quot;&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;\usepackage&lt;&#x2F;span&gt;&lt;span&gt;{&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a2a001;&quot;&gt;enumitem&lt;&#x2F;span&gt;&lt;span&gt;}
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;\usepackage&lt;&#x2F;span&gt;&lt;span&gt;{&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a2a001;&quot;&gt;amsfonts&lt;&#x2F;span&gt;&lt;span&gt;}
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;% level one
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;\setlist&lt;&#x2F;span&gt;&lt;span&gt;[itemize,1]{label=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;\bullet&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt;}
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;% level two
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;\setlist&lt;&#x2F;span&gt;&lt;span&gt;[itemize,2]{label=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;\circ&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt;}
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;% level three
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;\setlist&lt;&#x2F;span&gt;&lt;span&gt;[itemize,3]{label=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;\star&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt;}
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;p&gt;Comparing &lt;code&gt;pandoc sample_4.md -f gfm -o sample_4.pdf&lt;&#x2F;code&gt; vs &lt;code&gt;.&#x2F;md2pdf_syn_bullet.sh sample_4.md sample_4_bullet.pdf&lt;&#x2F;code&gt; gives:&lt;&#x2F;p&gt;
-&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;pandoc_pdf&#x2F;bullet_styling.png&quot; alt=&quot;Bullet styling&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
-&lt;br&gt;
-&lt;h2 id=&quot;pdf-properties&quot;&gt;PDF properties&lt;a class=&quot;zola-anchor&quot; href=&quot;#pdf-properties&quot; aria-label=&quot;Anchor link for: pdf-properties&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
-&lt;p&gt;This &lt;a href=&quot;https:&#x2F;&#x2F;tex.stackexchange.com&#x2F;questions&#x2F;23235&#x2F;eliminate-edit-pdf-properties-added-by-pdflatex&quot;&gt;tex.stackexchange Q&amp;amp;A&lt;&#x2F;a&gt; helped to change metadata. See also &lt;a href=&quot;https:&#x2F;&#x2F;pspdfkit.com&#x2F;blog&#x2F;2018&#x2F;whats-hiding-in-your-pdf&#x2F;&quot;&gt;pspdfkit: What’s Hiding in Your PDF?&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=18381515&quot;&gt;discussion on HN&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;latex&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-latex &quot;&gt;&lt;code class=&quot;language-latex&quot; data-lang=&quot;latex&quot;&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;\usepackage&lt;&#x2F;span&gt;&lt;span&gt;{&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a2a001;&quot;&gt;hyperref&lt;&#x2F;span&gt;&lt;span&gt;}
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;\hypersetup&lt;&#x2F;span&gt;&lt;span&gt;{
-&lt;&#x2F;span&gt;&lt;span&gt;  pdftitle={My awesome book},
-&lt;&#x2F;span&gt;&lt;span&gt;  pdfauthor={learnbyexample},
-&lt;&#x2F;span&gt;&lt;span&gt;  pdfsubject={pandoc},
-&lt;&#x2F;span&gt;&lt;span&gt;  pdfkeywords={pandoc,pdf,xelatex}
-&lt;&#x2F;span&gt;&lt;span&gt;}
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;p&gt;&lt;code&gt;.&#x2F;md2pdf_syn_bullet_prop.sh sample_4.md sample_4_bullet_prop.pdf&lt;&#x2F;code&gt; gives:&lt;&#x2F;p&gt;
-&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;pandoc_pdf&#x2F;pdf_properties.png&quot; alt=&quot;pdf properties&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
-&lt;br&gt;
-&lt;h2 id=&quot;adding-table-of-contents&quot;&gt;Adding table of contents&lt;a class=&quot;zola-anchor&quot; href=&quot;#adding-table-of-contents&quot; aria-label=&quot;Anchor link for: adding-table-of-contents&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
-&lt;p&gt;There&#x27;s a handy option &lt;code&gt;--toc&lt;&#x2F;code&gt; to automatically include table of contents at top of the generated &lt;code&gt;pdf&lt;&#x2F;code&gt;. You can control number of levels using &lt;code&gt;--toc-depth&lt;&#x2F;code&gt; option, the default is 3 levels. You can also change the default string &lt;code&gt;Contents&lt;&#x2F;code&gt; to something else using &lt;code&gt;-V toc-title&lt;&#x2F;code&gt; option.&lt;&#x2F;p&gt;
-&lt;p&gt;&lt;code&gt;.&#x2F;md2pdf_syn_bullet_prop_toc.sh sample_1.md sample_1_toc.pdf&lt;&#x2F;code&gt; gives:&lt;&#x2F;p&gt;
-&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;pandoc_pdf&#x2F;table_of_contents.png&quot; alt=&quot;table of contents&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
-&lt;br&gt;
-&lt;h2 id=&quot;adding-cover-image&quot;&gt;Adding cover image&lt;a class=&quot;zola-anchor&quot; href=&quot;#adding-cover-image&quot; aria-label=&quot;Anchor link for: adding-cover-image&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
-&lt;p&gt;To add something prior to table of contents, cover image for example, you can use a &lt;code&gt;tex&lt;&#x2F;code&gt; file and include it verbatim. Create a &lt;code&gt;tex&lt;&#x2F;code&gt; file (named as &lt;code&gt;cover.tex&lt;&#x2F;code&gt; here) with content as shown below:&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;tex&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-tex &quot;&gt;&lt;code class=&quot;language-tex&quot; data-lang=&quot;tex&quot;&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;\includegraphics&lt;&#x2F;span&gt;&lt;span&gt;{cover.png}
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;\thispagestyle&lt;&#x2F;span&gt;&lt;span&gt;{empty}
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;p&gt;Then, modify the previous script &lt;code&gt;md2pdf_syn_bullet_prop_toc.sh&lt;&#x2F;code&gt; by adding &lt;code&gt;--include-before-body cover.tex&lt;&#x2F;code&gt; and tada — you get the cover image before table of contents. &lt;code&gt;\thispagestyle{empty}&lt;&#x2F;code&gt; helps to avoid page number on the cover page, see also &lt;a href=&quot;https:&#x2F;&#x2F;tex.stackexchange.com&#x2F;questions&#x2F;360739&#x2F;what-is-the-use-of-clearpage-thispagestyleempty-cleardoublepage&quot;&gt;tex.stackexchange: clear page&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
-&lt;p&gt;The &lt;code&gt;bash&lt;&#x2F;code&gt; script invocation is now &lt;code&gt;.&#x2F;md2pdf_syn_bullet_prop_toc_cover.sh sample_5.md sample_5.pdf&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
-&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;warning.svg&quot; alt=&quot;warning&quot; &#x2F;&gt; You&#x27;ll need at least one image in input markdown file, otherwise settings won&#x27;t apply to the cover image and you may end up with weird output. &lt;code&gt;sample_5.md&lt;&#x2F;code&gt; used in the command above includes an image. And be careful to use escapes if the image path can contain &lt;code&gt;tex&lt;&#x2F;code&gt; metacharacters.&lt;&#x2F;p&gt;
-&lt;br&gt;
-&lt;h2 id=&quot;stylish-blockquote&quot;&gt;Stylish blockquote&lt;a class=&quot;zola-anchor&quot; href=&quot;#stylish-blockquote&quot; aria-label=&quot;Anchor link for: stylish-blockquote&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
-&lt;p&gt;By default, blockquotes (lines starting with &lt;code&gt;&amp;gt;&lt;&#x2F;code&gt; in markdown) are just indented in the &lt;code&gt;pdf&lt;&#x2F;code&gt; output. To make them standout, &lt;a href=&quot;https:&#x2F;&#x2F;tex.stackexchange.com&#x2F;questions&#x2F;154528&#x2F;how-to-change-the-background-color-and-border-of-a-pandoc-generated-blockquote&quot;&gt;tex.stackexchange: change the background color and border of blockquote&lt;&#x2F;a&gt; helped.&lt;&#x2F;p&gt;
-&lt;p&gt;Create &lt;code&gt;quote.tex&lt;&#x2F;code&gt; with the contents as shown below. You can change the colors to suit your own preferred style.&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;tex&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-tex &quot;&gt;&lt;code class=&quot;language-tex&quot; data-lang=&quot;tex&quot;&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;\usepackage&lt;&#x2F;span&gt;&lt;span&gt;{&lt;&#x2F;span&gt;&lt;span style=&quot;color:#a2a001;&quot;&gt;tcolorbox&lt;&#x2F;span&gt;&lt;span&gt;}
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;\newtcolorbox&lt;&#x2F;span&gt;&lt;span&gt;{myquote}{colback=red!5!white, colframe=red!75!black}
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;\renewenvironment&lt;&#x2F;span&gt;&lt;span&gt;{quote}{&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;\begin&lt;&#x2F;span&gt;&lt;span&gt;{&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;myquote&lt;&#x2F;span&gt;&lt;span&gt;}}{&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;\end&lt;&#x2F;span&gt;&lt;span&gt;{&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;myquote&lt;&#x2F;span&gt;&lt;span&gt;}}
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;p&gt;The &lt;code&gt;bash&lt;&#x2F;code&gt; script invocation is now &lt;code&gt;.&#x2F;md2pdf_syn_bullet_prop_toc_cover_quote.sh sample_5.md sample_5_quote.pdf&lt;&#x2F;code&gt;. The difference between default and styled blockquote is shown below.&lt;&#x2F;p&gt;
-&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;pandoc_pdf&#x2F;styled_blockquote.png&quot; alt=&quot;styling blockquotes&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
-&lt;br&gt;
-&lt;h2 id=&quot;customizing-epub&quot;&gt;Customizing epub&lt;a class=&quot;zola-anchor&quot; href=&quot;#customizing-epub&quot; aria-label=&quot;Anchor link for: customizing-epub&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
-&lt;p&gt;For a long time, I thought &lt;code&gt;epub&lt;&#x2F;code&gt; didn&#x27;t make sense for programming books. Turned out, I wasn&#x27;t using the right ebook readers. &lt;strong&gt;FBReader&lt;&#x2F;strong&gt; is good for novels but not ebooks with code snippets. When I used &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;mate-desktop&#x2F;atril&quot;&gt;atril&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;calibre-ebook.com&#x2F;&quot;&gt;calibre ebook-viewer&lt;&#x2F;a&gt;, the results were good.&lt;&#x2F;p&gt;
-&lt;p&gt;I didn&#x27;t know how to use &lt;code&gt;css&lt;&#x2F;code&gt; before trying to generate the &lt;code&gt;epub&lt;&#x2F;code&gt; version. Somehow, I managed to take the default &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;jgm&#x2F;pandoc&#x2F;blob&#x2F;master&#x2F;data&#x2F;epub.css&quot;&gt;epub.css&lt;&#x2F;a&gt; provided by &lt;code&gt;pandoc&lt;&#x2F;code&gt; and customize it as close as possible to the &lt;code&gt;pdf&lt;&#x2F;code&gt; version. The modified &lt;code&gt;epub.css&lt;&#x2F;code&gt; is available from the &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;learnbyexample.github.io&#x2F;tree&#x2F;master&#x2F;files&#x2F;pandoc_pdf&quot;&gt;learnbyexample.github.io repo&lt;&#x2F;a&gt;. The &lt;code&gt;bash&lt;&#x2F;code&gt; script to generate the &lt;code&gt;epub&lt;&#x2F;code&gt; is shown below and invoked as &lt;code&gt;.&#x2F;md2epub.sh sample_5.md sample_5.epub&lt;&#x2F;code&gt;. Note that &lt;code&gt;pygments.theme&lt;&#x2F;code&gt; is same as the &lt;code&gt;pdf&lt;&#x2F;code&gt; customization discussed before.&lt;&#x2F;p&gt;
-&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;#!&#x2F;bin&#x2F;bash
-&lt;&#x2F;span&gt;&lt;span&gt;
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;pandoc  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#acb3c2;&quot;&gt;1&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot; &lt;&#x2F;span&gt;&lt;span&gt;\
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;        -f&lt;&#x2F;span&gt;&lt;span&gt; gfm \
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;        --toc &lt;&#x2F;span&gt;&lt;span&gt;\
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;        --standalone &lt;&#x2F;span&gt;&lt;span&gt;\
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;        --top-level-division&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span&gt;chapter \
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;        --highlight-style&lt;&#x2F;span&gt;&lt;span&gt; pygments.theme \
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;        --css&lt;&#x2F;span&gt;&lt;span&gt; epub.css \
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;        --metadata&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span&gt;title:&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot;My awesome book&amp;quot; &lt;&#x2F;span&gt;&lt;span&gt;\
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;        --metadata&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span&gt;author:&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot;learnbyexample&amp;quot; &lt;&#x2F;span&gt;&lt;span&gt;\
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;        --metadata&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span&gt;lang:&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot;en-US&amp;quot; &lt;&#x2F;span&gt;&lt;span&gt;\
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;        --metadata&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span&gt;cover-image:&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot;cover.png&amp;quot; &lt;&#x2F;span&gt;&lt;span&gt;\
-&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;        -o &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot;$&lt;&#x2F;span&gt;&lt;span style=&quot;color:#acb3c2;&quot;&gt;2&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot;
-&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;br&gt;
-&lt;h2 id=&quot;resource-links&quot;&gt;Resource links&lt;a class=&quot;zola-anchor&quot; href=&quot;#resource-links&quot; aria-label=&quot;Anchor link for: resource-links&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;pandoc.org&#x2F;MANUAL.html&quot;&gt;pandoc: manual&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;pandoc.org&#x2F;demos.html&quot;&gt;pandoc: demos&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;jgm&#x2F;pandoc&#x2F;wiki&#x2F;Pandoc-Tricks&quot;&gt;pandoc: tips and tricks&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
-&lt;p&gt;&lt;strong&gt;More options and workflows for generating ebooks&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;Wandmalfarbe&#x2F;pandoc-latex-template&quot;&gt;pandoc-latex-template&lt;&#x2F;a&gt; — a clean pandoc LaTeX template to convert your markdown files to PDF or LaTeX&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;keleshev.com&#x2F;my-book-writing-setup&#x2F;&quot;&gt;Writing a book with pandoc, make, and vim&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;quarto.org&#x2F;&quot;&gt;Quarto&lt;&#x2F;a&gt; — open source scientific and technical publishing system built on Pandoc&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;jupyterbook.org&#x2F;intro.html&quot;&gt;Jupyter Book&lt;&#x2F;a&gt; — open source project for building beautiful, publication-quality books and documents from computational material
-&lt;ul&gt;
-&lt;li&gt;See also &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;fastai&#x2F;fastdoc&quot;&gt;fastdoc&lt;&#x2F;a&gt; — the output of fastdoc is an asciidoc file for each input notebook. You can then use asciidoctor to convert that to HTML, DocBook, epub, mobi, and so forth&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.thedigitalcatbooks.com&#x2F;maubook-introduction&#x2F;&quot;&gt;Mau&lt;&#x2F;a&gt; — template-based markup language, heavily inspired by AsciiDoc&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;asciidoctor.org&#x2F;docs&#x2F;what-is-asciidoc&#x2F;&quot;&gt;Asciidoctor&lt;&#x2F;a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;daneah&#x2F;asciidoc-book-template&quot;&gt;Asciidoc book template&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;shape-of-code.coding-guidelines.com&#x2F;2019&#x2F;08&#x2F;11&#x2F;my-books-pdf-generation-workflow&#x2F;&quot;&gt;pdf generation workflow with Asciidoc&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.sphinx-doc.org&#x2F;en&#x2F;stable&#x2F;index.html&quot;&gt;Sphinx&lt;&#x2F;a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;digitalsuperpowers.com&#x2F;blog&#x2F;2019-02-16-publishing-ebook.html&quot;&gt;Self-publishing a book with reStructuredText, Sphinx, Calibre, and vim&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
-&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;bookdown.org&#x2F;home&#x2F;&quot;&gt;Bookdown&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;orgmode.org&#x2F;&quot;&gt;Emacs orgmode&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;casual-effects.com&#x2F;markdeep&#x2F;&quot;&gt;Markdeep&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
-&lt;p&gt;&lt;strong&gt;Miscellaneous&lt;&#x2F;strong&gt;&lt;&#x2F;p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;nickjanetakis.com&#x2F;blog&#x2F;vim-is-saving-me-hours-of-work-when-writing-books-and-courses&quot;&gt;Vim is saving me hours of work when writing books &amp;amp; courses&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;joecmarshall.com&#x2F;posts&#x2F;book-writing-environment&#x2F;&quot;&gt;Writing a Book with Unix&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;askubuntu.com&#x2F;questions&#x2F;3697&#x2F;how-do-i-install-fonts&quot;&gt;askubuntu: How do I install fonts?&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;tex.stackexchange.com&#x2F;questions&#x2F;9533&#x2F;what-best-combination-of-fonts-for-serif-sans-and-mono-do-you-recommend&quot;&gt;tex.stackexchange: What best combination of fonts for Serif, Sans, and Mono do you recommend?&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;tug.org&#x2F;FontCatalogue&#x2F;&quot;&gt;LaTeX font catalogue&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;karthik&#x2F;markdown_science&#x2F;wiki&#x2F;Tools-to-support-your-markdown-authoring&quot;&gt;Tools to support markdown authoring&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;picular.co&#x2F;&quot;&gt;picular: search engine for colors&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;www.colorhexa.com&#x2F;&quot;&gt;colorhexa&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;ebooks.stackexchange.com&#x2F;questions?sort=votes&quot;&gt;ebooks.stackexchange&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;&#x2F;ul&gt;
 </content>
 	</entry>
 	<entry xml:lang="en">

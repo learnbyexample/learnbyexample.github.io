@@ -6,6 +6,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Posts
 
+* [Customizing pandoc to generate beautiful pdf and epub from markdown](https://learnbyexample.github.io/customizing-pandoc/)
 * [Everything you need to know about sed substitution](https://learnbyexample.github.io/everything-about-sed-substitution/)
 * [CLI text processing with GNU awk book announcement](https://learnbyexample.github.io/cli-text-processing-awk-announcement/)
 * [awk idioms explained](https://learnbyexample.github.io/awk-idioms-explained/)
@@ -53,7 +54,6 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 * [Emulating regexp lookarounds in GNU sed](https://learnbyexample.github.io/sed-lookarounds/)
 * [Search and replace tricks with ripgrep](https://learnbyexample.github.io/substitution-with-ripgrep/)
 * [I know Python basics, what next?](https://learnbyexample.github.io/python-intermediate/)
-* [Customizing pandoc to generate beautiful pdf and epub from markdown](https://learnbyexample.github.io/customizing-pandoc/)
 * [JavaScript regular expressions cheatsheet and examples](https://learnbyexample.github.io/javascript-regexp-cheatsheet/)
 * [Python regular expression cheatsheet and examples](https://learnbyexample.github.io/python-regex-cheatsheet/)
 * [Creating GUI Applications with wxPython - book review](https://learnbyexample.github.io/python-gui-book-review/)
