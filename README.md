@@ -64,6 +64,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Mini blog posts
 
+* [Better bindings for command line history search](https://learnbyexample.github.io/mini/better-bindings-cli-history-search/)
 * [OS installation woes](https://learnbyexample.github.io/mini/os-installation-woes/)
 * [Basic examples for the Linux date command](https://learnbyexample.github.io/mini/linux-date-command-examples/)
 * [CLI text editing with ed](https://learnbyexample.github.io/mini/cli-text-editing-with-ed/)

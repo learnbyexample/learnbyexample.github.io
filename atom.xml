@@ -5,8 +5,32 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2025-05-19T00:00:00+00:00</updated>
+	<updated>2025-05-21T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Better bindings for command line history search</title>
+		<published>2025-05-21T00:00:00+00:00</published>
+		<updated>2025-05-21T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://learnbyexample.github.io/mini/better-bindings-cli-history-search/" type="text/html"/>
+		<id>https://learnbyexample.github.io/mini/better-bindings-cli-history-search/</id>
+		<content type="html">&lt;p&gt;Do you find it confusing to use &lt;code&gt;Ctrl+r&lt;&#x2F;code&gt; for searching a command from shell history? I have the following mappings in the &lt;code&gt;~&#x2F;.inputrc&lt;&#x2F;code&gt; file, so that I can use the &lt;code&gt;↑&lt;&#x2F;code&gt; and &lt;code&gt;↓&lt;&#x2F;code&gt; arrow keys instead.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot;\e[A&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span&gt; history-search-backward
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot;\e[B&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span&gt; history-search-forward
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;Normally, when you use the &lt;code&gt;↑&lt;&#x2F;code&gt; arrow key, you&#x27;ll get the previous command from the history. You can repeatedly press the key to get more entries. With the above settings active, this behavior will change if you have some characters already typed before pressing the arrow key — you&#x27;ll only get entries from the history that match these characters from the start of the command. If there are multiple matches, you can use the &lt;code&gt;↑&lt;&#x2F;code&gt; and &lt;code&gt;↓&lt;&#x2F;code&gt; keys repeatedly to move backwards and forwards through the list.&lt;&#x2F;p&gt;
+&lt;p&gt;If you want the matching to happen anywhere in command (same behavior as &lt;code&gt;Ctrl+r&lt;&#x2F;code&gt; and &lt;code&gt;Ctrl+s&lt;&#x2F;code&gt;), use the following lines instead:&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot;\e[A&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span&gt; history-substring-search-backward
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot;\e[B&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span&gt; history-substring-search-forward
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;The &lt;code&gt;~&#x2F;.inputrc&lt;&#x2F;code&gt; file affects any shell using the &lt;code&gt;readline&lt;&#x2F;code&gt; library (for example, programming language REPLs). You can use the &lt;code&gt;bind&lt;&#x2F;code&gt; command and put them in, &lt;code&gt;~&#x2F;.bashrc&lt;&#x2F;code&gt; for example, to affect only that particular shell.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;bind &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&amp;quot;\e[A&amp;quot;: history-search-backward&amp;#39;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;bind &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&amp;quot;\e[B&amp;quot;: history-search-forward&amp;#39;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See &lt;a href=&quot;https:&#x2F;&#x2F;wiki.archlinux.org&#x2F;title&#x2F;Readline&quot;&gt;wiki.archlinux: readline&lt;&#x2F;a&gt; for more details and examples.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>Customizing pandoc to generate beautiful pdf and epub from markdown</title>
 		<published>2025-05-19T00:00:00+00:00</published>

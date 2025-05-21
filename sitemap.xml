@@ -127,6 +127,10 @@
         <lastmod>2022-06-04</lastmod>
     </url>
     <url>
+        <loc>https://learnbyexample.github.io/mini/better-bindings-cli-history-search/</loc>
+        <lastmod>2025-05-21</lastmod>
+    </url>
+    <url>
         <loc>https://learnbyexample.github.io/mini/cli-computing-sales/</loc>
         <lastmod>2022-11-14</lastmod>
     </url>
@@ -369,6 +373,9 @@
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tags/hacker-news/</loc>
+    </url>
+    <url>
+        <loc>https://learnbyexample.github.io/tags/inputrc/</loc>
     </url>
     <url>
         <loc>https://learnbyexample.github.io/tags/intermediate/</loc>
