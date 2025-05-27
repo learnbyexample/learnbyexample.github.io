@@ -5,15 +5,15 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2025-05-21T00:00:00+00:00</updated>
+	<updated>2025-05-27T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
 	<entry xml:lang="en">
 		<title>Better bindings for command line history search</title>
 		<published>2025-05-21T00:00:00+00:00</published>
-		<updated>2025-05-21T00:00:00+00:00</updated>
+		<updated>2025-05-27T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/mini/better-bindings-cli-history-search/" type="text/html"/>
 		<id>https://learnbyexample.github.io/mini/better-bindings-cli-history-search/</id>
-		<content type="html">&lt;p&gt;Do you find it confusing to use &lt;code&gt;Ctrl+r&lt;&#x2F;code&gt; for searching a command from shell history? I have the following mappings in the &lt;code&gt;~&#x2F;.inputrc&lt;&#x2F;code&gt; file, so that I can use the &lt;code&gt;↑&lt;&#x2F;code&gt; and &lt;code&gt;↓&lt;&#x2F;code&gt; arrow keys instead.&lt;&#x2F;p&gt;
+		<content type="html">&lt;p&gt;Do you find it confusing to use &lt;code&gt;Ctrl+r&lt;&#x2F;code&gt; for searching a command from shell history? I have the following mappings in the &lt;code&gt;~&#x2F;.inputrc&lt;&#x2F;code&gt; file, so that I can use the &lt;code&gt;↑&lt;&#x2F;code&gt; and &lt;code&gt;↓&lt;&#x2F;code&gt; arrow keys instead. Note that this assumes you are using Emacs-style key bindings instead of Vi mode.&lt;&#x2F;p&gt;
 &lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot;\e[A&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span&gt; history-search-backward
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;quot;\e[B&amp;quot;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;:&lt;&#x2F;span&gt;&lt;span&gt; history-search-forward
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
@@ -26,9 +26,13 @@
 &lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;bind &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&amp;quot;\e[A&amp;quot;: history-search-backward&amp;#39;
 &lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;bind &lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&amp;quot;\e[B&amp;quot;: history-search-forward&amp;#39;
 &lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See &lt;a href=&quot;https:&#x2F;&#x2F;wiki.archlinux.org&#x2F;title&#x2F;Readline&quot;&gt;wiki.archlinux: readline&lt;&#x2F;a&gt; for more details and examples.&lt;&#x2F;p&gt;
-&lt;&#x2F;blockquote&gt;
+&lt;h2 id=&quot;further-reading&quot;&gt;Further Reading&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;wiki.archlinux.org&#x2F;title&#x2F;Readline&quot;&gt;Introduction to readline&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;cupfullofcode.com&#x2F;blog&#x2F;2013&#x2F;07&#x2F;03&#x2F;efficient-command-line-navigation&#x2F;index.html&quot;&gt;Efficient command line navigation&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;junegunn&#x2F;fzf&quot;&gt;fzf: general purpose command line fuzzy finder&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;mikebian.co&#x2F;supercharged-zsh-command-history&#x2F;&quot;&gt;Supercharged zsh command history&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
 </content>
 	</entry>
 	<entry xml:lang="en">
