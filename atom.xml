@@ -5,7 +5,7 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2025-05-27T00:00:00+00:00</updated>
+	<updated>2025-06-04T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
 	<entry xml:lang="en">
 		<title>Better bindings for command line history search</title>
@@ -38,7 +38,7 @@
 	<entry xml:lang="en">
 		<title>Customizing pandoc to generate beautiful pdf and epub from markdown</title>
 		<published>2025-05-19T00:00:00+00:00</published>
-		<updated>2025-05-19T00:00:00+00:00</updated>
+		<updated>2025-06-04T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/customizing-pandoc/" type="text/html"/>
 		<id>https://learnbyexample.github.io/customizing-pandoc/</id>
 		<content type="html">&lt;p&gt;Either you&#x27;ve already heard of &lt;code&gt;pandoc&lt;&#x2F;code&gt; or if you have searched online for &lt;code&gt;markdown&lt;&#x2F;code&gt; to &lt;code&gt;pdf&lt;&#x2F;code&gt; or similar, you are sure to come across &lt;code&gt;pandoc&lt;&#x2F;code&gt;. This tutorial will help you use &lt;code&gt;pandoc&lt;&#x2F;code&gt; to generate &lt;code&gt;pdf&lt;&#x2F;code&gt; and &lt;code&gt;epub&lt;&#x2F;code&gt; versions from a &lt;a href=&quot;https:&#x2F;&#x2F;github.github.com&#x2F;gfm&#x2F;&quot;&gt;GitHub style markdown&lt;&#x2F;a&gt; file.&lt;&#x2F;p&gt;
@@ -266,9 +266,11 @@ no VAL is specified, the key will be given the value true.&lt;&#x2F;p&gt;
 &lt;p&gt;&lt;strong&gt;More options and workflows for generating ebooks&lt;&#x2F;strong&gt;:&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;Wandmalfarbe&#x2F;pandoc-latex-template&quot;&gt;pandoc-latex-template&lt;&#x2F;a&gt; — a clean pandoc LaTeX template to convert your markdown files to PDF or LaTeX&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;keleshev.com&#x2F;my-book-writing-setup&#x2F;&quot;&gt;Writing a book with pandoc, make, and vim&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;keleshev.com&#x2F;writing-a-book-with-pandoc-make-and-vim&#x2F;&quot;&gt;Writing a book with pandoc, make, and vim&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;quarto.org&#x2F;&quot;&gt;Quarto&lt;&#x2F;a&gt; — open source scientific and technical publishing system built on Pandoc&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;jupyterbook.org&#x2F;intro.html&quot;&gt;Jupyter Book&lt;&#x2F;a&gt; — open source project for building beautiful, publication-quality books and documents from computational material
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;iamgio&#x2F;quarkdown&quot;&gt;quarkdown&lt;&#x2F;a&gt; — a modern Markdown-based typetting system&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;typst&#x2F;typst&quot;&gt;typst&lt;&#x2F;a&gt; — a new markup-based typesetting system that is powerful and easy to learn&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;jupyterbook.org&#x2F;en&#x2F;stable&#x2F;intro.html&quot;&gt;Jupyter Book&lt;&#x2F;a&gt; — open source project for building beautiful, publication-quality books and documents from computational material
 &lt;ul&gt;
 &lt;li&gt;See also &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;fastai&#x2F;fastdoc&quot;&gt;fastdoc&lt;&#x2F;a&gt; — the output of fastdoc is an asciidoc file for each input notebook. You can then use asciidoctor to convert that to HTML, DocBook, epub, mobi, and so forth&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
@@ -280,7 +282,7 @@ no VAL is specified, the key will be given the value true.&lt;&#x2F;p&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;shape-of-code.coding-guidelines.com&#x2F;2019&#x2F;08&#x2F;11&#x2F;my-books-pdf-generation-workflow&#x2F;&quot;&gt;pdf generation workflow with Asciidoc&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.sphinx-doc.org&#x2F;en&#x2F;stable&#x2F;index.html&quot;&gt;Sphinx&lt;&#x2F;a&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.sphinx-doc.org&#x2F;en&#x2F;master&#x2F;index.html&quot;&gt;Sphinx&lt;&#x2F;a&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;digitalsuperpowers.com&#x2F;blog&#x2F;2019-02-16-publishing-ebook.html&quot;&gt;Self-publishing a book with reStructuredText, Sphinx, Calibre, and vim&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
