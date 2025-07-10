@@ -5,7 +5,7 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2025-06-09T00:00:00+00:00</updated>
+	<updated>2025-07-10T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
 	<entry xml:lang="en">
 		<title>Python regular expression cheatsheet and examples</title>
@@ -6396,7 +6396,7 @@ Specifying a greater than &lt;code&gt;0&lt;&#x2F;code&gt; start index when using
 	<entry xml:lang="en">
 		<title>Programming ebooks by Sundeep Agarwal</title>
 		<published>2022-08-09T00:00:00+00:00</published>
-		<updated>2025-01-23T00:00:00+00:00</updated>
+		<updated>2025-07-10T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/books/" type="text/html"/>
 		<id>https://learnbyexample.github.io/books/</id>
 		<content type="html">&lt;p&gt;This post lists my programming ebooks with details like PDF&#x2F;EPUB purchase links, GitHub repos, web versions, testimonials, etc. All my ebooks are self-published. You can get these ebooks individually or as part of bundles. You can also read them online for free.&lt;&#x2F;p&gt;
@@ -6428,7 +6428,7 @@ Specifying a greater than &lt;code&gt;0&lt;&#x2F;code&gt; start index when using
 &lt;&#x2F;li&gt;
 &lt;li&gt;&lt;strong&gt;Learn by example Python bundle&lt;&#x2F;strong&gt;: &lt;a href=&quot;https:&#x2F;&#x2F;leanpub.com&#x2F;b&#x2F;python-bundle&quot;&gt;leanpub&lt;&#x2F;a&gt; or &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;python-bundle&quot;&gt;gumroad&lt;&#x2F;a&gt;
 &lt;ul&gt;
-&lt;li&gt;Intro, Regular expressions and Projects&lt;&#x2F;li&gt;
+&lt;li&gt;Python introduction, Regular expressions and Projects&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;&#x2F;li&gt;
 &lt;li&gt;&lt;strong&gt;Ruby Text processing&lt;&#x2F;strong&gt;: &lt;a href=&quot;https:&#x2F;&#x2F;leanpub.com&#x2F;b&#x2F;ruby-textprocessing&quot;&gt;leanpub&lt;&#x2F;a&gt; or &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;ruby-textprocessing&quot;&gt;gumroad&lt;&#x2F;a&gt;
@@ -6530,7 +6530,7 @@ Specifying a greater than &lt;code&gt;0&lt;&#x2F;code&gt; start index when using
 &lt;br&gt;
 &lt;h1 id=&quot;practice-python-projects&quot;&gt;&lt;p style=&quot;color: #ff9933&quot;&gt;Practice Python Projects&lt;&#x2F;h1&gt;
 &lt;p&gt;Know Python basics but don&#x27;t know what to do next? Take the next step in your programming journey with real world inspired Python projects.&lt;&#x2F;p&gt;
-&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;books&#x2F;py_projects.png&quot; alt=&quot;Practice Python Projects cover image&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;learnbyexample&#x2F;practice_python_projects&#x2F;main&#x2F;images&#x2F;py_projects_ls.png&quot; alt=&quot;Practice Python Projects cover image&quot; loading=&quot;lazy&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;practice_python_projects&#x2F;blob&#x2F;main&#x2F;sample_chapters&#x2F;practice_python_projects_sample.pdf&quot;&gt;Sample chapters&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;Buy pdf&#x2F;epub from:
@@ -9236,48 +9236,62 @@ Specifying a greater than &lt;code&gt;0&lt;&#x2F;code&gt; start index when using
 	<entry xml:lang="en">
 		<title>Practice Python Projects book announcement</title>
 		<published>2021-07-30T00:00:00+00:00</published>
-		<updated>2023-01-07T00:00:00+00:00</updated>
+		<updated>2025-07-10T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/practice-python-projects-book-announcement/" type="text/html"/>
 		<id>https://learnbyexample.github.io/practice-python-projects-book-announcement/</id>
 		<content type="html">&lt;p&gt;Hello!&lt;&#x2F;p&gt;
-&lt;p&gt;I just published my ebook titled &amp;quot;&lt;strong&gt;Practice Python Projects&lt;&#x2F;strong&gt;&amp;quot;. This book presents five beginner to intermediate level projects inspired by real world use cases:&lt;&#x2F;p&gt;
+&lt;p&gt;My &amp;quot;&lt;strong&gt;Practice Python Projects&lt;&#x2F;strong&gt;&amp;quot; ebook presents five beginner-to-intermediate level projects inspired by real world use cases:&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;practice_python_projects&#x2F;calculator&#x2F;calculator.html&quot;&gt;Enhance your CLI experience with a custom Python calculator&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;practice_python_projects&#x2F;poll_data_analysis&#x2F;poll_data_analysis.html&quot;&gt;Analyzing poll data from a Reddit comment thread&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;practice_python_projects&#x2F;find_typos&#x2F;find_typos.html&quot;&gt;Finding typos in plain text and Markdown files&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;practice_python_projects&#x2F;mcq&#x2F;multiple_choice_questions.html&quot;&gt;Creating a GUI for evaluating multiple choice questions&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;practice_python_projects&#x2F;square_tic_tac_toe&#x2F;square_tic_tac_toe.html&quot;&gt;Square Tic Tac Toe — creating a GUI game with AI&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;practice_python_projects&#x2F;square_tic_tac_toe&#x2F;square_tic_tac_toe.html&quot;&gt;Square Tic Tac Toe — creating a GUI game with AI logic&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
-&lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;
-&lt;p&gt;To test your understanding and to make it more interesting, you&#x27;ll also be presented with exercises at the end of each project. Resources for further exploration are also mentioned throughout the book. Here&#x27;s a short video about the book:&lt;&#x2F;p&gt;
-&lt;p align=&quot;center&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;5whwiiURWS8&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;&#x2F;iframe&gt;&lt;&#x2F;p&gt;
-&lt;br&gt;
-&lt;br&gt;
+&lt;p&gt;To test your understanding and to make it more interesting, you&#x27;ll also be presented with exercises at the end of each project. Resources for further exploration are also mentioned throughout the book.&lt;&#x2F;p&gt;
+&lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;&lt;br&gt;
 &lt;h2 id=&quot;ebook-links&quot;&gt;Ebook links&lt;a class=&quot;zola-anchor&quot; href=&quot;#ebook-links&quot; aria-label=&quot;Anchor link for: ebook-links&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
-&lt;p&gt;You can buy the &lt;strong&gt;PDF&#x2F;EPUB&lt;&#x2F;strong&gt; versions of the book using these links:&lt;&#x2F;p&gt;
+&lt;p&gt;You can buy the &lt;strong&gt;PDF&#x2F;EPUB&lt;&#x2F;strong&gt; versions of the ebook using these links:&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;py_projects&quot;&gt;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;py_projects&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;leanpub.com&#x2F;py_projects&quot;&gt;https:&#x2F;&#x2F;leanpub.com&#x2F;py_projects&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
-&lt;p&gt;You can also get the ebooks as part of &lt;strong&gt;Learn by example Python bundle&lt;&#x2F;strong&gt; using these links:&lt;&#x2F;p&gt;
+&lt;p&gt;You can also get them as part of the &lt;strong&gt;Learn by example Python bundle&lt;&#x2F;strong&gt; using these links:&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;python-bundle&quot;&gt;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;python-bundle&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;leanpub.com&#x2F;b&#x2F;python-bundle&quot;&gt;https:&#x2F;&#x2F;leanpub.com&#x2F;b&#x2F;python-bundle&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
-&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;books&#x2F;py_projects.png&quot; alt=&quot;Practice Python Projects cover image&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;videos&quot;&gt;Videos&lt;a class=&quot;zola-anchor&quot; href=&quot;#videos&quot; aria-label=&quot;Anchor link for: videos&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;embed&#x2F;5whwiiURWS8&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;&#x2F;iframe&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Check out my &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;tips&#x2F;&quot;&gt;programming tips&lt;&#x2F;a&gt; covering Python, command line tools and Vim:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;playlist?list=PLTv2U3HnAL4PlFDiH3FXTHXRbhWs2sB3F&quot;&gt;Python tips&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;playlist?list=PLTv2U3HnAL4PNTmRqZBSUgKaiHbRL2zeY&quot;&gt;Linux command line tips&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;playlist?list=PLTv2U3HnAL4NN2tK-59ZiNBm-o64-Yvos&quot;&gt;Vim tips&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;testimonials&quot;&gt;Testimonials&lt;a class=&quot;zola-anchor&quot; href=&quot;#testimonials&quot; aria-label=&quot;Anchor link for: testimonials&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Your Practice Python Projects book is really helping me to reinforce my knowledge and mastery of Python as I&#x27;m learning.&lt;&#x2F;p&gt;
+&lt;p&gt;— &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;tayporware&#x2F;status&#x2F;1446499855988400129&quot;&gt;feedback on twitter&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
 &lt;br&gt;
 &lt;h2 id=&quot;web-version&quot;&gt;Web version&lt;a class=&quot;zola-anchor&quot; href=&quot;#web-version&quot; aria-label=&quot;Anchor link for: web-version&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
 &lt;p&gt;You can also read the book online here: &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;practice_python_projects&#x2F;preface.html&quot;&gt;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;practice_python_projects&#x2F;preface.html&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;br&gt;
 &lt;h2 id=&quot;github-repo&quot;&gt;GitHub repo&lt;a class=&quot;zola-anchor&quot; href=&quot;#github-repo&quot; aria-label=&quot;Anchor link for: github-repo&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
-&lt;p&gt;The &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;practice_python_projects&quot;&gt;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;practice_python_projects&lt;&#x2F;a&gt; repo has program&#x2F;example files, markdown source and other details about the book.&lt;&#x2F;p&gt;
+&lt;p&gt;Visit &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;practice_python_projects&quot;&gt;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;practice_python_projects&lt;&#x2F;a&gt; for programs, example files, markdown source and other details about the book.&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See also &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;customizing-pandoc&#x2F;&quot;&gt;my blog post&lt;&#x2F;a&gt; on how to customize &lt;code&gt;pandoc&lt;&#x2F;code&gt; for generating beautiful PDF&#x2F;EPUB versions from GitHub style markdown.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
 &lt;br&gt;
 &lt;h2 id=&quot;feedback&quot;&gt;Feedback&lt;a class=&quot;zola-anchor&quot; href=&quot;#feedback&quot; aria-label=&quot;Anchor link for: feedback&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
-&lt;p&gt;Hope you find it useful and fun to practice these Python projects. I would highly appreciate if you&#x27;d &lt;strong&gt;let me know how you felt about this book&lt;&#x2F;strong&gt;. It could be anything from a simple thank you, Gumroad rating, pointing out a typo, mistakes in code snippets, which aspects of the book worked for you (or didn&#x27;t!) and so on. Reader feedback is essential and especially so for self-published authors.&lt;&#x2F;p&gt;
+&lt;p&gt;I would highly appreciate it if you&#x27;d &lt;strong&gt;let me know how you felt about this book&lt;&#x2F;strong&gt;. It could be anything from a simple thank you, Gumroad rating, pointing out a typo, mistakes in code snippets, which aspects of the book worked for you (or didn&#x27;t!) and so on. Reader feedback is essential and especially so for self-published authors.&lt;&#x2F;p&gt;
 &lt;p&gt;You can reach me via:&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;Issue Manager: &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;practice_python_projects&#x2F;issues&quot;&gt;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;practice_python_projects&#x2F;issues&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;E-mail: &lt;code&gt;learn by example.net@gmail.com&lt;&#x2F;code&gt; (without the spaces)&lt;&#x2F;li&gt;
+&lt;li&gt;E-mail: &lt;code&gt;echo &#x27;bGVhcm5ieWV4YW1wbGUubmV0QGdtYWlsLmNvbQo=&#x27; | base64 --decode&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;Twitter: &lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;learn_byexample&quot;&gt;https:&#x2F;&#x2F;twitter.com&#x2F;learn_byexample&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;p&gt;Happy learning :)&lt;&#x2F;p&gt;
