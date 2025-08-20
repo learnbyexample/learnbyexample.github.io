@@ -6,6 +6,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Posts
 
+* [Connect Four game with a twist](https://learnbyexample.github.io/connect-four-game-with-a-twist/)
 * [Python regular expression cheatsheet and examples](https://learnbyexample.github.io/python-regex-cheatsheet/)
 * [Customizing pandoc to generate beautiful pdf and epub from markdown](https://learnbyexample.github.io/customizing-pandoc/)
 * [Everything you need to know about sed substitution](https://learnbyexample.github.io/everything-about-sed-substitution/)

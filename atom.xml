@@ -5,8 +5,69 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2025-07-10T00:00:00+00:00</updated>
+	<updated>2025-08-20T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Connect Four game with a twist</title>
+		<published>2025-08-20T00:00:00+00:00</published>
+		<updated>2025-08-20T00:00:00+00:00</updated>
+		<link rel="alternate" href="https://learnbyexample.github.io/connect-four-game-with-a-twist/" type="text/html"/>
+		<id>https://learnbyexample.github.io/connect-four-game-with-a-twist/</id>
+		<content type="html">&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;learnbyexample&#x2F;TUI-apps&#x2F;main&#x2F;ConnectSquare&#x2F;connect_square.png&quot; alt=&quot;Sample screenshot for Connect Square game&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;&lt;br&gt;
+&lt;p&gt;From &lt;a href=&quot;https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Connect_Four&quot;&gt;wikipedia: Connect Four&lt;&#x2F;a&gt;:&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Connect Four is a game in which the players choose a color and then take turns dropping colored tokens into a six-row, seven-column vertically suspended grid. The pieces fall straight down, occupying the lowest available space within the column. The objective of the game is to be the first to form a horizontal, vertical, or diagonal line of four of one&#x27;s own tokens.&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
+&lt;p&gt;As a twist, this TUI implementation also offers two more variations of the game:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;form a square, i.e. four cells forming 90 degree angles and equidistant from each other&lt;&#x2F;li&gt;
+&lt;li&gt;form a line or square&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;installation&quot;&gt;Installation&lt;a class=&quot;zola-anchor&quot; href=&quot;#installation&quot; aria-label=&quot;Anchor link for: installation&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;This app is available on PyPI as &lt;a href=&quot;https:&#x2F;&#x2F;pypi.org&#x2F;project&#x2F;connectsquare&#x2F;&quot;&gt;connectsquare&lt;&#x2F;a&gt;. Example installation instructions are shown below, adjust them based on your preferences and OS.&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# virtual environment
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; python3&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt; -m&lt;&#x2F;span&gt;&lt;span&gt; venv textual_apps
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; cd textual_apps
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; source bin&#x2F;activate
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; pip install connectsquare
+&lt;&#x2F;span&gt;&lt;span&gt;
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# launch the app
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#5597d6;&quot;&gt;$&lt;&#x2F;span&gt;&lt;span&gt; connectsquare
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;To run the app without having to enter the virtual environment again, add this alias to &lt;code&gt;.bashrc&lt;&#x2F;code&gt; (or equivalent):&lt;&#x2F;p&gt;
+&lt;pre data-lang=&quot;bash&quot; style=&quot;background-color:#f5f5f5;color:#1f1f1f;&quot; class=&quot;language-bash &quot;&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span style=&quot;color:#7f8989;&quot;&gt;# you&amp;#39;ll have to change the path
+&lt;&#x2F;span&gt;&lt;span style=&quot;color:#b39f04;&quot;&gt;alias &lt;&#x2F;span&gt;&lt;span style=&quot;color:#c23f31;&quot;&gt;connectsquare&lt;&#x2F;span&gt;&lt;span style=&quot;color:#72ab00;&quot;&gt;=&lt;&#x2F;span&gt;&lt;span style=&quot;color:#d07711;&quot;&gt;&amp;#39;&#x2F;path&#x2F;to&#x2F;textual_apps&#x2F;bin&#x2F;connectsquare&amp;#39;
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;p&gt;As an alternative to manually managing such virtual environments, you can use &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;astral-sh&#x2F;uv&quot;&gt;uv&lt;&#x2F;a&gt; or &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;pypa&#x2F;pipx&quot;&gt;pipx&lt;&#x2F;a&gt; instead.&lt;&#x2F;p&gt;
+&lt;p&gt;As yet another alternative, you can install &lt;code&gt;textual==0.85.2&lt;&#x2F;code&gt; (see &lt;a href=&quot;https:&#x2F;&#x2F;textual.textualize.io&#x2F;getting_started&#x2F;&quot;&gt;Textual documentation&lt;&#x2F;a&gt; for more details), clone &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;TUI-apps&quot;&gt;this repository&lt;&#x2F;a&gt; and run the &lt;code&gt;connect_square.py&lt;&#x2F;code&gt; file.&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;screenshots&quot;&gt;Screenshots&lt;a class=&quot;zola-anchor&quot; href=&quot;#screenshots&quot; aria-label=&quot;Anchor link for: screenshots&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;Adjust your terminal&#x27;s dimension for the game widgets to appear properly, for example 80x30 (characters x lines). Sample screenshots are shown below:&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;learnbyexample&#x2F;TUI-apps&#x2F;main&#x2F;ConnectSquare&#x2F;connect_four.png&quot; alt=&quot;Sample screenshot for Connect Four game&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;learnbyexample&#x2F;TUI-apps&#x2F;main&#x2F;ConnectSquare&#x2F;connect_both.png&quot; alt=&quot;Sample screenshot for Connect Four or Square game&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;br&gt;
+&lt;h2 id=&quot;guide&quot;&gt;Guide&lt;a class=&quot;zola-anchor&quot; href=&quot;#guide&quot; aria-label=&quot;Anchor link for: guide&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Press the &lt;strong&gt;n&lt;&#x2F;strong&gt; key to start a new game. Existing game, if any, will be abandoned&lt;&#x2F;li&gt;
+&lt;li&gt;You can choose between &lt;strong&gt;Connect Four&lt;&#x2F;strong&gt;, &lt;strong&gt;Connect Square&lt;&#x2F;strong&gt; (default) and &lt;strong&gt;Both&lt;&#x2F;strong&gt; types of game&lt;&#x2F;li&gt;
+&lt;li&gt;You can choose between &lt;strong&gt;Easy&lt;&#x2F;strong&gt; (default), &lt;strong&gt;Medium&lt;&#x2F;strong&gt; and &lt;strong&gt;Hard&lt;&#x2F;strong&gt; difficulty modes:
+&lt;ul&gt;
+&lt;li&gt;In the &lt;em&gt;Easy&lt;&#x2F;em&gt; mode, the AI will make a random move&lt;&#x2F;li&gt;
+&lt;li&gt;In the &lt;em&gt;Medium&lt;&#x2F;em&gt; mode, the AI will make a random move based on certain weight calculations&lt;&#x2F;li&gt;
+&lt;li&gt;In the &lt;em&gt;Hard&lt;&#x2F;em&gt; mode, the AI will make the best move based on the weight calculations (the algorithm is based only on the current board state and thus it is not impossible for the user to win)&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;The first move is based on the &lt;strong&gt;User first&lt;&#x2F;strong&gt; (default) and &lt;strong&gt;AI first&lt;&#x2F;strong&gt; choices&lt;&#x2F;li&gt;
+&lt;li&gt;Only the bottom most empty cell of each column will be considered as a valid move&lt;&#x2F;li&gt;
+&lt;li&gt;Press the &lt;strong&gt;t&lt;&#x2F;strong&gt; key to toggle between light and dark themes&lt;&#x2F;li&gt;
+&lt;li&gt;Press the &lt;strong&gt;q&lt;&#x2F;strong&gt; key to quit the app&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;p&gt;User moves are denoted by the ⭕️ character and AI moves are denoted by the ✖️  character.&lt;&#x2F;p&gt;
+&lt;p&gt;The text panel under the game board displays the current status of the game. If the game ends with one of the players forming a valid line or square, the cells forming the winning move will be highlighted.&lt;&#x2F;p&gt;
+</content>
+	</entry>
 	<entry xml:lang="en">
 		<title>Python regular expression cheatsheet and examples</title>
 		<published>2025-06-09T00:00:00+00:00</published>
