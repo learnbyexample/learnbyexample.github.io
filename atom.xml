@@ -5,12 +5,12 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2025-08-20T00:00:00+00:00</updated>
+	<updated>2025-08-26T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
 	<entry xml:lang="en">
 		<title>Connect Four game with a twist</title>
 		<published>2025-08-20T00:00:00+00:00</published>
-		<updated>2025-08-20T00:00:00+00:00</updated>
+		<updated>2025-08-26T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/connect-four-game-with-a-twist/" type="text/html"/>
 		<id>https://learnbyexample.github.io/connect-four-game-with-a-twist/</id>
 		<content type="html">&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;learnbyexample&#x2F;TUI-apps&#x2F;main&#x2F;ConnectSquare&#x2F;connect_square.png&quot; alt=&quot;Sample screenshot for Connect Square game&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
@@ -66,6 +66,9 @@
 &lt;&#x2F;ul&gt;
 &lt;p&gt;User moves are denoted by the ⭕️ character and AI moves are denoted by the ✖️  character.&lt;&#x2F;p&gt;
 &lt;p&gt;The text panel under the game board displays the current status of the game. If the game ends with one of the players forming a valid line or square, the cells forming the winning move will be highlighted.&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;square-tic-tac-toe&quot;&gt;Square tic tac toe&lt;a class=&quot;zola-anchor&quot; href=&quot;#square-tic-tac-toe&quot; aria-label=&quot;Anchor link for: square-tic-tac-toe&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;p&gt;If you liked this game, you might also enjoy &lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;TUI-apps&#x2F;tree&#x2F;main&#x2F;SquareTicTacToe&quot;&gt;Square tic tac toe&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
+&lt;p&gt;If you are interested in learning more about the AI algorithm for the Connect Square game, check out my &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;practice_python_projects&#x2F;square_tic_tac_toe&#x2F;square_tic_tac_toe_ai.html&quot;&gt;explanation here for Square tic tac toe&lt;&#x2F;a&gt; — while there are a few differences between the two, the foundation is the same.&lt;&#x2F;p&gt;
 </content>
 	</entry>
 	<entry xml:lang="en">
