@@ -5,7 +5,7 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2025-08-26T00:00:00+00:00</updated>
+	<updated>2025-09-05T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
 	<entry xml:lang="en">
 		<title>Connect Four game with a twist</title>
@@ -1395,7 +1395,7 @@ no VAL is specified, the key will be given the value true.&lt;&#x2F;p&gt;
 	<entry xml:lang="en">
 		<title>Coloring matched portions with GNU grep, sed and awk</title>
 		<published>2025-01-13T00:00:00+00:00</published>
-		<updated>2025-04-14T00:00:00+00:00</updated>
+		<updated>2025-09-05T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/coloring-matched-portions-grep-sed-awk/" type="text/html"/>
 		<id>https://learnbyexample.github.io/coloring-matched-portions-grep-sed-awk/</id>
 		<content type="html">&lt;p&gt;You might already know how to use the &lt;code&gt;--color&lt;&#x2F;code&gt; option to highlight matched portions with &lt;code&gt;GNU grep&lt;&#x2F;code&gt;. In this post, you&#x27;ll see how to use ANSI escape sequences to format matched portions with &lt;code&gt;GNU sed&lt;&#x2F;code&gt; and &lt;code&gt;GNU awk&lt;&#x2F;code&gt;.&lt;&#x2F;p&gt;
@@ -1424,6 +1424,7 @@ no VAL is specified, the key will be given the value true.&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;stackoverflow.com&#x2F;q&#x2F;4842424&#x2F;4082052&quot;&gt;List of ANSI color escape sequences&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;unix.stackexchange.com&#x2F;q&#x2F;148&#x2F;109046&quot;&gt;Colorizing your terminal and shell environment&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;wizardzines.com&#x2F;comics&#x2F;colours&#x2F;&quot;&gt;A comic on terminal colors&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; Note that you can also use &lt;code&gt;\e&lt;&#x2F;code&gt; instead of &lt;code&gt;\033&lt;&#x2F;code&gt; in the above examples. However, that will not work with the &lt;code&gt;GNU awk&lt;&#x2F;code&gt; examples shown below.&lt;&#x2F;p&gt;
 &lt;br&gt;
