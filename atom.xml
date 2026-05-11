@@ -5,7 +5,7 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2025-11-26T00:00:00+00:00</updated>
+	<updated>2026-05-11T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
 	<entry xml:lang="en">
 		<title>Festive offers for books on Python, Linux, Regular Expressions, Vim and more!</title>
@@ -10644,7 +10644,7 @@ The substitution works from start of the line for every iteration of the while l
 	<entry xml:lang="en">
 		<title>I know Python basics, what next?</title>
 		<published>2020-07-25T00:00:00+00:00</published>
-		<updated>2025-05-15T00:00:00+00:00</updated>
+		<updated>2026-05-11T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/python-intermediate/" type="text/html"/>
 		<id>https://learnbyexample.github.io/python-intermediate/</id>
 		<content type="html">&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;python_what_next.png&quot; alt=&quot;Python what next&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
@@ -10653,7 +10653,7 @@ The substitution works from start of the line for every iteration of the while l
 &lt;h2 id=&quot;next-step&quot;&gt;Next step&lt;a class=&quot;zola-anchor&quot; href=&quot;#next-step&quot; aria-label=&quot;Anchor link for: next-step&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
 &lt;p&gt;Programmers often wonder what to do after learning the basics. &lt;a href=&quot;https:&#x2F;&#x2F;old.reddit.com&#x2F;r&#x2F;learnpython&#x2F;search?q=what+next&amp;amp;restrict_sr=on&quot;&gt;Searching for &lt;code&gt;what next&lt;&#x2F;code&gt; on &#x2F;r&#x2F;learnpython&lt;&#x2F;a&gt; will give you too many results. And here are some wonderful articles related to this topic:&lt;&#x2F;p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.devdungeon.com&#x2F;content&#x2F;i-know-how-program-i-dont-know-what-program&quot;&gt;I know how to program, but I don&#x27;t know what to program&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;web.archive.org&#x2F;web&#x2F;20250220005327&#x2F;https:&#x2F;&#x2F;www.devdungeon.com&#x2F;content&#x2F;i-know-how-program-i-dont-know-what-program&quot;&gt;I know how to program, but I don&#x27;t know what to program&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.flyingmachinestudios.com&#x2F;programming&#x2F;learn-programming-languages-efficiently&#x2F;&quot;&gt;Techniques for Efficiently Learning Programming Languages&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.techinasia.com&#x2F;talk&#x2F;27-things-started-programming&quot;&gt;Things you might encounter in your programming journey&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
@@ -10662,7 +10662,7 @@ The substitution works from start of the line for every iteration of the while l
 &lt;h2 id=&quot;exercises&quot;&gt;Exercises&lt;a class=&quot;zola-anchor&quot; href=&quot;#exercises&quot; aria-label=&quot;Anchor link for: exercises&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
 &lt;p&gt;If you feel comfortable with programming basics and Python syntax, then exercises are a good way to test your knowledge. The resource you used to learn Python will typically have some sort of exercises, so those would be ideal as a first choice. I&#x27;d also suggest using the below resources to improve your skills. If you get stuck, reread the material related to those topics, search online, ask for clarifications, etc  — in short, make an effort to solve it. It is okay to skip some troublesome problems (and come back to it later if you have the time), but you should be able to solve most of the beginner problems. Maintaining notes and cheatsheets will help too, especially for common mistakes.&lt;&#x2F;p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;exercism.org&#x2F;tracks&#x2F;python&#x2F;exercises&quot;&gt;Exercism&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;www.hackinscience.org&#x2F;exercises&#x2F;&quot;&gt;Hackinscience&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;www.practicepython.org&#x2F;&quot;&gt;Practicepython&lt;&#x2F;a&gt; — these are all beginner friendly and difficulty levels are marked&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;exercism.org&#x2F;tracks&#x2F;python&#x2F;exercises&quot;&gt;Exercism&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;genepy.org&#x2F;exercises&#x2F;&quot;&gt;Genepy&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;www.practicepython.org&#x2F;&quot;&gt;Practicepython&lt;&#x2F;a&gt; — these are all beginner friendly and difficulty levels are marked&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;learnbyexample&#x2F;TUI-apps&#x2F;tree&#x2F;main&#x2F;PythonExercises&quot;&gt;Python Exercises&lt;&#x2F;a&gt; — my interactive TUI app, suited for beginner to intermediate level Python learners&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;inventwithpython.com&#x2F;pythongently&#x2F;&quot;&gt;Python Programming Exercises, Gently Explained&lt;&#x2F;a&gt; — includes gentle explanations of the problem, the prerequisite coding concepts you&#x27;ll need to understand the solution, etc&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;adventofcode.com&#x2F;&quot;&gt;Adventofcode&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;www.codewars.com&#x2F;&quot;&gt;Codewars&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;www.pythonmorsels.com&#x2F;&quot;&gt;Python Morsels&lt;&#x2F;a&gt; — includes more challenging exercises for intermediate to advanced level users&lt;&#x2F;li&gt;
@@ -10753,7 +10753,6 @@ The substitution works from start of the line for every iteration of the while l
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;ehmatthes.github.io&#x2F;pcc_3e&#x2F;cheat_sheets&#x2F;&quot;&gt;Python Crash Course cheatsheet&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;gto76.github.io&#x2F;python-cheatsheet&#x2F;&quot;&gt;Comprehensive Python cheatsheet&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;ipgp.github.io&#x2F;scientific_python_cheat_sheet&#x2F;&quot;&gt;Scientific Python cheatsheet&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;pythonforbiologists.com&#x2F;29-common-beginner-errors-on-one-page.html&quot;&gt;Common beginner errors&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;python-regex-cheatsheet&#x2F;&quot;&gt;Python regular expression cheatsheet&lt;&#x2F;a&gt; — my blog post, includes examples as well&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;br&gt;
