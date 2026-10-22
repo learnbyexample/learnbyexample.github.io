@@ -5,7 +5,7 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2026-05-11T00:00:00+00:00</updated>
+	<updated>2026-10-22T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
 	<entry xml:lang="en">
 		<title>Festive offers for books on Python, Linux, Regular Expressions, Vim and more!</title>
@@ -1895,7 +1895,7 @@ no VAL is specified, the key will be given the value true.&lt;&#x2F;p&gt;
 	<entry xml:lang="en">
 		<title>Linux Command Line Computing book announcement</title>
 		<published>2024-05-29T00:00:00+00:00</published>
-		<updated>2024-05-29T00:00:00+00:00</updated>
+		<updated>2026-10-22T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/linux-command-line-computing-announcement/" type="text/html"/>
 		<id>https://learnbyexample.github.io/linux-command-line-computing-announcement/</id>
 		<content type="html">&lt;p&gt;Hello!&lt;&#x2F;p&gt;
@@ -1937,7 +1937,7 @@ no VAL is specified, the key will be given the value true.&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Nice book! I just started trying to get into linux today and you have some tips I haven’t found elsewhere and the text is an enjoyable read so far.&lt;&#x2F;p&gt;
-&lt;p&gt;— &lt;a href=&quot;https:&#x2F;&#x2F;old.reddit.com&#x2F;r&#x2F;linux4noobs&#x2F;comments&#x2F;1adrx6c&#x2F;linux_guide_for_beginners&#x2F;kk3dypr&#x2F;&quot;&gt;feedback on reddit&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;— &lt;a href=&quot;https:&#x2F;&#x2F;www.reddit.com&#x2F;r&#x2F;linux4noobs&#x2F;comments&#x2F;1adrx6c&#x2F;linux_guide_for_beginners&#x2F;kk3dypr&#x2F;&quot;&gt;feedback on reddit&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;
 &lt;br&gt;
 &lt;h2 id=&quot;table-of-contents&quot;&gt;Table of Contents&lt;a class=&quot;zola-anchor&quot; href=&quot;#table-of-contents&quot; aria-label=&quot;Anchor link for: table-of-contents&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
@@ -2181,7 +2181,7 @@ no VAL is specified, the key will be given the value true.&lt;&#x2F;p&gt;
 	<entry xml:lang="en">
 		<title>CLI text processing with GNU Coreutils book announcement</title>
 		<published>2024-04-03T00:00:00+00:00</published>
-		<updated>2024-05-08T00:00:00+00:00</updated>
+		<updated>2026-10-22T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/cli-text-processing-coreutils-announcement/" type="text/html"/>
 		<id>https://learnbyexample.github.io/cli-text-processing-coreutils-announcement/</id>
 		<content type="html">&lt;p&gt;Hello!&lt;&#x2F;p&gt;
@@ -2226,7 +2226,7 @@ no VAL is specified, the key will be given the value true.&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;
 &lt;blockquote&gt;
 &lt;p&gt;I discovered your books recently and they’re awesome, thank you! As a 20 year *nix they made me realize how much more there are to these rock solid and ancient tools, once you spend the time to actually learn the intricacies of them.&lt;&#x2F;p&gt;
-&lt;p&gt;— feedback on &lt;a href=&quot;https:&#x2F;&#x2F;old.reddit.com&#x2F;r&#x2F;commandline&#x2F;comments&#x2F;1byumd6&#x2F;learn_gnu_coreutils_text_processing_tools_like&#x2F;l2pk5bd&#x2F;&quot;&gt;reddit&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;— feedback on &lt;a href=&quot;https:&#x2F;&#x2F;www.reddit.com&#x2F;r&#x2F;commandline&#x2F;comments&#x2F;1byumd6&#x2F;learn_gnu_coreutils_text_processing_tools_like&#x2F;l2pk5bd&#x2F;&quot;&gt;reddit&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;
 &lt;br&gt;
 &lt;h2 id=&quot;table-of-contents&quot;&gt;Table of Contents&lt;a class=&quot;zola-anchor&quot; href=&quot;#table-of-contents&quot; aria-label=&quot;Anchor link for: table-of-contents&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
@@ -5861,7 +5861,7 @@ Specifying a greater than &lt;code&gt;0&lt;&#x2F;code&gt; start index when using
 	<entry xml:lang="en">
 		<title>Computing from the Command Line: sales report</title>
 		<published>2022-11-14T00:00:00+00:00</published>
-		<updated>2022-11-14T00:00:00+00:00</updated>
+		<updated>2026-10-22T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/mini/cli-computing-sales/" type="text/html"/>
 		<id>https://learnbyexample.github.io/mini/cli-computing-sales/</id>
 		<content type="html">&lt;p&gt;I&#x27;ve previously written about events and strategies that led to &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;wild-ride-2021&#x2F;#book-sales&quot;&gt;increased ebook sales during the last quarter of 2021&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
@@ -5871,7 +5871,7 @@ Specifying a greater than &lt;code&gt;0&lt;&#x2F;code&gt; start index when using
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;p&#x2F;announcing-computing-from-the-command-line-free-discount-offers-and-more&quot;&gt;Announcement post on Gumroad&lt;&#x2F;a&gt; and sending an email to existing readers (1000+ users opened the email as per Gumroad analytics)&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;twitter.com&#x2F;learn_byexample&#x2F;status&#x2F;1587443517823275009&quot;&gt;Pinned tweet&lt;&#x2F;a&gt; — more than 300 link clicks as per Twitter analytics&lt;&#x2F;li&gt;
-&lt;li&gt;Posting on &lt;a href=&quot;https:&#x2F;&#x2F;old.reddit.com&#x2F;r&#x2F;commandline&#x2F;comments&#x2F;yk1izp&#x2F;i_wrote_a_book_on_linux_cli_tools_and_shell&#x2F;&quot;&gt;&#x2F;r&#x2F;commandline&#x2F;&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;old.reddit.com&#x2F;r&#x2F;linux&#x2F;comments&#x2F;yk1n8y&#x2F;i_wrote_a_book_on_linux_cli_tools_and_shell&#x2F;&quot;&gt;&#x2F;r&#x2F;linux&#x2F;&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;old.reddit.com&#x2F;r&#x2F;linux4noobs&#x2F;comments&#x2F;ykzuia&#x2F;i_wrote_a_book_on_linux_cli_tools_and_shell&#x2F;&quot;&gt;&#x2F;r&#x2F;linux4noobs&#x2F;&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;old.reddit.com&#x2F;r&#x2F;FreeEBOOKS&#x2F;comments&#x2F;yoj33g&#x2F;computing_from_the_command_line_linux_tools_and&#x2F;&quot;&gt;&#x2F;r&#x2F;FreeEBOOKS&#x2F;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;Posting on &lt;a href=&quot;https:&#x2F;&#x2F;www.reddit.com&#x2F;r&#x2F;commandline&#x2F;comments&#x2F;yk1izp&#x2F;i_wrote_a_book_on_linux_cli_tools_and_shell&#x2F;&quot;&gt;&#x2F;r&#x2F;commandline&#x2F;&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;www.reddit.com&#x2F;r&#x2F;linux&#x2F;comments&#x2F;yk1n8y&#x2F;i_wrote_a_book_on_linux_cli_tools_and_shell&#x2F;&quot;&gt;&#x2F;r&#x2F;linux&#x2F;&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;www.reddit.com&#x2F;r&#x2F;linux4noobs&#x2F;comments&#x2F;ykzuia&#x2F;i_wrote_a_book_on_linux_cli_tools_and_shell&#x2F;&quot;&gt;&#x2F;r&#x2F;linux4noobs&#x2F;&lt;&#x2F;a&gt; and &lt;a href=&quot;https:&#x2F;&#x2F;www.reddit.com&#x2F;r&#x2F;FreeEBOOKS&#x2F;comments&#x2F;yoj33g&#x2F;computing_from_the_command_line_linux_tools_and&#x2F;&quot;&gt;&#x2F;r&#x2F;FreeEBOOKS&#x2F;&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;news.ycombinator.com&#x2F;item?id=33449401&quot;&gt;Show HN post on Hacker News&lt;&#x2F;a&gt; — wasn&#x27;t lucky this time to reach front page&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;youtu.be&#x2F;PS5XEemn164&quot;&gt;Promo video on youtube&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;Mentioned in my &lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.gumroad.com&#x2F;l&#x2F;learnbyexample-weekly&quot;&gt;learnbyexample weekly&lt;&#x2F;a&gt; newsletter&lt;&#x2F;li&gt;
@@ -6490,7 +6490,7 @@ Specifying a greater than &lt;code&gt;0&lt;&#x2F;code&gt; start index when using
 	<entry xml:lang="en">
 		<title>Programming ebooks by Sundeep Agarwal</title>
 		<published>2022-08-09T00:00:00+00:00</published>
-		<updated>2025-07-10T00:00:00+00:00</updated>
+		<updated>2026-10-22T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/books/" type="text/html"/>
 		<id>https://learnbyexample.github.io/books/</id>
 		<content type="html">&lt;p&gt;This post lists my programming ebooks with details like PDF&#x2F;EPUB purchase links, GitHub repos, web versions, testimonials, etc. All my ebooks are self-published. You can get these ebooks individually or as part of bundles. You can also read them online for free.&lt;&#x2F;p&gt;
@@ -6535,7 +6535,7 @@ Specifying a greater than &lt;code&gt;0&lt;&#x2F;code&gt; start index when using
 &lt;h1 id=&quot;testimonials-heart-eyes&quot;&gt;&lt;p style=&quot;color: #c05b4d&quot;&gt;Testimonials 😍&lt;&#x2F;h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;I love your books on regex...As a student from the Digital VLSI space, it is indeed useful now and definitely in the future. It&#x27;s really well written and really easy to understand the examples.&lt;&#x2F;p&gt;
-&lt;p&gt;— &lt;a href=&quot;https:&#x2F;&#x2F;old.reddit.com&#x2F;r&#x2F;Python&#x2F;comments&#x2F;i0m2sy&#x2F;i_know_python_basics_what_next&#x2F;fzql5gh&#x2F;&quot;&gt;feedback on reddit&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;— &lt;a href=&quot;https:&#x2F;&#x2F;www.reddit.com&#x2F;r&#x2F;Python&#x2F;comments&#x2F;i0m2sy&#x2F;i_know_python_basics_what_next&#x2F;fzql5gh&#x2F;&quot;&gt;feedback on reddit&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;
 &lt;blockquote&gt;
 &lt;p&gt;It&#x27;s very thorough, written with care, and presented in a way that makes sense. Even as an intermediate Python programmer, I found use in this book.&lt;&#x2F;p&gt;
@@ -6579,15 +6579,15 @@ Specifying a greater than &lt;code&gt;0&lt;&#x2F;code&gt; start index when using
 &lt;&#x2F;blockquote&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Nice book! I just started trying to get into linux today and you have some tips I haven’t found elsewhere and the text is an enjoyable read so far.&lt;&#x2F;p&gt;
-&lt;p&gt;— &lt;a href=&quot;https:&#x2F;&#x2F;old.reddit.com&#x2F;r&#x2F;linux4noobs&#x2F;comments&#x2F;1adrx6c&#x2F;linux_guide_for_beginners&#x2F;kk3dypr&#x2F;&quot;&gt;feedback on reddit&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;— &lt;a href=&quot;https:&#x2F;&#x2F;www.reddit.com&#x2F;r&#x2F;linux4noobs&#x2F;comments&#x2F;1adrx6c&#x2F;linux_guide_for_beginners&#x2F;kk3dypr&#x2F;&quot;&gt;feedback on reddit&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;
 &lt;blockquote&gt;
 &lt;p&gt;I discovered your books recently and they’re awesome, thank you! As a 20 year *nix they made me realize how much more there are to these rock solid and ancient tools, once you spend the time to actually learn the intricacies of them.&lt;&#x2F;p&gt;
-&lt;p&gt;— &lt;a href=&quot;https:&#x2F;&#x2F;old.reddit.com&#x2F;r&#x2F;commandline&#x2F;comments&#x2F;1byumd6&#x2F;learn_gnu_coreutils_text_processing_tools_like&#x2F;l2pk5bd&#x2F;&quot;&gt;feedback on reddit&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;— &lt;a href=&quot;https:&#x2F;&#x2F;www.reddit.com&#x2F;r&#x2F;commandline&#x2F;comments&#x2F;1byumd6&#x2F;learn_gnu_coreutils_text_processing_tools_like&#x2F;l2pk5bd&#x2F;&quot;&gt;feedback on reddit&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;
 &lt;blockquote&gt;
 &lt;p&gt;I love the whole learn by example premise. Those exercises at the end are so valuable, as it often times leads me to find multiple solutions which helps me conceptualize how commands work with each other much better!&lt;&#x2F;p&gt;
-&lt;p&gt;— &lt;a href=&quot;https:&#x2F;&#x2F;old.reddit.com&#x2F;r&#x2F;linux4noobs&#x2F;comments&#x2F;lkbr65&#x2F;learn_grep_sed_awk_perl_oneliners_with_hundreds&#x2F;l6btf13&#x2F;?context=3&quot;&gt;feedback on reddit&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;— &lt;a href=&quot;https:&#x2F;&#x2F;www.reddit.com&#x2F;r&#x2F;linux4noobs&#x2F;comments&#x2F;lkbr65&#x2F;learn_grep_sed_awk_perl_oneliners_with_hundreds&#x2F;l6btf13&#x2F;?context=3&quot;&gt;feedback on reddit&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
 &lt;&#x2F;blockquote&gt;
 &lt;br&gt;
 &lt;h1 id=&quot;100-page-python-intro&quot;&gt;&lt;p style=&quot;color: #ff9933&quot;&gt;100 Page Python Intro&lt;&#x2F;h1&gt;
@@ -10644,14 +10644,14 @@ The substitution works from start of the line for every iteration of the while l
 	<entry xml:lang="en">
 		<title>I know Python basics, what next?</title>
 		<published>2020-07-25T00:00:00+00:00</published>
-		<updated>2026-05-11T00:00:00+00:00</updated>
+		<updated>2026-10-22T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/python-intermediate/" type="text/html"/>
 		<id>https://learnbyexample.github.io/python-intermediate/</id>
 		<content type="html">&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;python_what_next.png&quot; alt=&quot;Python what next&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 &lt;p align=&quot;center&quot;&gt;&lt;i&gt;Poster created using &lt;a href=&quot;https:&#x2F;&#x2F;www.canva.com&#x2F;&quot;&gt;Canva&lt;&#x2F;a&gt;&lt;&#x2F;i&gt;&lt;&#x2F;p&gt;
 &lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;&lt;br&gt;
 &lt;h2 id=&quot;next-step&quot;&gt;Next step&lt;a class=&quot;zola-anchor&quot; href=&quot;#next-step&quot; aria-label=&quot;Anchor link for: next-step&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
-&lt;p&gt;Programmers often wonder what to do after learning the basics. &lt;a href=&quot;https:&#x2F;&#x2F;old.reddit.com&#x2F;r&#x2F;learnpython&#x2F;search?q=what+next&amp;amp;restrict_sr=on&quot;&gt;Searching for &lt;code&gt;what next&lt;&#x2F;code&gt; on &#x2F;r&#x2F;learnpython&lt;&#x2F;a&gt; will give you too many results. And here are some wonderful articles related to this topic:&lt;&#x2F;p&gt;
+&lt;p&gt;Programmers often wonder what to do after learning the basics. &lt;a href=&quot;https:&#x2F;&#x2F;www.reddit.com&#x2F;r&#x2F;learnpython&#x2F;search?q=what+next&amp;amp;restrict_sr=on&quot;&gt;Searching for &lt;code&gt;what next&lt;&#x2F;code&gt; on &#x2F;r&#x2F;learnpython&lt;&#x2F;a&gt; will give you too many results. And here are some wonderful articles related to this topic:&lt;&#x2F;p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;web.archive.org&#x2F;web&#x2F;20250220005327&#x2F;https:&#x2F;&#x2F;www.devdungeon.com&#x2F;content&#x2F;i-know-how-program-i-dont-know-what-program&quot;&gt;I know how to program, but I don&#x27;t know what to program&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.flyingmachinestudios.com&#x2F;programming&#x2F;learn-programming-languages-efficiently&#x2F;&quot;&gt;Techniques for Efficiently Learning Programming Languages&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
@@ -10667,7 +10667,7 @@ The substitution works from start of the line for every iteration of the while l
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;inventwithpython.com&#x2F;pythongently&#x2F;&quot;&gt;Python Programming Exercises, Gently Explained&lt;&#x2F;a&gt; — includes gentle explanations of the problem, the prerequisite coding concepts you&#x27;ll need to understand the solution, etc&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;adventofcode.com&#x2F;&quot;&gt;Adventofcode&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;www.codewars.com&#x2F;&quot;&gt;Codewars&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;www.pythonmorsels.com&#x2F;&quot;&gt;Python Morsels&lt;&#x2F;a&gt; — includes more challenging exercises for intermediate to advanced level users&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;py.checkio.org&#x2F;&quot;&gt;Checkio&lt;&#x2F;a&gt;, &lt;a href=&quot;https:&#x2F;&#x2F;www.codingame.com&#x2F;start&quot;&gt;Codingame&lt;&#x2F;a&gt; — gaming based challenges&lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;old.reddit.com&#x2F;r&#x2F;dailyprogrammer&#x2F;&quot;&gt;&#x2F;r&#x2F;dailyprogrammer&lt;&#x2F;a&gt; — interesting challenges&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.reddit.com&#x2F;r&#x2F;dailyprogrammer&#x2F;&quot;&gt;&#x2F;r&#x2F;dailyprogrammer&lt;&#x2F;a&gt; — interesting challenges&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See also this article on &lt;a href=&quot;https:&#x2F;&#x2F;www.pythonmorsels.com&#x2F;programming-exercise-tips&#x2F;&quot;&gt;solving programming exercises&lt;&#x2F;a&gt;.&lt;&#x2F;p&gt;
 &lt;br&gt;
@@ -10688,7 +10688,7 @@ The substitution works from start of the line for every iteration of the while l
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;learnbyexample.github.io&#x2F;practice_python_projects&#x2F;&quot;&gt;Practice Python Projects&lt;&#x2F;a&gt; — my book on beginner to intermediate level projects&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;&#x2F;li&gt;
-&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;old.reddit.com&#x2F;r&#x2F;learnpython&#x2F;comments&#x2F;k5k1h0&#x2F;what_do_you_automate_with_python_at_home&#x2F;&quot;&gt;&#x2F;r&#x2F;learnpython: What do you automate with Python at home?&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.reddit.com&#x2F;r&#x2F;learnpython&#x2F;comments&#x2F;k5k1h0&#x2F;what_do_you_automate_with_python_at_home&#x2F;&quot;&gt;&#x2F;r&#x2F;learnpython: What do you automate with Python at home?&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
 &lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;projectbook.code.brettchalupa.com&#x2F;&quot;&gt;Projectbook&lt;&#x2F;a&gt; — collection of over 100 software project ideas for people looking to learn a given language or technology&lt;&#x2F;li&gt;
 &lt;&#x2F;ul&gt;
 &lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; See also &lt;a href=&quot;https:&#x2F;&#x2F;goodresearch.dev&#x2F;&quot;&gt;The Good Research Code Handbook&lt;&#x2F;a&gt; to learn how to organize your code so that it is easy to understand and works reliably.&lt;&#x2F;p&gt;
