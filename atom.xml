@@ -5,7 +5,7 @@
 	<link href="https://learnbyexample.github.io/atom.xml" rel="self" type="application/atom+xml"/>
   <link href="https://learnbyexample.github.io"/>
 	<generator uri="https://www.getzola.org/">Zola</generator>
-	<updated>2026-10-22T00:00:00+00:00</updated>
+	<updated>2026-11-03T00:00:00+00:00</updated>
 	<id>https://learnbyexample.github.io/atom.xml</id>
 	<entry xml:lang="en">
 		<title>Festive offers for books on Python, Linux, Regular Expressions, Vim and more!</title>
@@ -9599,12 +9599,17 @@ Specifying a greater than &lt;code&gt;0&lt;&#x2F;code&gt; start index when using
 	<entry xml:lang="en">
 		<title>GNU BRE&#x2F;ERE cheatsheet and differences between grep, sed and awk</title>
 		<published>2021-05-31T00:00:00+00:00</published>
-		<updated>2022-08-17T00:00:00+00:00</updated>
+		<updated>2026-11-03T00:00:00+00:00</updated>
 		<link rel="alternate" href="https://learnbyexample.github.io/gnu-bre-ere-cheatsheet/" type="text/html"/>
 		<id>https://learnbyexample.github.io/gnu-bre-ere-cheatsheet/</id>
 		<content type="html">&lt;p align=&quot;center&quot;&gt;&lt;img src=&quot;&#x2F;images&#x2F;bre_ere_cheatsheet.png&quot; alt=&quot;GNU BRE&#x2F;ERE cheatsheet&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
 &lt;p align=&quot;center&quot;&gt;&lt;i&gt;Poster created using &lt;a href=&quot;https:&#x2F;&#x2F;www.canva.com&#x2F;&quot;&gt;Canva&lt;&#x2F;a&gt;&lt;&#x2F;i&gt;&lt;&#x2F;p&gt;
 &lt;p&gt;This post covers &lt;strong&gt;Basic Regular Expressions&lt;&#x2F;strong&gt; (BRE) and &lt;strong&gt;Extended Regular Expressions&lt;&#x2F;strong&gt; (ERE) syntax supported by GNU &lt;code&gt;grep&lt;&#x2F;code&gt;, &lt;code&gt;sed&lt;&#x2F;code&gt; and &lt;code&gt;awk&lt;&#x2F;code&gt;. You&#x27;ll also learn the differences between these tools — for example, &lt;code&gt;awk&lt;&#x2F;code&gt; doesn&#x27;t support backreferences within regexp definition (i.e. the search portion).&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; &lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; &lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; The versions used in this post are &lt;strong&gt;3.11&lt;&#x2F;strong&gt; for &lt;code&gt;grep&lt;&#x2F;code&gt;, &lt;strong&gt;4.9&lt;&#x2F;strong&gt; for &lt;code&gt;sed&lt;&#x2F;code&gt; and &lt;strong&gt;5.3.1&lt;&#x2F;strong&gt; for &lt;code&gt;awk&lt;&#x2F;code&gt;. There has been a significant change in &lt;code&gt;awk&lt;&#x2F;code&gt;&#x27;s regular expression engine from version &lt;strong&gt;5.4&lt;&#x2F;strong&gt; such as the support for &lt;a href=&quot;https:&#x2F;&#x2F;www.gnu.org&#x2F;software&#x2F;gawk&#x2F;manual&#x2F;html_node&#x2F;Non_002dgreedy-operators.html&quot;&gt;shortest-match (non-greedy) quantifiers&lt;&#x2F;a&gt; — these changes are &lt;em&gt;not&lt;&#x2F;em&gt; covered in this post. From &lt;a href=&quot;https:&#x2F;&#x2F;www.gnu.org&#x2F;software&#x2F;gawk&#x2F;manual&#x2F;html_node&#x2F;Choosing-Matchers.html&quot;&gt;GNU awk manual&lt;&#x2F;a&gt;:&lt;&#x2F;p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Release 5.4.0 of gawk introduced a new regular expression matching engine, named MinRX.&lt;&#x2F;p&gt;
+&lt;p&gt;MinRX is fully compliant with the POSIX standard for Extended Regular Expressions (EREs), including the additional features needed by awk and gawk. It is also a little stricter that the original matchers are in terms of accepting valid regular expression syntax when specifying a regexp. (These restrictions apply to corner cases that should not come up in day-to-day use.)&lt;&#x2F;p&gt;
+&lt;&#x2F;blockquote&gt;
 &lt;span id=&quot;continue-reading&quot;&gt;&lt;&#x2F;span&gt;&lt;br&gt;
 &lt;h2 id=&quot;bre-and-ere&quot;&gt;BRE and ERE&lt;a class=&quot;zola-anchor&quot; href=&quot;#bre-and-ere&quot; aria-label=&quot;Anchor link for: bre-and-ere&quot;&gt;🔗&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
 &lt;p&gt;&lt;img src=&quot;&#x2F;images&#x2F;info.svg&quot; alt=&quot;info&quot; &#x2F;&gt; From &lt;a href=&quot;https:&#x2F;&#x2F;www.gnu.org&#x2F;software&#x2F;grep&#x2F;manual&#x2F;grep.html#Basic-vs-Extended&quot;&gt;GNU grep manual&lt;&#x2F;a&gt;:&lt;&#x2F;p&gt;
