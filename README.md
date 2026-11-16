@@ -1,4 +1,4 @@
-My super duper awesome programming blog is now live at https://learnbyexample.github.io/
+My super duper awesome programming blog: https://learnbyexample.github.io/
 
 I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnbyexample.github.io/escapist-reviews/) for that as well.
 
@@ -6,7 +6,7 @@ I'm addicted to reading fantasy/sci-fi books, so I have a [blog](https://learnby
 
 ## Posts
 
-* [Festive offers for books on Python, Linux, Regular Expressions, Vim and more!](https://learnbyexample.github.io/programming-deals-2025/)
+* [Festive offers for books on Python, Linux, Regular Expressions, Vim and more!](https://learnbyexample.github.io/programming-deals-2026/)
 * [Connect Four game with a twist](https://learnbyexample.github.io/connect-four-game-with-a-twist/)
 * [Python regular expression cheatsheet and examples](https://learnbyexample.github.io/python-regex-cheatsheet/)
 * [Customizing pandoc to generate beautiful pdf and epub from markdown](https://learnbyexample.github.io/customizing-pandoc/)
